@@ -123,10 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
     artWrap.innerHTML = window.renderArt(ev, false);
     card.appendChild(artWrap);
 
-    // Khối chữ tiêu đề và ngày tháng
+    // Khối chữ tiêu đề (đã bỏ hiển thị thời gian nhỏ trên thẻ ngoài trục)
     const cap = createEl('span', 'cap');
     cap.appendChild(createTextEl('span', 'c-title', evData.title));
-    cap.appendChild(createTextEl('span', 'c-date', evData.date));
     card.appendChild(cap);
 
     // Nếu có ghi chú đối chiếu thì gắn chấm cảnh báo

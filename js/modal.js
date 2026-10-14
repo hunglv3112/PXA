@@ -40,25 +40,115 @@
     // Lấy field theo ngôn ngữ
     const title = (lang === 'ja' && contentObj.title_ja) ? contentObj.title_ja : contentObj.title;
     const date = (lang === 'ja' && contentObj.date_ja) ? contentObj.date_ja : contentObj.date;
-    const texts = (lang === 'ja' && contentObj.text_ja) ? contentObj.text_ja : contentObj.text;
     const note = (lang === 'ja' && contentObj.note_ja != null) ? contentObj.note_ja : contentObj.note;
     const src = (lang === 'ja' && contentObj.src_ja) ? contentObj.src_ja : contentObj.src;
 
-    mMeta.textContent = `${evYl}  ·  ${date || ''}`;
+    mMeta.textContent = '';
+    mMeta.hidden = true;
     mTitle.textContent = title || '';
 
     mText.innerHTML = '';
-    if (Array.isArray(texts)) {
-      texts.forEach(paragraph => {
-        const p = document.createElement('p');
-        p.textContent = paragraph;
-        mText.appendChild(p);
-      });
+
+    // Khi ở layout 2 cột (split layout), hiển thị ảnh đại diện của mục đang chọn kèm chú thích bên dưới
+    const isSplit = mArt.classList.contains('m-art--split') || !sheet.classList.contains('sheet--single');
+    const mainImgSrc = contentObj.modalImg || contentObj.img || contentObj.image || 
+                       (contentObj.src && !contentObj.src.startsWith('Nguồn') && !contentObj.src.startsWith('出典') ? contentObj.src : '');
+
+    if (isSplit && mainImgSrc) {
+      const mainAlt = (lang === 'ja' && (contentObj.alt_ja || contentObj.modalImgAlt_ja)) 
+        ? (contentObj.alt_ja || contentObj.modalImgAlt_ja) 
+        : (contentObj.alt || contentObj.modalImgAlt || contentObj.title || '');
+      
+      const mainCaption = (lang === 'ja' && (contentObj.caption_ja || contentObj.modalImgLabel_ja || contentObj.label_ja || contentObj.modalImgAlt_ja)) 
+        ? (contentObj.caption_ja || contentObj.modalImgLabel_ja || contentObj.label_ja || contentObj.modalImgAlt_ja) 
+        : (contentObj.caption || contentObj.modalImgLabel || contentObj.label || contentObj.modalImgAlt || '');
+
+      const figure = document.createElement('figure');
+      figure.className = 'm-content-figure m-main-figure';
+
+      const imgEl = document.createElement('img');
+      imgEl.src = mainImgSrc;
+      imgEl.alt = mainAlt || mainCaption || '';
+      imgEl.className = 'm-content-img';
+      imgEl.loading = 'eager';
+      figure.appendChild(imgEl);
+
+      if (mainCaption) {
+        const capEl = document.createElement('figcaption');
+        capEl.className = 'm-content-caption';
+        capEl.textContent = mainCaption;
+        figure.appendChild(capEl);
+      }
+
+      mText.appendChild(figure);
     }
 
-    // Render ảnh bên dưới văn bản nếu có (hỗ trợ bottomImg, bottomImgs, contentImg)
-    const rawBottom = contentObj.bottomImg || contentObj.bottomImgs || contentObj.contentImg ||
-                      (rawEv && (rawEv.bottomImg || rawEv.bottomImgs || rawEv.contentImg));
+    // Thu thập các đoạn văn bản: hỗ trợ tách riêng từng field (text1, text2, text3...) hoặc dùng mảng text[]
+    let paragraphs = [];
+    let pIdx = 1;
+    while (true) {
+      const valJa = contentObj[`text${pIdx}_ja`] || contentObj[`text_${pIdx}_ja`] || contentObj[`p${pIdx}_ja`];
+      const valVi = contentObj[`text${pIdx}`] || contentObj[`text_${pIdx}`] || contentObj[`p${pIdx}`];
+      const chosen = (lang === 'ja' && valJa) ? valJa : (valVi || (lang === 'ja' ? valVi : ''));
+      if (chosen && typeof chosen === 'string' && chosen.trim() !== '') {
+        paragraphs.push(chosen);
+        pIdx++;
+      } else {
+        if (contentObj[`text${pIdx + 1}`] || contentObj[`text${pIdx + 1}_ja`]) {
+          pIdx++;
+          continue;
+        }
+        break;
+      }
+    }
+
+    if (paragraphs.length === 0) {
+      const texts = (lang === 'ja' && contentObj.text_ja) ? contentObj.text_ja : contentObj.text;
+      if (Array.isArray(texts)) {
+        paragraphs = texts;
+      } else if (typeof texts === 'string' && texts.trim() !== '') {
+        paragraphs = [texts];
+      }
+    }
+
+    paragraphs.forEach((paragraph, idx) => {
+      if (!paragraph || typeof paragraph !== 'string') return;
+      const p = document.createElement('p');
+      p.textContent = paragraph;
+      mText.appendChild(p);
+
+      // Render midImg sau đoạn văn đầu tiên (text1) nếu có
+      if (idx === 0 && contentObj.midImg) {
+        const mid = contentObj.midImg;
+        const midSrc = mid.src || mid.img || '';
+        if (midSrc) {
+          const midAlt = (lang === 'ja' && mid.alt_ja) ? mid.alt_ja : (mid.alt || '');
+          const midCap = (lang === 'ja' && mid.caption_ja) ? mid.caption_ja : (mid.caption || '');
+
+          const figure = document.createElement('figure');
+          figure.className = 'm-content-figure m-mid-figure';
+
+          const imgEl = document.createElement('img');
+          imgEl.src = midSrc;
+          imgEl.alt = midAlt || midCap || '';
+          imgEl.className = 'm-content-img';
+          imgEl.loading = 'lazy';
+          figure.appendChild(imgEl);
+
+          if (midCap) {
+            const capEl = document.createElement('figcaption');
+            capEl.className = 'm-content-caption';
+            capEl.textContent = midCap;
+            figure.appendChild(capEl);
+          }
+
+          mText.appendChild(figure);
+        }
+      }
+    });
+
+    // Render ảnh bên dưới văn bản nếu có (chỉ hiển thị nếu data của phần đó có khai báo)
+    const rawBottom = contentObj.bottomImg || contentObj.bottomImgs || contentObj.contentImg;
     if (rawBottom) {
       const imgList = Array.isArray(rawBottom) ? rawBottom : [rawBottom];
       const container = document.createElement('div');
@@ -119,15 +209,20 @@
   }
 
   // ─────────────────────────────────────────────────────────────────
-  // Render panel trái: 2 ảnh chia đôi dọc, click để chuyển nội dung
+  // Render layout 2 cột trái - phải (dành cho sự kiện có > 1 object, giống 1975)
   // ─────────────────────────────────────────────────────────────────
-  function renderSplitImages(ev, lang, cfg) {
+  function renderSplitLayout(ev, items, lang, cfg) {
+    sheet.classList.remove('sheet--single');
     mArt.classList.add('m-art--split');
     mArt.innerHTML = '';
 
-    ev.imgs.forEach((imgObj, i) => {
-      const altText = (lang === 'ja' && imgObj.alt_ja) ? imgObj.alt_ja : (imgObj.alt || '');
-      const label = (lang === 'ja' && imgObj.label_ja) ? imgObj.label_ja : (imgObj.label || '');
+    items.forEach((imgObj, i) => {
+      const altText = (lang === 'ja' && (imgObj.alt_ja || imgObj.modalImgAlt_ja)) 
+        ? (imgObj.alt_ja || imgObj.modalImgAlt_ja) 
+        : (imgObj.alt || imgObj.modalImgAlt || '');
+      const label = (lang === 'ja' && (imgObj.label_ja || imgObj.modalImgLabel_ja)) 
+        ? (imgObj.label_ja || imgObj.modalImgLabel_ja) 
+        : (imgObj.label || imgObj.modalImgLabel || '');
 
       const cell = document.createElement('div');
       cell.className = 'm-art-cell';
@@ -137,7 +232,8 @@
       if (i === 0) cell.classList.add('m-art-cell--active');
 
       const img = document.createElement('img');
-      const imgSrc = imgObj.img || imgObj.image || (imgObj.src && !imgObj.src.startsWith('Nguồn') && !imgObj.src.startsWith('出典') ? imgObj.src : '');
+      const imgSrc = imgObj.img || imgObj.modalImg || imgObj.image || imgObj.cardImg || 
+                     (imgObj.src && !imgObj.src.startsWith('Nguồn') && !imgObj.src.startsWith('出典') ? imgObj.src : '');
       img.src = imgSrc;
       img.alt = altText;
       img.loading = i === 0 ? 'eager' : 'lazy';
@@ -153,7 +249,6 @@
 
       // Click / Enter → chuyển nội dung panel phải
       function activate() {
-        // Bỏ active khỏi tất cả cell
         mArt.querySelectorAll('.m-art-cell').forEach(c => c.classList.remove('m-art-cell--active'));
         cell.classList.add('m-art-cell--active');
         renderRightPanel(imgObj, ev.yl, cfg, lang, ev);
@@ -165,8 +260,63 @@
       });
     });
 
-    // Hiển thị nội dung của ảnh đầu tiên mặc định
-    renderRightPanel(ev.imgs[0], ev.yl, cfg, lang, ev);
+    // Mặc định hiển thị nội dung của ảnh đầu tiên
+    renderRightPanel(items[0], ev.yl, cfg, lang, ev);
+  }
+
+  // ─────────────────────────────────────────────────────────────────
+  // Render layout 1 cột: Ảnh sau đến Text (dành cho sự kiện có 1 object)
+  // Không chia làm 2 phần trái phải nữa
+  // ─────────────────────────────────────────────────────────────────
+  function renderSingleLayout(ev, item, lang, cfg) {
+    sheet.classList.add('sheet--single');
+    mArt.classList.remove('m-art--split');
+    mArt.innerHTML = '';
+
+    // Tìm ảnh: ưu tiên modalImg -> img -> cardImg
+    const imgSrc = item.modalImg || item.img || item.cardImg || 
+                   (item.src && !item.src.startsWith('Nguồn') && !item.src.startsWith('出典') ? item.src : '') ||
+                   ev.modalImg || ev.img || ev.cardImg || '';
+
+    const altText = (lang === 'ja' && (item.modalImgAlt_ja || item.alt_ja)) 
+      ? (item.modalImgAlt_ja || item.alt_ja) 
+      : (item.modalImgAlt || item.alt || item.title || ev.title || '');
+
+    // Lấy chú thích bên dưới ảnh: ưu tiên caption -> modalImgLabel -> label -> modalImgAlt
+    const captionText = (lang === 'ja' && (item.caption_ja || item.modalImgLabel_ja || item.label_ja || item.modalImgAlt_ja)) 
+      ? (item.caption_ja || item.modalImgLabel_ja || item.label_ja || item.modalImgAlt_ja) 
+      : (item.caption || item.modalImgLabel || item.label || item.modalImgAlt || '');
+
+    if (imgSrc) {
+      mArt.style.display = '';
+      const figure = document.createElement('figure');
+      figure.className = 'm-hero-figure';
+
+      const img = document.createElement('img');
+      img.src = imgSrc;
+      img.alt = altText;
+      img.className = 'm-single-hero-img art-photo';
+      img.loading = 'eager';
+      figure.appendChild(img);
+
+      if (captionText) {
+        const figcap = document.createElement('figcaption');
+        figcap.className = 'm-hero-caption';
+        figcap.textContent = captionText;
+        figure.appendChild(figcap);
+      }
+
+      mArt.appendChild(figure);
+    } else {
+      // Đồ họa SVG biểu trưng nếu không có file ảnh
+      mArt.innerHTML = window.renderArt ? window.renderArt(ev, true) : '';
+    }
+
+    // Hiển thị nội dung văn bản bên dưới ảnh
+    renderRightPanel(item, ev.yl, cfg, lang, ev);
+
+    // Cuộn modal về đầu
+    sheet.scrollTop = 0;
   }
 
   // ─────────────────────────────────────────────────────────────────
@@ -185,26 +335,19 @@
     // Nhánh UI (spy / press)
     sheet.dataset.side = ev.side;
 
-    // Panel trái: 2 ảnh hoặc art đơn
-    if (Array.isArray(ev.imgs) && ev.imgs.length >= 2) {
-      renderSplitImages(ev, lang, cfg);
+    // Xác định danh sách đối tượng: kiểm tra ev.items hoặc ev.imgs
+    const items = Array.isArray(ev.items) 
+      ? ev.items 
+      : (Array.isArray(ev.imgs) ? ev.imgs : null);
+
+    if (items && items.length > 1) {
+      // Dữ liệu có > 1 object: Chia 2 bên trái - phải (như năm 1975)
+      renderSplitLayout(ev, items, lang, cfg);
     } else {
-      mArt.classList.remove('m-art--split');
-      mArt.innerHTML = window.renderArt(ev, true);
-
-      // Nếu có modalImgLabel thì thêm nhãn overlay cho ảnh bên trái
-      const modalLabel = (lang === 'ja' && (ev.modalImgLabel_ja || evData.modalImgLabel_ja))
-        ? (ev.modalImgLabel_ja || evData.modalImgLabel_ja)
-        : (ev.modalImgLabel || evData.modalImgLabel);
-      if (modalLabel) {
-        const overlay = document.createElement('div');
-        overlay.className = 'm-art-label';
-        overlay.textContent = modalLabel;
-        mArt.appendChild(overlay);
-      }
-
-      // Panel phải: nội dung thường kèm ảnh dưới nếu có
-      renderRightPanel(evData, ev.yl, cfg, lang, ev);
+      // Dữ liệu là mảng có 1 object (hoặc dữ liệu đơn thông thường):
+      // Thiết kế dạng 1 cột: Ảnh sau đến Text, không chia 2 phần trái phải
+      const singleItem = (items && items.length === 1) ? items[0] : evData;
+      renderSingleLayout(ev, singleItem, lang, cfg);
     }
 
     // Nút Trước / Sau
