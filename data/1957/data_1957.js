@@ -67,8 +67,7 @@ window.EXTRA_DATA_1957 = {
             caption_ja: '1957年秋、カリフォルニア州コスタメサにあるオレンジ・コースト・カレッジのキャンパス。',
             modalImgLabel: 'Trường cao đẳng Orange Coast College (OCC)',
             modalImgLabel_ja: 'オレンジ・コースト・カレッジのキャンパス (1957年)',
-            label: 'Trường OCC',
-            label_ja: 'OCCキャンパス',
+
 
             // ── VĂN BẢN CHI TIẾT (TÁCH RIÊNG TỪNG FIELD ĐOẠN VĂN) ──
             title: 'Tân sinh viên Orange Coast College',
@@ -94,8 +93,6 @@ window.EXTRA_DATA_1957 = {
             caption_ja: '1957年秋、カリフォルニア州コスタメサにあるオレンジ・コースト・カレッジのキャンパス。',
             modalImgLabel: 'Báo sinh viên The Barnacle',
             modalImgLabel_ja: '学生新聞 The Barnacle',
-            label: 'Báo The Barnacle',
-            label_ja: '学生新聞',
 
             // ── VĂN BẢN CHI TIẾT (TÁCH RIÊNG TỪNG FIELD ĐOẠN VĂN) ──
             title: 'Xuất hiện trên báo sinh viên The Barnacle',

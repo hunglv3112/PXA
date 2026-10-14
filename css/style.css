@@ -858,13 +858,24 @@ button.pill:hover {
   position: relative;
   cursor: pointer;
   min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .m-art-cell+.m-art-cell {
   border-top: 2px solid rgba(255, 255, 255, 0.12);
 }
 
-.m-art-cell img {
+.m-art-cell-img-wrap {
+  flex: 1 1 auto;
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+  width: 100%;
+}
+
+.m-art-cell img,
+.m-art-cell-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -873,36 +884,30 @@ button.pill:hover {
 }
 
 .m-art-cell:hover img {
-  transform: scale(1.04);
-  filter: brightness(1.08);
+  transform: scale(1.03);
+  filter: brightness(1.06);
 }
 
-/* Label overlay phía dưới mỗi ảnh */
+/* Khung chú thích bên dưới mỗi ảnh bên cột ảnh (chuẩn theo thiết kế Ảnh 2) */
+.m-art-cell-caption {
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  font-size: 12px;
+  line-height: 1.45;
+  font-style: italic;
+  color: #b0b0b0;
+  background: rgba(0, 0, 0, 0.55);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.m-art-cell--active .m-art-cell-caption {
+  background: rgba(0, 0, 0, 0.75);
+  color: #e2e8f0;
+}
+
+/* Ẩn hoàn toàn nhãn đè trên ảnh, chỉ giữ lại chú thích dưới đáy */
 .m-art-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 7px 12px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, transparent 100%);
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  pointer-events: none;
-  transition: color 0.2s;
-}
-
-/* Ảnh đang được chọn — viền vàng */
-.m-art-cell--active {
-  outline: 2.5px solid var(--hl, #ebcb45);
-  outline-offset: -2.5px;
-  z-index: 1;
-}
-
-.m-art-cell--active .m-art-label {
-  color: var(--hl, #ebcb45);
+  display: none !important;
 }
 
 .m-art .art,

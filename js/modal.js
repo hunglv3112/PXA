@@ -49,40 +49,6 @@
 
     mText.innerHTML = '';
 
-    // Khi ở layout 2 cột (split layout), hiển thị ảnh đại diện của mục đang chọn kèm chú thích bên dưới
-    const isSplit = mArt.classList.contains('m-art--split') || !sheet.classList.contains('sheet--single');
-    const mainImgSrc = contentObj.modalImg || contentObj.img || contentObj.image || 
-                       (contentObj.src && !contentObj.src.startsWith('Nguồn') && !contentObj.src.startsWith('出典') ? contentObj.src : '');
-
-    if (isSplit && mainImgSrc) {
-      const mainAlt = (lang === 'ja' && (contentObj.alt_ja || contentObj.modalImgAlt_ja)) 
-        ? (contentObj.alt_ja || contentObj.modalImgAlt_ja) 
-        : (contentObj.alt || contentObj.modalImgAlt || contentObj.title || '');
-      
-      const mainCaption = (lang === 'ja' && (contentObj.caption_ja || contentObj.modalImgLabel_ja || contentObj.label_ja || contentObj.modalImgAlt_ja)) 
-        ? (contentObj.caption_ja || contentObj.modalImgLabel_ja || contentObj.label_ja || contentObj.modalImgAlt_ja) 
-        : (contentObj.caption || contentObj.modalImgLabel || contentObj.label || contentObj.modalImgAlt || '');
-
-      const figure = document.createElement('figure');
-      figure.className = 'm-content-figure m-main-figure';
-
-      const imgEl = document.createElement('img');
-      imgEl.src = mainImgSrc;
-      imgEl.alt = mainAlt || mainCaption || '';
-      imgEl.className = 'm-content-img';
-      imgEl.loading = 'eager';
-      figure.appendChild(imgEl);
-
-      if (mainCaption) {
-        const capEl = document.createElement('figcaption');
-        capEl.className = 'm-content-caption';
-        capEl.textContent = mainCaption;
-        figure.appendChild(capEl);
-      }
-
-      mText.appendChild(figure);
-    }
-
     // Thu thập các đoạn văn bản: hỗ trợ tách riêng từng field (text1, text2, text3...) hoặc dùng mảng text[]
     let paragraphs = [];
     let pIdx = 1;
@@ -117,13 +83,13 @@
       p.textContent = paragraph;
       mText.appendChild(p);
 
-      // Render midImg sau đoạn văn đầu tiên (text1) nếu có
-      if (idx === 0 && contentObj.midImg) {
-        const mid = contentObj.midImg;
-        const midSrc = mid.src || mid.img || '';
+      // Render ảnh chèn giữa văn bản nếu có (midImg sau text1, hoặc midImg2 sau text2...)
+      const currentMid = (idx === 0 && contentObj.midImg) || contentObj[`midImg${idx + 1}`];
+      if (currentMid) {
+        const midSrc = currentMid.src || currentMid.img || '';
         if (midSrc) {
-          const midAlt = (lang === 'ja' && mid.alt_ja) ? mid.alt_ja : (mid.alt || '');
-          const midCap = (lang === 'ja' && mid.caption_ja) ? mid.caption_ja : (mid.caption || '');
+          const midAlt = (lang === 'ja' && currentMid.alt_ja) ? currentMid.alt_ja : (currentMid.alt || '');
+          const midCap = (lang === 'ja' && currentMid.caption_ja) ? currentMid.caption_ja : (currentMid.caption || '');
 
           const figure = document.createElement('figure');
           figure.className = 'm-content-figure m-mid-figure';
@@ -224,12 +190,19 @@
         ? (imgObj.label_ja || imgObj.modalImgLabel_ja) 
         : (imgObj.label || imgObj.modalImgLabel || '');
 
+      const captionText = (lang === 'ja' && (imgObj.caption_ja || imgObj.modalImgAlt_ja || imgObj.modalImgLabel_ja)) 
+        ? (imgObj.caption_ja || imgObj.modalImgAlt_ja || imgObj.modalImgLabel_ja) 
+        : (imgObj.caption || imgObj.modalImgAlt || imgObj.modalImgLabel || '');
+
       const cell = document.createElement('div');
       cell.className = 'm-art-cell';
       cell.setAttribute('role', 'button');
       cell.setAttribute('tabindex', '0');
       cell.setAttribute('aria-label', label || altText);
       if (i === 0) cell.classList.add('m-art-cell--active');
+
+      const imgWrap = document.createElement('div');
+      imgWrap.className = 'm-art-cell-img-wrap';
 
       const img = document.createElement('img');
       const imgSrc = imgObj.img || imgObj.modalImg || imgObj.image || imgObj.cardImg || 
@@ -238,13 +211,17 @@
       img.alt = altText;
       img.loading = i === 0 ? 'eager' : 'lazy';
       img.className = 'art-photo';
+      imgWrap.appendChild(img);
 
-      const overlay = document.createElement('div');
-      overlay.className = 'm-art-label';
-      overlay.textContent = label;
+      cell.appendChild(imgWrap);
 
-      cell.appendChild(img);
-      cell.appendChild(overlay);
+      if (captionText) {
+        const capEl = document.createElement('figcaption');
+        capEl.className = 'm-content-caption m-art-cell-caption';
+        capEl.textContent = captionText;
+        cell.appendChild(capEl);
+      }
+
       mArt.appendChild(cell);
 
       // Click / Enter → chuyển nội dung panel phải
