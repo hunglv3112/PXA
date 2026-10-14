@@ -21,69 +21,17 @@ window.TIMELINE_DATA = [
     side: "top",
     icon: "doc",
     img: "assets/images/1957_1959/1957_TNgoai_NgoDinhDiemToiThamMy.webp",
-    cardImg: "assets/images/1957_1959/1957_TNgoai_NgoDinhDiemToiThamMy.webp",
-    modalImg: "assets/images/1957_1959/1957_PXAHocMonBaoChiTaiMy.webp",
-    modalImgAlt: "Phạm Xuân Ẩn theo học môn Báo chí tại Mỹ",
-    modalImgAlt_ja: "米国でジャーナリズムを学ぶファム・スアン・アン",
-    modalImgLabel: "Phạm Xuân Ẩn tại trường Orange Coast College (1957)",
-    modalImgLabel_ja: "オレンジ・コースト・カレッジでのアン (1957年)",
     title: "Nhiệm vụ du học báo chí tại Mỹ",
-    date: "",
-    text: [
-      "Nhận thấy Mỹ sẽ thay thế Pháp tại Việt Nam, các chỉ huy tình báo Mười Hương và Mai Chí Thọ đã vạch ra kế hoạch đưa Phạm Xuân Ẩn sang Mỹ du học nhằm nắm bắt tình hình nước Mỹ và tạo nền móng cho vỏ bọc tình báo chiến lược lâu dài.",
-      "Cấp trên Mười Hương khuyên ông chọn ngành báo chí vì hai lý do chính. Thứ nhất, thời điểm đó ông chưa có bằng tốt nghiệp trung học, trong khi ngành báo chí lúc ấy không bắt buộc phải có loại bằng cấp này. Quan trọng hơn là nghề báo có bình diện giao tiếp rộng nhất, tạo điều kiện thuận lợi cho công tác tình báo sau này.",
-      "Dưới sự chỉ huy trực tiếp của tổ chức, một bản lý lịch hoàn hảo đã được xây dựng công phu cho Phạm Xuân Ẩn để ông thuận lợi lên đường sang California nhập học Orange Coast College."
-    ],
-    note: "",
-    src: "Nguồn: Larry Berman; Tư liệu Báo Nhân Dân; Thomas Bass",
     title_ja: "記者という偽装の選択",
-    date_ja: "1957年",
-    text_ja: [
-      "米国の対ベトナム介入の本格化を見据え、情報部門の最高幹部ムオイ・フオンとマイ・チー・トーは、ファム・スアン・アンを米国へ留学させる戦略的計画を立案。記者という職業が長期的な諜報任務の完璧な隠れ蓑として選ばれました。",
-      "当時高校卒業資格がなかったアンにとって、ジャーナリズム学科は入学しやすく、何より新聞記者という職業こそが社会のあらゆる階層と最も広く接触できる最適な偽装でした。",
-      "周到に仕組まれた合法的経歴が用意され、1957年秋、若き工作員アンは太平洋を渡りカリフォルニアの地へと旅立ちました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: バーマン; ニャンダーン紙; トーマス・バス"
   },
   {
     id: "1957b",
     y: 1957,
     yl: "1957",
     side: "bot",
-    icon: "plane",
     img: "assets/images/1957_1959/1957_BNgoai_Costa.jpg",
-    cardImg: "assets/images/1957_1959/1957_BNgoai_Costa.jpg",
-    modalImg: "assets/images/1957_1959/1957_BNgoai_Costa.jpg",
-    modalImgAlt: "Trường Orange Coast College tại Costa Mesa, California năm 1957",
-    modalImgAlt_ja: "1957年当時のオレンジ・コースト・カレッジ（カリフォルニア州コスタメサ）",
-    modalImgLabel: "Khuôn viên Orange Coast College (1957)",
-    modalImgLabel_ja: "オレンジ・コースト・カレッジのキャンパス (1957年)",
     title: "Người Việt Nam đầu tiên học báo chí tại Quận Cam",
-    date: "Tháng 10/1957",
-    text: [
-      "Tháng 10/1957, Phạm Xuân Ẩn chính thức đặt chân đến bang California (Hoa Kỳ), bắt đầu theo học ngành báo chí tại Orange Coast College (OCC) ở thành phố Costa Mesa.",
-      "Tại đây, chàng thanh niên Việt Nam nhanh chóng hòa nhập với môi trường học thuật phương Tây. Ông bắt đầu tiếp cận những nguyên lý báo chí hiện đại của Mỹ: tính khách quan, sự nhạy bén với nguồn tin, phương pháp phỏng vấn và cách thức vận hành của các hãng thông tấn lớn.",
-      "Chuyến đi này không chỉ mở đầu cho con đường trở thành một nhà báo quốc tế tài năng, mà còn là bước chuẩn bị vô giá giúp ông thấu hiểu sâu sắc tâm lý xã hội và văn hóa người Mỹ — điều cốt lõi làm nên bản lĩnh của ông sau này."
-    ],
-    bottomImg: {
-      src: "assets/images/1957_1959/1957_PXADuocDangLenBaoNgayNhapHoc.webp",
-      alt: "Báo chí trường Orange Coast College đưa tin về sinh viên Phạm Xuân Ẩn",
-      alt_ja: "OCCの学生新聞に紹介されたアン",
-      caption: "Tờ nhật báo trường ghi lại sự xuất hiện của du học sinh Việt Nam đầu tiên tại Orange Coast College vào mùa thu năm 1957.",
-      caption_ja: "1957年秋、大学初のベトナム人留学生として地元学生新聞に紹介されたファム・スアン・アン。"
-    },
-    note: "",
-    src: "Nguồn: Thomas Bass, The New Yorker (2005); Mellema (Đại học Nebraska–Lincoln)",
     title_ja: "渡米とカリフォルニア留学の始まり",
-    date_ja: "1957年10月",
-    text_ja: [
-      "1957年10月、ファム・スアン・アンは米国カリフォルニア州に到着し、コスタメサにあるオレンジ・コースト・カレッジ（OCC）でジャーナリズムの勉学を開始しました。",
-      "アンは現地の学術・学生社会に素早く溶け込み、米国の近代的ジャーナリズムの原則（客観性、情報源への鋭敏さ、取材手法、大手通信社の仕組み）を精力的に学びました。",
-      "この留学は、卓越した国際ジャーナリストへの道を切り拓いただけでなく、アメリカ人の心理と文化様式を肌感覚で深く体得するという、かけがえのない基盤を築くこととなりました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: トーマス・バス; メレマ（ネブラスカ大学）"
   },
 
   // ==========================================================================
@@ -95,23 +43,9 @@ window.TIMELINE_DATA = [
     yl: "1958",
     side: "top",
     icon: "eye",
-    img: "",
-    title: "Thấm nhuần cách tư duy của người Mỹ",
-    date: "1958",
-    text: [
-      "Thực hiện lời dặn của cấp trên: 'Sang đó là để học cách người Mỹ suy nghĩ', Phạm Xuân Ẩn quan sát sâu sắc cơ chế vận hành chính trị và tâm lý truyền thông Hoa Kỳ.",
-      "Sự thấu cảm này là nền tảng giúp các bản báo cáo tình báo chiến lược của ông sau này đạt độ chính xác phi thường."
-    ],
-    note: "",
-    src: "Nguồn: Larry Berman, “Điệp viên hoàn hảo”",
-    title_ja: "米国の思考様式と心理の研究",
-    date_ja: "1958年",
-    text_ja: [
-      "「アメリカ人の考え方を学べ」という指示に従い、アンは米国の政治システムとメディア心理を深く研究しました。",
-      "この深い洞察が、後の驚異的な分析報告の精度の礎となりました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: ラリー・バーマン『完璧なスパイ』"
+    img: "assets/images/1957_1959/1958_Ngoai_MuoiHuongChupCungPXAVaNhieuNhaTinhBao.jpg",
+    title: "Mất liên lạc với tổ chức sau khi Mười Hương bị bắt ",
+    title_ja: "記者という偽装の選択",
   },
   {
     id: "1958b",
@@ -119,25 +53,10 @@ window.TIMELINE_DATA = [
     yl: "1958",
     side: "bot",
     icon: "cap",
-    img: "",
-    title: "Cây bút sinh viên tờ The Barnacle",
-    date: "1958",
-    text: [
-      "Tại Orange Coast College, Phạm Xuân Ẩn tích cực viết bài cho tờ báo sinh viên trường mang tên The Barnacle.",
-      "Ông nhanh chóng kết thân với các giáo sư bản địa và bạn học Mỹ nhờ khiếu hài hước dí dỏm và ngòi bút phóng sự sắc sảo."
-    ],
-    note: "",
-    src: "Nguồn: Wikipedia; Nghiên cứu của Mellema",
-    title_ja: "学生新聞『バーナクル』の記者活動",
-    date_ja: "1958年",
-    text_ja: [
-      "カレッジで学生新聞『バーナクル』に熱心に寄稿し、ジャーナリズムの実践力を磨きました。",
-      "持ち前のユーモアと鋭い筆致で、現地の教授や学友たちから大きな信頼と好感を勝ち取りました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: Wikipedia; メレマ"
+    img: "assets/images/1957_1959/1958_PXAHocMonBaoChiTaiMy.jpg",
+    title: "Thành tích báo chí tại OCC",
+    title_ja: "渡米とカリフォルニア留学の始まり",
   },
-
   // ==========================================================================
   // NĂM 1959
   // ==========================================================================
