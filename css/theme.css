@@ -1,0 +1,59 @@
+/**
+ * ==============================================================================
+ * BẢNG MÀU & THÔNG SỐ GIAO DIỆN (css/theme.css)
+ * ==============================================================================
+ * Bạn có thể dễ dàng thay đổi màu sắc, font chữ và kích thước của cả 2 nửa
+ * bằng cách điều chỉnh các biến CSS dưới đây.
+ */
+
+:root {
+  /* ==========================================================================
+     1. NỬA TRÊN: PHONG CÁCH TÌNH BÁO (Dark Teal / Mật vụ)
+     ========================================================================== */
+  --spy-bg: #0e1f25;          /* Màu nền chính nửa trên */
+  --spy-2: #16303a;           /* Màu nền thẻ sự kiện nửa trên */
+  --spy-line: #2d4a54;        /* Màu đường viền khung thẻ */
+  --spy-ink: #dce7e6;         /* Màu chữ chính nửa trên */
+  --spy-mute: #8fa7ae;        /* Màu chữ phụ, ngày tháng mờ */
+  --spy-acc: #8fc1d4;         /* Màu điểm nhấn (accent), đường nối stem */
+
+  /* ==========================================================================
+     2. NỬA DƯỚI: PHONG CÁCH BÁO CHÍ (Vintage Paper / Newsprint)
+     ========================================================================== */
+  --press-bg: #dde3e6;        /* Màu nền chính nửa dưới */
+  --press-2: #eef1f2;         /* Màu nền thẻ sự kiện nửa dưới */
+  --press-line: #b9c3c8;      /* Màu đường viền khung thẻ */
+  --press-ink: #1a1d21;       /* Màu chữ chính mực in báo */
+  --press-mute: #5b6770;      /* Màu chữ phụ, ngày tháng mờ */
+  --hl: #ebcb45;              /* Màu bút dạ quang vàng đánh dấu tin báo */
+
+  /* ==========================================================================
+     3. GHI CHÚ ĐỐI CHIẾU & ĐIỂM NHẤN
+     ========================================================================== */
+  --note: #e3b341;            /* Màu chấm cảnh báo cần đối chiếu tư liệu */
+  --note-ink: #7a560a;        /* Màu chữ hộp cảnh báo */
+  --axis-line: #7f9096;       /* Màu thanh ray kẻ ngang trục thời gian */
+
+  /* ==========================================================================
+     4. KÍCH THƯỚC TRỤC & BỐ CỤC
+     ========================================================================== */
+  --axis: 64px;               /* Chiều cao khu vực trục mốc năm ở giữa */
+  --rail: 76px;               /* Bề rộng dải chữ dọc chạy bên lề trái */
+  --col: 300px;               /* Chiều rộng của mỗi cột năm */
+  --stem: 32px;               /* Chiều dài đường que nối từ thẻ tới trục */
+  --card-w: 246px;            /* Bề rộng cố định đồng nhất của tất cả ô sự kiện */
+  --card-h: 228px;            /* Chiều cao cố định đồng nhất của tất cả ô sự kiện */
+  --card-img-h: 140px;        /* Chiều cao cố định của phần ảnh/đồ họa bìa */
+  --img-h: var(--card-img-h); /* Chiều cao ảnh bìa trên thẻ */
+
+  /* ==========================================================================
+     5. FONT CHỮ HIỂN THỊ
+     ========================================================================== */
+  --serif: "Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --sans: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Hiệu ứng chuyển động mượt */
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-card: 0 4px 14px rgba(0, 0, 0, 0.22);
+}

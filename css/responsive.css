@@ -1,0 +1,201 @@
+/**
+ * ==============================================================================
+ * GIAO DIỆN TƯƠNG THÍCH ĐIỆN THOẠI & TABLET (css/responsive.css)
+ * ==============================================================================
+ */
+
+/* Màn hình Tablet & Màn hình vừa (< 900px) */
+@media (max-width: 900px) {
+  :root {
+    --col: 280px;
+    --rail: 60px;
+    --card-w: 236px;
+    --card-h: 218px;
+    --card-img-h: 132px;
+  }
+
+  .rail span {
+    font-size: 24px;
+  }
+
+  .intro h1 {
+    font-size: clamp(30px, 5.5dvh, 42px);
+  }
+
+  .sheet {
+    max-height: 88dvh;
+  }
+}
+
+/* Màn hình Điện thoại di động (< 640px) */
+@media (max-width: 640px) {
+  :root {
+    --rail: 44px;
+    --col: 260px;
+    --axis: 56px;
+    --stem: 24px;
+    --card-w: 224px;
+    --card-h: 196px;
+    --card-img-h: 114px;
+    --img-h: 114px;
+  }
+
+  .rail span {
+    font-size: 20px;
+    letter-spacing: 0.01em;
+  }
+
+  .pill {
+    padding: 5px 12px;
+  }
+
+  .pill b {
+    font-size: 18px;
+  }
+
+  .card {
+    max-width: calc(var(--col) - 24px);
+  }
+
+  .cap {
+    padding: 8px 10px 10px;
+  }
+
+  .c-title {
+    font-size: 12.5px;
+    height: 2.7em;
+    max-height: 2.7em;
+  }
+
+  .c-date {
+    font-size: 11px;
+  }
+
+  /* Cột giới thiệu trên di động */
+  .col.intro {
+    flex: 0 0 calc(var(--col) + 90px);
+    width: calc(var(--col) + 90px);
+  }
+
+  .intro .up {
+    padding: 0 16px 16px 16px;
+  }
+
+  .intro .down {
+    padding: 16px 16px 0 16px;
+  }
+
+  .intro h1 {
+    font-size: 28px;
+  }
+
+  .intro .yrs {
+    font-size: 17px;
+  }
+
+  .intro p {
+    font-size: 13.5px;
+  }
+
+  /* Ẩn nút mũi tên nổi trên di động để nhường chỗ vuốt chạm bằng tay */
+  .nav {
+    display: none;
+  }
+
+  /* Cửa sổ xem chi tiết dạng xếp chồng dọc */
+  .modal {
+    padding: 12px;
+  }
+
+  .sheet {
+    grid-template-columns: 1fr;
+    grid-template-rows: 160px minmax(0, 1fr);
+    max-height: 94dvh;
+    border-radius: 8px;
+  }
+
+  .m-art {
+    min-height: 160px;
+  }
+
+  .m-body {
+    padding: 20px 20px 18px;
+  }
+
+  .m-body h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .m-text p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .m-nav {
+    padding-top: 14px;
+  }
+
+  .m-nav button {
+    padding: 7px 12px;
+    font-size: 12.5px;
+  }
+
+  /* Cửa sổ Chuyện Bên Lề trên màn hình nhỏ */
+  .story-sheet {
+    max-height: 92dvh;
+  }
+
+  .story-header {
+    padding: 16px 18px 14px;
+    gap: 14px;
+  }
+
+  .story-avatar-wrap {
+    width: 52px;
+    height: 52px;
+  }
+
+  .story-header-meta h2 {
+    font-size: 20px;
+  }
+
+  .story-body {
+    padding: 16px 18px 20px;
+    gap: 12px;
+  }
+
+  .story-card {
+    padding: 12px 14px;
+  }
+
+  .story-card h3 {
+    font-size: 16.5px;
+  }
+
+  .story-card p {
+    font-size: 14.5px;
+  }
+
+  /* Bộ chọn ngôn ngữ trên di động */
+  .lang-switcher {
+    top: 10px;
+    right: 12px;
+    padding: 2px 4px;
+  }
+
+  .lang-btn {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+}
+
+/* Hỗ trợ người dùng cài đặt giảm hiệu ứng chuyển động */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

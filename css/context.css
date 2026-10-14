@@ -1,0 +1,525 @@
+/**
+ * ==============================================================================
+ * GIAO DIỆN TRANG BỐI CẢNH LỊCH SỬ (css/context.css)
+ * ==============================================================================
+ * Phong cách biên khảo lịch sử trang nhã, phông chữ serif cổ điển,
+ * hình ảnh tư liệu và hiệu ứng chuyển trang mượt mà.
+ */
+
+/* Màn hình Bối cảnh lịch sử */
+.context-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #091317;
+  color: var(--spy-ink, #dce7e6);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+  scroll-behavior: smooth;
+}
+
+.context-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-20px);
+}
+
+/* Khung chứa giới hạn độ rộng chữ */
+.context-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+/* ==========================================================================
+   1. HERO BANNER MỞ ĐẦU
+   ========================================================================== */
+.context-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 90px 24px 50px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 -80px 100px #091317, inset 0 80px 100px rgba(9, 19, 23, 0.85);
+}
+
+.context-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 19, 23, 0.72) 0%, rgba(9, 19, 23, 0.88) 70%, #091317 100%);
+  pointer-events: none;
+}
+
+.context-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+}
+
+.context-hero-badge {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hl, #ebcb45);
+  background: rgba(235, 203, 69, 0.12);
+  border: 1px solid rgba(235, 203, 69, 0.3);
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+.context-hero h1 {
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-size: clamp(32px, 5.5vw, 54px);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.context-hero-sub {
+  margin: 0 auto 30px;
+  font-family: var(--serif);
+  font-size: clamp(16px, 2.2vw, 20px);
+  font-style: italic;
+  line-height: 1.6;
+  color: #b5c7cd;
+  max-width: 64ch;
+}
+
+/* ==========================================================================
+   2. KHỐI TRÍCH DẪN (QUOTE)
+   ========================================================================== */
+.context-quote-box {
+  margin: 20px 0 50px;
+  padding: 24px 30px;
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--hl, #ebcb45);
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.context-quote-text {
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  font-size: 18.5px;
+  font-style: italic;
+  line-height: 1.65;
+  color: #e4edf0;
+}
+
+.context-quote-author {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--spy-mute, #8fa7ae);
+  text-align: right;
+}
+
+/* ==========================================================================
+   3. CÁC GIAI ĐOẠN LỊCH SỬ (CHAPTERS)
+   ========================================================================== */
+.context-chapters {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-bottom: 60px;
+}
+
+.context-chapter-card {
+  background: rgba(22, 48, 58, 0.45);
+  border: 1px solid rgba(45, 74, 84, 0.7);
+  border-radius: 8px;
+  padding: 32px 36px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.context-chapter-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(143, 193, 212, 0.5);
+}
+
+.context-chapter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.context-chapter-tag {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--hl, #ebcb45);
+}
+
+.context-chapter-period {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--spy-acc, #8fc1d4);
+}
+
+.context-chapter-card h2 {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.context-chapter-lead {
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-size: 17.5px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--spy-acc, #8fc1d4);
+}
+
+.context-chapter-img-box {
+  margin: 18px 0 22px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.context-chapter-img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.context-chapter-img-box:hover .context-chapter-img {
+  transform: scale(1.02);
+}
+
+.context-chapter-text p {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.7;
+  color: #c9d8dd;
+}
+
+.context-chapter-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   3b. KHỐI VIDEO TƯ LIỆU TIỂU SỬ PHẠM XUÂN ẨN
+   ========================================================================== */
+.bio-video-section {
+  margin: 10px 0 40px;
+}
+
+.bio-video-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(22, 48, 58, 0.72) 0%, rgba(12, 26, 32, 0.88) 100%);
+  border: 1px solid rgba(143, 193, 212, 0.38);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.bio-video-card:hover {
+  border-color: rgba(235, 203, 69, 0.65);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(235, 203, 69, 0.12);
+}
+
+.bio-video-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--spy-acc, #8fc1d4);
+  background: rgba(143, 193, 212, 0.12);
+  border: 1px solid rgba(143, 193, 212, 0.3);
+  padding: 3px 12px;
+  border-radius: 999px;
+}
+
+.bio-video-title {
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-size: clamp(24px, 3.4vw, 32px);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.bio-video-player-box {
+  margin: 22px 0 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(143, 193, 212, 0.28);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.bio-video-player {
+  width: 100%;
+  max-height: 480px;
+  display: block;
+  background: #000;
+  outline: none;
+}
+
+.bio-video-caption-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: rgba(0, 0, 0, 0.32);
+  border-left: 3px solid var(--hl, #ebcb45);
+  border-radius: 4px;
+  margin-top: 14px;
+}
+
+.bio-video-caption-icon {
+  color: var(--hl, #ebcb45);
+  font-size: 13px;
+  flex-shrink: 0;
+  animation: pulse-play 2.4s infinite ease-in-out;
+}
+
+@keyframes pulse-play {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.bio-video-caption {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--spy-ink, #dce7e6);
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   4. NÚT CHUYỂN SANG TIMELINE (CALL TO ACTION)
+   ========================================================================== */
+.context-cta-wrap {
+  text-align: center;
+  padding: 40px 20px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.context-cta-prompt {
+  margin: 0 0 20px;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+  color: #dce7e6;
+}
+
+.btn-enter-timeline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 42px;
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #12181b;
+  background: linear-gradient(135deg, #ebcb45 0%, #d4ad22 100%);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(235, 203, 69, 0.35);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+
+.btn-enter-timeline:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(235, 203, 69, 0.55);
+  filter: brightness(1.06);
+}
+
+.btn-enter-timeline:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.context-cta-sub {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: var(--spy-mute, #8fa7ae);
+}
+
+/* ==========================================================================
+   5. NÚT QUAY LẠI TRANG BỐI CẢNH (Trên giao diện Timeline)
+   ========================================================================== */
+.btn-back-to-context {
+  position: absolute;
+  top: 16px;
+  left: calc(var(--rail, 76px) + 20px);
+  z-index: 12;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--spy-ink, #dce7e6);
+  background: rgba(14, 31, 37, 0.85);
+  border: 1px solid rgba(143, 193, 212, 0.4);
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.btn-back-to-context:hover {
+  border-color: var(--hl, #ebcb45);
+  color: #fff;
+  transform: translateX(-2px);
+  background: rgba(14, 31, 37, 0.98);
+}
+
+/* Nút quay lại trên màn hình Tiểu sử */
+.bio-back-to-context-btn {
+  position: fixed;
+  top: 16px;
+  left: 20px;
+  z-index: 105;
+}
+
+/* Ẩn / Hiện màn hình Timeline */
+.timeline-screen {
+  position: relative;
+  height: 100%;
+  transition: opacity 0.4s ease;
+}
+
+.timeline-screen.hidden {
+  display: none;
+}
+
+/* ==========================================================================
+   TƯƠNG THÍCH MÀN HÌNH NHỎ (Responsive)
+   ========================================================================== */
+@media (max-width: 640px) {
+  .context-hero {
+    padding: 70px 16px 40px;
+    min-height: 50vh;
+  }
+
+  .context-container {
+    padding: 0 16px 60px;
+  }
+
+  .context-chapter-card {
+    padding: 22px 20px;
+  }
+
+  .bio-video-card {
+    padding: 20px 16px;
+  }
+
+  .bio-video-player {
+    max-height: 240px;
+  }
+
+  .bio-video-title {
+    font-size: 20px;
+  }
+
+  .bio-video-caption {
+    font-size: 13.5px;
+  }
+
+  .context-quote-box {
+    padding: 18px 20px;
+  }
+
+  .context-quote-text {
+    font-size: 16.5px;
+  }
+
+  .btn-enter-timeline {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .btn-back-to-context {
+    top: 10px;
+    left: calc(var(--rail, 44px) + 12px);
+    font-size: 11.5px;
+    padding: 5px 10px;
+  }
+
+  .btn-to-postwar {
+    bottom: 12px;
+    right: 12px;
+    font-size: 11.5px;
+    padding: 7px 12px;
+  }
+}
+
+/* ==========================================================================
+   6. NÚT CHUYỂN SANG MÀN HÌNH HẬU CHIẾN (Góc cuối bên phải màn hình Timeline)
+   ========================================================================== */
+.btn-to-postwar {
+  position: fixed;
+  bottom: 20px;
+  right: 24px;
+  z-index: 15;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--spy-ink, #dce7e6);
+  background: rgba(14, 31, 37, 0.9);
+  border: 1px solid rgba(143, 193, 212, 0.45);
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 10px rgba(143, 193, 212, 0.15);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-to-postwar:hover {
+  border-color: var(--hl, #ebcb45);
+  color: #fff;
+  transform: translateY(-2px);
+  background: rgba(18, 38, 46, 0.98);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(235, 203, 69, 0.3);
+}
+
+.btn-to-postwar:active {
+  transform: translateY(0);
+}

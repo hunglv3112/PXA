@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Trục thời gian tương tác hai nhánh - Phạm Xuân Ẩn: Điệp viên chiến lược và Nhà báo quốc tế trong bối cảnh lịch sử Việt Nam 1945 - 1975">
+  <meta name="theme-color" content="#0e1f25">
+  <title>Phạm Xuân Ẩn — Hai nửa một đời người</title>
+
+  <!-- Google Fonts: Be Vietnam Pro & Newsreader -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,500;1,6..72,600&display=swap" rel="stylesheet">
+
+  <!-- CSS tách riêng theo từng phần -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/context.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       BỘ CHỌN ĐA NGÔN NGỮ NỔI: TIẾNG VIỆT / TIẾNG NHẬT (Language Switcher)
+       Nằm cố định ở góc trên bên phải, hiển thị ở cả 2 màn hình
+       ======================================================================== -->
+  <nav class="lang-switcher" aria-label="Chọn ngôn ngữ / 言語選択">
+    <button type="button" class="lang-btn active" data-lang="vi" title="Chuyển sang Tiếng Việt">VI</button>
+    <span class="lang-divider" aria-hidden="true">/</span>
+    <button type="button" class="lang-btn" data-lang="ja" title="日本語に切り替える">日本語</button>
+  </nav>
+
+  <!-- ========================================================================
+       1. MÀN HÌNH BỐI CẢNH LỊCH SỬ VIỆT NAM (Historical Context Screen)
+       ======================================================================== -->
+  <section class="context-screen" id="contextScreen" aria-label="Bối cảnh lịch sử Việt Nam"></section>
+
+  <!-- ========================================================================
+       2. MÀN HÌNH TIỂU SỬ PHẠM XUÂN ẨN (Biography Screen)
+       Trình bày theo layout trang bối cảnh lịch sử
+       ======================================================================== -->
+  <section class="context-screen bio-screen hidden" id="bioScreen" aria-label="Tiểu sử Phạm Xuân Ẩn"></section>
+
+  <!-- ========================================================================
+       3. MÀN HÌNH DÒNG THỜI GIAN PHẠM XUÂN ẨN (Timeline Screen)
+       ======================================================================== -->
+  <div class="timeline-screen hidden" id="timelineScreen">
+
+    <!-- Nút quay lại Tiểu sử -->
+    <button type="button" class="btn-back-to-context" id="btnBackToBio" title="Xem lại Tiểu sử Phạm Xuân Ẩn">
+      <span>‹ Tiểu sử</span>
+    </button>
+
+    <!-- Nút chuyển sang trang Hậu chiến (ở góc cuối bên phải màn hình timeline) -->
+    <button type="button" class="btn-to-postwar" id="btnToPostwar" title="Một Phạm Xuân Ẩn bình lặng sau chiến tranh">
+      <span>Một Phạm Xuân Ẩn bình lặng sau chiến tranh ›</span>
+    </button>
+
+    <!-- Thanh tiến trình cuộn ngang -->
+    <div class="progress-container" aria-hidden="true">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Sân khấu hiển thị trục thời gian -->
+    <div class="stage" id="stage">
+      <!-- Dải chữ chạy dọc 2 bên lề trái -->
+      <div class="rail rail-top" aria-hidden="true">
+        <span>Tình báo</span>
+      </div>
+      <div class="rail rail-bot" aria-hidden="true">
+        <span>Nhà báo</span>
+      </div>
+
+      <!-- Khung cuộn ngang chính -->
+      <div class="scroller" id="scroller" role="region" aria-label="Dòng thời gian sự kiện">
+        <div class="track" id="track">
+          <!-- Các cột sự kiện và Intro sẽ được tự động sinh bởi js/app.js -->
+        </div>
+      </div>
+
+      <!-- Nút điều hướng cuộn trái / phải nổi bên phải -->
+      <div class="nav" aria-label="Điều hướng cuộn">
+        <button class="l" id="goL" aria-label="Cuộn sang trái" title="Cuộn sang trái (A hoặc ←)">‹</button>
+        <button class="r" id="goR" aria-label="Cuộn sang phải" title="Cuộn sang phải (D hoặc →)">›</button>
+      </div>
+    </div>
+
+    <!-- Cửa sổ xem chi tiết sự kiện (Modal Popup) -->
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="m-title" hidden>
+      <div class="sheet" id="sheet" data-side="top">
+        <!-- Nút đóng -->
+        <button class="x" id="mClose" aria-label="Đóng cửa sổ" title="Đóng (Esc)">×</button>
+        
+        <!-- Cột trái: Bìa ảnh sự kiện hoặc đồ họa vector -->
+        <div class="m-art" id="mArt"></div>
+
+        <!-- Cột phải: Nội dung chi tiết -->
+        <div class="m-body">
+          <p class="m-meta" id="mMeta"></p>
+          <h2 id="m-title"></h2>
+          <div class="m-text" id="mText"></div>
+          <p class="m-note" id="mNote" hidden></p>
+          <p class="m-src" id="mSrc"></p>
+          
+          <!-- Nút chuyển sang mốc thời gian trước / sau -->
+          <div class="m-nav">
+            <button id="mPrev">‹ Mốc trước</button>
+            <button id="mNext">Mốc sau ›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cửa sổ xem Chuyện Bên Lề (Side Stories Modal) -->
+    <div class="modal story-modal" id="storyModal" role="dialog" aria-modal="true" aria-labelledby="sm-title" hidden>
+      <div class="story-sheet" id="storySheet">
+        <!-- Nút đóng -->
+        <button class="x story-x" id="smClose" aria-label="Đóng cửa sổ" title="Đóng (Esc)">×</button>
+        
+        <!-- Đầu trang Modal: Avatar nhân vật & Tiêu đề -->
+        <div class="story-header">
+          <div class="story-avatar-wrap">
+            <img src="" alt="Phạm Xuân Ẩn" class="story-header-avatar" id="smAvatar">
+          </div>
+          <div class="story-header-meta">
+            <span class="story-badge" id="smBadge"></span>
+            <h2 id="sm-title"></h2>
+            <p class="story-subtitle" id="smSubtitle"></p>
+          </div>
+        </div>
+
+        <!-- Thân trang: Danh sách các mẩu chuyện bên lề -->
+        <div class="story-body" id="smBody"></div>
+      </div>
+    </div>
+
+  </div> <!-- Hết timeline-screen -->
+
+  <!-- ========================================================================
+       4. MÀN HÌNH HẬU CHIẾN: MỘT PHẠM XUÂN ẨN BÌNH LẶNG (Postwar Screen)
+       Trình bày theo layout trang tiểu sử / bối cảnh lịch sử
+       ======================================================================== -->
+  <section class="context-screen postwar-screen hidden" id="postwarScreen" aria-label="Một Phạm Xuân Ẩn bình lặng sau chiến tranh"></section>
+
+  <!-- ========================================================================
+       NẠP CÁC TỆP MÃ NGUỒN THEO THỨ TỰ PHỤ THUỘC
+       ======================================================================== -->
+  <!-- 1. Bộ điều khiển đa ngôn ngữ (VI / JA) -->
+  <script src="js/lang.js"></script>
+  <!-- 2. Bộ biểu tượng và đồ họa SVG -->
+  <script src="js/icons.js"></script>
+  <!-- 3. Tệp cấu hình tiêu đề, giới thiệu timeline (song ngữ) -->
+  <script src="data/config.js"></script>
+  <!-- 4. Tệp dữ liệu bối cảnh lịch sử Việt Nam 1945 - 1975 (song ngữ) -->
+  <script src="data/context-data.js"></script>
+  <!-- 4a. Tệp dữ liệu tiểu sử Phạm Xuân Ẩn (song ngữ) -->
+  <script src="data/bio-data.js"></script>
+  <!-- 4b. Tệp dữ liệu cuộc đời hậu chiến Phạm Xuân Ẩn (song ngữ) -->
+  <script src="data/postwar-data.js"></script>
+  <!-- 5. Tệp danh sách toàn bộ sự kiện theo năm (song ngữ) -->
+  <script src="data/timeline-data.js"></script>
+  <!-- 5a. Dữ liệu mở rộng năm 1957: Ảnh đại diện ngoài + Ảnh trái modal + Text & Ảnh dưới -->
+  <script src="data/1957/data_1957.js"></script>
+  <!-- 5b. Dữ liệu mở rộng năm 1975: 2 ảnh + nội dung chi tiết -->
+  <script src="data/1975/data_1975.js"></script>
+  <!-- 6. Tệp danh sách các câu chuyện bên lề trên đường kẻ trục (song ngữ) -->
+  <script src="data/side-stories.js"></script>
+  <!-- 7. Logic quản lý popup xem chi tiết sự kiện -->
+  <script src="js/modal.js"></script>
+  <!-- 8. Logic dựng màn hình Bối cảnh lịch sử và chuyển trang -->
+  <script src="js/context.js"></script>
+  <!-- 9. Logic ứng dụng chính, cuộn ngang timeline -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>
