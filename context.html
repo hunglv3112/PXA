@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bối cảnh lịch sử 1858–1975</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Be+Vietnam+Pro:wght@300;400;600&display=swap">
+<style>
+:root{--bg:#0b0f14;--panel:#111a24;--line:#3a3220;--gold:#e0b34a;--gold2:#f6d77e;--text:#d9d4c7;--mute:#8d8a80;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Be Vietnam Pro',system-ui,sans-serif;line-height:1.65}
+h1,h2,h3,.serif{font-family:'Playfair Display',Georgia,serif}
+
+/* Bộ chọn đa ngôn ngữ nổi VI / JA đồng bộ với các trang khác */
+.lang-switcher{position:fixed;top:16px;right:20px;z-index:120;display:inline-flex;align-items:center;gap:3px;padding:4px 6px;background:rgba(20,15,10,0.88);border:1.5px solid var(--gold);border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 4px 16px rgba(0,0,0,.6);transition:border-color .2s,transform .2s}
+.lang-switcher:hover{border-color:var(--gold2);transform:translateY(-1px)}
+.lang-btn{background:transparent;border:0;color:var(--mute);font-family:'Be Vietnam Pro',system-ui,sans-serif;font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;cursor:pointer;letter-spacing:.03em;transition:all .2s ease}
+.lang-btn:hover{color:#fff}
+.lang-btn.active{background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 100%);color:#1a1304;box-shadow:0 2px 8px rgba(224,179,74,.4)}
+.lang-divider{color:rgba(255,255,255,0.25);font-size:11px;user-select:none}
+
+/* Đầu trang giới thiệu */
+header{text-align:center;padding:70px 5vw 32px}
+header small{color:var(--gold);letter-spacing:.2em;font-size:12px;font-weight:600}
+header h1{margin:10px 0 0;font-size:clamp(28px,4.5vw,46px);color:var(--gold2)}
+
+/* Trục thời gian dòng sự kiện */
+.tl{position:relative;max-width:1040px;margin:0 auto;padding:20px 5vw 60px}
+.tl::before{content:"";position:absolute;left:calc(50% - 1px);top:0;bottom:0;width:2px;background:linear-gradient(var(--line),var(--gold),var(--line))}
+.ev{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;min-height:62vh;position:relative}
+.ev::after{content:"";position:absolute;left:calc(50% - 7px);top:50%;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--gold);transition:.4s}
+.ev.on::after{background:var(--gold);box-shadow:0 0 18px var(--gold)}
+
+/* Khung ảnh bên trái: Lùi sang bên trái một chút, có khung chú thích chuẩn timeline */
+.ph-frame{width:100%;max-width:440px;justify-self:end;margin-right:20px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#0e151d;box-shadow:0 12px 30px rgba(0,0,0,.6);opacity:.45;transform:translateX(-36px);transition:transform .6s cubic-bezier(0.16, 1, 0.3, 1),opacity .6s ease}
+.ev.on .ph-frame{opacity:1;transform:translateX(-16px)}
+
+.ph-img{aspect-ratio:4/3;width:100%;background:repeating-linear-gradient(135deg,#141c27 0 14px,#101720 14px 28px);display:grid;place-items:center;text-align:center;padding:16px;color:var(--mute);font-size:13px;position:relative;overflow:hidden}
+.ph-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* Khung ghi chú dưới ảnh chuẩn như popup modal timeline */
+.ph-caption{padding:9px 14px;font-size:12px;line-height:1.45;font-style:italic;color:#b4b9c2;background:rgba(8,12,16,0.9);border-top:1px solid rgba(255,255,255,0.08);display:flex;align-items:flex-start;gap:6px;text-align:left}
+.ph-caption::before{content:"•";color:var(--gold);font-size:14px;line-height:1;flex:0 0 auto;margin-top:2px}
+.ph-caption-text{flex:1 1 auto}
+
+/* Cột chữ bên phải: hàng ngang đi xuống dần */
+.txt{opacity:.35;transform:translateX(24px);transition:.6s;padding-left:6px}
+.ev.on .txt{opacity:1;transform:none}
+.yr{display:inline-block;font-size:12px;letter-spacing:.12em;color:#1a1304;background:var(--gold);padding:3px 10px;border-radius:3px;font-weight:600}
+.txt h3{margin:12px 0 8px;font-size:clamp(20px,2.4vw,27px);color:var(--gold2);line-height:1.25}
+.txt p{margin:0;color:var(--text);font-weight:300}
+
+/* Khối hé lộ nhân vật (The Big Reveal) */
+.reveal{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:36px;padding:70px 6vw;background:radial-gradient(circle at 75% 50%,#2a2214,#0b0f14 70%);border-top:1px solid var(--line)}
+.reveal .q{font-style:italic;color:var(--mute);border-left:2px solid var(--gold);padding-left:16px;margin:18px 0 26px}
+.reveal .q p{margin:0 0 4px}
+.reveal h2{margin:0;font-size:clamp(26px,4.6vw,52px);line-height:1.1;color:var(--gold2)}
+.reveal h2 small{display:block;font-size:.55em;color:var(--text);font-weight:600;letter-spacing:.05em}
+.btn{display:inline-block;margin-top:28px;padding:12px 28px;background:var(--gold);color:#1a1304;font-weight:600;font-size:13px;letter-spacing:.08em;text-decoration:none;border-radius:3px;transition:all .25s ease;box-shadow:0 4px 16px rgba(224,179,74,.3)}
+.btn:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(224,179,74,.5)}
+
+.reveal .ph-frame{opacity:1;transform:none;aspect-ratio:auto;max-width:360px;margin-inline:auto;width:100%}
+.reveal .ph-img{aspect-ratio:3/4}
+
+/* Nút quay lại trang Lý do chọn đề tài */
+.btn-back-intro{position:fixed;top:16px;left:20px;z-index:110;display:inline-flex;align-items:center;gap:6px;padding:7px 16px;background:rgba(20,15,10,0.85);border:1px solid var(--gold);border-radius:4px;color:var(--gold2);text-decoration:none;font-size:12px;letter-spacing:.08em;font-weight:600;backdrop-filter:blur(6px);transition:all .25s ease;box-shadow:0 4px 12px rgba(0,0,0,.5)}
+.btn-back-intro:hover{background:var(--gold);color:#1a1304;transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.7)}
+
+@media(max-width:720px){
+  header{padding-top:60px}
+  .tl::before{left:14px}
+  .ev{grid-template-columns:1fr;gap:20px;padding-left:34px;min-height:auto;padding-block:36px}
+  .ev::after{left:7px;top:44px}
+  .ph-frame{justify-self:start;margin-right:0;max-width:100%;transform:none}
+  .ev.on .ph-frame{transform:none}
+  .reveal{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- Bộ chọn đa ngôn ngữ nổi VI / JA -->
+<nav class="lang-switcher" aria-label="Chọn ngôn ngữ / 言語選択">
+  <button type="button" class="lang-btn active" data-lang="vi" title="Chuyển sang Tiếng Việt">VI</button>
+  <span class="lang-divider" aria-hidden="true">/</span>
+  <button type="button" class="lang-btn" data-lang="ja" title="日本語に切り替える">日本語</button>
+</nav>
+
+<!-- Nút quay lại trang Lý do chọn đề tài -->
+<a href="intro.html" class="btn-back-intro" id="btnBackIntro">‹ <span id="btnBackIntroText">Lý do chọn đề tài</span></a>
+
+<header>
+  <small id="hdrSmall">BỐI CẢNH LỊCH SỬ VIỆT NAM THỜI BẤY GIỜ</small>
+  <h1 id="hdrTitle">1858 – 1975</h1>
+</header>
+
+<main class="tl" id="timelineContainer"></main>
+
+<section class="reveal">
+  <div>
+    <p class="serif" style="font-size:19px;margin:0" id="revealIntro">Giữa bối cảnh ấy, một người đàn ông đã thay đổi cục diện cuộc chiến…</p>
+    <div class="q">
+      <p id="q1">Ông không hoạt động như một người lính…</p>
+      <p id="q2">Ông ra vào các phòng họp, tòa soạn, quán cà phê…</p>
+      <p id="q3">âm thầm thu thập những thông tin tuyệt mật.</p>
+    </div>
+    <h2>
+      <small id="revealBadge">THE BIG REVEAL</small>
+      <span id="revealName">ÔNG TÊN PHẠM XUÂN ẨN.</span>
+    </h2>
+    <a class="btn" href="bio.html" id="revealBtn">KHÁM PHÁ CÂU CHUYỆN CỦA ÔNG</a>
+  </div>
+
+  <div class="ph-frame">
+    <div class="ph-img">
+      <span id="revealImgText">[Ảnh: Phạm Xuân Ẩn<br>cầm máy ảnh, ngồi quán cà phê]</span>
+    </div>
+    <div class="ph-caption">
+      <span class="ph-caption-text" id="revealImgCaption">Ký giả Phạm Xuân Ẩn tại quán cà phê Givral trên đường Catinat (nay là đường Đồng Khởi, TP.HCM)</span>
+    </div>
+  </div>
+</section>
+
+<!-- Nạp bộ quản lý đa ngôn ngữ -->
+<script src="js/lang.js"></script>
+
+<script>
+const CONTEXT_DATA = {
+  vi: {
+    meta: {
+      pageTitle: 'Bối cảnh lịch sử 1858–1975',
+      hdrSmall: 'BỐI CẢNH LỊCH SỬ VIỆT NAM THỜI BẤY GIỜ',
+      hdrTitle: '1858 – 1975',
+      backIntroText: 'Lý do chọn đề tài',
+      revealIntro: 'Giữa bối cảnh ấy, một người đàn ông đã thay đổi cục diện cuộc chiến…',
+      q1: 'Ông không hoạt động như một người lính…',
+      q2: 'Ông ra vào các phòng họp, tòa soạn, quán cà phê…',
+      q3: 'âm thầm thu thập những thông tin tuyệt mật.',
+      revealBadge: 'THE BIG REVEAL',
+      revealName: 'ÔNG TÊN PHẠM XUÂN ẨN.',
+      revealBtn: 'KHÁM PHÁ CÂU CHUYỆN CỦA ÔNG',
+      revealImgText: '[Ảnh: Phạm Xuân Ẩn<br>cầm máy ảnh, ngồi quán cà phê]',
+      revealImgCaption: 'Ký giả Phạm Xuân Ẩn tại quán cà phê Givral trên đường Catinat (nay là đường Đồng Khởi, TP.HCM)'
+    },
+    events: [
+      {
+        yr: '1858 – 1945',
+        title: 'Pháp xâm lược & đô hộ',
+        desc: 'Từ năm 1858, Pháp nổ súng tấn công Đà Nẵng, rồi từng bước chiếm Nam Kỳ và áp đặt ách đô hộ lên toàn Việt Nam. Hơn tám thập kỷ sau, đất nước vẫn nằm dưới ách thực dân, các phong trào yêu nước nối tiếp nhau nổi lên.',
+        imgText: '[Ảnh: tàu chiến Pháp<br>tại Đà Nẵng, 1858]',
+        caption: 'Tàu chiến liên quân Pháp - Tây Ban Nha nổ súng tại bán đảo Sơn Trà, Đà Nẵng (1/9/1858)'
+      },
+      {
+        yr: '1945',
+        title: 'Cách mạng Tháng Tám',
+        desc: 'Tháng 8/1945, tổng khởi nghĩa thành công trên cả nước. Ngày 2/9/1945, tại Quảng trường Ba Đình, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.',
+        imgText: '[Ảnh: Hồ Chí Minh<br>năm 1945]',
+        caption: 'Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình (2/9/1945)'
+      },
+      {
+        yr: '1946 – 1954',
+        title: 'Kháng chiến chống Pháp & Điện Biên Phủ',
+        desc: 'Cuộc kháng chiến toàn quốc bùng nổ cuối năm 1946 và kéo dài gần chín năm. Chiến thắng Điện Biên Phủ năm 1954 buộc Pháp phải ký Hiệp định Genève, chấm dứt chiến tranh ở Đông Dương.',
+        imgText: '[Ảnh: chiến thắng<br>Điện Biên Phủ, 1954]',
+        caption: 'Lá cờ Quyết chiến Quyết thắng tung bay trên nóc hầm De Castries tại Điện Biên Phủ (7/5/1954)'
+      },
+      {
+        yr: '1954 – 1975',
+        title: 'Vĩ tuyến 17 & Mỹ can thiệp',
+        desc: 'Hiệp định Genève lấy vĩ tuyến 17 làm giới tuyến quân sự tạm thời, đất nước chia thành hai miền. Mỹ ngày càng can thiệp sâu vào miền Nam, dẫn đến cuộc chiến tranh kéo dài đến ngày 30/4/1975.',
+        imgText: '[Ảnh: bản đồ vĩ tuyến 17<br>và lính Mỹ]',
+        caption: 'Cầu Hiền Lương bắc qua sông Bến Hải — giới tuyến quân sự chia đôi đất nước tại vĩ tuyến 17'
+      }
+    ]
+  },
+  ja: {
+    meta: {
+      pageTitle: '歴史的背景 1858–1975',
+      hdrSmall: '当時のベトナムの歴史的背景',
+      hdrTitle: '1858年 – 1975年',
+      backIntroText: '研究テーマへ戻る',
+      revealIntro: 'その激動の時代の中、一人の男が戦争の局面を変えようとしていた…',
+      q1: '彼は通常の兵士のように戦うことはなかった…',
+      q2: '作戦室、新聞社、カフェを自在に行き来し…',
+      q3: '静かに、極秘の軍事情報を収集し続けた。',
+      revealBadge: 'THE BIG REVEAL',
+      revealName: 'その名は、ファム・スアン・アン。',
+      revealBtn: '彼の物語を紐解く',
+      revealImgText: '[写真: カフェでカメラを手にする<br>ファム・スアン・アン]',
+      revealImgCaption: 'カティナ通り（現ドンコイ通り）のカフェ・ジヴラルで取材中の記者ファム・スアン・アン'
+    },
+    events: [
+      {
+        yr: '1858年 – 1945年',
+        title: 'フランスの侵略と植民地支配',
+        desc: '1858年、フランス軍はダナンを砲撃して侵略を開始し、コーチシナを占領、ベトナム全土へ植民地支配を拡大した。80年以上にわたり国は過酷な支配下に置かれ、愛国運動が各地で次々と蜂起した。',
+        imgText: '[写真: 1858年ダナン沖の<br>フランス軍艦]',
+        caption: 'ダナン・ソンチャ半島を砲撃するフランス・スペイン連合艦隊（1858年9月1日）'
+      },
+      {
+        yr: '1945年',
+        title: '八月革命',
+        desc: '1945年8月、全国で蜂起が成功。同年9月2日、バーディン広場にてホー・チ・ミン主席が独立宣言を朗読し、ベトナム民主共和国が誕生した。',
+        imgText: '[写真: 1945年の<br>ホー・チ・ミン]',
+        caption: 'バーディン広場で独立宣言を読み上げるホー・チ・ミン主席（1945年9月2日）'
+      },
+      {
+        yr: '1946年 – 1954年',
+        title: '対仏抗戦とディエンビエンフーの戦い',
+        desc: '1946年末に全国抗戦が勃発し、9年近くに及ぶ過酷な戦いが続いた。1954年のディエンビエンフーの劇的な大勝利は、フランスにジュネーヴ協定の調印を余儀なくさせ、インドシナ戦争に終止符を打った。',
+        imgText: '[写真: 1954年ディエンビエンフーの<br>勝利]',
+        caption: 'ディエンビエンフーのド・カストリ司令部屋根に掲げられた勝利の旗（1954年5月7日）'
+      },
+      {
+        yr: '1954年 – 1975年',
+        title: '北緯17度線と米国の軍事介入',
+        desc: 'ジュネーヴ協定により北緯17度線が軍事境界線と定められ、祖国は南北に分断された。米国は南ベトナムへの軍事介入を深め、1975年4月30日の終戦まで激しい戦乱が続いた。',
+        imgText: '[写真: 北緯17度線の地図と<br>米軍]',
+        caption: 'ベンハイ川に架かるヒエンルオン橋 — 国土を南北に分断した北緯17度線の境界線'
+      }
+    ]
+  }
+};
+
+let ioTimeline = null;
+
+function renderPage() {
+  const lang = (window.getCurrentLang ? window.getCurrentLang() : 'vi') || 'vi';
+  const data = CONTEXT_DATA[lang] || CONTEXT_DATA.vi;
+  const m = data.meta;
+
+  document.title = m.pageTitle;
+  document.getElementById('hdrSmall').textContent = m.hdrSmall;
+  document.getElementById('hdrTitle').textContent = m.hdrTitle;
+
+  document.getElementById('revealIntro').textContent = m.revealIntro;
+  document.getElementById('q1').textContent = m.q1;
+  document.getElementById('q2').textContent = m.q2;
+  document.getElementById('q3').textContent = m.q3;
+  document.getElementById('revealBadge').textContent = m.revealBadge;
+  document.getElementById('revealName').textContent = m.revealName;
+  document.getElementById('revealBtn').textContent = m.revealBtn;
+  document.getElementById('revealImgText').innerHTML = m.revealImgText;
+  document.getElementById('revealImgCaption').textContent = m.revealImgCaption;
+
+  const backIntroTextEl = document.getElementById('btnBackIntroText');
+  if (backIntroTextEl && m.backIntroText) backIntroTextEl.textContent = m.backIntroText;
+
+  const container = document.getElementById('timelineContainer');
+  let html = '';
+
+  data.events.forEach((ev, idx) => {
+    html += `
+      <section class="ev" data-idx="${idx}">
+        <div class="ph-frame">
+          <div class="ph-img">
+            <span>${ev.imgText}</span>
+          </div>
+          <div class="ph-caption">
+            <span class="ph-caption-text">${ev.caption}</span>
+          </div>
+        </div>
+
+        <div class="txt">
+          <span class="yr">${ev.yr}</span>
+          <h3>${ev.title}</h3>
+          <p>${ev.desc}</p>
+        </div>
+      </section>
+    `;
+  });
+
+  container.innerHTML = html;
+
+  if (ioTimeline) {
+    ioTimeline.disconnect();
+  }
+
+  ioTimeline = new IntersectionObserver(
+    es => es.forEach(e => e.target.classList.toggle('on', e.isIntersecting)),
+    { rootMargin: '-35% 0px -35% 0px' }
+  );
+
+  document.querySelectorAll('.ev').forEach(e => ioTimeline.observe(e));
+}
+
+// Lắng nghe sự kiện chuyển đổi ngôn ngữ toàn cục
+window.addEventListener('languagechange', () => {
+  renderPage();
+});
+
+// Khởi chạy khi tải trang
+renderPage();
+</script>
+</body>
+</html>

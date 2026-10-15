@@ -370,18 +370,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================================
   // 4. CÁC HÀM ĐIỀU HƯỚNG CHUYỂN 4 MÀN HÌNH
   // ============================================================================
-  // 4.1. Hiển thị Màn hình 1: Bối cảnh lịch sử
+  // 4.1. Hiển thị Màn hình 1: Lý do chọn đề tài → Bối cảnh lịch sử
   function showContext() {
     pauseBioVideos();
-    document.documentElement.classList.remove('init-timeline');
-    contextScreen.classList.remove('hidden');
-    contextScreen.scrollTop = 0;
-
-    if (bioScreen) bioScreen.classList.add('hidden');
-    if (timelineScreen) timelineScreen.classList.add('hidden');
-    if (postwarScreen) postwarScreen.classList.add('hidden');
-
-    window.location.hash = 'context';
+    window.location.href = 'intro.html';
   }
 
   // 4.2. Hiển thị Màn hình 2: Tiểu sử Phạm Xuân Ẩn (Hồ sơ mật)
