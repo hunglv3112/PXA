@@ -47,7 +47,7 @@ window.APP_CONFIG = {
       backToBio: "‹ Tiểu sử Phạm Xuân Ẩn",
       enterBio: "Tiểu sử Phạm Xuân Ẩn ›",
       enterTimeline: "Xem Dòng Thời Gian ›",
-      toPostwar: "Một Phạm Xuân Ẩn bình lặng sau chiến tranh ›",
+      toPostwar: "Phòng lưu niệm Phạm Xuân Ẩn ›",
       backToTimeline: "‹ Dòng thời gian",
       storyBadge: "CHUYỆN BÊN LỀ"
     }

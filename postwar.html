@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Phòng lưu niệm Phạm Xuân Ẩn</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Be+Vietnam+Pro:wght@300;400;600&display=swap">
+<style>
+:root{--gold:#e0b34a;--gold2:#f6d77e;--text:#d9d4c7;--mute:#8d8a80;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+body{margin:0;height:100vh;overflow:hidden;color:var(--text);font-family:'Be Vietnam Pro',system-ui,sans-serif;line-height:1.6;background:radial-gradient(ellipse at 50% 0,#2a2218,#08090c 65%)}
+.serif{font-family:'Playfair Display',Georgia,serif}
+header{position:absolute;top:2px;left:0;right:0;text-align:center}
+.stage{position:absolute;left:50%;top:50%;width:1400px;height:800px;transform:translate(-50%,-50%) scale(var(--s,1))}
+header small{color:var(--gold);letter-spacing:.25em;font-size:11px}
+header h1{margin:0;font-size:24px;line-height:1.2;color:var(--gold2)}
+.cab{position:absolute;left:60px;top:58px;width:1280px;height:584px;perspective:1700px;padding:14px;border-radius:6px 6px 0 0;background:linear-gradient(135deg,#5a3a1c,#2b1a0c 60%,#4a2f16);box-shadow:0 30px 60px rgba(0,0,0,.8)}
+.bays{display:grid;grid-template-columns:1fr 1.15fr 1fr;height:556px;background:#050403;filter:brightness(.3);transition:filter 2s;perspective:1500px;overflow:hidden}
+.lit .bays{filter:none}
+.wing{position:relative;display:flex;flex-direction:column;background:linear-gradient(#1d1812,#0c0a07);border:2px solid #2b1a0c}
+.wL{transform:rotateY(14deg);transform-origin:100% 50%}.wR{transform:rotateY(-14deg);transform-origin:0 50%}
+.wing h4{margin:0;padding:10px 0 4px;text-align:center;color:var(--gold);font-size:11px;letter-spacing:.22em;font-weight:600}
+.tier{flex:1;position:relative;display:flex;justify-content:space-evenly;align-items:flex-end;padding:10px 8px 6px;border-bottom:9px solid #8a6535;box-shadow:0 6px 10px rgba(0,0,0,.6)}
+.tier::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:#fff3c4;box-shadow:0 0 14px 4px rgba(255,232,160,.7);opacity:0;transition:opacity 1.5s .8s}
+.tier::after{content:"";position:absolute;inset:3px 0 0;background:linear-gradient(rgba(255,236,170,.25),transparent 75%);pointer-events:none;opacity:0;transition:opacity 1.5s .8s}
+.lit .tier::before,.lit .tier::after{opacity:1}
+.fm{all:unset;cursor:pointer;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;flex:0 0 38%;transition:.3s}
+.fm:hover,.fm:focus-visible{transform:translateY(-5px) scale(1.04)}
+.wood{width:100%;padding:6px;background:linear-gradient(135deg,#e2bd86,#a67c45);box-shadow:0 10px 14px rgba(0,0,0,.65)}
+.mat{background:#f3eee2;padding:7px}
+.img{aspect-ratio:3/2;display:grid;place-items:center;text-align:center;padding:4px;font-size:9px;line-height:1.3;color:#777;background:repeating-linear-gradient(135deg,#c9c4b8 0 8px,#bdb8ab 8px 16px)}
+.fm i{font-style:normal;margin-top:7px;font-size:11px;color:var(--gold2);text-align:center;line-height:1.25;font-weight:600}
+.fm em{display:block;font-style:normal;font-weight:300;color:var(--mute);font-size:10px}
+.mid{position:relative;display:flex;flex-direction:column;align-items:center;gap:9px;padding:14px 10px 12px;background:radial-gradient(ellipse at 50% 20%,#c22d32,#6b1013 75%);border-left:4px solid #2b1a0c;border-right:4px solid #2b1a0c;overflow:hidden}
+.cone{position:absolute;top:0;width:34%;height:100%;background:linear-gradient(rgba(255,240,190,.35),transparent 70%);clip-path:polygon(38% 0,62% 0,100% 100%,0 100%);opacity:0;transition:opacity 1.5s .8s;pointer-events:none}
+.lit .cone{opacity:1}.c1{left:2%}.c2{left:33%}.c3{right:2%}
+.flags{display:flex;gap:10px;position:relative;z-index:1}.flags svg{width:84px;height:56px;filter:drop-shadow(0 3px 5px #000)}
+.plq{all:unset;cursor:pointer;position:relative;z-index:1;text-align:center;font-size:12px;letter-spacing:.14em;font-weight:600;color:var(--gold2);padding:5px 14px;border:1px solid var(--gold);background:rgba(0,0,0,.35)}
+.plq:hover{background:var(--gold);color:#1a1304}
+.meds{all:unset;cursor:pointer;position:relative;z-index:1;display:grid;grid-template-columns:repeat(8,1fr);gap:6px 5px;padding:8px 10px;background:rgba(0,0,0,.3);border-radius:3px;transition:.3s}
+.meds:hover{background:rgba(0,0,0,.5)}
+.md{width:17px;height:26px;position:relative}
+.md::before{content:"";position:absolute;left:4px;top:0;width:9px;height:11px;background:linear-gradient(90deg,#1c4f9c 50%,#e8d23a 50%)}
+.md::after{content:"";position:absolute;left:1px;bottom:0;width:15px;height:15px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold2),#8a6a1f);box-shadow:0 0 6px rgba(255,220,120,.6)}
+.pt{all:unset;cursor:pointer;position:relative;z-index:1;width:150px;transition:.3s}.pt:hover{transform:translateY(-4px)}
+.pt .img{aspect-ratio:3/4}
+.cp{position:relative;z-index:1;font-size:11px;color:#f1d9a0;letter-spacing:.1em}
+.floor{position:absolute;left:0;right:0;top:644px;height:156px;background:linear-gradient(#1a140d,#08090c)}
+.mail{display:block;position:absolute;left:50%;top:656px;transform:translateX(-50%);z-index:4;background:none;border:0;cursor:pointer;color:var(--gold2);font:inherit;text-align:center;transition:.3s}
+.mail:hover{transform:translateX(-50%) translateY(-4px)}
+.mail svg{width:84px;height:100px;display:block;margin:0 auto;filter:drop-shadow(0 8px 12px #000)}
+.mail span{font-size:13px;letter-spacing:.08em}
+.door{position:absolute;top:14px;bottom:14px;width:calc(50% - 14px);z-index:20;cursor:pointer;background:linear-gradient(135deg,#4a2f16,#2b1a0c);border:3px solid #6b4824;display:grid;place-items:center;transition:transform 1.7s cubic-bezier(.6,0,.3,1),opacity .6s 1.5s}
+.door::before{content:"";position:absolute;inset:16px;border:2px solid #6b4824;background:rgba(120,160,190,.1)}
+.door::after{content:"";position:absolute;top:48%;width:6px;height:60px;background:var(--gold);border-radius:3px}
+.dl{left:14px;transform-origin:0 50%}.dl::after{right:12px}
+.dr{right:14px;transform-origin:100% 50%}.dr::after{left:12px}
+.door span{position:relative;z-index:1;font-size:12px;letter-spacing:.2em;color:var(--gold2)}
+.open .dl{transform:rotateY(-115deg);opacity:0}.open .dr{transform:rotateY(115deg);opacity:0}
+.open .door{pointer-events:none}
+dialog{border:1px solid var(--gold);background:#0e1218;color:var(--text);padding:0;width:min(680px,92vw);max-height:88vh;border-radius:4px;box-shadow:0 30px 80px #000}
+dialog::backdrop{background:rgba(0,0,0,.8)}
+.mh{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px solid #2c2a22;font-size:12px;letter-spacing:.15em;color:var(--gold)}
+.mh button{all:unset;cursor:pointer;color:var(--text);font-size:20px;padding:0 6px}
+.mb{padding:22px 24px 26px;overflow:auto;max-height:calc(88vh - 48px)}
+.mb h2{margin:0 0 10px;color:var(--gold2);font-size:26px;line-height:1.2}
+.mb .ph{aspect-ratio:16/8;display:grid;place-items:center;color:var(--mute);font-size:12px;margin-bottom:16px;background:repeating-linear-gradient(135deg,#1a1f28 0 10px,#141922 10px 20px);border:1px solid #3a3220}
+.mb p{margin:0 0 12px;font-weight:300}
+.mb blockquote{margin:12px 0;padding-left:14px;border-left:2px solid var(--gold);font-style:italic}
+.mb ul{margin:0 0 12px;padding-left:20px;font-weight:300}
+.mb .poem p{font-style:italic;margin:0;text-align:center}.mb .poem p+p.g{margin-top:14px}
+.mb a,.mb button.go{display:inline-block;margin-top:10px;padding:9px 18px;border:1px solid var(--gold);background:none;color:var(--gold2);text-decoration:none;font:inherit;font-size:13px;cursor:pointer;border-radius:3px}
+.mb input,.mb textarea{width:100%;background:#12161d;border:1px solid #3a3220;color:var(--text);font:inherit;padding:10px;border-radius:3px;margin-bottom:10px}
+.mb textarea{min-height:130px;resize:vertical}
+
+/* Nút quay lại Dòng thời gian */
+.btn-back-timeline{position:fixed;top:16px;left:20px;z-index:100;display:inline-flex;align-items:center;gap:6px;padding:7px 16px;background:rgba(43,26,12,0.85);border:1px solid var(--gold);border-radius:4px;color:var(--gold2);text-decoration:none;font-size:12px;letter-spacing:.08em;font-weight:600;backdrop-filter:blur(6px);transition:all .25s ease;box-shadow:0 4px 12px rgba(0,0,0,.5)}
+.btn-back-timeline:hover{background:var(--gold);color:#1a1304;transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.7)}
+
+/* Bộ chuyển đổi ngôn ngữ Việt - Nhật đồng bộ */
+.lang-switcher{position:fixed;top:16px;right:20px;z-index:120;display:inline-flex;align-items:center;gap:3px;padding:4px 6px;background:rgba(20,15,10,0.88);border:1.5px solid var(--gold);border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 4px 16px rgba(0,0,0,.6);transition:border-color .2s,transform .2s}
+.lang-switcher:hover{border-color:var(--gold2);transform:translateY(-1px)}
+.lang-btn{background:transparent;border:0;color:var(--mute);font-family:'Be Vietnam Pro',system-ui,sans-serif;font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;cursor:pointer;letter-spacing:.03em;transition:all .2s ease}
+.lang-btn:hover{color:#fff}
+.lang-btn.active{background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 100%);color:#1a1304;box-shadow:0 2px 8px rgba(224,179,74,.4)}
+.lang-divider{color:rgba(255,255,255,0.25);font-size:11px;user-select:none}
+</style></head><body>
+
+<!-- Nút quay lại Timeline -->
+<a href="index.html#timeline" class="btn-back-timeline" id="btnBack" title="Quay lại Dòng thời gian">‹ Dòng thời gian</a>
+
+<!-- Bộ chọn đa ngôn ngữ nổi VI / JA -->
+<nav class="lang-switcher" aria-label="Chọn ngôn ngữ / 言語選択">
+  <button type="button" class="lang-btn active" data-lang="vi" title="Chuyển sang Tiếng Việt">VI</button>
+  <span class="lang-divider" aria-hidden="true">/</span>
+  <button type="button" class="lang-btn" data-lang="ja" title="日本語に切り替える">日本語</button>
+</nav>
+
+<div class="stage" id="stage"><header><small id="hdrSmall">HỒ SƠ SỐ 01 · PHẦN CUỐI</small><h1 class="serif" id="hdrTitle">Phòng lưu niệm Phạm Xuân Ẩn</h1></header>
+<div class="cab" id="cab">
+<div class="bays">
+<div class="wing wL"><h4 id="wLTitle">SAU CHIẾN TRANH</h4><div id="gL" style="flex:1;display:flex;flex-direction:column"></div></div>
+<div class="mid"><div class="cone c1"></div><div class="cone c2"></div><div class="cone c3"></div>
+<div class="flags"><svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#da251d"/><path d="M15 3.5l1.9 5.8h6.1l-4.9 3.6 1.9 5.8-5-3.6-5 3.6 1.9-5.8-4.9-3.6h6.1z" fill="#ffde00"/></svg><svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#da251d"/><g fill="none" stroke="#ffde00" stroke-width="1.6" stroke-linecap="round"><path d="M10.5 15.5A6 6 0 1 1 18 6"/><path d="M9 6.5l11 8"/></g><path d="M18.5 5.3l3.6 2.8-.9 1.1-3.6-2.8z" fill="#ffde00"/></svg></div>
+<button class="plq" id="hero">ANH HÙNG LỰC LƯỢNG VŨ TRANG NHÂN DÂN</button>
+<button class="meds" id="meds" aria-label="16 huân huy chương"></button><div class="cp" id="medsCp">16 HUÂN HUY CHƯƠNG</div>
+<button class="pt" id="pt"><div class="wood"><div class="mat"><div class="img" id="ptImg">[Ảnh chân dung<br>Thiếu tướng<br>Phạm Xuân Ẩn]</div></div></div></button></div>
+<div class="wing wR"><h4 id="wRTitle">NHỮNG CHI TIẾT KHÁC</h4><div id="gR" style="flex:1;display:flex;flex-direction:column"></div></div>
+</div>
+<div class="door dl" id="d1"><span id="doorText">MỞ TỦ</span></div><div class="door dr" id="d2"></div>
+</div><div class="floor"></div>
+<button class="mail" id="mb"><svg viewBox="0 0 110 130"><rect x="53" y="76" width="6" height="52" fill="#4a3a1c"/><rect x="38" y="124" width="36" height="5" fill="#4a3a1c"/><rect x="12" y="22" width="86" height="58" rx="10" fill="#b82a2a" stroke="#e0b34a" stroke-width="2"/><rect x="26" y="40" width="58" height="6" rx="3" fill="#0a0d12"/><rect x="30" y="56" width="50" height="3" fill="#e0b34a" opacity=".6"/><rect x="92" y="6" width="4" height="34" fill="#e0b34a"/><path d="M96 6h14v10H96z" fill="#e0b34a"/></svg><span id="mailText">Hòm thư cảm nhận</span></button></div>
+<dialog id="dlg"><div class="mh"><span id="dt"></span><button id="dx" aria-label="Đóng">✕</button></div><div class="mb" id="db"></div></dialog>
+
+<!-- Nạp bộ điều khiển ngôn ngữ chung -->
+<script src="js/lang.js"></script>
+
+<script>
+const DATA = {
+  vi: {
+    meta: {
+      pageTitle: 'Phòng lưu niệm Phạm Xuân Ẩn',
+      backBtn: '‹ Dòng thời gian',
+      backTitle: 'Quay lại Dòng thời gian',
+      hdrSmall: 'HỒ SƠ SỐ 01 · PHẦN CUỐI',
+      hdrTitle: 'Phòng lưu niệm Phạm Xuân Ẩn',
+      wLTitle: 'SAU CHIẾN TRANH',
+      wRTitle: 'NHỮNG CHI TIẾT KHÁC',
+      hero: 'ANH HÙNG LỰC LƯỢNG VŨ TRANG NHÂN DÂN',
+      medsCp: '16 HUÂN HUY CHƯƠNG',
+      medsAria: '16 huân huy chương',
+      ptImg: '[Ảnh chân dung<br>Thiếu tướng<br>Phạm Xuân Ẩn]',
+      doorText: 'MỞ TỦ',
+      mailText: 'Hòm thư cảm nhận',
+      imgPrefix: 'Ảnh'
+    },
+    L: [
+      {y:'1978',t:'Bí mật bị phơi ra',img:'bài báo Pháp 1978',h:`<p>Một bài báo ngắn trên tờ báo Pháp lần đầu tiết lộ trên truyền thông quốc tế: nhà báo tài năng của Time thực chất là điệp viên số một của phía Việt Nam.</p><p>Tin lan sang Mỹ, giới tình báo và báo chí choáng váng. Nhiều quan chức CIA từng tin tưởng, thậm chí tìm đến ông xin ý kiến, giờ mới biết mình bị qua mặt suốt bao năm.</p>`},
+      {y:'8/1978 – 6/1979',t:'Trở lại ghế nhà trường',img:'Học viện Chính trị Nguyễn Ái Quốc',h:`<p>Sau nhiều năm hoạt động bí mật, ông được cử đi học ở Học viện Chính trị Nguyễn Ái Quốc để bồi dưỡng lý luận, hòa nhập vào đời sống mới của đất nước thống nhất.</p><blockquote>"Tôi hiểu hệ thống của Mỹ hơn hệ thống này, do vậy tôi cần phải đọc những tài liệu kinh điển."</blockquote>`},
+      {y:'11/2003',t:'Chiến hạm Mỹ trở lại',img:'ông trên USS Vandegrift',h:`<p>Theo lời mời của Đại sứ Raymond Burghardt và Tổng lãnh sự Emi Lynn Yamauchi, ông lên thăm tàu USS Vandegrift, chiến hạm Mỹ đầu tiên cập cảng Việt Nam kể từ 1975.</p><blockquote>"Tôi đã có thể thanh thản nhắm mắt. Tôi đã phụng sự cho đất nước, cho nhân dân, cho sự thống nhất."</blockquote>`},
+      {y:'20/9/2006',t:'Những ngày cuối',img:'Phạm Xuân Ẩn những năm cuối đời',h:`<p>Mùa hè 2006, ông hai lần vào Viện Quân y 175. Ông vẫn đùa rằng muốn tìm một chỗ dưới địa ngục, gần người có duyên kể chuyện để còn có bạn mà trò chuyện.</p><p>Lúc 11 giờ 20 sáng thứ Tư, 20/9, ông qua đời ở tuổi 79. Cạnh quan tài là 16 tấm huân huy chương của ông.</p>`}
+    ],
+    C: [
+      {y:'1976 – 1990',t:'Quân hàm',img:'quân hàm',h:`<ul><li>12/1976: Trung tá</li><li>1981: Thượng tá</li><li>1984: Đại tá</li><li>1990: Thiếu tướng Quân đội Nhân dân Việt Nam</li></ul>`},
+      {y:'Danh hiệu',t:'Anh hùng LLVTND',img:'danh hiệu Anh hùng',h:`<p>Thiếu tướng Phạm Xuân Ẩn được Nhà nước tặng danh hiệu Anh hùng lực lượng vũ trang Nhân dân.</p>`},
+      {y:'16 huân huy chương',t:'Huân chương',img:'tủ huân huy chương',h:`<ul><li>Huân chương Độc lập hạng nhì</li><li>Huân chương Quân công hạng ba</li><li>Huân chương Kháng chiến hạng ba</li><li>Huân chương Kháng chiến chống Mỹ cứu nước hạng nhất</li><li>4 Huân chương Chiến công hạng nhất, nhì, ba</li><li>Huân chương Chiến công giải phóng hạng nhất, nhì, ba</li><li>Huân chương Chiến sĩ vẻ vang hạng nhất, nhì, ba</li><li>Huy chương Quân kỳ Quyết thắng</li><li>Huy hiệu 50 năm tuổi Đảng</li></ul>`}
+    ],
+    R: [
+      {y:'Đại tá Tư Cang',t:'Tiễn Bạn',img:'Đại tá Tư Cang',h:`<div class="poem"><p>Đời người tình báo thế là xong</p><p>Tình dân nghĩa Đảng, nợ non sông</p><p>Làm trai trong suốt thời ly loạn</p><p>Anh thật xứng danh một anh hùng.</p><p class="g">Nay anh nằm đó, anh Hai Trung</p><p>Nhớ giọng anh cười, thật ấm lòng</p><p>Những lúc hiểm nguy căng sợi tóc</p><p>Vẫn nói, vẫn cười, vẫn ung dung.</p><p class="g">Xuân Ẩn từ nay ẩn thật rồi</p><p>Bạn bè thương tiếc mãi không nguôi</p><p>Riêng tôi nhớ mãi người đồng chí</p><p>Dũng cảm, thông minh, nhớ suốt đời…</p></div><p style="text-align:center"><a href="https://www.tiktok.com/@saodaumu.nvn/video/7545473972821953812" target="_blank" rel="noopener">Xem video Đại tá Tư Cang đọc thơ ↗</a></p>`},
+      {y:'Triết lý sống',t:'Ba con vật',img:'nơi an nghỉ với ba con vật',h:`<p>Bên cạnh nơi an nghỉ của ông là hình ba con vật, tượng trưng cho triết lý sống của ông.</p><ul><li><b>Con chó:</b> lòng trung thành với Tổ quốc và bạn bè.</li><li><b>Con gà:</b> nhảy hoài, bận rộn, làm việc suốt ngày, không làm biếng.</li><li><b>Con cá:</b> sự khôn ngoan, im lặng, không nói nhiều mà suy tư.</li></ul>`},
+      {y:'Video',t:'Lời tiễn qua video',img:'Đại tá Tư Cang đọc thơ',h:`<p>Video Đại tá Tư Cang đọc bài thơ tiễn người đồng đội, và hình ảnh nơi an nghỉ của ông.</p><p><a href="https://www.tiktok.com/@saodaumu.nvn/video/7545473972821953812" target="_blank" rel="noopener">Xem video đọc thơ ↗</a></p><p><a href="https://www.tiktok.com/@ngocbuki/video/7386514753478216967" target="_blank" rel="noopener">Xem video nơi an nghỉ ↗</a></p>`}
+    ]
+  },
+  ja: {
+    meta: {
+      pageTitle: 'ファム・スアン・アン記念室',
+      backBtn: '‹ タイムライン',
+      backTitle: 'タイムラインへ戻る',
+      hdrSmall: 'ファイル No.01 · 最終章',
+      hdrTitle: 'ファム・スアン・アン記念室',
+      wLTitle: '戦後',
+      wRTitle: 'その他の逸話',
+      hero: '人民武装勢力英雄',
+      medsCp: '16の勲章・記章',
+      medsAria: '16の勲章・記章',
+      ptImg: '[肖像写真<br>少将<br>ファム・スアン・アン]',
+      doorText: '開扉',
+      mailText: '感想ポスト',
+      imgPrefix: '写真'
+    },
+    L: [
+      {y:'1978年',t:'明かされた秘密',img:'1978年フランスの報道',h:`<p>フランスの新聞に掲載された短い記事によって、国際メディアに初めてその真実が明かされた。『タイム』誌の敏腕記者が、実はベトナム側の最高峰のスパイであったことが。</p><p>この報せが米国に届くと、情報機関とジャーナリズム界は騒然となった。彼を信頼し、助言を求めてさえいた多くのCIA高官たちは、長年欺かれ続けていたことを知ったのである。</p>`},
+      {y:'1978年8月 – 1979年6月',t:'学び舎への帰還',img:'グエン・アイ・クオック政治学院',h:`<p>長年の秘密活動を経て、彼は理論の補強と統一国家の新たな生活に適応するため、グエン・アイ・クオック政治学院に派遣された。</p><blockquote>「私はこの国のシステムよりも米国のシステムの方をよく知っている。だからこそ、古典的な理論書を読まねばならないのだ。」</blockquote>`},
+      {y:'2003年11月',t:'米軍艦の再訪',img:'USSヴァンデグリフト号乗艦時のアン',h:`<p>レイモンド・バーグハート大使とエミ・リン・ヤマウチ総領事の招待を受け、1975年以降初めてベトナムに寄港した米軍フリゲート艦「USSヴァンデグリフト」を訪問した。</p><blockquote>「私は安らかに目を閉じることができる。祖国のため、人民のため、そして国家統一のためにすべてを捧げたのだから。」</blockquote>`},
+      {y:'2006年9月20日',t:'最期の日々',img:'晩年のファム・スアン・アン',h:`<p>2006年夏、彼は第175陸軍病院に2度入院した。彼はなおユーモアを交え、「地獄でも話し上手な奴の近くに席を見つけて、語り合いたいものだ」と冗談を言っていた。</p><p>9月20日水曜日午前11時20分、享年79歳で息を引き取った。棺の傍らには、彼に授与された16の勲章と記章が並べられていた。</p>`}
+    ],
+    C: [
+      {y:'1976年 – 1990年',t:'軍階級',img:'軍階級',h:`<ul><li>1976年12月：中佐</li><li>1981年：上佐</li><li>1984年：大佐</li><li>1990年：ベトナム人民軍少将</li></ul>`},
+      {y:'栄誉称号',t:'人民武装勢力英雄',img:'英雄称号',h:`<p>ファム・スアン・アン少将は、国家より「人民武装勢力英雄」の最高栄誉称号を授与されました。</p>`},
+      {y:'16の勲章・記章',t:'勲章一覧',img:'勲章ケース',h: `<ul><li>二等独立勲章</li><li>三等軍功勲章</li><li>三等抗戦勲章</li><li>一等対米抗戦救国勲章</li><li>一・二・三等戦功勲章（計4点）</li><li>一・二・三等解放戦功勲章</li><li>一・二・三等栄光の戦士勲章</li><li>決勝軍旗記章</li><li>党員歴50年記念章</li></ul>`}
+    ],
+    R: [
+      {y:'トゥ・カン大佐',t:'友を送る',img:'トゥ・カン大佐',h:`<div class="poem"><p>情報員としての生涯はここに幕を下ろした</p><p>人民への情、党への義、山河への恩義</p><p>動乱の時代を駆け抜けた男児として</p><p>君は真の英雄の名にふさわしい。</p><p class="g">今そこに横たわる、ハイ・チュン兄さん</p><p>その笑顔の声を思い出すと、胸が熱くなる</p><p>危機一髪の瀬戸際にあっても</p><p>君は語り、笑い、悠然としていた。</p><p class="g">スアン・アン（春の隠者）よ、今や真に隠れてしまった</p><p>友人たちの惜別の念は尽きることがない</p><p>私にとって忘れ得ぬ我が同志よ</p><p>勇敢で聡明な君を、生涯忘れることはない…</p></div><p style="text-align:center"><a href="https://www.tiktok.com/@saodaumu.nvn/video/7545473972821953812" target="_blank" rel="noopener">トゥ・カン大佐の詩朗読動画を見る ↗</a></p>`},
+      {y:'人生の哲学',t:'三匹の生き物',img:'三匹の動物像と墓所',h:`<p>彼の墓所の傍らには、彼の人生哲学を象徴する3匹の生き物の像が刻まれています。</p><ul><li><b>犬：</b>祖国と友に対する絶対の忠誠心。</li><li><b>鶏：</b>常に動き回り、一日中働き、怠惰を退ける勤勉さ。</li><li><b>魚：</b>多弁を排し、沈黙の中で思索を深める英知。</li></ul>`},
+      {y:'映像',t:'動画による追悼',img:'トゥ・カン大佐の詩朗読',h:`<p>戦友を送るトゥ・カン大佐の詩朗読動画、および墓所の記録映像。</p><p><a href="https://www.tiktok.com/@saodaumu.nvn/video/7545473972821953812" target="_blank" rel="noopener">詩朗読の動画を見る ↗</a></p><p><a href="https://www.tiktok.com/@ngocbuki/video/7386514753478216967" target="_blank" rel="noopener">安息の地（墓所）の動画を見る ↗</a></p>`}
+    ]
+  }
+};
+
+// Chuẩn bị danh sách cho cánh trái (chèn mục quân hàm vào vị trí thứ 3)
+['vi', 'ja'].forEach(lang => {
+  const d = DATA[lang];
+  if (d.L.length === 4) {
+    d.L.splice(2, 0, d.C[0]);
+  }
+});
+
+let currentLang = (window.getCurrentLang ? window.getCurrentLang() : 'vi') || 'vi';
+
+function ph(t) {
+  const p = DATA[currentLang]?.meta?.imgPrefix || 'Ảnh';
+  return `<div class="ph">[${p}: ${t}]</div>`;
+}
+
+const dlg = document.getElementById('dlg');
+function open(t, y, body) {
+  document.getElementById('dt').textContent = y;
+  document.getElementById('db').innerHTML = `<h2 class="serif">${t}</h2>` + body;
+  dlg.showModal();
+}
+
+const O = o => open(o.t, o.y, ph(o.img) + o.h);
+
+function fr(o, w) {
+  const b = document.createElement('button');
+  b.className = 'fm';
+  b.style.flexBasis = w;
+  const p = DATA[currentLang]?.meta?.imgPrefix || 'Ảnh';
+  b.innerHTML = `<div class="wood"><div class="mat"><div class="img">[${p}: ${o.img}]</div></div></div><i>${o.t}<em>${o.y}</em></i>`;
+  b.onclick = () => O(o);
+  return b;
+}
+
+function tiers(el, list, sizes) {
+  el.innerHTML = '';
+  let k = 0;
+  sizes.forEach(n => {
+    const t = document.createElement('div');
+    t.className = 'tier';
+    for (let i = 0; i < n; i++) {
+      if (list[k]) t.appendChild(fr(list[k++], n == 1 ? '34%' : '30%'));
+    }
+    el.appendChild(t);
+  });
+}
+
+function renderContent() {
+  currentLang = (window.getCurrentLang ? window.getCurrentLang() : 'vi') || 'vi';
+  if (!DATA[currentLang]) currentLang = 'vi';
+  const cur = DATA[currentLang];
+  const m = cur.meta;
+
+  document.title = m.pageTitle;
+  document.getElementById('btnBack').textContent = m.backBtn;
+  document.getElementById('btnBack').title = m.backTitle;
+  document.getElementById('hdrSmall').textContent = m.hdrSmall;
+  document.getElementById('hdrTitle').textContent = m.hdrTitle;
+  document.getElementById('wLTitle').textContent = m.wLTitle;
+  document.getElementById('wRTitle').textContent = m.wRTitle;
+  document.getElementById('hero').textContent = m.hero;
+  document.getElementById('medsCp').textContent = m.medsCp;
+  document.getElementById('meds').setAttribute('aria-label', m.medsAria);
+  document.getElementById('ptImg').innerHTML = m.ptImg;
+  document.getElementById('doorText').textContent = m.doorText;
+  document.getElementById('mailText').textContent = m.mailText;
+
+  tiers(document.getElementById('gL'), cur.L, [2, 2, 1]);
+  tiers(document.getElementById('gR'), cur.R, [1, 1, 1]);
+
+  document.getElementById('hero').onclick = () => O(cur.C[1]);
+  document.getElementById('meds').onclick = () => O(cur.C[2]);
+}
+
+// Khởi tạo 16 huân huy chương
+const meds = document.getElementById('meds');
+meds.innerHTML = '';
+for (let i = 0; i < 16; i++) {
+  const m = document.createElement('div');
+  m.className = 'md';
+  meds.appendChild(m);
+}
+
+// Bấm vào ảnh chân dung
+document.getElementById('pt').onclick = () => {
+  const isJa = currentLang === 'ja';
+  open(
+    isJa ? 'ファム・スアン・アン少将' : 'Thiếu tướng Phạm Xuân Ẩn',
+    isJa ? '1927年 – 2006年' : '1927 – 2006',
+    ph(isJa ? 'ファム・スアン・アン肖像' : 'chân dung Phạm Xuân Ẩn') +
+    (isJa
+      ? `<p>ファム・スアン・アン（1927年9月12日 – 2006年9月20日）、本名ファム・ヴァン・タイン、ドンナイ省ビエンホア生まれ。『タイム』誌やロイター通信の著名記者であり、同時に戦略諜報員、ベトナム人民軍少将、人民武装勢力英雄。</p>`
+      : `<p>Phạm Xuân Ẩn (12/9/1927 – 20/9/2006), tên thật Phạm Văn Thành, sinh ở Biên Hòa, Đồng Nai. Nhà báo của Time và Reuters, đồng thời là nhà tình báo chiến lược, Thiếu tướng, Anh hùng lực lượng vũ trang Nhân dân.</p>`)
+  );
+};
+
+// Bấm vào hòm thư cảm nhận
+document.getElementById('mb').onclick = () => {
+  const isJa = currentLang === 'ja';
+  open(
+    isJa ? '感想を送る' : 'Gửi cảm nhận của bạn',
+    isJa ? 'メールボックス' : 'Hòm thư',
+    isJa
+      ? `<p>この軌跡を振り返り、彼の生涯についてどう感じましたか？ぜひご感想をお寄せください。</p><input id="nm" placeholder="お名前（省略可）"><textarea id="ms" placeholder="あなたのご感想..."></textarea><button class="go" id="sd">ポストに投函する</button><p id="ok" style="margin-top:12px;color:var(--gold2)"></p>`
+      : `<p>Sau hành trình này, bạn nghĩ gì về cuộc đời ông? Viết vài dòng bên dưới nhé.</p><input id="nm" placeholder="Tên của bạn (có thể bỏ trống)"><textarea id="ms" placeholder="Cảm nhận của bạn..."></textarea><button class="go" id="sd">Gửi vào hòm thư</button><p id="ok" style="margin-top:12px;color:var(--gold2)"></p>`
+  );
+};
+
+// Xử lý gửi hòm thư
+document.addEventListener('click', e => {
+  if (e.target.id === 'sd') {
+    const m = document.getElementById('ms').value.trim();
+    if (!m) return;
+    try {
+      const a = JSON.parse(localStorage.getItem('pxa-mail') || '[]');
+      a.push({ n: document.getElementById('nm').value, m, t: Date.now() });
+      localStorage.setItem('pxa-mail', JSON.stringify(a));
+    } catch (x) {}
+    document.getElementById('ms').value = '';
+    const isJa = currentLang === 'ja';
+    document.getElementById('ok').textContent = isJa ? 'ご感想をお送りいただきありがとうございます。' : 'Cảm ơn bạn đã gửi cảm nhận.';
+  }
+});
+
+// Đóng modal
+document.getElementById('dx').onclick = () => dlg.close();
+dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+// Cơ chế mở tủ 3D
+const cab = document.getElementById('cab');
+let opened = false;
+function openCab() {
+  if (opened) return;
+  opened = true;
+  cab.classList.add('open');
+  setTimeout(() => cab.classList.add('lit'), 1500);
+}
+document.getElementById('d1').onclick = document.getElementById('d2').onclick = openCab;
+setTimeout(openCab, 1600);
+
+// Co giãn tỉ lệ sân khấu
+function fit() {
+  document.getElementById('stage').style.setProperty('--s', Math.min(innerWidth / 1400, innerHeight / 800));
+}
+addEventListener('resize', fit);
+fit();
+
+// Lắng nghe sự kiện đổi ngôn ngữ toàn cục
+window.addEventListener('languagechange', e => {
+  renderContent();
+});
+
+// Khởi chạy render lần đầu
+renderContent();
+</script></body></html>

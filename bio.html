@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hồ sơ mật – Phạm Xuân Ẩn đến 1957</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Be+Vietnam+Pro:wght@300;400;600&family=Courier+Prime:wght@400;700&display=swap">
+<style>
+:root{--bg:#0b0f14;--gold:#e0b34a;--gold2:#f6d77e;--paper:#e9e0c9;--ink:#2a241a;--red:#a3262a;--mute:#8d8a80;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#d9d4c7;font-family:'Be Vietnam Pro',system-ui,sans-serif;line-height:1.6}
+.mono{font-family:'Courier Prime','Courier New',monospace}
+header{text-align:center;padding:70px 5vw 36px}
+header small{color:var(--gold);letter-spacing:.2em;font-size:12px}
+header h1{font-family:'Playfair Display',Georgia,serif;margin:10px 0 6px;font-size:clamp(28px,5vw,48px);color:var(--gold2)}
+header p{margin:0 auto;max-width:520px;color:var(--mute);font-size:14px}
+.dossier{max-width:860px;margin:0 auto;padding:0 5vw 40px}
+.page{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px + min(var(--i),3)*34px);margin-bottom:30vh;background:var(--paper);color:var(--ink);border-radius:4px 4px 6px 6px;box-shadow:0 -8px 30px rgba(0,0,0,.55);padding-bottom:26px}
+.tab{display:flex;justify-content:space-between;align-items:center;height:34px;padding:0 20px;border-bottom:1px solid #c9bd9c;font-size:12px;letter-spacing:.1em}
+.tab b{color:var(--red)}
+.body{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;padding:22px 26px 0}
+.body h2{font-family:'Playfair Display',Georgia,serif;margin:0 0 10px;font-size:clamp(21px,3vw,30px);line-height:1.2}
+.body p{margin:0 0 10px;font-size:15px}
+.body blockquote{margin:12px 0 0;padding-left:12px;border-left:3px solid var(--red);font-style:italic;font-size:14px}
+.red{background:#15110a;color:transparent;border-radius:2px;padding:0 3px;transition:background .9s .3s,color .9s .3s;user-select:none}
+.page.on .red{background:transparent;color:var(--red);font-weight:600;user-select:auto}
+.pin{position:relative;align-self:start;aspect-ratio:3/4;background:repeating-linear-gradient(135deg,#d8ceb2 0 12px,#cfc4a5 12px 24px);border:6px solid #f7f2e2;box-shadow:0 6px 16px rgba(0,0,0,.35);display:grid;place-items:center;text-align:center;font-size:12px;color:#7a7059;padding:14px;transform:rotate(2.5deg);transition:transform .8s}
+.page:nth-child(even) .pin{transform:rotate(-2.5deg)}
+.page.on .pin{transform:rotate(0)}
+.pin::before{content:"";position:absolute;top:-22px;left:50%;width:16px;height:44px;border:3px solid #8a8d92;border-radius:10px;transform:translateX(-50%) rotate(8deg)}
+.stamp{position:absolute;right:22px;top:46px;border:3px solid var(--red);color:var(--red);padding:2px 12px;font-weight:700;font-size:12px;letter-spacing:.18em;transform:rotate(-8deg);opacity:0;transition:.5s .6s;border-radius:3px;background:rgba(233,224,201,.8)}
+.page.on .stamp{opacity:.85}
+.next{text-align:center;padding:10px 5vw 90px}
+.next .yr{font-size:clamp(40px,9vw,84px);font-family:'Playfair Display',Georgia,serif;color:var(--gold2);font-weight:800}
+.next p{color:var(--mute);margin:0}
+.next a{display:inline-block;margin-top:22px;padding:12px 26px;background:var(--gold);color:#1a1304;text-decoration:none;font-weight:600;font-size:13px;letter-spacing:.08em;border-radius:3px;transition:all .25s ease}
+.next a:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 6px 18px rgba(224,179,74,.4)}
+
+/* Nút quay lại Bối cảnh lịch sử */
+.btn-back-context{position:fixed;top:16px;left:20px;z-index:100;display:inline-flex;align-items:center;gap:6px;padding:7px 16px;background:rgba(20,15,10,0.85);border:1px solid var(--gold);border-radius:4px;color:var(--gold2);text-decoration:none;font-size:12px;letter-spacing:.08em;font-weight:600;backdrop-filter:blur(6px);transition:all .25s ease;box-shadow:0 4px 12px rgba(0,0,0,.5)}
+.btn-back-context:hover{background:var(--gold);color:#1a1304;transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.7)}
+
+/* Bộ chuyển đổi ngôn ngữ Việt - Nhật đồng bộ */
+.lang-switcher{position:fixed;top:16px;right:20px;z-index:120;display:inline-flex;align-items:center;gap:3px;padding:4px 6px;background:rgba(20,15,10,0.88);border:1.5px solid var(--gold);border-radius:999px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 4px 16px rgba(0,0,0,.6);transition:border-color .2s,transform .2s}
+.lang-switcher:hover{border-color:var(--gold2);transform:translateY(-1px)}
+.lang-btn{background:transparent;border:0;color:var(--mute);font-family:'Be Vietnam Pro',system-ui,sans-serif;font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;cursor:pointer;letter-spacing:.03em;transition:all .2s ease}
+.lang-btn:hover{color:#fff}
+.lang-btn.active{background:linear-gradient(135deg,var(--gold2) 0%,var(--gold) 100%);color:#1a1304;box-shadow:0 2px 8px rgba(224,179,74,.4)}
+.lang-divider{color:rgba(255,255,255,0.25);font-size:11px;user-select:none}
+
+@media(max-width:640px){.body{grid-template-columns:1fr;padding:18px 16px 0}.pin{max-width:150px;margin:0 auto}.body p{font-size:14px}.stamp{top:40px;right:12px;font-size:11px}}
+</style>
+</head>
+<body>
+
+<!-- Nút quay lại Bối cảnh lịch sử -->
+<a href="index.html#context" class="btn-back-context" id="btnBackContext" title="Xem lại Bối cảnh lịch sử">‹ Bối cảnh lịch sử</a>
+
+<!-- Bộ chọn đa ngôn ngữ nổi VI / JA -->
+<nav class="lang-switcher" aria-label="Chọn ngôn ngữ / 言語選択">
+  <button type="button" class="lang-btn active" data-lang="vi" title="Chuyển sang Tiếng Việt">VI</button>
+  <span class="lang-divider" aria-hidden="true">/</span>
+  <button type="button" class="lang-btn" data-lang="ja" title="日本語に切り替える">日本語</button>
+</nav>
+
+<header>
+  <small class="mono" id="hdrBadge">HỒ SƠ SỐ 01 · TUYỆT MẬT</small>
+  <h1 id="hdrTitle">Trước khi trở thành "Ẩn"</h1>
+  <p id="hdrDesc">Cuộc đời Phạm Xuân Ẩn từ lúc sinh ra đến ngày sang Mỹ, từng trang hồ sơ được mở dần ra.</p>
+</header>
+
+<main class="dossier" id="dossierContainer"></main>
+
+<section class="next">
+  <p class="mono" id="nextSubtitle">HỒ SƠ ĐƯỢC TIẾP TỤC…</p>
+  <div class="yr">1957</div>
+  <p id="nextDesc">Từ đây, hai cuộc đời chạy song song.</p>
+  <a href="index.html#timeline" id="nextBtn">XEM DÒNG THỜI GIAN 1957 – 1976</a>
+</section>
+
+<!-- Nạp bộ quản lý đa ngôn ngữ -->
+<script src="js/lang.js"></script>
+
+<script>
+const DOSSIER_DATA = {
+  vi: {
+    meta: {
+      pageTitle: 'Hồ sơ mật – Phạm Xuân Ẩn đến 1957',
+      backBtn: '‹ Bối cảnh lịch sử',
+      backTitle: 'Xem lại Bối cảnh lịch sử',
+      hdrBadge: 'HỒ SƠ SỐ 01 · TUYỆT MẬT',
+      hdrTitle: 'Trước khi trở thành "Ẩn"',
+      hdrDesc: 'Cuộc đời Phạm Xuân Ẩn từ lúc sinh ra đến ngày sang Mỹ, từng trang hồ sơ được mở dần ra.',
+      nextSubtitle: 'HỒ SƠ ĐƯỢC TIẾP TỤC…',
+      nextDesc: 'Từ đây, hai cuộc đời chạy song song.',
+      nextBtn: 'XEM DÒNG THỜI GIAN 1957 – 1976'
+    },
+    pages: [
+      {
+        tabLabel: 'TRANG 01',
+        period: '1927 – 1938',
+        stamp: 'MỞ HỒ SƠ',
+        title: 'Tuổi thơ lênh đênh',
+        paragraphs: [
+          'Phạm Xuân Ẩn, <span class="red">tên thật Phạm Văn Thành</span>, sinh ngày 12/9/1927 ở Biên Hòa, trong một gia đình Nho học giàu truyền thống yêu nước.',
+          'Chưa đầy 2 tuổi, ông đã theo cha mẹ <span class="red">sống trên thuyền ở vùng U Minh</span>. Mẹ lo sông nước nguy hiểm nên đưa ông về Huế ở với ông bà nội, đến năm 4 tuổi mới trở lại Gia Định.',
+          'Lớn lên, ông là cậu bé hiếu động, hay trốn học đi bắn chim, chọi gà, nuôi cá chọi.'
+        ],
+        pin: '[Ảnh: tuổi thơ<br>hoặc vùng U Minh]'
+      },
+      {
+        tabLabel: 'TRANG 02',
+        period: '1938 – 1945',
+        stamp: 'BƯỚC NGOẶT',
+        title: 'Bỏ bút nghiên',
+        paragraphs: [
+          'Năm 1938, gia đình chuyển về Cần Thơ. Ông học trung học ở <span class="red">trường Collège de Cần Thơ</span>.',
+          'Năm 1945, Cách mạng Tháng Tám nổ ra. Ông <span class="red">bỏ học</span>, gia nhập Thanh niên Tiền Phong và theo lớp công tác tuyên truyền của Việt Minh.'
+        ],
+        pin: '[Ảnh: Cần Thơ<br>hoặc Thanh niên Tiền Phong]'
+      },
+      {
+        tabLabel: 'TRANG 03',
+        period: '1947 – 1950',
+        stamp: 'XUỐNG ĐƯỜNG',
+        title: 'Về Sài Gòn, dẫn đầu biểu tình',
+        paragraphs: [
+          'Năm 1947, ông về Sài Gòn chăm người cha mắc bệnh lao nặng. Ở đây ông <span class="red">tham gia và tổ chức biểu tình</span> của học sinh, sinh viên chống Pháp, sau này là chống Mỹ.',
+          'Tiêu biểu là phong trào Trần Văn Ơn năm 1950. Qua đó ông bắt đầu làm việc với <span class="red">bác sĩ Phạm Ngọc Thạch</span>, người phụ trách vận động trí thức và học sinh sinh viên ở Nam Kỳ.'
+        ],
+        pin: '[Ảnh: phong trào<br>Trần Văn Ơn]'
+      },
+      {
+        tabLabel: 'TRANG 04',
+        period: '1950 – 1952',
+        stamp: 'NHIỆM VỤ',
+        title: 'Nhiệm vụ đầu tiên',
+        paragraphs: [
+          'Cuối năm 1950, ông vào làm ở <span class="red">Sở Thuế quan Sài Gòn</span>. Việt Minh giao ông nắm tình hình vận chuyển hàng hóa, khí tài và quân đội từ Pháp sang Việt Nam. Đó là bước đầu của hoạt động tình báo.',
+          'Cuối tháng 1/1952, bác sĩ Thạch gọi ông vào chiến khu D. Ông tưởng mình sẽ cầm súng, ai ngờ được giao làm tình báo, nghề mà ông từng cho là <span class="red">"việc của lũ chó săn, chim mồi"</span>.'
+        ],
+        pin: '[Ảnh: Sở Thuế quan<br>Sài Gòn]'
+      },
+      {
+        tabLabel: 'TRANG 05',
+        period: '1952 – 1953',
+        stamp: 'VÀO ĐẢNG',
+        title: 'Nghề không tự chọn',
+        paragraphs: [
+          'Sau khi được bác sĩ Thạch thuyết phục, ông nhận lời và trở thành một trong <span class="red">lứa cán bộ tình báo chiến lược đầu tiên</span>, chuyên nghiên cứu về Mỹ.',
+          'Năm 1953, trong rừng U Minh, dưới sự chủ tọa của Lê Đức Thọ, lúc đó là thường trực Xứ ủy Nam Bộ, ông được <span class="red">kết nạp vào Đảng Cộng sản</span>.'
+        ],
+        pin: '[Ảnh: chiến khu D<br>hoặc rừng U Minh]'
+      },
+      {
+        tabLabel: 'TRANG 06',
+        period: '1954 – 1955',
+        stamp: 'CẮM SÂU',
+        title: 'Người bạn của Lansdale',
+        paragraphs: [
+          'Năm 1954, chính quyền miền Nam gọi ông nhập ngũ. Ông làm bí thư phòng Chiến tranh tâm lý trong tổng hành dinh quân đội Liên hiệp Pháp, và ở đó <span class="red">kết thân với Đại tá Edward Lansdale</span>, người đứng đầu phái bộ quân sự đặc biệt của Mỹ, thực chất là chỉ huy CIA ở Đông Dương.',
+          'Năm 1955, nhờ giỏi tiếng Anh, ông làm <span class="red">sĩ quan liên lạc</span> với các phái bộ CATO và TRIM, trực tiếp dịch tài liệu huấn luyện biệt kích và kế hoạch tác chiến cho cố vấn Mỹ.'
+        ],
+        pin: '[Ảnh: Edward Lansdale<br>ở Sài Gòn]'
+      },
+      {
+        tabLabel: 'TRANG 07',
+        period: '1956 – 1957',
+        stamp: 'LÊN ĐƯỜNG',
+        title: 'Tấm vé sang Mỹ',
+        paragraphs: [
+          'Năm 1956, ông ngỏ ý muốn giải ngũ để đi du học. Lansdale <span class="red">đồng ý ngay</span>, viết thư giới thiệu và thu xếp học bổng cho ông.',
+          '<blockquote>"Tốt lắm, anh muốn sang Mỹ học về quân sự hay dân sự đều được cả. Tôi hoàn toàn ủng hộ."</blockquote>',
+          '<p style="margin-top:12px">Năm 1957, ông lên đường sang Mỹ học báo chí, mở ra <span class="red">vỏ bọc nhà báo</span> cho cả sự nghiệp về sau.</p>'
+        ],
+        pin: '[Ảnh: Phạm Xuân Ẩn<br>sang Mỹ, 1957]'
+      }
+    ]
+  },
+  ja: {
+    meta: {
+      pageTitle: '機密ファイル – ファム・スアン・アン 1957年まで',
+      backBtn: '‹ 歴史的背景',
+      backTitle: '歴史的背景へ戻る',
+      hdrBadge: '機密ファイル No.01 · 極秘',
+      hdrTitle: '「アン（隠）」となる前夜',
+      hdrDesc: '誕生から渡米の日に至るまでのファム・スアン・アンの生涯。機密ファイルが今、一枚ずつ開かれる。',
+      nextSubtitle: 'ファイルは続く…',
+      nextDesc: 'ここから、二つの顔を持つ人生が並走する。',
+      nextBtn: 'タイムラインを見る 1957 – 1976'
+    },
+    pages: [
+      {
+        tabLabel: 'ページ 01',
+        period: '1927 – 1938',
+        stamp: 'ファイル開封',
+        title: '流転の幼少期',
+        paragraphs: [
+          'ファム・スアン・アン、<span class="red">本名ファム・ヴァン・タイン</span>は、1927年9月12日にビエンホアの愛国心あふれる儒学の家系に生まれた。',
+          '2歳に満たぬ頃、両親とともに<span class="red">ウーミン湿地帯の小舟の上で暮らした</span>。水辺の危険を案じた母は彼をフエの祖父母のもとに預け、4歳になってようやくザーディンへと戻った。',
+          '成長した彼は好奇心旺盛で活発な少年となり、しばしば学校を抜け出しては鳥撃ちや闘鶏、闘魚の飼育に熱中した。'
+        ],
+        pin: '[写真: 幼少期<br>またはウーミン湿地帯]'
+      },
+      {
+        tabLabel: 'ページ 02',
+        period: '1938 – 1945',
+        stamp: '転機',
+        title: '筆を措いて',
+        paragraphs: [
+          '1938年、一家はカントーへと移住。彼は<span class="red">コレージュ・ド・カントー</span>（仏領中等学校）で学んだ。',
+          '1945年、八月革命が勃発。<span class="red">学業を退き</span>、前衛青年隊（タンニエン・ティエンフォン）に参加、ベトミンの宣伝工作員講習を受けた。'
+        ],
+        pin: '[写真: カントー<br>または前衛青年隊]'
+      },
+      {
+        tabLabel: 'ページ 03',
+        period: '1947 – 1950',
+        stamp: '街頭へ',
+        title: 'サイゴンへ、デモの先頭に立つ',
+        paragraphs: [
+          '1947年、重度の結核を患う父を看病するためサイゴンへ戻る。ここで彼は学生や生徒たちによる反仏（のちに反米）の<span class="red">街頭デモに参加・組織</span>した。',
+          '代表的なものが1950年のチャン・ヴァン・オン追悼運動である。これを機に、南部で知識人・学生運動を統率していた<span class="red">ファム・ゴック・タック医師</span>との協力が始まった。'
+        ],
+        pin: '[写真: チャン・ヴァン・オン<br>学生運動]'
+      },
+      {
+        tabLabel: 'ページ 04',
+        period: '1950 – 1952',
+        stamp: '任務',
+        title: '最初の任務',
+        paragraphs: [
+          '1950年末、彼は<span class="red">サイゴン税関局</span>に職を得た。ベトミンからはフランスからベトナムへの物資・軍備・兵力の輸送動向を把握する任務が下された。これが諜報活動の第一歩となる。',
+          '1952年1月末、タック医師に呼び出され戦区D（拠点）へ赴く。銃を取って戦うものと思っていた彼に命じられたのはスパイ任務だった。かつて彼自身が<span class="red">「猟犬や囮のやること」</span>と蔑んでいた仕事であった。'
+        ],
+        pin: '[写真: サイゴン<br>税関局]'
+      },
+      {
+        tabLabel: 'ページ 05',
+        period: '1952 – 1953',
+        stamp: '入党',
+        title: '自ら選ばざる天命',
+        paragraphs: [
+          'タック医師の説得を受けた彼はこれを受諾、対米研究を専門とする<span class="red">第1期戦略諜報幹部</span>の一員となった。',
+          '1953年、ウーミンの密林において、当時南部党委員会常務であったレ・ドゥク・トの主宰のもと、<span class="red">共産党への入党</span>を果たした。'
+        ],
+        pin: '[写真: 戦区D<br>またはウーミンの森]'
+      },
+      {
+        tabLabel: 'ページ 06',
+        period: '1954 – 1955',
+        stamp: '深部潜入',
+        title: 'レンズデールの友',
+        paragraphs: [
+          '1954年、南ベトナム当局により徴兵される。フランス連合軍総司令部の心理戦部書記を務める中で、米特別軍事顧問団長であり実質的なインドシナCIA責任者であった<span class="red">エドワード・レンズデール大佐と親交を結ぶ</span>。',
+          '1955年、卓越した英語力を買われ、CATOおよびTRIM軍事使節団の<span class="red">連絡将校</span>となり、米顧問向けのコマンドー訓練資料や作戦計画の翻訳を直接担当した。'
+        ],
+        pin: '[写真: サイゴンの<br>エドワード・レンズデール]'
+      },
+      {
+        tabLabel: 'ページ 07',
+        period: '1956 – 1957',
+        stamp: '旅立ち',
+        title: '米国への切符',
+        paragraphs: [
+          '1956年、留学のため除隊を申し出る。レンズデールは<span class="red">即座に同意</span>し、推薦状を執筆して奨学金の手配を行った。',
+          '<blockquote>「素晴らしい。君が軍事であれ民事であれ、米国で学びたいのであれば大賛成だ。全面的に支援しよう。」</blockquote>',
+          '<p style="margin-top:12px">1957年、ジャーナリズムを学ぶため米国へと旅立ち、以後の生涯を支える<span class="red">「記者」という偽装</span>の幕を開けた。</p>'
+        ],
+        pin: '[写真: ファム・スアン・アン<br>渡米（1957年）]'
+      }
+    ]
+  }
+};
+
+let ioInstance = null;
+
+function renderDossier() {
+  const lang = (window.getCurrentLang ? window.getCurrentLang() : 'vi') || 'vi';
+  const data = DOSSIER_DATA[lang] || DOSSIER_DATA.vi;
+  const m = data.meta;
+
+  document.title = m.pageTitle;
+  document.getElementById('btnBackContext').textContent = m.backBtn;
+  document.getElementById('btnBackContext').title = m.backTitle;
+  document.getElementById('hdrBadge').textContent = m.hdrBadge;
+  document.getElementById('hdrTitle').textContent = m.hdrTitle;
+  document.getElementById('hdrDesc').textContent = m.hdrDesc;
+  document.getElementById('nextSubtitle').textContent = m.nextSubtitle;
+  document.getElementById('nextDesc').textContent = m.nextDesc;
+  document.getElementById('nextBtn').textContent = m.nextBtn;
+
+  const container = document.getElementById('dossierContainer');
+  let html = '';
+
+  data.pages.forEach((p, idx) => {
+    let pContent = '';
+    p.paragraphs.forEach(pg => {
+      if (pg.startsWith('<blockquote>') || pg.startsWith('<p')) {
+        pContent += pg;
+      } else {
+        pContent += `<p>${pg}</p>`;
+      }
+    });
+
+    html += `
+      <article class="page" style="--i:${idx}" data-idx="${idx}">
+        <div class="tab mono"><b>${p.tabLabel}</b><span>${p.period}</span></div>
+        <div class="stamp mono">${p.stamp}</div>
+        <div class="body">
+          <div>
+            <h2>${p.title}</h2>
+            ${pContent}
+          </div>
+          <div class="pin"><span>${p.pin}</span></div>
+        </div>
+      </article>
+    `;
+  });
+
+  container.innerHTML = html;
+
+  if (ioInstance) {
+    ioInstance.disconnect();
+  }
+
+  ioInstance = new IntersectionObserver(es => {
+    es.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('on');
+      }
+    });
+  }, { rootMargin: '-30% 0px -30% 0px' });
+
+  document.querySelectorAll('.page').forEach(p => ioInstance.observe(p));
+}
+
+// Lắng nghe sự kiện chuyển đổi ngôn ngữ
+window.addEventListener('languagechange', () => {
+  renderDossier();
+});
+
+// Khởi chạy khi tải trang
+renderDossier();
+</script>
+</body>
+</html>

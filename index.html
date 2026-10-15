@@ -17,6 +17,31 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/context.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Khắc phục hiện tượng chớp/nhấp nháy màn hình (FOUC) khi mở trực tiếp timeline từ trang khác -->
+  <script>
+    (function () {
+      if (window.location.hash === '#timeline') {
+        document.documentElement.classList.add('init-timeline');
+      }
+    })();
+  </script>
+  <style>
+    html.init-timeline #contextScreen,
+    html.init-timeline #bioScreen,
+    html.init-timeline #postwarScreen {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      transition: none !important;
+    }
+    html.init-timeline #timelineScreen {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transition: none !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -51,9 +76,9 @@
       <span>‹ Tiểu sử</span>
     </button>
 
-    <!-- Nút chuyển sang trang Hậu chiến (ở góc cuối bên phải màn hình timeline) -->
-    <button type="button" class="btn-to-postwar" id="btnToPostwar" title="Một Phạm Xuân Ẩn bình lặng sau chiến tranh">
-      <span>Một Phạm Xuân Ẩn bình lặng sau chiến tranh ›</span>
+    <!-- Nút chuyển sang trang Phòng lưu niệm (ở góc cuối bên phải màn hình timeline) -->
+    <button type="button" class="btn-to-postwar" id="btnToPostwar" title="Phòng lưu niệm Phạm Xuân Ẩn">
+      <span>Phòng lưu niệm Phạm Xuân Ẩn ›</span>
     </button>
 
     <!-- Thanh tiến trình cuộn ngang -->

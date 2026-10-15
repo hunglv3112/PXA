@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnToPostwar) {
       const textSpan = btnToPostwar.querySelector('span') || btnToPostwar;
-      textSpan.textContent = cfg?.ui?.toPostwar || (lang === 'ja' ? '戦後の穏やかなファム・スアン・アン ›' : 'Một Phạm Xuân Ẩn bình lặng sau chiến tranh ›');
+      textSpan.textContent = cfg?.ui?.toPostwar || (lang === 'ja' ? '戦後の穏やかなファム・スアン・アン ›' : 'Phòng lưu niệm Phạm Xuân Ẩn ›');
     }
   }
 
@@ -373,6 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4.1. Hiển thị Màn hình 1: Bối cảnh lịch sử
   function showContext() {
     pauseBioVideos();
+    document.documentElement.classList.remove('init-timeline');
     contextScreen.classList.remove('hidden');
     contextScreen.scrollTop = 0;
 
@@ -383,18 +384,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.hash = 'context';
   }
 
-  // 4.2. Hiển thị Màn hình 2: Tiểu sử Phạm Xuân Ẩn
+  // 4.2. Hiển thị Màn hình 2: Tiểu sử Phạm Xuân Ẩn (Hồ sơ mật)
   function showBio() {
-    contextScreen.classList.add('hidden');
-
-    if (bioScreen) {
-      bioScreen.classList.remove('hidden');
-      bioScreen.scrollTop = 0;
-    }
-    if (timelineScreen) timelineScreen.classList.add('hidden');
-    if (postwarScreen) postwarScreen.classList.add('hidden');
-
-    window.location.hash = 'bio';
+    pauseBioVideos();
+    window.location.href = 'bio.html';
   }
 
   // 4.3. Hiển thị Màn hình 3: Dòng thời gian (Timeline)
@@ -410,19 +403,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.dispatchEvent(new Event('resize'));
   }
 
-  // 4.4. Hiển thị Màn hình 4: Hậu chiến (Postwar)
+  // 4.4. Hiển thị Màn hình 4: Phòng lưu niệm Phạm Xuân Ẩn (Postwar)
   function showPostwar() {
     pauseBioVideos();
-    contextScreen.classList.add('hidden');
-    if (bioScreen) bioScreen.classList.add('hidden');
-    if (timelineScreen) timelineScreen.classList.add('hidden');
-
-    if (postwarScreen) {
-      postwarScreen.classList.remove('hidden');
-      postwarScreen.scrollTop = 0;
-    }
-
-    window.location.hash = 'postwar';
+    window.location.href = 'postwar.html';
   }
 
   // Gắn sự kiện nút quay lại trên màn hình Timeline (quay lại Bio)
@@ -457,13 +441,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTimelineNavButtons();
   });
 
-  // Khởi tạo ban đầu
-  renderContextContent();
-  renderBioContent();
-  renderPostwarContent();
-  updateTimelineNavButtons();
-
-  // Kiểm tra URL hash lúc ban đầu khi vừa tải trang
+  // Kiểm tra URL hash ngay lập tức để chuyển màn hình tức thì, loại bỏ hoàn toàn độ trễ/chớp nháy
   const currentHash = window.location.hash;
   if (currentHash === '#timeline') {
     showTimeline();
@@ -474,4 +452,10 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     showContext();
   }
+
+  // Khởi tạo nội dung sau khi trạng thái màn hình đã được xác lập
+  renderContextContent();
+  renderBioContent();
+  renderPostwarContent();
+  updateTimelineNavButtons();
 });
