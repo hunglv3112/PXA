@@ -76,7 +76,7 @@
     }
 
     .dossier {
-      max-width: 860px;
+      max-width: 1060px;
       margin: 0 auto;
       padding: 0 5vw 40px
     }
@@ -146,19 +146,19 @@
     .pin {
       position: relative;
       align-self: start;
-      aspect-ratio: 3/4;
-      background: repeating-linear-gradient(135deg, #dde3e6 0 12px, #d2dbe0 12px 24px);
+      margin: 0;
+      background: #142830;
       border: 6px solid #f7f9fa;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, .35);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      font-size: 12px;
-      color: #5b6770;
-      padding: 14px;
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .32);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
       transform: rotate(2.5deg);
-      transition: transform .8s;
-      font-family: var(--sans)
+      transition: transform .8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .3s ease;
+      font-family: var(--sans);
+      width: 100%;
+      max-width: 380px;
     }
 
     .page:nth-child(even) .pin {
@@ -169,37 +169,95 @@
       transform: rotate(0)
     }
 
-    .pin::before {
-      content: "";
-      position: absolute;
-      top: -22px;
-      left: 50%;
-      width: 16px;
-      height: 44px;
-      border: 3px solid #8a8d92;
-      border-radius: 10px;
-      transform: translateX(-50%) rotate(8deg);
-      z-index: 2
+    .pin:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, .42)
+    }
+
+
+    .pin-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: repeating-linear-gradient(135deg, rgba(22, 48, 58, 0.7) 0 14px, #0e1f25 14px 28px);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .pin-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s ease, filter .3s ease
+    }
+
+    .pin:hover .pin-img {
+      transform: scale(1.025);
+      filter: brightness(1.04)
+    }
+
+    .pin-placeholder {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: 12.5px;
+      color: #8fa7ae;
+      padding: 16px;
+      line-height: 1.5;
+      font-family: var(--sans)
     }
 
     .stamp {
       position: absolute;
       top: 10px;
       right: 10px;
-      z-index: 10;
-      border: 2.5px solid var(--red);
+      z-index: 8;
+      border: 2px solid var(--red);
       color: var(--red);
-      padding: 3px 10px;
+      padding: 3px 9px;
       font-weight: 700;
-      font-size: 11.5px;
+      font-size: 11px;
       letter-spacing: .14em;
       transform: rotate(-6deg);
       border-radius: 3px;
-      background: rgba(238, 241, 242, .95);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+      background: rgba(238, 241, 242, .96);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
       user-select: none;
       pointer-events: none;
       white-space: nowrap
+    }
+
+    /* Chú thích dưới ảnh đồng bộ chuẩn timeline */
+    .pin-caption {
+      padding: 10px 14px;
+      font-size: 12.5px;
+      line-height: 1.45;
+      font-style: italic;
+      color: #b5c7cd;
+      background: rgba(14, 31, 37, 0.96);
+      border-top: 1px solid rgba(143, 193, 212, 0.25);
+      font-family: var(--serif);
+      text-align: left;
+      display: flex;
+      align-items: flex-start;
+      gap: 7px
+    }
+
+    .pin-caption-icon {
+      color: var(--gold);
+      font-style: normal;
+      font-size: 11px;
+      line-height: 1.45;
+      flex-shrink: 0;
+      margin-top: 1px
+    }
+
+    .pin-caption-text {
+      flex: 1
     }
 
     .next {
@@ -335,8 +393,8 @@
       }
 
       .pin {
-        max-width: 160px;
-        margin: 10px auto 0
+        max-width: 320px;
+        margin: 14px auto 0
       }
 
       .body p {
@@ -392,7 +450,7 @@
           backBtn: '‹ Bối cảnh lịch sử',
           backTitle: 'Xem lại Bối cảnh lịch sử',
           hdrTitle: 'Trước khi trở thành "Ẩn"',
-          hdrDesc: 'Khái quát cuộc đời Phạm Xuân Ẩn từ khi sinh ra đến những ngày ông chuẩn bị lên đường du học Mỹ.',
+          hdrDesc: 'Khái quát cuộc đời Phạm Xuân Ẩn từ khi sinh ra cho đến những ngày ông chuẩn bị lên đường du học Mỹ.',
           nextSubtitle: 'HỒ SƠ ĐƯỢC TIẾP TỤC…',
           nextDesc: 'Từ đây, hai cuộc đời chạy song song.',
           nextBtn: 'XEM DÒNG THỜI GIAN 1957 – 1976'
@@ -402,12 +460,15 @@
             tabLabel: 'TRANG 01',
             period: '1927 – 1938',
             stamp: 'HỒ SƠ MẬT',
-            title: 'Tuổi thơ lênh đênh',
+            title: 'Tuổi thơ hiếu động',
             paragraphs: [
-              'Phạm Xuân Ẩn, tên thật Phạm Văn Thành, sinh ngày 12/9/1927 ở Biên Hòa, trong một gia đình Nho học giàu truyền thống yêu nước.',
-              'Chưa đầy 2 tuổi, ông đã theo cha mẹ sống trên thuyền ở vùng U Minh. Mẹ lo sông nước nguy hiểm nên đưa ông về Huế ở với ông bà nội, đến năm 4 tuổi mới trở lại Gia Định.',
-              'Lớn lên, ông là cậu bé hiếu động, hay trốn học đi bắn chim, chọi gà, nuôi cá chọi.'
+              'Phạm Xuân Ẩn (12/9/1927 - 20/9/2006) tên thật là Phạm Văn Thành, sinh ra tại Biên Hòa, Đồng Nai, trong một gia đình trí thức, Nho học, giàu truyền thống yêu nước.',
+              'Tuổi thơ của ông gắn với những lần chuyển chỗ ở liên tục theo công việc của người cha. Khi chưa tròn 2 tuổi, ông theo cha mẹ sống lênh đênh trên thuyền ở vùng sông nước U Minh.',
+              'Sau đó, vì lo cuộc sống sông nước quá nguy hiểm, mẹ đưa ông về Huế sống với ông bà nội. Đến năm 4 tuổi, khi bà nội mất, ông trở về Gia Định sống cùng cha mẹ.'
             ],
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXAVaoNam1936.jpg',
+            caption: 'Phạm Xuân Ẩn lúc nhỏ - Năm 1936 (Nhà tưởng niệm Phạm Xuân Ẩn)',
+            placeholder: '[Ảnh: tuổi thơ<br>hoặc vùng U Minh]',
             pin: '[Ảnh: tuổi thơ<br>hoặc vùng U Minh]'
           },
           {
@@ -416,9 +477,14 @@
             stamp: 'HỒ SƠ MẬT',
             title: 'Bỏ bút nghiên',
             paragraphs: [
-              'Năm 1938, gia đình chuyển về Cần Thơ. Ông học trung học ở trường Collège de Cần Thơ.',
-              'Năm 1945, Cách mạng Tháng Tám nổ ra. Ông bỏ học, gia nhập Thanh niên Tiền Phong và theo lớp công tác tuyên truyền của Việt Minh.'
+              'Đến năm 1938, gia đình ông chuyển về Cần Thơ. Tại đây ông trải qua những năm học trung học ở trường Collège de Cần Thơ.',
+              'Đến năm 1945, khi Cách mạng Tháng Tám nổ ra, ông bỏ học, tham gia tổ chức Thanh niên Tiền Phong và học lớp công tác tuyên truyền của Việt Minh(*).',
+              'Năm 1947, ông trở về Sài Gòn chăm sóc người cha đang bị bệnh lao nặng. Tại đây, ông tham gia và tổ chức các cuộc biểu tình của học sinh, sinh viên nhằm phản đối người Pháp và sau này là người Mỹ, tiêu biểu là phong trào Trần Văn Ơn năm 1950 (*). ',
+              'Qua phong trào trên, Phạm Xuân Ẩn bắt đầu làm việc với bác sĩ Phạm Ngọc Thạch, người phụ trách công tác vận động trí thức và chính trị hóa phong trào học sinh sinh viên ở Nam Kỳ.'
             ],
+            img: '',
+            caption: 'Phong trào Thanh niên Tiền Phong và lớp công tác tuyên truyền Việt Minh (1945).',
+            placeholder: '[Ảnh: Cần Thơ<br>hoặc Thanh niên Tiền Phong]',
             pin: '[Ảnh: Cần Thơ<br>hoặc Thanh niên Tiền Phong]'
           },
           {
@@ -430,6 +496,9 @@
               'Năm 1947, ông về Sài Gòn chăm người cha mắc bệnh lao nặng. Ở đây ông tham gia và tổ chức biểu tình của học sinh, sinh viên chống Pháp, sau này là chống Mỹ.',
               'Tiêu biểu là phong trào Trần Văn Ơn năm 1950. Qua đó ông bắt đầu làm việc với bác sĩ Phạm Ngọc Thạch, người phụ trách vận động trí thức và học sinh sinh viên ở Nam Kỳ.'
             ],
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXADiBieuTinh.webp',
+            caption: 'Đồng chí Phạm Xuân Ẩn cầm biểu ngữ (bên phải) trong đoàn học sinh, sinh viên biểu tình năm 1950 tại Sài Gòn.',
+            placeholder: '[Ảnh: phong trào<br>Trần Văn Ơn]',
             pin: '[Ảnh: phong trào<br>Trần Văn Ơn]'
           },
           {
@@ -441,6 +510,9 @@
               'Cuối năm 1950, ông vào làm ở Sở Thuế quan Sài Gòn. Việt Minh giao ông nắm tình hình vận chuyển hàng hóa, khí tài và quân đội từ Pháp sang Việt Nam. Đó là bước đầu của hoạt động tình báo.',
               'Cuối tháng 1/1952, bác sĩ Thạch gọi ông vào chiến khu D. Ông tưởng mình sẽ cầm súng, ai ngờ được giao làm tình báo, nghề mà ông từng cho là "việc của lũ chó săn, chim mồi".'
             ],
+            img: '',
+            caption: 'Sở Thuế quan Sài Gòn đầu thập niên 1950 — nơi bắt đầu nhiệm vụ tình báo đầu tiên.',
+            placeholder: '[Ảnh: Sở Thuế quan<br>Sài Gòn]',
             pin: '[Ảnh: Sở Thuế quan<br>Sài Gòn]'
           },
           {
@@ -452,6 +524,9 @@
               'Sau khi được bác sĩ Thạch thuyết phục, ông nhận lời và trở thành một trong lứa cán bộ tình báo chiến lược đầu tiên, chuyên nghiên cứu về Mỹ.',
               'Năm 1953, trong rừng U Minh, dưới sự chủ tọa của Lê Đức Thọ, lúc đó là thường trực Xứ ủy Nam Bộ, ông được kết nạp vào Đảng Cộng sản.'
             ],
+            img: '',
+            caption: 'Chiến khu Rừng U Minh — nơi Phạm Xuân Ẩn được kết nạp vào Đảng năm 1953.',
+            placeholder: '[Ảnh: chiến khu D<br>hoặc rừng U Minh]',
             pin: '[Ảnh: chiến khu D<br>hoặc rừng U Minh]'
           },
           {
@@ -463,6 +538,9 @@
               'Năm 1954, chính quyền miền Nam gọi ông nhập ngũ. Ông làm bí thư phòng Chiến tranh tâm lý trong tổng hành dinh quân đội Liên hiệp Pháp, và ở đó kết thân với Đại tá Edward Lansdale, người đứng đầu phái bộ quân sự đặc biệt của Mỹ, thực chất là chỉ huy CIA ở Đông Dương.',
               'Năm 1955, nhờ giỏi tiếng Anh, ông làm sĩ quan liên lạc với các phái bộ CATO và TRIM, trực tiếp dịch tài liệu huấn luyện biệt kích và kế hoạch tác chiến cho cố vấn Mỹ.'
             ],
+            img: '',
+            caption: 'Đại tá Edward Lansdale tại Sài Gòn — người bảo trợ và bạn thân của Phạm Xuân Ẩn.',
+            placeholder: '[Ảnh: Edward Lansdale<br>ở Sài Gòn]',
             pin: '[Ảnh: Edward Lansdale<br>ở Sài Gòn]'
           },
           {
@@ -475,6 +553,9 @@
               '<blockquote>"Tốt lắm, anh muốn sang Mỹ học về quân sự hay dân sự đều được cả. Tôi hoàn toàn ủng hộ."</blockquote>',
               '<p style="margin-top:12px">Năm 1957, ông lên đường sang Mỹ học báo chí, mở ra vỏ bọc nhà báo cho cả sự nghiệp về sau.</p>'
             ],
+            img: 'assets/images/1957_1959/1957_PXADuocDangLenBaoNgayNhapHoc.jpg',
+            caption: 'Phạm Xuân Ẩn được đăng báo tại Mỹ nhân ngày nhập học báo chí tại California (1957).',
+            placeholder: '[Ảnh: Phạm Xuân Ẩn<br>sang Mỹ, 1957]',
             pin: '[Ảnh: Phạm Xuân Ẩn<br>sang Mỹ, 1957]'
           }
         ]
@@ -502,6 +583,9 @@
               '2歳に満たぬ頃、両親とともにウーミン湿地帯の小舟の上で暮らした。水辺の危険を案じた母は彼をフエの祖父母のもとに預け、4歳になってようやくザーディンへと戻った。',
               '成長した彼は好奇心旺盛で活発な少年となり、しばしば学校を抜け出しては鳥撃ちや闘鶏、闘魚の飼育に熱中した。'
             ],
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXAVaoNam1936.jpg',
+            caption: '1936年頃、ビエンホア時代のファム・スアン・アン（約9歳）。',
+            placeholder: '[写真: 幼少期<br>またはウーミン湿地帯]',
             pin: '[写真: 幼少期<br>またはウーミン湿地帯]'
           },
           {
@@ -513,6 +597,9 @@
               '1938年、一家はカントーへと移住。彼はコレージュ・ド・カントー（仏領中等学校）で学んだ。',
               '1945年、八月革命が勃発。学業を退き、前衛青年隊（タンニエン・ティエンフォン）に参加、ベトミンの宣伝工作員講習を受けた。'
             ],
+            img: '',
+            caption: '1945年の南部革命と前衛青年隊（タンニエン・ティエンフォン）。',
+            placeholder: '[写真: カントー<br>または前衛青年隊]',
             pin: '[写真: カントー<br>または前衛青年隊]'
           },
           {
@@ -524,6 +611,9 @@
               '1947年、重度の結核を患う父を看病するためサイゴンへ戻る。ここで彼は学生や生徒たちによる反仏（のちに反米）の街頭デモに参加・組織した。',
               '代表的なものが1950年のチャン・ヴァン・オン追悼運動である。これを機に、南部で知識人・学生運動を統率していたファム・ゴック・タック医師との協力が始まった。'
             ],
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXADiBieuTinh.webp',
+            caption: '1950年、サイゴンで学生・生徒の抗議デモを先導するファム・スアン・アン（右）。',
+            placeholder: '[写真: チャン・ヴァン・オン<br>学生運動]',
             pin: '[写真: チャン・ヴァン・オン<br>学生運動]'
           },
           {
@@ -532,9 +622,12 @@
             stamp: '極秘ファイル',
             title: '最初の任務',
             paragraphs: [
-              '1950年末、彼はサイゴン税関局に職を得た。ベトミンからはフランスからベトナムへの物資・軍備・兵力の輸送動向を把握する任務が下された。これが諜報活動の第一歩となる。',
+              '1950年末、彼はサイゴン税関局に職を得た。ベトミンからはフランスからベトナムへの物资・軍備・兵力の輸送動向を把握する任務が下された。これが諜報活動の第一歩となる。',
               '1952年1月末、タック医師に呼び出され戦区D（拠点）へ赴く。銃を取って戦うものと思っていた彼に命じられたのはスパイ任務だった。かつて彼自身が「猟犬や囮のやること」と蔑んでいた仕事であった。'
             ],
+            img: '',
+            caption: '1950年代初頭のサイゴン税関 — 最初の情報活動任務の拠点。',
+            placeholder: '[写真: サイゴン<br>税関局]',
             pin: '[写真: サイゴン<br>税関局]'
           },
           {
@@ -546,6 +639,9 @@
               'タック医師の説得を受けた彼はこれを受諾、対米研究を専門とする第1期戦略諜報幹部の一員となった。',
               '1953年、ウーミンの密林において、当時南部党委員会常務であったレ・ドゥク・トの主宰のもと、共産党への入党を果たした。'
             ],
+            img: '',
+            caption: '1953年にファム・スアン・アンが共産党に入党したウーミン湿地帯の拠点。',
+            placeholder: '[写真: 戦区D<br>またはウーミンの森]',
             pin: '[写真: 戦区D<br>またはウーミンの森]'
           },
           {
@@ -557,6 +653,9 @@
               '1954年、南ベトナム当局により徴兵される。フランス連合軍総司令部の心理戦部書記を務める中で、米特別軍事顧問団長であり実質的なインドシナCIA責任者であったエドワード・レンズデール大佐と親交を結ぶ。',
               '1955年、卓越した英語力を買われ、CATOおよびTRIM軍事使節団の連絡将校となり、米顧問向けのコマンドー訓練資料や作戦計画の翻訳を直接担当した。'
             ],
+            img: '',
+            caption: 'サイゴンのエドワード・レンズデール大佐 — アンの後見人であり親友。',
+            placeholder: '[写真: サイゴンの<br>エドワード・レンズデール]',
             pin: '[写真: サイゴンの<br>エドワード・レンズデール]'
           },
           {
@@ -569,6 +668,9 @@
               '<blockquote>「素晴らしい。君が軍事であれ民事であれ、米国で学びたいのであれば大賛成だ。全面的に支援しよう。」</blockquote>',
               '<p style="margin-top:12px">1957年、ジャーナリズムを学ぶため米国へと旅立ち、以後の生涯を支える「記者」という偽装の幕を開けた。</p>'
             ],
+            img: 'assets/images/1957_1959/1957_PXADuocDangLenBaoNgayNhapHoc.jpg',
+            caption: '1957年、カリフォルニアでジャーナリズムを学び始めたファム・スアン・アン。',
+            placeholder: '[写真: ファム・スアン・アン<br>渡米（1957年）]',
             pin: '[写真: ファム・スアン・アン<br>渡米（1957年）]'
           }
         ]
@@ -605,6 +707,30 @@
           }
         });
 
+        const imgSrc = p.img || p.image || '';
+        const captionText = p.caption || '';
+        const placeholderText = p.placeholder || p.pin || '[Ảnh tư liệu]';
+
+        let mediaHtml = '';
+        if (imgSrc) {
+          mediaHtml = `
+            <img src="${imgSrc}" alt="${captionText.replace(/"/g, '&quot;')}" class="pin-img" loading="lazy" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='grid';" />
+            <div class="pin-placeholder" style="display:none"><span>${placeholderText}</span></div>
+          `;
+        } else {
+          mediaHtml = `<div class="pin-placeholder"><span>${placeholderText}</span></div>`;
+        }
+
+        let captionHtml = '';
+        if (captionText) {
+          captionHtml = `
+            <figcaption class="pin-caption">
+              <span class="pin-caption-icon">◆</span>
+              <span class="pin-caption-text">${captionText}</span>
+            </figcaption>
+          `;
+        }
+
         html += `
       <article class="page" style="--i:${idx}" data-idx="${idx}">
         <div class="tab mono"><b>${p.tabLabel}</b><span>${p.period}</span></div>
@@ -613,10 +739,12 @@
             <h2>${p.title}</h2>
             ${pContent}
           </div>
-          <div class="pin">
-            <div class="stamp mono">${p.stamp}</div>
-            <span>${p.pin}</span>
-          </div>
+          <figure class="pin">
+            <div class="pin-media">
+              ${mediaHtml}
+            </div>
+            ${captionHtml}
+          </figure>
         </div>
       </article>
     `;
