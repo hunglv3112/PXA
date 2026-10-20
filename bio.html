@@ -89,7 +89,10 @@
       color: var(--ink);
       border-radius: 4px 4px 6px 6px;
       box-shadow: 0 -8px 30px rgba(0, 0, 0, .55);
-      padding-bottom: 26px
+      padding-bottom: 26px;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
     }
 
     .tab {
@@ -100,7 +103,8 @@
       padding: 0 20px;
       border-bottom: 1px solid #b9c3c8;
       font-size: 12px;
-      letter-spacing: .1em
+      letter-spacing: .1em;
+      flex-shrink: 0;
     }
 
     .tab b {
@@ -111,7 +115,9 @@
       display: grid;
       grid-template-columns: 1.3fr 1fr;
       gap: 28px;
-      padding: 22px 26px 0
+      padding: 22px 26px 0;
+      flex: 1;
+      align-items: start;
     }
 
     .body h2 {
@@ -120,13 +126,27 @@
       font-size: clamp(22px, 3vw, 30px);
       line-height: 1.25;
       color: var(--ink);
-      font-weight: 600
+      font-weight: 600;
+      min-height: 1.25em;
     }
 
     .body p {
       margin: 0 0 10px;
       font-size: 15px;
       line-height: 1.65
+    }
+
+    .body blockquote {
+      margin: 12px 0;
+      padding: 10px 16px;
+      background: rgba(22, 48, 58, 0.06);
+      border-left: 3px solid var(--line);
+      font-family: var(--serif);
+      font-style: italic;
+      color: #1a1d21;
+      font-size: 15px;
+      line-height: 1.6;
+      border-radius: 0 4px 4px 0;
     }
 
     .red {
@@ -244,7 +264,9 @@
       text-align: left;
       display: flex;
       align-items: flex-start;
-      gap: 7px
+      gap: 7px;
+      min-height: 54px;
+      box-sizing: border-box;
     }
 
     .pin-caption-icon {
@@ -387,6 +409,10 @@
     }
 
     @media(max-width:640px) {
+      .page {
+        min-height: auto;
+      }
+
       .body {
         grid-template-columns: 1fr;
         padding: 18px 16px 0
@@ -449,6 +475,7 @@
           pageTitle: 'Hồ sơ mật – Phạm Xuân Ẩn đến 1957',
           backBtn: '‹ Bối cảnh lịch sử',
           backTitle: 'Xem lại Bối cảnh lịch sử',
+          hdrBadge: 'HỒ SƠ SỐ 01 · TUYỆT MẬT',
           hdrTitle: 'Trước khi trở thành "Ẩn"',
           hdrDesc: 'Khái quát cuộc đời Phạm Xuân Ẩn từ khi sinh ra cho đến những ngày ông chuẩn bị lên đường du học Mỹ.',
           nextSubtitle: 'HỒ SƠ ĐƯỢC TIẾP TỤC…',
@@ -464,7 +491,6 @@
             paragraphs: [
               'Phạm Xuân Ẩn (12/9/1927 - 20/9/2006) tên thật là Phạm Văn Thành, sinh ra tại Biên Hòa, Đồng Nai, trong một gia đình trí thức, Nho học, giàu truyền thống yêu nước.',
               'Tuổi thơ của ông gắn với những lần chuyển chỗ ở liên tục theo công việc của người cha. Khi chưa tròn 2 tuổi, ông theo cha mẹ sống lênh đênh trên thuyền ở vùng sông nước U Minh.',
-              'Sau đó, vì lo cuộc sống sông nước quá nguy hiểm, mẹ đưa ông về Huế sống với ông bà nội. Đến năm 4 tuổi, khi bà nội mất, ông trở về Gia Định sống cùng cha mẹ.'
             ],
             img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXAVaoNam1936.jpg',
             caption: 'Phạm Xuân Ẩn lúc nhỏ - Năm 1936 (Nhà tưởng niệm Phạm Xuân Ẩn)',
@@ -473,90 +499,119 @@
           },
           {
             tabLabel: 'TRANG 02',
-            period: '1938 – 1945',
+            period: '',
             stamp: 'HỒ SƠ MẬT',
-            title: 'Bỏ bút nghiên',
+            title: '',
             paragraphs: [
-              'Đến năm 1938, gia đình ông chuyển về Cần Thơ. Tại đây ông trải qua những năm học trung học ở trường Collège de Cần Thơ.',
-              'Đến năm 1945, khi Cách mạng Tháng Tám nổ ra, ông bỏ học, tham gia tổ chức Thanh niên Tiền Phong và học lớp công tác tuyên truyền của Việt Minh(*).',
-              'Năm 1947, ông trở về Sài Gòn chăm sóc người cha đang bị bệnh lao nặng. Tại đây, ông tham gia và tổ chức các cuộc biểu tình của học sinh, sinh viên nhằm phản đối người Pháp và sau này là người Mỹ, tiêu biểu là phong trào Trần Văn Ơn năm 1950 (*). ',
-              'Qua phong trào trên, Phạm Xuân Ẩn bắt đầu làm việc với bác sĩ Phạm Ngọc Thạch, người phụ trách công tác vận động trí thức và chính trị hóa phong trào học sinh sinh viên ở Nam Kỳ.'
+              'Sau đó, vì lo cuộc sống sông nước quá nguy hiểm, mẹ đưa ông về Huế sống với ông bà nội. Đến năm 4 tuổi, khi bà nội mất, ông trở về Gia Định sống cùng cha mẹ. ',
+              'Lớn lên, ông là cậu bé ngoan nhưng rất hiếu động, ham chơi hơn ham học, hay trốn học đi bắn chim bằng súng cao su, chọi gà, nuôi cá chọi, bắt cá dưới ruộng, thậm chí còn lẻn ngủ trong quan tài trống nhà người bạn.',
             ],
-            img: '',
-            caption: 'Phong trào Thanh niên Tiền Phong và lớp công tác tuyên truyền Việt Minh (1945).',
-            placeholder: '[Ảnh: Cần Thơ<br>hoặc Thanh niên Tiền Phong]',
-            pin: '[Ảnh: Cần Thơ<br>hoặc Thanh niên Tiền Phong]'
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_TheHocSinh.webp',
+            caption: 'Thẻ học sinh của Phạm Xuân Ẩn vào năm 1936 (Nhà tưởng niệm Phạm Xuân Ẩn)',
+            placeholder: '[Thẻ học sinh của Phạm Xuân Ẩn vào năm 1936 (Nhà tưởng niệm Phạm Xuân Ẩn)]',
+            pin: '[Thẻ học sinh của Phạm Xuân Ẩn vào năm 1936 (Nhà tưởng niệm Phạm Xuân Ẩn)]',
           },
           {
             tabLabel: 'TRANG 03',
-            period: '1947 – 1950',
+            period: '1938 – 1947',
             stamp: 'HỒ SƠ MẬT',
-            title: 'Về Sài Gòn, dẫn đầu biểu tình',
+            title: 'Bước ngoặt năm 1945',
             paragraphs: [
-              'Năm 1947, ông về Sài Gòn chăm người cha mắc bệnh lao nặng. Ở đây ông tham gia và tổ chức biểu tình của học sinh, sinh viên chống Pháp, sau này là chống Mỹ.',
-              'Tiêu biểu là phong trào Trần Văn Ơn năm 1950. Qua đó ông bắt đầu làm việc với bác sĩ Phạm Ngọc Thạch, người phụ trách vận động trí thức và học sinh sinh viên ở Nam Kỳ.'
+              'Đến năm 1938, gia đình ông chuyển về Cần Thơ. Tại đây ông trải qua những năm học trung học ở trường Collège de Cần Thơ.',
+              'Đến năm 1945, khi Cách mạng Tháng Tám nổ ra, ông bỏ học, tham gia tổ chức Thanh niên Tiền Phong và học lớp công tác tuyên truyền của Việt Minh (*).'
             ],
-            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXADiBieuTinh.webp',
-            caption: 'Đồng chí Phạm Xuân Ẩn cầm biểu ngữ (bên phải) trong đoàn học sinh, sinh viên biểu tình năm 1950 tại Sài Gòn.',
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_CachMangThangTam.webp',
+            caption: 'Cách mạng tháng Tám (1945) - Cột mốc dân tộc Việt Nam đứng lên chấm dứt nhiều thập kỷ cai trị của thực dân Pháp. (Dân Việt)',
             placeholder: '[Ảnh: phong trào<br>Trần Văn Ơn]',
             pin: '[Ảnh: phong trào<br>Trần Văn Ơn]'
           },
           {
             tabLabel: 'TRANG 04',
-            period: '1950 – 1952',
+            period: '1947 – 1950',
             stamp: 'HỒ SƠ MẬT',
-            title: 'Nhiệm vụ đầu tiên',
+            title: 'Dẫn đầu cuộc biểu tình',
             paragraphs: [
-              'Cuối năm 1950, ông vào làm ở Sở Thuế quan Sài Gòn. Việt Minh giao ông nắm tình hình vận chuyển hàng hóa, khí tài và quân đội từ Pháp sang Việt Nam. Đó là bước đầu của hoạt động tình báo.',
-              'Cuối tháng 1/1952, bác sĩ Thạch gọi ông vào chiến khu D. Ông tưởng mình sẽ cầm súng, ai ngờ được giao làm tình báo, nghề mà ông từng cho là "việc của lũ chó săn, chim mồi".'
+              'Năm 1947, ông trở về Sài Gòn chăm sóc người cha đang bị bệnh lao nặng. Tại đây, ông tham gia và tổ chức các cuộc biểu tình của học sinh, sinh viên nhằm phản đối người Pháp và sau này là người Mỹ, tiêu biểu là phong trào Trần Văn Ơn năm 1950 (*).',
+              'Qua phong trào trên, Phạm Xuân Ẩn bắt đầu làm việc với bác sĩ Phạm Ngọc Thạch, người phụ trách công tác vận động trí thức và chính trị hóa phong trào học sinh sinh viên ở Nam Kỳ.',
             ],
-            img: '',
-            caption: 'Sở Thuế quan Sài Gòn đầu thập niên 1950 — nơi bắt đầu nhiệm vụ tình báo đầu tiên.',
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXADiBieuTinh.webp',
+            caption: 'Phạm Xuân Ẩn cầm biểu ngữ (bên phải) dẫn đầu trong đoàn sinh viên biểu tình năm 1950. (Dân Trí)',
             placeholder: '[Ảnh: Sở Thuế quan<br>Sài Gòn]',
             pin: '[Ảnh: Sở Thuế quan<br>Sài Gòn]'
           },
           {
             tabLabel: 'TRANG 05',
-            period: '1952 – 1953',
+            period: '1950 – 1954',
             stamp: 'HỒ SƠ MẬT',
-            title: 'Nghề không tự chọn',
+            title: 'Nghề chọn người',
             paragraphs: [
-              'Sau khi được bác sĩ Thạch thuyết phục, ông nhận lời và trở thành một trong lứa cán bộ tình báo chiến lược đầu tiên, chuyên nghiên cứu về Mỹ.',
-              'Năm 1953, trong rừng U Minh, dưới sự chủ tọa của Lê Đức Thọ, lúc đó là thường trực Xứ ủy Nam Bộ, ông được kết nạp vào Đảng Cộng sản.'
+              'Cũng trong năm 1950, ông vào làm ở Sở Thuế quan Sài Gòn. Lúc này, ông được Việt Minh giao nhiệm vụ nắm tình hình vận chuyển hàng hóa, khí tài và quân đội từ Pháp sang Việt Nam. Đây là những bước đầu trong hoạt động tình báo của ông.',
+              'Cuối tháng 1 năm 1952, ông được bác sĩ Phạm Ngọc Thạch gọi vào vào chiến khu D (Tây Ninh) để nhận nhiệm vụ.',
+              'Lúc đầu ông tưởng mình sẽ được cầm súng trực tiếp chiến đấu, nhưng lại được giao làm tình báo, một nghề mà khi đó ông mang định kiến là "công việc của lũ chó săn, chim mồi".',
             ],
-            img: '',
-            caption: 'Chiến khu Rừng U Minh — nơi Phạm Xuân Ẩn được kết nạp vào Đảng năm 1953.',
+
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_BacSiPNT.jpg',
+            caption: 'Bác sĩ Phạm Ngọc Thạch - Chủ tịch Ủy ban Kháng chiến Hành chính Đặc khu Sài Gòn-Chợ Lớn. (TTXVN)',
             placeholder: '[Ảnh: chiến khu D<br>hoặc rừng U Minh]',
             pin: '[Ảnh: chiến khu D<br>hoặc rừng U Minh]'
           },
           {
             tabLabel: 'TRANG 06',
-            period: '1954 – 1955',
+            period: '',
             stamp: 'HỒ SƠ MẬT',
-            title: 'Người bạn của Lansdale',
+            title: '',
             paragraphs: [
-              'Năm 1954, chính quyền miền Nam gọi ông nhập ngũ. Ông làm bí thư phòng Chiến tranh tâm lý trong tổng hành dinh quân đội Liên hiệp Pháp, và ở đó kết thân với Đại tá Edward Lansdale, người đứng đầu phái bộ quân sự đặc biệt của Mỹ, thực chất là chỉ huy CIA ở Đông Dương.',
-              'Năm 1955, nhờ giỏi tiếng Anh, ông làm sĩ quan liên lạc với các phái bộ CATO và TRIM, trực tiếp dịch tài liệu huấn luyện biệt kích và kế hoạch tác chiến cho cố vấn Mỹ.'
+              'Nhưng sau khi được bác sĩ Thạch đã thuyết phục, ông đã nhận lời và bước vào hàng ngũ cán bộ tình báo chiến lược lứa đầu tiên, chuyên nghiên cứu về Mỹ.',
+              'Năm 1953 trong rừng U Minh dưới sự chủ trì của Lê Đức Thọ lúc đó là thường trực Xứ ủy Nam Bộ, Phạm Xuân Ẩn được chính thức kết nạp vào Đảng Cộng Sản Việt Nam.'
             ],
-            img: '',
-            caption: 'Đại tá Edward Lansdale tại Sài Gòn — người bảo trợ và bạn thân của Phạm Xuân Ẩn.',
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXALucLamOSoThueQuan.jpg',
+            caption: 'Phạm Xuân Ẩn khi đang làm việc cho Sở Thuế Quan Sài Gòn vào năm 1953 (Tên người như cuộc đời - Trang 224)',
             placeholder: '[Ảnh: Edward Lansdale<br>ở Sài Gòn]',
             pin: '[Ảnh: Edward Lansdale<br>ở Sài Gòn]'
           },
           {
             tabLabel: 'TRANG 07',
-            period: '1956 – 1957',
+            period: '1954 – 1956',
             stamp: 'HỒ SƠ MẬT',
-            title: 'Tấm vé sang Mỹ',
+            title: 'Cơ duyên lịch sử',
             paragraphs: [
-              'Năm 1956, ông ngỏ ý muốn giải ngũ để đi du học. Lansdale đồng ý ngay, viết thư giới thiệu và thu xếp học bổng cho ông.',
-              '<blockquote>"Tốt lắm, anh muốn sang Mỹ học về quân sự hay dân sự đều được cả. Tôi hoàn toàn ủng hộ."</blockquote>',
-              '<p style="margin-top:12px">Năm 1957, ông lên đường sang Mỹ học báo chí, mở ra vỏ bọc nhà báo cho cả sự nghiệp về sau.</p>'
+              'Năm 1954, Phạm Xuân Ẩn bị chính quyền ở miền Nam gọi đi nhập ngũ và được giao nhiệm vụ làm bí thư phòng Chiến tranh tâm lý trong bộ tổng hành dinh quân đội Liên hiệp Pháp.',
+              'Tại đây, ông kết thân với Đại tá Edward Lansdale, Trưởng phái bộ quân sự đặc biệt của Mỹ (SMM), thực chất là chỉ huy CIA ở Đông Dương (*).  dưới vỏ bọc trưởng phái đoàn viện trợ quân sự Mỹ (US.MAAG) tại Sài Gòn.',
             ],
-            img: 'assets/images/1957_1959/1957_PXADuocDangLenBaoNgayNhapHoc.jpg',
-            caption: 'Phạm Xuân Ẩn được đăng báo tại Mỹ nhân ngày nhập học báo chí tại California (1957).',
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_1954QuanDoiPhap.jpg',
+            caption: 'Phạm Xuân Ẩn (ở giữa) khi làm việc trong quân đội Liên hiệp Pháp năm 1954 (Tên người như cuộc đời - Trang 225)',
             placeholder: '[Ảnh: Phạm Xuân Ẩn<br>sang Mỹ, 1957]',
             pin: '[Ảnh: Phạm Xuân Ẩn<br>sang Mỹ, 1957]'
+          },
+          {
+            tabLabel: 'TRANG 08',
+            period: '',
+            stamp: 'HỒ SƠ MẬT',
+            title: '',
+            paragraphs: [
+              'Năm 1955, nhờ giỏi tiếng Anh và am hiểu cách làm việc phương Tây, ông được cử làm sĩ quan liên lạc cho phái bộ CATO và TRIM (phái bộ hợp tác quân sự Mỹ - Việt - Pháp).',
+              'Ông trực tiếp dịch thuật và thảo luận với cố vấn Mỹ về những tài liệu huấn luyện biệt kích, kế hoạch tác chiến và hậu cần. Ông cũng tham gia vào việc chọn sĩ quan trẻ đưa sang Mỹ đào tạo.',
+            ],
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PhaiBoQuanSuMy.jpg',
+            caption: 'Phạm Xuân Ẩn (hàng trước, thứ hai từ bên phải sang) khi làm việc cho phái bộ quân sự của Mỹ. (Tên người như cuộc đời - Trang 226,227)',
+            placeholder: '[Ảnh tư liệu trang 08]',
+            pin: '[Ảnh tư liệu trang 08]'
+          },
+          {
+            tabLabel: 'TRANG 09',
+            period: '1956',
+            stamp: 'HỒ SƠ MẬT',
+            title: 'Khởi đầu của hai thân phận',
+            paragraphs: [
+              'Năm 1956 nhờ kết thân với Edward Lansdale từ trước nên khi ông Ẩn ngỏ ý muốn giải ngũ để đi Mỹ du học, Lansdale vui vẻ đáp ngay:',
+              '<blockquote>"Tốt lắm, anh muốn sang Mỹ học về quân sự hay dân sự đều được cả. Tôi hoàn toàn ủng hộ."</blockquote>',
+              ' Lansdale đã trực tiếp viết thư giới thiệu, thu xếp học bổng cho ông.',
+              'Từ đây, Phạm Xuân Ẩn bước vào hành trình du học Mỹ để rèn luyện những phẩm chất cần thiết cho những năm tháng dài sống với hai thân phận, vừa là người tình báo, vừa là nhà báo giữa lòng Sài Gòn.',
+            ],
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_DaiTaEL.jpg',
+            caption: 'Đại tá Edward Lansdale - Chỉ huy cơ quan tình báo CIA của Mỹ ở Đông Dương. (USAF via AP)',
+            placeholder: '[Ảnh tư liệu trang 09]',
+            pin: '[Ảnh tư liệu trang 09]'
           }
         ]
       },
@@ -672,6 +727,34 @@
             caption: '1957年、カリフォルニアでジャーナリズムを学び始めたファム・スアン・アン。',
             placeholder: '[写真: ファム・スアン・アン<br>渡米（1957年）]',
             pin: '[写真: ファム・スアン・アン<br>渡米（1957年）]'
+          },
+          {
+            tabLabel: 'ページ 08',
+            period: '1954 – 1955',
+            stamp: '極秘ファイル',
+            title: 'ページ 08 タイトル',
+            paragraphs: [
+              'ページ 08 の本文（第1段落）...',
+              'ページ 08 の本文（第2段落）...'
+            ],
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_DaiTaEL.jpg',
+            caption: 'サイゴンのエドワード・レンズデール大佐 — アンの後見人であり親友。',
+            placeholder: '[写真資料 ページ 08]',
+            pin: '[写真資料 ページ 08]'
+          },
+          {
+            tabLabel: 'ページ 09',
+            period: '1955 – 1956',
+            stamp: '極秘ファイル',
+            title: 'ページ 09 タイトル',
+            paragraphs: [
+              'ページ 09 の本文（第1段落）...',
+              'ページ 09 の本文（第2段落）...'
+            ],
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PhaiBoQuanSuMy.jpg',
+            caption: 'CATOおよびTRIM軍事使節団 — 連絡将校として翻訳を担当した。',
+            placeholder: '[写真資料 ページ 09]',
+            pin: '[写真資料 ページ 09]'
           }
         ]
       }
@@ -729,6 +812,13 @@
               <span class="pin-caption-text">${captionText}</span>
             </figcaption>
           `;
+        } else {
+          captionHtml = `
+            <figcaption class="pin-caption" style="visibility:hidden">
+              <span class="pin-caption-icon">◆</span>
+              <span class="pin-caption-text">&nbsp;</span>
+            </figcaption>
+          `;
         }
 
         html += `
@@ -736,7 +826,7 @@
         <div class="tab mono"><b>${p.tabLabel}</b><span>${p.period}</span></div>
         <div class="body">
           <div>
-            <h2>${p.title}</h2>
+            <h2>${p.title ? p.title : '&nbsp;'}</h2>
             ${pContent}
           </div>
           <figure class="pin">
