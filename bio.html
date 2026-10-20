@@ -78,7 +78,7 @@
     .dossier {
       max-width: 1060px;
       margin: 0 auto;
-      padding: 0 5vw 40px
+      padding: 0 5vw 0
     }
 
     .page {
@@ -93,6 +93,10 @@
       min-height: 480px;
       display: flex;
       flex-direction: column;
+    }
+
+    .page:last-child {
+      margin-bottom: 50px;
     }
 
     .tab {
@@ -282,6 +286,18 @@
       flex: 1
     }
 
+    /* Chú thích footnote ở đáy trang */
+    .page-footnote {
+      margin: auto 26px 0;
+      padding-top: 10px;
+      border-top: 1px solid rgba(26, 29, 33, 0.12);
+      font-size: 12.5px;
+      line-height: 1.55;
+      font-style: italic;
+      color: #5b6770;
+      font-family: var(--sans);
+    }
+
     .next {
       text-align: center;
       padding: 10px 5vw 90px
@@ -433,6 +449,11 @@
         font-size: 10.5px;
         padding: 2px 8px
       }
+
+      .page-footnote {
+        margin: 14px 16px 0;
+        font-size: 11.5px;
+      }
     }
   </style>
 </head>
@@ -459,9 +480,9 @@
   <main class="dossier" id="dossierContainer"></main>
 
   <section class="next">
-    <p class="mono" id="nextSubtitle">HỒ SƠ ĐƯỢC TIẾP TỤC…</p>
-    <div class="yr">1957</div>
-    <p id="nextDesc">Từ đây, hai cuộc đời chạy song song.</p>
+    <p class="mono" id="nextSubtitle"></p>
+    <div class="yr"></div>
+    <p id="nextDesc">Từ đây, hai cuộc đời chạy song song</p>
     <a href="index.html#timeline" id="nextBtn">XEM DÒNG THỜI GIAN 1957 – 1976</a>
   </section>
 
@@ -475,12 +496,12 @@
           pageTitle: 'Hồ sơ mật – Phạm Xuân Ẩn đến 1957',
           backBtn: '‹ Bối cảnh lịch sử',
           backTitle: 'Xem lại Bối cảnh lịch sử',
-          hdrBadge: 'HỒ SƠ SỐ 01 · TUYỆT MẬT',
+          hdrBadge: '',
           hdrTitle: 'Trước khi trở thành "Ẩn"',
           hdrDesc: 'Khái quát cuộc đời Phạm Xuân Ẩn từ khi sinh ra cho đến những ngày ông chuẩn bị lên đường du học Mỹ.',
-          nextSubtitle: 'HỒ SƠ ĐƯỢC TIẾP TỤC…',
+          nextSubtitle: '',
           nextDesc: 'Từ đây, hai cuộc đời chạy song song.',
-          nextBtn: 'XEM DÒNG THỜI GIAN 1957 – 1976'
+          nextBtn: 'DÒNG THỜI GIAN 1957 – 1976'
         },
         pages: [
           {
@@ -520,6 +541,7 @@
               'Đến năm 1938, gia đình ông chuyển về Cần Thơ. Tại đây ông trải qua những năm học trung học ở trường Collège de Cần Thơ.',
               'Đến năm 1945, khi Cách mạng Tháng Tám nổ ra, ông bỏ học, tham gia tổ chức Thanh niên Tiền Phong và học lớp công tác tuyên truyền của Việt Minh (*).'
             ],
+            footnote: '(*) Việt Minh là tổ chức mặt trận dân tộc do Hồ Chí Minh sáng lập ngày 19/5/1941, nhằm đấu tranh giành độc lập cho Việt Nam.',
             img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_CachMangThangTam.webp',
             caption: 'Cách mạng tháng Tám (1945) - Cột mốc dân tộc Việt Nam đứng lên chấm dứt nhiều thập kỷ cai trị của thực dân Pháp. (Dân Việt)',
             placeholder: '[Ảnh: phong trào<br>Trần Văn Ơn]',
@@ -534,6 +556,7 @@
               'Năm 1947, ông trở về Sài Gòn chăm sóc người cha đang bị bệnh lao nặng. Tại đây, ông tham gia và tổ chức các cuộc biểu tình của học sinh, sinh viên nhằm phản đối người Pháp và sau này là người Mỹ, tiêu biểu là phong trào Trần Văn Ơn năm 1950 (*).',
               'Qua phong trào trên, Phạm Xuân Ẩn bắt đầu làm việc với bác sĩ Phạm Ngọc Thạch, người phụ trách công tác vận động trí thức và chính trị hóa phong trào học sinh sinh viên ở Nam Kỳ.',
             ],
+            footnote: '(*) Phong trào Trần Văn Ơn (1950) là phong trào yêu nước của học sinh, sinh viên Sài Gòn – Gia Định chống Pháp, nổ ra sau khi học sinh Trần Văn Ơn bị Pháp bắn chết.',
             img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXADiBieuTinh.webp',
             caption: 'Phạm Xuân Ẩn cầm biểu ngữ (bên phải) dẫn đầu trong đoàn sinh viên biểu tình năm 1950. (Dân Trí)',
             placeholder: '[Ảnh: Sở Thuế quan<br>Sài Gòn]',
@@ -578,6 +601,7 @@
               'Năm 1954, Phạm Xuân Ẩn bị chính quyền ở miền Nam gọi đi nhập ngũ và được giao nhiệm vụ làm bí thư phòng Chiến tranh tâm lý trong bộ tổng hành dinh quân đội Liên hiệp Pháp.',
               'Tại đây, ông kết thân với Đại tá Edward Lansdale, Trưởng phái bộ quân sự đặc biệt của Mỹ (SMM), thực chất là chỉ huy CIA ở Đông Dương (*).  dưới vỏ bọc trưởng phái đoàn viện trợ quân sự Mỹ (US.MAAG) tại Sài Gòn.',
             ],
+            footnote: '(*) Đông Dương (Liên Bang Đông Dương) là tên gọi chỉ chung ba nước Việt Nam, Lào và Campuchia thời thực dân Pháp đô hộ.',
             img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_1954QuanDoiPhap.jpg',
             caption: 'Phạm Xuân Ẩn (ở giữa) khi làm việc trong quân đội Liên hiệp Pháp năm 1954 (Tên người như cuộc đời - Trang 225)',
             placeholder: '[Ảnh: Phạm Xuân Ẩn<br>sang Mỹ, 1957]',
@@ -620,139 +644,143 @@
           pageTitle: '機密ファイル – ファム・スアン・アン 1957年まで',
           backBtn: '‹ 歴史的背景',
           backTitle: '歴史的背景へ戻る',
-          hdrBadge: '機密ファイル No.01 · 極秘',
+          hdrBadge: '',
           hdrTitle: '「アン（隠）」となる前夜',
           hdrDesc: '誕生から渡米の日に至るまでのファム・スアン・アンの生涯。機密ファイルが今、一枚ずつ開かれる。',
-          nextSubtitle: 'ファイルは続く…',
+          nextSubtitle: '',
           nextDesc: 'ここから、二つの顔を持つ人生が並走する。',
-          nextBtn: 'タイムラインを見る 1957 – 1976'
+          nextBtn: 'タイムライン 1957 – 1976'
         },
         pages: [
           {
             tabLabel: 'ページ 01',
             period: '1927 – 1938',
             stamp: '極秘ファイル',
-            title: '流転の幼少期',
+            title: '活発な幼少期',
             paragraphs: [
-              'ファム・スアン・アン、本名ファム・ヴァン・タインは、1927年9月12日にビエンホアの愛国心あふれる儒学の家系に生まれた。',
-              '2歳に満たぬ頃、両親とともにウーミン湿地帯の小舟の上で暮らした。水辺の危険を案じた母は彼をフエの祖父母のもとに預け、4歳になってようやくザーディンへと戻った。',
-              '成長した彼は好奇心旺盛で活発な少年となり、しばしば学校を抜け出しては鳥撃ちや闘鶏、闘魚の飼育に熱中した。'
+              'ファム・スアン・アン（1927年9月12日 – 2006年9月20日）、本名ファム・ヴァン・タイン。ドンナイ省ビエンホアの愛国心あふれる儒学・知識人の家系に生まれた。',
+              '幼少期は、父の仕事の都合で転居を繰り返す日々だった。2歳に満たぬ頃、両親とともにウーミン湿地帯の小舟の上で暮らした。'
             ],
             img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXAVaoNam1936.jpg',
-            caption: '1936年頃、ビエンホア時代のファム・スアン・アン（約9歳）。',
+            caption: '幼少期のファム・スアン・アン - 1936年（ファム・スアン・アン記念館）',
             placeholder: '[写真: 幼少期<br>またはウーミン湿地帯]',
             pin: '[写真: 幼少期<br>またはウーミン湿地帯]'
           },
           {
             tabLabel: 'ページ 02',
-            period: '1938 – 1945',
+            period: '',
             stamp: '極秘ファイル',
-            title: '筆を措いて',
+            title: '',
             paragraphs: [
-              '1938年、一家はカントーへと移住。彼はコレージュ・ド・カントー（仏領中等学校）で学んだ。',
-              '1945年、八月革命が勃発。学業を退き、前衛青年隊（タンニエン・ティエンフォン）に参加、ベトミンの宣伝工作員講習を受けた。'
+              'その後、水上生活の危険を案じた母は、彼をフエの祖父母のもとに預けた。4歳になり祖母が亡くなると、ザーディンへ戻り両親と暮らした。',
+              '成長した彼は素直な子であったが非常にやんちゃで、勉強よりも遊びに夢中だった。パチンコでの鳥撃ち、闘鶏、闘魚の飼育、水田での魚獲りのために学校を抜け出し、友人の家にある空の棺桶に潜り込んで眠ることさえあった。'
             ],
-            img: '',
-            caption: '1945年の南部革命と前衛青年隊（タンニエン・ティエンフォン）。',
-            placeholder: '[写真: カントー<br>または前衛青年隊]',
-            pin: '[写真: カントー<br>または前衛青年隊]'
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_TheHocSinh.webp',
+            caption: '1936年のファム・スアン・アンの学生証（ファム・スアン・アン記念館）',
+            placeholder: '[1936年のファム・スアン・アンの学生証（ファム・スアン・アン記念館）]',
+            pin: '[1936年のファム・スアン・アンの学生証（ファム・スアン・アン記念館）]'
           },
           {
             tabLabel: 'ページ 03',
-            period: '1947 – 1950',
+            period: '1938 – 1947',
             stamp: '極秘ファイル',
-            title: 'サイゴンへ、デモの先頭に立つ',
+            title: '1945年の転機',
             paragraphs: [
-              '1947年、重度の結核を患う父を看病するためサイゴンへ戻る。ここで彼は学生や生徒たちによる反仏（のちに反米）の街頭デモに参加・組織した。',
-              '代表的なものが1950年のチャン・ヴァン・オン追悼運動である。これを機に、南部で知識人・学生運動を統率していたファム・ゴック・タック医師との協力が始まった。'
+              '1938年、一家はカントーへと移住。彼はコレージュ・ド・カントー（カントー中等学校）で中学時代を過ごした。',
+              '1945年に八月革命が勃発すると、学業を中断して前衛青年隊（タンニエン・ティエンフォン）に参加し、ベトミン（*）の宣伝工作員講習を受けた。'
             ],
-            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXADiBieuTinh.webp',
-            caption: '1950年、サイゴンで学生・生徒の抗議デモを先導するファム・スアン・アン（右）。',
+            footnote: '(*) ベトミン（ベトナム独立同盟会）は、ベトナムの独立を勝ち取るため、1941年5月19日にホー・チ・ミンによって設立された民族統一戦線組織。',
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_CachMangThangTam.webp',
+            caption: '八月革命（1945年）- ベトナム民族が立ち上がり、数十年にわたるフランス植民地支配に終止符を打った歴史的転換点。（Dan Viet）',
             placeholder: '[写真: チャン・ヴァン・オン<br>学生運動]',
             pin: '[写真: チャン・ヴァン・オン<br>学生運動]'
           },
           {
             tabLabel: 'ページ 04',
-            period: '1950 – 1952',
+            period: '1947 – 1950',
             stamp: '極秘ファイル',
-            title: '最初の任務',
+            title: 'デモの先頭に立つ',
             paragraphs: [
-              '1950年末、彼はサイゴン税関局に職を得た。ベトミンからはフランスからベトナムへの物资・軍備・兵力の輸送動向を把握する任務が下された。これが諜報活動の第一歩となる。',
-              '1952年1月末、タック医師に呼び出され戦区D（拠点）へ赴く。銃を取って戦うものと思っていた彼に命じられたのはスパイ任務だった。かつて彼自身が「猟犬や囮のやること」と蔑んでいた仕事であった。'
+              '1947年、重度の結核を患う父を看病するためサイゴンへ戻る。ここで彼は学生や生徒たちによる反仏、のちに反米の街頭抗議デモに参加・組織した。代表的なものが1950年のチャン・ヴァン・オン運動（*）である。',
+              'この運動を通じて、ファム・スアン・アンは南部における知識人・学生運動の指導と政治組織化を担当していたファム・ゴック・タック医師と活動を共にするようになった。'
             ],
-            img: '',
-            caption: '1950年代初頭のサイゴン税関 — 最初の情報活動任務の拠点。',
+            footnote: '(*) チャン・ヴァン・オン運動（1950年）は、学生のチャン・ヴァン・オンがフランス軍に射殺された事件を機に勃発した、サイゴン・ザーディンの生徒・学生による反仏愛国運動。',
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXADiBieuTinh.webp',
+            caption: '1950年、抗議デモの先頭で横断幕を掲げるファム・スアン・アン（右）。（Dan Tri）',
             placeholder: '[写真: サイゴン<br>税関局]',
             pin: '[写真: サイゴン<br>税関局]'
           },
           {
             tabLabel: 'ページ 05',
-            period: '1952 – 1953',
+            period: '1950 – 1954',
             stamp: '極秘ファイル',
-            title: '自ら選ばざる天命',
+            title: '仕事が人を選ぶ',
             paragraphs: [
-              'タック医師の説得を受けた彼はこれを受諾、対米研究を専門とする第1期戦略諜報幹部の一員となった。',
-              '1953年、ウーミンの密林において、当時南部党委員会常務であったレ・ドゥク・トの主宰のもと、共産党への入党を果たした。'
+              '1950年、彼はサイゴン税関局に就職した。この時、ベトミンからフランスからベトナムへの物資、軍備、軍隊の輸送状況を把握する任務を与えられた。これが彼の諜報活動の第一歩となった。',
+              '1952年1月末、ファム・ゴック・タック医師に呼ばれ、任務を受けるため戦区D（タイニン）へと向かった。',
+              '当初、彼は自ら銃を手にして直接戦うものと思っていたが、命じられたのはスパイ任務だった。当時彼にとってその職業は「猟犬や囮のやる仕事」という偏見を抱くものであった。'
             ],
-            img: '',
-            caption: '1953年にファム・スアン・アンが共産党に入党したウーミン湿地帯の拠点。',
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_BacSiPNT.jpg',
+            caption: 'ファム・ゴック・タック医師 - サイゴン＝チョロン特別区抗戦行政委員会委員長。（TTXVN）',
             placeholder: '[写真: 戦区D<br>またはウーミンの森]',
             pin: '[写真: 戦区D<br>またはウーミンの森]'
           },
           {
             tabLabel: 'ページ 06',
-            period: '1954 – 1955',
+            period: '',
             stamp: '極秘ファイル',
-            title: '深部潜入',
+            title: '',
             paragraphs: [
-              '1954年、南ベトナム当局により徴兵される。フランス連合軍総司令部の心理戦部書記を務める中で、米特別軍事顧問団長であり実質的なインドシナCIA責任者であったエドワード・レンズデール大佐と親交を結ぶ。',
-              '1955年、卓越した英語力を買われ、CATOおよびTRIM軍事使節団の連絡将校となり、米顧問向けのコマンドー訓練資料や作戦計画の翻訳を直接担当した。'
+              'しかしタック医師の説得を受け、彼はこれを受諾し、対米研究を専門とする第一期戦略諜報幹部の隊列に加わった。',
+              '1953年、ウーミンの密林において、当時南部党委員会常務であったレ・ドゥク・トの主宰のもと、ファム・スアン・アンはベトナム共産党に正式に入党した。'
             ],
-            img: '',
-            caption: 'サイゴンのエドワード・レンズデール大佐 — アンの後見人であり親友。',
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXALucLamOSoThueQuan.jpg',
+            caption: '1953年、サイゴン税関局で勤務していた頃のファム・スアン・アン（『名はその生涯のごとく』224ページ）',
             placeholder: '[写真: サイゴンの<br>エドワード・レンズデール]',
             pin: '[写真: サイゴンの<br>エドワード・レンズデール]'
           },
           {
             tabLabel: 'ページ 07',
-            period: '1956 – 1957',
+            period: '1954 – 1956',
             stamp: '極秘ファイル',
-            title: '米国への切符',
+            title: '歴史的巡り合わせ',
             paragraphs: [
-              '1956年、留学のため除隊を申し出る。レンズデールは即座に同意し、推薦状を執筆して奨学金の手配を行った。',
-              '<blockquote>「素晴らしい。君が軍事であれ民事であれ、米国で学びたいのであれば大賛成だ。全面的に支援しよう。」</blockquote>',
-              '<p style="margin-top:12px">1957年、ジャーナリズムを学ぶため米国へと旅立ち、以後の生涯を支える「記者」という偽装の幕を開けた。</p>'
+              '1954年、ファム・スアン・アンは南ベトナム政権により徴兵され、フランス連合軍総司令部の心理戦部書記の任務を与えられた。',
+              'ここで彼は、サイゴン駐在の米軍事援助顧問団（US.MAAG）団長を装いつつ、実質的にはインドシナにおけるCIAの最高責任者（*）であった米特別軍事使節団（SMM）トップのエドワード・レンズデール大佐と親密な関係を築いた。'
             ],
-            img: 'assets/images/1957_1959/1957_PXADuocDangLenBaoNgayNhapHoc.jpg',
-            caption: '1957年、カリフォルニアでジャーナリズムを学び始めたファム・スアン・アン。',
+            footnote: '(*) インドシナ（フランス領インドシナ連邦）は、フランス植民地支配期におけるベトナム、ラオス、カンボジアの3カ国を総称した呼称。',
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_1954QuanDoiPhap.jpg',
+            caption: '1954年、フランス連合軍で勤務していた頃のファム・スアン・アン（中央）（『名はその生涯のごとく』225ページ）',
             placeholder: '[写真: ファム・スアン・アン<br>渡米（1957年）]',
             pin: '[写真: ファム・スアン・アン<br>渡米（1957年）]'
           },
           {
             tabLabel: 'ページ 08',
-            period: '1954 – 1955',
+            period: '',
             stamp: '極秘ファイル',
-            title: 'ページ 08 タイトル',
+            title: '',
             paragraphs: [
-              'ページ 08 の本文（第1段落）...',
-              'ページ 08 の本文（第2段落）...'
+              '1955年、卓越した英語力と西洋の仕事スタイルへの深い理解を買われ、CATOおよびTRIM（米・越・仏軍事協力使節団）の連絡将校に任命された。',
+              '彼は米軍顧問とともにコマンドー訓練教材、作戦計画、兵站に関する資料の翻訳や協議を直接担った。また、米国へ派遣して訓練を受けさせる若手将校の選考にも携わった。'
             ],
-            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_DaiTaEL.jpg',
-            caption: 'サイゴンのエドワード・レンズデール大佐 — アンの後見人であり親友。',
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PhaiBoQuanSuMy.jpg',
+            caption: '米軍事使節団で勤務していた頃のファム・スアン・アン（前列右から2人目）（『名はその生涯のごとく』226–227ページ）',
             placeholder: '[写真資料 ページ 08]',
             pin: '[写真資料 ページ 08]'
           },
           {
             tabLabel: 'ページ 09',
-            period: '1955 – 1956',
+            period: '1956',
             stamp: '極秘ファイル',
-            title: 'ページ 09 タイトル',
+            title: '二つの顔の始まり',
             paragraphs: [
-              'ページ 09 の本文（第1段落）...',
-              'ページ 09 の本文（第2段落）...'
+              '1956年、かねてより親交の深かったエドワード・レンズデールに、アンが除隊して米国へ留学したい意向を伝えると、レンズデールは快く答えた：',
+              '<blockquote>「素晴らしい。君が軍事であれ民事であれ、米国で学びたいのであれば大賛成だ。全面的に支援しよう。」</blockquote>',
+              'レンズデールは自ら推薦状を執筆し、彼のために奨学金を手配した。',
+              'ここから、ファム・スアン・アンは米国留学の道へと進み、サイゴンの真ん中で諜報員とジャーナリストという「二つの顔」を持って生き抜く長き年月に必要な資質を磨くこととなった。'
             ],
-            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PhaiBoQuanSuMy.jpg',
-            caption: 'CATOおよびTRIM軍事使節団 — 連絡将校として翻訳を担当した。',
+            img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_DaiTaEL.jpg',
+            caption: 'エドワード・レンズデール大佐 - インドシナにおける米CIA機関の最高責任者。（USAF via AP）',
             placeholder: '[写真資料 ページ 09]',
             pin: '[写真資料 ページ 09]'
           }
@@ -821,6 +849,11 @@
           `;
         }
 
+        let footnoteHtml = '';
+        if (p.footnote) {
+          footnoteHtml = `<div class="page-footnote">${p.footnote}</div>`;
+        }
+
         html += `
       <article class="page" style="--i:${idx}" data-idx="${idx}">
         <div class="tab mono"><b>${p.tabLabel}</b><span>${p.period}</span></div>
@@ -836,6 +869,7 @@
             ${captionHtml}
           </figure>
         </div>
+        ${footnoteHtml}
       </article>
     `;
       });
