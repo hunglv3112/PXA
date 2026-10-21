@@ -17,11 +17,12 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/context.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/page-nav.css">
 
   <!-- Khắc phục hiện tượng chớp/nhấp nháy màn hình (FOUC) khi mở trực tiếp timeline từ trang khác -->
   <script>
     (function () {
-      if (window.location.hash === '#timeline') {
+      if (window.location.hash === '#timeline' || !window.location.hash) {
         document.documentElement.classList.add('init-timeline');
       }
     })();
@@ -44,6 +45,51 @@
   </style>
 </head>
 <body>
+
+  <!-- ========================================================================
+       BỘ ĐIỀU HƯỚNG CHUYỂN TRANG DẠNG DROPDOWN (Góc trên bên trái)
+       ======================================================================== -->
+  <nav class="page-nav-dropdown" id="pageNavDropdown" aria-label="Điều hướng các trang">
+    <button type="button" class="page-nav-btn" id="pageNavBtn" aria-expanded="false" aria-haspopup="true" title="Chuyển đến trang khác">
+      <svg class="page-nav-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+      </svg>
+      <span class="page-nav-label" id="pageNavLabel">Chuyển trang</span>
+      <svg class="page-nav-arrow" viewBox="0 0 20 20" fill="currentColor" width="12" height="12" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <div class="page-nav-menu" id="pageNavMenu" role="menu">
+      <div class="page-nav-header">
+        <span class="page-nav-header-title" id="pageNavHeaderTitle">DANH MỤC TRANG</span>
+      </div>
+      <a href="intro.html" class="page-nav-item" data-page="intro" role="menuitem">
+        <span class="page-nav-item-icon">📖</span>
+        <span class="page-nav-item-text" data-vi="1. Lý do chọn đề tài" data-ja="1. 研究の背景・理由">1. Lý do chọn đề tài</span>
+        <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
+      </a>
+      <a href="context.html" class="page-nav-item" data-page="context" role="menuitem">
+        <span class="page-nav-item-icon">⏳</span>
+        <span class="page-nav-item-text" data-vi="2. Bối cảnh lịch sử" data-ja="2. 当時の歴史的背景">2. Bối cảnh lịch sử</span>
+        <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
+      </a>
+      <a href="bio.html" class="page-nav-item" data-page="bio" role="menuitem">
+        <span class="page-nav-item-icon">👤</span>
+        <span class="page-nav-item-text" data-vi="3. Tiểu sử (Trước 1957)" data-ja="3. 人物伝（1957年以前）">3. Tiểu sử (Trước 1957)</span>
+        <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
+      </a>
+      <a href="index.html#timeline" class="page-nav-item active" data-page="timeline" role="menuitem">
+        <span class="page-nav-item-icon">⏱️</span>
+        <span class="page-nav-item-text" data-vi="4. Dòng thời gian (1957–1976)" data-ja="4. 年表タイムライン（1957–1976）">4. Dòng thời gian (1957–1976)</span>
+        <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
+      </a>
+      <a href="postwar.html" class="page-nav-item" data-page="postwar" role="menuitem">
+        <span class="page-nav-item-icon">🕊️</span>
+        <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm hậu chiến" data-ja="5. 戦後記念ルーム">5. Phòng lưu niệm hậu chiến</span>
+        <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
+      </a>
+    </div>
+  </nav>
 
   <!-- ========================================================================
        BỘ CHỌN ĐA NGÔN NGỮ NỔI: TIẾNG VIỆT / TIẾNG NHẬT (Language Switcher)
@@ -71,8 +117,8 @@
        ======================================================================== -->
   <div class="timeline-screen hidden" id="timelineScreen">
 
-    <!-- Nút quay lại Tiểu sử -->
-    <button type="button" class="btn-back-to-context" id="btnBackToBio" title="Xem lại Tiểu sử Phạm Xuân Ẩn">
+    <!-- Nút quay lại Tiểu sử (đã thay bằng dropdown) -->
+    <button type="button" class="btn-back-to-context" id="btnBackToBio" title="Xem lại Tiểu sử Phạm Xuân Ẩn" style="display: none;">
       <span>‹ Tiểu sử</span>
     </button>
 
@@ -198,6 +244,8 @@
   <script src="js/context.js"></script>
   <!-- 9. Logic ứng dụng chính, cuộn ngang timeline -->
   <script src="js/app.js"></script>
+  <!-- 10. Logic điều hướng chuyển trang dạng dropdown -->
+  <script src="js/page-nav.js"></script>
 
 </body>
 </html>

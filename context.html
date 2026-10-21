@@ -10,6 +10,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="css/page-nav.css">
   <style>
     :root {
       --bg: #0e1f25;
@@ -418,37 +419,6 @@
       filter: brightness(1.03);
     }
 
-    /* Nút quay lại trang Lý do chọn đề tài */
-    .btn-back-intro {
-      position: fixed;
-      top: 16px;
-      left: 20px;
-      z-index: 110;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 16px;
-      background: rgba(14, 31, 37, 0.9);
-      border: 1px solid rgba(143, 193, 212, 0.45);
-      border-radius: 999px;
-      color: var(--text);
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: .06em;
-      font-weight: 600;
-      backdrop-filter: blur(6px);
-      transition: all .2s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
-      font-family: var(--sans);
-    }
-
-    .btn-back-intro:hover {
-      border-color: var(--gold);
-      color: #fff;
-      background: rgba(18, 38, 46, 0.98);
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, .6);
-    }
 
     @media(max-width:720px) {
       header {
@@ -500,9 +470,48 @@
     <button type="button" class="lang-btn" data-lang="ja" title="日本語に切り替える">日本語</button>
   </nav>
 
-  <!-- Nút quay lại trang Lý do chọn đề tài -->
-  <a href="intro.html" class="btn-back-intro" id="btnBackIntro">‹ <span id="btnBackIntroText">Lý do chọn đề
-      tài</span></a>
+  <!-- Bộ điều hướng chuyển trang dạng dropdown (ở góc trên bên trái) -->
+  <nav class="page-nav-dropdown" id="pageNavDropdown" aria-label="Điều hướng các trang">
+    <button type="button" class="page-nav-btn" id="pageNavBtn" aria-expanded="false" aria-haspopup="true" title="Chuyển đến trang khác">
+      <svg class="page-nav-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+      </svg>
+      <span class="page-nav-label" id="pageNavLabel">Chuyển trang</span>
+      <svg class="page-nav-arrow" viewBox="0 0 20 20" fill="currentColor" width="12" height="12" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <div class="page-nav-menu" id="pageNavMenu" role="menu">
+      <div class="page-nav-header">
+        <span class="page-nav-header-title" id="pageNavHeaderTitle">DANH MỤC TRANG</span>
+      </div>
+      <a href="intro.html" class="page-nav-item" data-page="intro" role="menuitem">
+        <span class="page-nav-item-icon">📖</span>
+        <span class="page-nav-item-text" data-vi="1. Lý do chọn đề tài" data-ja="1. 研究の背景・理由">1. Lý do chọn đề tài</span>
+        <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
+      </a>
+      <a href="context.html" class="page-nav-item active" data-page="context" role="menuitem">
+        <span class="page-nav-item-icon">⏳</span>
+        <span class="page-nav-item-text" data-vi="2. Bối cảnh lịch sử" data-ja="2. 当時の歴史的背景">2. Bối cảnh lịch sử</span>
+        <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
+      </a>
+      <a href="bio.html" class="page-nav-item" data-page="bio" role="menuitem">
+        <span class="page-nav-item-icon">👤</span>
+        <span class="page-nav-item-text" data-vi="3. Tiểu sử (Trước 1957)" data-ja="3. 人物伝（1957年以前）">3. Tiểu sử (Trước 1957)</span>
+        <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
+      </a>
+      <a href="index.html#timeline" class="page-nav-item" data-page="timeline" role="menuitem">
+        <span class="page-nav-item-icon">⏱️</span>
+        <span class="page-nav-item-text" data-vi="4. Dòng thời gian (1957–1976)" data-ja="4. 年表タイムライン（1957–1976）">4. Dòng thời gian (1957–1976)</span>
+        <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
+      </a>
+      <a href="postwar.html" class="page-nav-item" data-page="postwar" role="menuitem">
+        <span class="page-nav-item-icon">🕊️</span>
+        <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm hậu chiến" data-ja="5. 戦後記念ルーム">5. Phòng lưu niệm hậu chiến</span>
+        <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
+      </a>
+    </div>
+  </nav>
 
   <header>
     <small id="hdrSmall">BỐI CẢNH LỊCH SỬ VIỆT NAM THỜI BẤY GIỜ</small>
@@ -584,7 +593,7 @@
           },
           {
             yr: '1946 – 1954',
-            title: 'Hai miền một dải đất, một lời hẹn chưa thành',
+            title: 'Một dải đất, hai miền Bắc - Nam và lời hẹn chưa thành',
             paragraphs: [
               'Đến năm 1954, chiến thắng Điện Biên Phủ lịch sử tưởng chừng như đã mở ra cho đất nước này một nền độc lập, khi Hiệp định Genève được ký kết, buộc Pháp phải rút khỏi Đông Dương (*). Việt Nam tạm thời bị chia cắt thành hai miền tại vĩ tuyến 17, và một cuộc tổng tuyển cử được dự kiến tổ chức vào tháng 7 năm 1956 để thống nhất đất nước.',
               'Tuy nhiên, Mỹ, một quốc gia vốn đã viện trợ cho Pháp suốt nhiều năm trong chiến tranh Đông Dương và đang theo đuổi chính sách ngăn chặn chủ nghĩa cộng sản, lo ngại rằng chính quyền VNDCCH sẽ giành thắng lợi nếu tổng tuyển cử diễn ra và trở thành một mắt xích trong sự lan rộng của chủ nghĩa cộng sản ở Đông Nam Á.'
@@ -764,6 +773,7 @@
     // Khởi chạy khi tải trang
     renderPage();
   </script>
+  <script src="js/page-nav.js"></script>
 </body>
 
 </html>

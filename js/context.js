@@ -414,14 +414,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Lắng nghe sự kiện hashchange của trình duyệt
   window.addEventListener('hashchange', () => {
     const hash = window.location.hash;
-    if (hash === '#timeline') {
+    if (hash === '#timeline' || !hash) {
       showTimeline();
     } else if (hash === '#bio') {
       showBio();
     } else if (hash === '#postwar') {
       showPostwar();
     } else {
-      showContext();
+      showTimeline();
     }
   });
 
@@ -435,14 +435,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Kiểm tra URL hash ngay lập tức để chuyển màn hình tức thì, loại bỏ hoàn toàn độ trễ/chớp nháy
   const currentHash = window.location.hash;
-  if (currentHash === '#timeline') {
+  if (currentHash === '#timeline' || !currentHash) {
     showTimeline();
   } else if (currentHash === '#bio') {
     showBio();
   } else if (currentHash === '#postwar') {
     showPostwar();
   } else {
-    showContext();
+    showTimeline();
   }
 
   // Khởi tạo nội dung sau khi trạng thái màn hình đã được xác lập

@@ -118,8 +118,10 @@ button {
 
 .rail span {
   writing-mode: vertical-rl;
+  -webkit-text-orientation: sideways;
+  text-orientation: sideways;
   transform: rotate(180deg);
-  font-family: var(--serif);
+  font-family: var(--serif), "Noto Sans JP", sans-serif;
   font-size: 28px;
   font-weight: 600;
   letter-spacing: 0.03em;

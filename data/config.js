@@ -28,11 +28,11 @@ window.APP_CONFIG = {
     // Nội dung cột mở đầu (Intro Column) ở góc trái timeline
     intro: {
       name: "Phạm Xuân Ẩn",
-      years: "1927 – 2006",
-      subtitle: "Hai nửa một đời người",
-      descriptionTop: "Một con người, hai số phận song hành. Nửa trên là cuộc đời một điệp viên chiến lược lỗi lạc mang bí số X6, hoạt động trong lòng đối phương suốt hai thập kỷ.",
-      descriptionBottom: "Nửa dưới là một ký giả tài ba của Time và Reuters, bạn thân của giới tướng lĩnh và phóng viên quốc tế. Cả hai cùng vận hành trên một trục lịch sử.",
-      guideText: "Kéo chuột ngang hoặc cuộn để khám phá. Bấm vào từng mốc để xem chi tiết. Chấm vàng là mốc cần đối chiếu tư liệu."
+      years: "Một con người với hai số phận song hành",
+      subtitle: "",
+      descriptionTop: "Nửa trên là cuộc đời một nhà tình báo chiến lược lỗi lạc mang bí số X6, hoạt động trong lòng đối phương suốt hai thập kỷ.",
+      descriptionBottom: "Nửa dưới là ký giả của Time và Reuters, thân với cả giới tướng lĩnh Sài Gòn - Mỹ lẫn báo chí quốc tế. Cả hai cùng vận hành trên một trục lịch sử.",
+      guideText: "Kéo chuột ngang hoặc cuộn để khám phá. Bấm vào từng mốc để xem chi tiết."
     },
 
     // Cấu hình nhãn nút và chữ hệ thống
@@ -98,7 +98,7 @@ window.APP_CONFIG = {
 };
 
 // Cung cấp hàm lấy cấu hình theo ngôn ngữ hiện tại
-window.getAppConfig = function(lang) {
+window.getAppConfig = function (lang) {
   const l = lang || (window.getCurrentLang ? window.getCurrentLang() : 'vi');
   return window.APP_CONFIG[l] || window.APP_CONFIG.vi;
 };
