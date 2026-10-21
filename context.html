@@ -132,9 +132,9 @@
     /* Trục thời gian dòng sự kiện */
     .tl {
       position: relative;
-      max-width: 1040px;
+      max-width: 1300px;
       margin: 0 auto;
-      padding: 20px 5vw 60px
+      padding: 20px 4vw 80px;
     }
 
     .tl::before {
@@ -144,16 +144,21 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background: linear-gradient(var(--line), var(--gold), var(--line))
+      background: linear-gradient(var(--line), var(--gold), var(--line));
     }
 
     .ev {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      gap: 52px;
       align-items: center;
-      min-height: 62vh;
-      position: relative
+      min-height: 68vh;
+      padding: 70px 0;
+      position: relative;
+    }
+
+    .ev:not(:last-child) {
+      margin-bottom: 50px;
     }
 
     .ev::after {
@@ -166,84 +171,92 @@
       border-radius: 50%;
       background: var(--bg);
       border: 2px solid var(--gold);
-      transition: .4s
+      transition: .4s;
     }
 
     .ev.on::after {
       background: var(--gold);
-      box-shadow: 0 0 18px var(--gold)
+      box-shadow: 0 0 18px var(--gold);
     }
 
-    /* Khung ảnh bên trái: Lùi sang bên trái một chút, có khung chú thích chuẩn timeline */
+    /* Khung ảnh bên trái: Viền chữ nhật trắng bo góc nhẹ chuẩn phong cách hồ sơ/timeline */
     .ph-frame {
       width: 100%;
-      max-width: 440px;
+      max-width: 460px;
       justify-self: end;
       margin-right: 20px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
+      border: 6px solid #f7f9fa;
+      border-radius: 6px;
       overflow: hidden;
-      background: var(--panel);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, .5);
+      background: #142830;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .45);
       opacity: .45;
       transform: translateX(-36px);
-      transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1), opacity .6s ease
+      transition: transform .6s cubic-bezier(0.16, 1, 0.3, 1), opacity .6s ease, box-shadow .3s ease;
     }
 
     .ev.on .ph-frame {
       opacity: 1;
-      transform: translateX(-16px)
+      transform: translateX(-16px);
+    }
+
+    .ph-frame:hover {
+      box-shadow: 0 14px 34px rgba(0, 0, 0, .55);
     }
 
     .ph-img {
       aspect-ratio: 4/3;
       width: 100%;
       background: repeating-linear-gradient(135deg, rgba(22, 48, 58, 0.7) 0 14px, #0e1f25 14px 28px);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 16px;
-      color: var(--mute);
-      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
       overflow: hidden;
-      font-family: var(--sans)
+      font-family: var(--sans);
     }
 
     .ph-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block
+      display: block;
+      transition: transform .4s ease, filter .3s ease;
     }
 
-    /* Khung ghi chú dưới ảnh chuẩn như popup modal timeline */
+    .ph-frame:hover .ph-img img {
+      transform: scale(1.025);
+      filter: brightness(1.03);
+    }
+
+    /* Khung ghi chú dưới ảnh đồng bộ chuẩn timeline và bio */
     .ph-caption {
       padding: 10px 14px;
       font-size: 12.5px;
-      line-height: 1.45;
+      line-height: 1.55;
       font-style: italic;
       color: #b5c7cd;
-      background: rgba(14, 31, 37, 0.95);
-      border-top: 1px solid var(--line);
+      background: rgba(14, 31, 37, 0.98);
+      border-top: 1px solid rgba(143, 193, 212, 0.25);
       display: flex;
       align-items: flex-start;
-      gap: 6px;
+      gap: 7px;
       text-align: left;
-      font-family: var(--serif)
+      font-family: var(--serif);
+      box-sizing: border-box;
     }
 
-    .ph-caption::before {
-      content: "•";
+    .ph-caption-icon {
       color: var(--gold);
-      font-size: 14px;
-      line-height: 1;
-      flex: 0 0 auto;
-      margin-top: 2px
+      font-style: normal;
+      font-size: 11px;
+      line-height: 1.55;
+      flex-shrink: 0;
+      margin-top: 1px;
     }
 
     .ph-caption-text {
-      flex: 1 1 auto
+      flex: 1 1 auto;
     }
 
     /* Cột chữ bên phải: hàng ngang đi xuống dần */
@@ -251,12 +264,12 @@
       opacity: .35;
       transform: translateX(24px);
       transition: .6s;
-      padding-left: 6px
+      padding-left: 6px;
     }
 
     .ev.on .txt {
       opacity: 1;
-      transform: none
+      transform: none;
     }
 
     .yr {
@@ -268,23 +281,40 @@
       padding: 4px 12px;
       border-radius: 999px;
       font-weight: 600;
-      font-family: var(--sans)
+      font-family: var(--sans);
     }
 
     .txt h3 {
-      margin: 12px 0 8px;
+      margin: 12px 0 10px;
       font-size: clamp(22px, 2.6vw, 30px);
       color: #fff;
       line-height: 1.25;
-      font-weight: 600
+      font-weight: 600;
     }
 
     .txt p {
-      margin: 0;
+      margin: 0 0 12px;
       color: #c9d8dd;
       font-weight: 400;
       font-size: 15px;
-      line-height: 1.7
+      line-height: 1.7;
+    }
+
+    .txt p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Chú thích footnote ở đáy mỗi đoạn sự kiện */
+    .page-footnote {
+      margin-top: 20px;
+      margin-bottom: 6px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(143, 193, 212, 0.25);
+      font-size: 13px;
+      line-height: 1.6;
+      font-style: italic;
+      color: #8fa7ae;
+      font-family: var(--sans);
     }
 
     /* Khối hé lộ nhân vật (The Big Reveal) */
@@ -295,7 +325,7 @@
       gap: 36px;
       padding: 70px 6vw;
       background: radial-gradient(circle at 75% 50%, #16303a, #0e1f25 70%);
-      border-top: 1px solid var(--line)
+      border-top: 1px solid var(--line);
     }
 
     .reveal .q {
@@ -305,19 +335,23 @@
       padding-left: 16px;
       margin: 18px 0 26px;
       font-family: var(--serif);
-      font-size: 17px
+      font-size: 17px;
     }
 
     .reveal .q p {
-      margin: 0 0 4px
+      margin: 0 0 4px;
     }
 
     .reveal h2 {
       margin: 0;
-      font-size: clamp(28px, 4.8vw, 52px);
-      line-height: 1.1;
+      font-size: clamp(22px, 3.2vw, 38px);
+      line-height: 1.25;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .reveal-highlight {
       color: var(--gold2);
-      font-weight: 600
     }
 
     .reveal h2 small {
@@ -327,7 +361,7 @@
       font-weight: 600;
       letter-spacing: .08em;
       font-family: var(--sans);
-      margin-bottom: 6px
+      margin-bottom: 6px;
     }
 
     .btn {
@@ -343,26 +377,45 @@
       border-radius: 999px;
       transition: all .25s ease;
       box-shadow: 0 8px 25px rgba(235, 203, 69, .35);
-      font-family: var(--sans)
+      font-family: var(--sans);
     }
 
     .btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 12px 32px rgba(235, 203, 69, .55);
-      filter: brightness(1.06)
+      filter: brightness(1.06);
     }
 
+    /* Khung ảnh của The Big Reveal: chữ nhật tỉ lệ 16:9 phù hợp với ảnh hai cuộc đời */
     .reveal .ph-frame {
       opacity: 1;
       transform: none;
-      aspect-ratio: auto;
-      max-width: 360px;
+      max-width: 520px;
       margin-inline: auto;
-      width: 100%
+      width: 100%;
+      border: 6px solid #f7f9fa;
+      border-radius: 6px;
+      background: #142830;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, .5);
+      overflow: hidden;
     }
 
     .reveal .ph-img {
-      aspect-ratio: 3/4
+      aspect-ratio: 16/9;
+      padding: 0;
+    }
+
+    .reveal .ph-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s ease, filter .3s ease;
+    }
+
+    .reveal .ph-frame:hover .ph-img img {
+      transform: scale(1.025);
+      filter: brightness(1.03);
     }
 
     /* Nút quay lại trang Lý do chọn đề tài */
@@ -386,7 +439,7 @@
       backdrop-filter: blur(6px);
       transition: all .2s ease;
       box-shadow: 0 4px 12px rgba(0, 0, 0, .4);
-      font-family: var(--sans)
+      font-family: var(--sans);
     }
 
     .btn-back-intro:hover {
@@ -394,16 +447,16 @@
       color: #fff;
       background: rgba(18, 38, 46, 0.98);
       transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, .6)
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .6);
     }
 
     @media(max-width:720px) {
       header {
-        padding-top: 60px
+        padding-top: 60px;
       }
 
       .tl::before {
-        left: 14px
+        left: 14px;
       }
 
       .ev {
@@ -411,27 +464,28 @@
         gap: 20px;
         padding-left: 34px;
         min-height: auto;
-        padding-block: 36px
+        padding-block: 40px;
+        margin-bottom: 30px;
       }
 
       .ev::after {
         left: 7px;
-        top: 44px
+        top: 44px;
       }
 
       .ph-frame {
         justify-self: start;
         margin-right: 0;
         max-width: 100%;
-        transform: none
+        transform: none;
       }
 
       .ev.on .ph-frame {
-        transform: none
+        transform: none;
       }
 
       .reveal {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -467,19 +521,20 @@
         <p id="q3">âm thầm thu thập những thông tin tuyệt mật.</p>
       </div>
       <h2>
-        <small id="revealBadge">THE BIG REVEAL</small>
-        <span id="revealName">ÔNG TÊN PHẠM XUÂN ẨN.</span>
+        <small id="revealBadge"></small>
+        <span id="revealName">ÔNG TÊN <span class="reveal-highlight">PHẠM XUÂN ẨN.</span></span>
       </h2>
       <a class="btn" href="bio.html" id="revealBtn">KHÁM PHÁ CÂU CHUYỆN CỦA ÔNG</a>
     </div>
 
     <div class="ph-frame">
       <div class="ph-img">
-        <span id="revealImgText">[Ảnh: Phạm Xuân Ẩn<br>cầm máy ảnh, ngồi quán cà phê]</span>
+        <img src="assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg"
+          alt="Hai cuộc đời của Phạm Xuân Ẩn (Tình báo và Nhà báo)" id="revealImg" loading="lazy">
       </div>
       <div class="ph-caption">
-        <span class="ph-caption-text" id="revealImgCaption">Ký giả Phạm Xuân Ẩn tại quán cà phê Givral trên đường
-          Catinat (nay là đường Đồng Khởi, TP.HCM)</span>
+        <span class="ph-caption-icon">◆</span>
+        <span class="ph-caption-text" id="revealImgCaption">Hai cuộc đời của Phạm Xuân Ẩn (Tình báo và Nhà báo)</span>
       </div>
     </div>
   </section>
@@ -491,47 +546,63 @@
     const CONTEXT_DATA = {
       vi: {
         meta: {
-          pageTitle: 'Bối cảnh lịch sử 1858–1975',
-          hdrSmall: 'BỐI CẢNH LỊCH SỬ VIỆT NAM THỜI BẤY GIỜ',
-          hdrTitle: '1858 – 1975',
+          pageTitle: '',
+          hdrSmall: '',
+          hdrTitle: 'BỐI CẢNH LỊCH SỬ VIỆT NAM THỜI BẤY GIỜ',
           backIntroText: 'Lý do chọn đề tài',
-          revealIntro: 'Giữa bối cảnh ấy, một người đàn ông đã thay đổi cục diện cuộc chiến…',
-          q1: 'Ông không hoạt động như một người lính…',
-          q2: 'Ông ra vào các phòng họp, tòa soạn, quán cà phê…',
-          q3: 'âm thầm thu thập những thông tin tuyệt mật.',
-          revealName: 'ÔNG TÊN PHẠM XUÂN ẨN.',
+          revealIntro: 'Giữa bối cảnh ấy, một người đàn ông góp phần thay đổi cục diện cuộc chiến đã xuất hiện.',
+          q1: 'Ông không hoạt động như một người lính ngoài mặt trận…',
+          q2: 'Ông ra vào các phòng họp, tòa soạn, quán cà phê và những trung tâm quyền lực của Sài Gòn…',
+          q3: 'Để âm thầm thu thập những thông tin tuyệt mật...',
+          revealBadge: '',
+          revealName: 'ÔNG TÊN <span class="reveal-highlight">PHẠM XUÂN ẨN</span>',
           revealBtn: 'KHÁM PHÁ CÂU CHUYỆN CỦA ÔNG',
-          revealImgText: '[Ảnh: Phạm Xuân Ẩn<br>cầm máy ảnh, ngồi quán cà phê]',
-          revealImgCaption: 'Ký giả Phạm Xuân Ẩn tại quán cà phê Givral trên đường Catinat (nay là đường Đồng Khởi, TP.HCM)'
+          revealImg: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
+          revealImgCaption: 'Hai cuộc đời của Phạm Xuân Ẩn (Tình báo và Nhà báo)'
         },
         events: [
           {
             yr: '1858 – 1945',
-            title: 'Pháp xâm lược & đô hộ',
-            desc: 'Từ năm 1858, Pháp nổ súng tấn công Đà Nẵng, rồi từng bước chiếm Nam Kỳ và áp đặt ách đô hộ lên toàn Việt Nam. Hơn tám thập kỷ sau, đất nước vẫn nằm dưới ách thực dân, các phong trào yêu nước nối tiếp nhau nổi lên.',
-            imgText: '[Ảnh: tàu chiến Pháp<br>tại Đà Nẵng, 1858]',
-            caption: 'Tàu chiến liên quân Pháp - Tây Ban Nha nổ súng tại bán đảo Sơn Trà, Đà Nẵng (1/9/1858)'
+            title: 'Cuộc xâm lược của thực dân Pháp',
+            paragraphs: [
+              'Trong suốt chiều dài lịch sử, dân tộc Việt Nam đã nhiều lần phải đứng lên bảo vệ nền độc lập trước các cuộc xâm lược từ bên ngoài. Đến năm 1858, đất nước này phải đối mặt với thực dân Pháp, một cường quốc phương Tây có tàu chiến, súng đạn hiện đại và tham vọng biến Việt Nam thành thuộc địa.',
+              'Cai quản Việt Nam lúc bấy giờ là triều đình phong kiến nhà Nguyễn đã không thể cản nổi sức mạnh quân sự của Pháp, để rồi quân Pháp từng bước mở rộng quyền kiểm soát trên toàn đất nước, mở đầu cho gần một thế kỷ Việt Nam sống dưới ách đô hộ.'
+            ],
+            img: 'assets/images/BoiCanhLichSu/BCLS_TauChienPhapTanCongVN.webp',
+            caption: 'Tàu chiến quân Pháp tấn công Đà Nẵng ngày 1-9-1858, mở đầu cho cuộc chiến tranh xâm lược Việt Nam. (Nguồn: Trung tâm lưu trữ Bộ Quốc phòng Pháp)'
           },
           {
-            yr: '1945',
-            title: 'Cách mạng Tháng Tám',
-            desc: 'Tháng 8/1945, tổng khởi nghĩa thành công trên cả nước. Ngày 2/9/1945, tại Quảng trường Ba Đình, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn độc lập, khai sinh nước Việt Nam Dân chủ Cộng hòa.',
-            imgText: '[Ảnh: Hồ Chí Minh<br>năm 1945]',
-            caption: 'Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình (2/9/1945)'
+            yr: '1945 – 1946',
+            title: 'Xương máu hóa thành độc lập, độc lập giữ lại bằng máu xương',
+            paragraphs: [
+              'Trải qua nhiều thập kỷ đấu tranh với biết bao máu xương đổ xuống, năm 1945, dưới sự lãnh đạo của Hồ Chí Minh, Cách mạng Tháng Tám (*) thành công. Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập, khai sinh ra nước Việt Nam Dân chủ Cộng hòa ( từ đây sẽ viết tắt là VNDCCH).',
+              'Thế nhưng hòa bình chưa được bao lâu, Pháp trở lại với quyết tâm xâm lược dân tộc này một lần nữa, dẫn tới cuộc kháng chiến chống Pháp bùng nổ cuối năm 1946 và kéo dài chín năm.'
+            ],
+            footnote: '(*) Cách mạng tháng Tám là cuộc tổng khởi nghĩa của nhân dân Việt Nam do chủ tịch Hồ Chí Minh lãnh đạo, giành chính quyền từ tay phát xít Nhật và thực dân Pháp',
+            img: 'assets/images/BoiCanhLichSu/BCLS_BacHoDocBanTuyenNgon.jpg',
+            caption: 'Ngày 2-9-1945, tại Quảng trường Ba Đình, Hà Nội, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập, khai sinh ra nước Việt Nam Dân chủ Cộng hòa. (Nguồn: QĐNDVN).'
           },
           {
             yr: '1946 – 1954',
-            title: 'Kháng chiến chống Pháp & Điện Biên Phủ',
-            desc: 'Cuộc kháng chiến toàn quốc bùng nổ cuối năm 1946 và kéo dài gần chín năm. Chiến thắng Điện Biên Phủ năm 1954 buộc Pháp phải ký Hiệp định Genève, chấm dứt chiến tranh ở Đông Dương.',
-            imgText: '[Ảnh: chiến thắng<br>Điện Biên Phủ, 1954]',
-            caption: 'Lá cờ Quyết chiến Quyết thắng tung bay trên nóc hầm De Castries tại Điện Biên Phủ (7/5/1954)'
+            title: 'Hai miền một dải đất, một lời hẹn chưa thành',
+            paragraphs: [
+              'Đến năm 1954, chiến thắng Điện Biên Phủ lịch sử tưởng chừng như đã mở ra cho đất nước này một nền độc lập, khi Hiệp định Genève được ký kết, buộc Pháp phải rút khỏi Đông Dương (*). Việt Nam tạm thời bị chia cắt thành hai miền tại vĩ tuyến 17, và một cuộc tổng tuyển cử được dự kiến tổ chức vào tháng 7 năm 1956 để thống nhất đất nước.',
+              'Tuy nhiên, Mỹ, một quốc gia vốn đã viện trợ cho Pháp suốt nhiều năm trong chiến tranh Đông Dương và đang theo đuổi chính sách ngăn chặn chủ nghĩa cộng sản, lo ngại rằng chính quyền VNDCCH sẽ giành thắng lợi nếu tổng tuyển cử diễn ra và trở thành một mắt xích trong sự lan rộng của chủ nghĩa cộng sản ở Đông Nam Á.'
+            ],
+            footnote: '(*) Đông Dương (Liên Bang Đông Dương) là tên gọi chỉ chung ba nước Việt Nam, Lào và Campuchia thời thực dân Pháp đô hộ.',
+            img: 'assets/images/BoiCanhLichSu/BCLS_DienBienPhu.jpg',
+            caption: 'Ngày 7-5-1954, toàn bộ Tập đoàn cứ điểm của Pháp ở Điện Biên Phủ bị tiêu diệt. Kết thúc cuộc chiến kéo dài 9 năm chống thực dân Pháp của dân tộc Việt Nam. (Nguồn: QĐNDVN)'
           },
           {
             yr: '1954 – 1975',
-            title: 'Vĩ tuyến 17 & Mỹ can thiệp',
-            desc: 'Hiệp định Genève lấy vĩ tuyến 17 làm giới tuyến quân sự tạm thời, đất nước chia thành hai miền. Mỹ ngày càng can thiệp sâu vào miền Nam, dẫn đến cuộc chiến tranh kéo dài đến ngày 30/4/1975.',
-            imgText: '[Ảnh: bản đồ vĩ tuyến 17<br>và lính Mỹ]',
-            caption: 'Cầu Hiền Lương bắc qua sông Bến Hải — giới tuyến quân sự chia đôi đất nước tại vĩ tuyến 17'
+            title: 'Hai phe đối lập, bốn bên giằng co',
+            paragraphs: [
+              'Vì vậy, Mỹ trực tiếp dựng nên và hậu thuẫn chính quyền Việt Nam Cộng hòa (từ đây sẽ viết tắt là VNCH) ở miền Nam do Ngô Đình Diệm đứng đầu, rồi can thiệp khiến cuộc tổng tuyển cử năm 1956 theo Hiệp định Genève không được diễn ra. Đến cuối năm 1960, Mặt trận Dân tộc Giải phóng miền Nam Việt Nam ra đời, tập hợp lực lượng đấu tranh ở miền Nam và sát cánh cùng Việt Nam Dân chủ Cộng hòa.',
+              'Từ đây, trên mảnh đất này hình thành hai phe đối lập với bốn bên liên quan, một phía là Việt Nam Dân chủ Cộng hòa và Mặt trận Dân tộc Giải phóng miền Nam Việt Nam, phía kia là Việt Nam Cộng hòa và Mỹ.',
+              'Đó là cuộc chiến kéo dài hơn hai mươi năm, trong đó sự đối đầu không chỉ diễn ra trên chiến trường mà còn trên mặt trận chính trị, ngoại giao và tình báo.'
+            ],
+            img: 'assets/images/BoiCanhLichSu/BCLS_CoBonPhe.jpg',
+            caption: 'Việt Nam Dân chủ Cộng hòa (Nửa trên, bên phải)<br><br>Mặt trận Dân tộc Giải phóng miền Nam Việt Nam (Nửa dưới, bên phải)<br><br>Mỹ (Nửa trên, bên trái)<br><br>Việt Nam Cộng hòa (Nửa dưới, bên trái)<br><br>Cầu Hiền Lương (ở giữa) bắc ngang sông Bến Hải (Quảng Trị), nơi vĩ tuyến 17 chia đôi Việt Nam thành hai miền Bắc và Nam'
           }
         ]
       },
@@ -545,40 +616,54 @@
           q1: '彼は通常の兵士のように戦うことはなかった…',
           q2: '作戦室、新聞社、カフェを自在に行き来し…',
           q3: '静かに、極秘の軍事情報を収集し続けた。',
-          revealBadge: 'THE BIG REVEAL',
-          revealName: 'その名は、ファム・スアン・アン。',
+          revealBadge: '',
+          revealName: 'その名は、<span class="reveal-highlight">ファム・スアン・アン。</span>',
           revealBtn: '彼の物語を紐解く',
-          revealImgText: '[写真: カフェでカメラを手にする<br>ファム・スアン・アン]',
-          revealImgCaption: 'カティナ通り（現ドンコイ通り）のカフェ・ジヴラルで取材中の記者ファム・スアン・アン'
+          revealImg: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
+          revealImgCaption: 'ファム・スアン・アンの二つの人生（諜報員とジャーナリスト）'
         },
         events: [
           {
             yr: '1858年 – 1945年',
             title: 'フランスの侵略と植民地支配',
-            desc: '1858年、フランス軍はダナンを砲撃して侵略を開始し、コーチシナを占領、ベトナム全土へ植民地支配を拡大した。80年以上にわたり国は過酷な支配下に置かれ、愛国運動が各地で次々と蜂起した。',
-            imgText: '[写真: 1858年ダナン沖の<br>フランス軍艦]',
-            caption: 'ダナン・ソンチャ半島を砲撃するフランス・スペイン連合艦隊（1858年9月1日）'
+            paragraphs: [
+              '長い歴史の中で、ベトナム民族は外からの侵略に対して幾度となく独立を守るために立ち上がってきた。1858年、近代的な軍艦や銃火器を備え、ベトナムを植民地化する野望を抱いた西欧の列強、フランス植民地主義者に直面することとなった。',
+              '当時ベトナムを統治していた阮朝（グエン朝）封建宮廷は、フランスの軍事力に対抗することができず、フランス軍は次第に全国へと支配権を拡大し、ベトナムが約1世紀に及ぶ植民地支配下に置かれる時代の幕開けとなった。'
+            ],
+            img: 'assets/images/BoiCanhLichSu/BCLS_TauChienPhapTanCongVN.webp',
+            caption: '1858年9月1日、ダナンを砲撃するフランス軍艦。ベトナム侵略戦争の始まり。（出典：フランス国防省歴史記録館）'
           },
           {
-            yr: '1945年',
-            title: '八月革命',
-            desc: '1945年8月、全国で蜂起が成功。同年9月2日、バーディン広場にてホー・チ・ミン主席が独立宣言を朗読し、ベトナム民主共和国が誕生した。',
-            imgText: '[写真: 1945年の<br>ホー・チ・ミン]',
-            caption: 'バーディン広場で独立宣言を読み上げるホー・チ・ミン主席（1945年9月2日）'
+            yr: '1945年 – 1946年',
+            title: '八月革命とベトナム民主共和国の誕生',
+            paragraphs: [
+              '幾世代にもわたる多大な犠牲を払った闘争を経て、1945年、ホー・チ・ミンの指導のもと八月革命（*）が成功を収めた。1945年9月2日、ホー・チ・ミン主席は独立宣言を朗読し、ベトナム民主共和国（以下VNDCCH）の樹立を宣言した。',
+              'しかし平穏な時は長く続かず、フランスは再びこの地を侵略する決意をもって舞い戻り、1946年末にフランスに対する抗戦が勃発、9年間にわたって続くこととなった。'
+            ],
+            footnote: '(*) 八月革命は、ホー・チ・ミン主席指導のもと、日本の軍国主義およびフランス植民地支配から政権を奪還したベトナム人民による全国総蜂起である。',
+            img: 'assets/images/BoiCanhLichSu/BCLS_BacHoDocBanTuyenNgon.jpg',
+            caption: '1945年9月2日、ハノイのバーディン広場にて、ホー・チ・ミン主席が独立宣言を朗読し、ベトナム民主共和国が誕生。（出典：QĐNDVN）'
           },
           {
             yr: '1946年 – 1954年',
-            title: '対仏抗戦とディエンビエンフーの戦い',
-            desc: '1946年末に全国抗戦が勃発し、9年近くに及ぶ過酷な戦いが続いた。1954年のディエンビエンフーの劇的な大勝利は、フランスにジュネーヴ協定の調印を余儀なくさせ、インドシナ戦争に終止符を打った。',
-            imgText: '[写真: 1954年ディエンビエンフーの<br>勝利]',
-            caption: 'ディエンビエンフーのド・カストリ司令部屋根に掲げられた勝利の旗（1954年5月7日）'
+            title: 'ディエンビエンフーの勝利とジュネーヴ協定',
+            paragraphs: [
+              '1954年、歴史的なディエンビエンフーの勝利により、ジュネーヴ協定が調印され、フランスはインドシナ（*）からの撤退を余儀なくされ、独立の道が開かれたかに見えた。ベトナムは北緯17度線で暫定的に南北に分断され、国土統一に向けた全国総選挙が1956年7月に実施される予定となっていた。',
+              'しかし、インドシナ戦争を通じて長年フランスを支援し、共産主義封じ込め政策を推進していた米国は、総選挙が実施されればVNDCCHが勝利し、東南アジアにおける共産主義拡大の結節点となることを強く警戒した。'
+            ],
+            footnote: '(*) インドシナ（フランス領インドシナ連邦）は、フランス植民地統治下におけるベトナム、ラオス、カンボジアの3カ国を指す総称。',
+            img: 'assets/images/BoiCanhLichSu/BCLS_DienBienPhu.jpg',
+            caption: '1954年5月7日、ディエンビエンフーのフランス軍要塞集団が壊滅。ベトナム民族による9年間に及ぶ対仏抗戦が終結。（出典：QĐNDVN）'
           },
           {
             yr: '1954年 – 1975年',
-            title: '北緯17度線と米国の軍事介入',
-            desc: 'ジュネーヴ協定により北緯17度線が軍事境界線と定められ、祖国は南北に分断された。米国は南ベトナムへの軍事介入を深め、1975年4月30日の終戦まで激しい戦乱が続いた。',
-            imgText: '[写真: 北緯17度線の地図と<br>米軍]',
-            caption: 'ベンハイ川に架かるヒエンルオン橋 — 国土を南北に分断した北緯17度線の境界線'
+            title: '北緯17度線と「二つの陣営・四当事者」の対立',
+            paragraphs: [
+              'そのため、米国は南ベトナムにゴ・ディン・ジエムを首班とするベトナム共和国（以下VNCH）政権を直接樹立・支援し、介入によってジュネーヴ協定に基づく1956年の全国総選挙の実施を阻止した。1960年末には南ベトナム解放民族戦線が結成され、南部の闘争勢力を結集してベトナム民主共和国と連携した。',
+              'これにより、この地には「二つの陣営・四当事者」の対立構図が形成された。一方はベトナム民主共和国と南ベトナム解放民族戦線、もう一方はベトナム共和国と米国である。'
+            ],
+            img: 'assets/images/BoiCanhLichSu/BCLS_CoBonPhe.jpg',
+            caption: 'ベトナム民主共和国：赤地に中央に黄色の五角星の旗。<br><br>南ベトナム解放民族戦線：上半分が赤、下半分が青で中央に黄色の五角星の旗。<br><br>米国：赤白13本のストライプと左上に星を配した星条旗。<br><br>ベトナム共和国：黄地に中央に3本の赤い横線の旗。<br><br>ヒエンルオン橋（中央の写真）：1954年ジュネーヴ協定によりベトナムを南北に分断した北緯17度線のベンハイ川（クアンチ省）に架かる橋。'
           }
         ]
       }
@@ -599,11 +684,19 @@
       document.getElementById('q1').textContent = m.q1;
       document.getElementById('q2').textContent = m.q2;
       document.getElementById('q3').textContent = m.q3;
-      document.getElementById('revealBadge').textContent = m.revealBadge;
-      document.getElementById('revealName').textContent = m.revealName;
+      document.getElementById('revealBadge').textContent = m.revealBadge || '';
+      document.getElementById('revealName').innerHTML = m.revealName;
       document.getElementById('revealBtn').textContent = m.revealBtn;
-      document.getElementById('revealImgText').innerHTML = m.revealImgText;
-      document.getElementById('revealImgCaption').textContent = m.revealImgCaption;
+
+      const revealImgEl = document.getElementById('revealImg');
+      if (revealImgEl && m.revealImg) {
+        revealImgEl.src = m.revealImg;
+        revealImgEl.alt = (m.revealImgCaption || '').replace(/<[^>]*>?/gm, '').replace(/"/g, '&quot;');
+      }
+      const revealCaptionEl = document.getElementById('revealImgCaption');
+      if (revealCaptionEl && m.revealImgCaption) {
+        revealCaptionEl.innerHTML = m.revealImgCaption;
+      }
 
       const backIntroTextEl = document.getElementById('btnBackIntroText');
       if (backIntroTextEl && m.backIntroText) backIntroTextEl.textContent = m.backIntroText;
@@ -612,23 +705,40 @@
       let html = '';
 
       data.events.forEach((ev, idx) => {
-        html += `
-      <section class="ev" data-idx="${idx}">
-        <div class="ph-frame">
-          <div class="ph-img">
-            <span>${ev.imgText}</span>
-          </div>
-          <div class="ph-caption">
-            <span class="ph-caption-text">${ev.caption}</span>
-          </div>
-        </div>
+        let pContent = '';
+        if (ev.paragraphs && Array.isArray(ev.paragraphs)) {
+          ev.paragraphs.forEach(pg => {
+            pContent += `<p>${pg}</p>`;
+          });
+        } else if (ev.desc) {
+          pContent = `<p>${ev.desc}</p>`;
+        }
 
-        <div class="txt">
-          <span class="yr">${ev.yr}</span>
-          <h3>${ev.title}</h3>
-          <p>${ev.desc}</p>
-        </div>
-      </section>
+        const footnoteHtml = ev.footnote ? `<div class="page-footnote">${ev.footnote}</div>` : '';
+
+        const mediaHtml = ev.img
+          ? `<img src="${ev.img}" alt="${ev.caption ? ev.caption.replace(/<[^>]*>?/gm, '').replace(/"/g, '&quot;') : ''}" loading="lazy" />`
+          : `<span>${ev.imgText || ''}</span>`;
+
+        html += `
+                  <section class="ev" data-idx="${idx}">
+                    <div class="ph-frame">
+                      <div class="ph-img">
+                        ${mediaHtml}
+                      </div>
+                      <div class="ph-caption">
+                        <span class="ph-caption-icon">◆</span>
+                        <span class="ph-caption-text">${ev.caption}</span>
+                      </div>
+                    </div>
+
+                    <div class="txt">
+                      <span class="yr">${ev.yr}</span>
+                      <h3>${ev.title}</h3>
+                      ${pContent}
+                      ${footnoteHtml}
+                    </div>
+                  </section>
     `;
       });
 
