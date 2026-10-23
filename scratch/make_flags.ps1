@@ -59,7 +59,7 @@ $g2.FillRectangle($yellowBrush, -8, 85, 16, 48)
 $g2.Restore($state2)
 
 $g2.Dispose()
-$dest2 = Join-Path $outDir "co_dang.png"
+$dest2 = Join-Path $outDir "co_dang.jpg"
 $bmp2.Save($dest2, [System.Drawing.Imaging.ImageFormat]::Png)
 $bmp2.Dispose()
 

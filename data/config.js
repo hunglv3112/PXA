@@ -65,7 +65,7 @@ window.APP_CONFIG = {
         subLabel: "暗号名 X6 · 完璧なスパイ"
       },
       bottom: {
-        label: "ジャーナリスト",
+        label: "記者",
         subLabel: "タイム誌 ＆ ロイター特派員"
       }
     },
