@@ -405,17 +405,9 @@ button.pill:hover {
   box-shadow: inset 0 0 0 1.5px rgba(235, 203, 69, 0.9), 0 0 14px rgba(235, 203, 69, 0.5);
 }
 
-/* Dấu chấm cảnh báo đối chiếu nguồn */
+/* Dấu chấm cảnh báo đối chiếu nguồn (đã ẩn) */
 .dot-note {
-  position: absolute;
-  top: 9px;
-  right: 9px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--note);
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
-  animation: pulseNote 2.4s infinite;
+  display: none !important;
 }
 
 @keyframes pulseNote {
@@ -563,13 +555,7 @@ button.pill:hover {
 }
 
 .axis-intro-node {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--hl);
-  border: 2px solid #7f9096;
-  z-index: 2;
-  box-shadow: 0 0 10px rgba(235, 203, 69, 0.4);
+  display: none !important;
 }
 
 /* ==========================================================================

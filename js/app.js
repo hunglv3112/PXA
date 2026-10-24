@@ -87,8 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Điểm giao trục
     const ax = createEl('div', 'axis');
-    const axisDecor = createEl('div', 'axis-intro-node');
-    ax.appendChild(axisDecor);
 
     // Nửa dưới Intro
     const down = createEl('div', 'down');
@@ -128,12 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cap.appendChild(createTextEl('span', 'c-title', evData.title));
     card.appendChild(cap);
 
-    // Nếu có ghi chú đối chiếu thì gắn chấm cảnh báo
-    if (evData.note && evData.note.trim() !== '') {
-      const dot = createEl('span', 'dot-note');
-      dot.title = lang === 'ja' ? '出典確認中の記述あり' : 'Có ghi chú cần đối chiếu';
-      card.appendChild(dot);
-    }
+
 
     if (ev.side === 'top') {
       slot.appendChild(card);

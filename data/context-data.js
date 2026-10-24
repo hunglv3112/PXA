@@ -12,7 +12,7 @@ window.HISTORICAL_CONTEXT = {
   vi: {
     hero: {
       badge: "BỐI CẢNH LỊCH SỬ VIỆT NAM (1945 – 1975)",
-      title: "Bối cảnh lịch sử Việt Nam thời bấy ",
+      title: "Bối cảnh lịch sử Việt Nam thời bấy giờ",
       subtitle: "Để thấu hiểu vì sao một nhà báo tài hoa lại dấn thân trở thành điệp viên chiến lược hoàn hảo bậc nhất thế kỷ 20, trước hết cần nhìn lại những biến cố lịch sử khắc nghiệt đã định hình thời đại và số phận của ông.",
       bgImage: "assets/images/context-saigon.jpg"
     },
