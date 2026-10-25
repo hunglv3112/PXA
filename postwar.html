@@ -339,8 +339,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
-      padding: 14px 12px 10px;
+      justify-content: space-evenly;
+      padding: 10px 12px 10px;
       background: radial-gradient(ellipse at 50% 25%, #8f171d 0%, #520c10 60%, #230406 100%);
       border-left: 4px solid #3d220e;
       border-right: 4px solid #3d220e;
@@ -379,7 +379,7 @@
     }
 
     /* ==========================================================================
-       KHUNG 2 LÁ CỜ (QUỐC KỲ & CỜ ĐẢNG CÓ THỂ THAY ẢNH TÙY CHỌN)
+       KHUNG 2 LÁ CỜ: ĐÃ KHÓA CỐ ĐỊNH, KHÔNG BẤM ĐƯỢC THEO YÊU CẦU
        ========================================================================== */
     .flags-wrapper {
       position: relative;
@@ -387,31 +387,27 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 4px;
+      margin-top: 2px;
+      margin-bottom: 4px;
     }
 
     .flags {
       display: flex;
-      gap: 14px;
+      gap: 16px;
       position: relative;
       z-index: 2;
     }
 
     .flag-frame {
-      cursor: pointer;
-      width: 104px;
-      height: 68px;
-      padding: 3.5px;
+      cursor: default;
+      pointer-events: none; /* Khóa hoàn toàn không cho bấm */
+      width: 94px;
+      height: 60px;
+      padding: 3px;
       background: linear-gradient(135deg, #ffd782 0%, #b8862d 40%, #fff0b3 60%, #7a5015 100%);
       border-radius: 4px;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.8), 0 0 12px rgba(235, 203, 69, 0.25);
-      transition: transform .25s ease, box-shadow .25s ease;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.85), 0 0 10px rgba(235, 203, 69, 0.25);
       position: relative;
-    }
-
-    .flag-frame:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.9), 0 0 18px rgba(235, 203, 69, 0.55);
     }
 
     .flag-inner {
@@ -436,7 +432,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(125deg, rgba(255, 255, 255, 0.25) 0%, transparent 40%, rgba(0, 0, 0, 0.18) 75%, rgba(255, 255, 255, 0.1) 100%);
+      background: linear-gradient(125deg, rgba(255, 255, 255, 0.22) 0%, transparent 40%, rgba(0, 0, 0, 0.18) 75%, rgba(255, 255, 255, 0.1) 100%);
       pointer-events: none;
     }
 
@@ -447,11 +443,12 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      font-size: 11.5px;
-      letter-spacing: .16em;
+      font-size: 11px;
+      letter-spacing: .14em;
       font-weight: 800;
       color: #382405;
-      padding: 6px 18px;
+      padding: 6px 16px;
+      margin: 4px 0;
       background: linear-gradient(135deg, #fff3c4 0%, #e5bd57 30%, #fff8db 50%, #b88628 85%, #d4a737 100%);
       border-radius: 3px;
       font-family: var(--sans);
@@ -468,108 +465,87 @@
       color: #1a0f02;
     }
 
-    /* Bảng 16 Huân huy chương tinh xảo */
-    .meds-card {
+    /* ==========================================================================
+       BÀN THỜ THIẾU TƯỚNG PHẠM XUÂN ẨN & 16 HUÂN HUY CHƯƠNG (THAY CHO HUY CHƯƠNG VẼ)
+       ========================================================================== */
+    .altar-card {
+      all: unset;
+      cursor: pointer;
       position: relative;
       z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 3px;
+      width: 156px;
+      margin: 3px 0;
+      transition: transform .28s cubic-bezier(0.2, 0.8, 0.2, 1), filter .28s ease;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.85));
     }
 
-    .meds {
-      all: unset;
-      cursor: pointer;
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      gap: 7px 6px;
-      padding: 9px 12px;
-      background: linear-gradient(180deg, rgba(16, 28, 22, 0.85) 0%, rgba(8, 15, 12, 0.95) 100%);
-      border: 1.5px solid #a67c45;
-      border-radius: 4px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, .7), inset 0 0 8px rgba(0, 0, 0, 0.8);
-      transition: all .25s ease;
+    .altar-card:hover,
+    .altar-card:focus-visible {
+      transform: translateY(-4px) scale(1.05);
+      filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 12px rgba(235, 203, 69, 0.5));
     }
 
-    .meds:hover {
-      border-color: var(--gold);
-      box-shadow: 0 10px 22px rgba(0, 0, 0, .85), 0 0 14px rgba(235, 203, 69, 0.4);
-      transform: translateY(-2px);
+    .altar-card .wood {
+      width: 100%;
+      padding: 4px;
+      background: linear-gradient(135deg, #d3a466 0%, #7d5225 45%, #a67c45 75%, #5a3814 100%);
+      border-radius: 3px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, .7), inset 0 1px 2px rgba(255, 255, 255, 0.4);
     }
 
-    .md {
-      width: 18px;
-      height: 28px;
-      position: relative;
-      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.6));
+    .altar-card .mat {
+      background: #fbf7ee;
+      padding: 3px;
+      border-radius: 1px;
     }
 
-    .md::before {
-      content: "";
-      position: absolute;
-      left: 3px;
-      top: 0;
-      width: 12px;
-      height: 12px;
-      background: linear-gradient(90deg, #c22d32 0%, #c22d32 30%, #e8d23a 30%, #e8d23a 50%, #1c4f9c 50%, #1c4f9c 70%, #c22d32 70%);
-      border-radius: 1px 1px 0 0;
-      border: 0.5px solid rgba(0, 0, 0, 0.3);
+    .altar-card .img-box {
+      aspect-ratio: 16/10;
+      width: 100%;
+      overflow: hidden;
+      background: #111;
     }
 
-    .md:nth-child(even)::before {
-      background: linear-gradient(90deg, #1c4f9c 33%, #c22d32 33%, #c22d32 66%, #e8d23a 66%);
-    }
-
-    .md::after {
-      content: "";
-      position: absolute;
-      left: 1.5px;
-      bottom: 0;
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 30%, #fff4c2, #d4a737 40%, #7a5015 85%);
-      box-shadow: 0 0 6px rgba(255, 220, 120, 0.65);
-      border: 0.5px solid #ffe89e;
-    }
-
-    .cp {
-      font-size: 10.5px;
+    .altar-caption {
+      margin-top: 4px;
+      font-size: 9.5px;
       color: var(--gold2);
-      letter-spacing: .15em;
+      text-align: center;
       font-family: var(--sans);
       font-weight: 700;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
     }
 
-    /* Khung ảnh chân dung Thiếu tướng */
+    /* Khung ảnh chân dung Thiếu tướng đứng một mình */
     .pt {
       all: unset;
       cursor: pointer;
       position: relative;
       z-index: 2;
-      width: 156px;
+      width: 136px;
+      margin-top: 3px;
       transition: transform .28s cubic-bezier(0.2, 0.8, 0.2, 1);
       filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.85));
     }
 
     .pt:hover {
-      transform: translateY(-5px) scale(1.04);
+      transform: translateY(-4px) scale(1.04);
       filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 14px rgba(235, 203, 69, 0.45));
     }
 
     .pt .wood {
-      padding: 6px;
+      padding: 5px;
       background: linear-gradient(135deg, #ffd782 0%, #9e6d2b 30%, #ffd782 50%, #684110 80%, #b8862d 100%);
       box-shadow: 0 8px 16px rgba(0, 0, 0, .8), inset 0 1px 3px rgba(255, 255, 255, 0.7);
     }
 
     .pt .mat {
-      padding: 6px;
+      padding: 4px;
       background: #faf6ed;
     }
 
@@ -578,8 +554,8 @@
     }
 
     .pt-caption {
-      margin-top: 5px;
-      font-size: 10.5px;
+      margin-top: 4px;
+      font-size: 10px;
       color: var(--gold2);
       text-align: center;
       font-family: var(--sans);
@@ -587,6 +563,374 @@
       letter-spacing: .03em;
       line-height: 1.25;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    }
+
+    /* ==========================================================================
+       BADGES ĐẶC BIỆT CHO KHUNG ẢNH (VIDEO & GIẢI MÃ PUZZLE)
+       ========================================================================== */
+    .video-shelf-badge, .puzzle-shelf-badge {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+      z-index: 3;
+    }
+
+    .video-shelf-badge {
+      background: rgba(185, 28, 28, 0.9);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .puzzle-shelf-badge {
+      background: linear-gradient(135deg, #b8862d 0%, #6b441f 100%);
+      color: #ffd782;
+      border: 1px solid #ffd782;
+    }
+
+    /* ==========================================================================
+       GIAO DIỆN MINI-GAME: GIẢI MÃ PHẠM XUÂN ẨN (PUZZLE 3 MẢNH GHÉP)
+       ========================================================================== */
+    .decode-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      font-family: var(--sans);
+    }
+
+    .decode-intro {
+      font-size: 13.5px;
+      color: var(--text);
+      line-height: 1.6;
+      background: rgba(14, 31, 37, 0.6);
+      border: 1px solid var(--line);
+      padding: 12px 16px;
+      border-radius: 6px;
+    }
+
+    .decode-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .decode-tab-btn {
+      all: unset;
+      cursor: pointer;
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--mute);
+      background: rgba(22, 48, 58, 0.6);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      transition: all .2s;
+    }
+
+    .decode-tab-btn:hover {
+      color: #fff;
+      border-color: var(--acc);
+    }
+
+    .decode-tab-btn.active {
+      background: linear-gradient(135deg, rgba(235, 203, 69, 0.25) 0%, rgba(212, 173, 34, 0.35) 100%);
+      color: var(--gold2);
+      border-color: var(--gold);
+      box-shadow: 0 0 10px rgba(235, 203, 69, 0.3);
+    }
+
+    .decode-photo-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      max-height: 320px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid #8f641a;
+      background: #060b0e;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8);
+    }
+
+    .decode-bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: filter .6s ease;
+    }
+
+    .decode-pieces-grid {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      z-index: 5;
+    }
+
+    .decode-piece {
+      position: relative;
+      border-right: 2px dashed rgba(235, 203, 69, 0.4);
+      background: rgba(11, 23, 28, 0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      cursor: pointer;
+      transition: all .5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .decode-piece:last-child {
+      border-right: none;
+    }
+
+    .decode-piece:hover:not(.unlocked) {
+      background: rgba(18, 38, 47, 0.9);
+      box-shadow: inset 0 0 25px rgba(235, 203, 69, 0.25);
+    }
+
+    .decode-piece.active:not(.unlocked) {
+      background: rgba(24, 52, 63, 0.95);
+      box-shadow: inset 0 0 20px rgba(235, 203, 69, 0.4);
+      border-color: var(--gold);
+    }
+
+    .decode-piece.unlocked {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(1.08);
+    }
+
+    .piece-lock-icon {
+      width: 28px;
+      height: 28px;
+      color: var(--gold);
+      filter: drop-shadow(0 0 8px rgba(235, 203, 69, 0.6));
+      margin-bottom: 6px;
+      transition: transform .25s;
+    }
+
+    .decode-piece:hover .piece-lock-icon {
+      transform: scale(1.15);
+    }
+
+    .piece-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold2);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      text-align: center;
+    }
+
+    .piece-hint {
+      font-size: 10px;
+      color: var(--mute);
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    .decode-progress-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 14px;
+      background: rgba(14, 31, 37, 0.8);
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--gold2);
+      font-weight: 600;
+    }
+
+    .decode-badges {
+      display: flex;
+      gap: 6px;
+    }
+
+    .decode-badge-item {
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--mute);
+      border: 1px solid var(--line);
+    }
+
+    .decode-badge-item.done {
+      background: rgba(46, 125, 50, 0.3);
+      color: #81c784;
+      border-color: #4caf50;
+    }
+
+    .decode-quiz-card {
+      background: linear-gradient(135deg, rgba(22, 48, 58, 0.95) 0%, rgba(14, 31, 37, 0.98) 100%);
+      border: 1.5px solid var(--gold);
+      border-radius: 8px;
+      padding: 16px 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .quiz-hdr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .quiz-target {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .quiz-question {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .quiz-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .quiz-options {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .quiz-opt-btn {
+      all: unset;
+      cursor: pointer;
+      padding: 10px 14px;
+      background: rgba(14, 31, 37, 0.85);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font-size: 13.5px;
+      color: var(--text);
+      font-weight: 500;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      line-height: 1.35;
+    }
+
+    .quiz-opt-btn:hover {
+      background: rgba(30, 62, 75, 0.9);
+      border-color: var(--gold);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .quiz-opt-btn.correct {
+      background: #1b5e20 !important;
+      border-color: #4caf50 !important;
+      color: #fff !important;
+      box-shadow: 0 0 14px rgba(76, 175, 80, 0.4);
+    }
+
+    .quiz-opt-btn.wrong {
+      background: #7f1d1d !important;
+      border-color: #ef5350 !important;
+      color: #fff !important;
+      animation: shake 0.4s ease;
+    }
+
+    .quiz-feedback {
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .quiz-feedback.success {
+      display: block;
+      background: rgba(46, 125, 50, 0.25);
+      color: #a5d6a7;
+      border: 1px solid #4caf50;
+    }
+
+    .quiz-feedback.error {
+      display: block;
+      background: rgba(198, 40, 40, 0.25);
+      color: #ef9a9a;
+      border: 1px solid #e57373;
+    }
+
+    .decode-completed-card {
+      background: linear-gradient(135deg, rgba(30, 62, 75, 0.8) 0%, rgba(14, 31, 37, 0.95) 100%);
+      border: 1.5px solid var(--gold);
+      border-radius: 8px;
+      padding: 20px 22px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(235, 203, 69, 0.2);
+      animation: fadeInStory .6s ease;
+    }
+
+    @keyframes fadeInStory {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .decode-win-banner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(235, 203, 69, 0.3);
+    }
+
+    .decode-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .decode-btn-sec {
+      all: unset;
+      cursor: pointer;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold2);
+      border: 1px solid var(--line);
+      background: rgba(14, 31, 37, 0.8);
+      border-radius: 999px;
+      transition: all .2s;
+    }
+
+    .decode-btn-sec:hover {
+      border-color: var(--gold);
+      color: #fff;
     }
 
     /* ==========================================================================
@@ -848,15 +1192,20 @@
     /* ==========================================================================
        HỘP THOẠI CHI TIẾT (MODAL DIALOG) ĐỒNG BỘ CÁC TRANG KHÁC
        ========================================================================== */
-    dialog {
-      border: 1px solid rgba(143, 193, 212, 0.3);
-      background: linear-gradient(165deg, #16303a 0%, #0e1f25 100%);
+    dialog,
+    dialog.m-postwar-dialog {
+      border: 1px solid rgba(235, 203, 69, 0.4);
+      background: linear-gradient(165deg, #132730 0%, #0a181e 100%);
       color: var(--text);
       padding: 0;
-      width: min(700px, 92vw);
+      width: min(880px, 94vw);
       max-height: 88vh;
-      border-radius: 10px;
-      box-shadow: 0 35px 90px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(235, 203, 69, 0.25);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 35px 90px rgba(0, 0, 0, 0.95), 0 0 30px rgba(235, 203, 69, 0.18);
+      position: fixed;
+      inset: 0;
+      margin: auto;
     }
 
     dialog::backdrop {
@@ -865,135 +1214,276 @@
       -webkit-backdrop-filter: blur(6px);
     }
 
-    .mh {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 22px;
-      border-bottom: 1px solid var(--line);
-      font-size: 12px;
-      letter-spacing: .18em;
-      color: var(--gold);
-      font-family: var(--sans);
-      font-weight: 700;
-      text-transform: uppercase;
-      background: rgba(14, 31, 37, 0.5);
-    }
-
-    .mh button {
-      all: unset;
-      cursor: pointer;
-      color: var(--mute);
-      font-size: 20px;
-      padding: 2px 8px;
-      border-radius: 4px;
-      transition: all .2s;
-    }
-
-    .mh button:hover {
+    /* Nút đóng ghim nổi góc trên bên trái (đồng bộ nút đóng dạng 1 cột trên Timeline) */
+    .m-postwar-close {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 50;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
       color: #fff;
-      transform: scale(1.1);
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    .mb {
-      padding: 24px 28px 28px;
-      overflow: auto;
-      max-height: calc(88vh - 54px);
-    }
-
-    .mb h2 {
-      margin: 0 0 14px;
-      color: var(--gold2);
-      font-size: clamp(22px, 2.5vw, 28px);
-      line-height: 1.25;
-      font-family: var(--serif);
-      font-weight: 600;
-    }
-
-    .mb .modal-img-wrap {
-      width: 100%;
-      border-radius: 6px;
-      overflow: hidden;
-      margin-bottom: 16px;
-      border: 1px solid var(--line);
-      background: #091418;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    .mb .modal-img-wrap img {
-      width: 100%;
-      max-height: 340px;
-      object-fit: contain;
-      display: block;
-      background: #070e12;
-    }
-
-    .mb .ph {
-      aspect-ratio: 16/9;
+      font-size: 19px;
       display: grid;
       place-items: center;
-      color: var(--mute);
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .m-postwar-close:hover {
+      transform: scale(1.1);
+      background: rgba(0, 0, 0, 0.9);
+      border-color: var(--gold, #ebcb45);
+      color: var(--gold, #ebcb45);
+      box-shadow: 0 0 16px rgba(235, 203, 69, 0.4);
+    }
+
+    /* Khung cuộn toàn bộ nội dung popup */
+    .m-postwar-sheet,
+    .mb {
+      max-height: 88vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      scrollbar-width: thin;
+      scrollbar-color: var(--gold, #ebcb45) rgba(0, 0, 0, 0.25);
+    }
+
+    .m-postwar-sheet::-webkit-scrollbar,
+    .mb::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    .m-postwar-sheet::-webkit-scrollbar-track,
+    .mb::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 4px;
+    }
+
+    .m-postwar-sheet::-webkit-scrollbar-thumb,
+    .mb::-webkit-scrollbar-thumb {
+      background: var(--gold, #ebcb45);
+      border-radius: 4px;
+    }
+
+    /* 1. KHỐI ẢNH / VIDEO HERO Ở TRÊN CÙNG (Y HỆT TIMELINE) */
+    .m-hero-figure {
+      margin: 0;
+      width: 100%;
+      background: #000;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .m-hero-figure img,
+    .m-hero-figure .m-hero-img {
+      width: 100%;
+      height: 400px;
+      max-height: 48vh;
+      object-fit: cover;
+      display: block;
+      background: #050b0e;
+    }
+
+    .m-hero-figure .m-hero-video-wrap {
+      width: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .m-hero-figure .m-hero-video-wrap video {
+      width: 100%;
+      max-height: 400px;
+      display: block;
+    }
+
+    /* Chú thích ngay bên dưới ảnh trên cùng */
+    .m-hero-caption {
+      padding: 11px 20px;
+      font-size: 13.5px;
+      line-height: 1.55;
+      font-style: italic;
+      color: #b8c4c7;
+      background: rgba(0, 0, 0, 0.55);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* 2. KHỐI NỘI DUNG VĂN BẢN BÊN DƯỚI ẢNH */
+    .m-modal-body {
+      padding: 34px 44px 44px;
+      max-width: 820px;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .m-modal-meta {
       font-size: 13px;
-      margin-bottom: 16px;
-      background: repeating-linear-gradient(135deg, rgba(22, 48, 58, 0.5) 0 10px, #0e1f25 10px 20px);
-      border: 1px solid var(--line);
-      border-radius: 6px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      color: var(--gold, #ebcb45);
+      text-transform: uppercase;
+      margin: 0 0 10px;
       font-family: var(--sans);
     }
 
-    .mb p {
-      margin: 0 0 14px;
-      font-weight: 400;
-      color: #dce7e6;
-      font-size: 15px;
-      line-height: 1.7;
+    .m-modal-title,
+    .mb h2 {
+      font-size: clamp(24px, 2.6vw, 32px);
+      line-height: 1.28;
+      margin: 0 0 20px;
+      font-weight: 700;
+      color: var(--gold2, #f6d77e);
+      font-family: var(--serif);
     }
 
+    .m-modal-text p,
+    .mb p {
+      margin: 0 0 16px;
+      font-size: 16px;
+      line-height: 1.75;
+      color: #dce7e6;
+    }
+
+    .m-modal-text ul,
+    .mb ul {
+      margin: 0 0 16px;
+      padding-left: 22px;
+      font-size: 16px;
+      line-height: 1.75;
+      color: #dce7e6;
+    }
+
+    .m-modal-text li,
+    .mb li {
+      margin-bottom: 6px;
+    }
+
+    .m-modal-text blockquote,
     .mb blockquote {
-      margin: 16px 0;
-      padding: 10px 16px;
-      border-left: 3px solid var(--gold);
+      margin: 20px 0;
+      padding: 12px 18px;
+      border-left: 3px solid var(--gold, #ebcb45);
       background: rgba(235, 203, 69, 0.08);
       font-style: italic;
       font-family: var(--serif);
       color: #f6d77e;
-      font-size: 16px;
+      font-size: 17px;
       border-radius: 0 6px 6px 0;
     }
 
-    .mb ul {
-      margin: 0 0 14px;
-      padding-left: 22px;
-      font-weight: 400;
-      color: #dce7e6;
-      line-height: 1.75;
+    /* 3. ẢNH CHÈN BÊN TRONG VĂN BẢN (MID FIGURE — GIỐNG HÌNH ÔNG MƯỜI HƯƠNG Ở TIMELINE) */
+    .m-content-figure,
+    .m-mid-figure {
+      margin: 28px 0;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(235, 203, 69, 0.6); /* Viền vàng đặc trưng như ảnh Mười Hương */
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
 
-    .mb li {
-      margin-bottom: 4px;
+    .m-content-figure:hover,
+    .m-mid-figure:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 0 1.5px rgba(235, 203, 69, 0.8), 0 0 20px rgba(235, 203, 69, 0.5), 0 8px 24px rgba(0, 0, 0, 0.4);
+      border-color: #ebcb45;
     }
 
+    .m-content-figure img,
+    .m-content-figure .m-content-img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .m-content-figure figcaption,
+    .m-content-figure .m-content-caption {
+      padding: 10px 16px;
+      font-size: 13px;
+      line-height: 1.5;
+      font-style: italic;
+      color: #b0b0b0;
+      background: rgba(0, 0, 0, 0.65);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .m-modal-text .poem,
     .mb .poem {
       background: rgba(14, 31, 37, 0.6);
-      padding: 16px 20px;
+      padding: 18px 22px;
       border-radius: 6px;
       border: 1px solid var(--line);
       margin-bottom: 16px;
     }
 
+    .m-modal-text .poem p,
     .mb .poem p {
       font-style: italic;
       margin: 0;
       text-align: center;
       font-family: var(--serif);
       color: #f6d77e;
-      font-size: 15.5px;
-      line-height: 1.6;
+      font-size: 16px;
+      line-height: 1.65;
     }
 
+    .m-modal-text .poem p+p.g,
     .mb .poem p+p.g {
       margin-top: 14px;
+    }
+
+    @media (max-width: 768px) {
+      dialog,
+      dialog.m-postwar-dialog {
+        width: 95vw;
+        max-height: 90vh;
+        border-radius: 6px;
+      }
+      .m-hero-figure img,
+      .m-hero-figure .m-hero-img {
+        height: 240px;
+        max-height: 36vh;
+      }
+      .m-modal-body {
+        padding: 22px 18px 28px;
+      }
+      .m-modal-title,
+      .mb h2 {
+        font-size: 22px;
+        margin-bottom: 14px;
+      }
+      .m-modal-text p,
+      .mb p {
+        font-size: 15px;
+        line-height: 1.68;
+      }
+      .m-postwar-close {
+        top: 10px;
+        left: 10px;
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+      }
     }
 
     .mb a,
@@ -1151,8 +1641,7 @@
       </a>
       <a href="postwar.html" class="page-nav-item active" data-page="postwar" role="menuitem">
         <span class="page-nav-item-icon">🕊️</span>
-        <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm Phạm Xuân Ẩn" data-ja="5. 戦後記念ルーム">5. Phòng lưu niệm
-          hậu chiến</span>
+        <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm Phạm Xuân Ẩn" data-ja="5. 戦後記念ルーム">5. Phòng lưu niệm Phạm Xuân Ẩn</span>
         <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
       </a>
     </div>
@@ -1189,21 +1678,18 @@
           <div class="cone c2"></div>
           <div class="cone c3"></div>
 
-          <!-- 1. KHU VỰC 2 LÁ CỜ: BẠN CÓ THỂ TỰ DO ĐỔI ĐƯỜNG DẪN ẢNH TÙY Ý -->
+          <!-- 1. KHU VỰC 2 LÁ CỜ: ĐÃ KHÓA CỐ ĐỊNH, TRANG TRỌNG TRÊN CÙNG -->
           <div class="flags-wrapper">
             <div class="flags">
-              <!-- Cờ Tổ quốc Việt Nam (ảnh có thể thay thế trong assets/images/co_to_quoc.png hoặc cấu hình ROOM_CONFIG) -->
-              <div class="flag-frame" id="flagVnFrame" title="Quốc kỳ Việt Nam (Bấm để xem chi tiết)">
+              <div class="flag-frame" id="flagVnFrame" title="Quốc kỳ Việt Nam">
                 <div class="flag-inner">
-                  <img id="flagVnImg" class="flag-img" src="assets/images/co_to_quoc.png" alt="Quốc kỳ Việt Nam"
-                    onerror="this.onerror=null; this.src='assets/images/co_to_quoc.svg';">
+                  <img id="flagVnImg" class="flag-img" src="assets/images/PhongLuuNiem/PLN_CoVietNam.webp" alt="Quốc kỳ Việt Nam">
                 </div>
               </div>
-              <!-- Cờ Đảng Cộng sản Việt Nam (ảnh có thể thay thế trong assets/images/co_dang.png hoặc cấu hình ROOM_CONFIG) -->
-              <div class="flag-frame" id="flagPartyFrame" title="Cờ Đảng Cộng sản Việt Nam (Bấm để xem chi tiết)">
+              <div class="flag-frame" id="flagPartyFrame" title="Cờ Đảng Cộng sản Việt Nam">
                 <div class="flag-inner">
-                  <img id="flagPartyImg" class="flag-img" src="assets/images/co_dang.png"
-                    alt="Cờ Đảng Cộng sản Việt Nam" onerror="this.onerror=null; this.src='assets/images/co_dang.svg';">
+                  <img id="flagPartyImg" class="flag-img" src="assets/images/PhongLuuNiem/PLN_CoDang.jpg"
+                    alt="Cờ Đảng Cộng sản Việt Nam">
                 </div>
               </div>
             </div>
@@ -1212,18 +1698,25 @@
           <!-- 2. Biển danh hiệu Anh hùng mạ vàng dập nổi -->
           <button class="plq" id="hero">ANH HÙNG LỰC LƯỢNG VŨ TRANG NHÂN DÂN</button>
 
-          <!-- 3. Bảng 16 Huân huy chương cao quý -->
-          <div class="meds-card">
-            <button class="meds" id="meds" aria-label="16 huân huy chương"></button>
-            <div class="cp" id="medsCp">16 HUÂN HUY CHƯƠNG CAO QUÝ</div>
-          </div>
+          <!-- 3. Bàn thờ Thiếu tướng Phạm Xuân Ẩn & 16 Huân huy chương cao quý -->
+          <button class="altar-card" id="altarCard" aria-label="Bàn thờ Thiếu tướng Phạm Xuân Ẩn">
+            <div class="wood">
+              <div class="mat">
+                <div class="img-box" id="altarImgBox">
+                  <img id="altarImg" src="assets/images/PhongLuuNiem/PLN_16HuyChuong.jpg" alt="Bàn thờ Thiếu tướng Phạm Xuân Ẩn"
+                    onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'img-placeholder\'>[Bàn thờ Thiếu tướng<br>Phạm Xuân Ẩn]</div>';">
+                </div>
+              </div>
+            </div>
+            <div class="altar-caption" id="altarCaption">BÀN THỜ & 16 HUÂN HUY CHƯƠNG</div>
+          </button>
 
-          <!-- 4. Khung ảnh chân dung Thiếu tướng Phạm Xuân Ẩn -->
+          <!-- 4. Khung ảnh chân dung Thiếu tướng Phạm Xuân Ẩn đứng một mình -->
           <button class="pt" id="pt">
             <div class="wood">
               <div class="mat">
                 <div class="img-box" id="ptImgBox">
-                  <img id="ptImg" src="assets/images/pxa-avatar.jpg" alt="Chân dung Thiếu tướng Phạm Xuân Ẩn"
+                  <img id="ptImg" src="assets/images/PhongLuuNiem/PLN_AnhChinhGiuaPXA.jpg" alt="Chân dung Thiếu tướng Phạm Xuân Ẩn"
                     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'img-placeholder\'>[Chân dung Thiếu tướng<br>Phạm Xuân Ẩn]</div>';">
                 </div>
               </div>
@@ -1278,13 +1771,10 @@
     </button>
   </div>
 
-  <!-- Modal hộp thoại xem chi tiết -->
-  <dialog id="dlg">
-    <div class="mh">
-      <span id="dt"></span>
-      <button id="dx" aria-label="Đóng">✕</button>
-    </div>
-    <div class="mb" id="db"></div>
+  <!-- Modal hộp thoại xem chi tiết đồng bộ phong cách Dòng thời gian -->
+  <dialog id="dlg" class="m-postwar-dialog">
+    <button type="button" class="m-postwar-close" id="dx" aria-label="Đóng cửa sổ" title="Đóng (Esc)">✕</button>
+    <div class="m-postwar-sheet mb" id="db"></div>
   </dialog>
 
   <!-- Nạp bộ điều khiển ngôn ngữ chung -->
@@ -1293,15 +1783,13 @@
   <script>
     // ==============================================================================
     // 1. CẤU HÌNH ĐƯỜNG DẪN ẢNH CỦA PHÒNG LƯU NIỆM
-    // Bạn có thể tự do thay đổi đường dẫn ảnh hoặc chép đè tệp vào assets/images/
     // ==============================================================================
     const ROOM_CONFIG = {
-      // Ảnh Quốc kỳ Việt Nam (mặc định tệp assets/images/co_to_quoc.png)
-      flagVn: 'assets/images/co_to_quoc.png',
-      // Ảnh Cờ Đảng Cộng sản Việt Nam (mặc định tệp assets/images/co_dang.png)
-      flagParty: 'assets/images/co_dang.png',
-      // Ảnh chân dung Thiếu tướng Phạm Xuân Ẩn
-      portrait: 'assets/images/pxa-avatar.jpg'
+      flagVn: 'assets/images/PhongLuuNiem/PLN_CoVietNam.webp',
+      flagParty: 'assets/images/PhongLuuNiem/PLN_CoDang.jpg',
+      portrait: 'assets/images/PhongLuuNiem/PLN_AnhChinhGiuaPXA.jpg',
+      altar: 'assets/images/PhongLuuNiem/PLN_16HuyChuong.jpg',
+      ahllvt: 'assets/images/PhongLuuNiem/PLN_AHLLVTND.webp'
     };
 
     const DATA = {
@@ -1315,8 +1803,8 @@
           wLTitle: 'SAU CHIẾN TRANH',
           wRTitle: 'NHỮNG CHI TIẾT KHÁC',
           hero: 'ANH HÙNG LỰC LƯỢNG VŨ TRANG NHÂN DÂN',
-          medsCp: '16 HUÂN HUY CHƯƠNG CAO QUÝ',
-          medsAria: '16 huân huy chương cao quý',
+          altarCp: 'BÀN THỜ & 16 HUÂN HUY CHƯƠNG',
+          altarAria: 'Bàn thờ Thiếu tướng Phạm Xuân Ẩn',
           sealBadge: 'KỶ VẬT LỊCH SỬ',
           doorText: 'MỞ TỦ LƯU NIỆM',
           sealHint: 'Chạm để khám phá',
@@ -1324,24 +1812,102 @@
           btnOpenSub: 'Chạm để mở cánh cửa lịch sử',
           btnCloseText: 'ĐÓNG TỦ LƯU NIỆM',
           btnCloseSub: 'Chạm để khép lại cánh cửa lịch sử',
-          imgPrefix: 'Ảnh',
-          flagVnName: 'Quốc kỳ nước Cộng hòa Xã hội Chủ nghĩa Việt Nam',
-          flagPartyName: 'Cờ Đảng Cộng sản Việt Nam'
+          imgPrefix: 'Ảnh'
         },
         L: [
-          { y: '1978', t: 'Bí mật bị phơi ra', img: 'Bài báo Pháp 1978', h: `<p>Một bài báo ngắn trên tờ báo Pháp lần đầu tiết lộ trên truyền thông quốc tế: nhà báo tài năng của Time thực chất là điệp viên số một của phía Việt Nam.</p><p>Tin lan sang Mỹ, giới tình báo và báo chí choáng váng. Nhiều quan chức CIA từng tin tưởng, thậm chí tìm đến ông xin ý kiến, giờ mới biết mình bị qua mặt suốt bao năm.</p>` },
-          { y: '1976 – 1990', t: 'Quân hàm', img: 'Quân hàm Thiếu tướng', h: `<ul><li>12/1976: Trung tá Quân đội Nhân dân Việt Nam</li><li>1981: Thượng tá</li><li>1984: Đại tá</li><li>1990: Thiếu tướng Quân đội Nhân dân Việt Nam</li></ul>` },
-          { y: '20/9/2006', t: 'Những ngày cuối', img: 'Phạm Xuân Ẩn những năm cuối đời', h: `<p>Mùa hè 2006, ông hai lần vào Viện Quân y 175. Ông vẫn đùa rằng muốn tìm một chỗ dưới địa ngục, gần người có duyên kể chuyện để còn có bạn mà trò chuyện.</p><p>Lúc 11 giờ 20 sáng thứ Tư, 20/9, ông qua đời ở tuổi 79. Cạnh quan tài là 16 tấm huân huy chương của ông.</p>` }
-        ],
-        C: [
-          { y: '1976 – 1990', t: 'Quân hàm', img: 'Quân hàm Thiếu tướng', h: `<ul><li>12/1976: Trung tá Quân đội Nhân dân Việt Nam</li><li>1981: Thượng tá</li><li>1984: Đại tá</li><li>1990: Thiếu tướng Quân đội Nhân dân Việt Nam</li></ul>` },
-          { y: 'Danh hiệu', t: 'Anh hùng LLVTND', img: 'Danh hiệu Anh hùng LLVTND', h: `<p>Ngày 15/1/1976, Thiếu tướng Phạm Xuân Ẩn được Nhà nước phong tặng danh hiệu cao quý <b>Anh hùng lực lượng vũ trang Nhân dân</b>.</p><p>Suốt hơn hai mươi năm hoạt động trong lòng địch, ông luôn giữ trọn khí tiết, sự thông minh mưu trí và lòng trung thành tuyệt đối với Tổ quốc.</p>` },
-          { y: '16 huân huy chương', t: 'Huân chương cao quý', img: 'Tủ 16 Huân huy chương', h: `<ul><li>Huân chương Độc lập hạng nhì</li><li>Huân chương Quân công hạng ba</li><li>Huân chương Kháng chiến hạng ba</li><li>Huân chương Kháng chiến chống Mỹ cứu nước hạng nhất</li><li>4 Huân chương Chiến công hạng nhất, nhì, ba</li><li>Huân chương Chiến công giải phóng hạng nhất, nhì, ba</li><li>Huân chương Chiến sĩ vẻ vang hạng nhất, nhì, ba</li><li>Huy chương Quân kỳ Quyết thắng</li><li>Huy hiệu 50 năm tuổi Đảng</li></ul>` }
+          {
+            y: '1978',
+            t: 'Bí mật bị phơi ra',
+            img: 'Thẻ nhà báo Phạm Xuân Ẩn',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_PhamXuanGioTheNhaBao.webp',
+            caption: 'Thẻ nhà báo tác nghiệp của Phạm Xuân Ẩn — vỏ bọc báo giới hoàn hảo giúp ông tự do tác nghiệp và che giấu thân phận điệp viên chiến lược suốt hơn hai mươi năm.',
+            h: `<p>Năm 1978, một bài báo ngắn trên tờ báo Pháp lần đầu tiên công khai hé lộ với truyền thông quốc tế: nhà báo kỳ cựu tài ba của tuần báo danh tiếng <i>Time</i> tại Sài Gòn thực chất là một điệp viên chiến lược kiệt xuất của Quân Giải phóng miền Nam Việt Nam.</p><p>Khi thông tin chấn động này lan sang Hoa Kỳ, giới tình báo CIA và báo giới phương Tây đều sửng sốt bàng hoàng. Chiếc thẻ nhà báo tác nghiệp chính quy (ảnh trên) từng giúp Phạm Xuân Ẩn tự do ra vào Bộ Tổng tham mưu Quân lực Việt Nam Cộng hòa, Bộ chỉ huy Viện trợ Quân sự Mỹ (MACV) và Tòa đại sứ Mỹ mà không một ai mảy may nghi ngờ suốt hơn hai mươi năm.</p>`
+          },
+          {
+            y: '1976 – 1990',
+            t: 'Quân hàm',
+            img: 'Mặc quân phục cùng Đại tướng Võ Nguyên Giáp',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_QuanHamPhamXuanAn.jpeg',
+            caption: 'Đại tướng Võ Nguyên Giáp thân mật chúc mừng và nắm tay Thiếu tướng tình báo Phạm Xuân Ẩn trong bộ quân phục trang nghiêm.',
+            h: `<p>Bức ảnh lịch sử ghi lại khoảnh khắc Đại tướng Võ Nguyên Giáp - người anh cả của Quân đội Nhân dân Việt Nam - thân mật chúc mừng và nắm tay Thiếu tướng tình báo Phạm Xuân Ẩn trong bộ quân phục trang nghiêm.</p><ul><li><b>Tháng 12/1976:</b> Được phong quân hàm Trung tá Quân đội Nhân dân Việt Nam.</li><li><b>Năm 1981:</b> Thăng quân hàm Thượng tá.</li><li><b>Năm 1984:</b> Thăng quân hàm Đại tá.</li><li><b>Năm 1990:</b> Thăng quân hàm Thiếu tướng Quân đội Nhân dân Việt Nam.</li></ul><p>Dù mang quân hàm cấp tướng và lập nhiều chiến công huyền thoại, ông luôn giữ trọn phẩm chất bình dị, khiêm nhường, luôn tâm niệm mình chỉ là một người lính đã hoàn thành nhiệm vụ mà Đảng và Tổ quốc giao phó.</p>`
+          },
+          {
+            y: '20/9/2006',
+            t: 'Những ngày cuối',
+            img: 'Phạm Xuân Ẩn những năm cuối đời',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_PXAHutThuocLucGia.webp',
+            caption: 'Thiếu tướng Phạm Xuân Ẩn những năm tháng cuối đời ung dung bên làn khói thuốc tại tư gia (TP. Hồ Chí Minh).',
+            h: `
+              <p>Những năm tháng tuổi xế chiều, Thiếu tướng Phạm Xuân Ẩn sống thanh bạch và an nhiên tại ngôi nhà quen thuộc trên đường Nguyễn Thị Minh Khai (TP. Hồ Chí Minh). Hình ảnh ông ngồi trò chuyện, ung dung trầm ngâm bên làn khói thuốc lá thơm cùng nụ cười hóm hỉnh, sâu sắc đã trở thành ký ức không thể nào quên trong lòng bạn bè, đồng chí và các ký giả quốc tế.</p>
+              <p>Mùa hè năm 2006, do bệnh phổi mãn tính trở nặng, ông được chăm sóc đặc biệt tại Viện Quân y 175. Đến 11 giờ 20 phút sáng thứ Tư, ngày 20/9/2006, trái tim của nhà tình báo huyền thoại đã ngừng đập ở tuổi 79.</p>
+              
+              <figure class="m-content-figure m-mid-figure">
+                <img src="assets/images/PhongLuuNiem/PLN_LeTruyDieuPXA.jpg" alt="Lễ truy điệu Thiếu tướng Phạm Xuân Ẩn" class="m-content-img" loading="lazy">
+                <figcaption class="m-content-caption">Lễ tang và lễ truy điệu Thiếu tướng Phạm Xuân Ẩn theo nghi thức quân đội tại Nhà tang lễ Bộ Quốc phòng phía Nam (23/9/2006)</figcaption>
+              </figure>
+
+              <p>Lễ tang và lễ truy điệu của Thiếu tướng Phạm Xuân Ẩn được tổ chức trọng thể theo nghi thức quân đội tại Nhà tang lễ Bộ Quốc phòng phía Nam (TP. Hồ Chí Minh) vào ngày 23/9/2006. Vô số vòng hoa và lời chia buồn sâu sắc từ các đồng chí lãnh đạo Đảng, Nhà nước, Quân đội, cùng các đồng nghiệp từ tạp chí Time, Reuters và các cựu chiến binh bên kia bờ đại dương đã gửi đến tiễn biệt ông.</p>
+              
+              <figure class="m-content-figure m-mid-figure">
+                <img src="assets/images/PhongLuuNiem/PLN_MuoiHuongThamMo.jpg" alt="Đoàn viếng thăm mộ Thiếu tướng Phạm Xuân Ẩn" class="m-content-img" loading="lazy">
+                <figcaption class="m-content-caption">Đồng chí Mười Hương (Trần Quốc Hương) cùng đoàn đồng chí, cựu chiến binh viếng mộ Thiếu tướng Phạm Xuân Ẩn tại Nghĩa trang TP. Hồ Chí Minh</figcaption>
+              </figure>
+
+              <p>Đồng chí Mười Hương (Trần Quốc Hương) - người thầy, người chỉ huy tình báo mẫu mực từng cử Phạm Xuân Ẩn sang Mỹ học báo chí - dù tuổi cao sức yếu vẫn chống gậy cùng đông đảo đồng chí, cựu chiến binh và các thế hệ nhân dân đến thắp nén tâm nhang viếng nơi an nghỉ của ông tại Nghĩa trang TP. Hồ Chí Minh (TP. Thủ Đức). Cuộc đời tận hiến trọn vẹn và nhân cách cao thượng của người anh hùng X6 mãi là niềm tự hào sáng ngời của dân tộc.</p>
+            `
+          }
         ],
         R: [
-          { y: 'Đại tá Tư Cang', t: 'Tiễn Bạn', img: 'Đại tá Tư Cang', h: `<div class="poem"><p>Đời người tình báo thế là xong</p><p>Tình dân nghĩa Đảng, nợ non sông</p><p>Làm trai trong suốt thời ly loạn</p><p>Anh thật xứng danh một anh hùng.</p><p class="g">Nay anh nằm đó, anh Hai Trung</p><p>Nhớ giọng anh cười, thật ấm lòng</p><p>Những lúc hiểm nguy căng sợi tóc</p><p>Vẫn nói, vẫn cười, vẫn ung dung.</p><p class="g">Xuân Ẩn từ nay ẩn thật rồi</p><p>Bạn bè thương tiếc mãi không nguôi</p><p>Riêng tôi nhớ mãi người đồng chí</p><p>Dũng cảm, thông minh, nhớ suốt đời…</p></div><p style="text-align:center"><a href="https://www.tiktok.com/@saodaumu.nvn/video/7545473972821953812" target="_blank" rel="noopener">Xem video Đại tá Tư Cang đọc thơ ↗</a></p>` },
-          { y: 'Triết lý sống', t: 'Ba con vật', img: 'Nơi an nghỉ với ba con vật', h: `<p>Bên cạnh nơi an nghỉ của ông là hình tượng ba con vật, đúc kết trọn vẹn triết lý sống và phong cách tình báo độc nhất vô nhị của ông:</p><ul><li><b>Con chó:</b> Lòng trung thành tuyệt đối với Tổ quốc, đồng đội và bè bạn.</li><li><b>Con gà:</b> Luôn siêng năng, bận rộn, làm việc không mệt mỏi, dứt khoát không lười biếng.</li><li><b>Con cá:</b> Sự khôn ngoan, tĩnh lặng trong chiều sâu tư duy, biết lắng nghe và kín kẽ.</li></ul>` },
-          { y: 'Video', t: 'Lời tiễn qua video', img: 'Đại tá Tư Cang đọc thơ', h: `<p>Video Đại tá Tư Cang đọc bài thơ tiễn biệt người đồng đội Hai Trung, và hình ảnh nơi an nghỉ của ông tại Nghĩa trang TP. Hồ Chí Minh.</p><p><a href="https://www.tiktok.com/@saodaumu.nvn/video/7545473972821953812" target="_blank" rel="noopener">Xem video đọc thơ ↗</a></p><p><a href="https://www.tiktok.com/@ngocbuki/video/7386514753478216967" target="_blank" rel="noopener">Xem video nơi an nghỉ ↗</a></p>` }
+          {
+            y: 'Đại tá Tư Cang',
+            t: 'Tiễn Bạn',
+            img: 'Đại tá Tư Cang đọc thơ',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
+            isVideo: true,
+            videoSrc: 'assets/images/PhongLuuNiem/PLN_DaiTaTuCangDocBaiThoTienBan.mp4',
+            caption: 'Đại tá Anh hùng LLVTND Tư Cang (Nguyễn Văn Tàu), Cụm trưởng Cụm Tình báo H.63 ngâm bài thơ "Tiễn Bạn" viếng người đồng chí Hai Trung.',
+            h: `
+              <div class="poem">
+                <p>Đời người tình báo thế là xong</p>
+                <p>Tình dân nghĩa Đảng, nợ non sông</p>
+                <p>Làm trai trong suốt thời ly loạn</p>
+                <p>Anh thật xứng danh một anh hùng.</p>
+                <p class="g">Nay anh nằm đó, anh Hai Trung</p>
+                <p>Nhớ giọng anh cười, thật ấm lòng</p>
+                <p>Những lúc hiểm nguy căng sợi tóc</p>
+                <p>Vẫn nói, vẫn cười, vẫn ung dung.</p>
+                <p class="g">Xuân Ẩn từ nay ẩn thật rồi</p>
+                <p>Bạn bè thương tiếc mãi không nguôi</p>
+                <p>Riêng tôi nhớ mãi người đồng chí</p>
+                <p>Dũng cảm, thông minh, nhớ suốt đời…</p>
+              </div>
+              <p style="font-size:13px; color:var(--mute); text-align:center; margin-top:8px;">— Đại tá Anh hùng LLVTND Tư Cang (Nguyễn Văn Tàu), Cụm trưởng Cụm Tình báo H.63</p>
+            `
+          },
+          {
+            y: 'Triết lý sống',
+            t: 'Ba con vật',
+            img: 'Nơi an nghỉ với ba con vật',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
+            caption: 'Hình tượng ba con vật: Con Chó, Con Gà và Con Cá bên phần mộ Thiếu tướng Phạm Xuân Ẩn tại Nghĩa trang TP. Hồ Chí Minh.',
+            h: `
+              <p>Bên cạnh phần mộ trang nghiêm của Thiếu tướng Phạm Xuân Ẩn tại Nghĩa trang TP. Hồ Chí Minh là hình tượng ba con vật: <b>Con Chó, Con Gà và Con Cá</b>. Đây là sự đúc kết trọn vẹn triết lý nhân sinh và phong cách tình báo độc nhất vô nhị của ông:</p>
+              <ul>
+                <li><b>Con chó:</b> Tượng trưng cho lòng trung thành tuyệt đối với Tổ quốc, với lý tưởng cách mạng và nghĩa tình son sắt với đồng đội, bạn bè từ cả hai phía chiến tuyến.</li>
+                <li><b>Con gà:</b> Biểu tượng của sự siêng năng, cần mẫn, thức khuya dậy sớm làm việc không mệt mỏi, luôn cảnh giác và dứt khoát không bao giờ lười biếng.</li>
+                <li><b>Con cá:</b> Sự trầm tĩnh, khôn ngoan và chiều sâu tư duy. Con cá không bao giờ gây ồn ào, biết quan sát, lắng nghe và luôn giữ kín mọi bí mật sâu thẳm trong lòng.</li>
+              </ul>
+              <p>Ba con vật ấy đã gắn bó như những người bạn tri kỷ, đồng hành cùng huyền thoại X6 trong suốt cuộc đời thầm lặng phụng sự giang sơn.</p>
+            `
+          },
+          {
+            y: 'Khám phá lịch sử',
+            t: 'Giải mã Phạm Xuân Ẩn',
+            img: '3 Mảnh ghép lịch sử',
+            imgSrc: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
+            isDecode: true,
+            h: ''
+          }
         ]
       },
       ja: {
@@ -1354,8 +1920,8 @@
           wLTitle: '戦後',
           wRTitle: 'その他の逸話',
           hero: '人民武装勢力英雄',
-          medsCp: '16の勲章・記章',
-          medsAria: '16の勲章・記章',
+          altarCp: '祭壇と16の勲章・記章',
+          altarAria: 'ファム・スアン・アン少将の祭壇',
           sealBadge: '歴史的遺品',
           doorText: '記念キャビネットを開く',
           sealHint: 'クリックして開扉 ✦',
@@ -1363,46 +1929,586 @@
           btnOpenSub: 'クリックして開扉 ✦',
           btnCloseText: '記念キャビネットを閉じる',
           btnCloseSub: 'クリックして扉を閉じる ✦',
-          imgPrefix: '写真',
-          flagVnName: 'ベトナム社会主義共和国国旗',
-          flagPartyName: 'ベトナム共産党旗'
+          imgPrefix: '写真'
         },
         L: [
-          { y: '1978年', t: '明かされた秘密', img: '1978年フランスの報道', h: `<p>フランスの新聞に掲載された短い記事によって、国際メディアに初めてその真実が明かされた。『タイム』誌の敏腕記者が、実はベトナム側の最高峰のスパイであったことが。</p><p>この報せが米国に届くと、情報機関とジャーナリズム界は騒然となった。彼を信頼し、助言を求めてさえいた多くのCIA高官たちは、長年欺かれ続けていたことを知ったのである。</p>` },
-          { y: '1976年 – 1990年', t: '軍階級', img: '軍階級', h: `<ul><li>1976年12月：ベトナム人民軍中佐</li><li>1981年：上佐</li><li>1984年：大佐</li><li>1990年：ベトナム人民軍少将</li></ul>` },
-          { y: '2006年9月20日', t: '最期の日々', img: '晩年のファム・スアン・アン', h: `<p>2006年夏、彼は第175陸軍病院に2度入院した。彼はなおユーモアを交え、「地獄でも話し上手な奴の近くに席を見つけて、語り合いたいものだ」と冗談を言っていた。</p><p>9月20日水曜日午前11時20分、享年79歳で息を引き取った。棺の傍らには、彼に授与された16の勲章と記章が並べられていた。</p>` }
-        ],
-        C: [
-          { y: '1976年 – 1990年', t: '軍階級', img: '軍階級', h: `<ul><li>1976年12月：ベトナム人民軍中佐</li><li>1981年：上佐</li><li>1984年：大佐</li><li>1990年：ベトナム人民軍少将</li></ul>` },
-          { y: '栄誉称号', t: '人民武装勢力英雄', img: '英雄称号', h: `<p>1976年1月15日、ファム・スアン・アン少将は国家より「人民武装勢力英雄」の最高栄誉称号を授与されました。</p><p>20年以上にわたる敵陣深奥での活動において、彼は常に忠誠と機知を保ち続けました。</p>` },
-          { y: '16の勲章・記章', t: '勲章一覧', img: '勲章ケース', h: `<ul><li>二等独立勲章</li><li>三等軍功勲章</li><li>三等抗戦勲章</li><li>一等対米抗戦救国勲章</li><li>一・二・三等戦功勲章（計4点）</li><li>一・二・三等解放戦功勲章</li><li>一・二・三等栄光の戦士勲章</li><li>決勝軍旗記章</li><li>党員歴50年記念章</li></ul>` }
+          {
+            y: '1978年',
+            t: '明かされた秘密',
+            img: '記者証を手にするファム・スアン・アン',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_PhamXuanGioTheNhaBao.webp',
+            caption: 'サイゴンでの正式な記者証 — 20年以上にわたる完璧な偽装と戦略諜報活動の証。',
+            h: `<p>1978年、フランスの新聞記事によって、タイム誌の敏腕記者が実はベトナム側の最高峰のスパイであったことが初めて全世界に公表されました。</p><p>この報せが米国に届くと、情報機関とジャーナリズム界は騒然となりました。上の写真の正式な記者証こそが、アンが南ベトナム軍総参謀部や米軍司令部、米大使館に20年以上疑われることなく出入りできた鍵でした。</p>`
+          },
+          {
+            y: '1976年 – 1990年',
+            t: '軍階級',
+            img: 'ヴォー・グエン・ザップ将軍と軍服で面会',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_QuanHamPhamXuanAn.jpeg',
+            caption: '正装の軍服を着たファム・スアン・アン少将を温かく迎え、握手を交わすヴォー・グエン・ザップ大将。',
+            h: `<p>ベトナム人民軍の長兄であるヴォー・グエン・ザップ大将が、正装の軍服を着たファム・スアン・アン少将を温かく迎え、握手を交わした歴史的瞬間です。</p><ul><li><b>1976年12月：</b>中佐</li><li><b>1981年：</b>上佐</li><li><b>1984年：</b>大佐</li><li><b>1990年：</b>ベトナム人民軍少将</li></ul><p>将軍の階級と数々の伝説的な功績を持ちながらも、彼は常に謙虚であり続け、自分は祖国と党から託された任務を果たした一人の兵士に過ぎないと語っていました。</p>`
+          },
+          {
+            y: '2006年9月20日',
+            t: '最期の日々',
+            img: '晩年のファム・スアン・アン',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_PXAHutThuocLucGia.webp',
+            caption: '自宅で煙草の煙をくゆらせながら穏やかな日々を過ごす晩年のファム・スアン・アン少将。',
+            h: `
+              <p>晩年、アンはホーチミン市の質素な自宅で、煙草の煙をくゆらせながら穏やかな日々を過ごしました。彼のユーモアに富んだ深い微笑みは、友人や戦友、国際的な記者たちの心に永遠の記憶として刻まれています。</p>
+              <p>2006年夏、持病の慢性肺疾患が悪化し、第175軍病院で特別治療を受けました。2006年9月20日水曜日午前11時20分、伝説の諜報員の心臓は79歳で静かに停止しました。</p>
+              
+              <figure class="m-content-figure m-mid-figure">
+                <img src="assets/images/PhongLuuNiem/PLN_LeTruyDieuPXA.jpg" alt="追悼式" class="m-content-img" loading="lazy">
+                <figcaption class="m-content-caption">2006年9月23日、国防省南部葬儀場にて軍葬形式で厳粛に執り行われた追悼式</figcaption>
+              </figure>
+
+              <p>2006年9月23日、国防省南部葬儀場にて軍葬が執り行われ、党・国家・軍の指導者やタイム誌、ロイター通信の同僚たち、海を越えた元米軍兵士たちからも深い哀悼が寄せられました。</p>
+              
+              <figure class="m-content-figure m-mid-figure">
+                <img src="assets/images/PhongLuuNiem/PLN_MuoiHuongThamMo.jpg" alt="墓所訪問" class="m-content-img" loading="lazy">
+                <figcaption class="m-content-caption">かつてアンを米国へ送り出した諜報指導者ムオイ・フオン同志をはじめ、多くの戦友や若者たちが墓所を訪問</figcaption>
+              </figure>
+
+              <p>かつてアンを米国へ送り出した諜報指導者ムオイ・フオン同志をはじめ、多くの戦友や若者たちが墓所を訪れ、その高潔な生涯に敬意を表しました。英雄X6の崇高な人格と完全な献身は、民族の永遠の誇りです。</p>
+            `
+          }
         ],
         R: [
-          { y: 'トゥ・カン大佐', t: '友を送る', img: 'トゥ・カン大佐', h: `<div class="poem"><p>情報員としての生涯はここに幕を下ろした</p><p>人民への情、党への義、山河への恩義</p><p>動乱の時代を駆け抜けた男児として</p><p>君は真の英雄の名にふさわしい。</p><p class="g">今そこに横たわる、ハイ・チュン兄さん</p><p>その笑顔の声を思い出すと、胸が熱くなる</p><p>危機一髪の瀬戸際にあっても</p><p>君は語り、笑い、悠然としていた。</p><p class="g">スアン・アン（春の隠者）よ、今や真に隠れてしまった</p><p>友人たちの惜別の念は尽きることがない</p><p>私にとって忘れ得ぬ我が同志よ</p><p>勇敢で聡明な君を、生涯忘れることはない…</p></div><p style="text-align:center"><a href="https://www.tiktok.com/@saodaumu.nvn/video/7545473972821953812" target="_blank" rel="noopener">トゥ・カン大佐の詩朗読動画を見る ↗</a></p>` },
-          { y: '人生の哲学', t: '三匹の生き物', img: '三匹の動物像と墓所', h: `<p>彼の墓所の傍らには、彼の人生哲学を象徴する3匹の生き物の像が刻まれています。</p><ul><li><b>犬：</b>祖国と友に対する絶対の忠誠心。</li><li><b>鶏：</b>常に動き回り、一日中働き、怠惰を退ける勤勉さ。</li><li><b>魚：</b>多弁を排し、沈黙の中で思索を深める英知。</li></ul>` },
-          { y: '映像', t: '動画による追悼', img: 'トゥ・カン大佐の詩朗読', h: `<p>戦友を送るトゥ・カン大佐の詩朗読動画、および墓所の記録映像。</p><p><a href="https://www.tiktok.com/@saodaumu.nvn/video/7545473972821953812" target="_blank" rel="noopener">詩朗読の動画を見る ↗</a></p><p><a href="https://www.tiktok.com/@ngocbuki/video/7386514753478216967" target="_blank" rel="noopener">安息の地（墓所）の動画を見る ↗</a></p>` }
+          {
+            y: 'トゥ・カン大佐',
+            t: '友を送る',
+            img: 'トゥ・カン大佐の詩朗読',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
+            isVideo: true,
+            videoSrc: 'assets/images/PhongLuuNiem/PLN_DaiTaTuCangDocBaiThoTienBan.mp4',
+            caption: 'H.63諜報群指揮官 トゥ・カン大佐による詩の朗読「友を送る」。',
+            h: `
+              <div class="poem">
+                <p>情報員としての生涯はここに幕を下ろした</p>
+                <p>人民への情、党への義、山河への恩義</p>
+                <p>動乱の時代を駆け抜けた男児として</p>
+                <p>君は真の英雄の名にふさわしい。</p>
+                <p class="g">今そこに横たわる、ハイ・チュン兄さん</p>
+                <p>その笑顔の声を思い出すと、胸が熱くなる</p>
+                <p>危機一髪の瀬戸際にあっても</p>
+                <p>君は語り、笑い、悠然としていた。</p>
+                <p class="g">スアン・アン（春の隠者）よ、今や真に隠れてしまった</p>
+                <p>友人たちの惜別の念は尽きることがない</p>
+                <p>私にとって忘れ得ぬ我が同志よ</p>
+                <p>勇敢で聡明な君を、生涯忘れることはない…</p>
+              </div>
+              <p style="font-size:13px; color:var(--mute); text-align:center; margin-top:8px;">— 人民武装勢力英雄 トゥ・カン大佐（グエン・ヴァン・タウ）、H.63諜報群指揮官</p>
+            `
+          },
+          {
+            y: '人生の哲学',
+            t: '三匹の生き物',
+            img: '三匹の動物像と墓所',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
+            caption: 'ファム・スアン・アン少将の墓傍らに佇む「犬」「鶏」「魚」の像。',
+            h: `
+              <p>ファム・スアン・アン少将の墓所には、<b>「犬」「鶏」「魚」</b>の3匹の生き物の像が安置されています。これは彼の人生哲学と独自の諜報スタイルを象徴しています。</p>
+              <ul>
+                <li><b>犬：</b>祖国と革命への絶対の忠誠心、そして敵味方の垣根を越えた友への信義。</li>
+                <li><b>鶏：</b>常に早起きして休むことなく働き、怠惰を退ける勤勉さ。</li>
+                <li><b>魚：</b>沈黙を守り、深く思索し、秘密を内に秘める英知。</li>
+              </ul>
+              <p>この三匹の生き物は、祖国に静かに捧げたX6の全生涯を映し出す親友として今も墓所に寄り添っています。</p>
+            `
+          },
+          {
+            y: '歴史の解読',
+            t: 'ファム・スアン・アンを解読せよ',
+            img: '3つの歴史ピース',
+            imgSrc: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
+            isDecode: true,
+            h: ''
+          }
         ]
+      }
+    };
+
+    // ==============================================================================
+    // DỮ LIỆU CÂU HỎI TRẮC NGHIỆM CHO MINI-GAME "GIẢI MÃ PHẠM XUÂN ẨN"
+    // ==============================================================================
+    const DECODE_GAME_DATA = {
+      vi: [
+        {
+          id: 'dossier-1',
+          name: 'Hồ sơ 01',
+          title: 'Hai nửa một cuộc đời huyền thoại',
+          sub: 'Vừa là ký giả kỳ cựu của Time, vừa là Thiếu tướng tình báo anh hùng',
+          image: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
+          pieces: [
+            {
+              title: 'Mảnh 1: Mật danh',
+              q: 'Phạm Xuân Ẩn hoạt động tình báo bí mật cho quân đội ta dưới mật danh nổi tiếng nào?',
+              options: ['A. X6', 'B. H10', 'C. K25', 'D. A3'],
+              correct: 0,
+              feedback: 'Chính xác! Mật danh huyền thoại của ông là X6 thuộc Cụm Tình báo H.63.'
+            },
+            {
+              title: 'Mảnh 2: Vỏ bọc',
+              q: 'Trong vai trò ký giả, Phạm Xuân Ẩn từng là phóng viên chính thức của cơ quan báo chí danh tiếng nào của Hoa Kỳ?',
+              options: ['A. Tuần báo Time', 'B. Báo The New York Times', 'C. Hãng tin Reuters', 'D. Tạp chí Newsweek'],
+              correct: 0,
+              feedback: 'Chính xác! Ông là phóng viên chính thức người Việt Nam đầu tiên của tuần báo danh tiếng Time.'
+            },
+            {
+              title: 'Mảnh 3: Chữ "Nghĩa"',
+              q: 'Trước giờ phút giải phóng trưa 30/4/1975, Phạm Xuân Ẩn đã bất chấp nguy hiểm dùng xe riêng đưa ai đi di tản để trọn vẹn chữ Nghĩa?',
+              options: ['A. Bác sĩ Trần Kim Tuyến (Trùm mật vụ)', 'B. Tướng Nguyễn Cao Kỳ', 'C. Đại sứ Graham Martin', 'D. Ký giả Morley Safer'],
+              correct: 0,
+              feedback: 'Chính xác! Ông đã mưu trí cứu bác sĩ Trần Kim Tuyến lên chuyến trực thăng di tản cuối cùng vì ân tình xưa.'
+            }
+          ],
+          story: `<p><b>Bức ảnh "Hai nửa một cuộc đời"</b> khắc họa sinh động hai mặt tưởng chừng đối lập nhưng hòa quyện hoàn hảo trong con người Thiếu tướng Phạm Xuân Ẩn: một bên là người chiến sĩ cộng sản kiên trung trong bộ quân phục Thiếu tướng trang nghiêm, một bên là nhà báo tài hoa, lịch thiệp của tuần báo hàng đầu thế giới <i>Time</i> với điếu thuốc lá quen thuộc trên môi.</p><p>Hơn hai mươi năm hoạt động ngay giữa đầu não của đối phương, ông đã làm tròn tuyệt đối cả hai sứ mệnh: người làm báo chân chính cung cấp thông tin trung thực cho dư luận thế giới, và người tình báo xuất sắc bảo vệ non sông mà chưa từng làm tổn thương đồng nghiệp hay phản bội bạn bè.</p>`
+        },
+        {
+          id: 'dossier-2',
+          name: 'Hồ sơ 02',
+          title: 'Cuộc gặp của các huyền thoại',
+          sub: 'Bức ảnh hiếm hoi cùng đồng chí Mười Hương và các bậc thầy tình báo',
+          image: 'assets/images/1957_1959/1958_Ngoai_MuoiHuongChupCungPXAVaNhieuNhaTinhBao.jpg',
+          pieces: [
+            {
+              title: 'Mảnh 1: Người thầy',
+              q: 'Ai là người chỉ huy tình báo chiến lược đã trực tiếp lựa chọn, định hướng và giao nhiệm vụ sang Mỹ học báo chí cho Phạm Xuân Ẩn?',
+              options: ['A. Đồng chí Mười Hương (Trần Quốc Hương)', 'B. Đại tá Tư Cang', 'C. Tướng Mai Chí Thọ', 'D. Bác sĩ Phạm Ngọc Thạch'],
+              correct: 0,
+              feedback: 'Chính xác! Đồng chí Mười Hương là kiến trúc sư vĩ đại của mạng lưới tình báo chiến lược miền Nam.'
+            },
+            {
+              title: 'Mảnh 2: Du học Mỹ',
+              q: 'Trường đại học mà Phạm Xuân Ẩn theo học chuyên ngành báo chí tại bang California (Mỹ) trong giai đoạn 1957 - 1959 là trường nào?',
+              options: ['A. Orange Coast College (OCC)', 'B. Đại học Harvard', 'C. Đại học Columbia', 'D. Đại học Stanford'],
+              correct: 0,
+              feedback: 'Chính xác! Ông đã học chuyên ngành báo chí tại Orange Coast College (California).'
+            },
+            {
+              title: 'Mảnh 3: Bài thơ Tiễn bạn',
+              q: 'Người đồng đội, chỉ huy trưởng Cụm H.63 từng gắn bó sinh tử và viết bài thơ "Tiễn bạn" xúc động cho Phạm Xuân Ẩn là ai?',
+              options: ['A. Đại tá Tư Cang (Nguyễn Văn Tàu)', 'B. Đại tá Đinh Đức Thiện', 'C. Tướng Đặng Trần Đức', 'D. Thiếu tướng Vũ Ngọc Nhạ'],
+              correct: 0,
+              feedback: 'Chính xác! Đó chính là Đại tá Anh hùng LLVTND Tư Cang (Nguyễn Văn Tàu).'
+            }
+          ],
+          story: `<p><b>Bức ảnh lịch sử vô giá</b> ghi lại khoảnh khắc hội ngộ của các huyền thoại trong ngành tình báo cách mạng Việt Nam. Đứng ở trung tâm là Phạm Xuân Ẩn cùng đồng chí Trần Quốc Hương (Mười Hương) - người thầy, người chỉ huy đã nhìn ra tư chất kiệt xuất của ông từ những năm đầu kháng chiến.</p><p>Họ là những trí tuệ lớn đã âm thầm dâng hiến cả thanh xuân và sinh mạng, tạo nên những chiến công hiển hách góp phần quyết định vào ngày non sông thống nhất.</p>`
+        },
+        {
+          id: 'dossier-3',
+          name: 'Hồ sơ 03',
+          title: 'Vỏ bọc hoàn hảo: Bàn máy chữ Sài Gòn',
+          sub: 'Cà phê Givral, bản tin chiến sự và mạng lưới giao liên bí mật',
+          image: 'assets/images/sample-journalist.jpg',
+          pieces: [
+            {
+              title: 'Mảnh 1: Điểm hẹn Givral',
+              q: 'Quán cà phê nổi tiếng nào tại Sài Gòn được mệnh danh là "trung tâm thông tin" nơi Phạm Xuân Ẩn thường lui tới mỗi ngày để thu thập tin tức?',
+              options: ['A. Cà phê Givral', 'B. Quán Brodard', 'C. Quán La Pagode', 'D. Khách sạn Caravelle'],
+              correct: 0,
+              feedback: 'Chính xác! Cà phê Givral nằm ngay góc đường Tự Do (Đồng Khởi) là "nghị viện Givral" trứ danh.'
+            },
+            {
+              title: 'Mảnh 2: Hộp thư mật',
+              q: 'Các tài liệu tình báo mật được Phạm Xuân Ẩn cuộn tròn và ngụy trang tinh vi trong đồ vật nào để chuyển ra chiến khu Củ Chi?',
+              options: ['A. Gói trong chả giò hoặc gài trong bánh tráng', 'B. Giấu trong ruột đài cassette', 'C. May vào gấu áo khoác dạ', 'D. Gắn dưới đáy bình xăng xe hơi'],
+              correct: 0,
+              feedback: 'Chính xác! Nữ giao liên anh hùng Nguyễn Thị Ba thường nhận chả giò ngụy trang phim tài liệu mật.'
+            },
+            {
+              title: 'Mảnh 3: Phong cách tình báo',
+              q: 'Nguyên tắc vàng nào đã giúp Phạm Xuân Ẩn hoạt động hơn 20 năm ngay giữa cơ quan đầu não đối phương mà không hề bị lộ?',
+              options: ['A. Giữ vỏ bọc chuyên nghiệp, phân tích độc lập và liên lạc đơn tuyến an toàn', 'B. Thường xuyên đổi chỗ ở khắp Sài Gòn', 'C. Luôn mang theo vũ khí ngụy trang', 'D. Sử dụng giấy tờ giả của nhiều nước'],
+              correct: 0,
+              feedback: 'Chính xác! Trí tuệ uyên bác, phân tích sắc bén và kỷ luật thép là bí quyết giúp ông bất khả xâm phạm.'
+            }
+          ],
+          story: `<p><b>Chiếc bàn máy chữ, tách cà phê đậm đặc và chiếc thẻ nhà báo</b> chính là "vũ khí" lợi hại nhất của Phạm Xuân Ẩn. Không cần ám sát, không cần súng đạn, chỉ bằng ngòi bút sắc sảo và nhãn quan địa chính trị thiên tài, ông đã tiếp cận những kế hoạch quân sự tối mật nhất của Lầu Năm Góc và chính quyền Sài Gòn.</p><p>Hàng ngàn trang báo cáo phân tích chiến lược của ông đã được chuyển qua rừng Củ Chi về Bộ Chính trị, giúp Trung ương hoạch định đường lối tác chiến giành thắng lợi hoàn toàn.</p>`
+        }
+      ],
+      ja: [
+        {
+          id: 'dossier-1',
+          name: 'ファイル 01',
+          title: '二重の伝説の生涯',
+          sub: 'タイム誌の敏腕記者であり、ベトナム人民軍の英雄少将',
+          image: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
+          pieces: [
+            {
+              title: 'ピース 1: 暗号名',
+              q: 'ファム・スアン・アンの最も有名な諜報暗号名は何でしたか？',
+              options: ['A. X6', 'B. H10', 'C. K25', 'D. A3'],
+              correct: 0,
+              feedback: '正解です！彼の暗号名はH.63諜報群の「X6」でした。'
+            },
+            {
+              title: 'ピース 2: 記者の仮面',
+              q: 'ジャーナリストとして、アンは米国のどの名門誌の正式特派員でしたか？',
+              options: ['A. 『タイム』誌 (Time)', 'B. 『ニューヨーク・タイムズ』', 'C. ロイター通信', 'D. 『ニューズウィーク』'],
+              correct: 0,
+              feedback: '正解です！彼はタイム誌の初代ベトナム人正式特派員でした。'
+            },
+            {
+              title: 'ピース 3: 「義」の心',
+              q: '1975年4月30日の直前、アンは友情のために危険を冒して誰を救出しましたか？',
+              options: ['A. チャン・キム・トゥエン医師（秘密警察長官）', 'B. グエン・カオ・キ将軍', 'C. グラハム・マーティン大使', 'D. モーリー・セーファー記者'],
+              correct: 0,
+              feedback: '正解です！過去の恩義に報いるため、トゥエン医師を最終脱出ヘリに乗せました。'
+            }
+          ],
+          story: `<p><b>「二重の生涯」の写真</b>は、アンの類まれな二つの顔を伝えています。一方は規律正しく忠誠な軍人、もう一方は西側ジャーナリズム界で愛された洗練された知識人です。彼は敵陣の奥深くで、どちらの役目も完璧に全うしました。</p>`
+        },
+        {
+          id: 'dossier-2',
+          name: 'ファイル 02',
+          title: '伝説たちの集い',
+          sub: '師ムオイ・フオン同志と諜報の巨匠たち',
+          image: 'assets/images/1957_1959/1958_Ngoai_MuoiHuongChupCungPXAVaNhieuNhaTinhBao.jpg',
+          pieces: [
+            {
+              title: 'ピース 1: 指導者',
+              q: 'アンを見出し、米国留学を指示した戦略諜報の指導者は誰ですか？',
+              options: ['A. ムオイ・フオン（チャン・クオック・フオン）', 'B. トゥ・カン大佐', 'C. マイ・チー・ト将軍', 'D. ファム・ゴック・タック医師'],
+              correct: 0,
+              feedback: '正解です！ムオイ・フオン同志こそが卓越した戦略諜報網の設計者でした。'
+            },
+            {
+              title: 'ピース 2: 米国留学',
+              q: '1957年から1959年にアンがジャーナリズムを学んだカリフォルニアの学校は？',
+              options: ['A. オレンジコースト・カレッジ (OCC)', 'B. ハーバード大学', 'C. コロンビア大学', 'D. スタンフォード大学'],
+              correct: 0,
+              feedback: '正解です！OCCでジャーナリズムを学びました。'
+            },
+            {
+              title: 'ピース 3: 追悼の詩',
+              q: '戦友としてアンを支え、感動的な詩「友を送る」を詠んだ指揮官は？',
+              options: ['A. トゥ・カン大佐（グエン・ヴァン・タウ）', 'B. ディン・ドゥック・ティエン大佐', 'C. ダン・チャン・ドゥック将軍', 'D. ヴー・ゴック・ニャ少将'],
+              correct: 0,
+              feedback: '正解です！H.63指揮官のトゥ・カン大佐です。'
+            }
+          ],
+          story: `<p><b>歴史的一枚</b>には、ベトナム諜報史を創り上げた伝説的人物たちが一堂に会しています。アンとムオイ・フオン同志が並び立ち、祖国の統一に捧げた知性と情熱を物語っています。</p>`
+        },
+        {
+          id: 'dossier-3',
+          name: 'ファイル 03',
+          title: '完璧な偽装：サイゴンのタイプライター',
+          sub: 'カフェ・ジヴラルと極秘連絡網',
+          image: 'assets/images/sample-journalist.jpg',
+          pieces: [
+            {
+              title: 'ピース 1: 集いの場',
+              q: 'アンが毎日情報収集のために通い、「情報議会」と呼ばれた有名なカフェは？',
+              options: ['A. カフェ・ジヴラル (Givral)', 'B. ブロダード (Brodard)', 'C. ラ・パゴド (La Pagode)', 'D. カラヴェル・ホテル'],
+              correct: 0,
+              feedback: '正解です！ジヴラル・カフェは国内外の特派員が集う情報の中心地でした。'
+            },
+            {
+              title: 'ピース 2: 極秘伝達',
+              q: '機密フィルムは何に包まれてクチの解放区へ運ばれましたか？',
+              options: ['A. 揚げ春巻きやライスペーパーの中', 'B. カセットテープの中', 'C. コートの裏地', 'D. 自動車の燃料タンク'],
+              correct: 0,
+              feedback: '正解です！連絡員グエン・ティ・バが春巻きなどに隠して運びました。'
+            },
+            {
+              title: 'ピース 3: 鉄の規律',
+              q: 'アンが20年以上一度も露見しなかった最大の秘訣は？',
+              options: ['A. 徹底した専門的偽装、独立した分析、単線連絡の規律', 'B. 頻繁な住居の変更', 'C. 常に武器を携帯していたこと', 'D. 複数国の偽造パスポート'],
+              correct: 0,
+              feedback: '正解です！深い知性と独立した分析力こそが最高の武器でした。'
+            }
+          ],
+          story: `<p><b>タイプライターと熱いコーヒー、そして記者証</b>こそがアンの真の武器でした。銃弾ではなく鋭い分析によって、彼は敵の最高機密を読み解き、祖国の勝利へと導きました。</p>`
+        }
+      ]
+    };
+
+    // Quản lý trạng thái giải mã các hồ sơ trong phiên
+    const decodeState = {
+      archiveIndex: 0,
+      activePiece: 0,
+      unlocked: {
+        'dossier-1': [false, false, false],
+        'dossier-2': [false, false, false],
+        'dossier-3': [false, false, false]
       }
     };
 
     let currentLang = (window.getCurrentLang ? window.getCurrentLang() : 'vi') || 'vi';
 
-    function ph(t, imgSrc) {
-      if (imgSrc) {
-        return `<div class="modal-img-wrap"><img src="${imgSrc}" alt="${t}" onerror="this.onerror=null; this.parentElement.style.display='none';"></div>`;
-      }
-      const p = DATA[currentLang]?.meta?.imgPrefix || 'Ảnh';
-      return `<div class="ph">[${p}: ${t}]</div>`;
+    const dlg = document.getElementById('dlg');
+
+    function stopVideos() {
+      const vids = dlg.querySelectorAll('video');
+      vids.forEach(v => {
+        try { v.pause(); } catch (e) { }
+      });
     }
 
-    const dlg = document.getElementById('dlg');
-    function open(t, y, body) {
-      document.getElementById('dt').textContent = y;
-      document.getElementById('db').innerHTML = `<h2 class="serif">${t}</h2>` + body;
+    // ==============================================================================
+    // HIỂN THỊ POPUP CHI TIẾT ĐỒNG BỘ PHONG CÁCH TIMELINE:
+    // 1. Ảnh / Video ở trên cùng (Full width / Hero figure)
+    // 2. Chú thích của ảnh ngay bên dưới ảnh
+    // 3. Sau đó mới xuống chữ: Năm/Mốc thời gian -> Tiêu đề H2 -> Nội dung đoạn văn
+    // 4. Nếu có ảnh bên trong nội dung: Hiển thị dạng m-mid-figure có viền vàng
+    //    và khung chú thích dưới ảnh (như ảnh ông Mười Hương ở timeline)
+    // ==============================================================================
+    function openModalPostwar(opt) {
+      stopVideos();
+      const { y, t, heroImg, heroCaption, videoSrc, bodyHtml, rawHtml, sub } = opt;
+      let html = '';
+
+      // 1. Ảnh hoặc Video Hero ở trên cùng
+      if (videoSrc) {
+        html += `
+          <figure class="m-hero-figure m-hero-video-figure">
+            <div class="m-hero-video-wrap">
+              <video id="modalVid" controls playsinline preload="metadata">
+                <source src="${videoSrc}" type="video/mp4">
+                Trình duyệt không hỗ trợ phát video.
+              </video>
+            </div>
+            ${heroCaption ? `<figcaption class="m-hero-caption">${heroCaption}</figcaption>` : ''}
+          </figure>
+        `;
+      } else if (heroImg) {
+        html += `
+          <figure class="m-hero-figure">
+            <img class="m-hero-img" src="${heroImg}" alt="${heroCaption || t}" onerror="this.onerror=null; this.parentElement.style.display='none';">
+            ${heroCaption ? `<figcaption class="m-hero-caption">${heroCaption}</figcaption>` : ''}
+          </figure>
+        `;
+      }
+
+      // 2. Khối nội dung văn bản bên dưới ảnh
+      html += `<div class="m-modal-body">`;
+      if (y) {
+        html += `<div class="m-modal-meta">${y}</div>`;
+      }
+      if (t) {
+        html += `<h2 class="m-modal-title serif">${t}</h2>`;
+      }
+      if (sub) {
+        html += `<p style="color:var(--mute);margin:-10px 0 18px;font-size:13.5px">${sub}</p>`;
+      }
+      if (bodyHtml) {
+        html += `<div class="m-modal-text">${bodyHtml}</div>`;
+      }
+      if (rawHtml) {
+        html += rawHtml;
+      }
+      html += `</div>`;
+
+      const db = document.getElementById('db');
+      db.innerHTML = html;
+      db.scrollTop = 0;
       dlg.showModal();
     }
 
-    const O = o => open(o.t, o.y, ph(o.img, o.imgSrc) + o.h);
+    // Hàm chuyển tiếp tương thích ngược
+    function open(t, y, body) {
+      openModalPostwar({ t, y, bodyHtml: body });
+    }
+
+    const O = o => {
+      if (o.isDecode) {
+        openDecodeGame(0);
+        return;
+      }
+      openModalPostwar({
+        y: o.y,
+        t: o.t,
+        heroImg: o.imgSrc,
+        heroCaption: o.caption || o.img,
+        videoSrc: o.videoSrc,
+        bodyHtml: o.h
+      });
+    };
+
+    // ==============================================================================
+    // BỘ ĐIỀU KHIỂN MINI-GAME: GIẢI MÃ PHẠM XUÂN ẨN
+    // ==============================================================================
+    function openDecodeGame(targetIdx = null) {
+      stopVideos();
+      if (targetIdx !== null && targetIdx >= 0) {
+        decodeState.archiveIndex = targetIdx;
+      }
+      const isJa = currentLang === 'ja';
+      const list = DECODE_GAME_DATA[isJa ? 'ja' : 'vi'];
+      const curArchive = list[decodeState.archiveIndex] || list[0];
+      const archiveId = curArchive.id;
+      const unlockedArr = decodeState.unlocked[archiveId] || [false, false, false];
+      const totalUnlocked = unlockedArr.filter(Boolean).length;
+      const isAllUnlocked = totalUnlocked === 3;
+
+      // Tìm mảnh ghép đầu tiên chưa mở để làm tiêu điểm
+      if (unlockedArr[decodeState.activePiece] && !isAllUnlocked) {
+        const nextLocked = unlockedArr.findIndex(u => !u);
+        if (nextLocked !== -1) decodeState.activePiece = nextLocked;
+      }
+
+      const activePieceObj = curArchive.pieces[decodeState.activePiece] || curArchive.pieces[0];
+
+      let tabsHtml = list.map((item, idx) => `
+        <button type="button" class="decode-tab-btn ${idx === decodeState.archiveIndex ? 'active' : ''}" onclick="window.switchDecodeArchive(${idx})">
+          ${item.name}: ${item.title.length > 20 ? item.title.slice(0, 18) + '…' : item.title}
+        </button>
+      `).join('');
+
+      let piecesHtml = curArchive.pieces.map((p, idx) => {
+        const isDone = unlockedArr[idx];
+        const isActive = idx === decodeState.activePiece;
+        return `
+          <div class="decode-piece ${isDone ? 'unlocked' : ''} ${isActive ? 'active' : ''}" onclick="window.selectDecodePiece(${idx})">
+            ${!isDone ? `
+              <svg class="piece-lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <div class="piece-title">${p.title}</div>
+              <div class="piece-hint">${isJa ? 'クリックして解読' : 'Chạm để giải mã ✦'}</div>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+
+      let badgesHtml = curArchive.pieces.map((p, idx) => `
+        <span class="decode-badge-item ${unlockedArr[idx] ? 'done' : ''}">
+          ${unlockedArr[idx] ? '✓' : '🔒'} ${p.title}
+        </span>
+      `).join('');
+
+      let quizHtml = '';
+      if (!isAllUnlocked) {
+        const pObj = activePieceObj;
+        const optHtml = pObj.options.map((opt, optIdx) => `
+          <button type="button" class="quiz-opt-btn" id="qOptBtn_${optIdx}" onclick="window.checkDecodeAnswer(${optIdx})">
+            ${opt}
+          </button>
+        `).join('');
+
+        quizHtml = `
+          <div class="decode-quiz-card">
+            <div class="quiz-hdr">
+              <span class="quiz-target">${pObj.title} · ${isJa ? '質問' : 'CÂU HỎI MỞ KHÓA MẢNH GHÉP'}</span>
+              <span style="font-size:11px;color:var(--mute)">${isJa ? '正解すると写真の1/3が開きます' : 'Trả lời đúng để lật mở 1/3 bức ảnh'}</span>
+            </div>
+            <div class="quiz-question">${pObj.q}</div>
+            <div class="quiz-options">${optHtml}</div>
+            <div class="quiz-feedback" id="quizFeedback"></div>
+          </div>
+        `;
+      } else {
+        quizHtml = `
+          <div class="decode-completed-card">
+            <div class="decode-win-banner">
+              <span>🎉</span>
+              <span>${isJa ? 'すべての歴史ピースの解読に成功しました！' : 'BẠN ĐÃ MỞ KHÓA HOÀN TOÀN BỨC ẢNH LỊCH SỬ!'}</span>
+            </div>
+            ${curArchive.story}
+            <div class="decode-actions">
+              <button type="button" class="decode-btn-sec" onclick="window.resetCurrentArchive()">
+                ${isJa ? '↺ もう一度解読する' : '↺ Khóa lại & Chơi lại hồ sơ này'}
+              </button>
+              ${decodeState.archiveIndex < list.length - 1 ? `
+                <button type="button" class="go" onclick="window.switchDecodeArchive(${decodeState.archiveIndex + 1})">
+                  ${isJa ? '次の歴史ファイルを解読 ➔' : 'Giải mã hồ sơ tiếp theo ➔'}
+                </button>
+              ` : ''}
+            </div>
+          </div>
+        `;
+      }
+
+      const bodyHtml = `
+        <div class="decode-wrap">
+          <div class="decode-intro">
+            ${isJa
+              ? '<b>歴史解読室へようこそ：</b>下の写真ファイルを選択し、3つのピースに対応する3つのクイズに正解して、秘められた歴史写真とストーリーを解き明かしてください！'
+              : '<b>Chào mừng bạn đến với Phòng Giải mã Lịch sử:</b> Bức ảnh tư liệu quý giá bên dưới đang bị che giấu bởi 3 mảnh ghép. Hãy chạm vào từng mảnh ghép và trả lời chính xác 3 câu trắc nghiệm để mở khóa toàn bộ bức ảnh cũng như câu chuyện lịch sử đằng sau!'}
+          </div>
+
+          <div class="decode-tabs">${tabsHtml}</div>
+
+          <div class="decode-photo-box">
+            <img class="decode-bg-img" src="${curArchive.image}" alt="${curArchive.title}" style="${isAllUnlocked ? 'filter:none;' : 'filter:blur(3px) brightness(0.85);'}">
+            <div class="decode-pieces-grid">${piecesHtml}</div>
+          </div>
+
+          <div class="decode-progress-bar">
+            <span>${isJa ? '解読進捗' : 'Tiến độ giải mã'}: <b>${totalUnlocked}/3</b> ${isJa ? 'ピース' : 'mảnh ghép'}</span>
+            <div class="decode-badges">${badgesHtml}</div>
+          </div>
+
+          ${quizHtml}
+        </div>
+      `;
+
+      openModalPostwar({
+        y: isJa ? 'ファム・スアン・アンの歴史解読' : 'GIẢI MÃ PHẠM XUÂN ẨN · HỒ SƠ LỊCH SỬ',
+        t: curArchive.title,
+        sub: curArchive.sub,
+        rawHtml: bodyHtml
+      });
+    }
+
+    // Các hàm tương tác của mini-game gắn vào window
+    window.switchDecodeArchive = function (idx) {
+      decodeState.archiveIndex = idx;
+      decodeState.activePiece = 0;
+      openDecodeGame();
+    };
+
+    window.selectDecodePiece = function (pieceIdx) {
+      const isJa = currentLang === 'ja';
+      const curArchive = DECODE_GAME_DATA[isJa ? 'ja' : 'vi'][decodeState.archiveIndex];
+      const unlockedArr = decodeState.unlocked[curArchive.id];
+      if (unlockedArr[pieceIdx]) return; // Đã mở rồi thì không cần chọn lại
+      decodeState.activePiece = pieceIdx;
+      openDecodeGame();
+    };
+
+    window.checkDecodeAnswer = function (optIdx) {
+      const isJa = currentLang === 'ja';
+      const curArchive = DECODE_GAME_DATA[isJa ? 'ja' : 'vi'][decodeState.archiveIndex];
+      const pObj = curArchive.pieces[decodeState.activePiece];
+      const feedbackEl = document.getElementById('quizFeedback');
+      const optBtn = document.getElementById(`qOptBtn_${optIdx}`);
+
+      if (optIdx === pObj.correct) {
+        if (optBtn) optBtn.classList.add('correct');
+        if (feedbackEl) {
+          feedbackEl.className = 'quiz-feedback success';
+          feedbackEl.textContent = '✓ ' + pObj.feedback;
+        }
+
+        // Mở khóa mảnh ghép này
+        decodeState.unlocked[curArchive.id][decodeState.activePiece] = true;
+
+        setTimeout(() => {
+          openDecodeGame();
+        }, 1100);
+      } else {
+        if (optBtn) {
+          optBtn.classList.add('wrong');
+          setTimeout(() => optBtn.classList.remove('wrong'), 600);
+        }
+        if (feedbackEl) {
+          feedbackEl.className = 'quiz-feedback error';
+          feedbackEl.textContent = isJa ? '✕ 不正解です。もう一度よく考えて選んでください！' : '✕ Chưa chính xác rồi! Hãy suy nghĩ và thử lại nhé.';
+        }
+      }
+    };
+
+    window.resetCurrentArchive = function () {
+      const isJa = currentLang === 'ja';
+      const curArchive = DECODE_GAME_DATA[isJa ? 'ja' : 'vi'][decodeState.archiveIndex];
+      decodeState.unlocked[curArchive.id] = [false, false, false];
+      decodeState.activePiece = 0;
+      openDecodeGame();
+    };
 
     // Tạo khung ảnh kỷ vật cho các cánh tủ
     function fr(o, w) {
@@ -1416,21 +2522,34 @@
         imgContent = `<img src="${o.imgSrc}" alt="${o.t}" onerror="this.onerror=null; this.parentElement.innerHTML='<span style=\\'padding:4px;\\'>[${p}: ${o.img}]</span>';">`;
       } else {
         imgContent = `
-      <div class="img-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        <span>[${p}: ${o.img}]</span>
-      </div>`;
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span>[${p}: ${o.img}]</span>
+          </div>`;
+      }
+
+      // Huy hiệu góc cho video hoặc puzzle
+      let badgeHtml = '';
+      if (o.isVideo) {
+        badgeHtml = `<span class="video-shelf-badge">▶ Video</span>`;
+      } else if (o.isDecode) {
+        badgeHtml = `<span class="puzzle-shelf-badge">🧩 Giải mã</span>`;
       }
 
       b.innerHTML = `
-    <div class="wood">
-      <div class="mat">
-        <div class="img-box">${imgContent}</div>
-      </div>
-    </div>
-    <i>${o.t}<em>${o.y}</em></i>
-  `;
-      b.onclick = () => O(o);
+        <div class="wood">
+          <div class="mat">
+            <div class="img-box">${imgContent}${badgeHtml}</div>
+          </div>
+        </div>
+        <i>${o.t}<em>${o.y}</em></i>
+      `;
+
+      if (o.isDecode) {
+        b.onclick = () => openDecodeGame(0);
+      } else {
+        b.onclick = () => O(o);
+      }
       return b;
     }
 
@@ -1461,82 +2580,79 @@
       document.getElementById('wLTitle').textContent = m.wLTitle;
       document.getElementById('wRTitle').textContent = m.wRTitle;
       document.getElementById('hero').textContent = m.hero;
-      document.getElementById('medsCp').textContent = m.medsCp;
-      document.getElementById('meds').setAttribute('aria-label', m.medsAria);
+      document.getElementById('altarCaption').textContent = m.altarCp;
+      document.getElementById('altarCard').setAttribute('aria-label', m.altarAria);
       updateFloorBtn();
 
-      // Cập nhật đường dẫn ảnh 2 lá cờ & chân dung
+      // Cập nhật đường dẫn ảnh 2 lá cờ, bàn thờ & chân dung
       const fVn = document.getElementById('flagVnImg');
       if (fVn) fVn.src = ROOM_CONFIG.flagVn;
       const fParty = document.getElementById('flagPartyImg');
       if (fParty) fParty.src = ROOM_CONFIG.flagParty;
+      const altarImg = document.getElementById('altarImg');
+      if (altarImg) altarImg.src = ROOM_CONFIG.altar;
       const pt = document.getElementById('ptImg');
       if (pt) pt.src = ROOM_CONFIG.portrait;
 
       tiers(document.getElementById('gL'), cur.L, [1, 1, 1]);
       tiers(document.getElementById('gR'), cur.R, [1, 1, 1]);
 
-      document.getElementById('hero').onclick = () => O(cur.C[1]);
-      document.getElementById('meds').onclick = () => O(cur.C[2]);
+      // Sự kiện bấm biển danh hiệu Anh hùng LLVTND
+      document.getElementById('hero').onclick = () => {
+        const isJa = currentLang === 'ja';
+        openModalPostwar({
+          y: isJa ? '1976年11月表彰' : 'Tuyên dương tháng 11/1976',
+          t: isJa ? '人民武装勢力英雄称号' : 'Danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân',
+          heroImg: ROOM_CONFIG.ahllvt,
+          heroCaption: isJa
+            ? 'チャン・ヴァン・チュン（ファム・スアン・アン）同志に授与された人民武装勢力英雄の表彰'
+            : 'Bằng tuyên dương danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân trao tặng đồng chí Trần Văn Trung (tức Phạm Xuân Ẩn)',
+          bodyHtml: isJa
+            ? `<p>1976年1月15日（1976年11月正式発表）、ベトナム国家は総参謀部第2総局のチャン・ヴァン・チュン（ファム・スアン・アン）同志に対し、国家最高位の栄誉である<b>「人民武装勢力英雄」</b>の称号を授与しました。</p><p>これは、20年以上にわたり敵陣の深奥で単独活動を続け、数百件に及ぶ貴重な戦略機密を提供して祖国の完全解放と統一に決定的な貢献を果たしたことに対する至高の顕彰です。</p>`
+            : `<p>Ngày 15/1/1976 (chính thức công bố và tuyên dương vào tháng 11/1976), Nhà nước đã phong tặng danh hiệu cao quý <b>Anh hùng Lực lượng Vũ trang Nhân dân</b> cho đồng chí Trần Văn Trung (tức Phạm Xuân Ẩn), Cán bộ Cục Nghiên cứu - Bộ Tổng Tham mưu (nay là Tổng cục II - Bộ Quốc phòng).</p><p>Đây là sự ghi nhận xứng đáng cho hơn hai mươi năm hoạt động đơn độc, kiên trung và mưu trí xuất chúng giữa hang hùm miệng cọp, cung cấp hàng trăm tài liệu chiến lược nguyên bản vô giá giúp Đảng và Quân đội ta đề ra những quyết sách mang tính bước ngoặt, dẫn tới thắng lợi trọn vẹn của cuộc Tổng tiến công và nổi dậy mùa Xuân 1975.</p>`
+        });
+      };
+
+      // Sự kiện bấm khung ảnh Bàn thờ Thiếu tướng & 16 Huân huy chương
+      document.getElementById('altarCard').onclick = () => {
+        const isJa = currentLang === 'ja';
+        openModalPostwar({
+          y: isJa ? '至高の栄誉' : 'Kỷ vật thiêng liêng',
+          t: isJa ? '祭壇と16の勲章・記章' : 'Bàn thờ Thiếu tướng & 16 Huân huy chương cao quý',
+          heroImg: ROOM_CONFIG.altar,
+          heroCaption: isJa
+            ? '自宅の祭壇と党・国家・軍より授与された16の勲章・記章'
+            : 'Bàn thờ và khung lưu giữ trang trọng 16 Huân, Huy chương cao quý của Thiếu tướng Phạm Xuân Ẩn tại tư gia',
+          bodyHtml: isJa
+            ? `<p>ホーチミン市の自宅に設けられたファム・スアン・アン少将の厳粛な祭壇です。軍服姿の遺影と香炉の傍らには、党・国家・軍から授与された16の勲章と記章が納められた額が恭しく祀られています。</p><ul><li>二等独立勲章</li><li>三等軍功勲章</li><li>三等抗戦勲章</li><li>一等対米抗戦救国勲章</li><li>一・二・三等戦功勲章（計4点）</li><li>一・二・三等解放戦功勲章</li><li>一・二・三等栄光の戦士勲章</li><li>決勝軍旗記章</li><li>党員歴50年記念章</li></ul><p>生前のアンは富や名声を一切求めませんでしたが、これらの勲章は祖国に捧げた高洁な生涯の不滅の証となっています。</p>`
+            : `<p>Bàn thờ trang trọng của Thiếu tướng Phạm Xuân Ẩn tại tư gia. Trên bàn thờ, cạnh di ảnh trong bộ quân phục Thiếu tướng và lư hương nghi ngút, là chiếc khung kính lưu giữ trang trọng 16 tấm huân, huy chương cao quý mà Đảng, Nhà nước và Quân đội đã trao tặng cho ông:</p><ul><li>Huân chương Độc lập hạng Nhì</li><li>Huân chương Quân công hạng Ba</li><li>Huân chương Kháng chiến hạng Ba</li><li>Huân chương Kháng chiến chống Mỹ cứu nước hạng Nhất</li><li>4 Huân chương Chiến công hạng Nhất, Nhì, Ba</li><li>Huân chương Chiến công giải phóng hạng Nhất, Nhì, Ba</li><li>Huân chương Chiến sĩ vẻ vang hạng Nhất, Nhì, Ba</li><li>Huy chương Quân kỳ Quyết thắng</li><li>Huy hiệu 50 năm tuổi Đảng</li></ul><p>Sinh thời, ông không bao giờ khoe khoang hay màng đến huân chương, bổng lộc. Nhưng tất cả những phần thưởng cao quý ấy là minh chứng bất tử cho một nhân cách sáng ngời và sự nghiệp phụng sự Tổ quốc trọn vẹn của người chiến sĩ cách mạng.</p>`
+        });
+      };
     }
 
-    // Khởi tạo 16 huân huy chương
-    const meds = document.getElementById('meds');
-    meds.innerHTML = '';
-    for (let i = 0; i < 16; i++) {
-      const m = document.createElement('div');
-      m.className = 'md';
-      meds.appendChild(m);
-    }
-
-    // Bấm vào ảnh Quốc kỳ Việt Nam
-    document.getElementById('flagVnFrame').onclick = () => {
-      const isJa = currentLang === 'ja';
-      open(
-        isJa ? 'ベトナム社会主義共和国国旗' : 'Quốc kỳ nước Cộng hòa Xã hội Chủ nghĩa Việt Nam',
-        isJa ? '誇り高き象徴' : 'Biểu tượng thiêng liêng',
-        `<div class="modal-img-wrap"><img src="${ROOM_CONFIG.flagVn}" alt="Quốc kỳ Việt Nam"></div>` +
-        (isJa
-          ? `<p>赤地に金星の旗は、ベトナム国民の不屈の独立意志と自由を象徴しています。ファム・スアン・アン少将は20年以上の秘密工作の中で、常に祖国統一とこの誇り高き旗のためにすべてを捧げました。</p>`
-          : `<p>Lá cờ đỏ sao vàng là biểu tượng thiêng liêng của độc lập, tự do và khối đại đoàn kết toàn dân tộc Việt Nam.</p><p>Trong suốt hai mươi năm hoạt động tình báo đơn độc giữa hang hùm miệng cọp, hình ảnh lá cờ Tổ quốc luôn là điểm tựa tinh thần sắt son giúp Thiếu tướng Phạm Xuân Ẩn vượt qua mọi thử thách hiểm nguy.</p>`)
-      );
-    };
-
-    // Bấm vào ảnh Cờ Đảng Cộng sản Việt Nam
-    document.getElementById('flagPartyFrame').onclick = () => {
-      const isJa = currentLang === 'ja';
-      open(
-        isJa ? 'ベトナム共産党旗' : 'Cờ Đảng Cộng sản Việt Nam',
-        isJa ? '信念と誓い' : 'Niềm tin & Lời thề danh dự',
-        `<div class="modal-img-wrap"><img src="${ROOM_CONFIG.flagParty}" alt="Cờ Đảng"></div>` +
-        (isJa
-          ? `<p>交差する鎌と槌は、労働者と農民の連帯を象徴するベトナム共産党の旗です。ファム・スアン・アン少将は50年以上の党員歴を持ち、共産党員としての誇りと規律を生涯貫き通しました。</p>`
-          : `<p>Lá cờ đỏ búa liềm vàng là biểu tượng vẻ vang của Đảng Cộng sản Việt Nam, đại diện cho khối liên minh công nông và con đường cách mạng giải phóng dân tộc.</p><p>Thiếu tướng Phạm Xuân Ẩn được trao tặng <b>Huy hiệu 50 năm tuổi Đảng</b>. Đối với ông, Đảng là lý tưởng cao cả, là nơi ông trọn đời cống hiến trọn vẹn tài năng và nhân cách vì sự nghiệp độc lập của nước nhà.</p>`)
-      );
-    };
-
-    // Bấm vào ảnh chân dung Thiếu tướng
+    // Bấm vào ảnh chân dung Thiếu tướng đứng một mình
     document.getElementById('pt').onclick = () => {
       const isJa = currentLang === 'ja';
-      open(
-        isJa ? '少将 ファム・スアン・アン' : 'Thiếu tướng Phạm Xuân Ẩn',
-        isJa ? '1927年 – 2006年' : '1927 – 2006',
-        `<div class="modal-img-wrap"><img src="${ROOM_CONFIG.portrait}" alt="Chân dung Phạm Xuân Ẩn"></div>` +
-        (isJa
-          ? `<p>ファム・スアン・アン（1927年9月12日 – 2006年9月20日）、本名ファム・ヴァン・タイン、ドンナイ省ビエンホア生まれ。『タイム』誌やロイター通信の著名記者であり、同時に戦略諜報員、ベトナム人民軍少将、人民武装勢力英雄。</p><p>彼は敵陣の深奥で20年以上にわたり極秘活動を続け、米国側からもベトナム側からも深く尊敬された稀代の人物でした。</p>`
-          : `<p><b>Phạm Xuân Ẩn</b> (12/9/1927 – 20/9/2006), tên thật Phạm Văn Thành, sinh tại Biên Hòa, Đồng Nai.</p><p>Ông là phóng viên chiến trường tài năng của các cơ quan thông tấn quốc tế hàng đầu như Time và Reuters, đồng thời là một trong những nhà tình báo chiến lược kiệt xuất nhất thế kỷ 20 với mật danh X6, Thiếu tướng Quân đội Nhân dân Việt Nam, Anh hùng lực lượng vũ trang Nhân dân.</p><blockquote>"Tôi làm tình báo không phải vì tiền hay danh vọng, mà vì tình yêu tha thiết với mảnh đất quê hương mình."</blockquote>`)
-      );
+      openModalPostwar({
+        y: isJa ? '1927年 – 2006年' : '1927 – 2006',
+        t: isJa ? '少将 ファム・スアン・アン' : 'Thiếu tướng Phạm Xuân Ẩn',
+        heroImg: ROOM_CONFIG.portrait,
+        heroCaption: isJa
+          ? 'ファム・スアン・アン少将の肖像（1927–2006）— 伝説の諜報員X6'
+          : 'Chân dung Thiếu tướng tình báo Phạm Xuân Ẩn (1927 – 2006) — Huyền thoại X6',
+        bodyHtml: isJa
+          ? `<p><b>ファム・スアン・アン</b>（1927年9月12日 – 2006年9月20日）、本名ファム・ヴァン・タイン、ドンナイ省ビエンホア生まれ。ベトナム人民軍少将、人民武装勢力英雄、タイム誌およびロイター通信の著名記者。</p><p>彼は敵陣の深奥で20年以上にわたり極秘活動を続け、米国側からもベトナム側からも深く尊敬された稀代の人物でした。</p><blockquote>"Tôi làm tình báo không phải vì tiền hay danh vọng, mà vì tình yêu tha thiết với mảnh đất quê hương mình."</blockquote>`
+          : `<p><b>Phạm Xuân Ẩn</b> (12/9/1927 – 20/9/2006), tên thật Phạm Văn Thành, sinh tại Biên Hòa, Đồng Nai.</p><p>Ông là phóng viên chiến trường tài năng của các cơ quan thông tấn quốc tế hàng đầu như <i>Time</i> và <i>Reuters</i>, đồng thời là một trong những nhà tình báo chiến lược kiệt xuất nhất thế kỷ 20 với mật danh X6, Thiếu tướng Quân đội Nhân dân Việt Nam, Anh hùng Lực lượng Vũ trang Nhân dân.</p><blockquote>"Tôi làm tình báo không phải vì tiền hay danh vọng, mà vì tình yêu tha thiết với mảnh đất quê hương mình."</blockquote>`
+      });
     };
 
-    // Đóng modal
-    document.getElementById('dx').onclick = () => dlg.close();
-    dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+    // Đóng modal & dừng phát video
+    document.getElementById('dx').onclick = () => { stopVideos(); dlg.close(); };
+    dlg.addEventListener('click', e => { if (e.target === dlg) { stopVideos(); dlg.close(); } });
+    dlg.addEventListener('cancel', () => { stopVideos(); });
 
     // ==============================================================================
-    // 2. CƠ CHẾ MỞ & ĐÓNG TỦ 3D THEO YÊU CẦU:
-    // - KHÔNG TỰ ĐỘNG MỞ KHI VÀO TRANG NỮA
-    // - MỞ TỦ BẰNG Ổ KHÓA HOẶC NÚT TẠI SÀN NHÀ
-    // - ĐÓNG TỦ BẰNG NÚT TẠI VỊ TRÍ HÒM THƯ (SÀN NHÀ)
+    // 2. CƠ CHẾ MỞ & ĐÓNG TỦ 3D:
     // ==============================================================================
     const cab = document.getElementById('cab');
     let opened = false;
@@ -1607,7 +2723,7 @@
       renderContent();
     });
 
-    // Khởi chạy render lần đầu (TỦ VẪN ĐÓNG ĐÚNG THEO YÊU CẦU)
+    // Khởi chạy render lần đầu
     renderContent();
   </script>
   <script src="js/page-nav.js"></script>
