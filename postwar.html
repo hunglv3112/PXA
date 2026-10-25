@@ -308,7 +308,7 @@
     .fm i {
       font-style: normal;
       margin-top: 6px;
-      font-size: 11.5px;
+      font-size: 11px;
       color: var(--gold2);
       text-align: center;
       line-height: 1.25;
@@ -317,9 +317,10 @@
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
       max-width: 100%;
       display: -webkit-box;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
+      word-break: break-word;
     }
 
     .fm em {
@@ -400,7 +401,8 @@
 
     .flag-frame {
       cursor: default;
-      pointer-events: none; /* Khóa hoàn toàn không cho bấm */
+      pointer-events: none;
+      /* Khóa hoàn toàn không cho bấm */
       width: 94px;
       height: 60px;
       padding: 3px;
@@ -511,14 +513,16 @@
 
     .altar-caption {
       margin-top: 4px;
-      font-size: 9.5px;
+      font-size: 8.5px;
+      line-height: 1.25;
       color: var(--gold2);
       text-align: center;
       font-family: var(--sans);
       font-weight: 700;
-      letter-spacing: .08em;
+      letter-spacing: .04em;
       text-transform: uppercase;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+      max-width: 100%;
     }
 
     /* Khung ảnh chân dung Thiếu tướng đứng một mình */
@@ -568,7 +572,8 @@
     /* ==========================================================================
        BADGES ĐẶC BIỆT CHO KHUNG ẢNH (VIDEO & GIẢI MÃ PUZZLE)
        ========================================================================== */
-    .video-shelf-badge, .puzzle-shelf-badge {
+    .video-shelf-badge,
+    .puzzle-shelf-badge {
       position: absolute;
       bottom: 4px;
       right: 4px;
@@ -890,8 +895,15 @@
     }
 
     @keyframes fadeInStory {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .decode-win-banner {
@@ -1334,13 +1346,13 @@
     }
 
     .m-modal-meta {
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 700;
-      letter-spacing: .16em;
+      letter-spacing: .06em;
       color: var(--gold, #ebcb45);
-      text-transform: uppercase;
       margin: 0 0 10px;
       font-family: var(--sans);
+      line-height: 1.45;
     }
 
     .m-modal-title,
@@ -1396,7 +1408,8 @@
       border-radius: 8px;
       overflow: hidden;
       background: rgba(0, 0, 0, 0.28);
-      border: 1px solid rgba(235, 203, 69, 0.6); /* Viền vàng đặc trưng như ảnh Mười Hương */
+      border: 1px solid rgba(235, 203, 69, 0.6);
+      /* Viền vàng đặc trưng như ảnh Mười Hương */
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
@@ -1453,30 +1466,36 @@
     }
 
     @media (max-width: 768px) {
+
       dialog,
       dialog.m-postwar-dialog {
         width: 95vw;
         max-height: 90vh;
         border-radius: 6px;
       }
+
       .m-hero-figure img,
       .m-hero-figure .m-hero-img {
         height: 240px;
         max-height: 36vh;
       }
+
       .m-modal-body {
         padding: 22px 18px 28px;
       }
+
       .m-modal-title,
       .mb h2 {
         font-size: 22px;
         margin-bottom: 14px;
       }
+
       .m-modal-text p,
       .mb p {
         font-size: 15px;
         line-height: 1.68;
       }
+
       .m-postwar-close {
         top: 10px;
         left: 10px;
@@ -1641,7 +1660,8 @@
       </a>
       <a href="postwar.html" class="page-nav-item active" data-page="postwar" role="menuitem">
         <span class="page-nav-item-icon">🕊️</span>
-        <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm Phạm Xuân Ẩn" data-ja="5. 戦後記念ルーム">5. Phòng lưu niệm Phạm Xuân Ẩn</span>
+        <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm Phạm Xuân Ẩn" data-ja="5. 戦後記念ルーム">5. Phòng lưu niệm
+          Phạm Xuân Ẩn</span>
         <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
       </a>
     </div>
@@ -1667,7 +1687,7 @@
         <!-- Cánh trái: Sau chiến tranh -->
         <div class="wing wL">
           <div class="wing-hdr">
-            <h4 id="wLTitle">SAU CHIẾN TRANH</h4>
+            <h4 id="wLTitle"></h4>
           </div>
           <div id="gL" style="flex:1;display:flex;flex-direction:column"></div>
         </div>
@@ -1683,7 +1703,8 @@
             <div class="flags">
               <div class="flag-frame" id="flagVnFrame" title="Quốc kỳ Việt Nam">
                 <div class="flag-inner">
-                  <img id="flagVnImg" class="flag-img" src="assets/images/PhongLuuNiem/PLN_CoVietNam.webp" alt="Quốc kỳ Việt Nam">
+                  <img id="flagVnImg" class="flag-img" src="assets/images/PhongLuuNiem/PLN_CoVietNam.webp"
+                    alt="Quốc kỳ Việt Nam">
                 </div>
               </div>
               <div class="flag-frame" id="flagPartyFrame" title="Cờ Đảng Cộng sản Việt Nam">
@@ -1703,12 +1724,13 @@
             <div class="wood">
               <div class="mat">
                 <div class="img-box" id="altarImgBox">
-                  <img id="altarImg" src="assets/images/PhongLuuNiem/PLN_16HuyChuong.jpg" alt="Bàn thờ Thiếu tướng Phạm Xuân Ẩn"
-                    onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'img-placeholder\'>[Bàn thờ Thiếu tướng<br>Phạm Xuân Ẩn]</div>';">
+                  <img id="altarImg" src="assets/images/PhongLuuNiem/PLN_16HuyChuong.jpg"
+                    alt="Sự ghi nhận đối với những cống hiến của Phạm Xuân Ẩn"
+                    onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'img-placeholder\'>[Sự ghi nhận đối với<br>những cống hiến của PXA]</div>';">
                 </div>
               </div>
             </div>
-            <div class="altar-caption" id="altarCaption">BÀN THỜ & 16 HUÂN HUY CHƯƠNG</div>
+            <div class="altar-caption" id="altarCaption">SỰ GHI NHẬN ĐỐI VỚI NHỮNG CỐNG HIẾN CỦA PHẠM XUÂN ẨN</div>
           </button>
 
           <!-- 4. Khung ảnh chân dung Thiếu tướng Phạm Xuân Ẩn đứng một mình -->
@@ -1716,7 +1738,8 @@
             <div class="wood">
               <div class="mat">
                 <div class="img-box" id="ptImgBox">
-                  <img id="ptImg" src="assets/images/PhongLuuNiem/PLN_AnhChinhGiuaPXA.jpg" alt="Chân dung Thiếu tướng Phạm Xuân Ẩn"
+                  <img id="ptImg" src="assets/images/PhongLuuNiem/PLN_AnhChinhGiuaPXA.jpg"
+                    alt="Chân dung Thiếu tướng Phạm Xuân Ẩn"
                     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'img-placeholder\'>[Chân dung Thiếu tướng<br>Phạm Xuân Ẩn]</div>';">
                 </div>
               </div>
@@ -1789,7 +1812,7 @@
       flagParty: 'assets/images/PhongLuuNiem/PLN_CoDang.jpg',
       portrait: 'assets/images/PhongLuuNiem/PLN_AnhChinhGiuaPXA.jpg',
       altar: 'assets/images/PhongLuuNiem/PLN_16HuyChuong.jpg',
-      ahllvt: 'assets/images/PhongLuuNiem/PLN_AHLLVTND.webp'
+      ahllvt: 'assets/images/PhongLuuNiem/PLN_AHLLVTND.jpg'
     };
 
     const DATA = {
@@ -1800,11 +1823,11 @@
           backTitle: 'Quay lại Dòng thời gian',
           hdrSmall: '',
           hdrTitle: '',
-          wLTitle: 'SAU CHIẾN TRANH',
-          wRTitle: 'NHỮNG CHI TIẾT KHÁC',
+          wLTitle: '',
+          wRTitle: '',
           hero: 'ANH HÙNG LỰC LƯỢNG VŨ TRANG NHÂN DÂN',
-          altarCp: 'BÀN THỜ & 16 HUÂN HUY CHƯƠNG',
-          altarAria: 'Bàn thờ Thiếu tướng Phạm Xuân Ẩn',
+          altarCp: 'SỰ GHI NHẬN ĐỐI VỚI NHỮNG CỐNG HIẾN CỦA PHẠM XUÂN ẨN',
+          altarAria: 'Sự ghi nhận đối với những cống hiến của Phạm Xuân Ẩn',
           sealBadge: 'KỶ VẬT LỊCH SỬ',
           doorText: 'MỞ TỦ LƯU NIỆM',
           sealHint: 'Chạm để khám phá',
@@ -1816,56 +1839,59 @@
         },
         L: [
           {
-            y: '1978',
-            t: 'Bí mật bị phơi ra',
+            y: '',
+            shelfTitle: 'Sự thật phía sau thẻ nhà báo',
+            t: 'Sự thật phía sau thẻ nhà báo',
+            modalTitle: 'Sự thật phía sau tấm thẻ nhà báo',
             img: 'Thẻ nhà báo Phạm Xuân Ẩn',
-            imgSrc: 'assets/images/PhongLuuNiem/PLN_PhamXuanGioTheNhaBao.webp',
-            caption: 'Thẻ nhà báo tác nghiệp của Phạm Xuân Ẩn — vỏ bọc báo giới hoàn hảo giúp ông tự do tác nghiệp và che giấu thân phận điệp viên chiến lược suốt hơn hai mươi năm.',
-            h: `<p>Năm 1978, một bài báo ngắn trên tờ báo Pháp lần đầu tiên công khai hé lộ với truyền thông quốc tế: nhà báo kỳ cựu tài ba của tuần báo danh tiếng <i>Time</i> tại Sài Gòn thực chất là một điệp viên chiến lược kiệt xuất của Quân Giải phóng miền Nam Việt Nam.</p><p>Khi thông tin chấn động này lan sang Hoa Kỳ, giới tình báo CIA và báo giới phương Tây đều sửng sốt bàng hoàng. Chiếc thẻ nhà báo tác nghiệp chính quy (ảnh trên) từng giúp Phạm Xuân Ẩn tự do ra vào Bộ Tổng tham mưu Quân lực Việt Nam Cộng hòa, Bộ chỉ huy Viện trợ Quân sự Mỹ (MACV) và Tòa đại sứ Mỹ mà không một ai mảy may nghi ngờ suốt hơn hai mươi năm.</p>`
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_PhamXuanGioTheNhaBao.jpg',
+            caption: 'Phạm Xuân Ẩn giơ giấy phép hành nghề nhà báo của mình. (Nguồn: Charles Dharapak - AP)',
+            h: `<p>Năm 1978, một bài báo ngắn trên tờ báo Pháp lần đầu tiên tiết lộ trên truyền thông quốc tế: nhà báo tài năng của Time, Phạm Xuân Ẩn, thực chất là một nhà tình báo chiến lược của quân Giải Phóng, từng nắm trong tay nhiều tài liệu mật của Mỹ và chính quyền Việt Nam Cộng Hòa.</p><p>Khi tin lan sang Mỹ, giới tình báo và báo chí đều choáng váng, không ít quan chức CIA từng tin tưởng, thậm chí tìm đến ông để tham khảo ý kiến, giờ mới biết mình bị qua mặt suốt bao năm.</p>`
           },
           {
-            y: '1976 – 1990',
-            t: 'Quân hàm',
+            y: '',
+            t: 'Lộ trình quân hàm',
+            modalTitle: 'Lộ trình quân hàm',
             img: 'Mặc quân phục cùng Đại tướng Võ Nguyên Giáp',
-            imgSrc: 'assets/images/PhongLuuNiem/PLN_QuanHamPhamXuanAn.jpeg',
-            caption: 'Đại tướng Võ Nguyên Giáp thân mật chúc mừng và nắm tay Thiếu tướng tình báo Phạm Xuân Ẩn trong bộ quân phục trang nghiêm.',
-            h: `<p>Bức ảnh lịch sử ghi lại khoảnh khắc Đại tướng Võ Nguyên Giáp - người anh cả của Quân đội Nhân dân Việt Nam - thân mật chúc mừng và nắm tay Thiếu tướng tình báo Phạm Xuân Ẩn trong bộ quân phục trang nghiêm.</p><ul><li><b>Tháng 12/1976:</b> Được phong quân hàm Trung tá Quân đội Nhân dân Việt Nam.</li><li><b>Năm 1981:</b> Thăng quân hàm Thượng tá.</li><li><b>Năm 1984:</b> Thăng quân hàm Đại tá.</li><li><b>Năm 1990:</b> Thăng quân hàm Thiếu tướng Quân đội Nhân dân Việt Nam.</li></ul><p>Dù mang quân hàm cấp tướng và lập nhiều chiến công huyền thoại, ông luôn giữ trọn phẩm chất bình dị, khiêm nhường, luôn tâm niệm mình chỉ là một người lính đã hoàn thành nhiệm vụ mà Đảng và Tổ quốc giao phó.</p>`
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_QuanHamPhamXuanAn.jpg',
+            caption: 'Phạm Xuân Ẩn chụp cùng đại tướng Võ Nguyên Giáp (Nguồn: Báo QDNDVN)',
+            h: `<p><b>Tháng 12/1976:</b> Ông giữ chức vụ Trung tá Quân đội Nhân dân Việt Nam</p><p><b>Năm 1981:</b> Ông được thăng lên hàm Thượng tá Quân đội Nhân dân Việt Nam</p><p><b>Năm 1984:</b> Ông được thăng lên hàm Đại tá Quân đội Nhân dân Việt Nam</p><p><b>Năm 1990:</b> Ông được phong hàm Thiếu tướng Quân đội Nhân dân Việt Nam</p><p>Sau đó, Phạm Xuân Ẩn vẫn tiếp tục cống hiến công sức cho công cuộc xây dựng đất nước cho đến tận tháng 3-2002 ông mới nghỉ hưu ở tuổi 75.</p>`
           },
           {
-            y: '20/9/2006',
-            t: 'Những ngày cuối',
+            y: '',
+            t: 'Những ngày cuối đời',
+            modalTitle: 'Những ngày cuối đời',
             img: 'Phạm Xuân Ẩn những năm cuối đời',
-            imgSrc: 'assets/images/PhongLuuNiem/PLN_PXAHutThuocLucGia.webp',
-            caption: 'Thiếu tướng Phạm Xuân Ẩn những năm tháng cuối đời ung dung bên làn khói thuốc tại tư gia (TP. Hồ Chí Minh).',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_PXAHutThuocLucGiaT.jpg',
+            caption: 'Thiếu tướng Phạm Xuân Ẩn những năm tháng cuối đời ung dung bên làn khói thuốc (Nguồn: Báo Tuổi Trẻ).',
             h: `
-              <p>Những năm tháng tuổi xế chiều, Thiếu tướng Phạm Xuân Ẩn sống thanh bạch và an nhiên tại ngôi nhà quen thuộc trên đường Nguyễn Thị Minh Khai (TP. Hồ Chí Minh). Hình ảnh ông ngồi trò chuyện, ung dung trầm ngâm bên làn khói thuốc lá thơm cùng nụ cười hóm hỉnh, sâu sắc đã trở thành ký ức không thể nào quên trong lòng bạn bè, đồng chí và các ký giả quốc tế.</p>
-              <p>Mùa hè năm 2006, do bệnh phổi mãn tính trở nặng, ông được chăm sóc đặc biệt tại Viện Quân y 175. Đến 11 giờ 20 phút sáng thứ Tư, ngày 20/9/2006, trái tim của nhà tình báo huyền thoại đã ngừng đập ở tuổi 79.</p>
+              <p>Năm 2003, sau nhiều thập niên hút thuốc, Phạm Xuân Ẩn mắc bệnh phổi nặng. Ông qua đời lúc 11 giờ 20 phút ngày 20/9/2006, hưởng thọ 79 tuổi.</p>
               
               <figure class="m-content-figure m-mid-figure">
-                <img src="assets/images/PhongLuuNiem/PLN_LeTruyDieuPXA.jpg" alt="Lễ truy điệu Thiếu tướng Phạm Xuân Ẩn" class="m-content-img" loading="lazy">
-                <figcaption class="m-content-caption">Lễ tang và lễ truy điệu Thiếu tướng Phạm Xuân Ẩn theo nghi thức quân đội tại Nhà tang lễ Bộ Quốc phòng phía Nam (23/9/2006)</figcaption>
+                <img src="assets/images/PhongLuuNiem/PLN_LeTruyDieuPXA.jpg" alt="Lễ truy điệu Phạm Xuân Ẩn" class="m-content-img" loading="lazy">
+                <figcaption class="m-content-caption">Lễ truy điệu Phạm Xuân Ẩn (Nguồn: Phim tài liệu: Huyền thoại về tướng tình báo Phạm Xuân Ẩn)</figcaption>
               </figure>
 
-              <p>Lễ tang và lễ truy điệu của Thiếu tướng Phạm Xuân Ẩn được tổ chức trọng thể theo nghi thức quân đội tại Nhà tang lễ Bộ Quốc phòng phía Nam (TP. Hồ Chí Minh) vào ngày 23/9/2006. Vô số vòng hoa và lời chia buồn sâu sắc từ các đồng chí lãnh đạo Đảng, Nhà nước, Quân đội, cùng các đồng nghiệp từ tạp chí Time, Reuters và các cựu chiến binh bên kia bờ đại dương đã gửi đến tiễn biệt ông.</p>
+              <p>Lễ truy điệu ông diễn ra ngày 23/9 tại Nhà tang lễ Bộ Quốc phòng phía Nam. Gần một nghìn người, từ đồng đội cũ đến bạn bè quốc tế, đã đến tiễn ông về nơi an nghỉ cuối cùng.</p>
               
               <figure class="m-content-figure m-mid-figure">
-                <img src="assets/images/PhongLuuNiem/PLN_MuoiHuongThamMo.jpg" alt="Đoàn viếng thăm mộ Thiếu tướng Phạm Xuân Ẩn" class="m-content-img" loading="lazy">
-                <figcaption class="m-content-caption">Đồng chí Mười Hương (Trần Quốc Hương) cùng đoàn đồng chí, cựu chiến binh viếng mộ Thiếu tướng Phạm Xuân Ẩn tại Nghĩa trang TP. Hồ Chí Minh</figcaption>
+                <img src="assets/images/PhongLuuNiem/PLN_MuoiHuongThamMo.jpg" alt="Mười Hương viếng thăm mộ Phạm Xuân Ẩn" class="m-content-img" loading="lazy">
+                <figcaption class="m-content-caption">Mười Hương (đội mũ đỏ) cùng những đồng đội cũ viếng thăm mộ Phạm Xuân Ẩn (Nguồn: Báo Thanh Niên)</figcaption>
               </figure>
-
-              <p>Đồng chí Mười Hương (Trần Quốc Hương) - người thầy, người chỉ huy tình báo mẫu mực từng cử Phạm Xuân Ẩn sang Mỹ học báo chí - dù tuổi cao sức yếu vẫn chống gậy cùng đông đảo đồng chí, cựu chiến binh và các thế hệ nhân dân đến thắp nén tâm nhang viếng nơi an nghỉ của ông tại Nghĩa trang TP. Hồ Chí Minh (TP. Thủ Đức). Cuộc đời tận hiến trọn vẹn và nhân cách cao thượng của người anh hùng X6 mãi là niềm tự hào sáng ngời của dân tộc.</p>
             `
           }
         ],
         R: [
           {
-            y: 'Đại tá Tư Cang',
-            t: 'Tiễn Bạn',
+            y: '',
+            modalY: '',
+            shelfTitle: 'Tiễn bạn',
+            t: '',
             img: 'Đại tá Tư Cang đọc thơ',
             imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
             isVideo: true,
             videoSrc: 'assets/images/PhongLuuNiem/PLN_DaiTaTuCangDocBaiThoTienBan.mp4',
-            caption: 'Đại tá Anh hùng LLVTND Tư Cang (Nguyễn Văn Tàu), Cụm trưởng Cụm Tình báo H.63 ngâm bài thơ "Tiễn Bạn" viếng người đồng chí Hai Trung.',
+            caption: 'Đại tá Tư Cang rưng rưng xúc động đọc bài thơ về người đồng đội cũ Phạm Xuân Ẩn (Nguồn: Sao Đầu Mũ)',
             h: `
               <div class="poem">
                 <p>Đời người tình báo thế là xong</p>
@@ -1881,23 +1907,21 @@
                 <p>Riêng tôi nhớ mãi người đồng chí</p>
                 <p>Dũng cảm, thông minh, nhớ suốt đời…</p>
               </div>
-              <p style="font-size:13px; color:var(--mute); text-align:center; margin-top:8px;">— Đại tá Anh hùng LLVTND Tư Cang (Nguyễn Văn Tàu), Cụm trưởng Cụm Tình báo H.63</p>
             `
           },
           {
-            y: 'Triết lý sống',
-            t: 'Ba con vật',
+            y: '',
+            shelfTitle: 'Nơi an nghỉ của Phạm Xuân Ẩn',
+            t: '',
+            modalTitle: '',
             img: 'Nơi an nghỉ với ba con vật',
             imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
-            caption: 'Hình tượng ba con vật: Con Chó, Con Gà và Con Cá bên phần mộ Thiếu tướng Phạm Xuân Ẩn tại Nghĩa trang TP. Hồ Chí Minh.',
+            caption: 'Nơi an nghỉ của thiếu tướng Phạm Xuân Ẩn (Nguồn ảnh: NGỌC BUKI)',
             h: `
-              <p>Bên cạnh phần mộ trang nghiêm của Thiếu tướng Phạm Xuân Ẩn tại Nghĩa trang TP. Hồ Chí Minh là hình tượng ba con vật: <b>Con Chó, Con Gà và Con Cá</b>. Đây là sự đúc kết trọn vẹn triết lý nhân sinh và phong cách tình báo độc nhất vô nhị của ông:</p>
-              <ul>
-                <li><b>Con chó:</b> Tượng trưng cho lòng trung thành tuyệt đối với Tổ quốc, với lý tưởng cách mạng và nghĩa tình son sắt với đồng đội, bạn bè từ cả hai phía chiến tuyến.</li>
-                <li><b>Con gà:</b> Biểu tượng của sự siêng năng, cần mẫn, thức khuya dậy sớm làm việc không mệt mỏi, luôn cảnh giác và dứt khoát không bao giờ lười biếng.</li>
-                <li><b>Con cá:</b> Sự trầm tĩnh, khôn ngoan và chiều sâu tư duy. Con cá không bao giờ gây ồn ào, biết quan sát, lắng nghe và luôn giữ kín mọi bí mật sâu thẳm trong lòng.</li>
-              </ul>
-              <p>Ba con vật ấy đã gắn bó như những người bạn tri kỷ, đồng hành cùng huyền thoại X6 trong suốt cuộc đời thầm lặng phụng sự giang sơn.</p>
+              <p>Bên cạnh nơi an nghỉ của ông là hình ảnh về 3 con vật đại diện cho triết lý sống của ông.</p>
+              <p>Con chó tượng trưng cho lòng trung thành với Tổ Quốc với bạn bè.</p>
+              <p>Con chim (gà) thì nhảy hoài, tiêu biểu cho sự bận rộn, làm việc suốt ngày, không làm biếng.</p>
+              <p>Còn con cá thì dạy ông sự khôn ngoan, im lặng, không nói nhiều mà suy tư.</p>
             `
           },
           {
@@ -1915,13 +1939,13 @@
           pageTitle: 'ファム・スアン・アン記念室',
           backBtn: '‹ タイムライン',
           backTitle: 'タイムラインへ戻る',
-          hdrSmall: 'ファイル No.01 · 最終章',
-          hdrTitle: 'ファム・スアン・アン記念室',
+          hdrSmall: '',
+          hdrTitle: '',
           wLTitle: '戦後',
           wRTitle: 'その他の逸話',
           hero: '人民武装勢力英雄',
-          altarCp: '祭壇と16の勲章・記章',
-          altarAria: 'ファム・スアン・アン少将の祭壇',
+          altarCp: 'ファム・スアン・アンの献身に対する顕彰',
+          altarAria: 'ファム・スアン・アン少将の献身に対する顕彰',
           sealBadge: '歴史的遺品',
           doorText: '記念キャビネットを開く',
           sealHint: 'クリックして開扉 ✦',
@@ -1933,56 +1957,59 @@
         },
         L: [
           {
-            y: '1978年',
-            t: '明かされた秘密',
+            y: '',
+            shelfTitle: '記者証の真実',
+            t: '記者証の真実',
+            modalTitle: '記者証の真実',
             img: '記者証を手にするファム・スアン・アン',
             imgSrc: 'assets/images/PhongLuuNiem/PLN_PhamXuanGioTheNhaBao.webp',
-            caption: 'サイゴンでの正式な記者証 — 20年以上にわたる完璧な偽装と戦略諜報活動の証。',
-            h: `<p>1978年、フランスの新聞記事によって、タイム誌の敏腕記者が実はベトナム側の最高峰のスパイであったことが初めて全世界に公表されました。</p><p>この報せが米国に届くと、情報機関とジャーナリズム界は騒然となりました。上の写真の正式な記者証こそが、アンが南ベトナム軍総参謀部や米軍司令部、米大使館に20年以上疑われることなく出入りできた鍵でした。</p>`
+            caption: 'サイゴンでの正式な記者証を手にするファム・スアン・アン。',
+            h: `<p>1978年、フランスの新聞記事によって、タイム誌の敏腕記者ファム・スアン・アンが実はベトナム人民解放軍の戦略諜報員であり、米軍や南ベトナム政権の最高機密文書を多数保持していたことが全世界に公表されました。</p><p>この報せが米国に届くと、情報機関とジャーナリズム界は騒然となり、彼を信頼し意見を求めに訪れていた多くのCIA高官たちは、長年にわたって欺かれていたことを知りました。</p>`
           },
           {
-            y: '1976年 – 1990年',
-            t: '軍階級',
+            y: '',
+            t: '軍階級の歩み',
+            modalTitle: '軍階級の歩み',
             img: 'ヴォー・グエン・ザップ将軍と軍服で面会',
-            imgSrc: 'assets/images/PhongLuuNiem/PLN_QuanHamPhamXuanAn.jpeg',
-            caption: '正装の軍服を着たファム・スアン・アン少将を温かく迎え、握手を交わすヴォー・グエン・ザップ大将。',
-            h: `<p>ベトナム人民軍の長兄であるヴォー・グエン・ザップ大将が、正装の軍服を着たファム・スアン・アン少将を温かく迎え、握手を交わした歴史的瞬間です。</p><ul><li><b>1976年12月：</b>中佐</li><li><b>1981年：</b>上佐</li><li><b>1984年：</b>大佐</li><li><b>1990年：</b>ベトナム人民軍少将</li></ul><p>将軍の階級と数々の伝説的な功績を持ちながらも、彼は常に謙虚であり続け、自分は祖国と党から託された任務を果たした一人の兵士に過ぎないと語っていました。</p>`
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_QuanHamPhamXuanAn.jpg',
+            caption: 'ヴォー・グエン・ザップ大将と記念撮影をするファム・スアン・アン（出典：ベトナム人民軍新聞）',
+            h: `<p><b>1976年12月：</b>ベトナム人民軍中佐に就任</p><p><b>1981年：</b>上佐へ昇進</p><p><b>1984年：</b>大佐へ昇進</p><p><b>1990年：</b>ベトナム人民軍少将に任命</p><p>その後も、ファム・スアン・アンは祖国の建設に尽力し続け、2002年3月に75歳で退役しました。</p>`
           },
           {
-            y: '2006年9月20日',
+            y: '',
             t: '最期の日々',
+            modalTitle: '最期の日々',
             img: '晩年のファム・スアン・アン',
-            imgSrc: 'assets/images/PhongLuuNiem/PLN_PXAHutThuocLucGia.webp',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_PXAHutThuocLucGiaT.jpg',
             caption: '自宅で煙草の煙をくゆらせながら穏やかな日々を過ごす晩年のファム・スアン・アン少将。',
             h: `
-              <p>晩年、アンはホーチミン市の質素な自宅で、煙草の煙をくゆらせながら穏やかな日々を過ごしました。彼のユーモアに富んだ深い微笑みは、友人や戦友、国際的な記者たちの心に永遠の記憶として刻まれています。</p>
-              <p>2006年夏、持病の慢性肺疾患が悪化し、第175軍病院で特別治療を受けました。2006年9月20日水曜日午前11時20分、伝説の諜報員の心臓は79歳で静かに停止しました。</p>
+              <p>2003年、長年の喫煙習慣により重い肺疾患を患いました。2006年9月20日午前11時20分、享年79歳で息を引き取りました。</p>
               
               <figure class="m-content-figure m-mid-figure">
                 <img src="assets/images/PhongLuuNiem/PLN_LeTruyDieuPXA.jpg" alt="追悼式" class="m-content-img" loading="lazy">
-                <figcaption class="m-content-caption">2006年9月23日、国防省南部葬儀場にて軍葬形式で厳粛に執り行われた追悼式</figcaption>
+                <figcaption class="m-content-caption">ファム・スアン・アン追悼式（出典：ドキュメンタリー映画『伝説の諜報将軍ファム・スアン・アン』）</figcaption>
               </figure>
 
-              <p>2006年9月23日、国防省南部葬儀場にて軍葬が執り行われ、党・国家・軍の指導者やタイム誌、ロイター通信の同僚たち、海を越えた元米軍兵士たちからも深い哀悼が寄せられました。</p>
+              <p>追悼式は9月23日、南部国防省葬儀場にて執り行われました。かつての戦友から各国の友人まで、1,000人近くの人々が彼を永遠の安息地へと見送るために集まりました。</p>
               
               <figure class="m-content-figure m-mid-figure">
                 <img src="assets/images/PhongLuuNiem/PLN_MuoiHuongThamMo.jpg" alt="墓所訪問" class="m-content-img" loading="lazy">
-                <figcaption class="m-content-caption">かつてアンを米国へ送り出した諜報指導者ムオイ・フオン同志をはじめ、多くの戦友や若者たちが墓所を訪問</figcaption>
+                <figcaption class="m-content-caption">ムオイ・フオン同志（赤い帽子）と旧戦友たちによるファム・スアン・アンの墓参（出典：タインニエン紙）</figcaption>
               </figure>
-
-              <p>かつてアンを米国へ送り出した諜報指導者ムオイ・フオン同志をはじめ、多くの戦友や若者たちが墓所を訪れ、その高潔な生涯に敬意を表しました。英雄X6の崇高な人格と完全な献身は、民族の永遠の誇りです。</p>
             `
           }
         ],
         R: [
           {
-            y: 'トゥ・カン大佐',
+            y: '',
+            modalY: 'トゥ・カン大佐による惜別の詩（抗戦時代の戦友）',
+            shelfTitle: '友を送る',
             t: '友を送る',
             img: 'トゥ・カン大佐の詩朗読',
             imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
             isVideo: true,
             videoSrc: 'assets/images/PhongLuuNiem/PLN_DaiTaTuCangDocBaiThoTienBan.mp4',
-            caption: 'H.63諜報群指揮官 トゥ・カン大佐による詩の朗読「友を送る」。',
+            caption: 'かつての戦友ファム・スアン・アンを偲び、涙ながらに詩を朗読するトゥ・カン大佐（出典：サオ・ダウ・ムー）',
             h: `
               <div class="poem">
                 <p>情報員としての生涯はここに幕を下ろした</p>
@@ -2002,19 +2029,18 @@
             `
           },
           {
-            y: '人生の哲学',
-            t: '三匹の生き物',
+            y: '',
+            shelfTitle: '人民武装勢力英雄ファム・スアン・アンの安息地',
+            t: '人民武装勢力英雄ファム・スアン・アンの安息地',
+            modalTitle: '人民武装勢力英雄ファム・スアン・アンの安息地',
             img: '三匹の動物像と墓所',
             imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
-            caption: 'ファム・スアン・アン少将の墓傍らに佇む「犬」「鶏」「魚」の像。',
+            caption: '人民武装勢力英雄ファム・スアン・アンの安息地（写真出典：NGỌC BUKI）',
             h: `
-              <p>ファム・スアン・アン少将の墓所には、<b>「犬」「鶏」「魚」</b>の3匹の生き物の像が安置されています。これは彼の人生哲学と独自の諜報スタイルを象徴しています。</p>
-              <ul>
-                <li><b>犬：</b>祖国と革命への絶対の忠誠心、そして敵味方の垣根を越えた友への信義。</li>
-                <li><b>鶏：</b>常に早起きして休むことなく働き、怠惰を退ける勤勉さ。</li>
-                <li><b>魚：</b>沈黙を守り、深く思索し、秘密を内に秘める英知。</li>
-              </ul>
-              <p>この三匹の生き物は、祖国に静かに捧げたX6の全生涯を映し出す親友として今も墓所に寄り添っています。</p>
+              <p>彼の安息の地の傍らには、彼の人生哲学を象徴する3匹の動物の像が佇んでいます。</p>
+              <p>犬は、祖国と友人への忠誠を象徴しています。</p>
+              <p>鳥（鶏）は、絶え間なく飛び跳ね、一日中働き決して怠けない勤勉さを表しています。</p>
+              <p>そして魚は、賢明さ、沈黙、多くを語らず思索することを教えています。</p>
             `
           },
           {
@@ -2318,8 +2344,8 @@
         return;
       }
       openModalPostwar({
-        y: o.y,
-        t: o.t,
+        y: o.modalY !== undefined ? o.modalY : o.y,
+        t: o.modalTitle || o.t,
         heroImg: o.imgSrc,
         heroCaption: o.caption || o.img,
         videoSrc: o.videoSrc,
@@ -2426,8 +2452,8 @@
         <div class="decode-wrap">
           <div class="decode-intro">
             ${isJa
-              ? '<b>歴史解読室へようこそ：</b>下の写真ファイルを選択し、3つのピースに対応する3つのクイズに正解して、秘められた歴史写真とストーリーを解き明かしてください！'
-              : '<b>Chào mừng bạn đến với Phòng Giải mã Lịch sử:</b> Bức ảnh tư liệu quý giá bên dưới đang bị che giấu bởi 3 mảnh ghép. Hãy chạm vào từng mảnh ghép và trả lời chính xác 3 câu trắc nghiệm để mở khóa toàn bộ bức ảnh cũng như câu chuyện lịch sử đằng sau!'}
+          ? '<b>歴史解読室へようこそ：</b>下の写真ファイルを選択し、3つのピースに対応する3つのクイズに正解して、秘められた歴史写真とストーリーを解き明かしてください！'
+          : '<b>Chào mừng bạn đến với Phòng Giải mã Lịch sử:</b> Bức ảnh tư liệu quý giá bên dưới đang bị che giấu bởi 3 mảnh ghép. Hãy chạm vào từng mảnh ghép và trả lời chính xác 3 câu trắc nghiệm để mở khóa toàn bộ bức ảnh cũng như câu chuyện lịch sử đằng sau!'}
           </div>
 
           <div class="decode-tabs">${tabsHtml}</div>
@@ -2536,13 +2562,16 @@
         badgeHtml = `<span class="puzzle-shelf-badge">🧩 Giải mã</span>`;
       }
 
+      const displayTitle = o.shelfTitle || o.t;
+      const displayYear = o.y ? `<em>${o.y}</em>` : '';
+
       b.innerHTML = `
         <div class="wood">
           <div class="mat">
             <div class="img-box">${imgContent}${badgeHtml}</div>
           </div>
         </div>
-        <i>${o.t}<em>${o.y}</em></i>
+        <i>${displayTitle}${displayYear}</i>
       `;
 
       if (o.isDecode) {
@@ -2601,31 +2630,65 @@
       document.getElementById('hero').onclick = () => {
         const isJa = currentLang === 'ja';
         openModalPostwar({
-          y: isJa ? '1976年11月表彰' : 'Tuyên dương tháng 11/1976',
-          t: isJa ? '人民武装勢力英雄称号' : 'Danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân',
+          y: '',
+          t: isJa ? '人民武装力英雄' : 'Danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân',
           heroImg: ROOM_CONFIG.ahllvt,
           heroCaption: isJa
-            ? 'チャン・ヴァン・チュン（ファム・スアン・アン）同志に授与された人民武装勢力英雄の表彰'
-            : 'Bằng tuyên dương danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân trao tặng đồng chí Trần Văn Trung (tức Phạm Xuân Ẩn)',
+            ? 'ファム・スアン・アン少将に授与された人民武装勢力英雄称号の表彰（出典：ファム・スアン・アン記念館）'
+            : 'Danh hiệu Anh hùng Lực lượng vũ trang nhân dân đầy cao quý được trao tặng cho thiếu tướng Phạm Xuân Ẩn (Nguồn: Nhà tưởng niệm Phạm Xuân Ẩn)',
           bodyHtml: isJa
-            ? `<p>1976年1月15日（1976年11月正式発表）、ベトナム国家は総参謀部第2総局のチャン・ヴァン・チュン（ファム・スアン・アン）同志に対し、国家最高位の栄誉である<b>「人民武装勢力英雄」</b>の称号を授与しました。</p><p>これは、20年以上にわたり敵陣の深奥で単独活動を続け、数百件に及ぶ貴重な戦略機密を提供して祖国の完全解放と統一に決定的な貢献を果たしたことに対する至高の顕彰です。</p>`
-            : `<p>Ngày 15/1/1976 (chính thức công bố và tuyên dương vào tháng 11/1976), Nhà nước đã phong tặng danh hiệu cao quý <b>Anh hùng Lực lượng Vũ trang Nhân dân</b> cho đồng chí Trần Văn Trung (tức Phạm Xuân Ẩn), Cán bộ Cục Nghiên cứu - Bộ Tổng Tham mưu (nay là Tổng cục II - Bộ Quốc phòng).</p><p>Đây là sự ghi nhận xứng đáng cho hơn hai mươi năm hoạt động đơn độc, kiên trung và mưu trí xuất chúng giữa hang hùm miệng cọp, cung cấp hàng trăm tài liệu chiến lược nguyên bản vô giá giúp Đảng và Quân đội ta đề ra những quyết sách mang tính bước ngoặt, dẫn tới thắng lợi trọn vẹn của cuộc Tổng tiến công và nổi dậy mùa Xuân 1975.</p>`
+            ? `<p>「人民武装力英雄 ベトナム民主共和国・ベトナム社会主義共和国の最高位の称号のうちの一つ。戦闘や戦闘工作で卓越した功績をあげ、祖国防衛、人民防衛に貢献した、人民軍や人民警察等に属する団体や個人に授与される。」</p>`
+            : `<p>Anh hùng Lực lượng vũ trang nhân dân là danh hiệu vinh dự cao nhất của Nhà nước Việt Nam dành tặng cho các cá nhân hoặc tập thể có thành tích đặc biệt xuất sắc trong chiến đấu, phục vụ chiến đấu, bảo vệ an ninh quốc gia và giữ gìn trật tự, an toàn xã hội.</p>`
         });
       };
 
-      // Sự kiện bấm khung ảnh Bàn thờ Thiếu tướng & 16 Huân huy chương
+      // Sự kiện bấm khung ảnh Bàn thờ Thiếu tướng & Ghi nhận cống hiến
       document.getElementById('altarCard').onclick = () => {
         const isJa = currentLang === 'ja';
         openModalPostwar({
-          y: isJa ? '至高の栄誉' : 'Kỷ vật thiêng liêng',
-          t: isJa ? '祭壇と16の勲章・記章' : 'Bàn thờ Thiếu tướng & 16 Huân huy chương cao quý',
+          y: '',
+          t: isJa ? 'ファム・スアン・アンの献身に対する顕彰' : 'Sự ghi nhận đối với những cống hiến của Phạm Xuân Ẩn',
           heroImg: ROOM_CONFIG.altar,
           heroCaption: isJa
-            ? '自宅の祭壇と党・国家・軍より授与された16の勲章・記章'
-            : 'Bàn thờ và khung lưu giữ trang trọng 16 Huân, Huy chương cao quý của Thiếu tướng Phạm Xuân Ẩn tại tư gia',
+            ? 'ファム・スアン・アン少将の祭壇と高潔な勲章・記章（出典：パーフェクト・スパイ - 327頁）'
+            : 'Bàn thờ của Phạm Xuân Ẩn tại nhà riêng với những huân, huy chương cao quý của ông (Nguồn: Điệp viên hoàn hảo - Trang 327)',
           bodyHtml: isJa
-            ? `<p>ホーチミン市の自宅に設けられたファム・スアン・アン少将の厳粛な祭壇です。軍服姿の遺影と香炉の傍らには、党・国家・軍から授与された16の勲章と記章が納められた額が恭しく祀られています。</p><ul><li>二等独立勲章</li><li>三等軍功勲章</li><li>三等抗戦勲章</li><li>一等対米抗戦救国勲章</li><li>一・二・三等戦功勲章（計4点）</li><li>一・二・三等解放戦功勲章</li><li>一・二・三等栄光の戦士勲章</li><li>決勝軍旗記章</li><li>党員歴50年記念章</li></ul><p>生前のアンは富や名声を一切求めませんでしたが、これらの勲章は祖国に捧げた高洁な生涯の不滅の証となっています。</p>`
-            : `<p>Bàn thờ trang trọng của Thiếu tướng Phạm Xuân Ẩn tại tư gia. Trên bàn thờ, cạnh di ảnh trong bộ quân phục Thiếu tướng và lư hương nghi ngút, là chiếc khung kính lưu giữ trang trọng 16 tấm huân, huy chương cao quý mà Đảng, Nhà nước và Quân đội đã trao tặng cho ông:</p><ul><li>Huân chương Độc lập hạng Nhì</li><li>Huân chương Quân công hạng Ba</li><li>Huân chương Kháng chiến hạng Ba</li><li>Huân chương Kháng chiến chống Mỹ cứu nước hạng Nhất</li><li>4 Huân chương Chiến công hạng Nhất, Nhì, Ba</li><li>Huân chương Chiến công giải phóng hạng Nhất, Nhì, Ba</li><li>Huân chương Chiến sĩ vẻ vang hạng Nhất, Nhì, Ba</li><li>Huy chương Quân kỳ Quyết thắng</li><li>Huy hiệu 50 năm tuổi Đảng</li></ul><p>Sinh thời, ông không bao giờ khoe khoang hay màng đến huân chương, bổng lộc. Nhưng tất cả những phần thưởng cao quý ấy là minh chứng bất tử cho một nhân cách sáng ngời và sự nghiệp phụng sự Tổ quốc trọn vẹn của người chiến sĩ cách mạng.</p>`
+            ? `<p>党、国家、ベトナム人民軍は、ファム・スアン・アン諜報少将の偉大な功績を高く評価しました。</p>
+<ul>
+  <li>二等独立勲章</li>
+  <li>三等軍功勲章</li>
+  <li>三等抗戦勲章</li>
+  <li>一等対米抗戦救国勲章</li>
+  <li>一・二・三等戦功勲章</li>
+  <li>一・二・三等解放戦功勲章</li>
+  <li>一・二・三等栄光の戦士勲章</li>
+  <li>決勝軍旗記章</li>
+  <li>党員歴50年記念章</li>
+</ul>
+<p>さらに、ファム・スアン・アン少将は国家より「人民武装勢力英雄」の称号を授与されました。</p>
+<p>2025年、ベトナムはホーチミン市タンニュット村にファム・スアン・アン少将の記念館を建設しました。</p>
+<figure class="m-content-figure m-mid-figure">
+  <img src="assets/images/PhongLuuNiem/PLN_NhaTuongNiem.jpg" alt="ファム・スアン・アン記念館" class="m-content-img" loading="lazy">
+  <figcaption class="m-content-caption">数々の貴重な遺品が収蔵されたファム・スアン・アン記念館（出典：トイチェー紙）</figcaption>
+</figure>`
+            : `<p>Công lao của Thiếu tướng tình báo Phạm Xuân Ẩn đã được Đảng, Nhà nước, Quân đội nhân dân Việt Nam đánh giá cao.</p>
+<ul>
+  <li>Huân chương Độc lập hạng Nhì</li>
+  <li>Huân chương Quân công hạng Ba</li>
+  <li>Huân chương Kháng chiến hạng Ba</li>
+  <li>Huân chương Kháng chiến chống Mỹ cứu nước hạng Nhất</li>
+  <li>Huân chương Chiến công (hạng Nhất, Nhì, Ba)</li>
+  <li>Huân chương Chiến công giải phóng (hạng Nhất, Nhì, Ba)</li>
+  <li>Huân chương Chiến sĩ vẻ vang (hạng Nhất, Nhì, Ba)</li>
+  <li>Huy chương Quân kỳ Quyết thắng</li>
+  <li>Huy hiệu 50 năm tuổi Đảng</li>
+</ul>
+<p>Ngoài ra, Thiếu tướng Phạm Xuân Ẩn được Nhà nước tặng danh hiệu Anh hùng lực lượng vũ trang Nhân dân.</p>
+<p>Năm 2025, Việt Nam cũng cho xây dựng nhà tưởng niệm tướng tình báo Phạm Xuân Ẩn tại xã Tân Nhựt, Thành phố Hồ Chí Minh.</p>
+<figure class="m-content-figure m-mid-figure">
+  <img src="assets/images/PhongLuuNiem/PLN_NhaTuongNiem.jpg" alt="Nhà tưởng niệm Phạm Xuân Ẩn" class="m-content-img" loading="lazy">
+  <figcaption class="m-content-caption">Nhà tưởng niệm Phạm Xuân Ẩn với nhiều kỷ vật vô giá (Nguồn: Báo Tuổi Trẻ)</figcaption>
+</figure>`
         });
       };
     }
@@ -2634,15 +2697,15 @@
     document.getElementById('pt').onclick = () => {
       const isJa = currentLang === 'ja';
       openModalPostwar({
-        y: isJa ? '1927年 – 2006年' : '1927 – 2006',
-        t: isJa ? '少将 ファム・スアン・アン' : 'Thiếu tướng Phạm Xuân Ẩn',
+        y: '',
+        t: '',
         heroImg: ROOM_CONFIG.portrait,
         heroCaption: isJa
-          ? 'ファム・スアン・アン少将の肖像（1927–2006）— 伝説の諜報員X6'
-          : 'Chân dung Thiếu tướng tình báo Phạm Xuân Ẩn (1927 – 2006) — Huyền thoại X6',
+          ? 'ファム・スアン・アン少将の肖像（出典：トイチェー紙）'
+          : 'Chân dung thiếu tướng tình báo Phạm Xuân Ẩn (Nguồn: Báo Tuổi Trẻ)',
         bodyHtml: isJa
-          ? `<p><b>ファム・スアン・アン</b>（1927年9月12日 – 2006年9月20日）、本名ファム・ヴァン・タイン、ドンナイ省ビエンホア生まれ。ベトナム人民軍少将、人民武装勢力英雄、タイム誌およびロイター通信の著名記者。</p><p>彼は敵陣の深奥で20年以上にわたり極秘活動を続け、米国側からもベトナム側からも深く尊敬された稀代の人物でした。</p><blockquote>"Tôi làm tình báo không phải vì tiền hay danh vọng, mà vì tình yêu tha thiết với mảnh đất quê hương mình."</blockquote>`
-          : `<p><b>Phạm Xuân Ẩn</b> (12/9/1927 – 20/9/2006), tên thật Phạm Văn Thành, sinh tại Biên Hòa, Đồng Nai.</p><p>Ông là phóng viên chiến trường tài năng của các cơ quan thông tấn quốc tế hàng đầu như <i>Time</i> và <i>Reuters</i>, đồng thời là một trong những nhà tình báo chiến lược kiệt xuất nhất thế kỷ 20 với mật danh X6, Thiếu tướng Quân đội Nhân dân Việt Nam, Anh hùng Lực lượng Vũ trang Nhân dân.</p><blockquote>"Tôi làm tình báo không phải vì tiền hay danh vọng, mà vì tình yêu tha thiết với mảnh đất quê hương mình."</blockquote>`
+          ? `<p>ある時、記者から「あなたは本当はどちらの側のために活動していたのか」と尋ねられた際、ファム・スアン・アンは高らかに笑ってこう答えました：</p><blockquote>"真実？ どちらの真実のことかな？ 一つの真実は、私が10年間『タイム』誌の記者であり、その前はロイター通信にいたということ。そしてもう一つの真実は、私が1945年から革命運動に加わり、それ以来ずっと様々な役職を務めてきたということだ。二つの真実、二つの真実……どちらも本物だよ。"</blockquote>`
+          : `<p>Trong một lần, khi phóng viên hỏi ông thật sự hoạt động cho phe nào, Phạm Xuân Ẩn cười lớn rồi đáp:</p><blockquote>"Sự thật? Sự thật nào mới được chứ? Có một sự thật là trong 10 năm tôi là phóng viên cho tòa soạn tuần báo Time và trước đó làm cho hãng Reuters. Một sự thật khác nữa là tôi gia nhập phong trào cách mạng từ năm 1945 và là thành viên của họ từ đó với các chức vụ khác nhau. Hai sự thật, hai sự thật... đều thật."</blockquote>`
       });
     };
 
