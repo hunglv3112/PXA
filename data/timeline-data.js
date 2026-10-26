@@ -846,47 +846,23 @@ window.TIMELINE_DATA = [
     yl: "1974",
     side: "top",
     icon: "redact",
-    img: "",
-    title: "Trận Thượng Đức & Dự báo thời cơ giải phóng",
+    img: "assets/images/1974_1976/1974_N_RichardNixon.jpg",
+    title: "Mỹ có can thiệp quân sự trở lại hay không?",
     date: "Cuối năm 1974",
     text: [
-      "Sau chiến thắng Thượng Đức, báo cáo của X6 khẳng định quân đội Sài Gòn đã suy sụp không thể gượng dậy nổi nếu không có viện trợ dồi dào.",
-      "Thông tin này củng cố quyết tâm của Bộ Chính trị chuẩn bị đòn quyết chiến chiến lược trong năm 1975."
+      "Cuối năm 1974, trước câu hỏi sống còn về khả năng can thiệp trở lại của Mỹ, Phạm Xuân Ẩn thu thập báo cáo tuyệt mật khẳng định quân Sài Gòn đã kiệt quệ và Mỹ sẽ không đưa quân trở lại.",
+      "Tin tình báo chiến lược này cùng trận đánh Phước Long đã 'bật đèn xanh' cho kế hoạch giải phóng hoàn toàn miền Nam."
     ],
     note: "",
-    src: "Nguồn: Đại tướng Võ Nguyên Giáp, Hồi ký; Larry Berman",
-    title_ja: "トゥオンドゥック戦の教訓と総解放の時機",
+    src: "Nguồn: Lịch sử Kháng chiến chống Mỹ; Larry Berman",
+    title_ja: "米国の軍事再介入はあるのか？",
     date_ja: "1974年末",
     text_ja: [
-      "トゥオンドゥック戦での南ベトナム軍精鋭の崩壊を受け、軍の再生不能を分析報告。",
-      "政治局が1975年の最終決戦作戦を決断する強力な後押しとなりました。"
+      "1974年末、米軍の再介入能力についての死活的な戦略課題に対し、アンは最高機密報告書を入手して米国の再介入不能を断言。",
+      "この戦略的確証とフオックロン戦の勝利が、南部完全解放への青信号を灯しました。"
     ],
     note_ja: "",
-    src_ja: "出典: ヴォー・グエン・ザップ将軍回想録; バーマン"
-  },
-  {
-    id: "1974b",
-    y: 1974,
-    yl: "1974",
-    side: "bot",
-    icon: "mag",
-    img: "",
-    title: "Khủng hoảng viện trợ & Tinh thần rệu rã ở Sài Gòn",
-    date: "1974",
-    text: [
-      "Phạm Xuân Ẩn phân tích sâu sắc trên Time về cuộc khủng hoảng cắt giảm viện trợ từ Quốc hội Mỹ và nạn tham nhũng tràn lan ở Sài Gòn.",
-      "Ông lột tả sự tuyệt vọng và mất phương hướng hoàn toàn của chính quyền Nguyễn Văn Thiệu."
-    ],
-    note: "",
-    src: "Nguồn: Time Magazine; Thomas Bass",
-    title_ja: "サイゴン政権の経済危機と士気崩壊の告発",
-    date_ja: "1974年",
-    text_ja: [
-      "米議会の援助削減と蔓延する腐敗がもたらす致命的打撃をタイム誌で冷静に分析。",
-      "ティウ政権の絶望と混迷を余すところなく読者へ伝えました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: タイム誌; トーマス・バス"
+    src_ja: "出典: 抗米救国戦争史; バーマン"
   },
 
   // ==========================================================================
@@ -898,23 +874,23 @@ window.TIMELINE_DATA = [
     yl: "1975",
     side: "top",
     icon: "house",
-    img: "",
-    title: "Quyết định ở lại Sài Gòn",
-    date: "Tháng 4/1975",
+    img: "assets/images/1974_1976/1975_TB_N_DanhTayNguyen.jpg",
+    title: "Chiến dịch Tây Nguyên mở màn cho tháng Tư lịch sử",
+    date: "Tháng 3 – 4/1975",
     text: [
-      "Trước ngày 30/4, ông tận dụng mối quan hệ với Time để gửi vợ và các con di tản sang nước ngoài an toàn, nhưng bản thân ông kiên quyết ở lại mảnh đất Sài Gòn để hoàn thành sứ mệnh của mình.",
-      "Hành động cứu bác sĩ Trần Kim Tuyến (cựu trùm mật vụ Sài Gòn) lên chuyến trực thăng cuối cùng cũng là một minh chứng lịch sử cảm động về chữ 'Nghĩa' trong nhân cách Phạm Xuân Ẩn."
+      "Nắm được sơ hở phòng thủ Tây Nguyên của chính quyền Thiệu, tin tình báo của Phạm Xuân Ẩn giúp quân Giải phóng mở màn đại thắng tại Buôn Ma Thuột.",
+      "Chuỗi chiến dịch sấm sét dẫn đến thắng lợi ngày 30/4/1975, xe tăng húc đổ cổng Dinh Độc Lập, chính thức khép lại cuộc chiến."
     ],
     note: "",
-    src: "Nguồn: Larry Berman; Mellema (Đại học Nebraska–Lincoln)",
-    title_ja: "サイゴン残留の決断",
-    date_ja: "1975年4月",
+    src: "Nguồn: TTXVN; QDNDVN; Điệp viên hoàn hảo",
+    title_ja: "歴史的4月への幕開けとなった中部高原作戦",
+    date_ja: "1975年3月～4月",
     text_ja: [
-      "タイム誌との関係を利用して妻子を安全に海外へ脱出させたものの、彼自身は祖国サイゴンに残る決断を下しました。",
-      "旧南ベトナム秘密警察長官チャン・キム・トゥエン医師を最後の脱出ヘリに乗せて救出した逸話は、アンの義理堅い人柄を示す感動的な歴史の一幕です。"
+      "ティウ政権の中部高原防衛の隙を突くアンの報告が、バンメトート電撃戦の引き金となりました。",
+      "一連の怒涛の進撃は4月30日の独立宮殿突入・完全無条件降伏へと結実し、戦争は終結を迎えました。"
     ],
     note_ja: "",
-    src_ja: "出典: ラリー・バーマン; メレマ"
+    src_ja: "出典: ベトナム通信社; 人民軍新聞"
   },
   {
     id: "1975b",
@@ -922,23 +898,23 @@ window.TIMELINE_DATA = [
     yl: "1975",
     side: "bot",
     icon: "mail",
-    img: "",
-    title: "Bức điện cuối cùng gửi Time ngày 29/4/1975",
-    date: "29/4/1975",
+    img: "assets/images/1974_1976/1975_NB_PXAHutThuocDoChinh.webp",
+    title: "Bài báo cuối cùng của Phạm Xuân Ẩn viết cho TIME – “Cuộc chia tay cuối cùng nghiệt ngã”",
+    date: "Tháng 4 – 5/1975",
     text: [
-      "Khi toàn bộ đồng nghiệp phương Tây tháo chạy, một mình Phạm Xuân Ẩn trực chiến tại văn phòng Time ở khách sạn Continental.",
-      "Ông gửi bức telex lịch sử về New York thông báo văn phòng chỉ còn một mình ông, trước khi gửi thêm 3 bản tin nóng khi xe tăng giải phóng tiến vào Dinh Độc Lập."
+      "Khi toàn bộ đồng nghiệp Mỹ di tản, Phạm Xuân Ẩn một mình trực chiến và điều hành văn phòng tạp chí Time tại Sài Gòn.",
+      "Ông gửi về New York bài báo lịch sử 'Cuộc chia tay cuối cùng nghiệt ngã' miêu tả trọn vẹn những giờ phút sụp đổ của chính quyền Sài Gòn."
     ],
     note: "",
-    src: "Nguồn: Military Myths & Legends: The Perfect Spy; Tạp chí Time",
-    title_ja: "タイム誌への最後の電報（1975年4月29日）",
-    date_ja: "1975年4月29日",
+    src: "Nguồn: Tạp chí Time; Điệp viên hoàn hảo - Larry Berman",
+    title_ja: "タイム誌への最後の寄稿「無情の最後の別れ」",
+    date_ja: "1975年4月～5月",
     text_ja: [
-      "同僚記者が脱出する中、コンチネンタルホテル内のタイム支局でたった一人留まり打電を継続。",
-      "「残っているのは私一人だ」と打電し、戦車が大統領府へ突入する瞬間まで速報を送り続けました。"
+      "米国人記者が全員退避する中、アンはたった一人でサイゴン支局を守り運営を継続。",
+      "サイゴン崩壊の瞬間を克明に捉えた歴史的記事「無情の最後の別れ」をニューヨーク本社へ送り届けました。"
     ],
     note_ja: "",
-    src_ja: "出典: タイム誌アーカイブ; Military Myths & Legends"
+    src_ja: "出典: タイム誌; バーマン"
   },
 
   // ==========================================================================
@@ -950,23 +926,23 @@ window.TIMELINE_DATA = [
     yl: "1976",
     side: "top",
     icon: "star",
-    img: "",
-    title: "Anh hùng Lực lượng VTND",
+    img: "assets/images/1974_1976/1976_N_AnMung.webp",
+    title: "Phạm Xuân Ẩn giữa những ngày đất nước trọn niềm vui",
     date: "1976",
     text: [
-      "Sau ngày đất nước thống nhất, ngày 15/1/1976, Phạm Xuân Ẩn được Nhà nước phong tặng danh hiệu cao quý Anh hùng Lực lượng vũ trang nhân dân.",
-      "Về sau, ông được phong quân hàm Thiếu tướng Quân đội Nhân dân Việt Nam. Hiện nay, một nhà tưởng niệm trang nghiêm dành cho ông đã được thành lập tại TP. Hồ Chí Minh."
+      "Ngày 15/1/1976, Phạm Xuân Ẩn được phong tặng danh hiệu cao quý Anh hùng Lực lượng Vũ trang Nhân dân.",
+      "Đến tháng 12/1976, tại Đại hội Đảng toàn quốc lần thứ IV, ông chính thức công khai thân phận sĩ quan tình báo huyền thoại."
     ],
-    note: "Có tài liệu ghi ngày tuyên dương là 15/1/1976 (Wikipedia), có nguồn ghi 15/11/1976 (Báo Nhân Dân).",
-    src: "Nguồn: Báo Nhân Dân; Cổng TTĐT Bộ Quốc phòng; Wikipedia",
-    title_ja: "人民武装力量英雄の称号授与",
+    note: "",
+    src: "Nguồn: Báo Thanh Niên; HCMCPV; Báo Nhân Dân",
+    title_ja: "祖国統一の歓喜に包まれる日々の中のファム・スアン・アン",
     date_ja: "1976年",
     text_ja: [
-      "祖国統一後の1976年、ファム・スアン・アンは国家最高位の栄誉である「人民武装力量英雄」称号を授与されました。",
-      "後にベトナム人民軍少将に昇進。現在、ホーチミン市には彼を記念する顕彰施設が設けられています。"
+      "1976年1月15日、ファム・スアン・アンは「人民武装力量英雄」称号を授与されました。",
+      "1976年12月の第4回党大会にて、軍服姿で出席し伝説的諜報将校としての真の身分が公表されました。"
     ],
-    note_ja: "授与日には1976年1月15日説と11月15日説があります。",
-    src_ja: "出典: ニャンダーン紙; 国防省公式サイト; Wikipedia"
+    note_ja: "",
+    src_ja: "出典: タインニエン紙; HCMCPV"
   },
   {
     id: "1976b",
@@ -974,23 +950,23 @@ window.TIMELINE_DATA = [
     yl: "1976",
     side: "bot",
     icon: "book",
-    img: "",
-    title: "Khép lại một đời ký giả huyền thoại",
-    date: "1976",
+    img: "assets/images/1974_1976/1976_NB_DocSach.jpg",
+    title: "Khép lại chặng đường làm nhà báo",
+    date: "Mùa hè năm 1976",
     text: [
-      "Khi thân phận tình báo của Phạm Xuân Ẩn được công khai, toàn bộ giới báo chí quốc tế chấn động sâu sắc.",
-      "Dù ở hai chiến tuyến, những đồng nghiệp Mỹ tại tạp chí Time và báo chí phương Tây đều bày tỏ sự nể phục tuyệt đối trước tài năng, tính trung thực và nhân cách cao đẹp của ông."
+      "Đến mùa hè năm 1976, văn phòng Time tại Sài Gòn chính thức đóng cửa.",
+      "Tên của Phạm Xuân Ẩn rời khỏi danh sách phóng viên, khép lại trọn vẹn hành trình làm báo lừng lẫy của ông."
     ],
     note: "",
-    src: "Nguồn: Thomas Bass, The Spy Who Loved Us; Tạp chí Time",
-    title_ja: "伝説のジャーナリストとしての記憶",
-    date_ja: "1976年",
+    src: "Nguồn: Báo Dân Trí; Thomas Bass",
+    title_ja: "記者としての歩みの終幕",
+    date_ja: "1976年夏",
     text_ja: [
-      "アンの真の身分が明かされた時、世界の国際報道界は驚嘆に包まれました。",
-      "敵味方を超え、タイム誌の同僚をはじめとする米国のジャーナリストたちは、彼の卓越した記者魂と高潔な人柄に最大の敬意を捧げました。"
+      "1976年夏、タイム誌サイゴン支局の閉鎖に伴い特派員名簿から名前が外れました。",
+      "ジャーナリストとしての輝かしい歩みも、ここに静かにその幕を下ろしました。"
     ],
     note_ja: "",
-    src_ja: "出典: トーマス・バス『愛されたスパイ』; タイム誌"
+    src_ja: "出典: ダンチー紙; トーマス・バス"
   }
 ];
 

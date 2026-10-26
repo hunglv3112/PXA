@@ -94,12 +94,23 @@
           const figure = document.createElement('figure');
           figure.className = 'm-content-figure m-mid-figure';
 
-          const imgEl = document.createElement('img');
-          imgEl.src = midSrc;
-          imgEl.alt = midAlt || midCap || '';
-          imgEl.className = 'm-content-img';
-          imgEl.loading = 'lazy';
-          figure.appendChild(imgEl);
+          const isVideo = midSrc.toLowerCase().endsWith('.mp4') || currentMid.isVideo || currentMid.type === 'video';
+          let mediaEl;
+          if (isVideo) {
+            mediaEl = document.createElement('video');
+            mediaEl.src = midSrc;
+            mediaEl.controls = true;
+            mediaEl.playsInline = true;
+            mediaEl.preload = 'metadata';
+            mediaEl.className = 'm-content-img m-content-video';
+          } else {
+            mediaEl = document.createElement('img');
+            mediaEl.src = midSrc;
+            mediaEl.alt = midAlt || midCap || '';
+            mediaEl.className = 'm-content-img';
+            mediaEl.loading = 'lazy';
+          }
+          figure.appendChild(mediaEl);
 
           if (midCap) {
             const capEl = document.createElement('figcaption');
@@ -157,6 +168,15 @@
       if (container.children.length > 0) {
         mText.appendChild(container);
       }
+    }
+
+    // Render footnote nếu có (như trang tiểu sử)
+    const footnote = (lang === 'ja' && contentObj.footnote_ja) ? contentObj.footnote_ja : contentObj.footnote;
+    if (footnote && footnote.trim() !== '') {
+      const footnoteDiv = document.createElement('div');
+      footnoteDiv.className = 'page-footnote m-page-footnote';
+      footnoteDiv.textContent = footnote;
+      mText.appendChild(footnoteDiv);
     }
 
     if (note && note.trim() !== '') {
@@ -303,6 +323,12 @@
     const dataList = window.TIMELINE_DATA;
     if (!dataList || index < 0 || index >= dataList.length) return;
 
+    // Dừng video đang phát nếu có
+    const activeVideos = modal.querySelectorAll('video');
+    activeVideos.forEach(v => {
+      try { v.pause(); } catch (e) {}
+    });
+
     currentIndex = index;
     const ev = dataList[index];
     const lang = window.getCurrentLang ? window.getCurrentLang() : 'vi';
@@ -353,6 +379,10 @@
   };
 
   window.closeModal = function () {
+    const activeVideos = modal.querySelectorAll('video');
+    activeVideos.forEach(v => {
+      try { v.pause(); } catch (e) {}
+    });
     modal.hidden = true;
     document.body.classList.remove('modal-open');
     if (lastActiveElement && typeof lastActiveElement.focus === 'function') {

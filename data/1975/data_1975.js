@@ -2,112 +2,175 @@
  * ==============================================================================
  * DỮ LIỆU MỞ RỘNG — NĂM 1975 (data/1975/data_1975.js)
  * ==============================================================================
- * Cung cấp nội dung phong phú hơn cho sự kiện "1975t".
- * Mỗi phần tử trong imgs[] có nội dung riêng (title/text/date/note/src – VI & JA).
- * Khi người dùng click vào ảnh, nội dung bên phải sẽ chuyển sang nội dung đó.
+ * Quản lý toàn bộ dữ liệu chi tiết năm 1975 cho 2 nhánh:
+ *   1. top: Nhánh TÌNH BÁO (id: '1975t') — 1 sự kiện (layout 1 cột liền mạch)
+ *   2. bot: Nhánh NHÀ BÁO  (id: '1975b') — 1 sự kiện (layout 1 cột liền mạch)
  * ==============================================================================
  */
 
 window.EXTRA_DATA_1975 = {
-    id: '1975t',
 
-    imgs: [
-        // ── Ảnh 1 ──────────────────────────────────────────────────────────────
+    // ==========================================================================
+    // 1. NHÁNH TÌNH BÁO — NỬA TRÊN (id: '1975t') — MẢNG CÓ 1 OBJECT (LAYOUT 1 CỘT)
+    // ==========================================================================
+    top: [
         {
-            img: 'assets/images/1974_1976/1975_SuKienTayNguyen.jpg',
-            alt: 'Sự kiện Tây Nguyên — Quân Giải phóng tiến vào Ban Mê Thuột, tháng 3/1975',
-            alt_ja: '中部高原作戦 — 解放軍バンメトート進撃 (1975年3月)',
-            label: 'Sự kiện Tây Nguyên(VOV)',
-            label_ja: '中部高原作戦',
+            id: '1975t',
+            modalImg: 'assets/images/1974_1976/1975_TB_N_DanhTayNguyen.jpg',
+            modalImgAlt: 'Quân Giải phóng trong Chiến dịch Tây Nguyên - Mở đầu cho cuộc Tổng tiến công mùa Xuân năm 1975. (Nguồn: QDNDVN)',
+            modalImgAlt_ja: '中部高原作戦でバンメトート空港を制圧する解放軍 — 1975年春季総攻勢の幕開け（ベトナム人民軍新聞）',
+            caption: 'Quân Giải phóng trong Chiến dịch Tây Nguyên - Mở đầu cho cuộc Tổng tiến công mùa Xuân năm 1975. (Nguồn: QDNDVN)',
+            caption_ja: '中部高原作戦でバンメトート空港を制圧する解放軍 — 1975年春季総攻勢の幕開け（ベトナム人民軍新聞）',
+            title: 'Chiến dịch Tây Nguyên mở màn cho tháng Tư lịch sử',
+            title_ja: '歴史的4月への幕開けとなった中部高原作戦',
+            date: 'Tháng 3 – 4/1975',
+            date_ja: '1975年3月～4月',
 
-            // Nội dung hiển thị khi click ảnh 1
-            title: 'Chiến dịch Tây Nguyên — Giờ tận của Sài Gòn',
-            title_ja: '中部高原作戦 — サイゴン政権の終焉',
-            date: 'Tháng 3/1975',
-            date_ja: '1975年3月',
-            text: [
-                'Nhận thấy Mỹ sẽ thay thế Pháp tại Việt Nam, các chỉ huy tình báo Mười Hương và Mai Chí Thọ đã vạch ra kế hoạch đưa Phạm Xuân Ẩn sang Mỹ du học nhằm nắm bắt tình hình nước Mỹ và tạo nền móng cho vỏ bọc tình báo chiến lược lâu dài. ',
-                'Cấp trên Mười Hương khuyên ông chọn ngành báo chí vì hai lý do chính. Thứ nhất, thời điểm đó ông chưa có bằng tốt nghiệp trung học, trong khi ngành báo chí lúc ấy không bắt buộc phải có loại bằng cấp này. Quan trọng hơn là nghề báo có bình diện giao tiếp rộng nhất, tạo điều kiện thuận lợi cho công tác tình báo sau này'
-            ],
-            text_ja: [
-                '1975年3月、中部高原作戦が電撃的に展開した。バンメトートは24時間以内に陥落——サイゴン軍の将軍たちも米国顧問団も、誰一人予想していなかった事態だった。',
-                'タイム誌特派員であり戦略諜報員X6でもあったアンは、これが終わりの始まりであることを瞬時に見抜いた。西側の同僚たちが混乱に陥る中、彼は中部高原全体が連鎖崩壊することを正確に予測していた。',
-                'ラリー・バーマンによれば、この時期にアンが革命側に密かに送り届けた戦略分析は極めて重要な意味を持ち、司令部が決定的な攻撃の時期と速度を正確に計算するのに役立った。',
-                'またこれは、アンが自身と家族の運命について生死を賭けた決断を下さなければならない瞬間でもあった——安全と、まだ果たされていない使命との間で。'
-            ],
+            text1: 'Cuối năm 1974, Thiệu họp kín tại Dinh Độc Lập, chủ quan cho rằng quân Giải phóng tổn thất nặng sau 1968 và 1972, chỉ đánh nổi các thị xã nhỏ, nên không tăng cường phòng thủ Tây Nguyên.',
+            text1_ja: '1974年末、ティウ大統領は独立宮殿で秘密会議を開き、解放軍は1968年や1972年の大損害から小規模な町しか攻撃できないと主観的に判断し、中部高原の防衛を強化しませんでした。',
+
+            text2: 'Phạm Xuân Ẩn đã nắm được thông tin từ cuộc họp này và báo cáo về. Tin này giúp quân Giải Phóng quyết mở Chiến dịch Tây Nguyên vào tháng 3/1975, lấy Buôn Ma Thuột làm đòn mở màn Tổng tiến công Mùa Xuân 1975.',
+            text2_ja: 'ファム・スアン・アンはこの会議の情報を的確に把握して本国へ報告。この情報が決め手となり、解放軍は1975年3月に中部高原作戦を開始し、バンメトートを春季総攻勢の口火と決定しました。',
+
+            text3: 'Đòn tiến công vào Buôn Mê Thuột của quân Giải phóng khiến chính quyền VNCH rơi vào thế choáng váng, mở đầu cho cuộc rút quân hỗn loạn khỏi Tây Nguyên. Sự thất bại của cuộc rút lui này khiến quân đội VNCH nhanh chóng suy yếu và tan rã, góp phần dẫn đến sự sụp đổ của chính quyền VNCH vào tháng 4/1975.',
+            text3_ja: 'バンメトートへの電撃打撃はサイゴン政権を大混乱に陥れ、中部高原からの潰走を引き起こしました。この撤退の大失敗により南ベトナム軍は急速に瓦解し、1975年4月の政権崩壊へと直結しました。',
+
+            // ── ẢNH CHÈN SAU text3 ──
+            midImg3: {
+                src: 'assets/images/1974_1976/1975_BoChay.jpg',
+                alt: 'Chiến dịch Tây Nguyên làm sụp đổ phòng tuyến phòng thủ của QLVNCH - Quân VNCH rút chạy sau khi để thua trận (Nguồn: TTXVN)',
+                alt_ja: '中部高原作戦で崩壊した防衛線 — 敗戦後に潰走する南ベトナム軍（ベトナム通信社）',
+                caption: 'Chiến dịch Tây Nguyên làm sụp đổ phòng tuyến phòng thủ của QLVNCH - Quân VNCH rút chạy sau khi để thua trận (Nguồn: TTXVN)',
+                caption_ja: '中部高原作戦で崩壊した防衛線 — 敗戦後に潰走する南ベトナム軍（ベトナム通信社）'
+            },
+
+            text4: 'Sau đó quân Giải Phóng liên tiếp mở các chiến dịch Huế - Đà Nẵng, chiến dịch Hồ Chí Minh, siết vòng vây quanh thủ đô của chính quyền Việt Nam Cộng hòa. Ngày 23/4, Thiệu tuyên bố từ chức Tổng thống và rời khỏi miền Nam. Đến ngày 28/4, quyền lực chuyển sang Dương Văn Minh khi Sài Gòn đã bị vây chặt.',
+            text4_ja: 'その後、解放軍はフエ・ダナン作戦、ホーチミン作戦を電撃的に展開し、首都サイゴンへの包囲網を狭めました。4月23日にティウは大統領を辞任して出国。4月28日、サイゴンが完全包囲される中でズオン・ヴァン・ミンへ権力が委譲されました。',
+
+            // ── VIDEO CHÈN SAU text4 ──
+            midImg4: {
+                src: 'assets/images/1974_1976/1975_HucDoCongCamCo.mp4',
+                isVideo: true,
+                alt: 'Xe tăng 843 và xe tăng 390 của quân Giải Phóng tiến vào Dinh Độc Lập',
+                alt_ja: '独立宮殿へ突入する解放軍の戦車843号と390号',
+                caption: 'Xe tăng 843 và xe tăng 390 của quân Giải Phóng lần lượt húc đổ cổng phụ và cổng chính, tiến vào Dinh Độc Lập. (Video tư liệu)',
+                caption_ja: '解放軍の戦車843号と390号が独立宮殿の門を突破して突入（記録映像）'
+            },
+
+            text5: 'Trưa ngày 30/4, sau hàng loạt trận đánh quân Giải Phóng tiến vào Sài Gòn, xe tăng húc đổ cổng Dinh Độc Lập, Dương Văn Minh đầu hàng không điều kiện, lá cờ của quân Giải Phóng tung bay trên nóc dinh lúc 11h30, cuộc chiến cũng chính thức khép lại.',
+            text5_ja: '4月30日正午、解放軍がサイゴンに進撃し、戦車が独立宮殿の門を破り、ズオン・ヴァン・ミンが無条件降伏。11時30分に解放軍の旗が屋上に掲げられ、戦争は正式に終結しました。',
+
+            // ── ẢNH CHÈN SAU text5 ──
+            midImg5: {
+                src: 'assets/images/1974_1976/1975_DauHang.jpg',
+                alt: 'Các cán bộ quân Giải phóng chờ ông Dương Văn Minh đọc tuyên bố đầu hàng vào trưa ngày 30/4/1975 (Nguồn: TTXVN)',
+                alt_ja: '1975年4月30日正午、ズオン・ヴァン・ミン氏が無条件降伏を読み上げるのを見守る解放軍幹部たち（ベトナム通信社）',
+                caption: 'Các cán bộ quân Giải phóng chờ ông Dương Văn Minh (mặc áo đen ngồi nhìn lên) đọc tuyên bố đầu hàng vào trưa ngày 30/4/1975. (Nguồn: TTXVN)',
+                caption_ja: '1975年4月30日正午、ズオン・ヴァン・ミン氏（黒服）が無条件降伏を読み上げるのを見守る解放軍幹部たち（ベトナム通信社）'
+            },
+
             note: '',
             note_ja: '',
-            src: 'Ghi chú',
-            src_ja: '出典'
-        },
-
-        // ── Ảnh 2 ──────────────────────────────────────────────────────────────
-        {
-            img: 'assets/images/1974_1976/1975_MyCoCanThiepTroLaiKhong.jpg',
-            alt: 'Câu hỏi chiến lược: Mỹ có thể can thiệp trở lại không? — Phân tích của Phạm Xuân Ẩn',
-            alt_ja: '戦略的問い：米国は再介入できるか — アンの分析',
-            label: 'Quyết định ở lại',
-            label_ja: '残留の決断',
-
-            // Nội dung hiển thị khi click ảnh 2
-            title: 'Quyết định ở lại Sài Gòn — Chữ Nghĩa của một đời người',
-            title_ja: 'サイゴン残留——生涯をかけた「義」',
-            date: 'Tháng 4/1975',
-            date_ja: '1975年4月',
-            text: [
-                'Ông tận dụng quan hệ đặc biệt với Time để thu xếp cho vợ và các con di tản sang Hoa Kỳ an toàn trước ngày 30/4. Nhưng bản thân ông kiên quyết ở lại Sài Gòn — bởi sứ mệnh chưa hoàn thành, và có lẽ bởi mảnh đất này đã là máu thịt của ông sau hơn hai mươi năm sống trong lòng kẻ thù.',
-                'Một trong những khoảnh khắc phi thường nhất: ông đã vận dụng quan hệ để đưa bác sĩ Trần Kim Tuyến — cựu trùm mật vụ Sài Gòn, kẻ đã từng săn lùng những người như ông — lên chuyến trực thăng di tản cuối cùng. Hành động vượt qua ranh giới thù — bạn ấy cho thấy bề sâu nhân cách của Phạm Xuân Ẩn.',
-                'Sau ngày 30/4/1975, khi các đồng nghiệp báo giới Mỹ hỏi ông có muốn ra đi không, Phạm Xuân Ẩn lắc đầu: "Tôi là người Việt Nam. Đây là đất nước của tôi."',
-                'Những năm sau đó, ông sống trong một khoảng lặng kỳ lạ — một anh hùng bí mật chưa được công nhận, một nhà báo mất nghề, một người đàn ông cô đơn giữa hai thế giới mà ông từng là cầu nối.'
-            ],
-            text_ja: [
-                'タイム誌との特別な関係を活かし、妻子を4月30日前に米国へ安全に脱出させた。しかし彼自身は残留を選んだ——使命はまだ果たされておらず、20年以上を敵の懐で生き抜いたこの街が彼にとって血肉そのものだったからだ。',
-                '最も劇的な場面のひとつ：アンは旧南ベトナム秘密警察長官チャン・キム・トゥエン医師——かつて自分のような人物を追い回していた人物——を最後の脱出ヘリコプターに乗せるよう手配した。敵と味方の境界を超えたこの行動が、アンという人間の深みを物語っている。',
-                '4月30日以降、米国人記者の友人たちに「一緒に来ないか」と声をかけられた際、アンは首を横に振った。「私はベトナム人だ。ここは私の国だ」。',
-                'その後の年月、彼は奇妙な静寂の中で生きた——まだ認められていない秘密の英雄、職を失ったジャーナリスト、かつて架け橋だった二つの世界の間でひとり孤独に立つ男として。'
-            ],
-            note: 'Chi tiết về việc cứu bác sĩ Trần Kim Tuyến được nhiều nguồn xác nhận nhưng có đôi khi dị bản về phương tiện sơ tán.',
-            note_ja: 'チャン・キム・トゥエン救出については複数の資料で確認されているが、脱出手段については異説もある。',
-            src: 'Nguồn: Larry Berman; Mellema (Đại học Nebraska–Lincoln); Thomas Bass, The New Yorker (2005)',
-            src_ja: '出典: バーマン; メレマ（ネブラスカ大学）; トーマス・バス（2005）'
+            src: '',
+            src_ja: ''
         }
     ],
 
-    // Nội dung mặc định của event (dùng khi không click ảnh nào)
-    title: 'Quyết định ở lại Sài Gòn',
-    title_ja: 'サイゴン残留の決断',
-    date: 'Tháng 3 – 4/1975',
-    date_ja: '1975年3月～4月',
-    text: [
-        'Tháng 3/1975, chiến dịch Tây Nguyên nổ ra như một đòn sấm sét. Ban Mê Thuột thất thủ trong 24 giờ. Phạm Xuân Ẩn đọc được ngay tín hiệu: đây là giờ tận của chính quyền Sài Gòn.',
-        'Ông thu xếp cho gia đình di tản an toàn, nhưng bản thân kiên quyết ở lại. Ông còn cứu cựu trùm mật vụ Trần Kim Tuyến lên chuyến trực thăng cuối cùng — hành động vượt qua ranh giới thù — bạn, cho thấy bề sâu nhân cách của ông.'
-    ],
-    text_ja: [
-        '1975年3月、中部高原作戦が展開しバンメトートが陥落。アンは即座に終焉を見抜いた。',
-        '家族を安全に脱出させながらも、自身はサイゴンに残留。旧秘密警察長官を最後のヘリに乗せて救出した逸話は、彼の深い人間性を示している。'
-    ],
-    note: '',
-    note_ja: '',
-    src: 'Nguồn: Larry Berman; Mellema (Đại học Nebraska–Lincoln)',
-    src_ja: '出典: バーマン; メレマ'
+    // ==========================================================================
+    // 2. NHÁNH NHÀ BÁO — NỬA DƯỚI (id: '1975b') — MẢNG CÓ 1 OBJECT (LAYOUT 1 CỘT)
+    // ==========================================================================
+    bot: [
+        {
+            id: '1975b',
+            modalImg: 'assets/images/1974_1976/1975_NB_PXAHutThuocDoChinh.webp',
+            modalImgAlt: 'Phạm Xuân Ẩn đứng trước tòa Đô chính Sài Gòn ngay trước khi quân Giải Phóng tiến vào Sài Gòn (Nguồn: Điệp viên hoàn hảo - Trang 281)',
+            modalImgAlt_ja: 'サイゴン解放直前、サイゴン市庁舎前に立つファム・スアン・アン（出典：『パーフェクト・スパイ』281頁）',
+            caption: 'Phạm Xuân Ẩn đứng trước tòa Đô chính Sài Gòn ngay trước khi quân Giải Phóng tiến vào Sài Gòn. Đây cũng là bức ảnh được Tạp chí TIME chọn đăng ngay trang nhất trên bản tin nội bộ F.Y.I. ngày 12/5/1975 để giới thiệu về người phóng viên duy nhất ở lại điều hành văn phòng Sài Gòn. (Nguồn: Điệp viên hoàn hảo - Trang 281)',
+            caption_ja: 'サイゴン解放直前、サイゴン市庁舎前に立つファム・スアン・アン。タイム誌は1975年5月12日付の社内報F.Y.I.の表紙にこの写真を掲載し、サイゴン支局に一人留まり運営した唯一の記者として紹介した（出典：『パーフェクト・スパイ』281頁）',
+            title: 'Bài báo cuối cùng của Phạm Xuân Ẩn viết cho TIME – “Cuộc chia tay cuối cùng nghiệt ngã”',
+            title_ja: 'タイム誌への最後の寄稿「無情の最後の別れ」',
+            date: 'Tháng 4 – 5/1975',
+            date_ja: '1975年4月～5月',
+
+            text1: 'Ngày 30/4/1975, khi toàn bộ phóng viên người Mỹ đã di tản, sợi dây liên lạc cuối cùng của tòa soạn Time tại New York với văn phòng Sài Gòn là một dòng điện báo ngắn gọn: "Đây, Phạm Xuân Ẩn đây. Tất cả các phóng viên người Mỹ đều đã di tản do tình hình khẩn cấp. Văn phòng của Time giờ do mình tôi, Phạm Xuân Ẩn điều hành." .',
+            text1_ja: '1975年4月30日、すべての米国人記者が避難した後、ニューヨークのタイム本社とサイゴン支局を結ぶ最後の連絡線は、簡潔な電報一本でした。「こちらファム・スアン・アン。緊急事態につき米国人記者は全員脱出。タイム支局は現在、私ファム・スアン・アン一人が運営している」。',
+
+            // ── ẢNH CHÈN SAU text1 ──
+            midImg1: {
+                src: 'assets/images/1974_1976/1975_NB_DiTan.webp',
+                alt: 'Những công dân Mỹ cuối cùng, trong đó có một số nhà báo, tập trung để rời khỏi Sài Gòn. (Nguồn: Getty Images)',
+                alt_ja: 'サイゴンを離れるため集まる最後の米国市民とジャーナリストたち（Getty Images）',
+                caption: 'Những công dân Mỹ cuối cùng, trong đó có một số nhà báo, tập trung để rời khỏi Sài Gòn. (Nguồn: Getty Images)',
+                caption_ja: 'サイゴンを離れるため集まる最後の米国市民とジャーナリストたち（Getty Images）'
+            },
+
+            text2: 'Cho đến ngày 12/5/1976 ông đã gửi bài viết cuối cùng về cho Time với tiêu đề "Cuộc chia tay cuối cùng nghiệt ngã"  miêu tả lại cảnh hỗn loạn của VNCH và Mỹ ngày 30/4/1975.',
+            text2_ja: '1976年5月12日、彼はタイム誌へ「無情の最後の別れ」と題する最後の記事を送り、1975年4月30日の南ベトナム政権と米国の混乱を鮮烈に描写しました。',
+
+            text3: 'Bài báo khép lại bằng một nhận định lịch sử đầy sâu sắc của Phạm Xuân Ẩn về sự kết thúc can thiệp của người Mỹ tại Việt Nam: "Có lẽ cần phải nói rằng, cuộc chia tay của người Mỹ đối với Việt Nam là chiến dịch duy nhất trong toàn bộ cuộc chiến mà họ hoàn toàn không mang theo ảo tưởng...".',
+            text3_ja: '記事は、米国のベトナム介入終焉についての歴史的かつ深い洞察で締めくくられています。「言わねばならないのは、米国人のベトナムからの撤退こそが、この戦争全体を通じて彼らが何の幻想も抱かずに実行した唯一の作戦だったということだ……」。',
+
+            note: '',
+            note_ja: '',
+            src: '',
+            src_ja: ''
+        }
+    ]
 };
 
-// ============================================================
-// Hòa trộn nội dung mở rộng vào TIMELINE_DATA
-// ============================================================
-(function mergeExtraData() {
-    function doMerge() {
+// ==============================================================================
+// TỰ ĐỘNG HÒA TRỘN DỮ LIỆU NĂM 1975 VÀO window.TIMELINE_DATA
+// ==============================================================================
+(function mergeExtraData1975() {
+    function applyBranch(branchKey, defaultId) {
         if (!window.TIMELINE_DATA || !window.EXTRA_DATA_1975) return;
-        const ev = window.TIMELINE_DATA.find(e => e.id === window.EXTRA_DATA_1975.id);
+        const branchData = window.EXTRA_DATA_1975[branchKey];
+        if (!branchData) return;
+
+        let targetId = defaultId;
+        if (Array.isArray(branchData)) {
+            if (branchData.length > 0 && branchData[0].id) {
+                targetId = branchData[0].id;
+            }
+        } else if (typeof branchData === 'object' && branchData.id) {
+            targetId = branchData.id;
+        }
+
+        const ev = window.TIMELINE_DATA.find(e => e.id === targetId);
         if (!ev) return;
-        const d = window.EXTRA_DATA_1975;
-        ev.imgs = d.imgs;
-        ev.title = d.title; ev.title_ja = d.title_ja;
-        ev.date = d.date; ev.date_ja = d.date_ja;
-        ev.text = d.text; ev.text_ja = d.text_ja;
-        ev.note = d.note; ev.note_ja = d.note_ja;
-        ev.src = d.src; ev.src_ja = d.src_ja;
+
+        const savedTitle = ev.title;
+        const savedTitleJa = ev.title_ja;
+        const savedCardImg = ev.cardImg;
+        const savedImg = ev.img;
+
+        if (Array.isArray(branchData)) {
+            ev.items = branchData;
+            ev.bottomImg = branchData[0].bottomImg || null;
+            if (branchData.length === 1) {
+                Object.assign(ev, branchData[0]);
+                ev.items = branchData;
+            } else if (branchData.length > 1) {
+                Object.assign(ev, branchData[0]);
+                ev.items = branchData;
+                ev.imgs = branchData;
+            }
+        } else {
+            Object.assign(ev, branchData);
+            if (branchData.imgs) ev.imgs = branchData.imgs;
+        }
+
+        if (savedTitle !== undefined) ev.title = savedTitle;
+        if (savedTitleJa !== undefined) ev.title_ja = savedTitleJa;
+        if (savedCardImg !== undefined) ev.cardImg = savedCardImg;
+        if (savedImg !== undefined) ev.img = savedImg;
     }
+
+    function doMerge() {
+        applyBranch('top', '1975t');
+        applyBranch('bot', '1975b');
+    }
+
     if (window.TIMELINE_DATA) {
         doMerge();
     } else {

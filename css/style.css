@@ -801,6 +801,30 @@ button.pill:hover {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.m-content-video {
+  width: 100%;
+  max-height: 480px;
+  background: #000;
+  display: block;
+}
+
+/* Footnote trong popup modal theo phong cách trang tiểu sử */
+.page-footnote.m-page-footnote {
+  margin-top: 28px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 13px;
+  line-height: 1.6;
+  font-style: italic;
+  color: #a0aab2;
+  font-family: var(--sans);
+}
+
+.sheet[data-side="bot"] .page-footnote.m-page-footnote {
+  border-top: 1px solid rgba(26, 29, 33, 0.14);
+  color: #5b6770;
+}
+
 .sheet.sheet--single .m-note {
   margin: 16px 0 0;
   text-align: left;
