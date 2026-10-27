@@ -97,23 +97,22 @@ Mở file `data/timeline-data.js`. Mỗi sự kiện là một đối tượng c
 }
 ```
 
-### C. Thay đổi các câu chuyện bên lề trên đường kẻ trục (1957 – 1959)
-Mở file `data/side-stories.js`. Bạn có thể thay đổi ảnh avatar nhỏ, tiêu đề và các câu chuyện:
+### C. Thay đổi các câu chuyện bên lề trên đường kẻ trục
+Mở file `data/side-stories.js`. Bạn có thể thay đổi vị trí (trước/sau mốc năm), ảnh avatar nhỏ, tiêu đề và các câu chuyện theo layout 1 cột:
 ```javascript
 {
-  id: "story-1957-1959",
-  afterYear: 1957,                           // Nằm sau năm 1957 (giữa 1957 và 1959 trên đường kẻ)
+  id: "story-1957",
+  afterYear: 1957,                           // Nằm giữa 1957 và 1958 (hoặc beforeYear để nằm trước)
   avatar: "assets/images/pxa-avatar.jpg",    // Đường dẫn ảnh nhỏ của nhân vật
-  tooltip: "Chuyện bên lề (1957 – 1959): Bấm để đọc",
-  title: "Những câu chuyện ngoài lề (1957 – 1959)",
-  subtitle: "Thời kỳ du học Mỹ & Chuyến độc hành xuyên lục địa",
-  stories: [
-    {
-      title: "1. Chuyến độc hành xuyên nước Mỹ...",
-      tag: "Kỷ niệm khó quên",
-      paragraphs: ["Đoạn văn 1...", "Đoạn văn 2..."]
-    }
-  ]
+  tooltip: "Chuyện bên lề (1957 – 1958): Bấm để đọc",
+  meta: "Chuyện bên lề · 1957 – 1958",
+  title: "Biến cố cha qua đời trước chuyến đi du học Mỹ",
+  modalImg: "assets/images/1957_1959/1959_ChaPXAQuaDoi.jpg",
+  caption: "Bàn thờ và di ảnh thân phụ của Phạm Xuân Ẩn...",
+  text1: "Đoạn văn 1...",
+  midImg: { src: "assets/images/1957_1959/1957_MuoiHuong.jpg", caption: "..." },
+  text2: "Đoạn văn 2...",
+  bottomImg: { src: "assets/images/1957_1959/1959_PhiTruongSanBayTanSanNhatTruoc1975.jpg", caption: "..." }
 }
 ```
 

@@ -35,6 +35,17 @@
   --axis-line: #7f9096;       /* Màu thanh ray kẻ ngang trục thời gian */
 
   /* ==========================================================================
+     PHONG CÁCH CÂU CHUYỆN NGOÀI LỀ (Đỏ mận chín cổ điển & Vàng ánh kim)
+     ========================================================================== */
+  --story-bg: #1c0a13;        /* Màu nền đỏ mận đậm */
+  --story-2: #280f1d;         /* Màu nền thẻ / khối phụ */
+  --story-line: #5a2039;      /* Đường viền mận */
+  --story-ink: #f7eaf0;       /* Màu chữ sáng kem hồng nhạt */
+  --story-mute: #bfa0ad;      /* Màu chữ phụ */
+  --story-acc: #e5a93b;       /* Màu viền vàng ánh kim ngoài trục */
+  --story-glow: rgba(229, 169, 59, 0.35);
+
+  /* ==========================================================================
      4. KÍCH THƯỚC TRỤC & BỐ CỤC
      ========================================================================== */
   --axis: 64px;               /* Chiều cao khu vực trục mốc năm ở giữa */

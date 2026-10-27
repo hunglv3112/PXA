@@ -141,40 +141,28 @@
     font-size: 12.5px;
   }
 
-  /* Cửa sổ Chuyện Bên Lề trên màn hình nhỏ */
+  /* Cửa sổ Chuyện Bên Lề kế thừa layout sheet--single */
   .story-sheet {
-    max-height: 92dvh;
+    max-height: 94dvh;
   }
 
-  .story-header {
-    padding: 16px 18px 14px;
-    gap: 14px;
+  .story-sheet .m-hero-figure .m-single-hero-img {
+    height: 220px;
   }
 
-  .story-avatar-wrap {
-    width: 52px;
-    height: 52px;
+  .story-sheet .m-body {
+    padding: 24px 20px 28px;
   }
 
-  .story-header-meta h2 {
-    font-size: 20px;
+  .story-sheet .m-body h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
   }
 
-  .story-body {
-    padding: 16px 18px 20px;
-    gap: 12px;
-  }
-
-  .story-card {
-    padding: 12px 14px;
-  }
-
-  .story-card h3 {
-    font-size: 16.5px;
-  }
-
-  .story-card p {
-    font-size: 14.5px;
+  .story-sheet .m-text p {
+    font-size: 16px;
+    line-height: 1.68;
+    margin-bottom: 14px;
   }
 
   /* Bộ chọn ngôn ngữ trên di động */

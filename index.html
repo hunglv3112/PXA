@@ -182,26 +182,23 @@
       </div>
     </div>
 
-    <!-- Cửa sổ xem Chuyện Bên Lề (Side Stories Modal) -->
+    <!-- Cửa sổ xem Chuyện Bên Lề (Side Stories Modal - Layout 1 cột đồng bộ với Timeline Modal) -->
     <div class="modal story-modal" id="storyModal" role="dialog" aria-modal="true" aria-labelledby="sm-title" hidden>
-      <div class="story-sheet" id="storySheet">
+      <div class="sheet sheet--single story-sheet" id="storySheet" data-side="story">
         <!-- Nút đóng -->
         <button class="x story-x" id="smClose" aria-label="Đóng cửa sổ" title="Đóng (Esc)">×</button>
         
-        <!-- Đầu trang Modal: Avatar nhân vật & Tiêu đề -->
-        <div class="story-header">
-          <div class="story-avatar-wrap">
-            <img src="" alt="Phạm Xuân Ẩn" class="story-header-avatar" id="smAvatar">
-          </div>
-          <div class="story-header-meta">
-            <span class="story-badge" id="smBadge"></span>
-            <h2 id="sm-title"></h2>
-            <p class="story-subtitle" id="smSubtitle"></p>
-          </div>
-        </div>
+        <!-- Khối ảnh bìa sự kiện lớn kèm chú thích -->
+        <div class="m-art" id="smArt"></div>
 
-        <!-- Thân trang: Danh sách các mẩu chuyện bên lề -->
-        <div class="story-body" id="smBody"></div>
+        <!-- Thân trang: Tiêu đề & Nội dung chi tiết -->
+        <div class="m-body">
+          <p class="m-meta" id="smMeta"></p>
+          <h2 id="sm-title"></h2>
+          <div class="m-text" id="smText"></div>
+          <p class="m-note" id="smNote" hidden></p>
+          <p class="m-src" id="smSrc"></p>
+        </div>
       </div>
     </div>
 

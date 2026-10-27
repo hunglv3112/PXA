@@ -194,21 +194,24 @@ document.addEventListener('DOMContentLoaded', () => {
         ax.appendChild(pill);
       }
 
-      // Kiểm tra câu chuyện bên lề trên đường kẻ (ví dụ giữa 1957 và 1959)
+      // Kiểm tra câu chuyện bên lề trên đường kẻ (hỗ trợ cả trước mốc năm và sau mốc năm)
       const storyList = window.AXIS_STORIES || [];
-      const storyForThisYear = storyList.find(s => s.afterYear === group.y);
-      if (storyForThisYear) {
-        const storyTooltip = (lang === 'ja' && storyForThisYear.tooltip_ja)
-          ? storyForThisYear.tooltip_ja
-          : storyForThisYear.tooltip;
+      storyList.forEach(s => {
+        const isBefore = (s.beforeYear === group.y) || (s.targetYear === group.y && s.position === 'before');
+        const isAfter = (s.afterYear === group.y) || (s.targetYear === group.y && s.position === 'after');
+        if (!isBefore && !isAfter) return;
 
-        const storyBtn = createEl('button', 'axis-story-btn');
+        const storyTooltip = (lang === 'ja' && s.tooltip_ja)
+          ? s.tooltip_ja
+          : s.tooltip;
+
+        const storyBtn = createEl('button', `axis-story-btn ${isBefore ? 'is-before' : 'is-after'}`);
         storyBtn.type = 'button';
-        storyBtn.dataset.storyId = storyForThisYear.id;
+        storyBtn.dataset.storyId = s.id;
         storyBtn.setAttribute('aria-label', storyTooltip || 'Chuyện bên lề');
 
         const avatarImg = createEl('img', 'axis-story-avatar');
-        avatarImg.src = storyForThisYear.avatar || 'assets/images/pxa-avatar.jpg';
+        avatarImg.src = s.avatar || 'assets/images/pxa-avatar.jpg';
         avatarImg.alt = 'Phạm Xuân Ẩn';
         avatarImg.loading = 'lazy';
         storyBtn.appendChild(avatarImg);
@@ -217,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         storyBtn.appendChild(tooltip);
 
         ax.appendChild(storyBtn);
-      }
+      });
 
       col.appendChild(up);
       col.appendChild(ax);
@@ -240,50 +243,176 @@ document.addEventListener('DOMContentLoaded', () => {
   // XỬ LÝ POPUP CHUYỆN BÊN LỀ (Side Stories Modal)
   // ========================================================================
   const storyModal = document.getElementById('storyModal');
+  const storySheet = document.getElementById('storySheet');
   const smClose = document.getElementById('smClose');
-  const smAvatar = document.getElementById('smAvatar');
-  const smBadge = document.getElementById('smBadge');
+  const smArt = document.getElementById('smArt');
+  const smMeta = document.getElementById('smMeta');
   const smTitle = document.getElementById('sm-title');
-  const smSubtitle = document.getElementById('smSubtitle');
-  const smBody = document.getElementById('smBody');
+  const smText = document.getElementById('smText');
+  const smNote = document.getElementById('smNote');
+  const smSrc = document.getElementById('smSrc');
 
   function openStoryModal(storyId) {
     const storyList = window.AXIS_STORIES || [];
-    const storyData = storyList.find(s => s.id === storyId) || storyList[0];
+    const storyData = storyList.find(s => s.id === storyId || s.aliasId === storyId) || storyList[0];
     if (!storyData || !storyModal) return;
 
     currentOpenStoryId = storyId;
     const lang = window.getCurrentLang ? window.getCurrentLang() : 'vi';
 
     const title = (lang === 'ja' && storyData.title_ja) ? storyData.title_ja : storyData.title;
-    const subtitle = (lang === 'ja' && storyData.subtitle_ja) ? storyData.subtitle_ja : storyData.subtitle;
-    const timeBadge = (lang === 'ja' && storyData.timeBadge_ja) ? storyData.timeBadge_ja : storyData.timeBadge;
-    const stories = (lang === 'ja' && storyData.stories_ja) ? storyData.stories_ja : storyData.stories;
+    const meta = (lang === 'ja' && storyData.meta_ja) ? storyData.meta_ja : (storyData.meta || (lang === 'ja' ? 'サイドストーリー' : 'CHUYỆN BÊN LỀ'));
+    const src = (lang === 'ja' && storyData.src_ja) ? storyData.src_ja : (storyData.src || '');
 
-    if (smAvatar) smAvatar.src = storyData.avatar || 'assets/images/pxa-avatar.jpg';
-    if (smBadge) smBadge.textContent = timeBadge || (lang === 'ja' ? 'サイドストーリー' : 'CHUYỆN BÊN LỀ');
-    if (smTitle) smTitle.textContent = title || '';
-    if (smSubtitle) smSubtitle.textContent = subtitle || '';
+    const heroImg = (lang === 'ja' && (storyData.modalImg_ja || storyData.heroImg_ja))
+      ? (storyData.modalImg_ja || storyData.heroImg_ja)
+      : (storyData.modalImg || storyData.heroImg || '');
 
-    if (smBody) {
-      smBody.innerHTML = '';
-      if (Array.isArray(stories)) {
-        stories.forEach(st => {
-          const card = createEl('div', 'story-card');
-          if (st.tag) {
-            card.appendChild(createTextEl('span', 'story-card-tag', st.tag));
-          }
-          if (st.title) {
-            card.appendChild(createTextEl('h3', '', st.title));
-          }
-          if (Array.isArray(st.paragraphs)) {
-            st.paragraphs.forEach(pText => {
-              card.appendChild(createTextEl('p', '', pText));
-            });
-          }
-          smBody.appendChild(card);
-        });
+    const heroAlt = (lang === 'ja' && (storyData.modalImgAlt_ja || storyData.heroAlt_ja))
+      ? (storyData.modalImgAlt_ja || storyData.heroAlt_ja)
+      : (storyData.modalImgAlt || storyData.heroAlt || title || '');
+
+    const heroCaption = (lang === 'ja' && (storyData.caption_ja || storyData.heroCaption_ja))
+      ? (storyData.caption_ja || storyData.heroCaption_ja)
+      : (storyData.caption || storyData.heroCaption || '');
+
+    // 1. Render Hero Image
+    if (smArt) {
+      smArt.innerHTML = '';
+      if (heroImg) {
+        smArt.style.display = '';
+        const figure = createEl('figure', 'm-hero-figure');
+        const img = createEl('img', 'm-single-hero-img art-photo');
+        img.src = heroImg;
+        img.alt = heroAlt;
+        img.loading = 'eager';
+        figure.appendChild(img);
+
+        if (heroCaption) {
+          const figcap = createTextEl('figcaption', 'm-hero-caption', heroCaption);
+          figure.appendChild(figcap);
+        }
+        smArt.appendChild(figure);
+      } else {
+        smArt.style.display = 'none';
       }
+    }
+
+    // 2. Render Header Meta & Title
+    if (smMeta) {
+      if (meta) {
+        smMeta.textContent = meta;
+        smMeta.hidden = false;
+      } else {
+        smMeta.hidden = true;
+      }
+    }
+    if (smTitle) {
+      smTitle.textContent = title || '';
+    }
+
+    // 3. Render Nội dung các đoạn văn & Ảnh chèn giữa / dưới
+    if (smText) {
+      smText.innerHTML = '';
+
+      let paragraphs = [];
+      let pIdx = 1;
+      while (true) {
+        const valJa = storyData[`text${pIdx}_ja`] || storyData[`p${pIdx}_ja`];
+        const valVi = storyData[`text${pIdx}`] || storyData[`p${pIdx}`];
+        const chosen = (lang === 'ja' && valJa) ? valJa : (valVi || (lang === 'ja' ? valVi : ''));
+        if (chosen && typeof chosen === 'string' && chosen.trim() !== '') {
+          paragraphs.push(chosen);
+          pIdx++;
+        } else {
+          if (storyData[`text${pIdx + 1}`] || storyData[`text${pIdx + 1}_ja`]) {
+            pIdx++;
+            continue;
+          }
+          break;
+        }
+      }
+
+      if (paragraphs.length === 0) {
+        const pList = (lang === 'ja' && storyData.paragraphs_ja) ? storyData.paragraphs_ja : storyData.paragraphs;
+        if (Array.isArray(pList)) {
+          paragraphs = pList;
+        }
+      }
+
+      paragraphs.forEach((pText, idx) => {
+        if (!pText) return;
+        const p = createTextEl('p', '', pText);
+        smText.appendChild(p);
+
+        // Ảnh chèn giữa văn bản: midImg (sau text1) hoặc midImg2...
+        const currentMid = (idx === 0 && ((lang === 'ja' && storyData.midImg_ja) ? storyData.midImg_ja : storyData.midImg))
+          || ((lang === 'ja' && storyData[`midImg${idx + 1}_ja`]) ? storyData[`midImg${idx + 1}_ja`] : storyData[`midImg${idx + 1}`]);
+
+        if (currentMid) {
+          const midSrc = currentMid.src || currentMid.img;
+          if (midSrc) {
+            const figure = createEl('figure', 'm-content-figure m-mid-figure');
+            const img = createEl('img', 'm-content-img');
+            img.src = midSrc;
+            img.alt = ((lang === 'ja' && currentMid.alt_ja) ? currentMid.alt_ja : currentMid.alt) || '';
+            img.loading = 'lazy';
+            figure.appendChild(img);
+
+            const midCap = (lang === 'ja' && currentMid.caption_ja) ? currentMid.caption_ja : currentMid.caption;
+            if (midCap) {
+              figure.appendChild(createTextEl('figcaption', 'm-content-caption', midCap));
+            }
+            smText.appendChild(figure);
+          }
+        }
+      });
+
+      // Ảnh bên dưới văn bản: bottomImg / extraImages
+      const rawBottom = ((lang === 'ja' && storyData.bottomImg_ja) ? storyData.bottomImg_ja : storyData.bottomImg)
+        || ((lang === 'ja' && storyData.extraImages_ja) ? storyData.extraImages_ja : storyData.extraImages);
+
+      if (rawBottom) {
+        const bottomList = Array.isArray(rawBottom) ? rawBottom : [rawBottom];
+        const container = createEl('div', 'm-content-images');
+        bottomList.forEach(item => {
+          const imgSrc = typeof item === 'string' ? item : (item.src || item.img);
+          if (!imgSrc) return;
+          const figure = createEl('figure', 'm-content-figure');
+          const img = createEl('img', 'm-content-img');
+          img.src = imgSrc;
+          img.alt = (typeof item === 'object' && ((lang === 'ja' && item.alt_ja) ? item.alt_ja : item.alt)) || '';
+          img.loading = 'lazy';
+          figure.appendChild(img);
+
+          const cap = typeof item === 'object' ? ((lang === 'ja' && item.caption_ja) ? item.caption_ja : item.caption) : '';
+          if (cap) {
+            figure.appendChild(createTextEl('figcaption', 'm-content-caption', cap));
+          }
+          container.appendChild(figure);
+        });
+        if (container.children.length > 0) {
+          smText.appendChild(container);
+        }
+      }
+    }
+
+    if (smNote) {
+      const note = (lang === 'ja' && storyData.note_ja) ? storyData.note_ja : storyData.note;
+      if (note && note.trim() !== '') {
+        smNote.textContent = note;
+        smNote.hidden = false;
+      } else {
+        smNote.hidden = true;
+      }
+    }
+
+    if (smSrc) {
+      smSrc.textContent = src || '';
+    }
+
+    if (storySheet) {
+      storySheet.scrollTop = 0;
     }
 
     storyModal.hidden = false;
@@ -304,6 +433,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target === storyModal) closeStoryModal();
     });
   }
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && storyModal && !storyModal.hidden) {
+      closeStoryModal();
+    }
+  });
 
   // 5. Lắng nghe sự kiện chuyển ngôn ngữ để cập nhật lại timeline
   window.addEventListener('languagechange', () => {
