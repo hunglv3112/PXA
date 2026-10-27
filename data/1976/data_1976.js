@@ -31,7 +31,7 @@ window.EXTRA_DATA_1976 = {
             date: '15/1/1976',
             date_ja: '1976年1月15日',
 
-            text1: 'Phạm Xuân Ẩn được phong tặng danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân vào ngày 15/1/1976. Nhưng do nguyên tắc giữ bí mật của ngành tình báo, tên Phạm Xuân Ẩn chưa được đưa ra công khai.',
+            text1: 'Phạm Xuân Ẩn được phong tặng danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân ngày 15/1/1976. Tuy nhiên, do nguyên tắc giữ bí mật của ngành tình báo, cái tên Phạm Xuân Ẩn của ông chưa được công bố, thay vào đó là bí danh thời chiến Trần Văn Trung được tuyên dương.',
             text1_ja: 'ファム・スアン・アンは1976年1月15日に国家最高栄誉である「人民武装力量英雄」の称号を授与されました。しかし諜報活動の秘密保持原則に基づき、彼の名はまだ公表されませんでした。',
 
             note: '',
