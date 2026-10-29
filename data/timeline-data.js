@@ -67,7 +67,7 @@ window.TIMELINE_DATA = [
     side: "top",
     icon: "rings",
     img: "assets/images/1957_1959/1959_N_ToCongDietCong.webp",
-    title: "Từng bước thâm nhập vào bộ máy chính quyền Việt Nam Cộng Hòa",
+    title: "Từng bước thâm nhập vào chính quyền Việt Nam Cộng Hòa",
     title_ja: "南ベトナム政権中枢への潜入の第一歩",
   },
   {

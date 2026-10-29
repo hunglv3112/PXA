@@ -68,9 +68,9 @@ window.EXTRA_DATA_1959 = {
         {
             id: '1959t',
             modalImg: 'assets/images/1957_1959/1959_PXAVietTanXA.jpg',
-            modalImgAlt: 'Phạm Xuân Ẩn trong một bữa tối công vụ tại Việt Tấn Xã (Nguồn: VTC)',
+            modalImgAlt: 'Phạm Xuân Ẩn (thứ ba từ bên trái sang) trong một bữa tối công vụ tại Việt Tấn Xã (Nguồn: VTC)',
             modalImgAlt_ja: 'ベトナム通信社（ベトタンサ）の公式夕食会におけるファム・スアン・アン（VTC）',
-            caption: 'Phạm Xuân Ẩn trong một bữa tối công vụ tại Việt Tấn Xã (Nguồn: VTC)',
+            caption: 'Phạm Xuân Ẩn (thứ ba từ bên trái sang) trong một bữa tối công vụ tại Việt Tấn Xã (Nguồn: VTC)',
             caption_ja: 'ベトナム通信社（ベトタンサ）の公式夕食会におけるファム・スアン・アン（VTC）',
 
             title: 'Bước đầu thâm nhập vào bộ máy chính quyền Việt Nam Cộng hòa',
