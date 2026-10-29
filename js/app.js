@@ -289,7 +289,8 @@ document.addEventListener('DOMContentLoaded', () => {
         figure.appendChild(img);
 
         if (heroCaption) {
-          const figcap = createTextEl('figcaption', 'm-hero-caption', heroCaption);
+          const figcap = createEl('figcaption', 'm-hero-caption');
+          figcap.innerHTML = heroCaption;
           figure.appendChild(figcap);
         }
         smArt.appendChild(figure);
@@ -361,7 +362,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const midCap = (lang === 'ja' && currentMid.caption_ja) ? currentMid.caption_ja : currentMid.caption;
             if (midCap) {
-              figure.appendChild(createTextEl('figcaption', 'm-content-caption', midCap));
+              const figcap = createEl('figcaption', 'm-content-caption');
+              figcap.innerHTML = midCap;
+              figure.appendChild(figcap);
             }
             smText.appendChild(figure);
           }
@@ -387,7 +390,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
           const cap = typeof item === 'object' ? ((lang === 'ja' && item.caption_ja) ? item.caption_ja : item.caption) : '';
           if (cap) {
-            figure.appendChild(createTextEl('figcaption', 'm-content-caption', cap));
+            const figcap = createEl('figcaption', 'm-content-caption');
+            figcap.innerHTML = cap;
+            figure.appendChild(figcap);
           }
           container.appendChild(figure);
         });

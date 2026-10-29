@@ -20,7 +20,7 @@ window.TIMELINE_DATA = [
     yl: "1957",
     side: "top",
     icon: "doc",
-    img: "assets/images/1957_1959/1957_TNgoai_NgoDinhDiemToiThamMy.webp",
+    img: "assets/images/1957_1959/1957_TNgoai_NgoDinhDiemToiThamMy.jpg",
     title: "Nhiệm vụ du học báo chí tại Mỹ",
     title_ja: "記者という偽装の選択",
   },
@@ -66,7 +66,7 @@ window.TIMELINE_DATA = [
     yl: "1959",
     side: "top",
     icon: "rings",
-    img: "assets/images/1957_1959/1959_N_ToCongDietCong.webp",
+    img: "assets/images/1957_1959/1959_N_ToCongDietCong.jpg",
     title: "Từng bước thâm nhập vào chính quyền Việt Nam Cộng Hòa",
     title_ja: "南ベトナム政権中枢への潜入の第一歩",
   },
@@ -90,23 +90,9 @@ window.TIMELINE_DATA = [
     yl: "1960",
     side: "top",
     icon: "redact",
-    img: "assets/images/sample-intel.jpg",
-    title: "Mật danh X6 và mạng lưới H63",
-    date: "1960",
-    text: [
-      "Về nước, Phạm Xuân Ẩn chính thức hoạt động bí mật dưới mật danh X6, trực thuộc mạng lưới tình báo huyền thoại H63 ở Củ Chi.",
-      "Ông là 'tế bào đơn tuyến' tuyệt mật, có mặt ở mọi cơ quan đầu não đối phương mà không hề gây nghi ngờ."
-    ],
-    note: "",
-    src: "Nguồn: Larry Berman; Tư liệu Tổng cục Tình báo",
-    title_ja: "暗号名X6と伝説のH63諜報網",
-    date_ja: "1960年",
-    text_ja: [
-      "帰国後、暗号名「X6」としてクチ解放区の伝説的諜報網H63に属する単独工作員として本格始動。",
-      "誰にも疑われることなく敵の中枢へ出入りできる、究極の秘密細胞となりました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: ラリー・バーマン; 国防情報総局資料"
+    img: "assets/images/1960_1963/1960_TB_N_ThamNhaPXA.jpg",
+    title: "Nối lại liên lạc với tổ chức tình báo cách mạng",
+    title_ja: "革命情報組織との連絡再開",
   },
   {
     id: "1960b",
@@ -114,23 +100,9 @@ window.TIMELINE_DATA = [
     yl: "1960",
     side: "bot",
     icon: "ticker",
-    img: "assets/images/sample-journalist.jpg",
-    title: "Gia nhập hãng thông tấn quốc tế Reuters",
-    date: "1960",
-    text: [
-      "Với bằng cấp báo chí Mỹ và vốn tiếng Anh lưu loát, ông nhanh chóng được nhận vào làm việc tại hãng thông tấn Anh Reuters tại Sài Gòn.",
-      "Công việc phóng viên mở ra cánh cửa tiếp cận tự nhiên với giới chức quân sự và các cơ quan ngoại giao."
-    ],
-    note: "",
-    src: "Nguồn: Wikipedia; Thomas Bass",
-    title_ja: "国際通信社ロイターへの入社",
-    date_ja: "1960年",
-    text_ja: [
-      "米国の正規ジャーナリズム学位を手に、英大手ロイター通信サイゴン支局に勤務を開始。",
-      "報道記者の身分が、軍や外交筋への自然なアクセスルートを切り拓きました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: Wikipedia; トーマス・バス"
+    img: "assets/images/1960_1963/1960_NB_Reuters.jpg",
+    title: "Bắt đầu làm việc tại hãng thông tấn Reuters",
+    title_ja: "ロイター通信での勤務開始",
   },
 
   // ==========================================================================
@@ -142,23 +114,9 @@ window.TIMELINE_DATA = [
     yl: "1961",
     side: "top",
     icon: "key",
-    img: "",
-    title: "Xâm nhập Phủ Tổng thống & Trùm mật vụ",
-    date: "1961",
-    text: [
-      "Phạm Xuân Ẩn kết thân đặc biệt với bác sĩ Trần Kim Tuyến — trùm mật vụ Phủ Tổng thống Ngô Đình Diệm.",
-      "Mối quan hệ thâm giao này cho phép ông tiếp cận những báo cáo an ninh và hồ sơ mật nội bộ giá trị nhất của chế độ Sài Gòn."
-    ],
-    note: "",
-    src: "Nguồn: Larry Berman; Thomas Bass",
-    title_ja: "秘密警察・大統領府中枢への接触",
-    date_ja: "1961年",
-    text_ja: [
-      "ジエム大統領の秘密警察長官チャン・キム・トゥエン医師と深い個人的信頼関係を構築。",
-      "南ベトナム政権内部の最高機密治安情報への直接アクセスルートを確保しました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: バーマン; トーマス・バス"
+    img: "assets/images/1960_1963/1961_MLxJFK.jpg",
+    title: "Âm mưu của nước Mỹ",
+    title_ja: "米国の企図と新たな軍事戦略",
   },
   {
     id: "1961b",
@@ -166,23 +124,9 @@ window.TIMELINE_DATA = [
     yl: "1961",
     side: "bot",
     icon: "doc",
-    img: "",
-    title: "Ký giả săn tin uy tín hàng đầu",
-    date: "1961",
-    text: [
-      "Tại văn phòng Reuters, Phạm Xuân Ẩn khẳng định năng lực qua các bản tin chính trị nhanh nhạy, sắc sảo.",
-      "Ông trở thành cầu nối thông tin đắc lực cho các đại sứ quán phương Tây và các phái đoàn báo chí quốc tế đến Sài Gòn."
-    ],
-    note: "",
-    src: "Nguồn: Báo Nhân Dân; Tư liệu Tạp chí Time",
-    title_ja: "一流の国際特派員としての評価",
-    date_ja: "1961年",
-    text_ja: [
-      "ロイター通信で迅速かつ正確な政治速報を連発し、敏腕記者としての名声を確立。",
-      "サイゴンを訪れる西側外交団や海外メディアにとって不可欠な情報相談役となりました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: ニャンダーン紙; タイム誌資料"
+    img: "assets/images/1960_1963/1961_NB_AnPham.jpg",
+    title: "Lợi thế từ thân phận nhà báo của Reuters",
+    title_ja: "ロイター記者としての身分がもたらす優位性",
   },
 
   // ==========================================================================
@@ -194,23 +138,9 @@ window.TIMELINE_DATA = [
     yl: "1962",
     side: "top",
     icon: "eye",
-    img: "",
-    title: "Giải mã kế hoạch 'Chiến tranh đặc biệt'",
-    date: "1962",
-    text: [
-      "Khi Mỹ thành lập Bộ Chỉ huy Viện trợ Quân sự (MACV), ông thiết lập quan hệ tin cậy với cố vấn Edward Lansdale.",
-      "Những tài liệu đầu tiên về chiến lược 'Chiến tranh đặc biệt' và chương trình Ấp chiến lược được ông bí mật chuyển về căn cứ."
-    ],
-    note: "",
-    src: "Nguồn: Larry Berman, “Điệp viên hoàn hảo”",
-    title_ja: "「特別戦争」計画と戦略村の解読",
-    date_ja: "1962年",
-    text_ja: [
-      "米軍事援助司令部（MACV）設立の中、エドワード・ランスデールら米高級顧問と親交を結びました。",
-      "「特別戦争」や「戦略村」計画に関する重要機密を秘密ルートで司令部へ送達しました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: ラリー・バーマン『完璧なスパイ』"
+    img: "assets/images/1960_1963/1962_N_VNCHxMy.jpg",
+    title: "Thu thập Kế hoạch quân sự Harkins - McGarr",
+    title_ja: "ハーキンス・マクガー軍事計画の解読",
   },
   {
     id: "1962b",
@@ -218,23 +148,9 @@ window.TIMELINE_DATA = [
     yl: "1962",
     side: "bot",
     icon: "camera",
-    img: "",
-    title: "Bạn đồng hành của các phóng viên chiến trường Mỹ",
-    date: "1962",
-    text: [
-      "Các ký giả trẻ huyền thoại của Mỹ như David Halberstam (NY Times) và Neil Sheehan (UPI) thường xuyên tìm đến ông để học hỏi và kiểm chứng thông tin.",
-      "Họ coi Phạm Xuân Ẩn là bậc thầy am hiểu cội rễ cuộc chiến tranh Việt Nam."
-    ],
-    note: "",
-    src: "Nguồn: David Halberstam, The Making of a Quagmire; Neil Sheehan",
-    title_ja: "ハルバースタムら米特派員との親交",
-    date_ja: "1962年",
-    text_ja: [
-      "米紙の若き記者デヴィッド・ハルバースタムやニール・シーハンらが連日アンを訪ねて指導を仰ぎました。",
-      "彼らはアンを「ベトナム情勢の深層を知り尽くした最高の導き手」と慕いました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: ハルバースタム; シーハン"
+    img: "assets/images/1960_1963/1962_NB_NickPeter.jpg",
+    title: "Hợp tác cùng các phóng viên quốc tế tại Reuters",
+    title_ja: "ロイター特派員としての国際報道連携",
   },
 
   // ==========================================================================
@@ -246,23 +162,9 @@ window.TIMELINE_DATA = [
     yl: "1963",
     side: "top",
     icon: "star",
-    img: "",
-    title: "Bản báo cáo giải mã chiến thuật sau Ấp Bắc",
-    date: "1963",
-    text: [
-      "Sau trận Ấp Bắc (1/1963), bản báo cáo của X6 giải mã toàn bộ chiến thuật 'trực thăng vận' và 'thiết xa vận' của Mỹ.",
-      "Tài liệu này giúp Bộ Chỉ huy Miền tìm ra phương án đánh bại các chiến thuật cơ động hiện đại của đối phương."
-    ],
-    note: "",
-    src: "Nguồn: Larry Berman; Viện Lịch sử Quân sự",
-    title_ja: "アプバク戦の分析と米軍戦術解読",
-    date_ja: "1963年",
-    text_ja: [
-      "1963年1月のアプバク戦後、X6は米軍のヘリコプター空輸戦術や装甲車戦術の弱点を詳細に報告。",
-      "解放軍司令部が現代的な米軍戦術に対抗する決定的な指針となりました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: バーマン; 軍事歴史研究所"
+    img: "assets/images/1960_1963/1963_DaoChinh.jpg",
+    title: "Theo dõi cuộc đảo chính Ngô Đình Diệm và dự báo chiến lược của Mỹ",
+    title_ja: "ゴ・ディン・ジエム政変の追跡と米国の戦略的動向予測",
   },
   {
     id: "1963b",
@@ -270,23 +172,9 @@ window.TIMELINE_DATA = [
     yl: "1963",
     side: "bot",
     icon: "ticker",
-    img: "",
-    title: "Chứng kiến sự sụp đổ của chế độ Ngô Đình Diệm",
-    date: "Tháng 11/1963",
-    text: [
-      "Tháng 11/1963, cuộc đảo chính lật đổ anh em Diệm - Nhu nổ ra dữ dội giữa Sài Gòn.",
-      "Phạm Xuân Ẩn túc trực xuyên đêm tại hiện trường, gửi những bản tin nóng bỏng cho báo giới quốc tế về bước ngoặt chính trị này."
-    ],
-    note: "",
-    src: "Nguồn: Thomas Bass, The New Yorker; Tư liệu Báo Tuổi Trẻ",
-    title_ja: "ゴ・ディン・ジエム政権崩壊クーデターの取材",
-    date_ja: "1963年11月",
-    text_ja: [
-      "1963年11月、ジエム大統領打倒クーデターが勃発。",
-      "アンは緊迫する現場に徹夜で張り付き、歴史的政変の全貌を国際社会へと速報しました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: トーマス・バス; トゥオイチェー紙"
+    img: "assets/images/1960_1963/1963_NB_RoiTrucThang.jpg",
+    title: "Tác nghiệp tại hiện trường Ấp Bắc bằng trực thăng Mỹ",
+    title_ja: "米軍ヘリでアプバク戦の最前線を取材",
   },
 
   // ==========================================================================

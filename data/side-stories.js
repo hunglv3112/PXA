@@ -44,15 +44,9 @@ window.AXIS_STORIES = [
     text4: "Có được lời đảm bảo từ tổ chức và sự ủng hộ của mẹ, tối 10/10/1957, Phạm Xuân Ẩn nén lại nỗi đau mất cha để lên đường sang Mỹ.",
 
     // Ảnh tư liệu bổ sung bên dưới (Phi trường Tân Sơn Nhất)
-    bottomImg: {
-      src: "assets/images/1957_1959/1959_PhiTruongSanBayTanSanNhatTruoc1975.jpg",
-      alt: "Phi trường Tân Sơn Nhất thập niên 1950",
-      caption: "Phi trường Tân Sơn Nhất (Sài Gòn) thập niên 1950 — nơi Phạm Xuân Ẩn bước lên chuyến bay đêm 10/10/1957 lên đường sang Mỹ."
-    },
+    bottomImg: {},
 
     note: "",
-    src: "Nguồn: Larry Berman (Điệp viên hoàn hảo); Thomas Bass (The Spy Who Loved Us)",
-
     // ==========================================================================
     // 2. TIẾNG NHẬT (JA - 日本語)
     // ==========================================================================
@@ -86,6 +80,85 @@ window.AXIS_STORIES = [
 
     note_ja: "",
     src_ja: "出典: ラリー・バーマン『パーフェクト・スパイ』; トーマス・バス"
+  },
+  {
+    id: "story-1962",
+    aliasId: "story-1962-1963",
+    afterYear: 1962,
+    nextYear: 1963,
+    position: "after",
+    avatar: "assets/images/pxa-avatar.jpg",
+
+    // ==========================================================================
+    // 1. TIẾNG VIỆT (VI)
+    // ==========================================================================
+    tooltip: "Chuyện bên lề (1962 – 1963): Bấm để đọc",
+    meta: "Chuyện bên lề · 1962 – 1963",
+    title: "H63 - Mạng lưới tình báo hỗ trợ cho Phạm Xuân Ẩn",
+
+    // ── ẢNH HERO BANNER ĐẦU POPUP (KÈM CHÚ THÍCH) ──
+    modalImg: "assets/images/CCNL_1962/H63_GapLai.jpg",
+    modalImgAlt: "Các cán bộ Cụm tình báo H63 (từ trái sang: Phạm Xuân Ẩn, Nguyễn Thị Ba, Nguyễn Văn Tàu (Tư Cang), Nguyễn Văn Minh (Nguồn: QDNDVN)",
+    caption: "Các cán bộ Cụm tình báo H63 (từ trái sang: Phạm Xuân Ẩn, Nguyễn Thị Ba, Nguyễn Văn Tàu (Tư Cang), Nguyễn Văn Minh (Nguồn: QDNDVN)",
+
+    // ── NỘI DUNG VĂN BẢN (KÈM ẢNH CHÈN GIỮA MID-IMG) ──
+    text1: "Tháng 4/1962, xuất phát từ yêu cầu của cuộc chiến và nhằm bảo vệ Phạm Xuân Ẩn, khi đó mang bí danh Hai Trung, Quân ủy Trung ương và Ban Quân báo Miền (Bộ Tham mưu B2) tiếp nhận lực lượng từ Ban Địch tình Đặc khu ủy Sài Gòn - Gia Định để thành lập Cụm điệp báo A18, tiền thân của Cụm tình báo chiến lược H63. Ban đầu, ông Nguyễn Xuân Mạnh (Mười Nho) phụ trách cụm, sau đó Đại tá Nguyễn Văn Tàu (Tư Cang) làm Cụm trưởng.",
+
+    text2: "Cụm đóng vai trò hậu phương cho ông Ẩn. Ông ngụy trang các cuộn microfilm chứa tài liệu mật trong đồ ăn như nem chua, bánh xèo, ổ bánh mì, rồi gửi từ nội đô Sài Gòn qua các giao liên như bà Nguyễn Thị Ba, bà Tám Thảo và bà Hai Ánh. Tài liệu sau đó được chuyển qua tuyến giao thông vũ trang ở Củ Chi (Phú Hòa Đông) về Trung ương Cục và Bộ Chính trị tại Hà Nội.",
+
+    text3: "Trong suốt cuộc chiến, cụm có 45 thành viên thì 27 người hy sinh, như liệt sĩ Nguyễn Văn Bờ. Một số người bị tra tấn, như Thiếu tá Nguyễn Văn Thương (Hai Thương) bị cưa chân nhiều lần, nhưng theo các tài liệu về cụm, họ vẫn giữ kín thông tin về ông Ẩn và đường dây.",
+
+    // ── ẢNH CHÈN SAU ĐOẠN 3 ──
+    midImg3: {
+      src: "assets/images/CCNL_1962/H63_TraTan.jpg",
+      alt: "Thiếu tá Hai Thương - Người bị phía Mỹ và Việt Nam Cộng hòa bắt giữ, cưa chân tới 6 lần nhưng vẫn không khai một thông tin nào (Nguồn: Báo Dân Trí)",
+      caption: "Thiếu tá Hai Thương - Người bị phía Mỹ và Việt Nam Cộng hòa bắt giữ, cưa chân tới 6 lần nhưng vẫn không khai một thông tin nào, khiến kẻ tra tấn phải thốt lên: “Tao thua rồi, mày là sinh vật thép” (Nguồn: Báo Dân Trí)"
+    },
+
+    text4: "Năm 1971, H63 được Nhà nước phong tặng danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân, là một trong những đơn vị tình báo đầu tiên nhận danh hiệu này trong thời chiến.",
+
+    // ── ẢNH CUỐI BÀI ──
+    bottomImg: {
+      src: "assets/images/CCNL_1962/H63_AHLLVTND.jpg",
+      alt: "Cụm tình báo H63 đón nhận danh hiệu Anh hùng lực lượng vũ trang nhân dân vào năm 1971 (Nguồn: VOV)",
+      caption: "Cụm tình báo H63 đón nhận danh hiệu Anh hùng lực lượng vũ trang nhân dân vào năm 1971 (Nguồn: VOV)"
+    },
+
+    note: "",
+
+    // ==========================================================================
+    // 2. TIẾNG NHẬT (JA - 日本語)
+    // ==========================================================================
+    tooltip_ja: "サイドストーリー (1962 – 1963): クリックして読む",
+    meta_ja: "サイドストーリー · 1962 – 1963",
+    title_ja: "H63――ファム・スアン・アンを支えた伝説の戦略諜報網",
+
+    modalImg_ja: "assets/images/CCNL_1962/H63_GapLai.jpg",
+    modalImgAlt_ja: "H63戦略情報班の幹部たち（左から：ファム・スアン・アン、グエン・ティ・バ、グエン・ヴァン・タウ［トゥー・カン］、グエン・ヴァン・ミン）（人民軍新聞）",
+    caption_ja: "H63戦略情報班の幹部たち（左から：ファム・スアン・アン、グエン・ティ・バ、グエン・ヴァン・タウ［トゥー・カン］、グエン・ヴァン・ミン）（人民軍新聞）",
+
+    text1_ja: "1962年4月、激化する戦局の要請と当時「ハイ・チュン」の暗号名で活動していたファム・スアン・アンを厳重に防護するため、中央軍事委員会と南部軍事情報部はサイゴン・ザディン特区敵情部から戦力を引き継ぎ、戦略諜報網H63の前身であるA18諜報班を創設しました。当初はグエン・スアン・マン（ムオイ・ニョ）が指揮を執り、後にグエン・ヴァン・タウ大佐（トゥー・カン）が班長を務めました。",
+
+    text2_ja: "H63班はアンの極めて強固な後方支援基盤として機能しました。アンはネムチュア（発酵豚肉ソーセージ）、バインセオ、フランスパンなどの食品の中に機密マイクロフィルムを精巧に隠匿し、グエン・ティ・バ、タム・タオ、ハイ・アインといった女性連絡員を通じてサイゴン中心部から搬出。文書はクチ（フーホアドン）の武装連絡路を経て南部中央機関およびハノイの政治局へと確実に送達されました。",
+
+    text3_ja: "戦争期間を通じて、H63班の全45名の構成員のうち、グエン・ヴァン・ボー烈士をはじめとする27名が尊い命を捧げました。ハイ・トゥオン（グエン・ヴァン・トゥオン少佐）のように繰り返し足を切断される凄惨な拷問を受けながらも、すべての同志たちはアンの正体と通信網の秘密を死守し続けました。",
+
+    midImg3_ja: {
+      src: "assets/images/CCNL_1962/H63_TraTan.jpg",
+      alt: "ハイ・トゥオン少佐――凄惨な拷問に屈しなかった鋼鉄の英雄（ダンチー紙）",
+      caption: "ハイ・トゥオン少佐――米軍とサイゴン政権に捕らえられ6回も足を切断される凄惨な拷問を受けながらも沈黙を守り抜き、拷問官に「お前の勝ちだ、お前は鋼鉄の生物だ」と言わしめた英雄（ダンチー紙）"
+    },
+
+    text4_ja: "1971年、H63は国家から「人民武装力量英雄」の最高栄誉を授与され、戦時中にこの称号を獲得した最初の情報部隊の一つとなりました。",
+
+    bottomImg_ja: {
+      src: "assets/images/CCNL_1962/H63_AHLLVTND.jpg",
+      alt: "1971年に人民武装力量英雄の称号を受賞したH63戦略情報班（VOV）",
+      caption: "1971年に人民武装力量英雄の称号を受賞したH63戦略情報班（VOV）"
+    },
+
+    note_ja: "",
+    src_ja: "出典: ベトナム人民軍新聞; VOV; ダンチー紙"
   },
   {
     id: "story-1975",

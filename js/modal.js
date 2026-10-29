@@ -115,7 +115,7 @@
           if (midCap) {
             const capEl = document.createElement('figcaption');
             capEl.className = 'm-content-caption';
-            capEl.textContent = midCap;
+            capEl.innerHTML = midCap;
             figure.appendChild(capEl);
           }
 

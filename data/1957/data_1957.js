@@ -22,7 +22,7 @@ window.EXTRA_DATA_1957 = {
         {
             id: '1957t',
             // ── ẢNH TRONG POPUP CHI TIẾT (HERO BANNER KÈM CHÚ THÍCH) ──
-            modalImg: 'assets/images/1957_1959/1957_TNgoai_NgoDinhDiemToiThamMy.webp',
+            modalImg: 'assets/images/1957_1959/1957_TNgoai_NgoDinhDiemToiThamMy.jpg',
             modalImgAlt: 'Tổng thống Dwight Eisenhower (ngoài cùng bên trái) đón Tổng thống VNCH Ngô Đình Diệm (thứ ba từ trái sang) tới thăm Washington năm 1957 (NARA)',
             modalImgAlt_ja: 'カリフォルニアのオレンジ・コースト・カレッジでジャーナリズムを学ぶファム・スアン・アン',
             caption: 'Tổng thống Dwight Eisenhower (ngoài cùng bên trái) đón Tổng thống VNCH Ngô Đình Diệm (thứ ba từ trái sang) tới thăm Washington năm 1957 (NARA)',
