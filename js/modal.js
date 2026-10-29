@@ -175,7 +175,7 @@
     if (footnote && footnote.trim() !== '') {
       const footnoteDiv = document.createElement('div');
       footnoteDiv.className = 'page-footnote m-page-footnote';
-      footnoteDiv.textContent = footnote;
+      footnoteDiv.innerHTML = footnote;
       mText.appendChild(footnoteDiv);
     }
 

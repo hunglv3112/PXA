@@ -185,24 +185,10 @@ window.TIMELINE_DATA = [
     y: 1964,
     yl: "1964",
     side: "top",
-    icon: "redact",
-    img: "",
-    title: "Thâm nhập hồ sơ Bộ Tổng tham mưu Sài Gòn",
-    date: "1964",
-    text: [
-      "Lợi dụng tình trạng hỗn loạn chính trị sau đảo chính, Phạm Xuân Ẩn thâm nhập sâu vào các phòng ban của Bộ Tổng tham mưu quân đội Sài Gòn.",
-      "Ông nắm bắt các mâu thuẫn nội bộ giữa các tướng lĩnh và kế hoạch điều chuyển binh lực đối phương."
-    ],
-    note: "",
-    src: "Nguồn: Lịch sử Tình báo Quốc phòng; Larry Berman",
-    title_ja: "南ベトナム軍総参謀部機密への侵入",
-    date_ja: "1964年",
-    text_ja: [
-      "クーデター後の政局混乱を巧みに利用し、南ベトナム軍総参謀部の中枢深くへ潜入。",
-      "将軍たちの派閥争いや軍事作戦計画の動向を正確に把握しました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: ベトナム国防情報史; バーマン"
+    icon: "doc",
+    img: "assets/images/1964_1970/1964_TB_MyDenDaNang.jpg",
+    title: "Thu thập các kế hoạch chiến lược và dự báo bộ binh Mỹ vào miền Nam",
+    title_ja: "米国の戦略計画収集と米地上軍の南部本格介入予測",
   },
   {
     id: "1964b",
@@ -210,23 +196,9 @@ window.TIMELINE_DATA = [
     yl: "1964",
     side: "bot",
     icon: "mag",
-    img: "",
-    title: "Cộng tác với Herald Tribune & CS Monitor",
-    date: "1964",
-    text: [
-      "Ông viết bài đều đặn cho các tòa soạn lớn như The New York Herald Tribune và The Christian Science Monitor.",
-      "Tên tuổi của Phạm Xuân Ẩn trở thành bảo chứng cho những bài phân tích trung thực và khách quan nhất tại chiến trường Việt Nam."
-    ],
-    note: "",
-    src: "Nguồn: Neil Sheehan, A Bright Shining Lie; Thomas Bass",
-    title_ja: "米有力紙ヘラルド・トリビューンへの寄稿",
-    date_ja: "1964年",
-    text_ja: [
-      "ニューヨーク・ヘラルド・トリビューン紙やクリスチャン・サイエンス・モニター紙へ精力的に寄稿。",
-      "ベトナム戦線における最も公平で洞察に満ちた分析者として名声を不動のものとしました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: ニール・シーハン; トーマス・バス"
+    img: "assets/images/1964_1970/1964_NB_N_PXADuongPho.jpg",
+    title: "Tiến sâu vào giới báo chí Mỹ",
+    title_ja: "米有力メディアへの本格的な進出",
   },
 
   // ==========================================================================
@@ -237,24 +209,10 @@ window.TIMELINE_DATA = [
     y: 1965,
     yl: "1965",
     side: "top",
-    icon: "doc",
-    img: "",
-    title: "Nắm bắt chiến lược 'Chiến tranh cục bộ'",
-    date: "1965",
-    text: [
-      "Khi lính thủy đánh bộ Mỹ đổ bộ vào Đà Nẵng, Phạm Xuân Ẩn thu thập các tài liệu điều quân và kế hoạch tác chiến của Tướng Westmoreland.",
-      "Những thông tin này giúp Trung ương Đảng khẳng định quyết tâm đánh thắng quân viễn chinh Mỹ ngay từ đầu."
-    ],
-    note: "",
-    src: "Nguồn: Larry Berman; Tư liệu Báo Nhân Dân",
-    title_ja: "米軍本格介入・「局地戦争」計画の把握",
-    date_ja: "1965年",
-    text_ja: [
-      "米海兵隊がダナンに上陸する中、ウェストモーランド将軍の作戦配備と増派計画を入手。",
-      "ハノイ指導部が米軍直接介入に対する抗戦方針を早期に確立する上で決定打となりました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: バーマン; ニャンダーン紙"
+    icon: "star",
+    img: "assets/images/1964_1970/1965_TB_LinhMyDoBo.jpg",
+    title: "Gửi Kế hoạch trận Ia Đrăng",
+    title_ja: "イードラン渓谷の戦闘作戦計画を送達",
   },
   {
     id: "1965b",
@@ -262,23 +220,9 @@ window.TIMELINE_DATA = [
     yl: "1965",
     side: "bot",
     icon: "mag",
-    img: "",
-    title: "Phóng viên chính thức của tuần báo Time",
-    date: "1965",
-    text: [
-      "Năm 1965, Phạm Xuân Ẩn chính thức trở thành phóng viên biên chế chính ngạch (Staff Correspondent) của tạp chí danh tiếng Time.",
-      "Ông là người Việt Nam duy nhất đạt được vị trí biên chế chính thức tại Time thời kỳ này, mang lại tấm thẻ tác nghiệp đầy quyền lực."
-    ],
-    note: "",
-    src: "Nguồn: Tạp chí Time; Thomas Bass, The New Yorker",
-    title_ja: "タイム誌の正規スタッフ特派員に就任",
-    date_ja: "1965年",
-    text_ja: [
-      "1965年、アンは米国の超大手週刊誌『タイム』の正規スタッフ特派員に就任しました。",
-      "戦時中の米大手メディアで正規特派員となった唯一のベトナム人記者であり、絶大な取材特権を獲得しました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: タイム誌アーカイブ; トーマス・バス"
+    img: "assets/images/1964_1970/1965_NB_N.jpg",
+    title: "Làm phóng viên cho Time",
+    title_ja: "タイム誌記者への道",
   },
 
   // ==========================================================================
@@ -290,23 +234,9 @@ window.TIMELINE_DATA = [
     yl: "1966",
     side: "top",
     icon: "doc",
-    img: "",
-    title: "Đường dây giao liên huyền thoại Củ Chi",
-    date: "1966",
-    text: [
-      "Các tài liệu mật được Phạm Xuân Ẩn chụp bằng vi phim chuyên dụng, giấu tinh vi trong giỏ thức ăn gửi qua giao liên Nguyễn Thị Ba (Bảy Triều).",
-      "Đường dây vận chuyển từ trung tâm Sài Gòn ra địa đạo Củ Chi rồi tới Trung ương Cục hoạt động thông suốt, an toàn tuyệt đối."
-    ],
-    note: "",
-    src: "Nguồn: Larry Berman; Tư liệu Báo Nhân Dân",
-    title_ja: "クチ地下道を結ぶ超小型フィルム連絡網",
-    date_ja: "1966年",
-    text_ja: [
-      "極秘文書を特殊カメラでマイクロフィルム化し、食料品などに隠蔽して女性連絡員バイ・チエウへ手渡し。",
-      "サイゴン中心街からクチ地下道を経て南部中央基地へ至る秘密ルートは完全な秘密を守り抜きました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: バーマン; ニャンダーン紙"
+    img: "assets/images/1964_1970/1966_TB_SaiGon1966.jpg",
+    title: "Khảo sát mục tiêu Mậu Thân và thu thập Kế hoạch AB142",
+    title_ja: "サイゴン潜入視察と軍事作戦計画AB142の入手",
   },
   {
     id: "1966b",
@@ -314,23 +244,9 @@ window.TIMELINE_DATA = [
     yl: "1966",
     side: "bot",
     icon: "camera",
-    img: "",
-    title: "Thâm nhập các căn cứ tiền duyên",
-    date: "1966",
-    text: [
-      "Với tấm thẻ phóng viên Time, ông bay trên các trực thăng quân sự Mỹ đến khắp các chiến trường ác liệt từ Tây Nguyên đến đồng bằng.",
-      "Ông trực tiếp phỏng vấn các tướng lĩnh, quan sát tại chỗ tình hình tác chiến của các sư đoàn quân đội Hoa Kỳ."
-    ],
-    note: "",
-    src: "Nguồn: Thomas Bass, The New Yorker",
-    title_ja: "タイム誌記者としての前線基地視察",
-    date_ja: "1966年",
-    text_ja: [
-      "タイム特派員の身分で米軍ヘリに乗り、中部高原からデルタ地帯まで最前線の基地を縦横に巡回取材。",
-      "米軍師団長らと直に言葉を交わし、現場の作戦遂行状況を仔細に目撃しました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: トーマス・バス"
+    img: "assets/images/1964_1970/1966_NB_N_MayAnhCap.jpg",
+    title: "Những bước tiến trong báo chí",
+    title_ja: "報道活動における新たな前進",
   },
 
   // ==========================================================================
@@ -342,23 +258,9 @@ window.TIMELINE_DATA = [
     yl: "1967",
     side: "top",
     icon: "redact",
-    img: "",
-    title: "Đón trước cuộc hành quân Cedar Falls & Junction City",
-    date: "1967",
-    text: [
-      "Mỹ mở các cuộc hành quân khổng lồ Cedar Falls và Junction City nhằm xóa sổ căn cứ kháng chiến miền Đông Nam Bộ.",
-      "Nhờ tin tức tình báo sớm và chuẩn xác của X6, Bộ Chỉ huy Cách mạng chủ động phòng tránh tổn thất và giáng trả thích đáng."
-    ],
-    note: "",
-    src: "Nguồn: Lịch sử Tình báo Quốc phòng; Larry Berman",
-    title_ja: "シダー・フォールズ作戦計画の事前察知",
-    date_ja: "1967年",
-    text_ja: [
-      "米軍は解放区中枢壊滅を狙う大作戦「シダー・フォールズ」と「ジャンクション・シティ」を展開。",
-      "X6の迅速な事前通報により、革命軍は損害を最小限に抑え、主力を完全に温存しました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: ベトナム国防情報史; バーマン"
+    img: "assets/images/1964_1970/1967_DSQMy.jpg",
+    title: "Ba tháng trước Tết Mậu Thân, Phạm Xuân Ẩn được chỉ thị ở lại Sài Gòn để đánh giá tình hình.",
+    title_ja: "テト攻勢3カ月前、情勢分析のためサイゴン残留の命を受ける",
   },
   {
     id: "1967b",
@@ -366,23 +268,9 @@ window.TIMELINE_DATA = [
     yl: "1967",
     side: "bot",
     icon: "mag",
-    img: "",
-    title: "Phân tích bế tắc quân sự của Mỹ trên Time",
-    date: "1967",
-    text: [
-      "Các bài phân tích chiến trường của Phạm Xuân Ẩn trên Time chỉ ra sự bế tắc của chiến lược 'tìm và diệt' của Tướng Westmoreland.",
-      "Những nhận định sâu sắc này tạo nên làn sóng tranh luận gay gắt ngay trong giới hoạch định chính sách tại Washington."
-    ],
-    note: "",
-    src: "Nguồn: Tạp chí Time; Military Myths & Legends",
-    title_ja: "タイム誌で米軍作戦の限界を鋭く指摘",
-    date_ja: "1967年",
-    text_ja: [
-      "タイム誌上の署名記事で、ウェストモーランド将軍の「索敵撃滅」戦略の行き詰まりを客観的に指摘。",
-      "ワシントンの政策決定者たちの間でも激しい議論を巻き起こしました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: タイム誌アーカイブ; Military Myths & Legends"
+    img: "assets/images/1964_1970/1967_NB_N_DonDoc.jpg",
+    title: "Mở rộng phạm vi hoạt động",
+    title_ja: "活動範囲の拡大と特権的通行許可",
   },
 
   // ==========================================================================
@@ -394,23 +282,9 @@ window.TIMELINE_DATA = [
     yl: "1968",
     side: "top",
     icon: "star",
-    img: "",
-    title: "Đánh giá chấn động tâm lý sau Tết Mậu Thân",
-    date: "Đầu năm 1968",
-    text: [
-      "Sau đòn tiến công Tết Mậu Thân 1968, bản báo cáo tuyệt mật của X6 đánh giá chính xác sự sụp đổ ý chí chiến tranh của chính quyền Washington.",
-      "Báo cáo khẳng định: Mỹ đã vỡ mộng chiến thắng và buộc phải tính tới việc xuống thang chiến tranh."
-    ],
-    note: "",
-    src: "Nguồn: Larry Berman; Thomas Bass",
-    title_ja: "テト攻勢後の米政権の動揺を分析報告",
-    date_ja: "1968年初頭",
-    text_ja: [
-      "1968年のテト攻勢直後、X6は米指導層の戦争継続意思の崩壊を的確に分析した極秘報告を提出。",
-      "米国が軍事的勝利を断念し、戦争縮小へ舵を切らざるを得ない状況を看破しました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: バーマン; トーマス・バス"
+    img: "assets/images/1964_1970/1968_HueSauMauThan.jpg",
+    title: "Hành động kịp thời giúp cứu nguy cho quân Giải phóng",
+    title_ja: "解放軍の危機を救った迅速果敢な情報活動",
   },
   {
     id: "1968b",
@@ -418,23 +292,9 @@ window.TIMELINE_DATA = [
     yl: "1968",
     side: "bot",
     icon: "ticker",
-    img: "",
-    title: "Trực chiến đưa tin giữa khói lửa Sài Gòn",
-    date: "1968",
-    text: [
-      "Khi tiếng súng nổ rền tại Tòa Đại sứ Mỹ và Đài phát thanh Sài Gòn, Phạm Xuân Ẩn lao vào hiện trường đưa tin nóng cho Time.",
-      "Những bản tin chân thực, sống động của ông phản ánh trọn vẹn sự bất ngờ và chấn động lịch sử của đợt tổng công kích."
-    ],
-    note: "",
-    src: "Nguồn: Time Magazine Archive; Báo Tuổi Trẻ",
-    title_ja: "戦火のサイゴン市街地から緊急速報",
-    date_ja: "1968年",
-    text_ja: [
-      "米大使館やサイゴン放送局が攻撃を受ける激戦の中、アンは銃撃戦の現場へ急行。",
-      "臨場感あふれる第一報をタイム本社へ打電し、世界中を驚嘆させました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: タイム誌アーカイブ; トゥオイチェー紙"
+    img: "assets/images/1964_1970/1968_4V.jpg",
+    title: "Trực tiếp tác nghiệp báo chí trong thời gian Tết Mậu Thân",
+    title_ja: "テト攻勢の渦中における最前線報道取材",
   },
 
   // ==========================================================================
@@ -446,23 +306,9 @@ window.TIMELINE_DATA = [
     yl: "1969",
     side: "top",
     icon: "key",
-    img: "",
-    title: "Giải mã học thuyết Nixon & Rút quân",
-    date: "1969",
-    text: [
-      "Khi Tổng thống Nixon nhậm chức và công bố học thuyết mới, Phạm Xuân Ẩn gửi về bản phân tích kế hoạch rút dần lính Mỹ.",
-      "Ông dự báo chính xác chiến lược 'thay màu da trên xác chết' (Việt Nam hóa chiến tranh) sẽ là hướng đi chính của Washington."
-    ],
-    note: "",
-    src: "Nguồn: Larry Berman; Tư liệu Tổng cục Tình báo",
-    title_ja: "ニクソン・ドクトリンと段階的撤退の解読",
-    date_ja: "1969年",
-    text_ja: [
-      "ニクソン政権誕生に伴い、米地上軍の段階的撤退計画の核心を分析。",
-      "「戦争のベトナム化」という新たな政策の狙いを早期に本国へ通報しました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: ラリー・バーマン; 国防情報総局資料"
+    img: "assets/images/1964_1970/1969_MidWay.jpg",
+    title: 'Xác thực việc Mỹ chuyển sang sử dụng kế hoạch "Việt Nam hóa chiến tranh"',
+    title_ja: "米国の「戦争のベトナム化」転換方針の検証・確認",
   },
   {
     id: "1969b",
@@ -470,27 +316,13 @@ window.TIMELINE_DATA = [
     yl: "1969",
     side: "bot",
     icon: "house",
-    img: "",
-    title: "'Hạ viện Catinat' tại Cà phê Givral",
-    date: "1969",
-    text: [
-      "Quán cà phê Givral trên đường Tự Do trở thành 'đại bản doanh săn tin' nổi tiếng của Phạm Xuân Ẩn, được mệnh danh là 'Hạ viện Catinat'.",
-      "Tại đây, các bộ trưởng, tướng lĩnh Sài Gòn, đặc vụ CIA và ký giả quốc tế tụ họp hàng ngày quanh bàn cà phê của ông."
-    ],
-    note: "",
-    src: "Nguồn: Thomas Bass, The Spy Who Loved Us",
-    title_ja: "カフェ・ジヴラールと「カティナ下院」",
-    date_ja: "1969年",
-    text_ja: [
-      "トゥードー通りの名門カフェ「ジヴラール」は、アンの定席として「カティナ下院」の異名をとるサロンとなりました。",
-      "閣僚、将軍、CIA工作官、各国記者がアンのテーブルに集い、最高機密が日常会話として交わされました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: トーマス・バス『愛されたスパイ』"
+    img: "assets/images/1964_1970/1969_NgoiTrongVanPhongBaoTime.jpg",
+    title: "Người Việt đầu tiên trở thành nhà báo của Time",
+    title_ja: "ベトナム人として初めてタイム誌の正規特派員に就任",
   },
 
   // ==========================================================================
-  // NĂM 1970
+  // NĂM 1970 (Chỉ có sự kiện tình báo, không có nhà báo)
   // ==========================================================================
   {
     id: "1970t",
@@ -498,47 +330,9 @@ window.TIMELINE_DATA = [
     yl: "1970",
     side: "top",
     icon: "doc",
-    img: "",
-    title: "Phân tích biến động chính trường Campuchia",
-    date: "1970",
-    text: [
-      "Khi tướng Lon Nol đảo chính lật đổ Hoàng thân Sihanouk và Mỹ tiến đánh Campuchia, X6 phân tích nhanh chiều hướng mở rộng chiến trường.",
-      "Ông khẳng định cuộc phiêu lưu quân sự này sẽ chỉ đẩy Mỹ lún sâu hơn vào khủng hoảng chính trị."
-    ],
-    note: "",
-    src: "Nguồn: Larry Berman; Báo Nhân Dân",
-    title_ja: "カンボジア政変と戦線拡大の情勢報告",
-    date_ja: "1970年",
-    text_ja: [
-      "ロン・ノル将軍によるクーデターと米軍のカンボジア侵攻に際し、迅速に戦略評価を提出。",
-      "この戦線拡大が米国の泥沼化を決定づけるとする的確な見通しをハノイへ伝えました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: バーマン; ニャンダーン紙"
-  },
-  {
-    id: "1970b",
-    y: 1970,
-    yl: "1970",
-    side: "bot",
-    icon: "mag",
-    img: "",
-    title: "Người săn tin hàng đầu của báo giới phương Tây",
-    date: "1970",
-    text: [
-      "Dắt theo chú chó béc-giê trung thành trên chiếc xe Renault quen thuộc, Phạm Xuân Ẩn là hình ảnh nổi bật của làng báo chí Sài Gòn.",
-      "Giới ký giả quốc tế kính trọng gọi ông là 'cuốn bách khoa toàn thư sống' về chính trị và quân sự Đông Dương."
-    ],
-    note: "",
-    src: "Nguồn: Thomas Bass; Báo Tuổi Trẻ",
-    title_ja: "名犬を連れた名物記者「生きる百科事典」",
-    date_ja: "1970年",
-    text_ja: [
-      "愛犬のシェパードをルノー車に乗せて街を走る姿は、サイゴン報道陣の象徴的光景でした。",
-      "国際ジャーナリスト仲間から「インドシナ情勢の生きた百科事典」と絶賛されました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: トーマス・バス; トゥオイチェー紙"
+    img: "assets/images/1964_1970/1970_Campuchia.jpg",
+    title: "Cảnh báo sớm cuộc tiến quân xâm lược Campuchia của Mỹ – Việt Nam Cộng hòa",
+    title_ja: "米・南ベトナム軍によるカンボジア侵攻計画の早期警戒通報",
   },
 
   // ==========================================================================
