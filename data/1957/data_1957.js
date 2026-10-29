@@ -31,8 +31,8 @@ window.EXTRA_DATA_1957 = {
             date: 'Năm 1957',
             date_ja: '1957年',
 
-            text1: 'Nhận thấy Mỹ sẽ thay thế Pháp tại Việt Nam, chỉ huy tình báo Mười Hương cùng các cấp lãnh đạo phía VNDCCH đã vạch ra kế hoạch đưa Phạm Xuân Ẩn sang Mỹ du học nhằm nắm bắt tình hình nước Mỹ và tạo nền móng cho vỏ bọc tình báo chiến lược lâu dài.',
-            text2: 'Cấp trên Mười Hương khuyên ông chọn ngành báo chí vì hai lý do chính. Thứ nhất, thời điểm đó ông chưa có bằng tốt nghiệp trung học, trong khi ngành báo chí lúc ấy không bắt buộc phải có loại bằng cấp này. Quan trọng hơn là nghề báo có bình diện giao tiếp rộng nhất, tạo điều kiện thuận lợi cho công tác tình báo sau này.',
+            text1: 'Nhận thấy Mỹ sẽ thay thế Pháp tại Việt Nam, chỉ huy tình báo Mười Hương cùng các cấp lãnh đạo phía Việt Nam Dân chủ Cộng hòa đã vạch ra kế hoạch đưa Phạm Xuân Ẩn sang Mỹ du học nhằm nắm bắt tình hình nước Mỹ và tạo nền móng cho vỏ bọc tình báo chiến lược lâu dài.',
+            text2: 'Cấp trên Mười Hương khuyên ông chọn ngành báo chí vì hai lý do chính. Thứ nhất, thời điểm đó Ẩn chưa có bằng tốt nghiệp trung học, trong khi ngành báo chí lúc ấy không bắt buộc phải có loại bằng cấp này. Quan trọng hơn Mười Hương cho rằng nghề báo có bình diện giao tiếp rộng nhất, tạo điều kiện thuận lợi cho công tác tình báo sau này.',
 
             text1_ja: '米国の対ベトナム介入の本格化を見据え、情報部門の最高幹部ムオイ・フオンとマイ・チー・トーは、ファム・スアン・アンを米国へ留学させる戦略的計画を立案しました。米国の内情と深層を把握し、恒久的な戦略諜報の足場を築くことが狙いでした。',
             text2_ja: 'ムオイ・フオンはアンにジャーナリズム専攻を強く勧めました。アンには当時高校卒業資格がなかったものの、当時のジャーナリズム学科は入学しやすく、何より新聞記者という職業こそが社会のあらゆる階層と最も広く接触できる最適な偽装であったためです。',
@@ -40,9 +40,9 @@ window.EXTRA_DATA_1957 = {
             // ── ẢNH CHÈN GIỮA text1 VÀ text2 ──
             midImg: {
                 src: 'assets/images/1957_1959/1957_MuoiHuong.jpg',
-                alt: 'Chân dung Mười Hương (Trần Quốc Hương) - Chỉ huy mạng lưới tình báo chiến lược chống Mỹ của phía VNDCCH (Văn hóa và Phát triển)',
+                alt: 'Chân dung Mười Hương (Trần Quốc Hương) - Chỉ huy mạng lưới tình báo chiến lược chống Mỹ của phía VNDCCH (Nguồn: Tạp chí Văn hóa và Phát triển)',
                 alt_ja: '1957年当時のオレンジ・コースト・カレッジ（カリフォルニア州コスタメサ）',
-                caption: 'Chân dung Mười Hương (Trần Quốc Hương) - Chỉ huy mạng lưới tình báo chiến lược chống Mỹ của phía VNDCCH (Văn hóa và Phát triển)',
+                caption: 'Chân dung Mười Hương (Trần Quốc Hương) - Chỉ huy mạng lưới tình báo chiến lược chống Mỹ của phía VNDCCH (Nguồn: Tạp chí Văn hóa và Phát triển)',
                 caption_ja: 'カリフォルニア州コスタメサのオレンジ・コースト・カレッジ — ファム・スアン・アンがジャーナリズムを学んだ場所（1957–1959年）。',
             },
 
@@ -61,9 +61,9 @@ window.EXTRA_DATA_1957 = {
             id: '1957b',
             // ── ẢNH TRONG POPUP CHI TIẾT (HERO BANNER KÈM CHÚ THÍCH) ──
             modalImg: 'assets/images/1957_1959/1957_TruongOCC.jpg',
-            modalImgAlt: 'Trường cao đẳng Orange Coast College (OCC) - Nơi Phạm Xuân Ẩn theo học ngành báo chí (Julius Shulman, Getty Research Institute)',
+            modalImgAlt: 'Trường cao đẳng Orange Coast College (OCC) - Nơi Phạm Xuân Ẩn theo học ngành báo chí (Nguồn: Julius Shulman, Getty Research Institute)',
             modalImgAlt_ja: '1957年当時のオレンジ・コースト・カレッジ（カリフォルニア州コスタメサ）',
-            caption: 'Trường cao đẳng Orange Coast College (OCC) - Nơi Phạm Xuân Ẩn theo học ngành báo chí (Julius Shulman, Getty Research Institute)',
+            caption: 'Trường cao đẳng Orange Coast College (OCC) - Nơi Phạm Xuân Ẩn theo học ngành báo chí (Nguồn: Julius Shulman, Getty Research Institute)',
             caption_ja: '1957年秋、カリフォルニア州コスタメサにあるオレンジ・コースト・カレッジのキャンパス。',
             modalImgLabel: 'Trường cao đẳng Orange Coast College (OCC)',
             modalImgLabel_ja: 'オレンジ・コースト・カレッジのキャンパス (1957年)',
@@ -80,16 +80,15 @@ window.EXTRA_DATA_1957 = {
             text1_ja: '1957年10月、ファム・スアン・アンは米国カリフォルニア州に到着し、コスタメサにあるオレンジ・コースト・カレッジ（OCC）でジャーナリズムの勉学を開始しました。',
             note: '',
             note_ja: '',
-            src: 'Nguồn: Thomas Bass, The New Yorker (2005); Mellema (Đại học Nebraska–Lincoln)',
             src_ja: '出典: トーマス・バス; メレマ（ネブラスカ大学）'
         },
         {
             id: '1957b',
             // ── ẢNH TRONG POPUP CHI TIẾT (HERO BANNER KÈM CHÚ THÍCH) ──
             modalImg: 'assets/images/1957_1959/1957_PXADuocDangLenBaoNgayNhapHoc.jpg',
-            modalImgAlt: 'Phạm Xuân Ẩn xuất hiện trên báo sinh viên The Barnacle (The Orange County)',
+            modalImgAlt: 'Phạm Xuân Ẩn xuất hiện trên báo sinh viên The Barnacle (Nguồn: The Orange County)',
             modalImgAlt_ja: '1957年当時のオレンジ・コースト・カレッジ（カリフォルニア州コスタメサ）',
-            caption: 'Phạm Xuân Ẩn xuất hiện trên báo sinh viên The Barnacle (The Orange County)',
+            caption: 'Phạm Xuân Ẩn xuất hiện trên báo sinh viên The Barnacle (Nguồn: The Orange County)',
             caption_ja: '1957年秋、カリフォルニア州コスタメサにあるオレンジ・コースト・カレッジのキャンパス。',
             modalImgLabel: 'Báo sinh viên The Barnacle',
             modalImgLabel_ja: '学生新聞 The Barnacle',
@@ -104,7 +103,6 @@ window.EXTRA_DATA_1957 = {
             text1_ja: 'アンは現地の学術・学生社会に素早く溶け込み、米国の近代的ジャーナリズムの原則（客観性、情報源への鋭敏さ、取材手法、大手通信社の仕組み）を精力的に学びました。',
             note: '',
             note_ja: '',
-            src: 'Nguồn: Thomas Bass, The New Yorker (2005); Mellema (Đại học Nebraska–Lincoln)',
             src_ja: '出典: トーマス・バス; メレマ（ネブラスカ大学）'
         }
     ]

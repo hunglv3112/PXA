@@ -876,9 +876,7 @@ button.pill:hover {
 }
 
 .m-art-cell {
-  flex: 1 1 50%;
-  height: 50%;
-  max-height: 50%;
+  flex: 1 1 0;
   overflow: hidden;
   position: relative;
   cursor: pointer;

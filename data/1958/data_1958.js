@@ -23,9 +23,9 @@ window.EXTRA_DATA_1958 = {
             id: '1958t',
             // ── ẢNH TRONG POPUP CHI TIẾT (HERO BANNER KÈM CHÚ THÍCH) ──
             modalImg: 'assets/images/1957_1959/1958_Ngoai_MuoiHuongChupCungPXAVaNhieuNhaTinhBao.jpg',
-            modalImgAlt: 'Mười Hương (hàng đầu, thứ ba từ bên trái sang) cùng các nhà tình báo Phạm Xuân Ẩn (hàng thứ hai, thứ ba từ bên trái sang), Vũ Ngọc Nhạ, Lê Hữu Thúy, Nguyễn Đức Trí... (Tuổi Trẻ)',
+            modalImgAlt: 'Mười Hương (hàng đầu, thứ ba từ bên trái sang) chụp ảnh cùng Phạm Xuân Ẩn (hàng thứ hai, thứ ba từ bên trái sang) và các nhà tình báo khác (Nguồn: Báo Tuổi Trẻ)',
             modalImgAlt_ja: 'カリフォルニアのオレンジ・コースト・カレッジでジャーナリズムを学ぶファム・スアン・アン',
-            caption: 'Mười Hương (hàng đầu, thứ ba từ bên trái sang) cùng các nhà tình báo Phạm Xuân Ẩn (hàng thứ hai, thứ ba từ bên trái sang), Vũ Ngọc Nhạ, Lê Hữu Thúy, Nguyễn Đức Trí... (Tuổi Trẻ)',
+            caption: 'Mười Hương (hàng đầu, thứ ba từ bên trái sang) chụp ảnh cùng Phạm Xuân Ẩn (hàng thứ hai, thứ ba từ bên trái sang) và các nhà tình báo khác (Nguồn: Báo Tuổi Trẻ)',
             title: 'Mất liên lạc với tổ chức sau khi Mười Hương bị bắt ',
             title_ja: '記者という偽装の選択',
             date: 'Năm 1958',
@@ -48,7 +48,6 @@ window.EXTRA_DATA_1958 = {
 
             note: '',
             note_ja: '',
-            src: 'Nguồn: Thomas Bass, The New Yorker (2005); Mellema (Đại học Nebraska–Lincoln)',
             src_ja: '出典: トーマス・バス; メレマ（ネブラスカ大学）'
         }
     ],
@@ -57,7 +56,7 @@ window.EXTRA_DATA_1958 = {
             id: '1958b',
             // ── ẢNH TRONG POPUP CHI TIẾT (HERO BANNER KÈM CHÚ THÍCH) ──
             modalImg: 'assets/images/1957_1959/1958_PXAHocMonBaoChiTaiMy.jpg',
-            modalImgAlt: 'Phạm Xuân Ẩn học môn báo chí tại trường OCC năm 1958 (Dân Trí)',
+            modalImgAlt: 'Phạm Xuân Ẩn học môn báo chí tại trường OCC năm 1958 (Nguồn: Nhà tưởng niệm Phạm Xuân Ẩn)',
             modalImgAlt_ja: '1957年当時のオレンジ・コースト・カレッジ（カリフォルニア州コスタメサ）',
 
             // ── VĂN BẢN CHI TIẾT (TÁCH RIÊNG TỪNG FIELD ĐOẠN VĂN) ──
@@ -77,7 +76,6 @@ window.EXTRA_DATA_1958 = {
             text4_ja: '1958年10月、ファム・スアン・アンは米国カリフォルニア州に到着し、コスタメサにあるオレンジ・コースト・カレッジ（OCC）でジャーナリズムの勉学を開始しました。',
             note: '',
             note_ja: '',
-            src: 'Nguồn: Thomas Bass, The New Yorker (2005); Mellema (Đại học Nebraska–Lincoln)',
             src_ja: '出典: トーマス・バス; メレマ（ネブラスカ大学）'
         }
     ]

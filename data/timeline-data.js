@@ -66,23 +66,9 @@ window.TIMELINE_DATA = [
     yl: "1959",
     side: "top",
     icon: "rings",
-    img: "",
-    title: "Chuyến độc hành xuyên nước Mỹ",
-    date: "1959",
-    text: [
-      "Trước khi hồi hương, Phạm Xuân Ẩn tự lái một chiếc xe cũ vượt hàng ngàn dặm xuyên qua nước Mỹ để tận mắt quan sát đời sống mọi tầng lớp nhân dân.",
-      "Sự am hiểu tường tận văn hóa thực tế giúp ông xây dựng một vỏ bọc tình báo hoàn hảo, không thể bị bóc trần."
-    ],
-    note: "",
-    src: "Nguồn: Thomas Bass; Tư liệu Báo Tuổi Trẻ",
-    title_ja: "全米大陸横断ドライブと社会観察",
-    date_ja: "1959年",
-    text_ja: [
-      "帰国直前、中古車を自ら運転して全米横断の旅を敢行し、一般市民の生の声と社会の実態を体感しました。",
-      "この実地体験が、誰にも破れない完璧なスパイとしての偽装を完成させました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: トーマス・バス; トゥオイチェー紙"
+    img: "assets/images/1957_1959/1959_N_ToCongDietCong.webp",
+    title: "Từng bước thâm nhập vào bộ máy chính quyền Việt Nam Cộng Hòa",
+    title_ja: "南ベトナム政権中枢への潜入の第一歩",
   },
   {
     id: "1959b",
@@ -90,23 +76,9 @@ window.TIMELINE_DATA = [
     yl: "1959",
     side: "bot",
     icon: "ticker",
-    img: "",
-    title: "Thực tập The Sacramento Bee & Hồi hương",
-    date: "Cuối năm 1959",
-    text: [
-      "Sau khi nhận bằng Associate of Arts, ông có thời gian thực tập tại tòa soạn The Sacramento Bee danh tiếng và Văn phòng LHQ.",
-      "Cuối năm 1959, ông chính thức hồi hương về Sài Gòn, mang theo hành trang của một ký giả Mỹ đào tạo bài bản."
-    ],
-    note: "",
-    src: "Nguồn: Wikipedia; Thomas Bass",
-    title_ja: "サクラメント・ビー紙での実務と帰国",
-    date_ja: "1959年末",
-    text_ja: [
-      "準学士号取得後、サクラメント・ビー紙や国連本部での実務インターンを経験。",
-      "1959年末、米国の正統なジャーナリストとしての資質を携え、サイゴンへと帰還しました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: Wikipedia; トーマス・バス"
+    img: "assets/images/1957_1959/1959_TheThucTapLHQ.jpg",
+    title: "Thực tập tại trụ sở Liên Hợp Quốc",
+    title_ja: "国連本部での実務インターン",
   },
 
   // ==========================================================================
