@@ -552,7 +552,7 @@ window.TIMELINE_DATA = [
     yl: "1975",
     side: "bot",
     icon: "mail",
-    img: "assets/images/1974_1976/1975_NB_PXAHutThuocDoChinh.webp",
+    img: "assets/images/1974_1976/1975_NB_PXAHutThuocDoChinh.jpg",
     title: "Bài báo cuối cùng của Phạm Xuân Ẩn viết cho TIME – “Cuộc chia tay cuối cùng nghiệt ngã”",
     date: "Tháng 4 – 5/1975",
     text: [
@@ -580,7 +580,7 @@ window.TIMELINE_DATA = [
     yl: "1976",
     side: "top",
     icon: "star",
-    img: "assets/images/1974_1976/1976_N_AnMung.webp",
+    img: "assets/images/1974_1976/1976_N_AnMung.jpg",
     title: "Phạm Xuân Ẩn giữa những ngày đất nước trọn niềm vui",
     date: "1976",
     text: [

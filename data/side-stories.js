@@ -187,7 +187,7 @@ window.AXIS_STORIES = [
 
     // Ảnh trèo tường Đại sứ quán Mỹ chèn sau đoạn 2
     midImg2: {
-      src: "assets/images/1974_1976/CCNL_1975_TreoTuong.webp",
+      src: "assets/images/1974_1976/CCNL_1975_TreoTuong.jpg",
       alt: "Người dân cố gắng trèo qua bức tường cao 4,2 mét của Đại sứ quán Mỹ để tiếp cận trực thăng sơ tán",
       caption: "Người dân cố gắng trèo qua bức tường cao 4,2 mét của Đại sứ quán Mỹ để tiếp cận trực thăng sơ tán. (Nguồn: AP)"
     },
@@ -200,7 +200,7 @@ window.AXIS_STORIES = [
 
     // Cảnh chen chúc lên trực thăng chèn sau đoạn 5
     midImg5: {
-      src: "assets/images/1974_1976/CCNL_1975_ChenChuc.webp",
+      src: "assets/images/1974_1976/CCNL_1975_ChenChuc.jpg",
       alt: "Cảnh chen chúc lên một trong những chuyến trực thăng rời Sài Gòn những ngày cuối tháng 4/1975",
       caption: "Cảnh chen chúc lên một trong những chuyến trực thăng rời Sài Gòn những ngày cuối tháng 4/1975 (Nguồn: Hugh Van Es)"
     },
@@ -226,7 +226,7 @@ window.AXIS_STORIES = [
     text2_ja: "トゥエンはタイム誌のオフィスに駆け込みました。アンは病気の高齢の母がいたためサイゴンに残っていました（タイム誌はすでに彼の妻と子どもたちを避難させていました）。アンは車を走らせてトゥエンをアメリカ大使館へ送り届けようとしましたが、群衆が分厚く取り囲み近寄ることすらできず、方々に電話をかけても望みはありませんでした。",
 
     midImg2_ja: {
-      src: "assets/images/1974_1976/CCNL_1975_TreoTuong.webp",
+      src: "assets/images/1974_1976/CCNL_1975_TreoTuong.jpg",
       alt: "避難ヘリコプターに近づこうと米大使館の壁をよじ登る市民たち",
       caption: "避難ヘリコプターに近づこうと、高さ4.2メートルの米国大使館の壁をよじ登ろうとする市民たち。（出典: AP）"
     },
@@ -238,7 +238,7 @@ window.AXIS_STORIES = [
     text5_ja: "もはや絶望的かと思われたその時、引き下げられようとする門に対し、アンは反射的に左手で門を押し留め、右手でトゥエンを隙間から中へと押し込みました。別れの言葉も感謝を伝える時間もありませんでした。「走れ！」とアンが叫ぶと、涙があふれ出しました。トゥエンも涙を流しながら「この恩は決して忘れない」と叫ぶのが精一杯でした。",
 
     midImg5_ja: {
-      src: "assets/images/1974_1976/CCNL_1975_ChenChuc.webp",
+      src: "assets/images/1974_1976/CCNL_1975_ChenChuc.jpg",
       alt: "1975年4月末、サイゴンを脱出するヘリコプターへ殺到する人々",
       caption: "1975年4月下旬、サイゴンを離れる避難ヘリコプターに殺到する光景（写真: ヒュー・ヴァン・エス）"
     },

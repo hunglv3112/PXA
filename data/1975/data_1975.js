@@ -82,7 +82,7 @@ window.EXTRA_DATA_1975 = {
     bot: [
         {
             id: '1975b',
-            modalImg: 'assets/images/1974_1976/1975_NB_PXAHutThuocDoChinh.webp',
+            modalImg: 'assets/images/1974_1976/1975_NB_PXAHutThuocDoChinh.jpg',
             modalImgAlt: 'Phạm Xuân Ẩn đứng trước tòa Đô chính Sài Gòn ngay trước khi quân Giải Phóng tiến vào Sài Gòn (Nguồn: Điệp viên hoàn hảo - Trang 281)',
             modalImgAlt_ja: 'サイゴン解放直前、サイゴン市庁舎前に立つファム・スアン・アン（出典：『パーフェクト・スパイ』281頁）',
             caption: 'Phạm Xuân Ẩn đứng trước tòa Đô chính Sài Gòn ngay trước khi quân Giải Phóng tiến vào Sài Gòn. Đây cũng là bức ảnh được Tạp chí TIME chọn đăng ngay trang nhất trên bản tin nội bộ F.Y.I. ngày 12/5/1975 để giới thiệu về người phóng viên duy nhất ở lại điều hành văn phòng Sài Gòn. (Nguồn: Điệp viên hoàn hảo - Trang 281)',
@@ -97,7 +97,7 @@ window.EXTRA_DATA_1975 = {
 
             // ── ẢNH CHÈN SAU text1 ──
             midImg1: {
-                src: 'assets/images/1974_1976/1975_NB_DiTan.webp',
+                src: 'assets/images/1974_1976/1975_NB_DiTan.jpg',
                 alt: 'Những công dân Mỹ cuối cùng, trong đó có một số nhà báo, tập trung để rời khỏi Sài Gòn. (Nguồn: Getty Images)',
                 alt_ja: 'サイゴンを離れるため集まる最後の米国市民とジャーナリストたち（Getty Images）',
                 caption: 'Những công dân Mỹ cuối cùng, trong đó có một số nhà báo, tập trung để rời khỏi Sài Gòn. (Nguồn: Getty Images)',
