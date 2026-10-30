@@ -27,7 +27,7 @@ window.EXTRA_DATA_1974 = {
 
             // ── ẢNH CHÈN GIỮA text1 VÀ text2 ──
             midImg1: {
-                src: 'assets/images/1974_1976/1974_HopCuoi1974.png',
+                src: 'assets/images/1974_1976/1974_HopCuoi1974.jpg',
                 alt: 'Phía quân Giải phóng trong cuộc họp cuối năm 1974 (Nguồn: QDNDVN)',
                 alt_ja: '1974年末の会議における解放軍首脳部（ベトナム人民軍新聞）',
                 caption: 'Phía quân Giải phóng trong cuộc họp cuối năm 1974 (Nguồn: QDNDVN)',
