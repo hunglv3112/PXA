@@ -336,55 +336,17 @@ window.TIMELINE_DATA = [
   },
 
   // ==========================================================================
-  // NĂM 1971
+  // NĂM 1971 (Chỉ có sự kiện tình báo, không có nhà báo)
   // ==========================================================================
   {
     id: "1971t",
     y: 1971,
     yl: "1971",
     side: "top",
-    icon: "eye",
-    img: "",
-    title: "Dự báo thất bại của cuộc hành quân Lam Sơn 719",
-    date: "1971",
-    text: [
-      "Trước khi chiến dịch Lam Sơn 719 (Đường 9 - Nam Lào) diễn ra, X6 thu thập toàn bộ kế hoạch từ Bộ Tổng tham mưu Sài Gòn.",
-      "Tin tình báo này giúp Quân Giải phóng chuẩn bị trận địa, đón lõng và tiêu diệt các sư đoàn thiện chiến nhất của đối phương."
-    ],
-    note: "",
-    src: "Nguồn: Lịch sử Kháng chiến chống Mỹ; Larry Berman",
-    title_ja: "ラオス侵攻作戦（ラムソン719）の敗北予見",
-    date_ja: "1971年",
-    text_ja: [
-      "南ベトナム軍参謀本部から極秘作戦「ラムソン719」の全貌を事前に入手。",
-      "解放軍が待ち伏せ態勢を敷き、敵精鋭部隊に壊滅的打撃を与えるための決定打となりました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: 抗米救国戦争史; バーマン"
-  },
-  {
-    id: "1971b",
-    y: 1971,
-    yl: "1971",
-    side: "bot",
-    icon: "ticker",
-    img: "",
-    title: "Tường thuật khủng hoảng tại Đường 9 - Nam Lào",
-    date: "1971",
-    text: [
-      "Trên tuần báo Time, các bài viết của ông bóc trần những tổn thất nặng nề của quân đội Sài Gòn tại chiến trường Hạ Lào.",
-      "Bài báo đánh sập những tuyên bố lạc quan giả tạo của chính quyền Thiệu và Lầu Năm Góc."
-    ],
-    note: "",
-    src: "Nguồn: Time Magazine Archive; Thomas Bass",
-    title_ja: "南ベトナム軍大敗の惨状を世界へ報道",
-    date_ja: "1971年",
-    text_ja: [
-      "タイム誌上で南ベトナム軍の壊滅的被害をありのままに報道。",
-      "サイゴン政権と国防総省の虚偽の戦果発表を白日の下に晒しました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: タイム誌アーカイブ; トーマス・バス"
+    icon: "doc",
+    img: "assets/images/1971_1973/1971_TB_N_LamSon.jpg",
+    title: "Dự báo về chiến dịch Lam Sơn 719",
+    title_ja: "ラムソン719作戦の全貌予測と事前迎撃",
   },
 
   // ==========================================================================
@@ -395,24 +357,10 @@ window.TIMELINE_DATA = [
     y: 1972,
     yl: "1972",
     side: "top",
-    icon: "mail",
-    img: "",
-    title: "Báo cáo hậu trường mật ước ngoại giao & Mùa hè 1972",
-    date: "1972",
-    text: [
-      "Trong đợt tiến công chiến lược 1972, Phạm Xuân Ẩn cung cấp các đánh giá về giới hạn hỏa lực không kích của Mỹ.",
-      "Ông cũng thu thập các thông tin nội bộ về các cuộc mặc cả ngoại giao bí mật giữa Kissinger và chính quyền Sài Gòn."
-    ],
-    note: "",
-    src: "Nguồn: Larry Berman, “Điệp viên hoàn hảo”",
-    title_ja: "激戦と米側外交交渉の舞台裏を伝達",
-    date_ja: "1972年",
-    text_ja: [
-      "1972年の大攻勢の中、米空軍の支援限界を的確に予測。",
-      "キッシンジャーと南ベトナム政権間の極秘交渉の裏側をいち早く本国へ報告しました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: ラリー・バーマン『完璧なスパイ』"
+    icon: "star",
+    img: "assets/images/1971_1973/1972_TB1_CoQGPQuangTri.jpg",
+    title: "Mùa hè đỏ lửa",
+    title_ja: "激戦の1972年・「赤き燃ゆる夏」の軍事情報",
   },
   {
     id: "1972b",
@@ -420,23 +368,9 @@ window.TIMELINE_DATA = [
     yl: "1972",
     side: "bot",
     icon: "camera",
-    img: "",
-    title: "Tác nghiệp giữa tâm điểm 'Mùa hè đỏ lửa'",
-    date: "1972",
-    text: [
-      "Ông cùng các đồng nghiệp Time bám sát chiến sự khốc liệt tại Quảng Trị, An Lộc và Kon Tum.",
-      "Các bài tường thuật sâu sắc của ông giúp độc giả Mỹ nhìn thấy cái giá thảm khốc của chiến tranh đối với người dân Việt Nam."
-    ],
-    note: "",
-    src: "Nguồn: Time Magazine; Báo Tuổi Trẻ",
-    title_ja: "1972年の死闘を巡る最前線取材",
-    date_ja: "1972年",
-    text_ja: [
-      "クアンチやアンロックでの激戦をタイム誌の記者団とともに徹底取材。",
-      "戦争がベトナムの民衆にもたらす苛烈な悲劇を世界へ伝え続けました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: タイム誌; トゥオイチェー紙"
+    img: "assets/images/1971_1973/1972_NB_N_LaiXe.jpg",
+    title: "Đỉnh cao của làm báo",
+    title_ja: "ジャーナリズムの頂点と西欧記者との協調",
   },
 
   // ==========================================================================
@@ -447,48 +381,20 @@ window.TIMELINE_DATA = [
     y: 1973,
     yl: "1973",
     side: "top",
-    icon: "star",
-    img: "",
-    title: "Hiệp định Paris & Nhận định Mỹ sẽ không trở lại",
-    date: "1973",
-    text: [
-      "Sau khi Hiệp định Paris được ký và lính Mỹ rút về nước, Phạm Xuân Ẩn gửi về nhận định chiến lược lịch sử:",
-      "Quốc hội và công chúng Mỹ đã hoàn toàn quay lưng với chiến tranh; dù quân đội Sài Gòn có nguy khốn, Mỹ cũng sẽ không đưa quân trở lại."
-    ],
-    note: "",
-    src: "Nguồn: Larry Berman, “Điệp viên hoàn hảo”",
-    title_ja: "「米軍の再介入は二度とない」と断言",
-    date_ja: "1973年",
-    text_ja: [
-      "パリ和平協定調印と米軍撤退を受け、歴史的な戦略判断を提出。",
-      "「米議会と世論は完全に離反しており、サイゴンが崩壊しても米軍の再介入は決してない」と断言しました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: ラリー・バーマン『完璧なスパイ』"
+    icon: "doc",
+    img: "assets/images/1971_1973/1973_Paris.jpg",
+    title: "Bước ngoặt của hiệp định Paris",
+    title_ja: "パリ協定の歴史的転換点と対抗工作",
   },
   {
     id: "1973b",
     y: 1973,
     yl: "1973",
     side: "bot",
-    icon: "plane",
-    img: "",
-    title: "Chứng kiến lễ cuốn cờ của Bộ Chỉ huy MACV",
-    date: "Tháng 3/1973",
-    text: [
-      "Ngày 29/3/1973, Phạm Xuân Ẩn có mặt tại căn cứ Tân Sơn Nhất chứng kiến người lính Mỹ cuối cùng lên máy bay về nước.",
-      "Ông ghi chép và gửi về Time bản tin tường thuật khoảnh khắc khép lại sự can thiệp quân sự trực tiếp của Hoa Kỳ."
-    ],
-    note: "",
-    src: "Nguồn: Time Magazine Archive; Thomas Bass",
-    title_ja: "米軍撤退とMACV解散式典を取材報道",
-    date_ja: "1973年3月",
-    text_ja: [
-      "1973年3月29日、最後の米兵が空港を去る歴史的瞬間を取材。",
-      "米軍の直接軍事介入の終焉を告げる記念碑的ルポルタージュをタイム誌へ送りました。"
-    ],
-    note_ja: "",
-    src_ja: "出典: タイム誌アーカイブ; トーマス・バス"
+    icon: "ticker",
+    img: "assets/images/1971_1973/1973_BatTay.jpg",
+    title: 'Khai thác tin đàm phán Paris, giúp tuần báo TIME "hớt tay trên" đối thủ Newsweek',
+    title_ja: "パリ交渉の舞台裏を特ダネ化し、タイム誌がニューズウィーク誌を圧倒",
   },
 
   // ==========================================================================
