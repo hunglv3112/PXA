@@ -106,21 +106,6 @@
       padding: 0 32px;
     }
 
-    /* Thanh chỉ đỏ tiến độ đọc */
-    .prog {
-      position: fixed;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 3.5px;
-      z-index: 100;
-      transform-origin: top;
-      transform: scaleY(0);
-      background: linear-gradient(#f04343, #8c1717);
-      box-shadow: 0 0 12px rgba(209, 42, 42, .8);
-      pointer-events: none;
-    }
-
     /* Header Hero */
     header.hero {
       padding: 82px 0 52px;
@@ -768,9 +753,6 @@
 </head>
 
 <body>
-  <!-- Thanh chỉ đỏ tiến độ cuộn trang -->
-  <div class="prog" id="prog"></div>
-
   <!-- Bộ điều hướng chuyển trang dạng dropdown (ở góc trên bên trái) -->
   <nav class="page-nav-dropdown" id="pageNavDropdown" aria-label="Điều hướng các trang">
     <button type="button" class="page-nav-btn" id="pageNavBtn" aria-expanded="false" aria-haspopup="true"
@@ -1078,15 +1060,6 @@
         flip();
       }
     });
-
-    /* Thanh chỉ đỏ theo cuộn trang */
-    var prog = document.getElementById('prog');
-    function sc() {
-      var h = document.documentElement.scrollHeight - innerHeight;
-      prog.style.transform = 'scaleY(' + (h > 0 ? Math.min(1, scrollY / h) : 0) + ')';
-    }
-    addEventListener('scroll', sc, { passive: true });
-    sc();
 
     /* Dữ liệu dịch song ngữ VI / 日本語 */
     var I = [
