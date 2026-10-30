@@ -20,6 +20,16 @@
     currentLang = 'vi';
   }
 
+  // Cập nhật ngay lập tức thuộc tính lang và class cho thẻ html để chống chớp tiếng Việt
+  if (typeof document !== 'undefined' && document.documentElement) {
+    document.documentElement.lang = currentLang;
+    if (currentLang === 'ja') {
+      document.documentElement.classList.add('lang-ja');
+    } else {
+      document.documentElement.classList.remove('lang-ja');
+    }
+  }
+
   /**
    * Lấy mã ngôn ngữ hiện tại ('vi' hoặc 'ja')
    */
@@ -38,8 +48,13 @@
       localStorage.setItem(STORAGE_KEY, newLang);
     } catch (e) {}
 
-    // Cập nhật thuộc tính lang cho thẻ html
+    // Cập nhật thuộc tính lang và class cho thẻ html
     document.documentElement.lang = newLang;
+    if (newLang === 'ja') {
+      document.documentElement.classList.add('lang-ja');
+    } else {
+      document.documentElement.classList.remove('lang-ja');
+    }
 
     // Cập nhật trạng thái active trên các nút chọn ngôn ngữ
     updateSwitcherUI();

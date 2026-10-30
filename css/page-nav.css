@@ -1,4 +1,11 @@
 /* ==========================================================================
+   CHỐNG HIỆN TƯỢNG CHỚP TIẾNG VIỆT KHI ĐANG Ở CHẾ ĐỘ TIẾNG NHẬT (FOUC PREVENT)
+   ========================================================================== */
+html.lang-ja:not(.lang-ready) body {
+  visibility: hidden !important;
+}
+
+/* ==========================================================================
    BỘ ĐIỀU HƯỚNG CHUYỂN TRANG DẠNG DROPDOWN (GÓC TRÊN BÊN TRÁI TOÀN BỘ WEBSITE)
    ========================================================================== */
 .page-nav-dropdown {
@@ -169,5 +176,74 @@
   }
   .page-nav-menu {
     min-width: 250px;
+  }
+}
+
+/* ==========================================================================
+   BỘ CHỌN ĐA NGÔN NGỮ NỔI: TIẾNG VIỆT / TIẾNG NHẬT (GÓC TRÊN BÊN PHẢI)
+   ========================================================================== */
+.lang-switcher {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 120;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px 6px;
+  background: rgba(14, 31, 37, 0.92);
+  border: 1.5px solid rgba(143, 193, 212, 0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .45);
+  transition: border-color .2s, transform .2s;
+  font-family: var(--sans, 'Be Vietnam Pro', system-ui, -apple-system, sans-serif);
+}
+
+.lang-switcher:hover {
+  border-color: var(--gold, #ebcb45);
+  transform: translateY(-1px);
+}
+
+.lang-btn {
+  background: transparent;
+  border: 0;
+  color: var(--mute, #8fa7ae);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  letter-spacing: .03em;
+  transition: all .2s ease;
+}
+
+.lang-btn:hover {
+  color: #fff;
+}
+
+.lang-btn.active {
+  background: linear-gradient(135deg, #ebcb45 0%, #d4ad22 100%);
+  color: #12181b;
+  box-shadow: 0 2px 8px rgba(235, 203, 69, .35);
+}
+
+.lang-divider {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 11px;
+  user-select: none;
+}
+
+@media (max-width: 720px) {
+  .lang-switcher {
+    top: 12px;
+    right: 12px;
+    padding: 3px 5px;
+  }
+  .lang-btn {
+    padding: 4px 8px;
+    font-size: 11px;
   }
 }

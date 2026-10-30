@@ -238,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   initTimeline();
+  document.documentElement.classList.add('lang-ready');
 
   // ========================================================================
   // XỬ LÝ POPUP CHUYỆN BÊN LỀ (Side Stories Modal)

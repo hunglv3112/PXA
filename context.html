@@ -5,6 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Bối cảnh lịch sử 1858–1975</title>
+  <script>
+    (function () {
+      try {
+        var l = localStorage.getItem('pxa_language') || 'vi';
+        document.documentElement.lang = l;
+        if (l === 'ja') document.documentElement.classList.add('lang-ja');
+      } catch (e) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -492,7 +501,7 @@
       </div>
       <a href="intro.html" class="page-nav-item" data-page="intro" role="menuitem">
         <span class="page-nav-item-icon">📖</span>
-        <span class="page-nav-item-text" data-vi="1. Lý do chọn đề tài" data-ja="1. 研究の背景・理由">1. Lý do chọn đề
+        <span class="page-nav-item-text" data-vi="1. Giới thiệu đề tài" data-ja="1. プロジェクト紹介">1. Giới thiệu đề
           tài</span>
         <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
       </a>
@@ -567,7 +576,7 @@
           pageTitle: 'Bối cảnh lịch sử 1858–1975',
           hdrSmall: '',
           hdrTitle: 'Bối cảnh Việt Nam thời bấy giờ',
-          backIntroText: 'Lý do chọn đề tài',
+          backIntroText: 'Giới thiệu đề tài',
           revealIntro: 'Giữa bối cảnh ấy, một người đàn ông góp phần thay đổi cục diện cuộc chiến đã xuất hiện.',
           q1: 'Ông không hoạt động như một người lính ngoài mặt trận…',
           q2: 'Ông ra vào các phòng họp, tòa soạn, quán cà phê và những trung tâm quyền lực của Sài Gòn…',
@@ -781,6 +790,7 @@
 
     // Khởi chạy khi tải trang
     renderPage();
+    document.documentElement.classList.add('lang-ready');
   </script>
   <script src="js/page-nav.js"></script>
 </body>

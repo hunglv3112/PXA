@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ============================================================================
   // 4. CÁC HÀM ĐIỀU HƯỚNG CHUYỂN 4 MÀN HÌNH
   // ============================================================================
-  // 4.1. Hiển thị Màn hình 1: Lý do chọn đề tài → Bối cảnh lịch sử
+  // 4.1. Hiển thị Màn hình 1: Giới thiệu đề tài → Bối cảnh lịch sử
   function showContext() {
     pauseBioVideos();
     window.location.href = 'intro.html';

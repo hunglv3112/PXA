@@ -19,9 +19,14 @@
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/page-nav.css">
 
-  <!-- Khắc phục hiện tượng chớp/nhấp nháy màn hình (FOUC) khi mở trực tiếp timeline từ trang khác -->
+  <!-- Khắc phục hiện tượng chớp/nhấp nháy màn hình (FOUC) khi mở trực tiếp timeline từ trang khác & chống chớp tiếng Việt khi chọn tiếng Nhật -->
   <script>
     (function () {
+      try {
+        var l = localStorage.getItem('pxa_language') || 'vi';
+        document.documentElement.lang = l;
+        if (l === 'ja') document.documentElement.classList.add('lang-ja');
+      } catch (e) {}
       if (window.location.hash === '#timeline' || !window.location.hash) {
         document.documentElement.classList.add('init-timeline');
       }
@@ -65,7 +70,7 @@
       </div>
       <a href="intro.html" class="page-nav-item" data-page="intro" role="menuitem">
         <span class="page-nav-item-icon">📖</span>
-        <span class="page-nav-item-text" data-vi="1. Lý do chọn đề tài" data-ja="1. 研究の背景・理由">1. Lý do chọn đề tài</span>
+        <span class="page-nav-item-text" data-vi="1. Giới thiệu đề tài" data-ja="1. プロジェクト紹介">1. Giới thiệu đề tài</span>
         <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
       </a>
       <a href="context.html" class="page-nav-item" data-page="context" role="menuitem">
