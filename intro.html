@@ -245,23 +245,6 @@
       background: linear-gradient(180deg, rgba(28, 20, 13, .3), rgba(14, 10, 6, .94));
     }
 
-    .face i {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 3.5px;
-      background: var(--thread);
-      z-index: 2;
-    }
-
-    .front i {
-      right: 28px;
-    }
-
-    .back i {
-      left: 28px;
-    }
-
     .face .t {
       position: absolute;
       top: 16px;
@@ -326,12 +309,10 @@
 
     .front .n {
       color: var(--text);
-      right: 48px;
     }
 
     .back .n {
       color: var(--paper);
-      left: 48px;
     }
 
     .face .n small {
@@ -357,20 +338,20 @@
       z-index: 0;
       background-size: cover;
       background-repeat: no-repeat;
-      filter: grayscale(1) contrast(1.15) brightness(.48) blur(4.5px);
+      filter: grayscale(1) contrast(1.15) brightness(.48) blur(6.5px);
       transition: filter .35s ease;
     }
 
     .front .photo {
       background-image: url('assets/images/GioiThieuDeTai/GioiThieuDeTai_TB.jpg');
       background-position: 50% 25%;
-      filter: grayscale(1) contrast(1.15) brightness(.48) blur(4.5px);
+      filter: grayscale(1) contrast(1.15) brightness(.48) blur(6.5px);
     }
 
     .back .photo {
       background-image: url('assets/images/GioiThieuDeTai/GioiThieuDeTai_NB.jpg');
-      background-position: 50% 25%;
-      filter: grayscale(1) sepia(.2) contrast(1.15) brightness(.45) blur(4.5px);
+      background-position: 60% 20%;
+      filter: grayscale(1) sepia(.2) contrast(1.15) brightness(.45) blur(6.5px);
     }
 
     /* Lead Text */
@@ -551,18 +532,17 @@
     .ph::before {
       content: "";
       position: absolute;
-      inset: -10px;
+      inset: -12px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      filter: grayscale(1) contrast(1.15) brightness(.62) blur(3.8px);
+      filter: grayscale(1) contrast(1.15) brightness(.62) blur(6px);
       z-index: 1;
-      transition: filter .35s ease, transform .35s ease;
+      transition: transform .35s ease;
     }
 
     .card:hover .ph::before {
-      filter: grayscale(0.8) contrast(1.1) brightness(.72) blur(2.5px);
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
 
     .ph::after {
@@ -929,14 +909,12 @@
               <div class="photo" aria-hidden="true"></div>
               <span class="t">1927 – 2006</span>
               <span class="hint">↻ Bấm để lật</span>
-              <i></i>
               <div class="n">Tình báo<small>Phạm Xuân Ẩn · Cán bộ tình báo chiến lược</small></div>
             </div>
             <div class="face back">
               <div class="photo" aria-hidden="true"></div>
               <span class="t">1927 – 2006</span>
               <span class="hint">↻ Bấm để lật</span>
-              <i></i>
               <div class="n">Nhà báo<small>Phạm Xuân Ẩn · Phóng viên Reuters &amp; TIME</small></div>
             </div>
           </div>
@@ -995,10 +973,6 @@
     <!-- Nút lớn dẫn sang trang Bối cảnh lịch sử -->
     <a class="next" href="context.html">▼ Khám phá bối cảnh lịch sử &amp; tiền truyện (1858 - 1956) ▼</a>
   </div>
-
-  <footer>
-    <div class="wrap">Phạm Xuân Ẩn: Tình báo hay nhà báo? · Dự án Việt – Nhật</div>
-  </footer>
 
   <!-- Nạp các script chung của hệ thống -->
   <script src="js/lang.js"></script>
@@ -1192,8 +1166,7 @@
       ['.card h3', ['ベトナムの歴史的背景', 'ファム・スアン・アンの経歴', '年表 1957 – 1976', '記念館']],
       ['.card p', ['国が南北に分かれた時代、戦争、そしてその背後にあった勢力。', 'ビエンホアの少年から、二つの世界に生きた人物へ。', '報道・諜報・歴史の動きの節目を、並べて見る。', '遺品、資料、そして残されたもの。']],
       ['.c4 .ph span', ['記念館']],
-      ['.next', ['▼ 歴史的背景と前史を探る（1858 - 1956） ▼']],
-      ['footer .wrap', ['ファム・スアン・アン：諜報員か、それとも記者か？ · ベトナム・日本プロジェクト']]
+      ['.next', ['▼ 歴史的背景と前史を探る（1858 - 1956） ▼']]
     ];
 
     I.forEach(function (r) {
