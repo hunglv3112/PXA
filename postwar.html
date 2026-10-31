@@ -1816,7 +1816,7 @@
         <!-- Cánh phải: Những chi tiết khác -->
         <div class="wing wR">
           <div class="wing-hdr">
-            <h4 id="wRTitle">NHỮNG CHI TIẾT KHÁC</h4>
+            <h4 id="wRTitle"></h4>
           </div>
           <div id="gR" style="flex:1;display:flex;flex-direction:column"></div>
         </div>
@@ -2005,8 +2005,8 @@
           backTitle: 'タイムラインへ戻る',
           hdrSmall: '',
           hdrTitle: '',
-          wLTitle: '戦後',
-          wRTitle: 'その他の逸話',
+          wLTitle: '',
+          wRTitle: '',
           hero: '人民武装勢力英雄',
           altarCp: 'ファム・スアン・アンの献身に対する顕彰',
           altarAria: 'ファム・スアン・アン少将の献身に対する顕彰',
@@ -2067,7 +2067,7 @@
           {
             y: '',
             modalY: '',
-            shelfTitle: '',
+            shelfTitle: '友を送る',
             t: '',
             img: 'トゥ・カン大佐の詩朗読',
             imgSrc: 'assets/images/PhongLuuNiem/PLN_DaiTaTuCangDocBaiThoTienBan_thumb.jpg',
@@ -2085,17 +2085,17 @@
                 <p>私にとって忘れ得ぬ我が同志よ</p>
                 <p>勇敢で聡明な君を、生涯忘れることはない…</p>
               </div>
-              <p style="font-size:13px; color:var(--mute); text-align:center; margin-top:8px;"></p>
+
             `
           },
           {
             y: '',
             shelfTitle: 'ファム・スアン・アンの安息地',
-            t: '人民武装勢力英雄ファム・スアン・アンの安息地',
-            modalTitle: '人民武装勢力英雄ファム・スアン・アンの安息地',
+            t: '',
+            modalTitle: '',
             img: '三匹の動物像と墓所',
             imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
-            caption: '人民武装勢力英雄ファム・スアン・アンの安息地（写真出典：NGỌC BUKI）',
+            caption: 'ファム・スアン・アン少将の安息地（写真出典：NGỌC BUKI）',
             h: `
               <p>彼の安息の地の傍らには、彼の人生哲学を象徴する3匹の動物の像が佇んでいます。</p>
               <p>犬は、祖国と友人への忠誠を象徴しています。</p>
@@ -2647,7 +2647,8 @@
       if (o.isVideo) {
         badgeHtml = `<span class="video-shelf-badge">▶ Video</span>`;
       } else if (o.isDecode) {
-        badgeHtml = `<span class="puzzle-shelf-badge">🧩 Giải mã</span>`;
+        const badgeTxt = (currentLang === 'ja') ? '🧩 解読' : '🧩 Giải mã';
+        badgeHtml = `<span class="puzzle-shelf-badge">${badgeTxt}</span>`;
       }
 
       const displayTitle = o.shelfTitle || o.t;
@@ -2731,7 +2732,7 @@
         const isJa = currentLang === 'ja';
         openModalPostwar({
           y: '',
-          t: isJa ? '人民武装力英雄' : 'Danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân',
+          t: isJa ? '人民武装勢力英雄' : 'Danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân',
           heroImg: ROOM_CONFIG.ahllvt,
           heroCaption: isJa
             ? 'ファム・スアン・アン少将に授与された人民武装勢力英雄称号の表彰（出典：ファム・スアン・アン記念館）'
