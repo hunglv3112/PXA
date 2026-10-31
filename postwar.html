@@ -11,7 +11,7 @@
         var l = localStorage.getItem('pxa_language') || 'vi';
         document.documentElement.lang = l;
         if (l === 'ja') document.documentElement.classList.add('lang-ja');
-      } catch (e) {}
+      } catch (e) { }
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,7 +84,7 @@
       font-size: 11.5px;
       font-family: var(--sans);
       font-weight: 700;
-      text-transform: uppercase;
+      /* text-transform: none; */
       text-shadow: 0 0 10px rgba(235, 203, 69, 0.4);
       margin-bottom: 2px;
     }
@@ -196,7 +196,7 @@
       letter-spacing: .25em;
       font-weight: 700;
       font-family: var(--sans);
-      text-transform: uppercase;
+      /* text-transform: none; */
       text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
     }
 
@@ -250,8 +250,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex: 0 0 auto;
-      width: 175px;
+      flex: 0 0 156px;
+      width: 156px;
+      min-width: 156px;
+      max-width: 156px;
+      box-sizing: border-box;
       transition: transform .28s cubic-bezier(0.2, 0.8, 0.2, 1), filter .28s ease;
       filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.7));
     }
@@ -263,6 +266,7 @@
     }
 
     .wood {
+      box-sizing: border-box;
       width: 100%;
       padding: 5px;
       background: linear-gradient(135deg, #d3a466 0%, #7d5225 45%, #a67c45 75%, #5a3814 100%);
@@ -271,6 +275,7 @@
     }
 
     .mat {
+      box-sizing: border-box;
       background: #fbf7ee;
       padding: 5px;
       box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.4);
@@ -278,6 +283,8 @@
     }
 
     .img-box {
+      width: 100%;
+      box-sizing: border-box;
       aspect-ratio: 3/2;
       display: grid;
       place-items: center;
@@ -497,6 +504,7 @@
     }
 
     .altar-card .wood {
+      box-sizing: border-box;
       width: 100%;
       padding: 4px;
       background: linear-gradient(135deg, #d3a466 0%, #7d5225 45%, #a67c45 75%, #5a3814 100%);
@@ -505,6 +513,7 @@
     }
 
     .altar-card .mat {
+      box-sizing: border-box;
       background: #fbf7ee;
       padding: 3px;
       border-radius: 1px;
@@ -519,14 +528,14 @@
 
     .altar-caption {
       margin-top: 5px;
-      font-size: 11.5px;
-      line-height: 1.3;
+      font-size: 12.5px;
+      line-height: 1.35;
       color: var(--gold2);
       text-align: center;
       font-family: var(--serif);
       font-weight: 600;
       letter-spacing: .02em;
-      text-transform: uppercase;
+      /* text-transform: none; */
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
       max-width: 320px;
     }
@@ -534,7 +543,8 @@
     /* Khung ảnh chân dung Thiếu tướng đứng một mình */
     .pt {
       all: unset;
-      cursor: pointer;
+      cursor: default;
+      pointer-events: none;
       position: relative;
       z-index: 2;
       display: flex;
@@ -542,16 +552,13 @@
       align-items: center;
       width: 136px;
       margin-top: 3px;
-      transition: transform .28s cubic-bezier(0.2, 0.8, 0.2, 1);
       filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.85));
     }
 
-    .pt:hover {
-      transform: translateY(-4px) scale(1.04);
-      filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 14px rgba(235, 203, 69, 0.45));
-    }
+    /* .pt is locked - no hover */
 
     .pt .wood {
+      box-sizing: border-box;
       width: 100%;
       padding: 5px;
       background: linear-gradient(135deg, #ffd782 0%, #9e6d2b 30%, #ffd782 50%, #684110 80%, #b8862d 100%);
@@ -559,6 +566,7 @@
     }
 
     .pt .mat {
+      box-sizing: border-box;
       padding: 4px;
       background: #faf6ed;
     }
@@ -596,7 +604,7 @@
       font-size: 9px;
       font-weight: 700;
       letter-spacing: .04em;
-      text-transform: uppercase;
+      /* text-transform: none; */
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
       z-index: 3;
     }
@@ -746,7 +754,7 @@
       font-size: 11px;
       font-weight: 700;
       color: var(--gold2);
-      text-transform: uppercase;
+      /* text-transform: none; */
       letter-spacing: .08em;
       text-align: center;
     }
@@ -813,7 +821,7 @@
       font-weight: 700;
       color: var(--gold);
       letter-spacing: .1em;
-      text-transform: uppercase;
+      /* text-transform: none; */
     }
 
     .quiz-question {
@@ -925,7 +933,7 @@
       font-size: 14px;
       font-weight: 800;
       letter-spacing: .08em;
-      text-transform: uppercase;
+      /* text-transform: none; */
       margin-bottom: 12px;
       padding-bottom: 8px;
       border-bottom: 1px solid rgba(235, 203, 69, 0.3);
@@ -1157,7 +1165,7 @@
       font-size: 13.5px;
       font-weight: 700;
       letter-spacing: .12em;
-      text-transform: uppercase;
+      /* text-transform: none; */
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), 0 0 18px rgba(235, 203, 69, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.35);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
@@ -1786,11 +1794,11 @@
                 </div>
               </div>
             </div>
-            <div class="altar-caption" id="altarCaption">SỰ GHI NHẬN ĐỐI VỚI NHỮNG CỐNG HIẾN CỦA PHẠM XUÂN ẨN</div>
+            <div class="altar-caption" id="altarCaption">Sự ghi nhận đối với những cống hiến của Phạm Xuân Ẩn</div>
           </button>
 
           <!-- 4. Khung ảnh chân dung Thiếu tướng Phạm Xuân Ẩn đứng một mình -->
-          <button class="pt" id="pt">
+          <div class="pt" id="pt">
             <div class="wood">
               <div class="mat">
                 <div class="img-box" id="ptImgBox">
@@ -1802,7 +1810,7 @@
             </div>
             <div class="pt-caption" id="ptCaption">Thiếu tướng Phạm Xuân Ẩn<br><span
                 style="font-weight:400;color:var(--mute);font-size:10.5px">(1927 – 2006)</span></div>
-          </button>
+          </div>
         </div>
 
         <!-- Cánh phải: Những chi tiết khác -->
@@ -1886,7 +1894,7 @@
           wLTitle: '',
           wRTitle: '',
           hero: 'ANH HÙNG LỰC LƯỢNG VŨ TRANG NHÂN DÂN',
-          altarCp: 'SỰ GHI NHẬN ĐỐI VỚI NHỮNG CỐNG HIẾN CỦA PHẠM XUÂN ẨN',
+          altarCp: 'Sự ghi nhận đối với những cống hiến của Phạm Xuân Ẩn',
           altarAria: 'Sự ghi nhận đối với những cống hiến của Phạm Xuân Ẩn',
           sealBadge: 'KỶ VẬT LỊCH SỬ',
           doorText: 'MỞ TỦ LƯU NIỆM',
@@ -1906,7 +1914,7 @@
             img: 'Thẻ nhà báo Phạm Xuân Ẩn',
             imgSrc: 'assets/images/PhongLuuNiem/PLN_PhamXuanGioTheNhaBao.jpg',
             caption: 'Phạm Xuân Ẩn giơ giấy phép hành nghề nhà báo của mình. (Nguồn: Charles Dharapak - AP)',
-            h: `<p>Năm 1978, một bài báo ngắn trên tờ báo Pháp lần đầu tiên tiết lộ trên truyền thông quốc tế: nhà báo tài năng của Time, Phạm Xuân Ẩn, thực chất là một nhà tình báo chiến lược của quân Giải Phóng, từng nắm trong tay nhiều tài liệu mật của Mỹ và chính quyền Việt Nam Cộng Hòa.</p><p>Khi tin lan sang Mỹ, giới tình báo và báo chí đều choáng váng, không ít quan chức CIA từng tin tưởng, thậm chí tìm đến ông để tham khảo ý kiến, giờ mới biết mình bị qua mặt suốt bao năm.</p>`
+            h: `<p>Năm 1978, một bài báo ngắn trên tờ báo Pháp lần đầu tiên tiết lộ trên truyền thông quốc tế: nhà báo tài năng của Time, Phạm Xuân Ẩn, thực chất là một nhà tình báo chiến lược của quân Giải Phóng, từng nắm trong tay nhiều tài liệu mật của Mỹ và chính quyền Việt Nam Cộng Hòa.</p><p>Khi tin lan sang Mỹ, giới tình báo và báo chí đều choáng váng, không ít quan chức CIA từng tin tưởng, thậm chí tìm đến ông để tham khảo ý kiến, giờ mới biết mình bị qua mặt suốt bao năm.</p><p>Và sau này trong một lần, khi phóng viên hỏi ông thật sự hoạt động cho phe nào, Phạm Xuân Ẩn cười lớn rồi đáp:</p><blockquote>"Sự thật? Sự thật nào mới được chứ? Có một sự thật là trong 10 năm tôi là phóng viên cho tòa soạn tuần báo Time và trước đó làm cho hãng Reuters. Một sự thật khác nữa là tôi gia nhập phong trào cách mạng từ năm 1945 và là thành viên của họ từ đó với các chức vụ khác nhau. Hai sự thật, hai sự thật... đều thật."</blockquote>`
           },
           {
             y: '',
@@ -2020,7 +2028,7 @@
             img: '記者証を手にするファム・スアン・アン',
             imgSrc: 'assets/images/PhongLuuNiem/PLN_PhamXuanGioTheNhaBao.webp',
             caption: 'サイゴンでの正式な記者証を手にするファム・スアン・アン。',
-            h: `<p>1978年、フランスの新聞記事によって、タイム誌の敏腕記者ファム・スアン・アンが実はベトナム人民解放軍の戦略諜報員であり、米軍や南ベトナム政権の最高機密文書を多数保持していたことが全世界に公表されました。</p><p>この報せが米国に届くと、情報機関とジャーナリズム界は騒然となり、彼を信頼し意見を求めに訪れていた多くのCIA高官たちは、長年にわたって欺かれていたことを知りました。</p>`
+            h: `<p>1978年、フランスの新聞記事によって、タイム誌の敏腕記者ファム・スアン・アンが実はベトナム人民解放軍の戦略諜報員であり、米軍や南ベトナム政権の最高機密文書を多数保持していたことが全世界に公表されました。</p><p>この報せが米国に届くと、情報機関とジャーナリズム界は騒然となり、彼を信頼し意見を求めに訪れていた多くのCIA高官たちは、長年にわたって欺かれていたことを知りました。</p><p>ある時、記者から「あなたは本当はどちらの側のために活動していたのか」と尋ねられた際、ファム・スアン・アンは高らかに笑ってこう答えました：</p><blockquote>"真実？ どちらの真実のことかな？ 一つの真実は、私が10年間『タイム』誌の記者であり、その前はロイター通信にいたということ。そしてもう一つの真実は、私が1945年から革命運動に加わり、それ以来ずっと様々な役職を務めてきたということだ。二つの真実、二つの真実……どちらも本物だよ。"</blockquote>`
           },
           {
             y: '',
@@ -2417,7 +2425,7 @@
       } else if (s.type === 'altar') {
         document.getElementById('altarCard').onclick();
       } else if (s.type === 'portrait') {
-        document.getElementById('pt').onclick();
+        // pt is locked
       }
     }
 
@@ -2624,7 +2632,7 @@
     function fr(o, w) {
       const b = document.createElement('button');
       b.className = 'fm';
-      b.style.flexBasis = w;
+      // flexBasis fixed by CSS
       const p = DATA[currentLang]?.meta?.imgPrefix || 'Ảnh';
 
       let imgContent = '';
@@ -2678,7 +2686,7 @@
             // Gắn thông tin side + index vào item để renderActiveModal() truy xuất lại được
             list[k]._side = side;
             list[k]._idx = k;
-            t.appendChild(fr(list[k++], n == 1 ? '36%' : '32%'));
+            t.appendChild(fr(list[k++]));
           }
         }
         el.appendChild(t);
@@ -2791,21 +2799,7 @@
     }
 
     // Bấm vào ảnh chân dung Thiếu tướng đứng một mình
-    document.getElementById('pt').onclick = () => {
-      currentModalState = { type: 'portrait' };
-      const isJa = currentLang === 'ja';
-      openModalPostwar({
-        y: '',
-        t: '',
-        heroImg: ROOM_CONFIG.portrait,
-        heroCaption: isJa
-          ? 'ファム・スアン・アン少将の肖像（出典：トイチェー紙）'
-          : 'Chân dung thiếu tướng tình báo Phạm Xuân Ẩn (Nguồn: Báo Tuổi Trẻ)',
-        bodyHtml: isJa
-          ? `<p>ある時、記者から「あなたは本当はどちらの側のために活動していたのか」と尋ねられた際、ファム・スアン・アンは高らかに笑ってこう答えました：</p><blockquote>"真実？ どちらの真実のことかな？ 一つの真実は、私が10年間『タイム』誌の記者であり、その前はロイター通信にいたということ。そしてもう一つの真実は、私が1945年から革命運動に加わり、それ以来ずっと様々な役職を務めてきたということだ。二つの真実、二つの真実……どちらも本物だよ。"</blockquote>`
-          : `<p>Trong một lần, khi phóng viên hỏi ông thật sự hoạt động cho phe nào, Phạm Xuân Ẩn cười lớn rồi đáp:</p><blockquote>"Sự thật? Sự thật nào mới được chứ? Có một sự thật là trong 10 năm tôi là phóng viên cho tòa soạn tuần báo Time và trước đó làm cho hãng Reuters. Một sự thật khác nữa là tôi gia nhập phong trào cách mạng từ năm 1945 và là thành viên của họ từ đó với các chức vụ khác nhau. Hai sự thật, hai sự thật... đều thật."</blockquote>`
-      });
-    };
+    // pt is locked - no onclick
 
     // Đóng modal & dừng phát video
     document.getElementById('dx').onclick = () => { stopVideos(); currentModalState = null; dlg.close(); };
