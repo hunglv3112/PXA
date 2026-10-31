@@ -229,20 +229,20 @@
     }
 
     .face.front {
-      background: linear-gradient(160deg, #16303a, #0a161b);
+      background: #1c140d;
     }
 
     .face.front::before {
-      background: linear-gradient(180deg, transparent 45%, rgba(10, 22, 27, .92));
+      background: linear-gradient(180deg, rgba(28, 20, 13, .3), rgba(14, 10, 6, .94));
     }
 
     .face.back {
       transform: rotateY(180deg);
-      background: #1c140d;
+      background: linear-gradient(160deg, #16303a, #0a161b);
     }
 
     .face.back::before {
-      background: linear-gradient(180deg, rgba(28, 20, 13, .3), rgba(14, 10, 6, .94));
+      background: linear-gradient(180deg, transparent 45%, rgba(10, 22, 27, .92));
     }
 
     .face .hint {
@@ -263,15 +263,15 @@
 
     .front .hint {
       left: 20px;
-      background: rgba(14, 31, 37, .88);
-      color: #e4ecef;
+      background: rgba(26, 17, 10, .88);
+      color: #f5eedc;
       border: 1px solid rgba(235, 203, 69, .4);
     }
 
     .back .hint {
       right: 20px;
-      background: rgba(26, 17, 10, .88);
-      color: #f5eedc;
+      background: rgba(14, 31, 37, .88);
+      color: #e4ecef;
       border: 1px solid rgba(235, 203, 69, .4);
     }
 
@@ -289,11 +289,11 @@
     }
 
     .front .n {
-      color: var(--text);
+      color: var(--paper);
     }
 
     .back .n {
-      color: var(--paper);
+      color: var(--text);
     }
 
     .face .photo {
@@ -307,15 +307,15 @@
     }
 
     .front .photo {
-      background-image: url('assets/images/GioiThieuDeTai/GioiThieuDeTai_TB.jpg');
-      background-position: 50% 25%;
-      filter: grayscale(1) contrast(1.15) brightness(.48) blur(6.5px);
-    }
-
-    .back .photo {
       background-image: url('assets/images/GioiThieuDeTai/GioiThieuDeTai_NB.jpg');
       background-position: 60% 20%;
       filter: grayscale(1) sepia(.2) contrast(1.15) brightness(.45) blur(6.5px);
+    }
+
+    .back .photo {
+      background-image: url('assets/images/GioiThieuDeTai/GioiThieuDeTai_TB.jpg');
+      background-position: 50% 25%;
+      filter: grayscale(1) contrast(1.15) brightness(.48) blur(6.5px);
     }
 
     /* Lead Text */
@@ -969,22 +969,22 @@
 
   <div class="wrap">
     <header class="hero">
-      <h1 data-text="Phạm Xuân Ẩn: Tình báo hay nhà báo?"><span class="a">Phạm Xuân Ẩn:</span> <span class="b">Tình báo
-          hay nhà báo?</span></h1>
+      <h1 data-text="Phạm Xuân Ẩn: Nhà báo hay tình báo?"><span class="a">Phạm Xuân Ẩn:</span> <span class="b">Nhà báo
+          hay tình báo?</span></h1>
       <div class="intro">
         <!-- Poster 3D lật 2 mặt -->
         <div class="poster" id="poster" role="button" tabindex="0" aria-pressed="false"
-          aria-label="Poster Phạm Xuân Ẩn: bấm để lật giữa mặt tình báo và mặt nhà báo">
+          aria-label="Poster Phạm Xuân Ẩn: bấm để lật giữa mặt nhà báo và mặt tình báo">
           <div class="flip">
             <div class="face front">
               <div class="photo" aria-hidden="true"></div>
               <span class="hint">↻ Bấm để lật</span>
-              <div class="n">Tình báo</div>
+              <div class="n">Nhà báo</div>
             </div>
             <div class="face back">
               <div class="photo" aria-hidden="true"></div>
               <span class="hint">↻ Bấm để lật</span>
-              <div class="n">Nhà báo</div>
+              <div class="n">Tình báo</div>
             </div>
           </div>
         </div>
@@ -1122,7 +1122,7 @@
         <a class="card c4" href="javascript:void(0)">
           <div class="ph"></div>
           <h3>Phòng lưu niệm</h3>
-          <p>Những thành tích danh hiệu và những gì quý giá nhất về cuộc đời ông.</p>
+          <p>Thành tích, danh hiệu và những gì quý giá nhất về cuộc đời ông.</p>
         </a>
       </div>
     </section>
@@ -1334,7 +1334,7 @@
     var I = [
       ['h1 .a', ['ファム・スアン・アン：']],
       ['h1 .b', ['諜報員か、それとも記者か？']],
-      ['.poster .n', ['諜報員', '記者']],
+      ['.poster .n', ['記者', '諜報員']],
       ['.poster .hint', ['↻ タップで裏返す', '↻ タップで裏返す']],
       ['.lead blockquote', ['「彼らの仕事は、先んじて知り、先んじて理解し、沈黙を守ること。それゆえ、その沈黙こそが彼らを忘れられやすくもしている。」']],
       ['.acc-title', [
@@ -1414,7 +1414,7 @@
       document.documentElement.lang = lang;
       document.title = (lang === 'ja') ? 'プロジェクト紹介 – ファム・スアン・アン' : 'Giới thiệu đề tài – Phạm Xuân Ẩn';
       poster.setAttribute('aria-label', lang === 'ja'
-        ? 'ファム・スアン・アンのポスター：タップで諜報員の面と記者の面を切り替え'
+        ? 'ファム・スアン・アンのポスター：タップで記者の面と諜報員の面を切り替え'
         : poster.getAttribute('data-vi-label'));
 
       I.forEach(function (r) {

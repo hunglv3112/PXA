@@ -54,7 +54,7 @@ window.TIMELINE_DATA = [
     side: "bot",
     icon: "cap",
     img: "assets/images/1957_1959/1958_PXAHocMonBaoChiTaiMy.jpg",
-    title: "Thành tích báo chí tại OCC",
+    title: "Thành tích báo chí tại Orange Coast College",
     title_ja: "渡米とカリフォルニア留学の始まり",
   },
   // ==========================================================================
@@ -283,7 +283,7 @@ window.TIMELINE_DATA = [
     side: "top",
     icon: "star",
     img: "assets/images/1964_1970/1968_HueSauMauThan.jpg",
-    title: "Hành động kịp thời giúp cứu nguy cho quân Giải phóng",
+    title: "Hành động kịp thời cứu nguy cho quân Giải phóng",
     title_ja: "解放軍の危機を救った迅速果敢な情報活動",
   },
   {

@@ -32,7 +32,7 @@ window.EXTRA_DATA_1975 = {
             text2: 'Phạm Xuân Ẩn đã nắm được thông tin từ cuộc họp này và báo cáo về. Tin này giúp quân Giải Phóng quyết mở Chiến dịch Tây Nguyên vào tháng 3/1975, lấy Buôn Ma Thuột làm đòn mở màn Tổng tiến công Mùa Xuân 1975.',
             text2_ja: 'ファム・スアン・アンはこの会議の情報を的確に把握して本国へ報告。この情報が決め手となり、解放軍は1975年3月に中部高原作戦を開始し、バンメトートを春季総攻勢の口火と決定しました。',
 
-            text3: 'Đòn tiến công vào Buôn Mê Thuột của quân Giải phóng khiến chính quyền VNCH rơi vào thế choáng váng, mở đầu cho cuộc rút quân hỗn loạn khỏi Tây Nguyên. Sự thất bại của cuộc rút lui này khiến quân đội VNCH nhanh chóng suy yếu và tan rã, góp phần dẫn đến sự sụp đổ của chính quyền VNCH vào tháng 4/1975.',
+            text3: 'Đòn tiến công vào Buôn Mê Thuột của quân Giải phóng khiến Việt Nam Cộng Hòa rơi vào thế choáng váng, mở đầu cho cuộc rút quân hỗn loạn khỏi Tây Nguyên. Sự thất bại này khiến quân Việt Nam Cộng Hòa nhanh chóng suy yếu và tan rã.',
             text3_ja: 'バンメトートへの電撃打撃はサイゴン政権を大混乱に陥れ、中部高原からの潰走を引き起こしました。この撤退の大失敗により南ベトナム軍は急速に瓦解し、1975年4月の政権崩壊へと直結しました。',
 
             // ── ẢNH CHÈN SAU text3 ──
@@ -107,7 +107,7 @@ window.EXTRA_DATA_1975 = {
             text2: 'Cho đến ngày 12/5/1976 ông đã gửi bài viết cuối cùng về cho Time với tiêu đề "Cuộc chia tay cuối cùng nghiệt ngã"  miêu tả lại cảnh hỗn loạn của VNCH và Mỹ ngày 30/4/1975.',
             text2_ja: '1976年5月12日、彼はタイム誌へ「無情の最後の別れ」と題する最後の記事を送り、1975年4月30日の南ベトナム政権と米国の混乱を鮮烈に描写しました。',
 
-            text3: 'Bài báo khép lại bằng một nhận định lịch sử đầy sâu sắc của Phạm Xuân Ẩn về sự kết thúc can thiệp của người Mỹ tại Việt Nam: "Có lẽ cần phải nói rằng, cuộc chia tay của người Mỹ đối với Việt Nam là chiến dịch duy nhất trong toàn bộ cuộc chiến mà họ hoàn toàn không mang theo ảo tưởng...".',
+            text3: 'Bài báo khép lại bằng một nhận định lịch sử đầy sâu sắc của Phạm Xuân Ẩn về sự kết thúc can thiệp của người Mỹ tại Việt Nam: "Có lẽ cần phải nói rằng, cuộc chia tay của người Mỹ đối với Việt Nam là chiến dịch duy nhất trong toàn bộ cuộc chiến mà họ hoàn toàn không mang theo ảo tưởng..."',
             text3_ja: '記事は、米国のベトナム介入終焉についての歴史的かつ深い洞察で締めくくられています。「言わねばならないのは、米国人のベトナムからの撤退こそが、この戦争全体を通じて彼らが何の幻想も抱かずに実行した唯一の作戦だったということだ……」。',
 
             note: '',

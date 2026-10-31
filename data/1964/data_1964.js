@@ -90,9 +90,9 @@ window.EXTRA_DATA_1964 = {
         {
             id: '1964b',
             modalImg: 'assets/images/1964_1970/1964_NB_DongNghiep.jpg',
-            modalImgAlt: 'Hình ảnh Phạm Xuân Ẩn (ngoài cùng bên trái) chụp cùng đồng nghiệp như nhà báo Beverly Deepe (ngoài cùng bên trái)… tại văn phòng The New York Herald Tribune tại Sài Gòn (Tên người như cuộc đời - Trang 234)',
+            modalImgAlt: 'Phạm Xuân Ẩn (ngoài cùng bên trái) chụp cùng đồng nghiệp như nhà báo Beverly Deepe (ngoài cùng bên phải)… tại văn phòng The New York Herald Tribune tại Sài Gòn (Tên người như cuộc đời - Trang 234)',
             modalImgAlt_ja: 'サイゴンのニューヨーク・ヘラルド・トリビューン支局でビバリー・ディープ記者ら同僚と写るファム・スアン・アン（『名前のような人生』234頁）',
-            caption: 'Hình ảnh Phạm Xuân Ẩn (ngoài cùng bên trái) chụp cùng đồng nghiệp như nhà báo Beverly Deepe (ngoài cùng bên trái)… tại văn phòng The New York Herald Tribune tại Sài Gòn (Tên người như cuộc đời - Trang 234)',
+            caption: 'Phạm Xuân Ẩn (ngoài cùng bên trái) chụp cùng đồng nghiệp như nhà báo Beverly Deepe (ngoài cùng bên phải)… tại văn phòng The New York Herald Tribune tại Sài Gòn (Tên người như cuộc đời - Trang 234)',
             caption_ja: 'サイゴンのニューヨーク・ヘラルド・トリビューン支局でビバリー・ディープ記者ら同僚と写るファム・スアン・アン（『名前のような人生』234頁）',
 
             title: 'Hợp tác với The New York Herald Tribune và Beverly Deepe',

@@ -60,7 +60,7 @@ window.EXTRA_DATA_1958 = {
             modalImgAlt_ja: '1957年当時のオレンジ・コースト・カレッジ（カリフォルニア州コスタメサ）',
 
             // ── VĂN BẢN CHI TIẾT (TÁCH RIÊNG TỪNG FIELD ĐOẠN VĂN) ──
-            title: 'Thành tích báo chí tại OCC',
+            title: 'Thành tích báo chí tại Orange Coast College',
             title_ja: '渡米とカリフォルニア留学の始まり',
             date: 'Tháng 10/1958',
             date_ja: '1958年10月',

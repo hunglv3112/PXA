@@ -1259,6 +1259,54 @@
       box-shadow: 0 0 16px rgba(235, 203, 69, 0.4);
     }
 
+    /* Bộ chuyển đổi ngôn ngữ Việt - Nhật nổi bên trong popup modal */
+    .m-postwar-lang {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 3px 6px;
+      background: rgba(14, 31, 37, 0.88);
+      border: 1px solid rgba(235, 203, 69, 0.45);
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+    }
+
+    .m-postwar-lang .lang-btn {
+      font-family: var(--sans);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: var(--mute);
+      cursor: pointer;
+      letter-spacing: .03em;
+      transition: all .2s ease;
+    }
+
+    .m-postwar-lang .lang-btn:hover {
+      color: #fff;
+    }
+
+    .m-postwar-lang .lang-btn.active {
+      background: linear-gradient(135deg, #ebcb45 0%, #d4ad22 100%);
+      color: #12181b;
+      box-shadow: 0 2px 8px rgba(235, 203, 69, .35);
+    }
+
+    .m-postwar-lang .lang-divider {
+      color: rgba(255, 255, 255, 0.25);
+      font-size: 11px;
+      user-select: none;
+    }
+
     /* Khung cuộn toàn bộ nội dung popup */
     .m-postwar-sheet,
     .mb {
@@ -1797,6 +1845,11 @@
   <!-- Modal hộp thoại xem chi tiết đồng bộ phong cách Dòng thời gian -->
   <dialog id="dlg" class="m-postwar-dialog">
     <button type="button" class="m-postwar-close" id="dx" aria-label="Đóng cửa sổ" title="Đóng (Esc)">✕</button>
+    <nav class="lang-switcher m-postwar-lang" aria-label="Chọn ngôn ngữ trong popup / 言語切替">
+      <button type="button" class="lang-btn active" data-lang="vi" title="Chuyển sang Tiếng Việt">VI</button>
+      <span class="lang-divider" aria-hidden="true">/</span>
+      <button type="button" class="lang-btn" data-lang="ja" title="日本語に切り替える">日本語</button>
+    </nav>
     <div class="m-postwar-sheet mb" id="db"></div>
   </dialog>
 
@@ -2259,8 +2312,16 @@
     };
 
     let currentLang = (window.getCurrentLang ? window.getCurrentLang() : 'vi') || 'vi';
+    let currentModalState = null; // Lưu trạng thái modal đang mở để re-render khi đổi ngôn ngữ
 
     const dlg = document.getElementById('dlg');
+
+    // Đồng bộ active class cho nút ngôn ngữ trong popup
+    function syncModalLangBtns() {
+      dlg.querySelectorAll('.m-postwar-lang .lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === currentLang);
+      });
+    }
 
     function stopVideos() {
       const vids = dlg.querySelectorAll('video');
@@ -2326,7 +2387,8 @@
       const db = document.getElementById('db');
       db.innerHTML = html;
       db.scrollTop = 0;
-      dlg.showModal();
+      if (!dlg.open) dlg.showModal();
+      syncModalLangBtns();
     }
 
     // Hàm chuyển tiếp tương thích ngược
@@ -2334,8 +2396,27 @@
       openModalPostwar({ t, y, bodyHtml: body });
     }
 
+    // Re-render modal đang mở theo ngôn ngữ hiện tại
+    function renderActiveModal() {
+      if (!currentModalState) return;
+      const s = currentModalState;
+      if (s.type === 'shelf') {
+        const item = DATA[currentLang]?.[s.side]?.[s.index];
+        if (item) O(item);
+      } else if (s.type === 'decode') {
+        openDecodeGame();
+      } else if (s.type === 'hero') {
+        document.getElementById('hero').onclick();
+      } else if (s.type === 'altar') {
+        document.getElementById('altarCard').onclick();
+      } else if (s.type === 'portrait') {
+        document.getElementById('pt').onclick();
+      }
+    }
+
     const O = o => {
       if (o.isDecode) {
+        currentModalState = { type: 'decode' };
         openDecodeGame(0);
         return;
       }
@@ -2571,22 +2652,27 @@
       `;
 
       if (o.isDecode) {
-        b.onclick = () => openDecodeGame(0);
+        b.onclick = () => { currentModalState = { type: 'decode' }; openDecodeGame(0); };
       } else {
-        b.onclick = () => O(o);
+        b.onclick = () => { currentModalState = { type: 'shelf', side: o._side, index: o._idx }; O(o); };
       }
       return b;
     }
 
     // Xếp các tầng kỷ vật
-    function tiers(el, list, sizes) {
+    function tiers(el, list, sizes, side) {
       el.innerHTML = '';
       let k = 0;
       sizes.forEach(n => {
         const t = document.createElement('div');
         t.className = 'tier';
         for (let i = 0; i < n; i++) {
-          if (list[k]) t.appendChild(fr(list[k++], n == 1 ? '36%' : '32%'));
+          if (list[k]) {
+            // Gắn thông tin side + index vào item để renderActiveModal() truy xuất lại được
+            list[k]._side = side;
+            list[k]._idx = k;
+            t.appendChild(fr(list[k++], n == 1 ? '36%' : '32%'));
+          }
         }
         el.appendChild(t);
       });
@@ -2625,11 +2711,12 @@
       const pt = document.getElementById('ptImg');
       if (pt) pt.src = ROOM_CONFIG.portrait;
 
-      tiers(document.getElementById('gL'), cur.L, [1, 1, 1]);
-      tiers(document.getElementById('gR'), cur.R, [1, 1, 1]);
+      tiers(document.getElementById('gL'), cur.L, [1, 1, 1], 'L');
+      tiers(document.getElementById('gR'), cur.R, [1, 1, 1], 'R');
 
       // Sự kiện bấm biển danh hiệu Anh hùng LLVTND
       document.getElementById('hero').onclick = () => {
+        currentModalState = { type: 'hero' };
         const isJa = currentLang === 'ja';
         openModalPostwar({
           y: '',
@@ -2646,6 +2733,7 @@
 
       // Sự kiện bấm khung ảnh Bàn thờ Thiếu tướng & Ghi nhận cống hiến
       document.getElementById('altarCard').onclick = () => {
+        currentModalState = { type: 'altar' };
         const isJa = currentLang === 'ja';
         openModalPostwar({
           y: '',
@@ -2697,6 +2785,7 @@
 
     // Bấm vào ảnh chân dung Thiếu tướng đứng một mình
     document.getElementById('pt').onclick = () => {
+      currentModalState = { type: 'portrait' };
       const isJa = currentLang === 'ja';
       openModalPostwar({
         y: '',
@@ -2712,9 +2801,9 @@
     };
 
     // Đóng modal & dừng phát video
-    document.getElementById('dx').onclick = () => { stopVideos(); dlg.close(); };
-    dlg.addEventListener('click', e => { if (e.target === dlg) { stopVideos(); dlg.close(); } });
-    dlg.addEventListener('cancel', () => { stopVideos(); });
+    document.getElementById('dx').onclick = () => { stopVideos(); currentModalState = null; dlg.close(); };
+    dlg.addEventListener('click', e => { if (e.target === dlg) { stopVideos(); currentModalState = null; dlg.close(); } });
+    dlg.addEventListener('cancel', () => { stopVideos(); currentModalState = null; });
 
     // ==============================================================================
     // 2. CƠ CHẾ MỞ & ĐÓNG TỦ 3D:
@@ -2783,6 +2872,10 @@
     // Lắng nghe sự kiện đổi ngôn ngữ toàn cục
     window.addEventListener('languagechange', e => {
       renderContent();
+      // Nếu có modal đang mở thì re-render nội dung theo ngôn ngữ mới
+      if (dlg && dlg.open && currentModalState) {
+        renderActiveModal();
+      }
     });
 
     // Khởi chạy render lần đầu

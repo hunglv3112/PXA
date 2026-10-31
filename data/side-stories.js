@@ -208,7 +208,6 @@ window.AXIS_STORIES = [
     text6: "Sau này Ẩn giải thích rằng đây là \"hành động của trái tim\", cứu bác sĩ Tuyến vì ân nghĩa xưa. Đại tướng Mai Chí Thọ nhận xét hành động này là \"Nhân Trí Dũng!\" và đây cũng là đánh giá chung của cấp trên dành cho Ẩn.",
 
     note: "",
-    src: "Nguồn: Larry Berman (Điệp viên hoàn hảo)",
 
     // ==========================================================================
     // 2. TIẾNG NHẬT (JA - 日本語)

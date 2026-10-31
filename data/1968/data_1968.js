@@ -71,9 +71,9 @@ window.EXTRA_DATA_1968 = {
         {
             id: '1968b',
             modalImg: 'assets/images/1964_1970/1968_4V.jpg',
-            modalImgAlt: 'Chiếc xe Renault 4v được Phạm Xuân Ẩn dùng trong suốt thời chiến (Nguồn: KienThuc)',
+            modalImgAlt: 'Chiếc xe Renault 4v được Phạm Xuân Ẩn dùng trong suốt thời chiến (Nguồn: ZingVN)',
             modalImgAlt_ja: '戦時中にファム・スアン・アンが愛用したルノー4CV（KienThuc）',
-            caption: 'Chiếc xe Renault 4v được Phạm Xuân Ẩn dùng trong suốt thời chiến (Nguồn: KienThuc)',
+            caption: 'Chiếc xe Renault 4v được Phạm Xuân Ẩn dùng trong suốt thời chiến (Nguồn: ZingVN)',
             caption_ja: '戦時中にファム・スアン・アンが愛用したルノー4CV（KienThuc）',
 
             title: 'Trực tiếp tác nghiệp báo chí trong thời gian Tết Mậu Thân',

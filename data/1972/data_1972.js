@@ -56,9 +56,9 @@ window.EXTRA_DATA_1972 = {
         {
             id: '1972t',
             modalImg: 'assets/images/1971_1973/1972_TB2_B52ThaBom.jpg',
-            modalImgAlt: 'Máy bay b-52 trút bom (Nguồn: QĐNDVN)',
+            modalImgAlt: 'Máy bay B-52 trút bom (Nguồn: QĐNDVN)',
             modalImgAlt_ja: '爆弾を投下する米軍B-52戦略爆撃機（ベトナム人民軍新聞）',
-            caption: 'Máy bay b-52 trút bom (Nguồn: QĐNDVN)',
+            caption: 'Máy bay B-52 trút bom (Nguồn: QĐNDVN)',
             caption_ja: '爆弾を投下する米軍B-52戦略爆撃機（ベトナム人民軍新聞）',
 
             title: 'Cảnh báo sớm chiến dịch Linebacker I (*) và máy bay B-52 ra miền Bắc',
