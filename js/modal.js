@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ==============================================================================
  * LOGIC CỬA SỔ XEM CHI TIẾT (js/modal.js) — HỖ TRỢ SONG NGỮ (VI / JA)
  * ==============================================================================
@@ -426,10 +426,22 @@
     });
   }
 
-  // Làm mới khi đổi ngôn ngữ
+  // Làm mới khi đổi ngôn ngữ (giữ nguyên vị trí cuộn trong popup modal)
   window.addEventListener('languagechange', () => {
     if (modal && !modal.hidden && currentIndex >= 0) {
+      const prevSheetScroll = sheet ? sheet.scrollTop : 0;
+      const mBody = sheet ? sheet.querySelector('.m-body') : null;
+      const prevBodyScroll = mBody ? mBody.scrollTop : 0;
+
       renderModalContent(currentIndex);
+
+      if (sheet && prevSheetScroll > 0) {
+        sheet.scrollTop = prevSheetScroll;
+      }
+      const newBody = sheet ? sheet.querySelector('.m-body') : null;
+      if (newBody && prevBodyScroll > 0) {
+        newBody.scrollTop = prevBodyScroll;
+      }
     }
   });
 

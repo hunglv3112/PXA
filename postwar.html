@@ -1,4 +1,3 @@
-﻿<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -591,7 +590,11 @@
     /* ==========================================================================
        BADGES ĐẶC BIỆT CHO KHUNG ẢNH (VIDEO & GIẢI MÃ PUZZLE)
        ========================================================================== */
-    .video-shelf-badge, .puzzle-shelf-badge { display: none !important; }
+    .video-shelf-badge,
+    .puzzle-shelf-badge {
+      display: none !important;
+    }
+
     .puzzle-shelf-badge {
       position: absolute;
       bottom: 4px;
@@ -2407,9 +2410,11 @@
       openModalPostwar({ t, y, bodyHtml: body });
     }
 
-    // Re-render modal đang mở theo ngôn ngữ hiện tại
-    function renderActiveModal() {
+    // Re-render modal đang mở theo ngôn ngữ hiện tại (giữ nguyên vị trí cuộn)
+    function renderActiveModal(isLangChange = false) {
       if (!currentModalState) return;
+      const db = document.getElementById('db');
+      const prevScroll = (isLangChange && db) ? db.scrollTop : 0;
       const s = currentModalState;
       if (s.type === 'shelf') {
         const item = DATA[currentLang]?.[s.side]?.[s.index];
@@ -2422,6 +2427,9 @@
         document.getElementById('altarCard').onclick();
       } else if (s.type === 'portrait') {
         // pt is locked
+      }
+      if (isLangChange && db && prevScroll > 0) {
+        db.scrollTop = prevScroll;
       }
     }
 
@@ -2863,7 +2871,7 @@
       renderContent();
       // Nếu có modal đang mở thì re-render nội dung theo ngôn ngữ mới
       if (dlg && dlg.open && currentModalState) {
-        renderActiveModal();
+        renderActiveModal(true);
       }
     });
 

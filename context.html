@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -730,6 +730,12 @@
       if (backIntroTextEl && m.backIntroText) backIntroTextEl.textContent = m.backIntroText;
 
       const container = document.getElementById('timelineContainer');
+      const isReRender = container && container.children.length > 0;
+      const savedY = isReRender ? (window.pageYOffset || document.documentElement.scrollTop) : 0;
+      const prevHeight = isReRender ? container.offsetHeight : 0;
+      if (isReRender && prevHeight > 0) {
+        container.style.minHeight = prevHeight + 'px';
+      }
       let html = '';
 
       data.events.forEach((ev, idx) => {
@@ -771,6 +777,18 @@
       });
 
       container.innerHTML = html;
+
+      if (isReRender) {
+        document.querySelectorAll('.ev').forEach(e => {
+          const r = e.getBoundingClientRect();
+          if (r.top < window.innerHeight) e.classList.add('on');
+        });
+        window.scrollTo({ top: savedY, behavior: 'instant' });
+        requestAnimationFrame(() => {
+          if (container) container.style.minHeight = '';
+          window.scrollTo({ top: savedY, behavior: 'instant' });
+        });
+      }
 
       if (ioTimeline) {
         ioTimeline.disconnect();

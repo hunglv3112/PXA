@@ -1,5 +1,4 @@
-﻿<!DOCTYPE html>
-<html lang="vi">
+﻿<html lang="vi">
 
 <head>
   <meta charset="utf-8">
@@ -1409,7 +1408,8 @@
       }, 28);
     }
 
-    function applyIntroLang(l) {
+    function applyIntroLang(l, preserveScroll) {
+      var savedY = preserveScroll ? (window.pageYOffset || document.documentElement.scrollTop) : 0;
       var lang = (l === 'ja') ? 'ja' : 'vi';
       document.documentElement.lang = lang;
       document.title = (lang === 'ja') ? 'プロジェクト紹介 – ファム・スアン・アン' : 'Giới thiệu đề tài – Phạm Xuân Ẩn';
@@ -1427,12 +1427,18 @@
       h1.setAttribute('data-text', h1.textContent);
       build();
       typeQuote(lang);
+      if (preserveScroll && savedY > 0) {
+        window.scrollTo({ top: savedY, behavior: 'instant' });
+        requestAnimationFrame(function () {
+          window.scrollTo({ top: savedY, behavior: 'instant' });
+        });
+      }
     }
 
     // Lắng nghe sự kiện chuyển đổi ngôn ngữ toàn cục
     window.addEventListener('languagechange', function (e) {
       var l = e.detail && e.detail.lang ? e.detail.lang : (window.getCurrentLang ? window.getCurrentLang() : 'vi');
-      applyIntroLang(l);
+      applyIntroLang(l, true);
     });
 
     // Spotlight cursor trên tiêu đề H1

@@ -229,12 +229,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Khởi dựng Timeline
-  function initTimeline() {
+  // Khởi dựng Timeline (hỗ trợ giữ nguyên vị trí cuộn khi đổi ngôn ngữ)
+  function initTimeline(preserveScroll = false) {
+    const prevScrollLeft = (scroller && preserveScroll) ? scroller.scrollLeft : 0;
+    const prevWidth = (track && preserveScroll) ? track.scrollWidth : 0;
+
+    if (preserveScroll && prevWidth > 0 && track) {
+      track.style.minWidth = prevWidth + 'px';
+    }
+
     track.innerHTML = '';
     applyConfigAndTexts();
     renderTimeline();
     updateProgressBar();
+
+    if (preserveScroll && scroller) {
+      scroller.scrollLeft = prevScrollLeft;
+      requestAnimationFrame(() => {
+        if (track) track.style.minWidth = '';
+        scroller.scrollLeft = prevScrollLeft;
+        updateProgressBar();
+      });
+    }
   }
 
   initTimeline();
@@ -447,9 +463,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. Lắng nghe sự kiện chuyển ngôn ngữ để cập nhật lại timeline
   window.addEventListener('languagechange', () => {
-    initTimeline();
+    initTimeline(true);
     if (storyModal && !storyModal.hidden && currentOpenStoryId) {
+      const prevScroll = storySheet ? storySheet.scrollTop : 0;
       openStoryModal(currentOpenStoryId);
+      if (storySheet && prevScroll > 0) {
+        storySheet.scrollTop = prevScroll;
+      }
     }
   });
 

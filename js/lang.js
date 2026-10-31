@@ -97,6 +97,8 @@
     document.addEventListener('click', (e) => {
       const btn = e.target.closest('.lang-btn');
       if (btn && btn.dataset.lang) {
+        e.preventDefault();
+        e.stopPropagation();
         window.setLanguage(btn.dataset.lang);
       }
     });
