@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ==============================================================================
  * DỮ LIỆU MỞ RỘNG — NĂM 1958 (data/1958/data_1958.js)
  * ==============================================================================
@@ -26,6 +26,7 @@ window.EXTRA_DATA_1958 = {
             modalImgAlt: 'Mười Hương (hàng đầu, thứ ba từ bên trái sang) chụp ảnh cùng Phạm Xuân Ẩn (hàng thứ hai, thứ ba từ bên trái sang) và các nhà tình báo khác (Nguồn: Báo Tuổi Trẻ)',
             modalImgAlt_ja: 'カリフォルニアのオレンジ・コースト・カレッジでジャーナリズムを学ぶファム・スアン・アン',
             caption: 'Mười Hương (hàng đầu, thứ ba từ bên trái sang) chụp ảnh cùng Phạm Xuân Ẩn (hàng thứ hai, thứ ba từ bên trái sang) và các nhà tình báo khác (Nguồn: Báo Tuổi Trẻ)',
+            caption_ja: 'ムオイ・フオン（前列左から3人目）がファム・スアン・アン（後列左から3人目）および他の諜報員たちと共に撮影した記念写真（出典：トイチェー紙）',
             title: 'Mất liên lạc với tổ chức sau khi Mười Hương bị bắt ',
             title_ja: '記者という偽装の選択',
             date: 'Năm 1958',

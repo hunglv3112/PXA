@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ==============================================================================
  * DỮ LIỆU MỞ RỘNG — NĂM 1957 (data/1957/data_1957.js)
  * ==============================================================================
@@ -26,6 +26,7 @@ window.EXTRA_DATA_1957 = {
             modalImgAlt: 'Tổng thống Dwight Eisenhower (ngoài cùng bên trái) đón Tổng thống VNCH Ngô Đình Diệm (thứ ba từ trái sang) tới thăm Washington năm 1957 (NARA)',
             modalImgAlt_ja: 'カリフォルニアのオレンジ・コースト・カレッジでジャーナリズムを学ぶファム・スアン・アン',
             caption: 'Tổng thống Dwight Eisenhower (ngoài cùng bên trái) đón Tổng thống VNCH Ngô Đình Diệm (thứ ba từ trái sang) tới thăm Washington năm 1957 (NARA)',
+            caption_ja: 'ドワイト・アイゼンハワー米大統領（一番左）が1957年にワシントンを訪問した南ベトナムのゴ・ディン・ジエム大統領（左から3人目）を出迎える（NARA）',
             title: 'Nhiệm vụ du học báo chí tại Mỹ',
             title_ja: '記者という偽装の選択',
             date: 'Năm 1957',
