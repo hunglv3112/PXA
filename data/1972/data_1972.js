@@ -37,7 +37,7 @@ window.EXTRA_DATA_1972 = {
             text3_ja: '彼は南ベトナム第2軍団の士気崩壊、軍団長ゴー・ズー少将による地方部隊再編計画、さらには精鋭空挺部隊や海兵隊の甚大な損害状況を分析報告。敵戦力が広大な戦線で過度に薄まっている事実を浮き彫りにし、政治局と中央軍事委員会が各戦域間の有機的協調作戦を機敏に下すための決定打となりました。',
 
             // ── ẢNH CHÈN GIỮA NỘI DUNG ──
-            midImg: {
+            midImg3: {
                 src: 'assets/images/1971_1973/1972_TB1_NuCuoi.jpg',
                 alt: 'Bức ảnh nổi tiếng “Nụ cười chiến thắng” của quân Giải phóng dưới chân Thành cổ Quảng Trị (Nguồn: Đoàn Công Tính)',
                 alt_ja: 'クアンチ古城の足元で撮影された解放軍の有名な「勝利の笑顔」（ドアン・コン・ティン撮影）',

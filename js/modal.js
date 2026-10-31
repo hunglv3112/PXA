@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ==============================================================================
  * LOGIC CỬA SỔ XEM CHI TIẾT (js/modal.js) — HỖ TRỢ SONG NGỮ (VI / JA)
  * ==============================================================================
@@ -26,6 +26,7 @@
   const mClose = document.getElementById('mClose');
 
   let currentIndex = -1;
+  let currentSubIndex = 0;
   let lastActiveElement = null;
 
   // ─────────────────────────────────────────────────────────────────
@@ -202,6 +203,9 @@
     mArt.classList.add('m-art--split');
     mArt.innerHTML = '';
 
+    const activeSub = (currentSubIndex >= 0 && currentSubIndex < items.length) ? currentSubIndex : 0;
+    currentSubIndex = activeSub;
+
     items.forEach((imgObj, i) => {
       const altText = (lang === 'ja' && (imgObj.alt_ja || imgObj.modalImgAlt_ja)) 
         ? (imgObj.alt_ja || imgObj.modalImgAlt_ja) 
@@ -219,7 +223,7 @@
       cell.setAttribute('role', 'button');
       cell.setAttribute('tabindex', '0');
       cell.setAttribute('aria-label', label || altText);
-      if (i === 0) cell.classList.add('m-art-cell--active');
+      if (i === activeSub) cell.classList.add('m-art-cell--active');
 
       const imgWrap = document.createElement('div');
       imgWrap.className = 'm-art-cell-img-wrap';
@@ -246,6 +250,7 @@
 
       // Click / Enter → chuyển nội dung panel phải
       function activate() {
+        currentSubIndex = i;
         mArt.querySelectorAll('.m-art-cell').forEach(c => c.classList.remove('m-art-cell--active'));
         cell.classList.add('m-art-cell--active');
         renderRightPanel(imgObj, ev.yl, cfg, lang, ev);
@@ -258,7 +263,7 @@
     });
 
     // Mặc định hiển thị nội dung của ảnh đầu tiên
-    renderRightPanel(items[0], ev.yl, cfg, lang, ev);
+    renderRightPanel(items[activeSub], ev.yl, cfg, lang, ev);
   }
 
   // ─────────────────────────────────────────────────────────────────
@@ -329,6 +334,9 @@
       try { v.pause(); } catch (e) {}
     });
 
+    if (index !== currentIndex) {
+      currentSubIndex = 0;
+    }
     currentIndex = index;
     const ev = dataList[index];
     const lang = window.getCurrentLang ? window.getCurrentLang() : 'vi';
@@ -372,6 +380,7 @@
   // ─────────────────────────────────────────────────────────────────
   window.openModal = function (index) {
     lastActiveElement = document.activeElement;
+    currentSubIndex = 0;
     renderModalContent(index);
     modal.hidden = false;
     document.body.classList.add('modal-open');
@@ -401,13 +410,17 @@
 
   if (mPrev) {
     mPrev.addEventListener('click', () => {
-      if (currentIndex > 0) renderModalContent(currentIndex - 1);
+      if (currentIndex > 0) {
+        currentSubIndex = 0;
+        renderModalContent(currentIndex - 1);
+      }
     });
   }
 
   if (mNext) {
     mNext.addEventListener('click', () => {
       if (currentIndex < window.TIMELINE_DATA.length - 1) {
+        currentSubIndex = 0;
         renderModalContent(currentIndex + 1);
       }
     });

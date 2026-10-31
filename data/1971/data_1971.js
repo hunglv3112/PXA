@@ -37,7 +37,7 @@ window.EXTRA_DATA_1971 = {
             text3_ja: '極秘報告書が完成すると、アンは綿密な計画通りにサイゴンの通りを歩きました。専属秘密連絡員であるグエン・ティ・バー（B3）が偽の装飾品を載せたトレイを抱えて歩き、わざとアンの前で落としました。アンは立ち止まって拾い集める手助けをするふりをして、報告書を素早く彼女へ手渡しました。報告は直ちに解放軍へ届き、ラムソン719作戦に対する万全の迎撃態勢が敷かれました。',
 
             // ── ẢNH CHÈN GIỮA NỘI DUNG ──
-            midImg: {
+            midImg3: {
                 src: 'assets/images/1971_1973/1971_TB_NTB.jpg',
                 alt: 'Bà Nguyễn Thị Ba (Nguồn: TTXVN)',
                 alt_ja: '連絡員グエン・ティ・バー（ベトナム通信社）',
@@ -47,6 +47,14 @@ window.EXTRA_DATA_1971 = {
 
             text4: 'Tin tức của Phạm Xuân Ẩn đã góp phần làm thất bại hoàn toàn chiến dịch sang Lào năm 1971 của Quân Việt Nam Cộng hòa. Chiến dịch này khiến Quân Việt Nam Cộng hòa bị thương vong 8.000 người, 108 trực thăng bị mất, 618 chiếc khác hư hại và 150 xe tăng bị phá hủy.',
             text4_ja: 'ファム・スアン・アンの先見情報は、1971年の南ベトナム軍によるラオス侵攻作戦を完全な大敗北へと追い込む決定打となりました。この作戦で南ベトナム軍は死傷者8,000人以上、ヘリコプター108機喪失、618機損傷、戦車150両破壊という壊滅的打撃を被りました。',
+
+            midImg4: {
+                src: 'assets/images/1971_1973/1971_TB_ThuMayBay.jpg',
+                alt: 'Máy bay trực thăng, xe thiết giáp của Quân Việt Nam Cộng hòa bị diệt ở Bản Đông trong chiến dịch Đường 9 - Nam Lào (Nguồn: QĐNDVN)',
+                alt_ja: '国道9号線・ラオス南部作戦のバンドンで撃破された南ベトナム軍のヘリコプターと装甲車（ベトナム人民軍新聞）',
+                caption: 'Máy bay trực thăng, xe thiết giáp của Quân Việt Nam Cộng hòa bị diệt ở Bản Đông trong chiến dịch Đường 9 - Nam Lào (Nguồn: QĐNDVN)',
+                caption_ja: '国道9号線・ラオス南部作戦のバンドンで撃破された南ベトナム軍のヘリコプターと装甲車（ベトナム人民軍新聞）'
+            },
 
             footnote: '(*) Chiến dịch Lam Sơn 719 là cuộc hành quân quân sự lớn của quân Việt Nam Cộng hòa, được Mỹ yểm trợ mạnh bằng không quân và pháo binh, diễn ra tại Đường 9 – Nam Lào từ ngày 8/2 đến 23/3/1971.',
             footnote_ja: '(*) ラムソン719作戦：米軍の強力な航空・砲兵支援を受けた南ベトナム軍が、1971年2月8日から3月23日にかけて国道9号線およびラオス南部で展開した大規模侵攻作戦。',
