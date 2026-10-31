@@ -591,7 +591,7 @@
     /* ==========================================================================
        BADGES ĐẶC BIỆT CHO KHUNG ẢNH (VIDEO & GIẢI MÃ PUZZLE)
        ========================================================================== */
-    .video-shelf-badge,
+    .video-shelf-badge, .puzzle-shelf-badge { display: none !important; }
     .puzzle-shelf-badge {
       position: absolute;
       bottom: 4px;
@@ -2642,22 +2642,13 @@
           </div>`;
       }
 
-      // Huy hiệu góc cho video hoặc puzzle
-      let badgeHtml = '';
-      if (o.isVideo) {
-        badgeHtml = `<span class="video-shelf-badge">▶ Video</span>`;
-      } else if (o.isDecode) {
-        const badgeTxt = (currentLang === 'ja') ? '🧩 解読' : '🧩 Giải mã';
-        badgeHtml = `<span class="puzzle-shelf-badge">${badgeTxt}</span>`;
-      }
-
       const displayTitle = o.shelfTitle || o.t;
       const displayYear = o.y ? `<em>${o.y}</em>` : '';
 
       b.innerHTML = `
         <div class="wood">
           <div class="mat">
-            <div class="img-box">${imgContent}${badgeHtml}</div>
+            <div class="img-box">${imgContent}</div>
           </div>
         </div>
         <i>${displayTitle}${displayYear}</i>
