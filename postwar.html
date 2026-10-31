@@ -250,7 +250,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex: 0 0 42%;
+      flex: 0 0 auto;
+      width: 175px;
       transition: transform .28s cubic-bezier(0.2, 0.8, 0.2, 1), filter .28s ease;
       filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.7));
     }
@@ -317,19 +318,14 @@
     .fm i {
       font-style: normal;
       margin-top: 6px;
-      font-size: 11px;
+      font-size: 13.5px;
       color: var(--gold2);
       text-align: center;
       line-height: 1.25;
       font-weight: 600;
-      font-family: var(--sans);
+      font-family: var(--serif);
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-      max-width: 100%;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      word-break: break-word;
+      white-space: nowrap;
     }
 
     .fm em {
@@ -337,7 +333,8 @@
       font-style: normal;
       font-weight: 500;
       color: var(--mute);
-      font-size: 10px;
+      font-size: 11px;
+      font-family: var(--serif);
       letter-spacing: .04em;
     }
 
@@ -521,17 +518,17 @@
     }
 
     .altar-caption {
-      margin-top: 4px;
-      font-size: 8.5px;
-      line-height: 1.25;
+      margin-top: 5px;
+      font-size: 11.5px;
+      line-height: 1.3;
       color: var(--gold2);
       text-align: center;
-      font-family: var(--sans);
-      font-weight: 700;
-      letter-spacing: .04em;
+      font-family: var(--serif);
+      font-weight: 600;
+      letter-spacing: .02em;
       text-transform: uppercase;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
-      max-width: 100%;
+      max-width: 320px;
     }
 
     /* Khung ảnh chân dung Thiếu tướng đứng một mình */
@@ -540,6 +537,9 @@
       cursor: pointer;
       position: relative;
       z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 136px;
       margin-top: 3px;
       transition: transform .28s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -552,6 +552,7 @@
     }
 
     .pt .wood {
+      width: 100%;
       padding: 5px;
       background: linear-gradient(135deg, #ffd782 0%, #9e6d2b 30%, #ffd782 50%, #684110 80%, #b8862d 100%);
       box-shadow: 0 8px 16px rgba(0, 0, 0, .8), inset 0 1px 3px rgba(255, 255, 255, 0.7);
@@ -567,15 +568,16 @@
     }
 
     .pt-caption {
-      margin-top: 4px;
-      font-size: 10px;
+      margin-top: 5px;
+      font-size: 13.5px;
       color: var(--gold2);
       text-align: center;
-      font-family: var(--sans);
+      font-family: var(--serif);
       font-weight: 600;
-      letter-spacing: .03em;
+      letter-spacing: .02em;
       line-height: 1.25;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+      white-space: nowrap;
     }
 
     /* ==========================================================================
@@ -1197,17 +1199,7 @@
     }
 
     .close-cab-sub {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: .04em;
-      color: var(--mute);
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
-      transition: color .25s;
-    }
-
-    .btn-close-cabinet:hover .close-cab-sub,
-    .btn-close-cabinet.is-open .close-cab-sub {
-      color: var(--gold2);
+      display: none !important;
     }
 
     /* ==========================================================================
@@ -1754,7 +1746,7 @@
               </div>
             </div>
             <div class="pt-caption" id="ptCaption">Thiếu tướng Phạm Xuân Ẩn<br><span
-                style="font-weight:400;color:var(--mute);font-size:9.5px">(1927 – 2006)</span></div>
+                style="font-weight:400;color:var(--mute);font-size:10.5px">(1927 – 2006)</span></div>
           </button>
         </div>
 
@@ -1799,7 +1791,6 @@
         </span>
         <span class="close-cab-text" id="closeCabText">MỞ TỦ LƯU NIỆM</span>
       </div>
-      <span class="close-cab-sub" id="closeCabSub">Chạm để mở cánh cửa lịch sử ✦</span>
     </button>
   </div>
 
@@ -1841,9 +1832,9 @@
           doorText: 'MỞ TỦ LƯU NIỆM',
           sealHint: 'Chạm để khám phá',
           btnOpenText: 'MỞ TỦ LƯU NIỆM',
-          btnOpenSub: 'Chạm để mở cánh cửa lịch sử',
+          btnOpenSub: '',
           btnCloseText: 'ĐÓNG TỦ LƯU NIỆM',
-          btnCloseSub: 'Chạm để khép lại cánh cửa lịch sử',
+          btnCloseSub: '',
           imgPrefix: 'Ảnh'
         },
         L: [
@@ -1897,7 +1888,7 @@
             shelfTitle: 'Tiễn bạn',
             t: '',
             img: 'Đại tá Tư Cang đọc thơ',
-            imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_DaiTaTuCangDocBaiThoTienBan_thumb.jpg',
             isVideo: true,
             videoSrc: 'assets/images/PhongLuuNiem/PLN_DaiTaTuCangDocBaiThoTienBan.mp4',
             caption: 'Đại tá Tư Cang rưng rưng xúc động đọc bài thơ về người đồng đội cũ Phạm Xuân Ẩn (Nguồn: Sao Đầu Mũ)',
@@ -1955,9 +1946,9 @@
           doorText: '記念キャビネットを開く',
           sealHint: 'クリックして開扉 ✦',
           btnOpenText: '記念キャビネットを開く',
-          btnOpenSub: 'クリックして開扉 ✦',
+          btnOpenSub: '',
           btnCloseText: '記念キャビネットを閉じる',
-          btnCloseSub: 'クリックして扉を閉じる ✦',
+          btnCloseSub: '',
           imgPrefix: '写真'
         },
         L: [
@@ -2011,7 +2002,7 @@
             shelfTitle: '友を送る',
             t: '友を送る',
             img: 'トゥ・カン大佐の詩朗読',
-            imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
+            imgSrc: 'assets/images/PhongLuuNiem/PLN_DaiTaTuCangDocBaiThoTienBan_thumb.jpg',
             isVideo: true,
             videoSrc: 'assets/images/PhongLuuNiem/PLN_DaiTaTuCangDocBaiThoTienBan.mp4',
             caption: 'かつての戦友ファム・スアン・アンを偲び、涙ながらに詩を朗読するトゥ・カン大佐（出典：サオ・ダウ・ムー）',
@@ -2616,6 +2607,12 @@
       document.getElementById('hero').textContent = m.hero;
       document.getElementById('altarCaption').textContent = m.altarCp;
       document.getElementById('altarCard').setAttribute('aria-label', m.altarAria);
+      const ptCap = document.getElementById('ptCaption');
+      if (ptCap) {
+        ptCap.innerHTML = (currentLang === 'ja')
+          ? 'ファム・スアン・アン少将<br><span style="font-weight:400;color:var(--mute);font-size:10px">(1927 - 2006)</span>'
+          : 'Thiếu tướng Phạm Xuân Ẩn<br><span style="font-weight:400;color:var(--mute);font-size:10.5px">(1927 - 2006)</span>';
+      }
       updateFloorBtn();
 
       // Cập nhật đường dẫn ảnh 2 lá cờ, bàn thờ & chân dung
@@ -2729,20 +2726,17 @@
       const m = DATA[currentLang]?.meta || DATA.vi.meta;
       const btn = document.getElementById('btnCloseCab');
       const txt = document.getElementById('closeCabText');
-      const sub = document.getElementById('closeCabSub');
       const icon = document.getElementById('closeCabIcon');
 
       if (opened) {
         if (btn) btn.classList.add('is-open');
         if (txt) txt.textContent = m.btnCloseText;
-        if (sub) sub.textContent = m.btnCloseSub;
         if (icon) {
           icon.innerHTML = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`;
         }
       } else {
         if (btn) btn.classList.remove('is-open');
         if (txt) txt.textContent = m.btnOpenText;
-        if (sub) sub.textContent = m.btnOpenSub;
         if (icon) {
           icon.innerHTML = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"></circle><path d="M10.5 12.5L20 3"></path><path d="M16 3l4 4"></path><path d="M13 6l2 2"></path></svg>`;
         }

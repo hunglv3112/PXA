@@ -245,54 +245,34 @@
       background: linear-gradient(180deg, rgba(28, 20, 13, .3), rgba(14, 10, 6, .94));
     }
 
-    .face .t {
-      position: absolute;
-      top: 16px;
-      font-family: var(--serif);
-      font-weight: 700;
-      font-size: 13.5px;
-      line-height: 1;
-      letter-spacing: .16em;
-      z-index: 2;
-    }
-
-    .front .t {
-      left: 20px;
-      color: var(--gold);
-    }
-
-    .back .t {
-      right: 20px;
-      color: var(--gold);
-    }
-
     .face .hint {
       position: absolute;
-      top: 46px;
+      top: 18px;
       z-index: 2;
-      padding: 5px 11px;
+      padding: 7px 15px;
       border-radius: 999px;
       font-family: var(--sans);
-      font-weight: 500;
-      font-size: 12px;
+      font-weight: 600;
+      font-size: 13px;
       line-height: 1;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, .35);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, .45);
+      letter-spacing: .02em;
     }
 
     .front .hint {
       left: 20px;
       background: rgba(14, 31, 37, .88);
-      color: var(--mute);
-      border: 1px solid rgba(143, 193, 212, .25);
+      color: #e4ecef;
+      border: 1px solid rgba(235, 203, 69, .4);
     }
 
     .back .hint {
       right: 20px;
       background: rgba(26, 17, 10, .88);
-      color: #d6caa8;
-      border: 1px solid rgba(235, 203, 69, .25);
+      color: #f5eedc;
+      border: 1px solid rgba(235, 203, 69, .4);
     }
 
     .face .n {
@@ -304,7 +284,8 @@
       font-family: var(--serif);
       font-weight: 700;
       font-size: 38px;
-      line-height: 1.05;
+      line-height: 1;
+      margin: 0;
     }
 
     .front .n {
@@ -313,23 +294,6 @@
 
     .back .n {
       color: var(--paper);
-    }
-
-    .face .n small {
-      display: block;
-      margin-top: 8px;
-      font-family: var(--sans);
-      font-weight: 500;
-      font-size: 13px;
-      line-height: 1.45;
-    }
-
-    .front .n small {
-      color: var(--gold);
-    }
-
-    .back .n small {
-      color: var(--gold);
     }
 
     .face .photo {
@@ -440,32 +404,35 @@
     .acc-heading {
       margin: 0;
       font-family: var(--serif);
-      font-weight: 700;
-      font-size: 15.5px;
+      font-weight: 600;
+      font-size: 16px;
       line-height: 1.4;
-      color: var(--gold2);
-      text-transform: uppercase;
-      letter-spacing: .03em;
+      color: #fff;
+      letter-spacing: .01em;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     .acc-heading b {
-      color: var(--gold);
+      color: #fff;
       font-family: var(--sans);
-      font-size: 16px;
+      font-size: 15px;
+      font-weight: 700;
       flex-shrink: 0;
+      transition: color 0.25s ease;
     }
 
     .acc-title {
-      color: var(--gold2);
-      transition: color 0.2s ease;
+      color: #fff;
+      transition: color 0.25s ease;
     }
 
+    .acc-item:hover .acc-heading b,
     .acc-item:hover .acc-title,
+    .acc-item.open .acc-heading b,
     .acc-item.open .acc-title {
-      color: #fff;
+      color: var(--gold);
     }
 
     .acc-icon {
@@ -476,15 +443,20 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background: rgba(235, 203, 69, 0.1);
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, color 0.3s ease;
+    }
+
+    .acc-item:hover .acc-icon {
+      background: rgba(235, 203, 69, 0.18);
       color: var(--gold);
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
     }
 
     .acc-item.open .acc-icon {
       transform: rotate(180deg);
-      background: rgba(235, 203, 69, 0.25);
-      color: #fff;
+      background: rgba(235, 203, 69, 0.28);
+      color: var(--gold);
     }
 
     .acc-panel {
@@ -541,7 +513,7 @@
     /* Dây nối hồ sơ (.strings) */
     .strings {
       position: relative;
-      height: 480px;
+      height: 520px;
     }
 
     .strings svg {
@@ -654,22 +626,16 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.85) 100%);
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.3) 100%);
       z-index: 2;
       pointer-events: none;
-    }
-
-    .ph span {
-      position: relative;
-      z-index: 3;
-      letter-spacing: .5px;
     }
 
     .card h3 {
       margin: 0 0 6px;
       font-family: var(--serif);
       font-weight: 700;
-      font-size: 17.5px;
+      font-size: 17px;
       line-height: 1.25;
       color: #1a1d21;
     }
@@ -677,8 +643,8 @@
     .card p {
       margin: 0;
       font-family: var(--sans);
-      font-size: 13.5px;
-      line-height: 1.5;
+      font-size: 13px;
+      line-height: 1.48;
       color: #3f3c34;
     }
 
@@ -1012,15 +978,13 @@
           <div class="flip">
             <div class="face front">
               <div class="photo" aria-hidden="true"></div>
-              <span class="t">1927 – 2006</span>
               <span class="hint">↻ Bấm để lật</span>
-              <div class="n">Tình báo<small>Phạm Xuân Ẩn · Cán bộ tình báo chiến lược</small></div>
+              <div class="n">Tình báo</div>
             </div>
             <div class="face back">
               <div class="photo" aria-hidden="true"></div>
-              <span class="t">1927 – 2006</span>
               <span class="hint">↻ Bấm để lật</span>
-              <div class="n">Nhà báo<small>Phạm Xuân Ẩn · Phóng viên Reuters &amp; TIME</small></div>
+              <div class="n">Nhà báo</div>
             </div>
           </div>
         </div>
@@ -1035,12 +999,23 @@
               <button type="button" class="acc-trigger" aria-expanded="false">
                 <h3 class="acc-heading"><b>01.</b> <span class="acc-title">Lý do lựa chọn nhân vật</span></h3>
                 <span class="acc-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
                 </span>
               </button>
               <div class="acc-panel">
                 <div class="acc-panel-inner">
-                  <p>Nhắc đến chiến tranh Việt Nam, người ta thường nhớ đến những chiến thắng vang dội như Điện Biên Phủ, hay những vị tướng đã đi vào lịch sử như Đại tướng Võ Nguyên Giáp. Thế nhưng, góp phần làm nên những thắng lợi ấy còn có lực lượng tình báo, những con người lặng lẽ hoạt động phía sau chiến tuyến.<br><br>Khi bắt đầu tìm hiểu, nhóm nhận ra đây là khoảng trống của cả một đội ngũ đông đảo, gồm những người đã gửi cả cuộc đời và tên tuổi của mình vào bóng tối, như Phạm Ngọc Thảo, Vũ Ngọc Nhạ hay Đặng Trần Đức... Giữa họ, Phạm Xuân Ẩn đặc biệt thu hút nhóm bởi cuộc đời hai thân phận của ông. Ông là một sĩ quan tình báo với 498 báo cáo và tài liệu chiến lược gửi về căn cứ, đồng thời là một nhà báo xuất sắc của Reuters và TIME. Chính sự song hành giữa hai vai trò ấy đã trở thành điểm khởi đầu cho dự án của nhóm.</p>
+                  <p>Nhắc đến chiến tranh Việt Nam, người ta thường nhớ đến những chiến thắng vang dội như Điện Biên
+                    Phủ, hay những vị tướng đã đi vào lịch sử như Đại tướng Võ Nguyên Giáp. Thế nhưng, góp phần làm nên
+                    những thắng lợi ấy còn có lực lượng tình báo, những con người lặng lẽ hoạt động phía sau chiến
+                    tuyến.<br><br>Khi bắt đầu tìm hiểu, nhóm nhận ra đây là khoảng trống của cả một đội ngũ đông đảo,
+                    gồm những người đã gửi cả cuộc đời và tên tuổi của mình vào bóng tối, như Phạm Ngọc Thảo, Vũ Ngọc
+                    Nhạ hay Đặng Trần Đức... Giữa họ, Phạm Xuân Ẩn đặc biệt thu hút nhóm bởi cuộc đời hai thân phận của
+                    ông. Ông là một sĩ quan tình báo với 498 báo cáo và tài liệu chiến lược gửi về căn cứ, đồng thời là
+                    một nhà báo xuất sắc của Reuters và TIME. Chính sự song hành giữa hai vai trò ấy đã trở thành điểm
+                    khởi đầu cho dự án của nhóm.</p>
                 </div>
               </div>
             </div>
@@ -1049,12 +1024,21 @@
               <button type="button" class="acc-trigger" aria-expanded="false">
                 <h3 class="acc-heading"><b>02.</b> <span class="acc-title">Lý do lựa chọn hình thức website</span></h3>
                 <span class="acc-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
                 </span>
               </button>
               <div class="acc-panel">
                 <div class="acc-panel-inner">
-                  <p>Cuộc đời Phạm Xuân Ẩn đã được kể lại trong nhiều cuốn sách, bài viết, tiêu biểu như “Điệp viên hoàn hảo” của Larry Berman, “Một người Việt trầm lặng” của Jean-Claude Pomonti hay “Tên người như cuộc đời” của Nguyễn Thị Ngọc Hải. Vì vậy, điều nhóm quan tâm là làm thế nào để những tư liệu ấy đến gần hơn với người đọc, bằng một hình thức mới.<br><br>Từ định hướng đó, nhóm xây dựng một website kết hợp timeline, hình ảnh và tư liệu lịch sử. Khi các dấu mốc được đặt cạnh nhau theo trình tự thời gian, người đọc có thể dễ dàng theo dõi hành trình của ông, đồng thời thấy rõ mối liên hệ giữa hoạt động báo chí, nhiệm vụ tình báo và những biến động của lịch sử Việt Nam.</p>
+                  <p>Cuộc đời Phạm Xuân Ẩn đã được kể lại trong nhiều cuốn sách, bài viết, tiêu biểu như “Điệp viên hoàn
+                    hảo” của Larry Berman, “Một người Việt trầm lặng” của Jean-Claude Pomonti hay “Tên người như cuộc
+                    đời” của Nguyễn Thị Ngọc Hải. Vì vậy, điều nhóm quan tâm là làm thế nào để những tư liệu ấy đến gần
+                    hơn với người đọc, bằng một hình thức mới.<br><br>Từ định hướng đó, nhóm xây dựng một website kết
+                    hợp timeline, hình ảnh và tư liệu lịch sử. Khi các dấu mốc được đặt cạnh nhau theo trình tự thời
+                    gian, người đọc có thể dễ dàng theo dõi hành trình của ông, đồng thời thấy rõ mối liên hệ giữa hoạt
+                    động báo chí, nhiệm vụ tình báo và những biến động của lịch sử Việt Nam.</p>
                 </div>
               </div>
             </div>
@@ -1063,26 +1047,48 @@
               <button type="button" class="acc-trigger" aria-expanded="false">
                 <h3 class="acc-heading"><b>03.</b> <span class="acc-title">Nội dung và phạm vi thể hiện</span></h3>
                 <span class="acc-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
                 </span>
               </button>
               <div class="acc-panel">
                 <div class="acc-panel-inner">
-                  <p>Website dẫn người đọc đi từ bối cảnh lịch sử Việt Nam, qua tuổi thơ của Phạm Xuân Ẩn và bước ngoặt tham gia cách mạng vào tháng 8 năm 1945, đến quá trình chuẩn bị và lên đường du học báo chí tại Mỹ. Trọng tâm của website là giai đoạn 1957–1976, khi ông đồng thời hoạt động trong hai thân phận nhà báo và tình báo, cho đến lúc những năm tháng hoạt động bí mật khép lại và thân phận tình báo được công khai.<br><br>Bên cạnh đó, website còn giới thiệu những chiến công, thành tích của ông và cuộc sống bình dị của ông sau chiến tranh, giúp người đọc có cái nhìn đầy đủ hơn về con người phía sau những năm tháng hoạt động đặc biệt.</p>
+                  <p>Website dẫn người đọc đi từ bối cảnh lịch sử Việt Nam, qua tuổi thơ của Phạm Xuân Ẩn và bước ngoặt
+                    tham gia cách mạng vào tháng 8 năm 1945, đến quá trình chuẩn bị và lên đường du học báo chí tại Mỹ.
+                    Trọng tâm của website là giai đoạn 1957–1976, khi ông đồng thời hoạt động trong hai thân phận nhà
+                    báo và tình báo, cho đến lúc những năm tháng hoạt động bí mật khép lại và thân phận tình báo được
+                    công khai.<br><br>Bên cạnh đó, website còn giới thiệu những chiến công, thành tích của ông và cuộc
+                    sống bình dị của ông sau chiến tranh, giúp người đọc có cái nhìn đầy đủ hơn về con người phía sau
+                    những năm tháng hoạt động đặc biệt.</p>
                 </div>
               </div>
             </div>
 
             <div class="acc-item">
               <button type="button" class="acc-trigger" aria-expanded="false">
-                <h3 class="acc-heading"><b>04.</b> <span class="acc-title">Cái duyên với lịch sử và cầu nối ngôn ngữ Việt - Nhật</span></h3>
+                <h3 class="acc-heading"><b>04.</b> <span class="acc-title">Cái duyên với lịch sử và cầu nối ngôn ngữ
+                    Việt - Nhật</span></h3>
                 <span class="acc-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
                 </span>
               </button>
               <div class="acc-panel">
                 <div class="acc-panel-inner">
-                  <p>Dự án bắt đầu từ một cái duyên đặc biệt: nhóm tình cờ biết đến bản dịch tiếng Nhật của cuốn sách “Phạm Xuân Ẩn: Tên người như cuộc đời” của Nguyễn Thị Ngọc Hải do dịch giả Shibuya Yuki chuyển ngữ. Điều đó khiến nhóm muốn dùng chính thứ ngôn ngữ đã theo học suốt bốn năm đại học để tiếp tục kể câu chuyện ấy bằng một hình thức mới, giới thiệu về một vị anh hùng của dân tộc Việt tới bạn bè quốc tế.<br><br>Hơn thế nữa, đây cũng là cách nhóm bày tỏ lòng biết ơn đối với Phạm Xuân Ẩn, và rộng hơn là với những thế hệ đã âm thầm cống hiến, hy sinh để hôm nay Việt Nam có hòa bình. Nhóm hiểu rằng một website không thể kể hết cuộc đời ông, cũng không thể gọi tên tất cả những người đã nằm lại trong bóng tối. Nhưng nếu sau khi đọc, có thêm một người biết đến Phạm Xuân Ẩn, hiểu ông là ai và nhớ rằng phía sau ông còn có biết bao con người thầm lặng khác, thì đó đã là một thành công có ý nghĩa với nhóm.</p>
+                  <p>Dự án bắt đầu từ một cái duyên đặc biệt: nhóm tình cờ biết đến bản dịch tiếng Nhật của cuốn sách
+                    “Phạm Xuân Ẩn: Tên người như cuộc đời” của Nguyễn Thị Ngọc Hải do dịch giả Shibuya Yuki chuyển ngữ.
+                    Điều đó khiến nhóm muốn dùng chính thứ ngôn ngữ đã theo học suốt bốn năm đại học để tiếp tục kể câu
+                    chuyện ấy bằng một hình thức mới, giới thiệu về một vị anh hùng của dân tộc Việt tới bạn bè quốc
+                    tế.<br><br>Hơn thế nữa, đây cũng là cách nhóm bày tỏ lòng biết ơn đối với Phạm Xuân Ẩn, và rộng hơn
+                    là với những thế hệ đã âm thầm cống hiến, hy sinh để hôm nay Việt Nam có hòa bình. Nhóm hiểu rằng
+                    một website không thể kể hết cuộc đời ông, cũng không thể gọi tên tất cả những người đã nằm lại
+                    trong bóng tối. Nhưng nếu sau khi đọc, có thêm một người biết đến Phạm Xuân Ẩn, hiểu ông là ai và
+                    nhớ rằng phía sau ông còn có biết bao con người thầm lặng khác, thì đó đã là một thành công có ý
+                    nghĩa với nhóm.</p>
                 </div>
               </div>
             </div>
@@ -1093,35 +1099,36 @@
 
     <!-- Khối 4 lối vào câu chuyện -->
     <section class="board">
-      <h2>Bốn lối vào câu chuyện</h2>
-      <p class="sub">Mỗi tấm ảnh là một phần của hồ sơ. Lần theo sợi chỉ đỏ để nối chúng lại.</p>
+      <h2>Hành trình của Phạm Xuân Ẩn qua những mảnh ghép lịch sử</h2>
+      <p class="sub">Men theo những bức ảnh còn ẩn trong màn sương mờ lịch sử, ghép nối những mảnh tư liệu để
+        dần hé lộ câu chuyện về một con người, hai cuộc đời.</p>
       <div class="strings" id="strings">
         <svg id="web" aria-hidden="true"></svg>
         <a class="card c1" href="javascript:void(0)">
-          <div class="ph"><span>1954–75</span></div>
+          <div class="ph"></div>
           <h3>Bối cảnh lịch sử Việt Nam</h3>
-          <p>Đất nước chia đôi, cuộc chiến và những thế lực phía sau.</p>
+          <p>Từ ách đô hộ trăm năm đến âm mưu chia cắt hai miền Bắc - Nam của những thế lực phía sau.</p>
         </a>
         <a class="card c2" href="javascript:void(0)">
-          <div class="ph"><span>1927</span></div>
+          <div class="ph"></div>
           <h3>Tiểu sử Phạm Xuân Ẩn</h3>
-          <p>Từ cậu học trò Biên Hòa đến người của hai thế giới.</p>
+          <p>Cậu học trò của Biên Hòa và hành trình trở thành nhà báo và tình báo.</p>
         </a>
         <a class="card c3" href="javascript:void(0)">
-          <div class="ph"><span>1957–76</span></div>
+          <div class="ph"></div>
           <h3>Timeline 1957 – 1976</h3>
-          <p>Các mốc báo chí, tình báo và biến động lịch sử, xếp cạnh nhau.</p>
+          <p>Những dấu mốc báo chí, tình báo và biến động lịch sử đan xen qua từng năm tháng.</p>
         </a>
         <a class="card c4" href="javascript:void(0)">
-          <div class="ph"><span>Lưu niệm</span></div>
+          <div class="ph"></div>
           <h3>Phòng lưu niệm</h3>
-          <p>Hiện vật, tư liệu và những gì còn lại.</p>
+          <p>Những thành tích danh hiệu và những gì quý giá nhất về cuộc đời ông.</p>
         </a>
       </div>
     </section>
 
     <!-- Nút lớn dẫn sang trang Bối cảnh lịch sử -->
-    <a class="next" href="context.html">▼ Khám phá bối cảnh lịch sử &amp; tiền truyện (1858 - 1956) ▼</a>
+    <a class="next" href="context.html">Khám phá bối cảnh lịch sử Việt Nam (1858 - 1975)</a>
   </div>
 
   <!-- Nạp các script chung của hệ thống -->
@@ -1327,7 +1334,7 @@
     var I = [
       ['h1 .a', ['ファム・スアン・アン：']],
       ['h1 .b', ['諜報員か、それとも記者か？']],
-      ['.poster .n', ['諜報員<small>ファム・スアン・アン · 戦略情報を担う人物</small>', '記者<small>ファム・スアン・アン · ロイター／TIME記者</small>']],
+      ['.poster .n', ['諜報員', '記者']],
       ['.poster .hint', ['↻ タップで裏返す', '↻ タップで裏返す']],
       ['.lead blockquote', ['「彼らの仕事は、先んじて知り、先んじて理解し、沈黙を守ること。それゆえ、その沈黙こそが彼らを忘れられやすくもしている。」']],
       ['.acc-title', [
@@ -1342,11 +1349,15 @@
         '本ウェブサイトは、当時の歴史的背景から、ファム・スアン・アンの幼少期、1945年8月の革命参加という転機、そして米国へのジャーナリズム留学に向けた準備と出発へと読者を導きます。中心となるのは、彼が記者と諜報員という二重の身分で活動した1957年から1976年までの期間であり、秘密活動が幕を閉じ、諜報員としての素性が公表される瞬間に至るまでを描きます。<br><br>さらに、彼の戦功や実績、そして戦後の素朴で穏やかな日常生活も紹介し、あの激動の時代を生きた人物のより多面的な人間像をお伝えします。',
         'このプロジェクトは特別なご縁から始まりました。私たちはグエン・ティ・ゴック・ハイ著『Phạm Xuân Ẩn: Tên người như cuộc đời』が渋谷由紀氏によって日本語に翻訳されていることを偶然知ったのです。大学の4年間で学んできたこの日本語という言語を活かし、新しい形式で物語を紡ぎ直し、ベトナムの英雄を世界の友人に紹介したいという思いが強く湧き上がりました。<br><br>それ以上に、これはファム・スアン・アンへの、そして今日のベトナムの平和のために黙々と尽力し犠牲となった先人たちへの感謝を捧げる私たちの試みでもあります。一つのウェブサイトですべてを語り尽くすことも、暗闇の中に眠るすべての人々の名を挙げることも叶いません。しかし、このサイトを通じてファム・スアン・アンを知り、彼が何者であったのか、そしてその背後には数え切れないほどの名もなき人々がいたことを心に留めてくれる人が一人でも増えるなら、それは私たちにとって大きな意味を持つ成功なのです。'
       ]],
-      ['.board h2', ['物語への四つの入口']],
-      ['.board .sub', ['写真の一枚一枚が資料の一部です。赤い糸をたどって、それらをつなげてください。']],
+      ['.board h2', ['歴史の断片からたどるファム・スアン・アンの軌跡']],
+      ['.board .sub', ['歴史の霧の中に今なお残る写真たち。その足跡をたどり、断片的な資料を紡ぎ合わせることで、一人の人間、二つの人生の物語が次第に明かされていく。']],
       ['.card h3', ['ベトナムの歴史的背景', 'ファム・スアン・アンの経歴', '年表 1957 – 1976', '記念館']],
-      ['.card p', ['国が南北に分かれた時代、戦争、そしてその背後にあった勢力。', 'ビエンホアの少年から、二つの世界に生きた人物へ。', '報道・諜報・歴史の動きの節目を、並べて見る。', '遺品、資料、そして残されたもの。']],
-      ['.c4 .ph span', ['記念館']],
+      ['.card p', [
+        '百年にわたる植民地支配から、背後の大国による南北分断の企みまで。',
+        'ビエンホアの少年から、記者と諜報員という二つの道を歩む軌跡へ。',
+        '激動の歳月とともに織りなされた報道と諜報の記録。',
+        '数々の功績や栄誉、そして彼の生涯において最も尊いもの。'
+      ]],
       ['.next', ['▼ 歴史的背景と前史を探る（1858 - 1956） ▼']]
     ];
 
