@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ==============================================================================
  * LOGIC ĐIỀU KHIỂN ĐIỀU HƯỚNG 4 MÀN HÌNH (js/context.js) — HỖ TRỢ SONG NGỮ
  * ==============================================================================
@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4.1. Hiển thị Màn hình 1: Giới thiệu đề tài → Bối cảnh lịch sử
   function showContext() {
     pauseBioVideos();
-    window.location.href = 'intro.html';
+    window.location.href = 'index.html';
   }
 
   // 4.2. Hiển thị Màn hình 2: Tiểu sử Phạm Xuân Ẩn (Hồ sơ mật)

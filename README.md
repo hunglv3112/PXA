@@ -1,4 +1,4 @@
-# Dự Án Trục Thời Gian Tương Tác Hai Nhánh (Dual-Axis Horizontal Timeline)
+﻿# Dự Án Trục Thời Gian Tương Tác Hai Nhánh (Dual-Axis Horizontal Timeline)
 
 > Dự án giao diện dòng thời gian lịch sử tương tác hai nửa song song (Trục trên: Tình báo, Trục dưới: Nhà báo). Dự án được thiết kế chuyên nghiệp, module hóa toàn bộ thư mục để bạn có thể **thay thế chữ, hình ảnh, màu sắc và sự kiện** một cách nhanh chóng nhất.
 
