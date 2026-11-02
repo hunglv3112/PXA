@@ -676,6 +676,27 @@
       box-shadow: 0 0 10px rgba(235, 203, 69, 0.3);
     }
 
+    /* Trạng thái khi đã giải mã xong toàn bộ 3 mảnh của hồ sơ: sáng đèn xanh lá cây */
+    .decode-tab-btn.completed {
+      background: linear-gradient(135deg, rgba(39, 174, 96, 0.25) 0%, rgba(46, 204, 113, 0.35) 100%);
+      color: #7bed9f;
+      border-color: #2ed573;
+      box-shadow: 0 0 12px rgba(46, 213, 115, 0.45);
+    }
+
+    .decode-tab-btn.completed:hover {
+      color: #ffffff;
+      border-color: #7bed9f;
+      box-shadow: 0 0 14px rgba(46, 213, 115, 0.6);
+    }
+
+    .decode-tab-btn.completed.active {
+      background: linear-gradient(135deg, rgba(39, 174, 96, 0.4) 0%, rgba(46, 204, 113, 0.55) 100%);
+      color: #ffffff;
+      border-color: #2ed573;
+      box-shadow: 0 0 18px rgba(46, 213, 115, 0.75), inset 0 0 8px rgba(46, 213, 115, 0.3);
+    }
+
     .decode-photo-box {
       position: relative;
       width: 100%;
@@ -2603,11 +2624,16 @@
 
       const activePieceObj = curArchive.pieces[decodeState.activePiece] || curArchive.pieces[0];
 
-      let tabsHtml = list.map((item, idx) => `
-        <button type="button" class="decode-tab-btn ${idx === decodeState.archiveIndex ? 'active' : ''}" onclick="window.switchDecodeArchive(${idx})">
-          ${item.name}: ${item.title.length > 20 ? item.title.slice(0, 18) + '…' : item.title}
-        </button>
-      `).join('');
+      let tabsHtml = list.map((item, idx) => {
+        const itemUnlocked = decodeState.unlocked[item.id] || [false, false, false];
+        const isCompleted = itemUnlocked.filter(Boolean).length === 3;
+        const isActive = idx === decodeState.archiveIndex;
+        return `
+          <button type="button" class="decode-tab-btn ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}" onclick="window.switchDecodeArchive(${idx})">
+            ${isCompleted ? '✓ ' : ''}${item.name}: ${item.title.length > 20 ? item.title.slice(0, 18) + '…' : item.title}
+          </button>
+        `;
+      }).join('');
 
       let piecesHtml = curArchive.pieces.map((p, idx) => {
         const isDone = unlockedArr[idx];
