@@ -824,6 +824,11 @@
       border-color: #4caf50;
     }
 
+    .decode-quiz-area {
+      width: 100%;
+      min-height: 180px;
+    }
+
     .decode-quiz-card {
       background: linear-gradient(135deg, rgba(22, 48, 58, 0.95) 0%, rgba(14, 31, 37, 0.98) 100%);
       border: 1.5px solid var(--gold);
@@ -2502,8 +2507,17 @@
     // ==============================================================================
     function openModalPostwar(opt) {
       stopVideos();
-      const { y, t, heroImg, heroCaption, videoSrc, bodyHtml, rawHtml, sub } = opt;
+      const { y, t, heroImg, heroCaption, videoSrc, bodyHtml, rawHtml, sub, keepScroll } = opt;
       let html = '';
+
+      // Thoát focus khỏi phần tử hiện tại để trình duyệt không tự động cuộn lên đầu dialog khi DOM bị thay thế
+      if (document.activeElement && typeof document.activeElement.blur === 'function') {
+        try { document.activeElement.blur(); } catch (e) { }
+      }
+
+      const db = document.getElementById('db');
+      const shouldKeep = !!keepScroll;
+      const prevScroll = (shouldKeep && db) ? db.scrollTop : 0;
 
       // 1. Ảnh hoặc Video Hero ở trên cùng
       if (videoSrc) {
@@ -2546,9 +2560,18 @@
       }
       html += `</div>`;
 
-      const db = document.getElementById('db');
       db.innerHTML = html;
-      db.scrollTop = 0;
+      if (shouldKeep && db) {
+        db.scrollTop = prevScroll;
+        requestAnimationFrame(() => {
+          if (db) db.scrollTop = prevScroll;
+        });
+        setTimeout(() => {
+          if (db) db.scrollTop = prevScroll;
+        }, 30);
+      } else {
+        db.scrollTop = 0;
+      }
       if (!dlg.open) dlg.showModal();
       syncModalLangBtns();
     }
@@ -2584,7 +2607,7 @@
     const O = o => {
       if (o.isDecode) {
         currentModalState = { type: 'decode' };
-        openDecodeGame(0);
+        openDecodeGame(0, false);
         return;
       }
       openModalPostwar({
@@ -2600,7 +2623,7 @@
     // ==============================================================================
     // BỘ ĐIỀU KHIỂN MINI-GAME: GIẢI MÃ PHẠM XUÂN ẨN
     // ==============================================================================
-    function openDecodeGame(targetIdx = null) {
+    function openDecodeGame(targetIdx = null, preserveScroll = true) {
       stopVideos();
       if (targetIdx !== null && targetIdx >= 0) {
         decodeState.archiveIndex = targetIdx;
@@ -2662,19 +2685,19 @@
       if (!isAllUnlocked) {
         const pObj = activePieceObj;
         const optHtml = pObj.options.map((opt, optIdx) => `
-          <button type="button" class="quiz-opt-btn" id="qOptBtn_${optIdx}" onclick="window.checkDecodeAnswer(${optIdx})">
+          <button type="button" class="quiz-opt-btn" id="qOptBtn_${optIdx}" onclick="window.checkDecodeAnswer(${optIdx}, event)">
             ${opt}
           </button>
         `).join('');
 
         quizHtml = `
-          <div class="decode-quiz-card">
+          <div class="decode-quiz-card" id="decodeQuizCard">
             <div class="quiz-hdr">
-              <span class="quiz-target">${pObj.title} · ${isJa ? '質問' : 'CÂU HỎI MỞ KHÓA MẢNH GHÉP'}</span>
+              <span class="quiz-target" id="quizTargetText">${pObj.title} · ${isJa ? '質問' : 'CÂU HỎI MỞ KHÓA MẢNH GHÉP'}</span>
               <span style="font-size:11px;color:var(--mute)">${isJa ? '正解すると写真の1/3が開きます' : 'Trả lời đúng để lật mở 1/3 bức ảnh'}</span>
             </div>
-            <div class="quiz-question">${pObj.q}</div>
-            <div class="quiz-options">${optHtml}</div>
+            <div class="quiz-question" id="quizQuestionText">${pObj.q}</div>
+            <div class="quiz-options" id="quizOptionsWrap">${optHtml}</div>
             <div class="quiz-feedback" id="quizFeedback"></div>
           </div>
         `;
@@ -2700,6 +2723,95 @@
         `;
       }
 
+      // Nếu game đang mở trên màn hình, chỉ cập nhật trực tiếp nội dung các phần tử (in-place DOM update)
+      // TUYỆT ĐỐI KHÔNG render lại toàn bộ modal để tránh mọi hiện tượng giật trang hay cuộn màn hình
+      const wrapEl = document.querySelector('.decode-wrap');
+      if (wrapEl && dlg && dlg.open) {
+        const db = document.getElementById('db');
+        const savedScroll = (preserveScroll && db) ? db.scrollTop : 0;
+
+        // Bỏ focus trước khi cập nhật để ngăn trình duyệt tự động scroll theo phần tử focus
+        if (document.activeElement && typeof document.activeElement.blur === 'function') {
+          try { document.activeElement.blur(); } catch (e) { }
+        }
+
+        // 1. Cập nhật tiêu đề trên thanh modal (nếu có đổi hồ sơ)
+        const titleEl = dlg.querySelector('.m-modal-title');
+        if (titleEl && titleEl.textContent !== curArchive.title) {
+          titleEl.textContent = curArchive.title;
+        }
+
+        // 2. Cập nhật lời dẫn ngôn ngữ
+        const introEl = wrapEl.querySelector('.decode-intro');
+        if (introEl) {
+          introEl.textContent = isJa
+            ? '以下の歴史資料写真は3つのピースで隠されています。各ピースをタップして3つのクイズに正解し、写真の全体と背後にある歴史の物語を解き明かしてください。'
+            : 'Bức ảnh tư liệu dưới đây đang được che bởi 3 mảnh ghép. Vui lòng chạm vào từng mảnh và trả lời đúng 3 câu trắc nghiệm để mở khóa toàn bộ bức ảnh cùng câu chuyện lịch sử phía sau.';
+        }
+
+        // 3. Cập nhật danh sách tabs
+        const tabsEl = wrapEl.querySelector('.decode-tabs');
+        if (tabsEl) tabsEl.innerHTML = tabsHtml;
+
+        // 4. Cập nhật ảnh nền & các mảnh ghép
+        const bgImg = wrapEl.querySelector('.decode-bg-img');
+        if (bgImg) {
+          if (bgImg.getAttribute('src') !== curArchive.image) {
+            bgImg.src = curArchive.image;
+            bgImg.alt = curArchive.title;
+          }
+          bgImg.style.filter = isAllUnlocked ? 'none' : 'blur(3px) brightness(0.85)';
+        }
+
+        const piecesGrid = wrapEl.querySelector('.decode-pieces-grid');
+        if (piecesGrid) piecesGrid.innerHTML = piecesHtml;
+
+        // 5. Cập nhật thanh tiến độ
+        const progressEl = wrapEl.querySelector('.decode-progress-bar');
+        if (progressEl) {
+          progressEl.innerHTML = `
+            <span>${isJa ? '解読進捗' : 'Tiến độ giải mã'}: <b>${totalUnlocked}/3</b> ${isJa ? 'ピース' : 'mảnh ghép'}</span>
+            <div class="decode-badges">${badgesHtml}</div>
+          `;
+        }
+
+        // 6. Cập nhật khu vực câu hỏi trắc nghiệm
+        const quizArea = document.getElementById('decodeQuizArea');
+        if (quizArea) {
+          const quizCard = document.getElementById('decodeQuizCard');
+          if (!isAllUnlocked && quizCard) {
+            // Cập nhật câu hỏi và đáp án bên trong card hiện tại, KHÔNG xóa DOM card
+            const targetEl = document.getElementById('quizTargetText');
+            if (targetEl) targetEl.textContent = `${activePieceObj.title} · ${isJa ? '質問' : 'CÂU HỎI MỞ KHÓA MẢNH GHÉP'}`;
+            const qEl = document.getElementById('quizQuestionText');
+            if (qEl) qEl.textContent = activePieceObj.q;
+            const optWrap = document.getElementById('quizOptionsWrap');
+            if (optWrap) optWrap.innerHTML = activePieceObj.options.map((opt, optIdx) => `
+              <button type="button" class="quiz-opt-btn" id="qOptBtn_${optIdx}" onclick="window.checkDecodeAnswer(${optIdx}, event)">
+                ${opt}
+              </button>
+            `).join('');
+            const fb = document.getElementById('quizFeedback');
+            if (fb) {
+              fb.className = 'quiz-feedback';
+              fb.style.display = 'none';
+              fb.textContent = '';
+            }
+          } else {
+            quizArea.innerHTML = quizHtml;
+          }
+        }
+
+        // Khóa chặt vị trí cuộn không cho dịch chuyển dù chỉ 1 pixel
+        if (preserveScroll && db) {
+          db.scrollTop = savedScroll;
+          requestAnimationFrame(() => { if (db) db.scrollTop = savedScroll; });
+          setTimeout(() => { if (db) db.scrollTop = savedScroll; }, 20);
+          setTimeout(() => { if (db) db.scrollTop = savedScroll; }, 80);
+        }
+        return;
+      }
+
       const bodyHtml = `
         <div class="decode-wrap">
           <div class="decode-intro">
@@ -2720,7 +2832,9 @@
             <div class="decode-badges">${badgesHtml}</div>
           </div>
 
-          ${quizHtml}
+          <div id="decodeQuizArea" class="decode-quiz-area">
+            ${quizHtml}
+          </div>
         </div>
       `;
 
@@ -2728,7 +2842,8 @@
         y: isJa ? 'ファム・スアン・アンの歴史解読' : 'GIẢI MÃ PHẠM XUÂN ẨN · HỒ SƠ LỊCH SỬ',
         t: curArchive.title,
         sub: '',
-        rawHtml: bodyHtml
+        rawHtml: bodyHtml,
+        keepScroll: preserveScroll
       });
     }
 
@@ -2736,7 +2851,7 @@
     window.switchDecodeArchive = function (idx) {
       decodeState.archiveIndex = idx;
       decodeState.activePiece = 0;
-      openDecodeGame();
+      openDecodeGame(idx, true);
     };
 
     window.selectDecodePiece = function (pieceIdx) {
@@ -2745,10 +2860,18 @@
       const unlockedArr = decodeState.unlocked[curArchive.id];
       if (unlockedArr[pieceIdx]) return; // Đã mở rồi thì không cần chọn lại
       decodeState.activePiece = pieceIdx;
-      openDecodeGame();
+      openDecodeGame(null, true);
     };
 
-    window.checkDecodeAnswer = function (optIdx) {
+    window.checkDecodeAnswer = function (optIdx, e) {
+      if (e) {
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+      }
+      if (document.activeElement && typeof document.activeElement.blur === 'function') {
+        try { document.activeElement.blur(); } catch (err) { }
+      }
+
       const isJa = currentLang === 'ja';
       const curArchive = DECODE_GAME_DATA[isJa ? 'ja' : 'vi'][decodeState.archiveIndex];
       const pObj = curArchive.pieces[decodeState.activePiece];
@@ -2759,15 +2882,38 @@
         if (optBtn) optBtn.classList.add('correct');
         if (feedbackEl) {
           feedbackEl.className = 'quiz-feedback success';
+          feedbackEl.style.display = 'block';
           feedbackEl.textContent = '✓ ' + pObj.feedback;
         }
 
         // Mở khóa mảnh ghép này
         decodeState.unlocked[curArchive.id][decodeState.activePiece] = true;
 
+        // Mở khóa ngay mảnh ghép trên ảnh để người dùng thấy ảnh lộ ra tức thì mà không cần đợi
+        const pieceEls = document.querySelectorAll('.decode-piece');
+        if (pieceEls[decodeState.activePiece]) {
+          pieceEls[decodeState.activePiece].classList.add('unlocked');
+        }
+
+        const badgeEls = document.querySelectorAll('.decode-badge-item');
+        if (badgeEls[decodeState.activePiece]) {
+          badgeEls[decodeState.activePiece].classList.add('done');
+          badgeEls[decodeState.activePiece].innerHTML = `✓ ${pObj.title}`;
+        }
+
+        const totalUnlocked = decodeState.unlocked[curArchive.id].filter(Boolean).length;
+        const progressSpan = document.querySelector('.decode-progress-bar span b');
+        if (progressSpan) progressSpan.textContent = `${totalUnlocked}/3`;
+
+        if (totalUnlocked === 3) {
+          const bgImg = document.querySelector('.decode-bg-img');
+          if (bgImg) bgImg.style.filter = 'none';
+        }
+
+        // Chuyển sang câu hỏi kế tiếp hoặc màn thắng sau 1 giây mà giữ nguyên 100% vị trí cuộn
         setTimeout(() => {
-          openDecodeGame();
-        }, 1100);
+          openDecodeGame(null, true);
+        }, 1000);
       } else {
         if (optBtn) {
           optBtn.classList.add('wrong');
@@ -2775,6 +2921,7 @@
         }
         if (feedbackEl) {
           feedbackEl.className = 'quiz-feedback error';
+          feedbackEl.style.display = 'block';
           feedbackEl.textContent = isJa ? '✕ 不正解です。もう一度よく考えて選んでください！' : '✕ Chưa chính xác rồi! Hãy suy nghĩ và thử lại nhé.';
         }
       }
@@ -2785,7 +2932,7 @@
       const curArchive = DECODE_GAME_DATA[isJa ? 'ja' : 'vi'][decodeState.archiveIndex];
       decodeState.unlocked[curArchive.id] = [false, false, false];
       decodeState.activePiece = 0;
-      openDecodeGame();
+      openDecodeGame(null, true);
     };
 
     // Tạo khung ảnh kỷ vật cho các cánh tủ
@@ -2819,7 +2966,7 @@
       `;
 
       if (o.isDecode) {
-        b.onclick = () => { currentModalState = { type: 'decode' }; openDecodeGame(0); };
+        b.onclick = () => { currentModalState = { type: 'decode' }; openDecodeGame(0, false); };
       } else {
         b.onclick = () => { currentModalState = { type: 'shelf', side: o._side, index: o._idx }; O(o); };
       }
