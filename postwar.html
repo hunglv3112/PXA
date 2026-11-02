@@ -807,21 +807,58 @@
     .decode-badges {
       display: flex;
       gap: 6px;
+      flex-wrap: wrap;
     }
 
     .decode-badge-item {
-      padding: 3px 10px;
+      all: unset;
+      box-sizing: border-box;
+      cursor: pointer;
+      padding: 4px 11px;
       border-radius: 999px;
       font-size: 11px;
+      font-weight: 600;
       background: rgba(255, 255, 255, 0.08);
       color: var(--mute);
       border: 1px solid var(--line);
+      transition: all .2s ease;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .decode-badge-item:hover {
+      border-color: var(--gold);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .decode-badge-item.current {
+      border-color: var(--gold);
+      color: var(--gold2);
+      box-shadow: 0 0 10px rgba(235, 203, 69, 0.45);
+      background: rgba(235, 203, 69, 0.18);
     }
 
     .decode-badge-item.done {
       background: rgba(46, 125, 50, 0.3);
       color: #81c784;
       border-color: #4caf50;
+    }
+
+    .decode-badge-item.done:hover {
+      background: rgba(46, 125, 50, 0.45);
+      border-color: #66bb6a;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+    }
+
+    .decode-badge-item.done.current {
+      background: rgba(46, 125, 50, 0.4);
+      color: #a5d6a7;
+      border-color: #81c784;
+      box-shadow: 0 0 12px rgba(76, 175, 80, 0.55);
     }
 
     .decode-quiz-area {
@@ -2469,6 +2506,7 @@
     const decodeState = {
       archiveIndex: 0,
       activePiece: 0,
+      showStory: false,
       unlocked: {
         'dossier-1': [false, false, false],
         'dossier-2': [false, false, false],
@@ -2639,12 +2677,6 @@
       const totalUnlocked = unlockedArr.filter(Boolean).length;
       const isAllUnlocked = totalUnlocked === 3;
 
-      // Tìm mảnh ghép đầu tiên chưa mở để làm tiêu điểm
-      if (unlockedArr[decodeState.activePiece] && !isAllUnlocked) {
-        const nextLocked = unlockedArr.findIndex(u => !u);
-        if (nextLocked !== -1) decodeState.activePiece = nextLocked;
-      }
-
       const activePieceObj = curArchive.pieces[decodeState.activePiece] || curArchive.pieces[0];
 
       let tabsHtml = list.map((item, idx) => {
@@ -2660,9 +2692,9 @@
 
       let piecesHtml = curArchive.pieces.map((p, idx) => {
         const isDone = unlockedArr[idx];
-        const isActive = idx === decodeState.activePiece;
+        const isActive = idx === decodeState.activePiece && !decodeState.showStory;
         return `
-          <div class="decode-piece ${isDone ? 'unlocked' : ''} ${isActive ? 'active' : ''}" onclick="window.selectDecodePiece(${idx})">
+          <div class="decode-piece ${isDone ? 'unlocked' : ''} ${isActive ? 'active' : ''}" onclick="window.selectDecodePiece(${idx}, event)" title="${isDone ? (isJa ? 'クリックして正解を確認' : 'Chạm để xem lại câu trả lời đúng') : (isJa ? 'クリックして解読' : 'Chạm để giải mã ✦')}">
             ${!isDone ? `
               <svg class="piece-lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
@@ -2675,33 +2707,21 @@
         `;
       }).join('');
 
-      let badgesHtml = curArchive.pieces.map((p, idx) => `
-        <span class="decode-badge-item ${unlockedArr[idx] ? 'done' : ''}">
-          ${unlockedArr[idx] ? '✓' : '🔒'} ${p.title}
-        </span>
-      `).join('');
-
-      let quizHtml = '';
-      if (!isAllUnlocked) {
-        const pObj = activePieceObj;
-        const optHtml = pObj.options.map((opt, optIdx) => `
-          <button type="button" class="quiz-opt-btn" id="qOptBtn_${optIdx}" onclick="window.checkDecodeAnswer(${optIdx}, event)">
-            ${opt}
+      let badgesHtml = curArchive.pieces.map((p, idx) => {
+        const isDone = unlockedArr[idx];
+        const isCurrent = idx === decodeState.activePiece && !decodeState.showStory;
+        return `
+          <button type="button" class="decode-badge-item ${isDone ? 'done' : ''} ${isCurrent ? 'current' : ''}" onclick="window.selectDecodePiece(${idx}, event)" title="${isDone ? (isJa ? 'クリックして正解を確認' : 'Chạm để xem lại câu trả lời đúng') : (isJa ? 'このピースを解読' : 'Chạm để giải mã mảnh này')}">
+            ${isDone ? '✓' : '🔒'} ${p.title}
           </button>
-        `).join('');
-
-        quizHtml = `
-          <div class="decode-quiz-card" id="decodeQuizCard">
-            <div class="quiz-hdr">
-              <span class="quiz-target" id="quizTargetText">${pObj.title} · ${isJa ? '質問' : 'CÂU HỎI MỞ KHÓA MẢNH GHÉP'}</span>
-              <span style="font-size:11px;color:var(--mute)">${isJa ? '正解すると写真の1/3が開きます' : 'Trả lời đúng để lật mở 1/3 bức ảnh'}</span>
-            </div>
-            <div class="quiz-question" id="quizQuestionText">${pObj.q}</div>
-            <div class="quiz-options" id="quizOptionsWrap">${optHtml}</div>
-            <div class="quiz-feedback" id="quizFeedback"></div>
-          </div>
         `;
-      } else {
+      }).join('');
+
+      const isCurrentPieceUnlocked = unlockedArr[decodeState.activePiece] === true;
+      let quizHtml = '';
+
+      if (isAllUnlocked && decodeState.showStory) {
+        // Màn hình xem câu chuyện lịch sử hoàn chỉnh
         quizHtml = `
           <div class="decode-completed-card">
             <div class="decode-win-banner">
@@ -2718,6 +2738,58 @@
                   ${isJa ? '次の歴史ファイルを解読 ➔' : 'Giải mã hồ sơ tiếp theo ➔'}
                 </button>
               ` : ''}
+            </div>
+            <div style="margin-top:14px;padding:9px 13px;background:rgba(235,203,69,0.1);border:1px dashed var(--gold);border-radius:6px;font-size:12px;color:var(--gold2);display:flex;align-items:center;gap:6px;">
+              <span>💡</span>
+              <span>${isJa ? '上の各ピース（✓）をクリックすると、いつでもクイズと正解解説を再確認できます。' : 'Bạn có thể bấm vào các mảnh (✓) ở thanh tiến độ phía trên để xem lại câu hỏi và lời giải trắc nghiệm bất cứ lúc nào.'}</span>
+            </div>
+          </div>
+        `;
+      } else {
+        const pObj = activePieceObj;
+
+        let optHtml = '';
+        if (isCurrentPieceUnlocked) {
+          // CHẾ ĐỘ XEM LẠI: Mảnh này đã mở -> hiển thị đáp án đúng màu xanh và feedback
+          optHtml = pObj.options.map((opt, optIdx) => `
+            <button type="button" class="quiz-opt-btn ${optIdx === pObj.correct ? 'correct' : ''}" style="cursor:default;opacity:${optIdx === pObj.correct ? '1' : '0.65'};" disabled>
+              ${optIdx === pObj.correct ? '✓ ' : ''}${opt}
+            </button>
+          `).join('');
+        } else {
+          // CHẾ ĐỘ GIẢI MÃ: Mảnh chưa mở -> 4 nút bấm chọn đáp án
+          optHtml = pObj.options.map((opt, optIdx) => `
+            <button type="button" class="quiz-opt-btn" id="qOptBtn_${optIdx}" onclick="window.checkDecodeAnswer(${optIdx}, event)">
+              ${opt}
+            </button>
+          `).join('');
+        }
+
+        const nextLockedIdx = unlockedArr.findIndex(u => !u);
+        let nextBtnHtml = '';
+        if (isCurrentPieceUnlocked && nextLockedIdx === -1) {
+          nextBtnHtml = `
+            <button type="button" class="go" onclick="window.showArchiveStory()" style="padding:9px 20px;font-size:13px;cursor:pointer;">
+              ${isJa ? '歴史ストーリーを読む ➔' : 'Xem toàn bộ ảnh & Câu chuyện lịch sử ➔'}
+            </button>
+          `;
+        }
+
+        quizHtml = `
+          <div class="decode-quiz-card" id="decodeQuizCard">
+            <div class="quiz-hdr">
+              <span class="quiz-target" id="quizTargetText">${pObj.title} · ${isCurrentPieceUnlocked ? (isJa ? '解読完了' : 'MẢNH GHÉP ĐÃ MỞ KHÓA') : (isJa ? '質問' : 'CÂU HỎI MỞ KHÓA MẢNH GHÉP')}</span>
+              <span style="font-size:11.5px;color:${isCurrentPieceUnlocked ? '#81c784;font-weight:700;' : 'var(--mute);'}">
+                ${isCurrentPieceUnlocked ? (isJa ? '✓ 正解済み' : '✓ Đã giải mã thành công') : (isJa ? '正解すると写真の1/3が開きます' : 'Trả lời đúng để lật mở 1/3 bức ảnh')}
+              </span>
+            </div>
+            <div class="quiz-question" id="quizQuestionText">${pObj.q}</div>
+            <div class="quiz-options" id="quizOptionsWrap">${optHtml}</div>
+            <div class="quiz-feedback ${isCurrentPieceUnlocked ? 'success' : ''}" id="quizFeedback" style="${isCurrentPieceUnlocked ? 'display:block;' : 'display:none;'}">
+              ${isCurrentPieceUnlocked ? '✓ ' + pObj.feedback : ''}
+            </div>
+            <div class="quiz-next-action" id="quizNextAction" style="${isCurrentPieceUnlocked && nextLockedIdx === -1 ? 'display:flex;' : 'display:none;'}margin-top:14px;justify-content:flex-end;gap:10px;">
+              ${nextBtnHtml}
             </div>
           </div>
         `;
@@ -2778,28 +2850,7 @@
         // 6. Cập nhật khu vực câu hỏi trắc nghiệm
         const quizArea = document.getElementById('decodeQuizArea');
         if (quizArea) {
-          const quizCard = document.getElementById('decodeQuizCard');
-          if (!isAllUnlocked && quizCard) {
-            // Cập nhật câu hỏi và đáp án bên trong card hiện tại, KHÔNG xóa DOM card
-            const targetEl = document.getElementById('quizTargetText');
-            if (targetEl) targetEl.textContent = `${activePieceObj.title} · ${isJa ? '質問' : 'CÂU HỎI MỞ KHÓA MẢNH GHÉP'}`;
-            const qEl = document.getElementById('quizQuestionText');
-            if (qEl) qEl.textContent = activePieceObj.q;
-            const optWrap = document.getElementById('quizOptionsWrap');
-            if (optWrap) optWrap.innerHTML = activePieceObj.options.map((opt, optIdx) => `
-              <button type="button" class="quiz-opt-btn" id="qOptBtn_${optIdx}" onclick="window.checkDecodeAnswer(${optIdx}, event)">
-                ${opt}
-              </button>
-            `).join('');
-            const fb = document.getElementById('quizFeedback');
-            if (fb) {
-              fb.className = 'quiz-feedback';
-              fb.style.display = 'none';
-              fb.textContent = '';
-            }
-          } else {
-            quizArea.innerHTML = quizHtml;
-          }
+          quizArea.innerHTML = quizHtml;
         }
 
         // Khóa chặt vị trí cuộn không cho dịch chuyển dù chỉ 1 pixel
@@ -2850,16 +2901,46 @@
     // Các hàm tương tác của mini-game gắn vào window
     window.switchDecodeArchive = function (idx) {
       decodeState.archiveIndex = idx;
-      decodeState.activePiece = 0;
+      const isJa = currentLang === 'ja';
+      const curArchive = DECODE_GAME_DATA[isJa ? 'ja' : 'vi'][idx];
+      const unlockedArr = decodeState.unlocked[curArchive.id] || [false, false, false];
+      const firstLocked = unlockedArr.findIndex(u => !u);
+      if (firstLocked !== -1) {
+        decodeState.activePiece = firstLocked;
+        decodeState.showStory = false;
+      } else {
+        decodeState.activePiece = 0;
+        decodeState.showStory = true;
+      }
       openDecodeGame(idx, true);
     };
 
-    window.selectDecodePiece = function (pieceIdx) {
+    window.selectDecodePiece = function (pieceIdx, e) {
+      if (e) {
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+        if (typeof e.stopPropagation === 'function') e.stopPropagation();
+      }
+      decodeState.activePiece = pieceIdx;
+      decodeState.showStory = false;
+      openDecodeGame(null, true);
+    };
+
+    window.goToNextPiece = function () {
       const isJa = currentLang === 'ja';
       const curArchive = DECODE_GAME_DATA[isJa ? 'ja' : 'vi'][decodeState.archiveIndex];
-      const unlockedArr = decodeState.unlocked[curArchive.id];
-      if (unlockedArr[pieceIdx]) return; // Đã mở rồi thì không cần chọn lại
-      decodeState.activePiece = pieceIdx;
+      const unlockedArr = decodeState.unlocked[curArchive.id] || [false, false, false];
+      const nextLocked = unlockedArr.findIndex(u => !u);
+      if (nextLocked !== -1) {
+        decodeState.activePiece = nextLocked;
+        decodeState.showStory = false;
+      } else {
+        decodeState.showStory = true;
+      }
+      openDecodeGame(null, true);
+    };
+
+    window.showArchiveStory = function () {
+      decodeState.showStory = true;
       openDecodeGame(null, true);
     };
 
@@ -2880,6 +2961,9 @@
 
       if (optIdx === pObj.correct) {
         if (optBtn) optBtn.classList.add('correct');
+        // Vô hiệu hóa các nút còn lại sau khi chọn đúng
+        document.querySelectorAll('#quizOptionsWrap .quiz-opt-btn').forEach(btn => btn.disabled = true);
+
         if (feedbackEl) {
           feedbackEl.className = 'quiz-feedback success';
           feedbackEl.style.display = 'block';
@@ -2889,7 +2973,7 @@
         // Mở khóa mảnh ghép này
         decodeState.unlocked[curArchive.id][decodeState.activePiece] = true;
 
-        // Mở khóa ngay mảnh ghép trên ảnh để người dùng thấy ảnh lộ ra tức thì mà không cần đợi
+        // Mở khóa ngay mảnh ghép trên ảnh để người dùng thấy ảnh lộ ra tức thì
         const pieceEls = document.querySelectorAll('.decode-piece');
         if (pieceEls[decodeState.activePiece]) {
           pieceEls[decodeState.activePiece].classList.add('unlocked');
@@ -2908,12 +2992,31 @@
         if (totalUnlocked === 3) {
           const bgImg = document.querySelector('.decode-bg-img');
           if (bgImg) bgImg.style.filter = 'none';
+          const tabBtns = document.querySelectorAll('.decode-tab-btn');
+          if (tabBtns[decodeState.archiveIndex]) {
+            tabBtns[decodeState.archiveIndex].classList.add('completed');
+          }
         }
 
-        // Chuyển sang câu hỏi kế tiếp hoặc màn thắng sau 1 giây mà giữ nguyên 100% vị trí cuộn
-        setTimeout(() => {
-          openDecodeGame(null, true);
-        }, 1000);
+        // Không hiện nút "Giải mã mảnh tiếp theo" — người dùng tự bấm badge phía trên
+        // Chỉ hiện nút "Xem toàn bộ ảnh" khi cả 3 mảnh đã mở khóa
+        const actionEl = document.getElementById('quizNextAction');
+        const nextLockedIdx = decodeState.unlocked[curArchive.id].findIndex(u => !u);
+        if (actionEl) {
+          if (nextLockedIdx === -1) {
+            // Tất cả 3 mảnh đã giải mã xong → hiện nút xem câu chuyện
+            actionEl.style.display = 'flex';
+            actionEl.innerHTML = `
+              <button type="button" class="go" onclick="window.showArchiveStory()" style="padding:9px 20px;font-size:13px;cursor:pointer;">
+                ${isJa ? '歴史ストーリーを読む ➔' : 'Xem toàn bộ ảnh & Câu chuyện lịch sử ➔'}
+              </button>
+            `;
+          } else {
+            // Còn mảnh chưa mở → ẩn khu vực action, người dùng tự bấm badge trên
+            actionEl.style.display = 'none';
+            actionEl.innerHTML = '';
+          }
+        }
       } else {
         if (optBtn) {
           optBtn.classList.add('wrong');
@@ -2932,6 +3035,7 @@
       const curArchive = DECODE_GAME_DATA[isJa ? 'ja' : 'vi'][decodeState.archiveIndex];
       decodeState.unlocked[curArchive.id] = [false, false, false];
       decodeState.activePiece = 0;
+      decodeState.showStory = false;
       openDecodeGame(null, true);
     };
 
