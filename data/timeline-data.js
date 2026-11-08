@@ -368,9 +368,9 @@ window.TIMELINE_DATA = [
     yl: "1972",
     side: "bot",
     icon: "camera",
-    img: "assets/images/1971_1973/1972_NB_N_LaiXe.jpg",
-    title: "Đỉnh cao của làm báo",
-    title_ja: "ジャーナリズムの頂点と西欧記者との協調",
+    img: "assets/images/1971_1973/1972_NB_PXAxRobert.jpg",
+    title: "Cuộc trao đổi với Robert Shaplen",
+    title_ja: "ロバート・シャプレンとの対談",
   },
 
   // ==========================================================================
@@ -392,9 +392,9 @@ window.TIMELINE_DATA = [
     yl: "1973",
     side: "bot",
     icon: "ticker",
-    img: "assets/images/1971_1973/1973_BatTay.jpg",
-    title: 'Khai thác tin đàm phán Paris, giúp tuần báo TIME "hớt tay trên" đối thủ Newsweek',
-    title_ja: "パリ交渉の舞台裏を特ダネ化し、タイム誌がニューズウィーク誌を圧倒",
+    img: "assets/images/1971_1973/1972_NB_N_LaiXe.jpg",
+    title: "Đỉnh cao của làm báo",
+    title_ja: "ジャーナリズムの頂点と西欧記者との協調",
   },
 
   // ==========================================================================

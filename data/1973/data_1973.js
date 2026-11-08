@@ -4,7 +4,7 @@
  * ==============================================================================
  * Quản lý toàn bộ dữ liệu năm 1973 cho cả 2 nửa trên Timeline:
  *   1. top: Nhánh TÌNH BÁO (id: '1973t') — 2 sự kiện (layout chia 2, có footnotes)
- *   2. bot: Nhánh NHÀ BÁO  (id: '1973b') — 1 sự kiện (layout 1 cột)
+ *   2. bot: Nhánh NHÀ BÁO  (id: '1973b') — 2 sự kiện (layout chia 2)
  * ==============================================================================
  */
 
@@ -80,7 +80,7 @@ window.EXTRA_DATA_1973 = {
     ],
 
     // ==========================================================================
-    // 2. NHÁNH NHÀ BÁO — NỬA DƯỚI (id: '1973b') — MẢNG CÓ 1 OBJECT (LAYOUT 1 CỘT)
+    // 2. NHÁNH NHÀ BÁO — NỬA DƯỚI (id: '1973b') — MẢNG CÓ 2 OBJECT (CHIA 2)
     // ==========================================================================
     bot: [
         {
@@ -101,6 +101,33 @@ window.EXTRA_DATA_1973 = {
 
             text2: 'Phạm Xuân Ẩn tiếp cận Thiếu tướng Nguyễn Khắc Bình, Đặc ủy trưởng CIO, để khai thác nguồn tin độc quyền về phản ứng của Thiệu. Ông gửi các bản tin phân tích về trụ sở Time ở New York, giúp Time vượt đối thủ Newsweek với bài viết có chiều sâu và dự báo đúng cục diện chính trị Sài Gòn - Washington.',
             text2_ja: 'ファム・スアン・アンは中央情報局（CIO）長官グエン・カック・ビン少将に接触し、ティウ大統領の激しい反応と密室の動向に関する独占情報を入手。タイム誌ニューヨーク本社へ鋭い分析記事を打電し、ライバル誌『ニューズウィーク』に決定的なスクープ差をつけてサイゴン・ワシントン間の政局を完璧に予見しました。',
+
+            note: '',
+            note_ja: '',
+            src: '',
+            src_ja: ''
+        },
+        {
+            id: '1973b',
+            modalImg: 'assets/images/1971_1973/1973_NB_CL.jpg',
+            modalImgAlt: 'Nhà báo Pháp Jean Claude Pomonti (Nguồn: Tiền Phong)',
+            modalImgAlt_ja: 'フランス人記者ジャン＝クロード・ポモンティ（ティエン・フォン紙）',
+            caption: 'Nhà báo Pháp Jean Claude Pomonti (Nguồn: Tiền Phong)',
+            caption_ja: 'フランス人記者ジャン＝クロード・ポモンティ（ティエン・フォン紙）',
+
+            title: 'Chỉ đường cho nhà báo quốc tế thâm nhập vùng giải phóng Mỹ Tho',
+            title_ja: '国際記者団のミトー解放区潜入ルートを案内',
+            date: 'Đầu tháng 2/1973',
+            date_ja: '1973年2月初頭',
+
+            text1: 'Đầu tháng 2/1973, sau khi Jean-Claude Pomonti của báo Le Monde cùng các nhà báo khác nhiều lần tìm cách vào vùng giải phóng nhưng chưa thành công, Phạm Xuân Ẩn đã gợi ý cho ông một hướng đi cụ thể.  Tại khách sạn Continental, Ẩn gợi ý Pomonti đi theo Quốc lộ 4, trước khi đến Mỹ Tho thì tiếp tục đi theo con đường dẫn đến bến phà Mỹ Thuận, rồi dừng lại trước xóm Mỹ Quý.',
+            text1_ja: '1973年2月初頭、ル・モンド紙のジャン＝クロード・ポモンティらが幾度も試みながら果たせなかった解放区潜入に関し、ファム・スアン・アンはコンチネンタル・ホテルで具体的なルートを教示。国道4号線を進み、ミトー手前でミートゥアン渡し船へ向かう道に入り、ミークイ集落前で待機するよう助言しました。',
+
+            text2: 'Theo gợi ý đó, sáng hôm sau, nhóm nhà báo quốc tế đã vào được vùng giải phóng, được đón tiếp bằng băng rôn “Hoan nghênh các nhà báo quốc tế!”, đi khắp vùng nông thôn dọc sông Mê Kông trong hai ngày và được xem một buổi biểu diễn văn nghệ.',
+            text2_ja: 'その指示通り翌朝、海外特派員団は見事に解放区への潜入に成功。「国際特派員団を熱烈歓迎！」と記された横断幕で迎えられ、メコン川沿いの農村地帯を2日間にわたり視察し、解放軍の文芸公演を鑑賞しました。',
+
+            text3: 'Chuyến đi giúp truyền thông quốc tế có được nguồn tin thực địa khách quan về vùng giải phóng, đồng thời vẫn giữ an toàn cho vỏ bọc tình báo của Phạm Xuân Ẩn.',
+            text3_ja: 'この視察により、国際メディアは解放区の実態に関する客観的な一次情報を獲得し、同時にファム・スアン・アンの諜報員としての潜伏偽装も完全に保全されました。',
 
             note: '',
             note_ja: '',

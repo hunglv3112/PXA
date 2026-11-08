@@ -4,7 +4,7 @@
  * ==============================================================================
  * Quản lý toàn bộ dữ liệu năm 1972 cho cả 2 nửa trên Timeline:
  *   1. top: Nhánh TÌNH BÁO (id: '1972t') — 2 sự kiện (layout chia 2, có midImg & footnotes)
- *   2. bot: Nhánh NHÀ BÁO  (id: '1972b') — 2 sự kiện (layout chia 2)
+ *   2. bot: Nhánh NHÀ BÁO  (id: '1972b') — 1 sự kiện (layout 1 cột)
  * ==============================================================================
  */
 
@@ -98,7 +98,7 @@ window.EXTRA_DATA_1972 = {
     ],
 
     // ==========================================================================
-    // 2. NHÁNH NHÀ BÁO — NỬA DƯỚI (id: '1972b') — MẢNG CÓ 2 OBJECT (CHIA 2)
+    // 2. NHÁNH NHÀ BÁO — NỬA DƯỚI (id: '1972b') — MẢNG CÓ 1 OBJECT (LAYOUT 1 CỘT)
     // ==========================================================================
     bot: [
         {
@@ -109,8 +109,8 @@ window.EXTRA_DATA_1972 = {
             caption: 'Phạm Xuân Ẩn (người thứ hai từ bên trái) trao đổi với Robert Shaplen (người thứ ba từ bên trái) và những người bạn (Nguồn: Richard Avedon)',
             caption_ja: 'ロバート・シャプレン（左から3人目）らと歓談するファム・スアン・アン（左から2人目）（リチャード・アヴェドン撮影）',
 
-            title: 'Cuộc trao đổi đòn tâm lý với Robert Shaplen (The New Yorker)',
-            title_ja: '『ニューヨーカー』誌ロバート・シャプレンとの心理戦',
+            title: 'Cuộc trao đổi với Robert Shaplen',
+            title_ja: 'ロバート・シャプレンとの対談',
             date: 'Năm 1972',
             date_ja: '1972年',
 
@@ -122,27 +122,6 @@ window.EXTRA_DATA_1972 = {
 
             text3: 'Ngay trong năm 1972, trên mặt báo tạp chí The New Yorker, nhà báo Robert Shaplen đã công khai ca ngợi ông Phạm Xuân Ẩn là "người Việt làm báo chăm chỉ nhất và được nhiều người kính trọng nhất".',
             text3_ja: '同年、シャプレンは『ニューヨーカー』誌上で、ファム・スアン・アンを「最も勤勉で、誰からも最も深く敬愛されているベトナム人ジャーナリスト」と公然と賞賛しました。',
-
-            note: '',
-            note_ja: '',
-            src: '',
-            src_ja: ''
-        },
-        {
-            id: '1972b',
-            modalImg: 'assets/images/1971_1973/1972_NB_PXATrai.jpg',
-            modalImgAlt: 'Phạm Xuân Ẩn (ngoài cùng bên trái) và các nhà báo đồng nghiệp quốc tế (Nguồn: Một người Việt trầm lặng - Trang 107)',
-            modalImgAlt_ja: '国際特派員の同僚たちと並ぶファム・スアン・アン（一番左）（『物静かなるベトナム人』107頁）',
-            caption: 'Phạm Xuân Ẩn (ngoài cùng bên trái) và các nhà báo đồng nghiệp quốc tế (Nguồn: Một người Việt trầm lặng - Trang 107)',
-            caption_ja: '国際特派員の同僚たちと並ぶファム・スアン・アン（一番左）（『物静かなるベトナム人』107頁）',
-
-            title: 'Dẫn đường cho nhà báo giới phương Tây tiếp cận thực tế',
-            title_ja: '欧米報道陣をサイゴン近郊の前線実態へ案内',
-            date: 'Tháng 11/1972',
-            date_ja: '1972年11月',
-
-            text1: 'Tháng 11/1972, giữa lúc đàm phán Paris của Henry Kissinger và Tổng thống Nguyễn Văn Thiệu rơi vào căng thẳng, Lộc "bẩy" (người môi giới tin tức) đã đề xuất và trực tiếp dẫn đường cho một nhóm nhà báo quốc tế ra vùng ven Sài Gòn lúc chập tối. Nhóm khảo sát gồm Jean-Claude Pomonti (Le Monde), Marcel Giuglaris (France Soir), Ron Moreau (Newsweek), Daniel Southerland (The Christian Science Monitor) cùng Cao Giao và Vượng. Chuyến đi giúp báo giới phương Tây chứng kiến thực tế sự hiện diện của lực lượng Giải phóng ngay sát cửa ngõ Sài Gòn.',
-            text1_ja: '1972年11月、キッシンジャーとティウ大統領の協議が緊迫する中、情報仲介者のロク・バイが提案し、日没時にサイゴン近郊へ海外特派員団を直接案内しました。視察団にはジャン＝クロード・ポモンティ（ル・モンド）、マルセル・ジグラリス（フランス・ソワール）、ロン・モロー（ニューズウィーク）、ダニエル・サザーランド（クリスチャン・サイエンス・モニター）らが参加。欧米報道陣にサイゴンの門前にまで迫る解放軍の厳然たる実勢を直に見せつけました。',
 
             note: '',
             note_ja: '',
@@ -185,6 +164,7 @@ window.EXTRA_DATA_1972 = {
             if (branchData.length === 1) {
                 Object.assign(ev, branchData[0]);
                 ev.items = branchData;
+                delete ev.imgs;
             } else if (branchData.length > 1) {
                 Object.assign(ev, branchData[0]);
                 ev.items = branchData;
