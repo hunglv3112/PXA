@@ -697,16 +697,35 @@
       box-shadow: 0 0 18px rgba(46, 213, 115, 0.75), inset 0 0 8px rgba(46, 213, 115, 0.3);
     }
 
-    .decode-photo-box {
-      position: relative;
+    .decode-photo-card {
       width: 100%;
-      aspect-ratio: 16/9;
-      max-height: 320px;
       border-radius: 8px;
       overflow: hidden;
       border: 2px solid #8f641a;
       background: #060b0e;
       box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .decode-photo-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      max-height: 320px;
+      overflow: hidden;
+      background: #060b0e;
+    }
+
+    /* Khung đen chú thích ảnh bên dưới phần trắc nghiệm */
+    .decode-photo-caption {
+      padding: 10px 18px;
+      font-size: 13px;
+      line-height: 1.5;
+      font-style: italic;
+      color: #b8c4c7;
+      background: rgba(0, 0, 0, 0.65);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .decode-bg-img {
@@ -2233,6 +2252,7 @@
           title: 'Hai nửa một cuộc đời huyền thoại',
           sub: '',
           image: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
+          caption: 'Bức ảnh "Hai nửa một cuộc đời" – Thiếu tướng tình báo Phạm Xuân Ẩn và Nhà báo tuần báo Time',
           pieces: [
             {
               title: 'Mảnh 1: Mật danh',
@@ -2264,6 +2284,7 @@
           title: 'Cuộc gặp của các huyền thoại',
           sub: '',
           image: 'assets/images/1957_1959/1958_Ngoai_MuoiHuongChupCungPXAVaNhieuNhaTinhBao.jpg',
+          caption: 'Mười Hương (hàng đầu, thứ ba từ trái sang) chụp cùng Phạm Xuân Ẩn (hàng thứ hai, thứ ba từ trái sang) và các nhà tình báo khác (Nguồn: Báo Tuổi Trẻ)',
           pieces: [
             {
               title: 'Mảnh 1: Người thầy',
@@ -2295,6 +2316,7 @@
           title: 'Sự thật phía sau tấm thẻ nhà báo',
           sub: '',
           image: 'assets/images/PhongLuuNiem/PLN_PhamXuanGioTheNhaBao.jpg',
+          caption: 'Phạm Xuân Ẩn giơ giấy phép hành nghề nhà báo của mình. (Nguồn: Charles Dharapak - AP)',
           pieces: [
             {
               title: 'Mảnh 1: Điểm hẹn Givral',
@@ -2326,6 +2348,7 @@
           title: 'Chuyến xe trưa ngày 30/4/1975',
           sub: '',
           image: 'assets/images/1974_1976/CCNL_1975_PXAVaTTK.jpg',
+          caption: 'Phạm Xuân Ẩn (bên trái) và Trần Kim Tuyến (bên phải)',
           pieces: [
             {
               title: 'Mảnh 1: Lòng nhân ái',
@@ -2381,7 +2404,7 @@
               feedback: 'Chính xác! Thiệu từ chức ngày 21/4 và giao quyền cho Phó Tổng thống Trần Văn Hương. Đến ngày 28/4, Hương chuyển tiếp quyền lực cho Dương Văn Minh.'
             }
           ],
-          story: `<p style="font-size:12px;color:var(--mute);font-style:italic;margin-bottom:12px;border-bottom:1px dashed rgba(235,203,69,0.25);padding-bottom:8px;">Ảnh: Phạm Xuân Ẩn (đứng thứ hai từ phải qua) trên chiến hạm USS Vandegrift, tháng 11/2003 (Nguồn: Tổng lãnh sự quán Mỹ tại Thành phố Hồ Chí Minh)</p><p>Gần ba mươi năm sau khi chiến tranh kết thúc, tháng 11/2003, chiến hạm USS Vandegrift cập cảng Sài Gòn. Đây là tàu chiến đầu tiên của Hải quân Mỹ ghé thăm Việt Nam kể từ năm 1975.</p><p>Theo lời mời của Đại sứ Mỹ Raymond Burghardt và Tổng lãnh sự Emi Lynn Yamauchi, Phạm Xuân Ẩn cùng nhiều quan chức đã lên thăm tàu.</p><p>Sau chuyến thăm, Lãnh sự quán Mỹ gửi tặng ông một tấm ảnh chụp trên chiến hạm. Ông coi đây là một trong những món quà đáng giá của mình. Ông tự hào vì đã sống đủ lâu để chứng kiến một sự kiện mang tính biểu tượng cho tiến trình hòa giải và hợp tác giữa Mỹ và Việt Nam, và nói: <i>“Tôi đã có thể thanh thản nhắm mắt. Tôi đã phụng sự cho đất nước, cho nhân dân, cho sự thống nhất.”</i></p>`
+          story: `<p>Gần ba mươi năm sau khi chiến tranh kết thúc, tháng 11/2003, chiến hạm USS Vandegrift cập cảng Sài Gòn. Đây là tàu chiến đầu tiên của Hải quân Mỹ ghé thăm Việt Nam kể từ năm 1975.</p><p>Theo lời mời của Đại sứ Mỹ Raymond Burghardt và Tổng lãnh sự Emi Lynn Yamauchi, Phạm Xuân Ẩn cùng nhiều quan chức đã lên thăm tàu.</p><p>Sau chuyến thăm, Lãnh sự quán Mỹ gửi tặng ông một tấm ảnh chụp trên chiến hạm. Ông coi đây là một trong những món quà đáng giá của mình. Ông tự hào vì đã sống đủ lâu để chứng kiến một sự kiện mang tính biểu tượng cho tiến trình hòa giải và hợp tác giữa Mỹ và Việt Nam, và nói: <i>“Tôi đã có thể thanh thản nhắm mắt. Tôi đã phụng sự cho đất nước, cho nhân dân, cho sự thống nhất.”</i></p>`
         }
       ],
       ja: [
@@ -2391,6 +2414,7 @@
           title: '二重の伝説の生涯',
           sub: '',
           image: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
+          caption: '写真「二重の生涯」― 諜報少将ファム・スアン・アンと『タイム』誌記者',
           pieces: [
             {
               title: 'ピース 1: 暗号名',
@@ -2422,6 +2446,7 @@
           title: '伝説たちの集い',
           sub: '',
           image: 'assets/images/1957_1959/1958_Ngoai_MuoiHuongChupCungPXAVaNhieuNhaTinhBao.jpg',
+          caption: 'ムオイ・フオン（前列左から3人目）がファム・スアン・アン（後列左から3人目）および他の諜報員たちと共に撮影した記念写真（出典：トイチェー紙）',
           pieces: [
             {
               title: 'ピース 1: 指導者',
@@ -2453,6 +2478,7 @@
           title: '記者証の裏の真実',
           sub: '',
           image: 'assets/images/PhongLuuNiem/PLN_PhamXuanGioTheNhaBao.jpg',
+          caption: '自らの記者証を掲げるファム・スアン・アン（出典：チャールズ・ダラパック - AP通信）',
           pieces: [
             {
               title: 'ピース 1: 集いの場',
@@ -2484,6 +2510,7 @@
           title: '運命の1975年4月30日',
           sub: '',
           image: 'assets/images/1974_1976/CCNL_1975_PXAVaTTK.jpg',
+          caption: 'ファム・スアン・アン（左）とチャン・キム・トゥエン（右）',
           pieces: [
             {
               title: 'ピース 1: 仁愛の心',
@@ -2539,7 +2566,7 @@
               feedback: '正解です！ティエウは4月21日に辞任し、副大統領チャン・ヴァン・フオンに権力を移譲した。4月28日、フオンはさらにズオン・ヴァン・ミンへと権力を移譲した。'
             }
           ],
-          story: `<p style="font-size:12px;color:var(--mute);font-style:italic;margin-bottom:12px;border-bottom:1px dashed rgba(235,203,69,0.25);padding-bottom:8px;">出典写真：2003年11月、軍艦USSヴァンデグリフト艦上のファム・スアン・アン（右から2人目）（出典：在ホーチミン市アメリカ総領事館）</p><p>戦争の終結から30年近くが経った2003年11月、軍艦USSヴァンデグリフトがサイゴン港に入港した。これは、1975年以降にベトナムに寄港した初めてのアメリカ海軍の軍艦であった。</p><p>駐ベトナム・アメリカ大使レイモンド・バーグハートと総領事エミ・リン・ヤマウチの招きにより、ファム・スアン・アンは多くの政府関係者とともに同艦を訪れた。</p><p>訪問後、アメリカ領事館は艦上で撮影された一枚の写真をアンに贈った。アンはこれを自分にとって価値ある贈り物の一つと考えていた。アンは、アメリカとベトナムの和解と協力の過程を象徴する出来事を目にするまで長く生きられたことを誇りに思い、<i>「これで心安らかに目をつぶることができる。私は国のため、人民のため、統一のために尽くしてきた」</i>と語った。</p>`
+          story: `<p>戦争の終結から30年近くが経った2003年11月、軍艦USSヴァンデグリフトがサイゴン港に入港した。これは、1975年以降にベトナムに寄港した初めてのアメリカ海軍の軍艦であった。</p><p>駐ベトナム・アメリカ大使レイモンド・バーグハートと総領事エミ・リン・ヤマウチの招きにより、ファム・スアン・アンは多くの政府関係者とともに同艦を訪れた。</p><p>訪問後、アメリカ領事館は艦上で撮影された一枚の写真をアンに贈った。アンはこれを自分にとって価値ある贈り物の一つと考えていた。アンは、アメリカとベトナムの和解と協力の過程を象徴する出来事を目にするまで長く生きられたことを誇りに思い、<i>「これで心安らかに目をつぶることができる。私は国のため、人民のため、統一のために尽くしてきた」</i>と語った。</p>`
         }
       ]
     };
@@ -2718,6 +2745,7 @@
       const unlockedArr = decodeState.unlocked[archiveId];
       const totalUnlocked = unlockedArr.filter(Boolean).length;
       const isAllUnlocked = totalUnlocked === 3;
+      const shouldShowCaption = isAllUnlocked && decodeState.showStory && !!curArchive.caption;
 
       const activePieceObj = curArchive.pieces[decodeState.activePiece] || curArchive.pieces[0];
 
@@ -2876,6 +2904,13 @@
         const piecesGrid = wrapEl.querySelector('.decode-pieces-grid');
         if (piecesGrid) piecesGrid.innerHTML = piecesHtml;
 
+        // Cập nhật khung đen chú thích ảnh (chỉ hiện khi đã giải mã xong 3 mảnh VÀ đã bấm xem toàn bộ)
+        const captionEl = wrapEl.querySelector('.decode-photo-caption');
+        if (captionEl) {
+          captionEl.textContent = curArchive.caption || '';
+          captionEl.style.display = shouldShowCaption ? 'block' : 'none';
+        }
+
         // 5. Cập nhật thanh tiến độ
         const progressEl = wrapEl.querySelector('.decode-progress-bar');
         if (progressEl) {
@@ -2911,9 +2946,12 @@
 
           <div class="decode-tabs">${tabsHtml}</div>
 
-          <div class="decode-photo-box">
-            <img class="decode-bg-img" src="${curArchive.image}" alt="${curArchive.title}" style="opacity:1;filter:none;">
-            <div class="decode-pieces-grid">${piecesHtml}</div>
+          <div class="decode-photo-card">
+            <div class="decode-photo-box">
+              <img class="decode-bg-img" src="${curArchive.image}" alt="${curArchive.title}" style="opacity:1;filter:none;">
+              <div class="decode-pieces-grid">${piecesHtml}</div>
+            </div>
+            <div class="decode-photo-caption" style="${shouldShowCaption ? 'display:block;' : 'display:none;'}">${curArchive.caption || ''}</div>
           </div>
 
           <div class="decode-progress-bar">
