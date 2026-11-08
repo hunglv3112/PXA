@@ -714,7 +714,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: filter .6s ease;
+      transition: filter .6s ease, opacity .6s ease;
     }
 
     .decode-pieces-grid {
@@ -728,9 +728,9 @@
     .decode-piece {
       position: relative;
       border-right: 2px dashed rgba(235, 203, 69, 0.4);
-      background: rgba(11, 23, 28, 0.94);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgb(10, 20, 26);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -746,12 +746,12 @@
     }
 
     .decode-piece:hover:not(.unlocked) {
-      background: rgba(18, 38, 47, 0.9);
+      background: rgb(18, 36, 46);
       box-shadow: inset 0 0 25px rgba(235, 203, 69, 0.25);
     }
 
     .decode-piece.active:not(.unlocked) {
-      background: rgba(24, 52, 63, 0.95);
+      background: rgb(22, 44, 56);
       box-shadow: inset 0 0 20px rgba(235, 203, 69, 0.4);
       border-color: var(--gold);
     }
@@ -2832,7 +2832,8 @@
             bgImg.src = curArchive.image;
             bgImg.alt = curArchive.title;
           }
-          bgImg.style.filter = isAllUnlocked ? 'none' : 'blur(3px) brightness(0.85)';
+          bgImg.style.filter = 'none';
+          bgImg.style.opacity = '1';
         }
 
         const piecesGrid = wrapEl.querySelector('.decode-pieces-grid');
@@ -2874,7 +2875,7 @@
           <div class="decode-tabs">${tabsHtml}</div>
 
           <div class="decode-photo-box">
-            <img class="decode-bg-img" src="${curArchive.image}" alt="${curArchive.title}" style="${isAllUnlocked ? 'filter:none;' : 'filter:blur(3px) brightness(0.85);'}">
+            <img class="decode-bg-img" src="${curArchive.image}" alt="${curArchive.title}" style="opacity:1;filter:none;">
             <div class="decode-pieces-grid">${piecesHtml}</div>
           </div>
 
@@ -2990,8 +2991,7 @@
         if (progressSpan) progressSpan.textContent = `${totalUnlocked}/3`;
 
         if (totalUnlocked === 3) {
-          const bgImg = document.querySelector('.decode-bg-img');
-          if (bgImg) bgImg.style.filter = 'none';
+          // Tất cả mảnh đã mở — ảnh đã hiển thị đầy đủ (các mảnh đều opacity:0)
           const tabBtns = document.querySelectorAll('.decode-tab-btn');
           if (tabBtns[decodeState.archiveIndex]) {
             tabBtns[decodeState.archiveIndex].classList.add('completed');
