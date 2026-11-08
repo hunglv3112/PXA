@@ -861,6 +861,46 @@
       box-shadow: 0 0 12px rgba(76, 175, 80, 0.55);
     }
 
+    .decode-story-badge-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      border: 1px solid var(--gold);
+      background: linear-gradient(135deg, #ebcb45 0%, #d4ad22 100%);
+      color: #12181b;
+      font-size: 11.5px;
+      font-weight: 700;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all .2s ease;
+      font-family: var(--sans);
+      box-shadow: 0 0 10px rgba(235, 203, 69, 0.45);
+      animation: decodeBadgePulse 1.8s infinite;
+      user-select: none;
+    }
+
+    .decode-story-badge-btn:hover {
+      background: #fff;
+      color: #12181b;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(235, 203, 69, 0.7);
+    }
+
+    @keyframes decodeBadgePulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 8px rgba(235, 203, 69, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 0 16px rgba(235, 203, 69, 0.85);
+        transform: scale(1.03);
+      }
+    }
+
     .decode-quiz-area {
       width: 100%;
       min-height: 180px;
@@ -2719,6 +2759,14 @@
         `;
       }).join('');
 
+      if (isAllUnlocked && !decodeState.showStory) {
+        badgesHtml += `
+          <button type="button" id="decodeStoryHeaderBtn" class="decode-story-badge-btn" onclick="window.showArchiveStory()" title="${isJa ? '写真全体と歴史物語を見る' : 'Xem toàn bộ ảnh & Câu chuyện lịch sử'}">
+            ${isJa ? '歴史ストーリーを読む ➔' : 'Xem toàn bộ ảnh & Câu chuyện lịch sử ➔'}
+          </button>
+        `;
+      }
+
       const isCurrentPieceUnlocked = unlockedArr[decodeState.activePiece] === true;
       let quizHtml = '';
 
@@ -2767,16 +2815,6 @@
           `).join('');
         }
 
-        const nextLockedIdx = unlockedArr.findIndex(u => !u);
-        let nextBtnHtml = '';
-        if (isCurrentPieceUnlocked && nextLockedIdx === -1) {
-          nextBtnHtml = `
-            <button type="button" class="go" onclick="window.showArchiveStory()" style="padding:9px 20px;font-size:13px;cursor:pointer;">
-              ${isJa ? '歴史ストーリーを読む ➔' : 'Xem toàn bộ ảnh & Câu chuyện lịch sử ➔'}
-            </button>
-          `;
-        }
-
         quizHtml = `
           <div class="decode-quiz-card" id="decodeQuizCard">
             <div class="quiz-hdr">
@@ -2789,9 +2827,6 @@
             <div class="quiz-options" id="quizOptionsWrap">${optHtml}</div>
             <div class="quiz-feedback ${isCurrentPieceUnlocked ? 'success' : ''}" id="quizFeedback" style="${isCurrentPieceUnlocked ? 'display:block;' : 'display:none;'}">
               ${isCurrentPieceUnlocked ? '✓ ' + pObj.feedback : ''}
-            </div>
-            <div class="quiz-next-action" id="quizNextAction" style="${isCurrentPieceUnlocked && nextLockedIdx === -1 ? 'display:flex;' : 'display:none;'}margin-top:14px;justify-content:flex-end;gap:10px;">
-              ${nextBtnHtml}
             </div>
           </div>
         `;
@@ -2998,25 +3033,18 @@
           if (tabBtns[decodeState.archiveIndex]) {
             tabBtns[decodeState.archiveIndex].classList.add('completed');
           }
-        }
 
-        // Không hiện nút "Giải mã mảnh tiếp theo" — người dùng tự bấm badge phía trên
-        // Chỉ hiện nút "Xem toàn bộ ảnh" khi cả 3 mảnh đã mở khóa
-        const actionEl = document.getElementById('quizNextAction');
-        const nextLockedIdx = decodeState.unlocked[curArchive.id].findIndex(u => !u);
-        if (actionEl) {
-          if (nextLockedIdx === -1) {
-            // Tất cả 3 mảnh đã giải mã xong → hiện nút xem câu chuyện
-            actionEl.style.display = 'flex';
-            actionEl.innerHTML = `
-              <button type="button" class="go" onclick="window.showArchiveStory()" style="padding:9px 20px;font-size:13px;cursor:pointer;">
-                ${isJa ? '歴史ストーリーを読む ➔' : 'Xem toàn bộ ảnh & Câu chuyện lịch sử ➔'}
-              </button>
-            `;
-          } else {
-            // Còn mảnh chưa mở → ẩn khu vực action, người dùng tự bấm badge trên
-            actionEl.style.display = 'none';
-            actionEl.innerHTML = '';
+          // Hiện ngay nút màu vàng bên cạnh Mảnh 3 trên thanh tiến độ
+          const badgesWrap = document.querySelector('.decode-badges');
+          if (badgesWrap && !badgesWrap.querySelector('#decodeStoryHeaderBtn')) {
+            const storyBadgeBtn = document.createElement('button');
+            storyBadgeBtn.type = 'button';
+            storyBadgeBtn.id = 'decodeStoryHeaderBtn';
+            storyBadgeBtn.className = 'decode-story-badge-btn';
+            storyBadgeBtn.onclick = function () { window.showArchiveStory(); };
+            storyBadgeBtn.title = isJa ? '写真全体と歴史物語を見る' : 'Xem toàn bộ ảnh & Câu chuyện lịch sử';
+            storyBadgeBtn.innerHTML = isJa ? '歴史ストーリーを読む ➔' : 'Xem toàn bộ ảnh & Câu chuyện lịch sử ➔';
+            badgesWrap.appendChild(storyBadgeBtn);
           }
         }
       } else {
