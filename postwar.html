@@ -2789,8 +2789,8 @@
 
       if (isAllUnlocked && !decodeState.showStory) {
         badgesHtml += `
-          <button type="button" id="decodeStoryHeaderBtn" class="decode-story-badge-btn" onclick="window.showArchiveStory()" title="${isJa ? '写真全体と歴史物語を見る' : 'Xem toàn bộ ảnh & Câu chuyện lịch sử'}">
-            ${isJa ? '歴史ストーリーを読む ➔' : 'Xem toàn bộ ảnh & Câu chuyện lịch sử ➔'}
+          <button type="button" id="decodeStoryHeaderBtn" class="decode-story-badge-btn" onclick="window.showArchiveStory()" title="${isJa ? '背後にある歴史ストーリーを読む' : 'Xem câu chuyện lịch sử phía sau'}">
+            ${isJa ? '背後にある歴史ストーリーを読む ➔' : 'Xem câu chuyện lịch sử phía sau ➔'}
           </button>
         `;
       }
@@ -3080,8 +3080,8 @@
             storyBadgeBtn.id = 'decodeStoryHeaderBtn';
             storyBadgeBtn.className = 'decode-story-badge-btn';
             storyBadgeBtn.onclick = function () { window.showArchiveStory(); };
-            storyBadgeBtn.title = isJa ? '写真全体と歴史物語を見る' : 'Xem toàn bộ ảnh & Câu chuyện lịch sử';
-            storyBadgeBtn.innerHTML = isJa ? '歴史ストーリーを読む ➔' : 'Xem toàn bộ ảnh & Câu chuyện lịch sử ➔';
+            storyBadgeBtn.title = isJa ? '背後にある歴史ストーリーを読む' : 'Xem câu chuyện lịch sử phía sau';
+            storyBadgeBtn.innerHTML = isJa ? '背後にある歴史ストーリーを読む ➔' : 'Xem câu chuyện lịch sử phía sau ➔';
             badgesWrap.appendChild(storyBadgeBtn);
           }
         }
