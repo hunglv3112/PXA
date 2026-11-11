@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ==============================================================================
  * BỐ CỤC CHÍNH VÀ HIỆU ỨNG GIAO DIỆN (css/style.css)
  * ==============================================================================
@@ -172,6 +172,68 @@ button {
 
 .down {
   justify-content: flex-start;
+  position: relative;
+}
+
+/* ==========================================================================
+   VẠCH GẠCH CHÂN GIAI ĐOẠN (Period Highlight - 1957 - 1959)
+   ========================================================================== */
+.timeline-period-highlight {
+  position: absolute;
+  top: calc(var(--stem) + var(--card-h) + 10px);
+  left: calc((var(--col) - var(--card-w)) / 2);
+  width: calc(var(--col) * 2 + var(--card-w));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.timeline-period-highlight .period-line {
+  width: 100%;
+  height: 3px;
+  background: #d32f2f;
+  position: relative;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(211, 47, 47, 0.28);
+}
+
+.timeline-period-highlight .period-line::before,
+.timeline-period-highlight .period-line::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 3px;
+  height: 10px;
+  background: #d32f2f;
+  border-radius: 1.5px 1.5px 0 0;
+}
+
+.timeline-period-highlight .period-line::before {
+  left: 0;
+}
+
+.timeline-period-highlight .period-line::after {
+  right: 0;
+}
+
+.timeline-period-highlight .period-label {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 14px;
+  background: rgba(211, 47, 47, 0.08);
+  border: 1.5px solid rgba(211, 47, 47, 0.35);
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: #b71c1c;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .slot {
@@ -787,13 +849,13 @@ button.pill:hover {
 }
 
 /* Khoảng cách giữa ảnh chèn và đoạn văn bản kế tiếp */
-.m-mid-figure + p,
-.m-content-figure + p {
+.m-mid-figure+p,
+.m-content-figure+p {
   margin-top: 24px !important;
 }
 
-p + .m-mid-figure,
-p + .m-content-figure {
+p+.m-mid-figure,
+p+.m-content-figure {
   margin-top: 26px !important;
 }
 

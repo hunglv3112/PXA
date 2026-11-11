@@ -172,6 +172,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
+      // Nhãn giai đoạn du học báo chí (1957 - 1959) ở nhánh báo chí
+      if (group.y == 1957) {
+        const periodEl = createEl('div', 'timeline-period-highlight');
+        const periodLine = createEl('div', 'period-line');
+        const periodLabel = createEl('div', 'period-label');
+        const periodText = createEl('span', 'period-text', lang === 'ja' ? 'ジャーナリズム専攻の学生' : 'Sinh viên ngành báo chí');
+        periodLabel.appendChild(periodText);
+        periodEl.appendChild(periodLine);
+        periodEl.appendChild(periodLabel);
+        dn.appendChild(periodEl);
+      }
+
       // Nếu có sự kiện mốc ở giữa (mid)
       if (midEvent) {
         const midData = window.getEventData ? window.getEventData(midEvent, lang) : midEvent;
