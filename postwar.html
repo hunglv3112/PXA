@@ -2245,7 +2245,7 @@
             modalTitle: 'ファム・スアン・アン少将が眠る地',
             img: '三匹の動物像と墓所',
             imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
-            caption: '出典：ファム・スアン・アン少将が眠る地 (Ngoc BUKI)',
+            caption: '出典：mmlafmファム・スアン・アン少将が眠る地 (Ngoc BUKI)',
             h: `
               <p>アンが眠る地のそばには、その人生哲学を表す3種類の動物の像がある。</p>
               <p>犬は、祖国と友への忠誠を象徴している。</p>
@@ -2254,8 +2254,8 @@
             `
           },
           {
-            y: '歴史の解読',
-            t: 'ファム・スアン・アンを解読せよ',
+            y: '',
+            t: 'ファム・スアン・アン 解読',
             img: '3つの歴史ピース',
             imgSrc: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
             isDecode: true,
@@ -2273,130 +2273,190 @@
         {
           id: 'dossier-1',
           name: 'Hồ sơ 01',
-          title: 'Hai nửa một cuộc đời huyền thoại',
+          title: 'Kỷ vật vô giá từ tờ báo trường The Barnacle',
           sub: '',
-          image: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
-          caption: 'Bức ảnh "Hai nửa một cuộc đời" – Thiếu tướng tình báo Phạm Xuân Ẩn và Nhà báo tuần báo Time',
+          image: 'assets/images/Trắc nghiệm/TN_CocCafe.jpg',
+          caption: 'Chiếc cốc cà phê có chữ ký của các nhân viên tờ The Barnacle được đặt trên bàn thờ cùng huân chương của Thiếu tướng Phạm Xuân Ẩn (Nguồn: Điệp viên hoàn hảo - Trang 147, 327)',
           pieces: [
             {
-              title: 'Mảnh 1: Mật danh',
-              q: 'Phạm Xuân Ẩn hoạt động tình báo bí mật cho quân đội ta dưới mật danh nổi tiếng nào?',
-              options: ['A. X6', 'B. H10', 'C. K25', 'D. A3'],
-              correct: 0,
-              feedback: 'Chính xác! Mật danh huyền thoại của ông là X6 thuộc Cụm Tình báo H.63.'
+              title: 'Mảnh 1: Chọn ngành báo chí',
+              q: 'Mười Hương khuyên Phạm Xuân Ẩn chọn ngành báo chí vì lý do quan trọng nhất nào?',
+              options: [
+                'A. Học phí ngành báo chí rẻ nhất',
+                'B. Nghề báo có bình diện giao tiếp rộng nhất, thuận lợi cho công tác tình báo sau này',
+                'C. Hildreth yêu cầu Ẩn phải học ngành báo chí',
+                'D. Ngành báo chí được Liên Hợp Quốc cấp học bổng'
+              ],
+              correct: 1,
+              feedback: 'Chính xác! Mười Hương cho rằng nghề báo có bình diện giao tiếp rộng nhất, tạo điều kiện thuận lợi cho công tác tình báo sau này. Ngoài ra, khi đó Ẩn chưa có bằng tốt nghiệp trung học, mà ngành báo chí không bắt buộc loại bằng này.'
             },
             {
-              title: 'Mảnh 2: Vỏ bọc',
-              q: 'Trong vai trò ký giả, Phạm Xuân Ẩn từng là phóng viên chính thức của cơ quan báo chí danh tiếng nào của Hoa Kỳ?',
-              options: ['A. Tuần báo Time', 'B. Báo The New York Times', 'C. Hãng tin Reuters', 'D. Tạp chí Newsweek'],
-              correct: 0,
-              feedback: 'Chính xác! Ông là phóng viên chính thức người Việt Nam đầu tiên của tuần báo danh tiếng Time.'
+              title: 'Mảnh 2: Phương án dự phòng',
+              q: 'Sau khi mất liên lạc với tổ chức vì Mười Hương bị bắt, Phạm Xuân Ẩn đã học thêm ngôn ngữ nào để dự phòng?',
+              options: [
+                'A. Tiếng Pháp',
+                'B. Tiếng Nga',
+                'C. Tiếng Tây Ban Nha',
+                'D. Tiếng Trung'
+              ],
+              correct: 2,
+              feedback: 'Chính xác! Ẩn lo Mỹ phát hiện thân phận tình báo của mình nên học thêm tiếng Tây Ban Nha để dự phòng một lối thoát sang Cuba, từ đó tìm đường về nước tiếp tục chiến đấu.'
             },
             {
-              title: 'Mảnh 3: Chữ "Nghĩa"',
-              q: 'Trước giờ phút giải phóng trưa 30/4/1975, Phạm Xuân Ẩn đã bất chấp nguy hiểm dùng xe riêng đưa ai đi di tản để trọn vẹn chữ Nghĩa?',
-              options: ['A. Bác sĩ Trần Kim Tuyến (Trùm mật vụ)', 'B. Tướng Nguyễn Cao Kỳ', 'C. Đại sứ Graham Martin', 'D. Ký giả Morley Safer'],
-              correct: 0,
-              feedback: 'Chính xác! Ông đã mưu trí cứu bác sĩ Trần Kim Tuyến lên chuyến trực thăng di tản cuối cùng vì ân tình xưa.'
+              title: 'Mảnh 3: Trở về Tân Sơn Nhất',
+              q: 'Khi trở về sân bay Tân Sơn Nhất ngày 10/10/1959, Phạm Xuân Ẩn đã làm gì để phòng trường hợp bị bắt?',
+              options: [
+                'A. Chọn chuyến bay đêm để tránh bị chú ý',
+                'B. Sắp xếp để cả gia đình ra đón tại sân bay',
+                'C. Nhờ Lansdale đứng ra bảo lãnh',
+                'D. Nhập cảnh bằng tên giả'
+              ],
+              correct: 1,
+              feedback: 'Chính xác! Ẩn sắp xếp để cả gia đình ra đón, vì ông tính rằng nếu mình bị bắt thì có nhân chứng sẽ tốt hơn.'
             }
           ],
-          story: `<p><b>Bức ảnh "Hai nửa một cuộc đời"</b> khắc họa sinh động hai mặt tưởng chừng đối lập nhưng hòa quyện hoàn hảo trong con người Thiếu tướng Phạm Xuân Ẩn: một bên là người chiến sĩ cộng sản kiên trung trong bộ quân phục Thiếu tướng trang nghiêm, một bên là nhà báo tài hoa, lịch thiệp của tuần báo hàng đầu thế giới <i>Time</i> với điếu thuốc lá quen thuộc trên môi.</p><p>Hơn hai mươi năm hoạt động ngay giữa đầu não của đối phương, ông đã làm tròn tuyệt đối cả hai sứ mệnh: người làm báo chân chính cung cấp thông tin trung thực cho dư luận thế giới, và người tình báo xuất sắc bảo vệ non sông mà chưa từng làm tổn thương đồng nghiệp hay phản bội bạn bè.</p>`
+          story: `<p>Trong số báo cuối cùng của năm học 1959 trên tờ The Barnacle, Phạm Xuân Ẩn viết một bài chia tay, mở đầu bằng câu của nhà văn Pháp Anatole France: “Cuộc ra đi dù đúng với mong muốn của mình vẫn để lại phía sau một chút buồn”. Ông cũng gửi lời cảm ơn đến các thầy cô, các cô gái phục vụ căn tin, nhân viên trực điện thoại và bạn học đã giúp đỡ ông trong suốt thời gian học tập.</p><p>Để ghi nhận đóng góp của ông, tờ The Barnacle tặng ông một chiếc cốc cà phê in hình ông ngồi đánh máy tại bàn làm việc, kèm chữ ký của toàn bộ thành viên. Ông mang chiếc cốc về Sài Gòn và giữ suốt đời.</p>`
         },
         {
           id: 'dossier-2',
           name: 'Hồ sơ 02',
-          title: 'Cuộc gặp của các huyền thoại',
+          title: 'Người vợ thầm lặng của Phạm Xuân Ẩn',
           sub: '',
-          image: 'assets/images/1957_1959/1958_Ngoai_MuoiHuongChupCungPXAVaNhieuNhaTinhBao.jpg',
-          caption: 'Mười Hương (hàng đầu, thứ ba từ trái sang) chụp cùng Phạm Xuân Ẩn (hàng thứ hai, thứ ba từ trái sang) và các nhà tình báo khác (Nguồn: Báo Tuổi Trẻ)',
+          image: 'assets/images/Trắc nghiệm/TN_PXAVoGia.jpg',
+          caption: 'Vợ chồng Phạm Xuân Ẩn - Thu Nhạn trong ngày cưới, tháng 1/1962. (Nguồn: Phạm Xuân Ẩn: Tên người như cuộc đời, tr. 238)',
           pieces: [
             {
-              title: 'Mảnh 1: Người thầy',
-              q: 'Ai là người chỉ huy tình báo chiến lược đã trực tiếp lựa chọn, định hướng và giao nhiệm vụ sang Mỹ học báo chí cho Phạm Xuân Ẩn?',
-              options: ['A. Đồng chí Mười Hương (Trần Quốc Hương)', 'B. Đại tá Tư Cang', 'C. Tướng Mai Chí Thọ', 'D. Bác sĩ Phạm Ngọc Thạch'],
-              correct: 0,
-              feedback: 'Chính xác! Đồng chí Mười Hương là kiến trúc sư vĩ đại của mạng lưới tình báo chiến lược miền Nam.'
+              title: 'Mảnh 1: Hãng thông tấn Reuters',
+              q: 'Năm 1960, sau khi về nước, Phạm Xuân Ẩn được giới thiệu vào làm việc cho hãng thông tấn nào?',
+              options: [
+                'A. AP (Mỹ)',
+                'B. Reuters (Anh)',
+                'C. AFP (Pháp)',
+                'D. TASS (Liên Xô)'
+              ],
+              correct: 1,
+              feedback: 'Chính xác! Năm 1960, qua sự giới thiệu của Nguyễn Thái, Tổng Giám đốc Việt Tấn Xã, Phạm Xuân Ẩn bắt đầu làm việc cho Reuters, hãng thông tấn của Anh.'
             },
             {
-              title: 'Mảnh 2: Du học Mỹ',
-              q: 'Trường đại học mà Phạm Xuân Ẩn theo học chuyên ngành báo chí tại bang California (Mỹ) trong giai đoạn 1957 - 1959 là trường nào?',
-              options: ['A. Orange Coast College (OCC)', 'B. Đại học Harvard', 'C. Đại học Columbia', 'D. Đại học Stanford'],
-              correct: 0,
-              feedback: 'Chính xác! Ông đã học chuyên ngành báo chí tại Orange Coast College (California).'
+              title: 'Mảnh 2: Sao chụp tài liệu mật',
+              q: 'Phạm Xuân Ẩn đã chụp tài liệu “Kỹ thuật và chiến thuật chống nổi dậy” thành bao nhiêu cuộn phim?',
+              options: [
+                'A. 12 cuộn',
+                'B. 18 cuộn',
+                'C. 24 cuộn',
+                'D. 36 cuộn'
+              ],
+              correct: 2,
+              feedback: 'Chính xác! Năm 1961, Phạm Xuân Ẩn chụp toàn bộ tài liệu thành 24 cuộn phim và chuyển ra căn cứ qua đường dây liên lạc mới thiết lập.'
             },
             {
-              title: 'Mảnh 3: Bài thơ Tiễn bạn',
-              q: 'Người đồng đội, chỉ huy trưởng Cụm H.63 từng gắn bó sinh tử và viết bài thơ "Tiễn bạn" xúc động cho Phạm Xuân Ẩn là ai?',
-              options: ['A. Đại tá Tư Cang (Nguyễn Văn Tàu)', 'B. Đại tá Đinh Đức Thiện', 'C. Tướng Đặng Trần Đức', 'D. Thiếu tướng Vũ Ngọc Nhạ'],
-              correct: 0,
-              feedback: 'Chính xác! Đó chính là Đại tá Anh hùng LLVTND Tư Cang (Nguyễn Văn Tàu).'
+              title: 'Mảnh 3: Ngụy trang tài liệu',
+              q: 'Để gửi phim chụp tài liệu mật ra căn cứ, Phạm Xuân Ẩn đã giấu chúng ở đâu?',
+              options: [
+                'A. Trong giày',
+                'B. Trong các món ăn như nem chua, bánh mì',
+                'C. Trong máy ảnh',
+                'D. Trong sách'
+              ],
+              correct: 1,
+              feedback: 'Chính xác! Phạm Xuân Ẩn giấu phim chụp thu nhỏ tài liệu mật trong các món ăn như nem chua, bánh xèo, bánh mì, rồi gửi ra căn cứ qua các giao liên như bà Nguyễn Thị Ba, bà Tám Thảo.'
             }
           ],
-          story: `<p><b>Bức ảnh lịch sử vô giá</b> ghi lại khoảnh khắc hội ngộ của các huyền thoại trong ngành tình báo cách mạng Việt Nam. Đứng ở trung tâm là Phạm Xuân Ẩn cùng đồng chí Trần Quốc Hương (Mười Hương) - người thầy, người chỉ huy đã nhìn ra tư chất kiệt xuất của ông từ những năm đầu kháng chiến.</p><p>Họ là những trí tuệ lớn đã âm thầm dâng hiến cả thanh xuân và sinh mạng, tạo nên những chiến công hiển hách góp phần quyết định vào ngày non sông thống nhất.</p>`
+          story: `<p>Ngày 25/1/1962, Phạm Xuân Ẩn kết hôn với Hoàng Thị Thu Nhạn, khi ấy đang bán đồ thêu và hộp sơn mài tại một cửa hàng trên đường Catinat, Sài Gòn.</p><p>Sau khi kết hôn, bà Nhạn nghỉ việc để chăm lo gia đình, đồng thời hạn chế những mối quan hệ bên ngoài có thể gây nguy hiểm cho hoạt động bí mật của chồng. Khi dần biết đến công việc tình báo của ông, bà cũng âm thầm hỗ trợ bằng nhiều cách.</p><p>Mỗi khi cần, bà lặng lẽ theo chồng từ xa trong lúc ông trao tài liệu cho giao liên. Nếu ông bị bắt hoặc gặp sự cố, bà có thể kịp thời báo tin cho tổ chức. Khi cùng chồng đến nhà những nhân vật có ảnh hưởng trong chính quyền Sài Gòn, bà thường trò chuyện riêng với vợ chủ nhà, tạo điều kiện để ông Ẩn trao đổi thông tin với người cần gặp.</p>`
         },
         {
           id: 'dossier-3',
           name: 'Hồ sơ 03',
-          title: 'Sự thật phía sau tấm thẻ nhà báo',
+          title: 'Bài học không có ở trường',
           sub: '',
-          image: 'assets/images/PhongLuuNiem/PLN_PhamXuanGioTheNhaBao.jpg',
-          caption: 'Phạm Xuân Ẩn giơ thẻ nhà báo của mình (Nguồn: Charles Dharapak - AP)',
+          image: 'assets/images/Trắc nghiệm/TN_PXATreEm.jpg',
+          caption: 'Phạm Xuân Ẩn cùng những đứa trẻ không nhà kiếm sống bằng nghề đánh giày trên đường phố Sài Gòn, năm 1970 (Nguồn: Phạm Xuân Ẩn: Tên người như cuộc đời - Trang 235)',
           pieces: [
             {
-              title: 'Mảnh 1: Điểm hẹn Givral',
-              q: 'Quán cà phê nổi tiếng nào tại góc đường Tự Do được mệnh danh là "trung tâm thông tin" nơi Phạm Xuân Ẩn thường lui tới mỗi sáng để đàm đạo cùng giới báo chí và chính khách?',
-              options: ['A. Cà phê Givral', 'B. Quán Brodard', 'C. Quán La Pagode', 'D. Khách sạn Caravelle'],
-              correct: 0,
-              feedback: 'Chính xác! Cà phê Givral là nơi hội tụ các nhà báo quốc tế, được ví như "nghị viện Givral" lừng danh giữa lòng Sài Gòn.'
+              title: 'Mảnh 1: Rời khỏi Reuters',
+              q: 'Năm 1964, trưởng đại diện Reuters yêu cầu Phạm Xuân Ẩn dẹp thứ gì trên bàn làm việc, khiến ông quyết định nộp đơn xin nghỉ việc?',
+              options: [
+                'A. Máy đánh chữ',
+                'B. Lồng chim',
+                'C. Bể cá',
+                'D. Chồng báo cũ'
+              ],
+              correct: 1,
+              feedback: 'Chính xác! Ngày 27/8/1964, trưởng đại diện Nick Turner quát mắng Phạm Xuân Ẩn và bắt ông dẹp lồng chim trên bàn làm việc, nên ông nộp đơn xin nghỉ việc tại Reuters sau gần 4 năm gắn bó.'
             },
             {
-              title: 'Mảnh 2: Hộp thư mật',
-              q: 'Nữ giao liên dũng cảm của Cụm H.63 thường xuyên nhận tài liệu mật được ngụy trang trong nem, chả giò từ Phạm Xuân Ẩn để chuyển ra chiến khu Củ Chi là ai?',
-              options: ['A. Nữ anh hùng Nguyễn Thị Ba', 'B. Nữ anh hùng Võ Thị Sáu', 'C. Đồng chí Nguyễn Thị Định', 'D. Đồng chí Lê Thị Riêng'],
-              correct: 0,
-              feedback: 'Chính xác! Nữ giao liên anh hùng Nguyễn Thị Ba (cô Ba) đã kiên cường vận chuyển hàng trăm tài liệu mật an toàn suốt cuộc chiến.'
+              title: 'Mảnh 2: Phóng viên tạp chí Time',
+              q: 'Tháng 8/1965, Phạm Xuân Ẩn được tuyển chính thức làm phóng viên thường trú cho cơ quan báo chí nào?',
+              options: [
+                'A. Hãng thông tấn Reuters',
+                'B. Báo The New York Herald Tribune',
+                'C. Tạp chí Time',
+                'D. Tạp chí Newsweek'
+              ],
+              correct: 2,
+              feedback: 'Chính xác! Tháng 8/1965, trưởng đại diện văn phòng Time tại Sài Gòn là Frank McCulloch ký hợp đồng tuyển Phạm Xuân Ẩn làm phóng viên thường trú với mức lương 75 USD/tuần.'
             },
             {
-              title: 'Mảnh 3: Hai sự thật',
-              q: 'Khi phóng viên quốc tế hỏi ông rốt cuộc hoạt động cho phe nào, Phạm Xuân Ẩn đã có câu trả lời bất hủ nào?',
-              options: ['A. "Hai sự thật... đều thật"', 'B. "Tôi chỉ là một người quan sát"', 'C. "Tôi phục vụ cho sự thật"', 'D. "Lịch sử sẽ trả lời tất cả"'],
+              title: 'Mảnh 3: Hồ sơ Tám Hà',
+              q: 'Năm 1968, Phạm Xuân Ẩn mượn nguyên bản hồ sơ thẩm vấn Tám Hà, sao chụp rồi trả lại trong bao lâu?',
+              options: [
+                'A. Chỉ trong 15 phút',
+                'B. Khoảng 1 tiếng',
+                'C. Trọn 1 ngày',
+                'D. 1 tuần'
+              ],
               correct: 0,
-              feedback: 'Chính xác! Ông khẳng định sự thật làm phóng viên 10 năm cho Time và sự thật theo cách mạng từ 1945 đều hoàn toàn là thật.'
+              feedback: 'Chính xác! Theo chỉ thị khẩn của Tư Cang, Phạm Xuân Ẩn chở ông ra sở chỉ huy quân Việt Nam Cộng hòa ở Gia Định, mượn hồ sơ thẩm vấn Tám Hà, sao chụp rồi trả lại chỉ trong vòng 15 phút.'
             }
           ],
-          story: `<p><b>Tấm thẻ phóng viên tuần báo Time</b> chính là "vũ khí" bí mật và kiên cố nhất của Phạm Xuân Ẩn. Dưới vỏ bọc một nhà báo chuyên nghiệp, sắc sảo và am hiểu địa chính trị bậc nhất Sài Gòn, ông đã đàng hoàng bước vào những cơ quan đầu não quân sự của Mỹ và chính quyền Sài Gòn.</p><p>Năm 1978, khi thân phận tình báo của ông lần đầu tiên được tiết lộ, cả giới tình báo Lầu Năm Góc lẫn báo giới quốc tế đều bàng hoàng thán phục trước nhãn quan chiến lược thiên tài và nhân cách cao đẹp của người ký giả kỳ cựu.</p>`
+          story: `<p>Trong những năm 1960, Phạm Xuân Ẩn lần lượt làm việc cho hãng thông tấn Reuters của Anh, rồi báo The New York Herald Tribune và tạp chí Time của Mỹ, thường xuyên tiếp xúc với giới quan chức, tướng lĩnh Mỹ và chính quyền Sài Gòn.</p><p>Dù làm việc trong môi trường đó, ông vẫn giữ sự quan tâm tới đời sống người dân bình thường. Bức ảnh chụp năm 1970, in trong phần tư liệu ảnh của cuốn “Phạm Xuân Ẩn: Tên người như cuộc đời”, là ảnh ông cùng những đứa trẻ không nhà kiếm sống bằng nghề đánh giày trên đường phố Sài Gòn. Trong sách, ông kể rằng thời làm phóng viên Time, ông mong các con lớn lên gần gũi với đời sống người dân và muốn đưa các con theo khi về nông thôn để chúng thấy cảnh sống khó khăn của người nghèo.</p><p>Ông còn quyết định cho con trai đi tập làm bồi bàn ở nhà hàng Givral trong kỳ nghỉ hè, với lý do “để gần gũi với dân”. Tầng lớp thượng lưu Sài Gòn khi ấy cho rằng chỉ có “Việt Cộng” mới dạy con làm việc vất vả. Ông biết làm như vậy có thể bị nghi là “Việt Cộng”, nhưng vẫn quyết định làm.</p>`
         },
         {
           id: 'dossier-4',
           name: 'Hồ sơ 04',
-          title: 'Chuyến xe trưa ngày 30/4/1975',
+          title: '"Tướng Givral"',
           sub: '',
-          image: 'assets/images/1974_1976/CCNL_1975_PXAVaTTK.jpg',
-          caption: 'Phạm Xuân Ẩn (bên trái) và Trần Kim Tuyến (bên phải)',
+          image: 'assets/images/Trắc nghiệm/TN_Givral.jpg',
+          caption: 'Ông Ẩn trong một cuộc gặp với tác giả Larry Berman tại tiệm Givral quen thuộc (Nguồn: Điệp viên hoàn hảo - Trang 47; Báo Dân Việt)',
           pieces: [
             {
-              title: 'Mảnh 1: Lòng nhân ái',
-              q: 'Ai là người đứng đầu cơ quan mật vụ chính quyền Sài Gòn được Phạm Xuân Ẩn bất chấp tính mạng tìm cách cứu thoát trưa ngày 29-30/4/1975?',
-              options: ['A. Bác sĩ Trần Kim Tuyến', 'B. Đại tá Dương Văn Hiếu', 'C. Chuẩn tướng Nguyễn Ngọc Loan', 'D. Trung tá Trần Khắc Kính'],
-              correct: 0,
-              feedback: 'Chính xác! Bác sĩ Trần Kim Tuyến (Trưởng Sở Nghiên cứu Chính trị Xã hội) từng giúp đỡ ông du học Mỹ và tạo vỏ bọc hoạt động.'
+              title: 'Mảnh 1: Hiệp định Paris',
+              q: 'Hiệp định Paris được ký kết vào ngày nào?',
+              options: [
+                'A. 22/12/1972',
+                'B. 27/01/1973',
+                'C. 29/03/1973',
+                'D. 21/07/1973'
+              ],
+              correct: 1,
+              feedback: 'Chính xác! Hiệp định Paris ký ngày 27/01/1973; ngày 29/03/1973 là ngày quân Mỹ cuối cùng rút khỏi miền Nam.'
             },
             {
-              title: 'Mảnh 2: Khoảnh khắc sinh tử',
-              q: 'Phạm Xuân Ẩn đã mưu trí đưa bác sĩ Trần Kim Tuyến thoát lên chuyến trực thăng di tản cuối cùng ở địa điểm nào?',
-              options: ['A. Tòa nhà số 22 Gia Long (nóc nhà Đại sứ quán Mỹ / cơ quan tình báo)', 'B. Sân bay Tân Sơn Nhất', 'C. Tòa nhà Dinh Độc Lập', 'D. Bến cảng Bạch Đằng'],
-              correct: 0,
-              feedback: 'Chính xác! Ông đã thắng gấp xe trước cánh cổng đang khép và đẩy bác sĩ Tuyến vào bên trong tòa nhà sơ tán kịp giờ trực thăng cất cánh.'
+              title: 'Mảnh 2: Chiến dịch Linebacker I',
+              q: 'Phạm Xuân Ẩn cảnh báo chiến dịch Linebacker I sẽ dùng gì để đánh phá miền Bắc?',
+              options: [
+                'A. B-52 rải thảm Hà Nội',
+                'B. Máy bay cường kích và bom laser',
+                'C. Tên lửa hành trình',
+                'D. Đặc nhiệm đổ bộ'
+              ],
+              correct: 1,
+              feedback: 'Chính xác! Ẩn báo trước Mỹ sẽ dùng máy bay cường kích và bom laser.'
             },
             {
-              title: 'Mảnh 3: Đánh giá của cấp trên',
-              q: 'Vị lãnh đạo cấp cao nào của cách mạng sau ngày giải phóng đã khen ngợi hành động cứu bác sĩ Tuyến của Phạm Xuân Ẩn là "Nhân - Trí - Dũng"?',
-              options: ['A. Đồng chí Mai Chí Thọ', 'B. Đồng chí Phạm Hùng', 'C. Đồng chí Võ Văn Kiệt', 'D. Đồng chí Nguyễn Văn Linh'],
-              correct: 0,
-              feedback: 'Chính xác! Đại tướng Mai Chí Thọ đã đánh giá hành động trọng ân nghĩa, mưu trí của ông là biểu tượng sáng ngời của tinh thần "Nhân - Trí - Dũng".'
+              title: 'Mảnh 3: Vùng giải phóng Mỹ Tho',
+              q: 'Phạm Xuân Ẩn gợi ý nhà báo Pomonti dừng lại ở đâu để vào vùng giải phóng Mỹ Tho?',
+              options: [
+                'A. Bến phà Mỹ Thuận',
+                'B. Thành phố Mỹ Tho',
+                'C. Xóm Mỹ Quý',
+                'D. Thị trấn Cai Lậy'
+              ],
+              correct: 2,
+              feedback: 'Chính xác! Ẩn gợi ý dừng trước xóm Mỹ Quý, trên đường dẫn đến bến phà Mỹ Thuận.'
             }
           ],
-          story: `<p><b>Bức ảnh lưu giữ ký ức về tình bạn và đạo lý làm người</b> giữa Phạm Xuân Ẩn và bác sĩ Trần Kim Tuyến - hai con người ở hai chiến tuyến đối đầu. Trong cơn biến loạn trưa 30/4/1975, khi biết Tuyến bị kẹt lại trong hiểm nguy, ông Ẩn đã tự tay lái chiếc xe Renault đưa Tuyến vượt qua biển người hỗn loạn để đến điểm di tản.</p><p>Hành động quả cảm "vị nghĩa cứu bạn" ấy cho thấy một phẩm chất cao quý của Phạm Xuân Ẩn: dù dấn thân trọn đời cho cách mạng, ông chưa từng đánh mất tình người và tấm lòng trung trinh nhân hậu.</p>`
+          story: `<p>Trong chiến tranh, Phạm Xuân Ẩn có mặt hằng ngày tại tiệm cà phê Givral trên đường Tự Do (nay là đường Đồng Khởi, Quận 1, TP. Hồ Chí Minh), đối diện khách sạn Continental và cách không xa tòa nhà Quốc hội.</p><p>Givral thời chiến là nơi tụ họp của giới ký giả, thông tín viên, cảnh sát và quan chức chính quyền, nơi tin đồn phát khởi, được kiểm chứng rồi lan truyền, đến mức quán được gọi là “Radio Catinat” (Đài phát thanh Catinat).</p><p>Richard Pyle, trưởng văn phòng hãng AP tại Sài Gòn giai đoạn 1970–1973, kể rằng từ chiếc bàn quen thuộc ở Givral, Ẩn chia sẻ những mẩu tin về chính trường Sài Gòn và các mưu đồ bên trong Dinh Tổng thống cho các phóng viên Việt Nam làm việc cho báo đài nước ngoài.</p><p>Nguồn tin của Ẩn phong phú đến mức nhiều đồng nghiệp cho rằng ông cộng tác với CIA ở một mức độ nào đó.</p><p>Cũng vì thế, ông được gọi là “Tướng Givral”, biệt danh mà Laura Palmer, phóng viên chiến trường người Mỹ, hay dùng. Sau này, khi đã được phong quân hàm Thiếu tướng Quân đội nhân dân Việt Nam, ông nói đùa: “Laura phong cho tôi quân hàm cấp tướng từ thời đó.”</p>`
         },
         {
           id: 'dossier-5',
@@ -2435,130 +2495,190 @@
         {
           id: 'dossier-1',
           name: 'ファイル 01',
-          title: '二重の伝説の生涯',
+          title: '学生新聞『バーナクル』からのかけがえのない記念品',
           sub: '',
-          image: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
-          caption: '写真「二重の生涯」― 諜報少将ファム・スアン・アンと『タイム』誌記者',
+          image: 'assets/images/Trắc nghiệm/TN_CocCafe.jpg',
+          caption: 'ファム・スアン・アン少将の勲章とともに祭壇に供えられた、『バーナクル』紙のメンバーたちのサインが入ったコーヒーマグ（出典：『完璧なスパイ』147、327ページ）',
           pieces: [
             {
-              title: 'ピース 1: 暗号名',
-              q: 'ファム・スアン・アンの最も有名な諜報暗号名は何でしたか？',
-              options: ['A. X6', 'B. H10', 'C. K25', 'D. A3'],
-              correct: 0,
-              feedback: '正解です！彼の暗号名はH.63諜報群の「X6」でした。'
+              title: 'ピース 1: ジャーナリズム専攻',
+              q: 'ムオイ・フオンが、アンにジャーナリズムを専攻するよう勧めた最も重要な理由はどれか。',
+              options: [
+                'A. ジャーナリズムの学費が最も安かったから',
+                'B. 記者という職業は交友関係が最も広く、後の諜報活動に有利だから',
+                'C. ヒルドレスがジャーナリズムの専攻を求めたから',
+                'D. ジャーナリズムの分野には国際連合の奨学金があったから'
+              ],
+              correct: 1,
+              feedback: '正解です！ムオイ・フオンは、記者という職業は交友関係が最も広く、後の諜報活動に有利な条件をもたらすと考えていた。また、当時アンは高校の卒業資格を持っていなかったが、ジャーナリズムの分野ではその資格が必須ではなかった。'
             },
             {
-              title: 'ピース 2: 記者の仮面',
-              q: 'ジャーナリストとして、アンは米国のどの名門誌の正式特派員でしたか？',
-              options: ['A. 『タイム』誌 (Time)', 'B. 『ニューヨーク・タイムズ』', 'C. ロイター通信', 'D. 『ニューズウィーク』'],
-              correct: 0,
-              feedback: '正解です！彼はタイム誌の初代ベトナム人正式特派員でした。'
+              title: 'ピース 2: 万一への備え',
+              q: 'ムオイ・フオンの逮捕によって組織との連絡が途絶えた後、アンは万一に備えて何語を学んだか。',
+              options: [
+                'A. フランス語',
+                'B. ロシア語',
+                'C. スペイン語',
+                'D. 中国語'
+              ],
+              correct: 2,
+              feedback: '正解です！アンは、アメリカに諜報員としての正体を見破られることを恐れ、キューバへの逃げ道を確保し、そこから帰国して戦い続けられるようスペイン語を学んだ。'
             },
             {
-              title: 'ピース 3: 「義」の心',
-              q: '1975年4月30日の直前、アンは友情のために危険を冒して誰を救出しましたか？',
-              options: ['A. チャン・キム・トゥエン医師（秘密警察長官）', 'B. グエン・カオ・キ将軍', 'C. グラハム・マーティン大使', 'D. モーリー・セーファー記者'],
-              correct: 0,
-              feedback: '正解です！過去の恩義に報いるため、トゥエン医師を最終脱出ヘリに乗せました。'
+              title: 'ピース 3: タンソンニャット空港への帰国',
+              q: '1959年10月10日にタンソンニャット空港に戻った際、アンは逮捕された場合に備えて何をしたか。',
+              options: [
+                'A. 人目を避けるために夜の便を選んだ',
+                'B. 家族全員に空港まで迎えに来てもらった',
+                'C. ランズデールに身元保証を頼んだ',
+                'D. 偽名で入国した'
+              ],
+              correct: 1,
+              feedback: '正解です！アンは、万一自分が逮捕された場合には目撃者がいたほうがよいと考え、家族全員に空港まで迎えに来てもらうよう手配した。'
             }
           ],
-          story: `<p><b>「二重の生涯」の写真</b>は、アンの類まれな二つの顔を伝えています。一方は規律正しく忠誠な軍人、もう一方は西側ジャーナリズム界で愛された洗練された知識人です。彼は敵陣の奥深くで、どちらの役目も完璧に全うしました。</p>`
+          story: `<p>1959年の学年末に発行された『バーナクル』紙の最終号に、ファム・スアン・アンは別れの記事を書き、フランスの作家アナトール・フランスの「たとえ自ら望んだ旅立ちであっても、あとには少しの寂しさが残る」という言葉で書き出した。アンはまた、在学中に自分を助けてくれた先生たち、食堂で働く女性たち、電話番の職員、そして同級生たちにも感謝の言葉を送った。</p><p>アンの貢献をたたえ、『バーナクル』紙は、机に向かってタイプライターを打つアンの姿が描かれ、メンバー全員のサインが入ったマグカップを贈った。アンはそのマグカップをサイゴンに持ち帰り、生涯手放さなかった。</p>`
         },
         {
           id: 'dossier-2',
           name: 'ファイル 02',
-          title: '伝説たちの集い',
+          title: 'ホアン・ティ・トゥー・ニャン ― ファム・スアン・アンを陰で支えた妻',
           sub: '',
-          image: 'assets/images/1957_1959/1958_Ngoai_MuoiHuongChupCungPXAVaNhieuNhaTinhBao.jpg',
-          caption: 'ムオイ・フオン（前列左から3人目）がファム・スアン・アン（後列左から3人目）および他の諜報員たちと共に撮影した記念写真（出典：トイチェー紙）',
+          image: 'assets/images/Trắc nghiệm/TN_PXAVoGia.jpg',
+          caption: '1962年1月の結婚式でのファム・スアン・アンと妻のトゥー・ニャン（出典：『ファム・スアン・アン――名前のとおりに生きた男』ベトナム語版238ページ）',
           pieces: [
             {
-              title: 'ピース 1: 指導者',
-              q: 'アンを見出し、米国留学を指示した戦略諜報の指導者は誰ですか？',
-              options: ['A. ムオイ・フオン（チャン・クオック・フオン）', 'B. トゥ・カン大佐', 'C. マイ・チー・ト将軍', 'D. ファム・ゴック・タック医師'],
-              correct: 0,
-              feedback: '正解です！ムオイ・フオン同志こそが卓越した戦略諜報網の設計者でした。'
+              title: 'ピース 1: ロイター通信',
+              q: '1960年、帰国したファム・スアン・アンが紹介されて働き始めた通信社はどこか。',
+              options: [
+                'A. AP通信',
+                'B. ロイター通信',
+                'C. AFP通信',
+                'D. タス通信'
+              ],
+              correct: 1,
+              feedback: '正解です！1960年、アンはベトナム通信の社長グエン・タイの紹介で、イギリスの通信社であるロイター通信で働き始めた。'
             },
             {
-              title: 'ピース 2: 米国留学',
-              q: '1957年から1959年にアンがジャーナリズムを学んだカリフォルニアの学校は？',
-              options: ['A. オレンジコースト・カレッジ (OCC)', 'B. ハーバード大学', 'C. コロンビア大学', 'D. スタンフォード大学'],
-              correct: 0,
-              feedback: '正解です！OCCでジャーナリズムを学びました。'
+              title: 'ピース 2: 機密資料の撮影',
+              q: 'アンは資料「対反乱作戦の技術と戦術」を何本のフィルムに撮影したか。',
+              options: [
+                'A. 12本',
+                'B. 18本',
+                'C. 24本',
+                'D. 36本'
+              ],
+              correct: 2,
+              feedback: '正解です！1961年、アンは資料のすべてを24本のフィルムに撮影し、新たに築かれた連絡網を通じて根拠地へ送った。'
             },
             {
-              title: 'ピース 3: 追悼の詩',
-              q: '戦友としてアンを支え、感動的な詩「友を送る」を詠んだ指揮官は？',
-              options: ['A. トゥ・カン大佐（グエン・ヴァン・タウ）', 'B. ディン・ドゥック・ティエン大佐', 'C. ダン・チャン・ドゥック将軍', 'D. ヴー・ゴック・ニャ少将'],
-              correct: 0,
-              feedback: '正解です！H.63指揮官のトゥ・カン大佐です。'
+              title: 'ピース 3: 資料の偽装',
+              q: 'アンは機密資料を撮影したフィルムを根拠地へ送る際、どこに隠したか。',
+              options: [
+                'A. 靴の中',
+                'B. ネムチュアやバインミーなどの料理の中',
+                'C. カメラの中',
+                'D. 本の中'
+              ],
+              correct: 1,
+              feedback: '正解です！アンは機密資料を縮小撮影したフィルムをネムチュアやバインセオ、バインミーなどの料理の中に隠し、グエン・ティ・バーやタム・タオなどの連絡係を通じて根拠地へ送った。'
             }
           ],
-          story: `<p><b>歴史的一枚</b>には、ベトナム諜報史を創り上げた伝説的人物たちが一堂に会しています。アンとムオイ・フオン同志が並び立ち、祖国の統一に捧げた知性と情熱を物語っています。</p>`
+          story: `<p>1962年1月25日、ファム・スアン・アンはホアン・ティ・トゥー・ニャンと結婚した。当時、彼女はサイゴンのカティナ通りにある店で、刺繍製品や漆塗りの小箱を販売していた。</p><p>結婚後、トゥー・ニャンは仕事を辞めて家事に専念するようになった。また、夫の秘密活動に危険が及ばないよう、外部との接触をできるだけ控えた。夫の諜報活動について徐々に知るようになると、彼女もさまざまな形で陰ながら夫を支えた。</p><p>必要に応じて、夫が連絡係に資料を渡す際には、少し離れたところからひそかに後をつけた。夫が逮捕されたり、何らかの問題が起きたりした場合、すぐに組織へ知らせるためであった。また、夫とともにサイゴン政権の有力者の自宅を訪れた際には、相手の妻と別の場所で会話をすることで、アンが必要な人物と情報交換できるようにした。</p>`
         },
         {
           id: 'dossier-3',
           name: 'ファイル 03',
-          title: '記者証の裏の真実',
+          title: '学校では教わらないこと',
           sub: '',
-          image: 'assets/images/PhongLuuNiem/PLN_PhamXuanGioTheNhaBao.jpg',
-          caption: '自身の記者証を掲げるファム・スアン・アン（出典：Charles Dharapak／AP通信）',
+          image: 'assets/images/Trắc nghiệm/TN_PXATreEm.jpg',
+          caption: 'サイゴンの路上で靴磨きをして生計を立てるホームレスの子供たちとファム・スアン・アン（1970年）（出典：『ファム・スアン・アン――名前のとおりに生きた男』ベトナム語版235ページ）',
           pieces: [
             {
-              title: 'ピース 1: 集いの場',
-              q: 'アンが毎日情報収集のために通い、「情報議会」と呼ばれた有名なカフェは？',
-              options: ['A. カフェ・ジヴラル (Givral)', 'B. ブロダード (Brodard)', 'C. ラ・パゴド (La Pagode)', 'D. カラヴェル・ホテル'],
-              correct: 0,
-              feedback: '正解です！ジヴラル・カフェは国内外の特派員が集う情報の中心地でした。'
+              title: 'ピース 1: ロイター通信の退職',
+              q: '1964年、ファム・スアン・アンは支局長から机の上の何を片付けるよう要求され、ロイター通信に辞表を提出したか。',
+              options: [
+                'A. タイプライター',
+                'B. 鳥かご',
+                'C. 水槽',
+                'D. 古新聞の束'
+              ],
+              correct: 1,
+              feedback: '正解です！1964年8月27日、支局長のニック・ターナーから叱責され、机の上の鳥かごを片付けるよう要求されたため、アンは4年近く勤めたロイター通信に辞表を提出した。'
             },
             {
-              title: 'ピース 2: 極秘伝達',
-              q: '機密フィルムは何に包まれてクチの解放区へ運ばれましたか？',
-              options: ['A. 揚げ春巻きやライスペーパーの中', 'B. カセットテープの中', 'C. コートの裏地', 'D. 自動車の燃料タンク'],
-              correct: 0,
-              feedback: '正解です！連絡員グエン・ティ・バが春巻きなどに隠して運びました。'
+              title: 'ピース 2: 『タイム』誌の記者',
+              q: '1965年8月、アンが支局記者として正式に雇用されたのはどこか。',
+              options: [
+                'A. ロイター通信',
+                'B. 『ニューヨーク・ヘラルド・トリビューン』紙',
+                'C. 『タイム』誌',
+                'D. 『ニューズウィーク』誌'
+              ],
+              correct: 2,
+              feedback: '正解です！1965年8月、『タイム』誌サイゴン支局長のフランク・マッカロックは、週75ドルの給与でファム・スアン・アンを支局記者として雇用する契約を結んだ。'
             },
             {
-              title: 'ピース 3: 鉄の規律',
-              q: 'アンが20年以上一度も露見しなかった最大の秘訣は？',
-              options: ['A. 徹底した専門的偽装、独立した分析、単線連絡の規律', 'B. 頻繁な住居の変更', 'C. 常に武器を携帯していたこと', 'D. 複数国の偽造パスポート'],
+              title: 'ピース 3: タム・ハーの尋問記録',
+              q: '1968年、アンはタム・ハーの尋問記録の原版を借りて複写し、どのくらいの時間で返却したか。',
+              options: [
+                'A. わずか15分',
+                'B. 約1時間',
+                'C. 丸一日',
+                'D. 1週間'
+              ],
               correct: 0,
-              feedback: '正解です！深い知性と独立した分析力こそが最高の武器でした。'
+              feedback: '正解です！トゥー・カンの緊急の指示を受けたアンは、ザディンにあるベトナム共和国軍の司令部でタム・ハーの尋問記録の原版を借りて複写し、わずか15分で返却した。'
             }
           ],
-          story: `<p><b>タイプライターと熱いコーヒー、そして記者証</b>こそがアンの真の武器でした。銃弾ではなく鋭い分析によって、彼は敵の最高機密を読み解き、祖国の勝利へと導きました。</p>`
+          story: `<p>1960年代、ファム・スアン・アンはイギリスのロイター通信、アメリカの『ニューヨーク・ヘラルド・トリビューン』紙、『タイム』誌で順に働き、アメリカの高官や将官、サイゴン政権の関係者と日常的に接していた。</p><p>そうした環境の中で働きながらも、アンは庶民の暮らしへの関心を持ち続けていた。1970年に撮影されたこの写真は、『ファム・スアン・アン――名前のとおりに生きた男』の資料ページに収められた、サイゴンの路上で靴磨きをして生計を立てるホームレスの子供たちとアンの写真である。本書の中でアンは、『タイム』誌の記者であった頃、子どもたちに庶民の暮らしに接しながら成長してほしいと願い、農村を訪れる際には子どもたちを同行させ、貧しい人々の苦しい暮らしを見せたいと望んでいたと語っている。</p><p>さらにアンは、夏休みの間、息子にレストラン・ジヴラルでボーイの実習をさせることを決めた。その理由は「民に寄り添うために」であった。当時のサイゴンの上流階級は、子どもに辛い労働を教えるのはベトコンだけだと考えていた。アンはベトコンと疑われかねないことを承知の上で、それでもそうすることを選んだ。</p>`
         },
         {
           id: 'dossier-4',
           name: 'ファイル 04',
-          title: '運命の1975年4月30日',
+          title: '「ジヴラル将軍」',
           sub: '',
-          image: 'assets/images/1974_1976/CCNL_1975_PXAVaTTK.jpg',
-          caption: 'ファム・スアン・アン（左）とチャン・キム・トゥエン（右）',
+          image: 'assets/images/Trắc nghiệm/TN_Givral.jpg',
+          caption: '行きつけのカフェ・ジヴラルで著者ラリー・バーマンと会うファム・スアン・アン（出典：『完璧なスパイ』47ページ、Dan Viet紙）',
           pieces: [
             {
-              title: 'ピース 1: 仁愛の心',
-              q: '1975年4月末、アンが危険を冒して米軍の脱出ヘリに乗せて救った旧サイゴン政権の人物は？',
-              options: ['A. チャン・キム・トゥエン医師', 'B. ズオン・ヴァン・ヒエウ大佐', 'C. グエン・ゴック・ロアン准将', 'D. チャン・カック・キン中佐'],
-              correct: 0,
-              feedback: '正解です！かつてアンの米国留学を助けた元秘密警察長官のトゥエン医師でした。'
+              title: 'ピース 1: パリ協定',
+              q: 'パリ協定が締結されたのはいつか。',
+              options: [
+                'A. 1972年12月22日',
+                'B. 1973年1月27日',
+                'C. 1973年3月29日',
+                'D. 1973年7月21日'
+              ],
+              correct: 1,
+              feedback: '正解です！パリ協定は1973年1月27日に締結された。1973年3月29日は、最後のアメリカ軍部隊が南ベトナムから撤退した日である。'
             },
             {
-              title: 'ピース 2: 生死の瞬間',
-              q: 'アンがトゥエン医師を押し込んで脱出ヘリへと送り込んだ場所はどこですか？',
-              options: ['A. ジアロン通り22番地ビル（CIA避難拠点）', 'B. タンソンニャット空港', 'C. 統一会堂（大統領官邸）', 'D. バクダン港'],
-              correct: 0,
-              feedback: '正解です！閉まりかけた門で車を急停止させ、トゥエン医師を建物内へ滑り込ませました。'
+              title: 'ピース 2: ラインバッカーI作戦',
+              q: 'ファム・スアン・アンは、ラインバッカーI作戦で北ベトナムへの爆撃に何が使われると警告したか。',
+              options: [
+                'A. ハノイへのＢ-52爆撃機による絨毯爆撃',
+                'B. 攻撃機とレーザー誘導爆弾',
+                'C. 巡航ミサイル',
+                'D. 特殊部隊の上陸'
+              ],
+              correct: 1,
+              feedback: '正解です！アンは、アメリカが攻撃機とレーザー誘導爆弾を使うことを事前に警告した。'
             },
             {
-              title: 'ピース 3: 上官の評価',
-              q: 'この救出劇を知った革命指導部（マイ・チー・ト大将）がアンを称えた言葉は？',
-              options: ['A. 「仁・智・勇」', 'B. 「忠勇無双」', 'C. 「鉄の意志」', 'D. 「義理人情」'],
-              correct: 0,
-              feedback: '正解です！恩義を重んじ機転を利かせた彼の行動を「仁・智・勇」と高く評価しました。'
+              title: 'ピース 3: ミトーの解放区',
+              q: 'ファム・スアン・アンは、ミトーの解放区に入るために、記者のポモンティにどこで止まるよう提案したか。',
+              options: [
+                'A. ミートゥアン・フェリー乗り場',
+                'B. ミトー市内',
+                'C. ミークイの集落',
+                'D. カイライの町'
+              ],
+              correct: 2,
+              feedback: '正解です！アンは、ミートゥアン・フェリー乗り場へ向かう道の途中にあるミークイの集落の手前で止まるよう提案した。'
             }
           ],
-          story: `<p><b>敵味方を超えた友情と人道の記録</b>です。激動の1975年4月30日、アンは自ら車を運転し、取り残されたトゥエン医師を米軍の最終ヘリへと送り届けました。祖国の勝利のため戦い抜く中でも、人間としての信義を決して忘れませんでした。</p>`
+          story: `<p>戦時中、ファム・スアン・アンは、トゥゾー通り（現ホーチミン市1区ドンコイ通り）にあり、コンチネンタルホテルの向かい、国会議事堂からほど近いカフェ・ジヴラルに毎日姿を見せていた。</p><p>戦時中のジヴラルは、記者や通信員、警察官、官僚たちが集まる場であり、噂が生まれ、確かめられ、そして広まっていく場所でもあったため、「ラジオ・カティナ」（カティナ放送局）と呼ばれるほどであった。</p><p>1970～1973年にAP通信サイゴン支局長を務めたリチャード・パイルは、アンがジヴラルのいつものテーブルから、サイゴン政界に関する情報や大統領府内部の策謀について、外国の報道機関で働くベトナム人記者たちに語っていたと述べている。</p><p>アンの情報源は、多くの同業者たちが、アンはある程度CIAに協力していると考えるほど豊富であった。</p><p>こうしたことから、アンは、アメリカ人従軍記者のローラ・パーマーがよく使っていた呼び名である「ジヴラル将軍」と呼ばれていた。後にベトナム人民軍の少将に昇進した際、アンは「ローラはあの頃から、私に将軍の階級を授けてくれていたんだ」と冗談を言った。</p>`
         },
         {
           id: 'dossier-5',
@@ -2595,7 +2715,6 @@
       ]
     };
 
-    // Quản lý trạng thái giải mã các hồ sơ trong phiên
     const decodeState = {
       archiveIndex: 0,
       activePiece: 0,
