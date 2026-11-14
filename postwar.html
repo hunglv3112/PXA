@@ -480,6 +480,13 @@
       color: #1a0f02;
     }
 
+    html[lang="ja"] .plq,
+    html.lang-ja .plq {
+      font-size: 15px;
+      letter-spacing: .24em;
+      padding: 6px 22px;
+    }
+
     /* ==========================================================================
        BÀN THỜ THIẾU TƯỚNG PHẠM XUÂN ẨN & 16 HUÂN HUY CHƯƠNG (THAY CHO HUY CHƯƠNG VẼ)
        ========================================================================== */
@@ -3349,7 +3356,19 @@
       document.getElementById('hdrTitle').textContent = m.hdrTitle;
       document.getElementById('wLTitle').textContent = m.wLTitle;
       document.getElementById('wRTitle').textContent = m.wRTitle;
-      document.getElementById('hero').textContent = m.hero;
+      const heroEl = document.getElementById('hero');
+      if (heroEl) {
+        heroEl.textContent = m.hero;
+        if (currentLang === 'ja') {
+          heroEl.style.fontSize = '15px';
+          heroEl.style.letterSpacing = '0.24em';
+          heroEl.style.padding = '6px 22px';
+        } else {
+          heroEl.style.fontSize = '';
+          heroEl.style.letterSpacing = '';
+          heroEl.style.padding = '';
+        }
+      }
       document.getElementById('altarCaption').textContent = m.altarCp;
       document.getElementById('altarCard').setAttribute('aria-label', m.altarAria);
       const ptCap = document.getElementById('ptCaption');
