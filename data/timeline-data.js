@@ -236,7 +236,7 @@ window.TIMELINE_DATA = [
     icon: "doc",
     img: "assets/images/1964_1970/1966_TB_SaiGon1966.jpg",
     title: "Khảo sát mục tiêu Mậu Thân và thu thập Kế hoạch AB142",
-    title_ja: "サイゴン潜入視察と軍事作戦計画AB142の入手",
+    title_ja: "テト攻勢の目標を偵察し、AB142計画を入手",
   },
   {
     id: "1966b",
