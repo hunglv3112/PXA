@@ -153,31 +153,31 @@ window.AXIS_STORIES = [
     caption: "Phạm Xuân Ẩn (bên trái) và Trần Kim Tuyến (bên phải)",
 
     // ── NỘI DUNG VĂN BẢN (KÈM ẢNH CHÈN GIỮA MID-IMG) ──
-    text1: "Cuối tháng 4/1975, Trần Kim Tuyến nán lại Sài Gòn vì bạn bè, người ủng hộ ông bị bắt hồi đầu tháng, ông không chịu đi khi họ chưa được thả. CIA xếp ông ưu tiên di tản, nhưng ngày 29/4 người phụ trách là Kohlmann đã đi trước, còn Shaplen cũng không thể đưa được ông vào danh sách phóng viên được di tản, đành chỉ dặn: \"Tới chỗ ông Ẩn đi!\"",
+    text1: "Cuối tháng 4/1975, Trần Kim Tuyến nán lại Sài Gòn vì bạn bè, người ủng hộ ông bị bắt hồi đầu tháng, ông không chịu đi khi họ chưa được thả. CIA xếp ông ưu tiên di tản. Nhưng ngày 29/4 người phụ trách chuyện di tản của Tuyến là William Kohlmann đã đi trước, còn Shaplen cũng không thể đưa được ông vào danh sách phóng viên được di tản, đành chỉ dặn: “Tới chỗ ông Ẩn đi!”",
 
-    text2: "Tuyến đến văn phòng Time. Ẩn thì vẫn ở lại vì còn mẹ già bệnh (Time đã đưa vợ con ông đi). Ẩn lái xe đưa Tuyến tới đại sứ quán nhưng đám đông quá dày khiến họ không thể lại gần, gọi điện khắp nơi cũng vô vọng.",
+    text2: "Lúc này Ẩn vẫn ở lại Sài Gòn vì còn mẹ già bệnh. Khi Tuyến đến văn phòng Time, Ẩn lái xe đưa Tuyến tới đại sứ quán nhưng đám đông quá dày khiến họ không thể lại gần, gọi điện khắp nơi cũng vô vọng.",
 
     // Ảnh trèo tường Đại sứ quán Mỹ chèn sau đoạn 2
     midImg2: {
       src: "assets/images/1974_1976/CCNL_1975_TreoTuong.jpg",
-      alt: "Người dân cố gắng trèo qua bức tường cao 4,2 mét của Đại sứ quán Mỹ để tiếp cận trực thăng sơ tán",
-      caption: "Người dân cố gắng trèo qua bức tường cao 4,2 mét của Đại sứ quán Mỹ để tiếp cận trực thăng sơ tán. (Nguồn: AP)"
+      alt: "Người dân cố gắng trèo qua bức tường cao 4,2 mét của Đại sứ quán Mỹ để tiếp cận trực thăng sơ tán (Nguồn: AP)",
+      caption: "Người dân cố gắng trèo qua bức tường cao 4,2 mét của Đại sứ quán Mỹ để tiếp cận trực thăng sơ tán (Nguồn: AP)"
     },
 
-    text3: "Khoảng 5 giờ chiều, phóng viên Dan Southerland (báo Christian Science Monitor) gọi tới. Ẩn nhờ anh liên lạc đại sứ quán, và Southerland báo đã gặp Tom Polgar (trưởng CIA tại Sài Gòn). Polgar nói không thể cử người đón, nhưng nếu Tuyến kịp tới thì sẽ đưa tên vào danh sách.",
+    text3: "Khoảng 5 giờ chiều cùng ngày, phóng viên Dan Southerland (báo Christian Science Monitor) gọi tới hỏi thăm xem tình hình của Ẩn hiện tại ra sao. Ẩn liền nhờ anh liên lạc đại sứ quán, và Southerland báo đã nói chuyện với Tom Polgar (trưởng CIA tại Sài Gòn). Polgar nói không thể cử người đón, nhưng nếu Tuyến kịp tới số 22 đường Gia Long thì sẽ đưa tên vào danh sách di tản.",
 
-    text4: "Ẩn vừa lái xe chở Tuyến tới nơi thì lúc này đội bảo vệ đang đóng cổng lại. Ẩn thắng gấp, nhảy ra khỏi xe và quát lớn: \"Theo lệnh của Đại sứ, phải cho người này vào!\" Người bảo vệ đáp lại rằng không ai được vào nữa, vì trực thăng sắp cất cánh.",
+    text4: "Ẩn vừa lái xe chở Tuyến tới nơi thì lúc này đội bảo vệ đang đóng cổng lại. Ẩn thắng gấp, nhảy ra khỏi xe và quát lớn: “Theo lệnh của Đại sứ, phải cho người này vào!” Người bảo vệ đáp lại rằng không ai được vào nữa, vì trực thăng sắp cất cánh.",
 
-    text5: "Tình huống tưởng như vô vọng, nhưng ngay khi cánh cổng đang được kéo xuống, theo phản xạ, Ẩn dùng tay trái giữ cổng lại, tay phải đẩy Tuyến lọt qua khe cửa vào trong. Không còn thời gian để nói lời tạm biệt hay cảm ơn. \"Chạy đi,\" Ẩn chỉ kịp nói, nước mắt trào ra. Tuyến vừa khóc vừa kịp thốt lên: \"Tôi sẽ không bao giờ quên.\"",
+    text5: "Tình huống tưởng như vô vọng, nhưng ngay khi cánh cổng đang được kéo xuống, theo phản xạ, Ẩn dùng tay trái giữ cổng lại, tay phải đẩy Tuyến lọt qua khe cửa vào trong. Không còn thời gian để nói lời tạm biệt hay cảm ơn. “Chạy đi,” Ẩn chỉ kịp nói, nước mắt trào ra. Tuyến vừa khóc vừa kịp thốt lên: “Tôi sẽ không bao giờ quên.”",
 
     // Cảnh chen chúc lên trực thăng chèn sau đoạn 5
     midImg5: {
       src: "assets/images/1974_1976/CCNL_1975_ChenChuc.jpg",
-      alt: "Cảnh chen chúc lên một trong những chuyến trực thăng rời Sài Gòn những ngày cuối tháng 4/1975",
+      alt: "Cảnh chen chúc lên một trong những chuyến trực thăng rời Sài Gòn những ngày cuối tháng 4/1975 (Nguồn: Hugh Van Es)",
       caption: "Cảnh chen chúc lên một trong những chuyến trực thăng rời Sài Gòn những ngày cuối tháng 4/1975 (Nguồn: Hugh Van Es)"
     },
 
-    text6: "Sau này Ẩn giải thích rằng đây là \"hành động của trái tim\", cứu bác sĩ Tuyến vì ân nghĩa xưa. Đại tướng Mai Chí Thọ nhận xét hành động này là \"Nhân Trí Dũng!\" và đây cũng là đánh giá chung của cấp trên dành cho Ẩn.",
+    text6: "Sau này Ẩn giải thích rằng đây là “hành động của trái tim”, cứu bác sĩ Tuyến vì ân nghĩa xưa. Đại tướng Mai Chí Thọ nhận xét hành động này là “Nhân Trí Dũng!” và đây cũng là đánh giá chung của cấp trên dành cho Ẩn.",
 
     note: "",
 
@@ -186,35 +186,35 @@ window.AXIS_STORIES = [
     // ==========================================================================
     tooltip_ja: "サイドストーリー (1975): クリックして読む",
     meta_ja: "サイドストーリー · 1975",
-    title_ja: "すべてを賭けて――ファム・スアン・アンによる秘密警察長官チャン・キム・トゥエン救出劇",
+    title_ja: "すべてを顧みず、秘密警察の頭目チャン・キム・トゥエンを救出したファム・スアン・アン",
 
     modalImg_ja: "assets/images/1974_1976/CCNL_1975_PXAVaTTK.jpg",
     modalImgAlt_ja: "ファム・スアン・アン（左）とチャン・キム・トゥエン（右）",
     caption_ja: "ファム・スアン・アン（左）とチャン・キム・トゥエン（右）",
 
-    text1_ja: "1975年4月下旬、チャン・キム・トゥエンは、月上旬に逮捕された友人や支持者たちが釈放されるまでサイゴンを離れないとして留まり続けていました。CIAは彼を優先避難対象に指定していましたが、4月29日には担当官コールマンが一足先に脱出し、シェイプリン記者も彼を記者避難名簿に載せることができず、「アンのところへ行け！」と告げることしかできませんでした。",
+    text1_ja: "1975年4月末、チャン・キム・トゥエンは、月初めに友人や支持者が逮捕され、その人々が釈放されるまでは去ろうとしなかったため、サイゴンにとどまっていた。CIAはトゥエンを優先的な退避対象としていた。しかし、4月29日にはトゥエンの退避を担当していたウィリアム・コールマンが先に去ってしまい、ボブ・シャプレンもトゥエンを退避する記者の名簿に入れることができず、「アンのところへ行け！」と告げるしかなかった。",
 
-    text2_ja: "トゥエンはタイム誌のオフィスに駆け込みました。アンは病気の高齢の母がいたためサイゴンに残っていました（タイム誌はすでに彼の妻と子どもたちを避難させていました）。アンは車を走らせてトゥエンをアメリカ大使館へ送り届けようとしましたが、群衆が分厚く取り囲み近寄ることすらできず、方々に電話をかけても望みはありませんでした。",
+    text2_ja: "このとき、アンは病気の老母がいたため、サイゴンに残っていた。トゥエンが『タイム』誌の支局を訪れると、アンは車でトゥエンを大使館まで送ったが、大使館は人々でごったがえしていて近づくことができず、あちこちに電話をかけても無駄だった。",
 
     midImg2_ja: {
       src: "assets/images/1974_1976/CCNL_1975_TreoTuong.jpg",
-      alt: "避難ヘリコプターに近づこうと米大使館の壁をよじ登る市民たち",
-      caption: "避難ヘリコプターに近づこうと、高さ4.2メートルの米国大使館の壁をよじ登ろうとする市民たち。（出典: AP）"
+      alt: "アメリカ大使館の高さ4.2メートルの壁を乗り越え、退避用のヘリコプターに近づこうとする人々（出典：AP通信）",
+      caption: "アメリカ大使館の高さ4.2メートルの壁を乗り越え、退避用のヘリコプターに近づこうとする人々（出典：AP通信）"
     },
 
-    text3_ja: "夕方5時頃、クリスチャン・サイエンス・モニター紙のダン・サウザーランド記者から電話が入りました。アンは大使館への連絡を依頼し、サウザーランドはサイゴンのCIA支局長トム・ポルガーと接触したと連絡してきました。ポルガーは迎えを出すことはできないが、トゥエンが自力で時間内にたどり着ければ名簿に加えると告げました。",
+    text3_ja: "同日午後5時ごろ、『クリスチャン・サイエンス・モニター』紙の記者ダン・サザーランドが電話をかけてきて、アンの今の状況を尋ねた。アンはすぐに大使館に連絡を取ってくれるよう頼み、サザーランドは、トム・ポルガー（CIAサイゴン支局長）と話をしたと伝えた。ポルガーは、迎えの人を出すことはできないが、トゥエンがザロン通り22番地にたどり着ければ退避者名簿に名前を載せると言った。",
 
-    text4_ja: "アンが車を飛ばしてトゥエンを連れて駆けつけたとき、警備隊はまさに門を閉めようとしているところでした。アンは急ブレーキをかけて車から飛び出し、「大使の命令だ、この人を通せ！」と大声で叫びました。警備員は、ヘリコプターがまもなく離陸するためもう誰も中には入れられないと告げました。",
+    text4_ja: "アンが車でトゥエンを乗せて到着したちょうどそのとき、警備員たちは門を閉めようとしていた。アンは急ブレーキをかけて車から飛び降り、「大使の命令だ、この人を中に入れろ！」と大声で叫んだ。警備員は、ヘリコプターがまもなく飛び立つので、もう誰も中に入れないと答えた。",
 
-    text5_ja: "もはや絶望的かと思われたその時、引き下げられようとする門に対し、アンは反射的に左手で門を押し留め、右手でトゥエンを隙間から中へと押し込みました。別れの言葉も感謝を伝える時間もありませんでした。「走れ！」とアンが叫ぶと、涙があふれ出しました。トゥエンも涙を流しながら「この恩は決して忘れない」と叫ぶのが精一杯でした。",
+    text5_ja: "状況は絶望的に思えたが、門が引き下ろされようとしたその瞬間、アンはとっさに左手で門を押さえ、右手でトゥエンを隙間から中へ押し込んだ。別れの言葉や礼を言う時間はなかった。「走れ」――アンはそれだけ言うのがやっとで、涙があふれ出た。トゥエンは泣きながら、かろうじて「決して忘れない」と口にした。",
 
     midImg5_ja: {
       src: "assets/images/1974_1976/CCNL_1975_ChenChuc.jpg",
-      alt: "1975年4月末、サイゴンを脱出するヘリコプターへ殺到する人々",
-      caption: "1975年4月下旬、サイゴンを離れる避難ヘリコプターに殺到する光景（写真: ヒュー・ヴァン・エス）"
+      alt: "1975年4月末、サイゴンを離れるヘリコプターの一機に、押し合うように乗り込む人々（出典：Hugh Van Es）",
+      caption: "1975年4月末、サイゴンを離れるヘリコプターの一機に、押し合うように乗り込む人々（出典：Hugh Van Es）"
     },
 
-    text6_ja: "後にアンは、これは過去の恩義に応えるための「心の命ずる行動」だったと説明しています。マイ・チー・トー大将はこの行動を「仁・智・勇」と称賛し、これが上層部によるアンへの共通の評価となりました。",
+    text6_ja: "後にアンは、これは「心に従った行動」であり、昔の恩義に報いるためにトゥエン医師を救ったのだと説明した。マイ・チー・ト大将はこの行動を「仁・智・勇！」と評し、これは上官たちがアンに下した共通の評価でもあった。",
 
     note_ja: "",
   }

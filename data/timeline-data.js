@@ -345,8 +345,8 @@ window.TIMELINE_DATA = [
     side: "top",
     icon: "doc",
     img: "assets/images/1971_1973/1971_TB_N_LamSon.jpg",
-    title: "Dự báo về chiến dịch Lam Sơn 719",
-    title_ja: "ラムソン719作戦の全貌予測と事前迎撃",
+    title: "Dự báo chiến lược Chiến dịch Lam Sơn 719",
+    title_ja: "ラムソン719作戦の戦略予測",
   },
 
   // ==========================================================================
@@ -360,7 +360,7 @@ window.TIMELINE_DATA = [
     icon: "star",
     img: "assets/images/1971_1973/1972_TB1_CoQGPQuangTri.jpg",
     title: "Mùa hè đỏ lửa",
-    title_ja: "激戦の1972年・「赤き燃ゆる夏」の軍事情報",
+    title_ja: "炎の夏",
   },
   {
     id: "1972b",
@@ -369,8 +369,8 @@ window.TIMELINE_DATA = [
     side: "bot",
     icon: "camera",
     img: "assets/images/1971_1973/1972_NB_PXAxRobert.jpg",
-    title: "Cuộc trao đổi với Robert Shaplen",
-    title_ja: "ロバート・シャプレンとの対談",
+    title: "Cuộc trao đổi với Robert (Bob) Shaplen (The New Yorker)",
+    title_ja: "ボブ・シャプレン（『ザ・ニューヨーカー』誌）との対話",
   },
 
   // ==========================================================================
@@ -383,8 +383,8 @@ window.TIMELINE_DATA = [
     side: "top",
     icon: "doc",
     img: "assets/images/1971_1973/1973_Paris.jpg",
-    title: "Bước ngoặt của hiệp định Paris",
-    title_ja: "パリ協定の歴史的転換点と対抗工作",
+    title: "Bước ngoặt của Hiệp định Paris",
+    title_ja: "パリ協定の転機",
   },
   {
     id: "1973b",
@@ -393,8 +393,8 @@ window.TIMELINE_DATA = [
     side: "bot",
     icon: "ticker",
     img: "assets/images/1971_1973/1972_NB_N_LaiXe.jpg",
-    title: "Đỉnh cao của làm báo",
-    title_ja: "ジャーナリズムの頂点と西欧記者との協調",
+    title: "Đỉnh cao nghề báo",
+    title_ja: "記者としての頂点",
   },
 
   // ==========================================================================
@@ -410,16 +410,16 @@ window.TIMELINE_DATA = [
     title: "Mỹ có can thiệp quân sự trở lại hay không?",
     date: "Cuối năm 1974",
     text: [
-      "Cuối năm 1974, trước câu hỏi sống còn về khả năng can thiệp trở lại của Mỹ, Phạm Xuân Ẩn thu thập báo cáo tuyệt mật khẳng định quân Sài Gòn đã kiệt quệ và Mỹ sẽ không đưa quân trở lại.",
-      "Tin tình báo chiến lược này cùng trận đánh Phước Long đã 'bật đèn xanh' cho kế hoạch giải phóng hoàn toàn miền Nam."
+      "Cuối năm 1974, một cuộc họp giữa những lãnh đạo ở Hà Nội đặt câu hỏi sống còn rằng: Liệu Mỹ còn khả năng đưa quân trở lại miền Nam hay không, khi các cuộc tiến công quy mô lớn của quân Giải phóng có thể dẫn đến nguy cơ sụp đổ của Việt Nam Cộng hòa?",
+      "Nhiệm vụ trả lời câu hỏi chiến lược này được giao cho Phạm Xuân Ẩn."
     ],
     note: "",
     src: "Nguồn: Lịch sử Kháng chiến chống Mỹ; Larry Berman",
-    title_ja: "米国の軍事再介入はあるのか？",
+    title_ja: "アメリカは再び軍事介入するのか",
     date_ja: "1974年末",
     text_ja: [
-      "1974年末、米軍の再介入能力についての死活的な戦略課題に対し、アンは最高機密報告書を入手して米国の再介入不能を断言。",
-      "この戦略的確証とフオックロン戦の勝利が、南部完全解放への青信号を灯しました。"
+      "1974年末、ハノイの指導者たちによる会議で、「解放軍の大規模な攻勢がベトナム共和国の崩壊の危機を招きかねないとき、アメリカには南部へ再び派兵する能力がまだあるのか」という死活にかかわる問いが提起された。",
+      "この戦略的な問いに答えるという任務は、ファム・スアン・アンに与えられた。"
     ],
     note_ja: "",
     src_ja: "出典: 抗米救国戦争史; バーマン"
@@ -438,16 +438,16 @@ window.TIMELINE_DATA = [
     title: "Chiến dịch Tây Nguyên mở màn cho tháng Tư lịch sử",
     date: "Tháng 3 – 4/1975",
     text: [
-      "Nắm được sơ hở phòng thủ Tây Nguyên của chính quyền Thiệu, tin tình báo của Phạm Xuân Ẩn giúp quân Giải phóng mở màn đại thắng tại Buôn Ma Thuột.",
-      "Chuỗi chiến dịch sấm sét dẫn đến thắng lợi ngày 30/4/1975, xe tăng húc đổ cổng Dinh Độc Lập, chính thức khép lại cuộc chiến."
+      "Cuối năm 1974, trong một cuộc họp kín tại Dinh Độc Lập, Thiệu chủ quan đánh giá rằng quân Giải phóng đã chịu tổn thất nặng nề sau các trận đánh năm 1968 và 1972, không còn đủ khả năng tấn công các mục tiêu lớn mà chỉ có thể đánh chiếm những thị xã nhỏ. Vì vậy, Thiệu không tăng cường phòng thủ Tây Nguyên.",
+      "Tin này giúp quân Giải phóng quyết định mở Chiến dịch Tây Nguyên vào tháng 3/1975, lấy Buôn Ma Thuột làm đòn mở màn cuộc Tổng tiến công và nổi dậy Mùa Xuân 1975."
     ],
     note: "",
     src: "Nguồn: TTXVN; QDNDVN; Điệp viên hoàn hảo",
-    title_ja: "歴史的4月への幕開けとなった中部高原作戦",
+    title_ja: "歴史的な4月の幕を開けた中部高原作戦",
     date_ja: "1975年3月～4月",
     text_ja: [
-      "ティウ政権の中部高原防衛の隙を突くアンの報告が、バンメトート電撃戦の引き金となりました。",
-      "一連の怒涛の進撃は4月30日の独立宮殿突入・完全無条件降伏へと結実し、戦争は終結を迎えました。"
+      "1974年末、独立宮殿での秘密会議で、ティエウは、解放軍が1968年と1972年の戦闘で甚大な損失を被っており、もはや大きな目標を攻撃する能力はなく、小規模な地方都市しか占領できないと高をくくった。そのため、ティエウは中部高原の防衛を強化しなかった。",
+      "この情報によって、解放軍は1975年3月に中部高原作戦を開始することを決断し、ブオンマトートへの攻撃を1975年春の総進攻と蜂起の幕開けとした。"
     ],
     note_ja: "",
     src_ja: "出典: ベトナム通信社; 人民軍新聞"
@@ -459,19 +459,19 @@ window.TIMELINE_DATA = [
     side: "bot",
     icon: "mail",
     img: "assets/images/1974_1976/1975_NB_PXAHutThuocDoChinh.jpg",
-    title: "Bài báo cuối cùng của Phạm Xuân Ẩn viết cho TIME – “Cuộc chia tay cuối cùng nghiệt ngã”",
+    title: "Bài báo cuối cùng của Phạm Xuân Ẩn viết cho Time – “Cuộc chia tay cuối cùng đầy nghiệt ngã”",
     date: "Tháng 4 – 5/1975",
     text: [
-      "Khi toàn bộ đồng nghiệp Mỹ di tản, Phạm Xuân Ẩn một mình trực chiến và điều hành văn phòng tạp chí Time tại Sài Gòn.",
-      "Ông gửi về New York bài báo lịch sử 'Cuộc chia tay cuối cùng nghiệt ngã' miêu tả trọn vẹn những giờ phút sụp đổ của chính quyền Sài Gòn."
+      "Ngày 30/4/1975, khi toàn bộ phóng viên người Mỹ đã di tản, một trong những bức điện cuối cùng mà văn phòng Time ở Sài Gòn gửi về trụ sở tại New York có nội dung: “Đây, Phạm Xuân Ẩn đây. Tất cả các phóng viên người Mỹ đều đã di tản do tình hình khẩn cấp. Văn phòng của Time giờ do mình tôi, Phạm Xuân Ẩn điều hành.”",
+      "Sau đó Ẩn gửi bài báo cuối cùng về cho Time với tiêu đề “Cuộc chia tay cuối cùng đầy nghiệt ngã”, miêu tả lại cảnh hỗn loạn của Việt Nam Cộng hòa và Mỹ ngày 30/4/1975."
     ],
     note: "",
     src: "Nguồn: Tạp chí Time; Điệp viên hoàn hảo - Larry Berman",
-    title_ja: "タイム誌への最後の寄稿「無情の最後の別れ」",
+    title_ja: "ファム・スアン・アンが『タイム』誌に書いた最後の記事――「残酷さに満ちた最後の別れ」",
     date_ja: "1975年4月～5月",
     text_ja: [
-      "米国人記者が全員退避する中、アンはたった一人でサイゴン支局を守り運営を継続。",
-      "サイゴン崩壊の瞬間を克明に捉えた歴史的記事「無情の最後の別れ」をニューヨーク本社へ送り届けました。"
+      "1975年4月30日、アメリカ人記者が全員退避した後、『タイム』誌サイゴン支局がニューヨークの本社に送った最後の電文の一つは、「こちらファム・スアン・アン。アメリカ人記者は緊急事態のため全員退避した。『タイム』誌の支局は今、私ファム・スアン・アン一人で運営している」というものだった。",
+      "その後、アンは、1975年4月30日のベトナム共和国とアメリカの混乱ぶりを描いた「残酷さに満ちた最後の別れ」と題する最後の記事を『タイム』誌に送り、同誌に掲載された。"
     ],
     note_ja: "",
     src_ja: "出典: タイム誌; バーマン"
@@ -490,16 +490,16 @@ window.TIMELINE_DATA = [
     title: "Phạm Xuân Ẩn giữa những ngày đất nước trọn niềm vui",
     date: "1976",
     text: [
-      "Ngày 15/1/1976, Phạm Xuân Ẩn được phong tặng danh hiệu cao quý Anh hùng Lực lượng Vũ trang Nhân dân.",
-      "Đến tháng 12/1976, tại Đại hội Đảng toàn quốc lần thứ IV, ông chính thức công khai thân phận sĩ quan tình báo huyền thoại."
+      "Phạm Xuân Ẩn được phong tặng danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân ngày 15/1/1976.",
+      "Thông báo chính thức đầu tiên về thân phận sĩ quan tình báo của Phạm Xuân Ẩn diễn ra khi ông ra Hà Nội tham dự Đại hội Đảng toàn quốc lần thứ IV vào tháng 12/1976."
     ],
     note: "",
     src: "Nguồn: Báo Thanh Niên; HCMCPV; Báo Nhân Dân",
-    title_ja: "祖国統一の歓喜に包まれる日々の中のファム・スアン・アン",
+    title_ja: "国中が喜びに包まれた日々の中のファム・スアン・アン",
     date_ja: "1976年",
     text_ja: [
-      "1976年1月15日、ファム・スアン・アンは「人民武装力量英雄」称号を授与されました。",
-      "1976年12月の第4回党大会にて、軍服姿で出席し伝説的諜報将校としての真の身分が公表されました。"
+      "ファム・スアン・アンは、1976年1月15日に「人民武装勢力英雄」の称号を授与された。",
+      "ファム・スアン・アンが諜報将校であることが初めて正式に公表されたのは、1976年12月、アンが第4回全国党大会に出席するためにハノイへ赴いたときだった。"
     ],
     note_ja: "",
     src_ja: "出典: タインニエン紙; HCMCPV"
@@ -514,16 +514,14 @@ window.TIMELINE_DATA = [
     title: "Khép lại chặng đường làm nhà báo",
     date: "Mùa hè năm 1976",
     text: [
-      "Đến mùa hè năm 1976, văn phòng Time tại Sài Gòn chính thức đóng cửa.",
-      "Tên của Phạm Xuân Ẩn rời khỏi danh sách phóng viên, khép lại trọn vẹn hành trình làm báo lừng lẫy của ông."
+      "Đến mùa hè năm 1976, văn phòng Time đóng cửa, tên ông cũng biến mất khỏi danh sách phóng viên của tạp chí. Quãng thời gian Phạm Xuân Ẩn gắn bó với báo chí cũng từ đó mà khép lại."
     ],
     note: "",
     src: "Nguồn: Báo Dân Trí; Thomas Bass",
-    title_ja: "記者としての歩みの終幕",
+    title_ja: "記者としての道に幕を下ろす",
     date_ja: "1976年夏",
     text_ja: [
-      "1976年夏、タイム誌サイゴン支局の閉鎖に伴い特派員名簿から名前が外れました。",
-      "ジャーナリストとしての輝かしい歩みも、ここに静かにその幕を下ろしました。"
+      "1976年夏には『タイム』誌の支局が閉鎖され、アンの名前も同誌の記者名簿から消えた。ファム・スアン・アンがジャーナリズムと関わってきた日々も、これをもって幕を閉じた。"
     ],
     note_ja: "",
   }

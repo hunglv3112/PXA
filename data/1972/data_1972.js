@@ -17,36 +17,36 @@ window.EXTRA_DATA_1972 = {
         {
             id: '1972t',
             modalImg: 'assets/images/1971_1973/1972_TB1_QGPBaoVeThanhCo.jpg',
-            modalImgAlt: 'Quân giải phóng chiến đấu bảo vệ Thành cổ Quảng Trị năm 1972 (Nguồn: Báo Biên phòng)',
-            modalImgAlt_ja: '1972年、クアンチ古城防衛戦を戦う解放軍戦士たち（国境警備新聞）',
-            caption: 'Quân giải phóng chiến đấu bảo vệ Thành cổ Quảng Trị năm 1972 (Nguồn: Báo Biên phòng)',
-            caption_ja: '1972年、クアンチ古城防衛戦を戦う解放軍戦士たち（国境警備新聞）',
+            modalImgAlt: 'Quân Giải phóng chiến đấu bảo vệ Thành cổ Quảng Trị năm 1972 (Nguồn: Báo Biên phòng)',
+            modalImgAlt_ja: '1972年、クアンチ城塞を守るために戦う解放軍（出典：Bien phong紙）',
+            caption: 'Quân Giải phóng chiến đấu bảo vệ Thành cổ Quảng Trị năm 1972 (Nguồn: Báo Biên phòng)',
+            caption_ja: '1972年、クアンチ城塞を守るために戦う解放軍（出典：Bien phong紙）',
 
-            title: 'Cuộc tiến công chiến lược Xuân – Hè 1972',
-            title_ja: '1972年春夏戦略攻勢と敵軍配置の偵察分析',
+            title: 'Cuộc tiến công chiến dịch Xuân – Hè 1972',
+            title_ja: '1972年春夏作戦の攻勢',
             date: 'Ngày 30/03/1972',
             date_ja: '1972年3月30日',
 
-            text1: 'Ngày 30/3/1972, Quân Giải phóng mở tiến công chiến dịch Xuân – Hè 1972(*) đánh vào các vùng Quảng Trị, Tây Nguyên và Đông Nam Bộ. Phía Mỹ và Chính quyền Việt Nam Cộng hòa bị bất ngờ về thời điểm, quy mô và hướng tiến công chính.',
-            text1_ja: '1972年3月30日、解放軍はクアンチ、中部高原、東南部において「1972年春夏戦略攻勢」（*）を開始。米軍および南ベトナム政権は攻勢の開始時期、規模、主攻撃軸すべてにおいて完全に不意を突かれました。',
+            text1: 'Ngày 30/3/1972, quân Giải phóng mở tiến công chiến dịch Xuân – Hè 1972⁽¹⁾ đánh vào các vùng Quảng Trị, Tây Nguyên và Đông Nam Bộ. Phía Mỹ và chính quyền Việt Nam Cộng hòa bị bất ngờ về thời điểm, quy mô và hướng tiến công chính.',
+            text1_ja: '1972年3月30日、解放軍は1972年春夏作戦⁽¹⁾の攻勢を開始し、クアンチ、中部高原、東南部の各地域を攻撃した。アメリカ側とベトナム共和国政権にとって、その時期、規模、主な攻撃方向は予想外のものだった。',
 
-            text2: 'Phạm Xuân Ẩn dùng thẻ nhà báo Time để tiếp cận Bộ Tổng Tham mưu QĐVNCH, trụ sở MACV của Đại tướng Creighton Abrams và các buổi họp báo Five O’Clock Follies. Từ đó, ông khai thác tin tức thực địa từ các cố vấn quân sự Mỹ.',
-            text2_ja: 'ファム・スアン・アンはタイム誌記者証を駆使して南ベトナム軍総参謀部、クレイトン・エイブラムス将軍のMACV本部、および毎日17時の公式記者会見「ファイブ・オクロック・フォリーズ」へ出入りし、米軍事顧問団から最前線の実態情報を巧みに聞き出しました。',
+            text2: 'Phạm Xuân Ẩn dùng thẻ nhà báo của tạp chí Time để tiếp cận Bộ Tổng Tham mưu quân Việt Nam Cộng hòa, trụ sở MACV của Đại tướng Creighton Abrams và các buổi họp báo Five O’Clock Follies (“Trò hề lúc 5 giờ”). Từ đó, Ẩn khai thác thông tin từ thực địa qua các cố vấn quân sự Mỹ.',
+            text2_ja: 'ファム・スアン・アンは『タイム』誌の記者証を使い、ベトナム共和国軍の参謀本部、クレイトン・エイブラムス大将のMACV本部、そしてブリーフィング「ファイブ・オクロック・フォリーズ（5時の茶番）」に出入りした。そこから、アンはアメリカの軍事顧問たちを通じて現場の情報を引き出した。',
 
-            text3: 'Ông cung cấp các phân tích về sự suy sụp của Quân đoàn II Quân Việt Nam Cộng hòa, kế hoạch điều động địa phương quân của Thiếu tướng Ngô Du (Tư lệnh Quân đoàn II), và mức tổn thất nặng của Binh chủng Nhảy dù và Thủy quân lục chiến. Các báo cáo này cho thấy lực lượng đối phương bị dàn mỏng. Nhờ đó, Bộ Chính trị và Quân ủy Trung ương đã kịp thời chỉ đạo phương án phối hợp trên các chiến trường.',
-            text3_ja: '彼は南ベトナム第2軍団の士気崩壊、軍団長ゴー・ズー少将による地方部隊再編計画、さらには精鋭空挺部隊や海兵隊の甚大な損害状況を分析報告。敵戦力が広大な戦線で過度に薄まっている事実を浮き彫りにし、政治局と中央軍事委員会が各戦域間の有機的協調作戦を機敏に下すための決定打となりました。',
+            text3: 'Ẩn cung cấp các phân tích về sự suy sụp của Quân đoàn II của quân Việt Nam Cộng hòa, kế hoạch điều động lực lượng Địa phương quân của Thiếu tướng Ngô Du (Tư lệnh Quân đoàn II) cùng mức tổn thất nặng của Binh chủng Nhảy dù và Thủy quân lục chiến. Những phân tích này cho thấy lực lượng đối phương bị dàn mỏng. Nhờ đó, quân Giải phóng đã kịp thời triển khai phương án phối hợp trên các chiến trường.',
+            text3_ja: 'アンは、ベトナム共和国軍第II軍団の崩壊、ゴ・ズー少将（第II軍団司令官）による地方軍の動員計画、および空挺部隊と海兵隊の甚大な損失についての分析を提供した。これらの分析は、敵の兵力が分散して手薄になっていることを示していた。これにより、解放軍は各戦場における連携計画を迅速に実行に移した。',
 
             // ── ẢNH CHÈN GIỮA NỘI DUNG ──
             midImg3: {
                 src: 'assets/images/1971_1973/1972_TB1_NuCuoi.jpg',
-                alt: 'Bức ảnh nổi tiếng “Nụ cười chiến thắng” của quân Giải phóng dưới chân Thành cổ Quảng Trị (Nguồn: Đoàn Công Tính)',
-                alt_ja: 'クアンチ古城の足元で撮影された解放軍の有名な「勝利の笑顔」（ドアン・コン・ティン撮影）',
-                caption: 'Bức ảnh nổi tiếng “Nụ cười chiến thắng” của quân Giải phóng dưới chân Thành cổ Quảng Trị (Nguồn: Đoàn Công Tính)',
-                caption_ja: 'クアンチ古城の足元で撮影された解放軍の有名な「勝利の笑顔」（ドアン・コン・ティン撮影）'
+                alt: 'Bức ảnh nổi tiếng “Nụ cười chiến thắng” của quân Giải phóng ở Thành cổ Quảng Trị (Nguồn: Đoàn Công Tính)',
+                alt_ja: 'クアンチ城塞での解放軍の有名な写真「勝利の笑顔」（出典：Doan Cong Tinh）',
+                caption: 'Bức ảnh nổi tiếng “Nụ cười chiến thắng” của quân Giải phóng ở Thành cổ Quảng Trị (Nguồn: Đoàn Công Tính)',
+                caption_ja: 'クアンチ城塞での解放軍の有名な写真「勝利の笑顔」（出典：Doan Cong Tinh）'
             },
 
-            footnote: '(*) Chiến dịch Xuân - Hè 1972 là một trong những chiến dịch quân sự lớn nhất của Quân Giải phóng trong cuộc kháng chiến chống Mỹ, cứu nước kéo dài từ ngày 30/3/1972 đến đầu năm 1973.',
-            footnote_ja: '(*) 1972年春夏戦役（グエン・フエ攻勢）：1972年3月30日から1973年初頭にかけて解放軍が展開した最大規模の戦略的攻勢の一つ。',
+            footnote: '1. Chiến dịch Xuân – Hè 1972 là một trong những chiến dịch quân sự lớn nhất của quân Giải phóng miền Nam và quân đội nhân dân Việt Nam trong cuộc kháng chiến chống Mỹ, cứu nước, diễn ra từ ngày 30/3/1972 đến đầu năm 1973.',
+            footnote_ja: '1. 1972年春夏作戦は、抗米救国戦争における南ベトナム解放軍とベトナム人民軍の最大規模の軍事作戦の一つで、1972年3月30日から1973年初めまで行われた。',
 
             note: '',
             note_ja: '',
@@ -56,21 +56,18 @@ window.EXTRA_DATA_1972 = {
         {
             id: '1972t',
             modalImg: 'assets/images/1971_1973/1972_TB2_B52ThaBom.jpg',
-            modalImgAlt: 'Máy bay B-52 trút bom (Nguồn: QĐNDVN)',
-            modalImgAlt_ja: '爆弾を投下する米軍B-52戦略爆撃機（ベトナム人民軍新聞）',
-            caption: 'Máy bay B-52 trút bom (Nguồn: QĐNDVN)',
-            caption_ja: '爆弾を投下する米軍B-52戦略爆撃機（ベトナム人民軍新聞）',
+            modalImgAlt: 'Máy bay B-52 trút bom (Nguồn: Báo Quân đội nhân dân)',
+            modalImgAlt_ja: '爆弾を投下するB-52爆撃機（出典：Quan doi nhan dan紙）',
+            caption: 'Máy bay B-52 trút bom (Nguồn: Báo Quân đội nhân dân)',
+            caption_ja: '爆弾を投下するB-52爆撃機（出典：Quan doi nhan dan紙）',
 
-            title: 'Cảnh báo sớm chiến dịch Linebacker I (*) và máy bay B-52 ra miền Bắc',
-            title_ja: 'ラインバッカーI作戦とB-52北爆再開の早期警戒通報',
+            title: 'Cảnh báo sớm chiến dịch Linebacker I',
+            title_ja: 'ラインバッカーI作戦に関する早期警告',
             date: 'Năm 1972',
             date_ja: '1972年',
 
-            text1: 'Nhằm cứu vãn sự sụp đổ của Quân Việt Nam Cộng hòa và tăng sức ép buộc Quân Giải Phóng nhượng bộ trên bàn đàm phán Paris, Mỹ quyết định tạm dừng đàm phán, huy động tối đa hỏa lực không quân chiến lược mở Chiến dịch Linebacker I ném bom đánh phá trở lại miền Bắc.',
-            text1_ja: '南ベトナム軍の壊滅を防ぎ、パリ和平交渉で解放軍に妥協を強いるため、米国は交渉を一時中断。戦略航空火力を最大限に結集して北ベトナムへの再空爆作戦「ラインバッカーI」（*）を発動しました。',
-
-            text2: 'Phạm Xuân Ẩn đã tiếp cận, khai thác nhanh ý đồ quân sự thông qua các sĩ quan tham mưu cấp cao tại MACV và các mối liên hệ thân cận trong Phủ Đặc ủy Trung ương Tình báo (CIO) Sài Gòn.',
-            text2_ja: 'ファム・スアン・アンはMACVの高級参謀将校やサイゴン中央情報局（CIO）内の腹心ルートを通じ、米軍の軍事作戦計画を迅速に察知・入手しました。',
+            text1: 'Năm 1972, khi đàm phán Paris ngưng trệ, Mỹ mở Chiến dịch Linebacker I⁽¹⁾ ném bom trở lại miền Bắc nhằm cứu vãn tình thế của quân Việt Nam Cộng hòa và tăng sức ép buộc phía cách mạng nhượng bộ trên bàn đàm phán.',
+            text1_ja: '1972年、パリ交渉が停滞する中、アメリカはベトナム共和国軍の劣勢を挽回し、交渉の場で革命側に譲歩を迫る圧力を強めるため、北ベトナムへの爆撃を再開するラインバッカーI作戦⁽¹⁾を開始した。',
 
             // ── ẢNH CHÈN GIỮA NỘI DUNG ──
             midImg: {
@@ -81,14 +78,17 @@ window.EXTRA_DATA_1972 = {
                 caption_ja: '1972年、アメリカ軍機を迎え撃つため防空ミサイルを準備する革命勢力（出典：Quan doi nhan dan紙）'
             },
 
-            text3: 'Ẩn đã gửi báo cáo khẩn cảnh báo sớm về việc Mỹ chuẩn bị dùng máy bay ném bom chiến lược B-52, bom thông minh dẫn đường laser và máy bay cường kích đánh phá ác liệt hệ thống cầu cống, kho tàng hậu cần, đường giao thông ở miền Bắc.',
-            text3_ja: 'アンは、米国が戦略爆撃機B-52、レーザー誘導スマート爆弾、最新鋭攻撃機を投入し、北部の橋梁、兵站基地、交通網を壊滅させる作戦を準備している旨の緊急警報を急送しました。',
+            text2: 'Nhờ các mối liên hệ thân thiết trong CIO, Phạm Xuân Ẩn đã nắm được ý đồ quân sự của Mỹ.',
+            text2_ja: 'CIO内部との親しいつながりを通じて、ファム・スアン・アンはアメリカの軍事的意図を把握した。',
 
-            text4: 'Tin tức giúp hậu phương miền Bắc và lực lượng Phòng không - Không quân chủ động sơ tán, chuẩn bị phương án đối phó.',
-            text4_ja: 'この先見情報は、北ベトナムの後方基地および防空・空軍部隊が事前に住民疎開を完了させ、万全の迎撃態勢を構築する上で決定的な役割を果たしました。',
+            text3: 'Ẩn đã gửi báo cáo khẩn cảnh báo sớm việc Mỹ chuẩn bị dùng máy bay cường kích và bom dẫn đường laser đánh phá đường sá, cầu cống, đường sắt, căn cứ quân sự và kho bãi hậu cần ở miền Bắc.',
+            text3_ja: 'アンは、アメリカが攻撃機とレーザー誘導爆弾を用いて北ベトナムの道路、橋梁、鉄道、軍事基地、補給倉庫を爆撃する準備を進めていることを早期に警告する緊急報告を送った。',
 
-            footnote: '(*) Chiến dịch Linebacker I là chiến dịch ném bom và phong tỏa bằng thủy lôi của Mỹ vào miền Bắc Việt Nam năm 1972.',
-            footnote_ja: '(*) ラインバッカーI作戦：1972年に米軍が北ベトナムに対して展開した大規模爆撃および機雷封鎖作戦。',
+            text4: 'Nhờ những thông tin cảnh báo sớm này, hậu phương miền Bắc và lực lượng Phòng không - Không quân chủ động sơ tán, chuẩn bị phương án đối phó.',
+            text4_ja: 'これらの早期警告の情報により、北ベトナムの後方と防空・空軍は事前に疎開を行い、対策を準備することができた。',
+
+            footnote: '1. Chiến dịch Linebacker I là chiến dịch ném bom và phong tỏa bằng thủy lôi của Mỹ vào miền Bắc Việt Nam năm 1972.',
+            footnote_ja: '1. ラインバッカーI作戦は、1972年にアメリカが北ベトナムに対して行った爆撃と機雷による封鎖の作戦である。',
 
             note: '',
             note_ja: '',
@@ -104,24 +104,24 @@ window.EXTRA_DATA_1972 = {
         {
             id: '1972b',
             modalImg: 'assets/images/1971_1973/1972_NB_PXAxRobert.jpg',
-            modalImgAlt: 'Phạm Xuân Ẩn (người thứ hai từ bên trái) trao đổi với Robert Shaplen (người thứ ba từ bên trái) và những người bạn (Nguồn: Richard Avedon)',
-            modalImgAlt_ja: 'ロバート・シャプレン（左から3人目）らと歓談するファム・スアン・アン（左から2人目）（リチャード・アヴェドン撮影）',
-            caption: 'Phạm Xuân Ẩn (người thứ hai từ bên trái) trao đổi với Robert Shaplen (người thứ ba từ bên trái) và những người bạn (Nguồn: Richard Avedon)',
-            caption_ja: 'ロバート・シャプレン（左から3人目）らと歓談するファム・スアン・アン（左から2人目）（リチャード・アヴェドン撮影）',
+            modalImgAlt: 'Phạm Xuân Ẩn (người thứ hai từ bên trái) trao đổi với Robert Shaplen (người thứ ba từ bên trái) và những người bạn (Nguồn: nhiếp ảnh gia Richard Avedon )',
+            modalImgAlt_ja: 'ファム・スアン・アン（左から2番目）が、ボブ・シャプレン（左から3番目）や友人たちと話している（出典：Richard Avedon）',
+            caption: 'Phạm Xuân Ẩn (người thứ hai từ bên trái) trao đổi với Robert Shaplen (người thứ ba từ bên trái) và những người bạn (Nguồn: nhiếp ảnh gia Richard Avedon )',
+            caption_ja: 'ファム・スアン・アン（左から2番目）が、ボブ・シャプレン（左から3番目）や友人たちと話している（出典：Richard Avedon）',
 
-            title: 'Cuộc trao đổi với Robert Shaplen',
-            title_ja: 'ロバート・シャプレンとの対談',
+            title: 'Cuộc trao đổi với Robert (Bob) Shaplen (The New Yorker)',
+            title_ja: 'ボブ・シャプレン（『ザ・ニューヨーカー』誌）との対話',
             date: 'Năm 1972',
             date_ja: '1972年',
 
-            text1: 'Năm 1972, Phạm Xuân Ẩn trao đổi với Robert Shaplen, cây bút lão thành của tạp chí The New Yorker, người được báo chí phương Tây coi là “tượng đài báo chí Mỹ tại Đông Nam Á”.',
-            text1_ja: '1972年、ファム・スアン・アンは欧米報道界で「東南アジアにおける米報道界の生きた記念碑」と称された『ニューヨーカー』誌の重鎮記者ロバート・シャプレンと深い議論を交わしました。',
+            text1: 'Năm 1972, Phạm Xuân Ẩn trao đổi với Robert (Bob) Shaplen, phóng viên khu vực Viễn Đông của tạp chí The New Yorker từ năm 1962 đến năm 1978 và là một trong những người bạn làm báo của ông.',
+            text1_ja: '1972年、ファム・スアン・アンは、1962年から1978年まで『ザ・ニューヨーカー』誌の極東特派員を務め、自身の記者仲間の一人でもあったボブ・シャプレンと意見を交わした。',
 
-            text2: 'Ẩn cho rằng chính quyền Mỹ và Tổng thống Thiệu đã sai lầm khi cố nhấn mạnh sự tàn khốc của đợt tấn công để lên án quân Giải Phóng. Theo ông, cách làm này “chỉ khiến cho nhân dân Mỹ thêm hoảng sợ và dồn Tổng thống Nixon đến bờ vực” ngay trước bầu cử Tổng thống Mỹ tháng 11/1972.',
-            text2_ja: 'アンは「米政権とティウ大統領が攻勢の凄惨さを針小棒大に強調して解放軍を非難しようとするのは重大な失策である。それは米国民の恐怖と反戦感情を煽り、1972年11月の大統領選を控えたニクソン大統領を破滅の淵に追い込むだけだ」と鋭く心理的急所を突きました。',
+            text2: 'Ẩn cho rằng chính quyền Mỹ và Tổng thống Thiệu đã sai lầm khi cố nhấn mạnh sự tàn khốc của đợt tấn công năm 1972 để lên án quân Giải phóng. Theo ông, cách làm này “chỉ khiến cho nhân dân Mỹ thêm hoảng sợ và dồn Tổng thống Nixon đến bờ vực” ngay trước bầu cử Tổng thống Mỹ tháng 11/1972.',
+            text2_ja: 'アンは、アメリカ政府とティエウ大統領が解放軍を非難するために1972年の攻勢の残虐さを強調しようとしたのは誤りだったと考えていた。アンによれば、このやり方は1972年11月のアメリカ大統領選挙の直前にあって、「アメリカ国民をいっそう恐怖に陥れ、ニクソン大統領を窮地に追い込むだけ」であった。',
 
-            text3: 'Ngay trong năm 1972, trên mặt báo tạp chí The New Yorker, nhà báo Robert Shaplen đã công khai ca ngợi ông Phạm Xuân Ẩn là "người Việt làm báo chăm chỉ nhất và được nhiều người kính trọng nhất".',
-            text3_ja: '同年、シャプレンは『ニューヨーカー』誌上で、ファム・スアン・アンを「最も勤勉で、誰からも最も深く敬愛されているベトナム人ジャーナリスト」と公然と賞賛しました。',
+            text3: 'Năm 1972, trên tạp chí The New Yorker, nhà báo Robert Shaplen đã công khai ca ngợi ông Phạm Xuân Ẩn là "người Việt làm báo chăm chỉ nhất và được nhiều người kính trọng nhất".',
+            text3_ja: '1972年、記者のボブ・シャプレンは『ザ・ニューヨーカー』誌の紙面で、ファム・スアン・アンを「最も勤勉で、最も多くの人々から尊敬を集めるベトナム人記者」と公然と称賛した。',
 
             note: '',
             note_ja: '',
