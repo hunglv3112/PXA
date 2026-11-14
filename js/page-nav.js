@@ -54,7 +54,7 @@
         label.textContent = (lang === 'ja') ? 'ページ移動' : 'Chuyển trang';
       }
       if (headerTitle) {
-        headerTitle.textContent = (lang === 'ja') ? 'ページ目次' : 'DANH MỤC TRANG';
+        headerTitle.textContent = (lang === 'ja') ? 'ページ一覧' : 'DANH MỤC TRANG';
       }
 
       dropdown.querySelectorAll('.page-nav-item-text').forEach(el => {
