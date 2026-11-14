@@ -74,11 +74,11 @@ window.EXTRA_DATA_1972 = {
 
             // ── ẢNH CHÈN GIỮA NỘI DUNG ──
             midImg: {
-                src: 'assets/images/1971_1973/1972_BachMai.jpg',
-                alt: 'Cảnh đổ nát tại Bệnh viện Bạch Mai sau khi bị B52 Mỹ dội bom, 22/12/1972 (Nguồn: Chu Chí Thành)',
-                alt_ja: '1972年12月22日、米B-52の空爆を受け廃墟と化したバックマイ病院（チュ・チ・タイン撮影）',
-                caption: 'Cảnh đổ nát tại Bệnh viện Bạch Mai sau khi bị B52 Mỹ dội bom, 22/12/1972 (Nguồn: Chu Chí Thành)',
-                caption_ja: '1972年12月22日、米B-52の空爆を受け廃墟と化したバックマイ病院（チュ・チ・タイン撮影）'
+                src: 'assets/images/1971_1973/1972_Line.jpg',
+                alt: 'Lực lượng cách mạng chuẩn bị tên lửa phòng không để đánh trả máy bay Mỹ năm 1972 (Nguồn: Báo Quân đội nhân dân)',
+                alt_ja: '1972年、アメリカ軍機を迎え撃つため防空ミサイルを準備する革命勢力（出典：Quan doi nhan dan紙）',
+                caption: 'Lực lượng cách mạng chuẩn bị tên lửa phòng không để đánh trả máy bay Mỹ năm 1972 (Nguồn: Báo Quân đội nhân dân)',
+                caption_ja: '1972年、アメリカ軍機を迎え撃つため防空ミサイルを準備する革命勢力（出典：Quan doi nhan dan紙）'
             },
 
             text3: 'Ẩn đã gửi báo cáo khẩn cảnh báo sớm về việc Mỹ chuẩn bị dùng máy bay ném bom chiến lược B-52, bom thông minh dẫn đường laser và máy bay cường kích đánh phá ác liệt hệ thống cầu cống, kho tàng hậu cần, đường giao thông ở miền Bắc.',
