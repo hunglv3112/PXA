@@ -17,45 +17,48 @@ window.EXTRA_DATA_1960 = {
         {
             id: '1960t',
             modalImg: 'assets/images/1960_1963/1960_TB_N_ThamNhaPXA.jpg',
-            modalImgAlt: 'Ông Nguyễn Xuân Mạnh (thứ hai, từ trái sang) và đồng đội trong một lần đến thăm gia đình Phạm Xuân Ẩn (ngoài cùng, bên phải) (Nguồn: QDNDVN)',
-            modalImgAlt_ja: 'ファム・スアン・アンの家族を訪問するグエン・スアン・マン（左から2人目）と戦友たち（人民軍新聞）',
-            caption: 'Ông Nguyễn Xuân Mạnh (thứ hai, từ trái sang) và đồng đội trong một lần đến thăm gia đình Phạm Xuân Ẩn (ngoài cùng, bên phải) (Nguồn: QDNDVN)',
-            caption_ja: 'ファム・スアン・アンの家族を訪問するグエン・スアン・マン（左から2人目）と戦友たち（人民軍新聞）',
+            modalImgAlt: 'Ông Nguyễn Xuân Mạnh (thứ hai từ trái sang) và đồng đội trong một lần đến thăm gia đình Phạm Xuân Ẩn (ngoài cùng bên phải) (Nguồn: Báo Quân đội nhân dân)',
+            modalImgAlt_ja: 'ファム・スアン・アン（右端）の家族を訪ねた際のグエン・スアン・マイン（左から2番目）と仲間たち（出典：Quan doi nhan dan紙）',
+            caption: 'Ông Nguyễn Xuân Mạnh (thứ hai từ trái sang) và đồng đội trong một lần đến thăm gia đình Phạm Xuân Ẩn (ngoài cùng bên phải) (Nguồn: Báo Quân đội nhân dân)',
+            caption_ja: 'ファム・スアン・アン（右端）の家族を訪ねた際のグエン・スアン・マイン（左から2番目）と仲間たち（出典：Quan doi nhan dan紙）',
 
             title: 'Nối lại liên lạc với tổ chức tình báo cách mạng',
-            title_ja: '革命情報組織との連絡再開',
+            title_ja: '革命側の諜報組織との連絡の再開',
             date: 'Năm 1960',
             date_ja: '1960年',
 
-            text1: 'Sau khi trở về Việt Nam, Phạm Xuân Ẩn tạm thời chưa hoạt động tình báo mà chờ nối lại liên lạc với tổ chức. Thông qua những người quen biết ông, Nguyễn Xuân Mạnh (Mười Nho), cán bộ phụ trách công tác tình báo tại Sài Gòn - Gia Định, biết được ông đã về nước và báo cáo với Võ Văn Kiệt (Sáu Dân) cùng Cao Đăng Chiếm (Sáu Hoàng).',
-            text1_ja: '帰国後、ファム・スアン・アンは組織との連絡再開を待ち、一時的に諜報活動を控えました。知人を通じてサイゴン・ザディン地区の情報担当幹部グエン・スアン・マン（ムオイ・ニョ）がアンの帰国を知り、ヴォー・ヴァン・キエット（サウ・ザン）およびカオ・ダン・チエム（サウ・ホアン）に報告しました。',
+            text1: 'Sau khi trở về Việt Nam, Phạm Xuân Ẩn tạm thời chưa hoạt động tình báo mà chờ nối lại liên lạc với tổ chức. Thông qua những người quen biết ông, Nguyễn Xuân Mạnh (Mười Nho), cán bộ phụ trách công tác tình báo tại Sài Gòn - Gia Định, biết được ông đã về nước và báo cáo với Võ Văn Kiệt (Sáu Dân)⁽¹⁾ cùng Cao Đăng Chiếm (Sáu Hoàng)⁽²⁾.',
+            text1_ja: 'ベトナムに帰国した後、ファム・スアン・アンは当面は諜報活動を行わず、組織との連絡が再開されるのを待った。\n\nアンの知人たちを通じて、サイゴン・ザディンで諜報活動を担当していた幹部のグエン・スアン・マイン（ムオイ・ニョー）は、アンが帰国したことを知り、ヴォー・ヴァン・キエット（サウ・ザン）⁽¹⁾とカオ・ダン・チェム（サウ・ホアン）⁽²⁾に報告した。',
 
             // ── ẢNH CHÈN SAU ĐOẠN 1 ──
             midImg1: {
                 src: 'assets/images/1960_1963/1960_TB_BaNguoiQuanTrong.jpg',
                 alt: 'Ông Mười Nho - Nguyễn Xuân Mạnh (ngoài cùng bên trái) - Trưởng ban Đặc tình Đặc khu ủy Sài Gòn - Gia Định; Ông Sáu Dân - Võ Văn Kiệt (ở giữa) - Bí thư Khu ủy Sài Gòn - Gia Định; Ông Sáu Hoàng - Cao Đăng Chiếm (ngoài cùng bên phải) - Phó trưởng ban Bảo vệ an ninh Xứ ủy',
-                alt_ja: '左：ムオイ・ニョ（サイゴン特区特情部長）、中央：サウ・ザン／ヴォー・ヴァン・キエット（区書記）、右：サウ・ホアン／カオ・ダン・チエム（治安部長）',
+                alt_ja: 'ムオイ・ニョー――グエン・スアン・マイン（左端）――サイゴン・ザディン特別区党委員会特別諜報班長／サウ・ザン――ヴォー・ヴァン・キエット（中央）――サイゴン・ザディン地区党委員会書記／サウ・ホアン――カオ・ダン・チェム（右端）――南部党委員会治安保護班副班長',
                 caption: 'Ông Mười Nho - Nguyễn Xuân Mạnh (ngoài cùng bên trái) - Trưởng ban Đặc tình Đặc khu ủy Sài Gòn - Gia Định<br><br>Ông Sáu Dân - Võ Văn Kiệt (ở giữa) - Bí thư Khu ủy Sài Gòn - Gia Định<br><br>Ông Sáu Hoàng - Cao Đăng Chiếm (ngoài cùng bên phải) - Phó trưởng ban Bảo vệ an ninh Xứ ủy',
-                caption_ja: 'ムオイ・ニョ（グエン・スアン・マン、左端）— サイゴン・ザディン特区特別情報部長<br><br>サウ・ザン（ヴォー・ヴァン・キエット、中央）— サイゴン・ザディン地区書記<br><br>サウ・ホアン（カオ・ダン・チエム、右端）— 地区治安防衛副部長'
+                caption_ja: 'ムオイ・ニョー――グエン・スアン・マイン（左端）――サイゴン・ザディン特別区党委員会特別諜報班長<br><br>サウ・ザン――ヴォー・ヴァン・キエット（中央）――サイゴン・ザディン地区党委員会書記<br><br>サウ・ホアン――カオ・ダン・チェム（右端）――南部党委員会治安保護班副班長'
             },
 
             text2: 'Cao Đăng Chiếm từng tham gia việc cử Phạm Xuân Ẩn sang Mỹ học báo chí năm 1957. Sau khi xác nhận thông tin, ông giao Nguyễn Xuân Mạnh tổ chức nối lại liên lạc với Phạm Xuân Ẩn. Nguyễn Thị Mỹ Nhung (Tám Thảo), một cán bộ tình báo từng quen biết ông, được phân công làm người liên lạc trực tiếp.',
-            text2_ja: 'カオ・ダン・チエムは1957年にアンを米国留学へ派遣する決定に関わった人物でした。情報を確認した彼は、グエン・スアン・マンにアンとの連絡再開を指示。アンと面識のあった女性情報幹部グエン・ティ・ミー・ニュン（タム・タオ）が直接の連絡役に任命されました。',
+            text2_ja: 'カオ・ダン・チェムは、1957年にファム・スアン・アンをアメリカに派遣してジャーナリズムを学ばせることに関わった。\n\n情報を確認した後、カオ・ダン・チェムはグエン・スアン・マインにアンとの連絡の再開を手配するよう任せた。\n\nかつてアンと面識のあった諜報幹部のグエン・ティ・ミー・ニュン（タム・タオ）が、直接の連絡係に任命された。',
 
-            text3: 'Cuối năm 1960, Tám Thảo bí mật đưa Phạm Xuân Ẩn đến căn cứ Phú Hòa Đông, Củ Chi. Tại đây, ông gặp các cán bộ lãnh đạo và ở lại ba ngày để báo cáo về quá trình học tập tại Mỹ, tình hình chính trị - quân sự và những mâu thuẫn trong chính quyền Sài Gòn.',
-            text3_ja: '1960年末、タム・タオはアンを極秘裏にクチのフーホアドン根拠地へ案内しました。アンは指導部と合流して3日間にわたり滞在し、米国での留学成果、政治・軍事情勢、サイゴン政権内部の深刻な矛盾について包括的な報告を行いました。',
+            text3: 'Cuối năm 1960, Tám Thảo bí mật đưa Phạm Xuân Ẩn đến căn cứ Phú Hòa Đông, Củ Chi. Tại đây, ông gặp các cán bộ lãnh đạo và ở lại ba ngày để báo cáo về quá trình học tập tại Mỹ, tình hình chính trị - quân sự và những mâu thuẫn trong chính quyền Sài Gòn (một tên gọi khác của phía Việt Nam Cộng hòa).',
+            text3_ja: '1960年末、タム・タオはファム・スアン・アンを秘密裏にクチのフーホアドン根拠地へ連れて行った。\n\nアンはここで指導幹部たちと会い、3日間とどまって、アメリカでの学習の過程、政治・軍事情勢、サイゴン政権（ベトナム共和国側の別称）内部の矛盾について報告した。',
 
             // ── ẢNH CHÈN SAU ĐOẠN 3 ──
             midImg3: {
                 src: 'assets/images/1960_1963/1960_TB_TamThao.jpg',
-                alt: 'Tám Thảo (Nguyễn Thị Mỹ Nhung) - Nữ giao liên cho Phạm Xuân Ẩn (Nguồn: QDNDVN)',
-                alt_ja: 'タム・タオ（グエン・ティ・ミー・ニュン）— ファム・スアン・アン専属の女性連絡員（人民軍新聞）',
-                caption: 'Tám Thảo (Nguyễn Thị Mỹ Nhung) - Nữ giao liên cho Phạm Xuân Ẩn (Nguồn: QDNDVN)',
-                caption_ja: 'タム・タオ（グエン・ティ・ミー・ニュン）— ファム・スアン・アン専属の女性連絡員（人民軍新聞）'
+                alt: 'Tám Thảo (Nguyễn Thị Mỹ Nhung) - Nữ giao liên cho Phạm Xuân Ẩn trong giai đoạn đầu (Nguồn: Báo Quân đội nhân dân)',
+                alt_ja: 'タム・タオ（グエン・ティ・ミー・ニュン）――初期のファム・スアン・アンの女性連絡員（出典：Quan doi nhan dan紙）',
+                caption: 'Tám Thảo (Nguyễn Thị Mỹ Nhung) - Nữ giao liên cho Phạm Xuân Ẩn trong giai đoạn đầu (Nguồn: Báo Quân đội nhân dân)',
+                caption_ja: 'タム・タオ（グエン・ティ・ミー・ニュン）――初期のファム・スアン・アンの女性連絡員（出典：Quan doi nhan dan紙）'
             },
 
-            text4: 'Phạm Xuân Ẩn được đánh giá là người có tầm cỡ chiến lược, lãnh đạo giao ông tận dụng vỏ bọc nhà báo chuyên nghiệp để tiếp cận các cơ quan đầu não Mỹ - Sài Gòn lấy tin. Tại đây, ông chính thức được trao bí danh huyền thoại X6 thuộc Cụm tình báo chiến lược (sau phát triển thành Cụm H63).',
-            text4_ja: 'アンは戦略的価値を極めて高く評価され、プロの報道記者という偽装を活用して米軍・サイゴン政権の中枢機関へ接近し情報収集を行う任務を課されました。ここで彼は正式に伝説の暗号名「X6」を授与され、戦略情報班（後のH63諜報網）に編入されました。',
+            text4: 'Phạm Xuân Ẩn được đánh giá là người có tầm cỡ chiến lược và được lãnh đạo giao tận dụng vỏ bọc nhà báo chuyên nghiệp để tiếp cận các cơ quan đầu não Mỹ - Sài Gòn lấy tin. Tại đây, ông chính thức được trao bí danh huyền thoại X6 thuộc Cụm tình báo chiến lược (sau phát triển thành Cụm H63).',
+            text4_ja: 'ファム・スアン・アンは戦略的な力量を持つ人物と評価され、指導部はアンに、プロの記者という隠れ蓑を活用してアメリカ・サイゴン政権の中枢機関に接近し、情報を得るよう任せた。\n\nアンはここで、戦略情報グループ（のちにH63情報グループに発展）に属する伝説的な秘密名「X6」を正式に授けられた。',
+
+            footnote: '1. Võ Văn Kiệt (Sáu Dân): Sinh năm 1922 tại tỉnh Vĩnh Long. Trong kháng chiến chống Mỹ, ông là Bí thư Khu ủy Sài Gòn - Gia Định. Sau khi đất nước thống nhất, ông là Chủ tịch Ủy ban Nhân dân TP. Hồ Chí Minh đầu tiên và là Thủ tướng Việt Nam từ năm 1991 đến 1997.<br><br>2. Cao Đăng Chiếm (Sáu Hoàng): Ông phụ trách lĩnh vực công an ở miền Nam từ thời kháng chiến chống Pháp đến kháng chiến chống Mỹ. Sau này, ông là Ủy viên Trung ương Đảng và Thứ trưởng Bộ Nội vụ.',
+            footnote_ja: '1. ヴォー・ヴァン・キエット（サウ・ザン）：1922年、ヴィンロン省に生まれる。抗米戦争中はサイゴン・ザディン地区党委員会書記であった。南北統一後は初代ホーチミン市人民委員会主席を務め、1991年から1997年までベトナム社会主義共和国首相を務めた。<br><br>2. カオ・ダン・チェム（サウ・ホアン）：抗仏戦争期から抗米戦争期にかけて南部で公安分野を担当した。のちに党中央委員、内務次官を務めた。',
 
             note: '',
             note_ja: '',
@@ -72,9 +75,9 @@ window.EXTRA_DATA_1960 = {
             id: '1960b',
             modalImg: 'assets/images/1960_1963/1960_NB_Reuters.jpg',
             modalImgAlt: 'Thẻ nhà báo khi ông Ẩn làm phóng viên hãng thông tấn Reuters (Nguồn: Báo Thanh Niên)',
-            modalImgAlt_ja: 'ロイター通信特派員時代のファム・スアン・アンの記者証（タインニエン紙）',
+            modalImgAlt_ja: 'アンがロイター通信の記者だったころの記者証（出典：Thanh Nien紙）',
             caption: 'Thẻ nhà báo khi ông Ẩn làm phóng viên hãng thông tấn Reuters (Nguồn: Báo Thanh Niên)',
-            caption_ja: 'ロイター通信特派員時代のファム・スアン・アンの記者証（タインニエン紙）',
+            caption_ja: 'アンがロイター通信の記者だったころの記者証（出典：Thanh Nien紙）',
 
             title: 'Bắt đầu làm việc tại hãng thông tấn Reuters',
             title_ja: 'ロイター通信での勤務開始',
@@ -82,25 +85,25 @@ window.EXTRA_DATA_1960 = {
             date_ja: '1960年',
 
             text1: 'Sau khi trở về Việt Nam, Phạm Xuân Ẩn làm việc tại Việt Tấn Xã và có quan hệ tốt với Nguyễn Thái, Tổng Giám đốc cơ quan này.',
-            text1_ja: 'ベトナム帰国後、ファム・スアン・アンはベトナム通信社（ベトタンサ）に勤務し、同社総局長のグエン・タイと親密な関係を築きました。',
+            text1_ja: 'ベトナムに帰国した後、ファム・スアン・アンはベトナム通信で働き、同社の社長グエン・タイと良好な関係にあった。',
 
             text2: 'Thời điểm đó, hãng thông tấn Reuters của Anh đang mở rộng hoạt động đưa tin tại Sài Gòn. Nguyễn Thái đã giới thiệu Phạm Xuân Ẩn cho Bruce Russell, đại diện Reuters, vì ông được đào tạo về báo chí tại Mỹ, sử dụng tiếng Anh thành thạo và am hiểu tình hình chính trị Việt Nam.',
-            text2_ja: '当時、英ロイター通信はサイゴンでの特派活動を拡大していました。グエン・タイは、米国で正規のジャーナリズム教育を受け、流暢な英語力とベトナム政治への深い洞察を持つアンを、ロイター代表のブルース・ラッセルに推薦しました。',
+            text2_ja: '当時、イギリスのロイター通信はサイゴンでの報道活動を拡大していた。\n\nアンがアメリカでジャーナリズムの教育を受け、英語に堪能で、ベトナムの政治情勢に精通していたことから、グエン・タイはロイター通信の代表ブルース・ラッセルにファム・スアン・アンを紹介した。',
 
-            text3: 'Thời gian đầu làm việc tại Reuters, Phạm Xuân Ẩn đồng thời nhận lương từ Phủ Tổng thống, Việt Tấn Xã và Reuters. Để tránh những rắc rối có thể phát sinh khi làm việc cho nhiều cơ quan, ông đề nghị Trần Kim Tuyến cho thôi công tác tại Sở Nghiên cứu Chính trị và Việt Tấn Xã.',
-            text3_ja: 'ロイターでの勤務初期、アンは大統領府、ベトタンサ、ロイターの3箇所から給与を受け取っていました。多重勤務による疑惑や不都合を避けるため、彼はチャン・キム・トゥエンに政治社会調査局およびベトタンサからの退職を申し出ました。',
+            text3: 'Thời gian đầu làm việc tại Reuters, Phạm Xuân Ẩn đồng thời nhận lương từ Phủ Tổng thống, Việt Tấn Xã và Reuters. Để tránh những rắc rối có thể phát sinh khi làm việc cho nhiều cơ quan, ông đề nghị Trần Kim Tuyến cho thôi công tác tại Sở Nghiên cứu Chính trị và Xã hội cùng với Việt Tấn Xã.',
+            text3_ja: 'ロイター通信で働き始めた当初、ファム・スアン・アンは大統領府、ベトナム通信、ロイター通信から同時に給与を受け取っていた。\n\n複数の機関で働くことで生じうる面倒を避けるため、アンはチャン・キム・トゥエンに、政治・社会研究局とベトナム通信での勤務をやめさせてほしいと申し出た。',
 
             // ── ẢNH CHÈN SAU ĐOẠN 3 ──
             midImg3: {
                 src: 'assets/images/1960_1963/1960_NB_DongNghiepPhuongTay.jpg',
-                alt: 'Phạm Xuân Ẩn (thứ hai từ trái) cùng các đồng nghiệp phóng viên phương Tây (Nguồn: Điệp viên hoàn hảo - Trang 95)',
-                alt_ja: '欧米の特派員仲間と語らうファム・スアン・アン（左から2人目）（『パーフェクト・スパイ』95頁）',
-                caption: 'Phạm Xuân Ẩn (thứ hai từ trái) cùng các đồng nghiệp phóng viên phương Tây (Nguồn: Điệp viên hoàn hảo - Trang 95)',
-                caption_ja: '欧米の特派員仲間と語らうファム・スアン・アン（左から2人目）（『パーフェクト・スパイ』95頁）'
+                alt: 'Phạm Xuân Ẩn (thứ hai từ trái sang) cùng các đồng nghiệp phóng viên phương Tây (Nguồn: Điệp viên hoàn hảo - Trang 95)',
+                alt_ja: '西側の同僚記者たちとファム・スアン・アン（左から2番目）（出典：『完璧なスパイ』95ページ）',
+                caption: 'Phạm Xuân Ẩn (thứ hai từ trái sang) cùng các đồng nghiệp phóng viên phương Tây (Nguồn: Điệp viên hoàn hảo - Trang 95)',
+                caption_ja: '西側の同僚記者たちとファム・スアン・アン（左から2番目）（出典：『完璧なスパイ』95ページ）'
             },
 
             text4: 'Việc này giúp Phạm Xuân Ẩn xây dựng hình ảnh một nhà báo không trực tiếp làm việc cho chính quyền Sài Gòn, qua đó tạo điều kiện thuận lợi hơn để tiếp xúc với các nhân vật thuộc nhiều phe phái chính trị, giới quân sự và các cơ quan tình báo nước ngoài.',
-            text4_ja: 'これによりアンはサイゴン政権に直接属さない独立系記者の立場を確立し、諸派の政治家、軍首脳部、外国諜報機関の関係者とより自然かつ広範に接触できる理想的な環境を整えました。',
+            text4_ja: 'このことにより、ファム・スアン・アンはサイゴン政権のために直接働いてはいない記者というイメージを築くことができ、それによって、さまざまな政治派閥に属する人物、軍関係者、外国の諜報機関と接触しやすくなった。',
 
             note: '',
             note_ja: '',

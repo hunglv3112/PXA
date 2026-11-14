@@ -92,7 +92,7 @@ window.TIMELINE_DATA = [
     icon: "redact",
     img: "assets/images/1960_1963/1960_TB_N_ThamNhaPXA.jpg",
     title: "Nối lại liên lạc với tổ chức tình báo cách mạng",
-    title_ja: "革命情報組織との連絡再開",
+    title_ja: "革命側の諜報組織との連絡の再開",
   },
   {
     id: "1960b",
@@ -116,7 +116,7 @@ window.TIMELINE_DATA = [
     icon: "key",
     img: "assets/images/1960_1963/1961_MLxJFK.jpg",
     title: "Âm mưu của nước Mỹ",
-    title_ja: "米国の企図と新たな軍事戦略",
+    title_ja: "アメリカの陰謀",
   },
   {
     id: "1961b",
@@ -126,7 +126,7 @@ window.TIMELINE_DATA = [
     icon: "doc",
     img: "assets/images/1960_1963/1961_NB_AnPham.jpg",
     title: "Lợi thế từ thân phận nhà báo của Reuters",
-    title_ja: "ロイター記者としての身分がもたらす優位性",
+    title_ja: "ロイター通信の記者という身分がもたらした利点",
   },
 
   // ==========================================================================
@@ -139,8 +139,8 @@ window.TIMELINE_DATA = [
     side: "top",
     icon: "eye",
     img: "assets/images/1960_1963/1962_N_VNCHxMy.jpg",
-    title: "Thu thập Kế hoạch quân sự Harkins - McGarr",
-    title_ja: "ハーキンス・マクガー軍事計画の解読",
+    title: "Thu thập thông tin liên quan đến Kế hoạch quân sự Harkins - McGarr",
+    title_ja: "ハーキンズ・マクガー軍事計画に関する情報の収集",
   },
   {
     id: "1962b",
@@ -149,8 +149,8 @@ window.TIMELINE_DATA = [
     side: "bot",
     icon: "camera",
     img: "assets/images/1960_1963/1962_NB_NickPeter.jpg",
-    title: "Hợp tác cùng các phóng viên quốc tế tại Reuters",
-    title_ja: "ロイター特派員としての国際報道連携",
+    title: "Làm việc tại Reuters cùng Nick Turner",
+    title_ja: "ロイター通信でニック・ターナーとともに働く",
   },
 
   // ==========================================================================
@@ -164,7 +164,7 @@ window.TIMELINE_DATA = [
     icon: "star",
     img: "assets/images/1960_1963/1963_DaoChinh.jpg",
     title: "Theo dõi cuộc đảo chính Ngô Đình Diệm và dự báo chiến lược của Mỹ",
-    title_ja: "ゴ・ディン・ジエム政変の追跡と米国の戦略的動向予測",
+    title_ja: "ゴー・ディン・ジェム政権打倒のクーデターの注視とアメリカの戦略の予測",
   },
   {
     id: "1963b",
@@ -174,7 +174,7 @@ window.TIMELINE_DATA = [
     icon: "ticker",
     img: "assets/images/1960_1963/1963_NB_RoiTrucThang.jpg",
     title: "Tác nghiệp tại hiện trường Ấp Bắc bằng trực thăng Mỹ",
-    title_ja: "米軍ヘリでアプバク戦の最前線を取材",
+    title_ja: "アメリカのヘリコプターによるアプバックの戦場での取材",
   },
 
   // ==========================================================================
