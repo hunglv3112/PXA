@@ -24,27 +24,13 @@ window.AXIS_STORIES = [
 
     // ── ẢNH HERO BANNER ĐẦU POPUP (KÈM CHÚ THÍCH) ──
     modalImg: "assets/images/1957_1959/1959_ChaPXAQuaDoi.jpg",
-    modalImgAlt: "Bàn thờ và di ảnh thân phụ của Phạm Xuân Ẩn",
-    caption: "Cha của Phạm Xuân Ẩn, ông Phạm Xuân Viễn qua đời ngày 24/9/1957 (Nguồn: Điệp Viên Hoàn Hảo - Trang 126)",
+    modalImgAlt: "Cha của Phạm Xuân Ẩn, ông Phạm Xuân Viễn qua đời ngày 24/9/1957 (Nguồn: Điệp viên hoàn hảo - Trang 126)",
+    caption: "Cha của Phạm Xuân Ẩn, ông Phạm Xuân Viễn qua đời ngày 24/9/1957 (Nguồn: Điệp viên hoàn hảo - Trang 126)",
 
-    // ── NỘI DUNG VĂN BẢN (KÈM ẢNH CHÈN GIỮA MID-IMG) ──
+    // ── NỘI DUNG VĂN BẢN ──
     text1: "Ngày 24/9/1957, chỉ vài tuần trước chuyến du học Mỹ của Phạm Xuân Ẩn, cha ông qua đời sau thời gian dài mắc bệnh lao nặng. Là con trưởng, ông phải gánh vác trách nhiệm với gia đình và chịu tang cha trong ba năm theo truyền thống Việt Nam. Trước biến cố này, ông không nghĩ rằng ông sẽ có thể tiếp tục tới Mỹ để học.",
-
-    // Ảnh đồng chí Mười Hương chèn sau đoạn 1
-    midImg: {
-      src: "",
-      alt: "Đồng chí Mười Hương (Trần Quốc Hương)",
-      caption: "Đồng chí Mười Hương (Trần Quốc Hương) — người chỉ huy trực tiếp đã trấn an và bảo đảm tổ chức cách mạng sẽ chăm lo vẹn toàn cho gia đình."
-    },
-
-    text2: "Người quyết định có hoãn nhiệm vụ này hay không là cấp trên trực tiếp của ông, Mười Hương. Nhận thấy không còn ai khác có thể đảm nhận nhiệm vụ này, Mười Hương trấn an ông rằng phía cách mạng sẽ lo cho gia đình ông.",
-
-    text3: "Sau đó, Phạm Xuân Ẩn xin phép mẹ về chuyến đi khi vẫn đang trong thời gian chịu tang cha. Bà hết lòng ủng hộ con trai và cho rằng chỉ cần biết con đang cống hiến cho cách mạng là đủ.",
-
-    text4: "Có được lời đảm bảo từ tổ chức và sự ủng hộ của mẹ, tối 10/10/1957, Phạm Xuân Ẩn nén lại nỗi đau mất cha để lên đường sang Mỹ.",
-
-    // Ảnh tư liệu bổ sung bên dưới (Phi trường Tân Sơn Nhất)
-    bottomImg: {},
+    text2: "Sau đó, Phạm Xuân Ẩn xin phép mẹ về chuyến đi khi vẫn đang trong thời gian chịu tang cha. Bà hết lòng ủng hộ con trai và cho rằng chỉ cần biết con đang cống hiến cho cách mạng là đủ.",
+    text3: "Có được lời đảm bảo từ tổ chức và sự ủng hộ của mẹ, tối 10/10/1957, Phạm Xuân Ẩn nén lại nỗi đau mất cha để lên đường sang Mỹ.",
 
     note: "",
     // ==========================================================================
@@ -52,31 +38,15 @@ window.AXIS_STORIES = [
     // ==========================================================================
     tooltip_ja: "サイドストーリー (1957): クリックして読む",
     meta_ja: "サイドストーリー · 1957",
-    title_ja: "渡米直前の父の逝去と重大な決断",
+    title_ja: "アメリカ留学を前にした父の死",
 
     modalImg_ja: "assets/images/1957_1959/1959_ChaPXAQuaDoi.jpg",
-    modalImgAlt_ja: "ファム・スアン・アンの父の祭壇と遺影",
-    caption_ja: "ファム・スアン・アンの父の祭壇と遺影――渡米留学をわずか数週間後に控えた1957年9月24日に起きた痛ましい悲報。",
+    modalImgAlt_ja: "1957年9月24日に亡くなったファム・スアン・アンの父、ファム・スアン・ヴィエン（出典：『完璧なスパイ』126ページ）",
+    caption_ja: "1957年9月24日に亡くなったファム・スアン・アンの父、ファム・スアン・ヴィエン（出典：『完璧なスパイ』126ページ）",
 
-    text1_ja: "1957年9月24日、渡米留学をわずか数週間後に控えたファム・スアン・アンの父が、長患いの重い結核のため逝去しました。長男であった彼は、家族を支え、ベトナムの伝統に従い3年間の喪に服す責任がありました。この予期せぬ悲劇に直面し、彼はもはや渡米を継続することは不可能だと考えました。",
-
-    midImg_ja: {
-      src: "assets/images/1957_1959/1957_MuoiHuong.jpg",
-      alt: "同志ムオイ・フオン（チャン・クオック・フオン）",
-      caption: "同志ムオイ・フオン（チャン・クオック・フオン）――革命組織が家族の面倒をすべて引き受けると約束し、彼を安心させた直属の指揮官。"
-    },
-
-    text2_ja: "任務を延期するかどうかの決定権を持っていたのは、彼の直属の上官であるムオイ・フオン（チャン・クオック・フオン）でした。アンに代わる人材は他にいないと判断したムオイ・フオンは、革命組織が家族の面倒を一切引き受けると伝え、彼を安心させました。",
-
-    text3_ja: "その後、アンは父の喪中である身ながら、母に渡米の許しを請いました。母は息子の決断を心から支持し、「国と革命のために尽くしていると知るだけで十分です」と背中を押しました。",
-
-    text4_ja: "組織からの保証と母の力強い支えを得て、1957年10月10日の夜、ファム・スアン・アンは父を失った深い悲しみを胸に秘め、アメリカへと旅立ちました。",
-
-    bottomImg_ja: {
-      src: "assets/images/1957_1959/1959_PhiTruongSanBayTanSanNhatTruoc1975.jpg",
-      alt: "1950年代のタンソンニャット空港",
-      caption: "1950年代当時のサイゴン・タンソンニャット空港――1957年10月10日夜、アンがアメリカへと飛び立った場所。"
-    },
+    text1_ja: "1957年9月24日、ファム・スアン・アンがアメリカ留学に出発するわずか数週間前に、父が重い結核を長く患った末に亡くなった。長男であったアンは、家族に対する責任を背負い、ベトナムの伝統に従って3年間父の喪に服さなければならなかった。この不幸に見舞われ、アメリカに渡って学業を続けられるとは思えなかった。",
+    text2_ja: "その後、ファム・スアン・アンは、まだ父の喪に服している最中に、この渡航について母に許しを求めた。母は息子を心から支持し、息子が革命のために尽くしていると知っていれば、それだけで十分だと考えた。",
+    text3_ja: "組織からの確約と母の支持を得て、1957年10月10日の夜、ファム・スアン・アンは父を失った悲しみをこらえ、アメリカへと旅立った。",
 
     note_ja: "",
   },

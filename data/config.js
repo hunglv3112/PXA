@@ -31,7 +31,7 @@ window.APP_CONFIG = {
       years: "Một con người với hai số phận song hành",
       subtitle: "",
       descriptionTop: "Nửa trên là cuộc đời một nhà tình báo chiến lược lỗi lạc mang bí số X6, hoạt động trong lòng đối phương suốt hai thập kỷ.",
-      descriptionBottom: "Nửa dưới là ký giả của Time và Reuters, thân với cả giới tướng lĩnh Sài Gòn - Mỹ lẫn báo chí quốc tế. Cả hai cùng vận hành trên một trục lịch sử.",
+      descriptionBottom: "Nửa dưới là ký giả của tạp chí Time và hãng Reuters, thân với cả giới tướng lĩnh Sài Gòn – Mỹ lẫn báo chí quốc tế. Cả hai cùng vận hành trên một trục lịch sử.",
       guideText: "Kéo chuột ngang hoặc cuộn để khám phá. Bấm vào từng mốc để xem chi tiết."
     },
 
@@ -72,11 +72,11 @@ window.APP_CONFIG = {
 
     intro: {
       name: "ファム・スアン・アン",
-      years: "1927 – 2006",
-      subtitle: "二つの顔を生きた男",
-      descriptionTop: "一人の男、二つの並行した運命。上半分はコードネームX6を持つ伝説的な戦略スパイの生涯。敵陣の深奥で20年間にわたり活動を続けました。",
-      descriptionBottom: "下半分は「タイム」や「ロイター」の敏腕記者であり、米軍高官や国際特派員たちの親友。二つの人生は同一の歴史の軸上で交差しています。",
-      guideText: "左右にドラッグまたはホイールでスクロール。カードをクリックして詳細を表示。"
+      years: "二つの運命が並走した一人の男",
+      subtitle: "",
+      descriptionTop: "上半分は、コードネーム「X6」を持つ卓越した戦略諜報員の生涯。敵の懐深くで20年にわたり活動を続けた。",
+      descriptionBottom: "下半分は、「タイム」誌とロイター通信の記者としての顔。サイゴン政権・米軍の将官とも、海外メディアの記者とも親交が深かった。二つの人生は、同じ歴史の軸の上を並走した。",
+      guideText: "横にドラッグまたはスクロールして探索。各出来事をクリックすると詳細を表示。"
     },
 
     ui: {

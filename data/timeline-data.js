@@ -22,7 +22,7 @@ window.TIMELINE_DATA = [
     icon: "doc",
     img: "assets/images/1957_1959/1957_TNgoai_NgoDinhDiemToiThamMy.jpg",
     title: "Nhiệm vụ du học báo chí tại Mỹ",
-    title_ja: "記者という偽装の選択",
+    title_ja: "アメリカでのジャーナリズム留学という任務",
   },
   {
     id: "1957b",
@@ -31,7 +31,7 @@ window.TIMELINE_DATA = [
     side: "bot",
     img: "assets/images/1957_1959/1957_BNgoai_Costa.jpg",
     title: "Người Việt Nam đầu tiên học báo chí tại Quận Cam",
-    title_ja: "渡米とカリフォルニア留学の始まり",
+    title_ja: "オレンジ郡でジャーナリズムを学んだ最初のベトナム人",
   },
 
   // ==========================================================================
@@ -44,8 +44,8 @@ window.TIMELINE_DATA = [
     side: "top",
     icon: "eye",
     img: "assets/images/1957_1959/1958_Ngoai_MuoiHuongChupCungPXAVaNhieuNhaTinhBao.jpg",
-    title: "Mất liên lạc với tổ chức sau khi Mười Hương bị bắt ",
-    title_ja: "記者という偽装の選択",
+    title: "Mất liên lạc với tổ chức sau khi Mười Hương bị bắt",
+    title_ja: "ムオイ・フオンの逮捕後、途絶えた組織との連絡",
   },
   {
     id: "1958b",
@@ -54,8 +54,8 @@ window.TIMELINE_DATA = [
     side: "bot",
     icon: "cap",
     img: "assets/images/1957_1959/1958_PXAHocMonBaoChiTaiMy.jpg",
-    title: "Thành tích báo chí tại Orange Coast College",
-    title_ja: "渡米とカリフォルニア留学の始まり",
+    title: "Thành tích báo chí tại OCC",
+    title_ja: "OCCでのジャーナリズムの実績",
   },
   // ==========================================================================
   // NĂM 1959
@@ -67,8 +67,8 @@ window.TIMELINE_DATA = [
     side: "top",
     icon: "rings",
     img: "assets/images/1957_1959/1959_N_ToCongDietCong.jpg",
-    title: "Từng bước thâm nhập vào chính quyền Việt Nam Cộng Hòa",
-    title_ja: "南ベトナム政権中枢への潜入の第一歩",
+    title: "Từng bước thâm nhập vào bộ máy chính quyền Việt Nam Cộng hòa",
+    title_ja: "ベトナム共和国政権の機構への段階的な潜入",
   },
   {
     id: "1959b",
@@ -78,7 +78,7 @@ window.TIMELINE_DATA = [
     icon: "ticker",
     img: "assets/images/1957_1959/1959_TheThucTapLHQ.jpg",
     title: "Thực tập tại trụ sở Liên Hợp Quốc",
-    title_ja: "国連本部での実務インターン",
+    title_ja: "国際連合本部での研修",
   },
 
   // ==========================================================================
