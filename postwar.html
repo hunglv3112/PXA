@@ -1929,8 +1929,7 @@
             <div class="wood">
               <div class="mat">
                 <div class="img-box" id="altarImgBox">
-                  <img id="altarImg" src="assets/images/PhongLuuNiem/PLN_16HuyChuong.jpg"
-                    alt="ファム・スアン・アンの貢献に対する評価"
+                  <img id="altarImg" src="assets/images/PhongLuuNiem/PLN_16HuyChuong.jpg" alt="ファム・スアン・アンの貢献に対する評価"
                     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'img-placeholder\'>[ファム・スアン・アンの貢献に対する評価]</div>';">
                 </div>
               </div>
@@ -1943,8 +1942,7 @@
             <div class="wood">
               <div class="mat">
                 <div class="img-box" id="ptImgBox">
-                  <img id="ptImg" src="assets/images/PhongLuuNiem/PLN_AnhChinhGiuaPXA.jpg"
-                    alt="ファム・スアン・アン少将の肖像"
+                  <img id="ptImg" src="assets/images/PhongLuuNiem/PLN_AnhChinhGiuaPXA.jpg" alt="ファム・スアン・アン少将の肖像"
                     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'img-placeholder\'>[ファム・スアン・アン少将の肖像]</div>';">
                 </div>
               </div>
@@ -2092,8 +2090,8 @@
             y: '',
             modalY: '',
             shelfTitle: '友を送る',
-            t: '友を送る',
-            modalTitle: '友を送る',
+            t: '',
+            modalTitle: '',
             img: 'トゥー・カン大佐の詩朗読',
             imgSrc: 'assets/images/PhongLuuNiem/PLN_DaiTaTuCangDocBaiThoTienBan_thumb.jpg',
             isVideo: true,
@@ -2122,7 +2120,7 @@
             modalTitle: 'ファム・スアン・アン少将が眠る地',
             img: '三匹の動物像と墓所',
             imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
-            caption: '出典：mmlafmファム・スアン・アン少将が眠る地 (Ngoc BUKI)',
+            caption: '出典：ファム・スアン・アン少将が眠る地 (Ngoc BUKI)',
             h: `
               <p>アンが眠る地のそばには、その人生哲学を表す3種類の動物の像がある。</p>
               <p>犬は、祖国と友への忠誠を象徴している。</p>
@@ -2781,7 +2779,7 @@
       `;
 
       openModalPostwar({
-        y: isJa ? 'ファム・スアン・アンの歴史解読' : 'GIẢI MÃ PHẠM XUÂN ẨN · HỒ SƠ LỊCH SỬ',
+        y: isJa ? '' : 'GIẢI MÃ PHẠM XUÂN ẨN · HỒ SƠ LỊCH SỬ',
         t: curArchive.title,
         sub: '',
         rawHtml: bodyHtml,
@@ -3030,67 +3028,29 @@
       // Sự kiện bấm biển danh hiệu Anh hùng LLVTND
       document.getElementById('hero').onclick = () => {
         currentModalState = { type: 'hero' };
-        const isJa = currentLang === 'ja';
         openModalPostwar({
           y: '',
-          t: isJa ? '「人民武装勢力英雄」の称号' : 'Danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân',
+          t: '「人民武装勢力英雄」の称号',
           heroImg: ROOM_CONFIG.ahllvt,
-          heroCaption: isJa
-            ? 'ファム・スアン・アン少将に授与された栄誉ある「人民武装勢力英雄」の称号（出典：諜報員ファム・スアン・アン記念館）'
-            : 'Danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân đầy cao quý được trao tặng cho Thiếu tướng Phạm Xuân Ẩn (Nguồn: Nhà tưởng niệm nhà tình báo Phạm Xuân Ẩn)',
-          bodyHtml: isJa
-            ? `<p>「人民武装勢力英雄」は、戦闘、戦闘支援、国家の安全保障、社会の秩序と安全の維持において特に卓越した功績をあげた個人または団体に、ベトナム国家が授与する最高の栄誉称号である。</p>`
-            : `<p>Anh hùng Lực lượng Vũ trang Nhân dân là danh hiệu vinh dự cao nhất của Nhà nước Việt Nam dành tặng cho các cá nhân hoặc tập thể có thành tích đặc biệt xuất sắc trong chiến đấu, phục vụ chiến đấu, bảo vệ an ninh quốc gia và giữ gìn trật tự, an toàn xã hội.</p>`
+          heroCaption: 'ファム・スアン・アン少将に授与された栄誉ある「人民武装勢力英雄」の称号（出典：諜報員ファム・スアン・アン記念館）',
+          bodyHtml: `<p>「人民武装勢力英雄」は、戦闘、戦闘支援、国家の安全保障、社会の秩序と安全の維持において特に卓越した功績をあげた個人または団体に、ベトナム国家が授与する最高の栄誉称号である。</p>`
         });
       };
 
       // Sự kiện bấm khung ảnh Bàn thờ Thiếu tướng & Ghi nhận cống hiến
       document.getElementById('altarCard').onclick = () => {
         currentModalState = { type: 'altar' };
-        const isJa = currentLang === 'ja';
         openModalPostwar({
           y: '',
-          t: isJa ? 'ファム・スアン・アンの貢献に対する評価' : 'Sự ghi nhận đối với những cống hiến của Phạm Xuân Ẩn',
+          t: 'ファム・スアン・アンの貢献に対する評価',
           heroImg: ROOM_CONFIG.altar,
-          heroCaption: isJa
-            ? '数々の栄誉ある勲章・記章が飾られた、ファム・スアン・アンの自宅の祭壇（出典：『完璧なスパイ』327ページ）'
-            : 'Bàn thờ của Phạm Xuân Ẩn tại nhà riêng với những huân, huy chương cao quý của ông (Nguồn: Điệp viên hoàn hảo - Trang 327)',
-          bodyHtml: isJa
-            ? `<p>諜報部門の少将ファム・スアン・アンの功績は、ベトナム共産党、国家、ベトナム人民軍から高く評価され、数多くの栄誉ある勲章・記章と称号によって顕彰された。</p>
-<ul>
-  <li>二等独立勲章</li>
-  <li>三等軍功勲章</li>
-  <li>三等抗戦勲章</li>
-  <li>一等対米抗戦救国勲章</li>
-  <li>一・二・三等戦功勲章</li>
-  <li>一・二・三等解放戦功勲章</li>
-  <li>一・二・三等栄光の戦士勲章</li>
-  <li>決勝軍旗記章</li>
-  <li>党員歴50年記念章</li>
-</ul>
+          heroCaption: '数々の栄誉ある勲章・記章が飾られた、ファム・スアン・アンの自宅の祭壇（出典：『完璧なスパイ』327ページ）',
+          bodyHtml: `<p>諜報部門の少将ファム・スアン・アンの功績は、ベトナム共産党、国家、ベトナム人民軍から高く評価され、数多くの栄誉ある勲章・記章と称号によって顕彰された。</p>
 <p>さらに、ファム・スアン・アン少将は国家から「人民武装勢力英雄」の称号を授与された。</p>
 <p>2025年には、ホーチミン市タンニュット社に、諜報員ファム・スアン・アン記念館も建設された。</p>
 <figure class="m-content-figure m-mid-figure">
   <img src="assets/images/PhongLuuNiem/PLN_NhaTuongNiem.jpg" alt="諜報員ファム・スアン・アン記念館" class="m-content-img" loading="lazy">
   <figcaption class="m-content-caption">数々のかけがえのない遺品が展示された諜報員ファム・スアン・アン記念館（出典：Tuoi Tre紙）</figcaption>
-</figure>`
-            : `<p>Công lao của Thiếu tướng tình báo Phạm Xuân Ẩn được Đảng, Nhà nước và quân đội nhân dân Việt Nam đánh giá cao, ghi nhận bằng rất nhiều huân, huy chương và danh hiệu cao quý.</p>
-<ul>
-  <li>Huân chương Độc lập hạng Nhì</li>
-  <li>Huân chương Quân công hạng Ba</li>
-  <li>Huân chương Kháng chiến hạng Ba</li>
-  <li>Huân chương Kháng chiến chống Mỹ cứu nước hạng Nhất</li>
-  <li>Huân chương Chiến công (hạng Nhất, Nhì, Ba)</li>
-  <li>Huân chương Chiến công giải phóng (hạng Nhất, Nhì, Ba)</li>
-  <li>Huân chương Chiến sĩ vẻ vang (hạng Nhất, Nhì, Ba)</li>
-  <li>Huy chương Quân kỳ Quyết thắng</li>
-  <li>Huy hiệu 50 năm tuổi Đảng</li>
-</ul>
-<p>Ngoài ra, Thiếu tướng Phạm Xuân Ẩn được Nhà nước tặng danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân.</p>
-<p>Năm 2025, Việt Nam cũng cho xây dựng nhà tưởng niệm nhà tình báo Phạm Xuân Ẩn tại xã Tân Nhựt, Thành phố Hồ Chí Minh.</p>
-<figure class="m-content-figure m-mid-figure">
-  <img src="assets/images/PhongLuuNiem/PLN_NhaTuongNiem.jpg" alt="Nhà tưởng niệm nhà tình báo Phạm Xuân Ẩn" class="m-content-img" loading="lazy">
-  <figcaption class="m-content-caption">Nhà tưởng niệm nhà tình báo Phạm Xuân Ẩn với nhiều kỷ vật vô giá (Nguồn: Báo Tuổi Trẻ)</figcaption>
 </figure>`
         });
       };
