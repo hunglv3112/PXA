@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="ja" class="lang-ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Trục thời gian tương tác hai nhánh - Phạm Xuân Ẩn: Điệp viên chiến lược và Nhà báo quốc tế trong bối cảnh lịch sử Việt Nam 1945 - 1975">
+  <meta name="description" content="ファム・スアン・アン：ベトナム戦争（1945～1975年）の歴史的背景における戦略情報員と国際記者">
   <meta name="theme-color" content="#0e1f25">
-  <title>Phạm Xuân Ẩn — Hai nửa một đời người</title>
+  <title>ファム・スアン・アン — 二つの顔を持つ男</title>
 
   <!-- Google Fonts: Be Vietnam Pro, Newsreader & Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,9 +23,9 @@
   <script>
     (function () {
       try {
-        var l = localStorage.getItem('pxa_language') || 'vi';
-        document.documentElement.lang = l;
-        if (l === 'ja') document.documentElement.classList.add('lang-ja');
+        localStorage.setItem('pxa_language', 'ja');
+        document.documentElement.lang = 'ja';
+        document.documentElement.classList.add('lang-ja');
       } catch (e) {}
       if (window.location.hash === '#timeline' || !window.location.hash) {
         document.documentElement.classList.add('init-timeline');
@@ -96,15 +96,7 @@
     </div>
   </nav>
 
-  <!-- ========================================================================
-       BỘ CHỌN ĐA NGÔN NGỮ NỔI: TIẾNG VIỆT / TIẾNG NHẬT (Language Switcher)
-       Nằm cố định ở góc trên bên phải, hiển thị ở cả 2 màn hình
-       ======================================================================== -->
-  <nav class="lang-switcher" aria-label="Chọn ngôn ngữ / 言語選択">
-    <button type="button" class="lang-btn active" data-lang="vi" title="Chuyển sang Tiếng Việt">VI</button>
-    <span class="lang-divider" aria-hidden="true">/</span>
-    <button type="button" class="lang-btn" data-lang="ja" title="日本語に切り替える">日本語</button>
-  </nav>
+  <!-- Bộ chọn đa ngôn ngữ nổi đã được gỡ bỏ -->
 
   <!-- ========================================================================
        1. MÀN HÌNH BỐI CẢNH LỊCH SỬ VIỆT NAM (Historical Context Screen)

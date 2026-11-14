@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="ja" class="lang-ja">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Phòng lưu niệm Phạm Xuân Ẩn</title>
+  <title>ファム・スアン・アン記念室</title>
   <script>
     (function () {
       try {
-        var l = localStorage.getItem('pxa_language') || 'vi';
-        document.documentElement.lang = l;
-        if (l === 'ja') document.documentElement.classList.add('lang-ja');
+        localStorage.setItem('pxa_language', 'ja');
+        document.documentElement.lang = 'ja';
+        document.documentElement.classList.add('lang-ja');
       } catch (e) { }
     })();
   </script>
@@ -1877,18 +1877,13 @@
     </div>
   </nav>
 
-  <!-- Bộ chọn đa ngôn ngữ nổi VI / JA -->
-  <nav class="lang-switcher" aria-label="Chọn ngôn ngữ / 言語選択">
-    <button type="button" class="lang-btn active" data-lang="vi" title="Chuyển sang Tiếng Việt">VI</button>
-    <span class="lang-divider" aria-hidden="true">/</span>
-    <button type="button" class="lang-btn" data-lang="ja" title="日本語に切り替える">日本語</button>
-  </nav>
+  <!-- Bộ chọn đa ngôn ngữ nổi đã được gỡ bỏ -->
 
   <!-- Sân khấu chính -->
   <div class="stage" id="stage">
     <header>
-      <small id="hdrSmall">HỒ SƠ SỐ 01 · PHẦN CUỐI</small>
-      <h1 class="serif" id="hdrTitle">Phòng lưu niệm Phạm Xuân Ẩn</h1>
+      <small id="hdrSmall">ファム・スアン・アン少将（1927 - 2006）</small>
+      <h1 class="serif" id="hdrTitle">記念室</h1>
     </header>
 
     <!-- Tủ lưu niệm 3D -->
@@ -1927,20 +1922,20 @@
           </div>
 
           <!-- 2. Biển danh hiệu Anh hùng mạ vàng dập nổi -->
-          <button class="plq" id="hero">ANH HÙNG LỰC LƯỢNG VŨ TRANG NHÂN DÂN</button>
+          <button class="plq" id="hero">人民武装勢力英雄</button>
 
           <!-- 3. Bàn thờ Thiếu tướng Phạm Xuân Ẩn & 16 Huân huy chương cao quý -->
-          <button class="altar-card" id="altarCard" aria-label="Bàn thờ Thiếu tướng Phạm Xuân Ẩn">
+          <button class="altar-card" id="altarCard" aria-label="ファム・スアン・アン少将の祭壇">
             <div class="wood">
               <div class="mat">
                 <div class="img-box" id="altarImgBox">
                   <img id="altarImg" src="assets/images/PhongLuuNiem/PLN_16HuyChuong.jpg"
-                    alt="Sự ghi nhận đối với những cống hiến của Phạm Xuân Ẩn"
-                    onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'img-placeholder\'>[Sự ghi nhận đối với<br>những cống hiến của PXA]</div>';">
+                    alt="ファム・スアン・アンの貢献に対する評価"
+                    onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'img-placeholder\'>[ファム・スアン・アンの貢献に対する評価]</div>';">
                 </div>
               </div>
             </div>
-            <div class="altar-caption" id="altarCaption">Sự ghi nhận đối với những cống hiến của Phạm Xuân Ẩn</div>
+            <div class="altar-caption" id="altarCaption">ファム・スアン・アンの貢献に対する評価</div>
           </button>
 
           <!-- 4. Khung ảnh chân dung Thiếu tướng Phạm Xuân Ẩn đứng một mình -->
@@ -1949,13 +1944,13 @@
               <div class="mat">
                 <div class="img-box" id="ptImgBox">
                   <img id="ptImg" src="assets/images/PhongLuuNiem/PLN_AnhChinhGiuaPXA.jpg"
-                    alt="Chân dung Thiếu tướng Phạm Xuân Ẩn"
-                    onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'img-placeholder\'>[Chân dung Thiếu tướng<br>Phạm Xuân Ẩn]</div>';">
+                    alt="ファム・スアン・アン少将の肖像"
+                    onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'img-placeholder\'>[ファム・スアン・アン少将の肖像]</div>';">
                 </div>
               </div>
             </div>
-            <div class="pt-caption" id="ptCaption">Thiếu tướng Phạm Xuân Ẩn<br><span
-                style="font-weight:400;color:var(--mute);font-size:10.5px">(1927 – 2006)</span></div>
+            <div class="pt-caption" id="ptCaption">ファム・スアン・アン少将<br><span
+                style="font-weight:400;color:var(--mute);font-size:10px">(1927 – 2006)</span></div>
           </div>
         </div>
 
@@ -1998,19 +1993,14 @@
             <path d="M13 6l2 2"></path>
           </svg>
         </span>
-        <span class="close-cab-text" id="closeCabText">MỞ TỦ LƯU NIỆM</span>
+        <span class="close-cab-text" id="closeCabText">記念棚を開く</span>
       </div>
     </button>
   </div>
 
   <!-- Modal hộp thoại xem chi tiết đồng bộ phong cách Dòng thời gian -->
   <dialog id="dlg" class="m-postwar-dialog">
-    <button type="button" class="m-postwar-close" id="dx" aria-label="Đóng cửa sổ" title="Đóng (Esc)">✕</button>
-    <nav class="lang-switcher m-postwar-lang" aria-label="Chọn ngôn ngữ trong popup / 言語切替">
-      <button type="button" class="lang-btn active" data-lang="vi" title="Chuyển sang Tiếng Việt">VI</button>
-      <span class="lang-divider" aria-hidden="true">/</span>
-      <button type="button" class="lang-btn" data-lang="ja" title="日本語に切り替える">日本語</button>
-    </nav>
+    <button type="button" class="m-postwar-close" id="dx" aria-label="閉じる" title="閉じる (Esc)">✕</button>
     <div class="m-postwar-sheet mb" id="db"></div>
   </dialog>
 
@@ -2030,126 +2020,6 @@
     };
 
     const DATA = {
-      vi: {
-        meta: {
-          pageTitle: 'Phòng lưu niệm Phạm Xuân Ẩn',
-          backBtn: '‹ Dòng thời gian',
-          backTitle: 'Quay lại Dòng thời gian',
-          hdrSmall: '',
-          hdrTitle: '',
-          wLTitle: '',
-          wRTitle: '',
-          hero: 'ANH HÙNG LỰC LƯỢNG VŨ TRANG NHÂN DÂN',
-          altarCp: 'Sự ghi nhận đối với những cống hiến của Phạm Xuân Ẩn',
-          altarAria: 'Sự ghi nhận đối với những cống hiến của Phạm Xuân Ẩn',
-          sealBadge: 'KỶ VẬT LỊCH SỬ',
-          doorText: 'MỞ TỦ LƯU NIỆM',
-          sealHint: 'Chạm để khám phá',
-          btnOpenText: 'MỞ TỦ LƯU NIỆM',
-          btnOpenSub: '',
-          btnCloseText: 'ĐÓNG TỦ LƯU NIỆM',
-          btnCloseSub: '',
-          imgPrefix: 'Ảnh'
-        },
-        L: [
-          {
-            y: '',
-            shelfTitle: 'Sự thật phía sau tấm thẻ nhà báo',
-            t: 'Sự thật phía sau tấm thẻ nhà báo',
-            modalTitle: 'Sự thật phía sau tấm thẻ nhà báo',
-            img: 'Thẻ nhà báo Phạm Xuân Ẩn',
-            imgSrc: 'assets/images/PhongLuuNiem/PLN_PhamXuanGioTheNhaBao.jpg',
-            caption: 'Phạm Xuân Ẩn giơ thẻ nhà báo của mình (Nguồn: Charles Dharapak - AP)',
-            h: `<p>Năm 1978, một bài báo ngắn trên tờ báo Pháp lần đầu tiên tiết lộ trên truyền thông quốc tế: nhà báo tài năng của Time, Phạm Xuân Ẩn, thực chất là một nhà tình báo chiến lược của quân Giải phóng, từng nắm trong tay nhiều tài liệu mật của Mỹ và chính quyền Việt Nam Cộng hòa.</p><p>Khi tin lan sang Mỹ, giới tình báo choáng váng, không ít quan chức CIA từng tin tưởng, thậm chí tìm đến ông để tham khảo ý kiến, giờ mới biết mình bị qua mặt suốt bao năm.</p><p>Và sau này trong một lần, khi phóng viên hỏi ông thật sự hoạt động cho phe nào, Phạm Xuân Ẩn cười lớn rồi đáp:</p><blockquote>“Sự thật? Sự thật nào mới được chứ? Có một sự thật là trong 10 năm tôi là phóng viên cho tòa soạn tuần báo Time và trước đó làm cho hãng Reuters. Một sự thật khác nữa là tôi gia nhập phong trào cách mạng từ năm 1945 và là thành viên của họ từ đó với các chức vụ khác nhau. Hai sự thật, hai sự thật... đều thật.”</blockquote>`
-          },
-          {
-            y: '',
-            shelfTitle: 'Lộ trình quân hàm',
-            t: 'Lộ trình quân hàm',
-            modalTitle: 'Lộ trình quân hàm',
-            img: 'Phạm Xuân Ẩn chụp cùng Đại tướng Võ Nguyên Giáp',
-            imgSrc: 'assets/images/PhongLuuNiem/PLN_QuanHamPhamXuanAn.jpg',
-            caption: 'Phạm Xuân Ẩn chụp cùng Đại tướng Võ Nguyên Giáp (Nguồn: Báo Quân đội nhân dân)',
-            h: `<p><b>Tháng 12/1976:</b> Ông giữ cấp bậc Trung tá quân đội nhân dân Việt Nam</p><p><b>Năm 1981:</b> Ông được thăng lên hàm Thượng tá quân đội nhân dân Việt Nam</p><p><b>Năm 1984:</b> Ông được thăng lên hàm Đại tá quân đội nhân dân Việt Nam</p><p><b>Năm 1990:</b> Ông được phong hàm Thiếu tướng quân đội nhân dân Việt Nam</p><p>Sau đó, Phạm Xuân Ẩn vẫn tiếp tục cống hiến công sức cho công cuộc xây dựng đất nước cho đến tận tháng 3/2002 ông mới nghỉ hưu.</p>`
-          },
-          {
-            y: '',
-            shelfTitle: 'Những ngày cuối đời',
-            t: 'Những ngày cuối đời',
-            modalTitle: 'Những ngày cuối đời',
-            img: 'Thiếu tướng Phạm Xuân Ẩn những năm tháng cuối đời',
-            imgSrc: 'assets/images/PhongLuuNiem/PLN_PXAHutThuocLucGiaT.jpg',
-            caption: 'Thiếu tướng Phạm Xuân Ẩn những năm tháng cuối đời ung dung bên làn khói thuốc (Nguồn: Báo Tuổi Trẻ)',
-            h: `
-              <p>Năm 2003, sau nhiều thập niên hút thuốc, Phạm Xuân Ẩn mắc bệnh phổi nặng. Ông qua đời lúc 11 giờ 20 phút ngày 20/9/2006, hưởng thọ 79 tuổi.</p>
-              
-              <figure class="m-content-figure m-mid-figure">
-                <img src="assets/images/PhongLuuNiem/PLN_LeTruyDieuPXA.jpg" alt="Lễ truy điệu Thiếu tướng Phạm Xuân Ẩn" class="m-content-img" loading="lazy">
-                <figcaption class="m-content-caption">Lễ truy điệu Thiếu tướng Phạm Xuân Ẩn (Nguồn: Phim tài liệu: Huyền thoại về tướng tình báo Phạm Xuân Ẩn)</figcaption>
-              </figure>
-
-              <p>Lễ truy điệu ông diễn ra ngày 23/9, rất nhiều bạn bè, đồng đội cũ cùng bạn bè quốc tế đã đến viếng tang và tiễn đưa ông về nơi an nghỉ cuối cùng.</p>
-              
-              <figure class="m-content-figure m-mid-figure">
-                <img src="assets/images/PhongLuuNiem/PLN_MuoiHuongThamMo.jpg" alt="Mười Hương cùng những đồng đội cũ đến thăm mộ Thiếu tướng Phạm Xuân Ẩn" class="m-content-img" loading="lazy">
-                <figcaption class="m-content-caption">Mười Hương (đội mũ đỏ) cùng những đồng đội cũ đến thăm mộ Thiếu tướng Phạm Xuân Ẩn (Nguồn: Báo Thanh Niên)</figcaption>
-              </figure>
-            `
-          }
-        ],
-        R: [
-          {
-            y: '',
-            modalY: '',
-            shelfTitle: 'Tiễn bạn',
-            t: 'Tiễn bạn',
-            modalTitle: 'Tiễn bạn',
-            img: 'Đại tá Tư Cang đọc thơ',
-            imgSrc: 'assets/images/PhongLuuNiem/PLN_DaiTaTuCangDocBaiThoTienBan_thumb.jpg',
-            isVideo: true,
-            videoSrc: 'assets/images/PhongLuuNiem/PLN_DaiTaTuCangDocBaiThoTienBan.mp4',
-            caption: 'Đại tá Tư Cang rưng rưng xúc động đọc bài thơ về người đồng đội cũ Phạm Xuân Ẩn (Nguồn: Sao Đầu Mũ)',
-            h: `
-              <div class="poem">
-                <p>Đời người tình báo thế là xong</p>
-                <p>Tình dân nghĩa Đảng, nợ non sông</p>
-                <p>Làm trai trong suốt thời ly loạn</p>
-                <p>Anh thật xứng danh một anh hùng.</p>
-                <p class="g">Xuân Ẩn⁽¹⁾ từ nay ẩn thật rồi</p>
-                <p>Bạn bè thương tiếc mãi không nguôi</p>
-                <p>Riêng tôi nhớ mãi người đồng chí</p>
-                <p>Dũng cảm, thông minh, nhớ suốt đời…</p>
-              </div>
-              <div class="page-footnote m-page-footnote">
-                1. "Ẩn" trong tiếng Việt tương ứng với chữ Hán "隠", mang nghĩa là "ẩn đi". Ở câu này, tên "Ẩn" được dùng với lối chơi chữ, hàm ý "ẩn (khỏi cõi đời)", tức là ông đã khuất, từ nay không còn gặp lại được nữa.
-              </div>
-            `
-          },
-          {
-            y: '',
-            shelfTitle: 'Nơi an nghỉ của Thiếu tướng Phạm Xuân Ẩn',
-            t: 'Nơi an nghỉ của Thiếu tướng Phạm Xuân Ẩn',
-            modalTitle: 'Nơi an nghỉ của Thiếu tướng Phạm Xuân Ẩn',
-            img: 'Nơi an nghỉ với ba con vật',
-            imgSrc: 'assets/images/PhongLuuNiem/PLN_MoPXA.jpg',
-            caption: 'Nơi an nghỉ của Thiếu tướng Phạm Xuân Ẩn',
-            h: `
-              <p>Bên cạnh nơi an nghỉ của ông là tượng về 3 con vật đại diện cho triết lý sống của ông.</p>
-              <p>Con chó tượng trưng cho lòng trung thành với Tổ quốc và bạn bè.</p>
-              <p>Con chim (gà) là biểu tượng của tự do, đồng thời nhảy hoài, tiêu biểu cho sự bận rộn, làm việc suốt ngày, không làm biếng.</p>
-              <p>Còn con cá thì dạy ông sự khôn ngoan, im lặng, không nói nhiều mà suy tư.</p>
-            `
-          },
-          {
-            y: '',
-            t: 'Giải mã Phạm Xuân Ẩn',
-            img: '3 Mảnh ghép lịch sử',
-            imgSrc: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
-            isDecode: true,
-            h: ''
-          }
-        ]
-      },
       ja: {
         meta: {
           pageTitle: 'ファム・スアン・アン記念室',
@@ -2271,248 +2141,12 @@
         ]
       }
     };
+    DATA.vi = DATA.ja;
 
     // ==============================================================================
     // DỮ LIỆU CÂU HỎI TRẮC NGHIỆM CHO MINI-GAME "GIẢI MÃ PHẠM XUÂN ẨN"
     // ==============================================================================
     const DECODE_GAME_DATA = {
-      vi: [
-        {
-          id: 'dossier-1',
-          name: 'Hồ sơ 01',
-          title: 'Kỷ vật vô giá từ tờ báo trường The Barnacle',
-          sub: '',
-          image: 'assets/images/Trắc nghiệm/TN_CocCafe.jpg',
-          caption: 'Chiếc cốc cà phê có chữ ký của các nhân viên tờ The Barnacle được đặt trên bàn thờ cùng huân chương của Thiếu tướng Phạm Xuân Ẩn (Nguồn: Điệp viên hoàn hảo - Trang 147, 327)',
-          pieces: [
-            {
-              title: 'Mảnh 1: Chọn ngành báo chí',
-              q: 'Mười Hương khuyên Phạm Xuân Ẩn chọn ngành báo chí vì lý do quan trọng nhất nào?',
-              options: [
-                'A. Nghề báo có bình diện giao tiếp rộng nhất, thuận lợi cho công tác tình báo sau này',
-                'B. Học phí ngành báo chí rẻ nhất',
-                'C. Hildreth yêu cầu Ẩn phải học ngành báo chí',
-                'D. Ngành báo chí được Liên Hợp Quốc cấp học bổng'
-              ],
-              correct: 0,
-              feedback: 'Chính xác! Mười Hương cho rằng nghề báo có bình diện giao tiếp rộng nhất, tạo điều kiện thuận lợi cho công tác tình báo sau này. Ngoài ra, khi đó Ẩn chưa có bằng tốt nghiệp trung học, mà ngành báo chí không bắt buộc loại bằng này.'
-            },
-            {
-              title: 'Mảnh 2: Phương án dự phòng',
-              q: 'Sau khi mất liên lạc với tổ chức vì Mười Hương bị bắt, Phạm Xuân Ẩn đã học thêm ngôn ngữ nào để dự phòng?',
-              options: [
-                'A. Tiếng Pháp',
-                'B. Tiếng Nga',
-                'C. Tiếng Trung',
-                'D. Tiếng Tây Ban Nha'
-              ],
-              correct: 3,
-              feedback: 'Chính xác! Ẩn lo Mỹ phát hiện thân phận tình báo của mình nên học thêm tiếng Tây Ban Nha để dự phòng một lối thoát sang Cuba, từ đó tìm đường về nước tiếp tục chiến đấu.'
-            },
-            {
-              title: 'Mảnh 3: Trở về Tân Sơn Nhất',
-              q: 'Khi trở về sân bay Tân Sơn Nhất ngày 10/10/1959, Phạm Xuân Ẩn đã làm gì để phòng trường hợp bị bắt?',
-              options: [
-                'A. Chọn chuyến bay đêm để tránh bị chú ý',
-                'B. Sắp xếp để cả gia đình ra đón tại sân bay',
-                'C. Nhờ Lansdale đứng ra bảo lãnh',
-                'D. Nhập cảnh bằng tên giả'
-              ],
-              correct: 1,
-              feedback: 'Chính xác! Ẩn sắp xếp để cả gia đình ra đón, vì ông tính rằng nếu mình bị bắt thì có nhân chứng sẽ tốt hơn.'
-            }
-          ],
-          story: `<p>Trong số báo cuối cùng của năm học 1959 trên tờ The Barnacle, Phạm Xuân Ẩn viết một bài chia tay, mở đầu bằng câu của nhà văn Pháp Anatole France: “Cuộc ra đi dù đúng với mong muốn của mình vẫn để lại phía sau một chút buồn”. Ông cũng gửi lời cảm ơn đến các thầy cô, các cô gái phục vụ căn tin, nhân viên trực điện thoại và bạn học đã giúp đỡ ông trong suốt thời gian học tập.</p><p>Để ghi nhận đóng góp của ông, tờ The Barnacle tặng ông một chiếc cốc cà phê in hình ông ngồi đánh máy tại bàn làm việc, kèm chữ ký của toàn bộ thành viên. Ông mang chiếc cốc về Sài Gòn và giữ suốt đời.</p>`
-        },
-        {
-          id: 'dossier-2',
-          name: 'Hồ sơ 02',
-          title: 'Hoàng Thị Thu Nhạn - Người vợ thầm lặng của Phạm Xuân Ẩn',
-          sub: '',
-          image: 'assets/images/Trắc nghiệm/TN_PXAVoGia.jpg',
-          caption: 'Vợ chồng Phạm Xuân Ẩn - Thu Nhạn trong ngày cưới, tháng 1/1962. (Nguồn: Phạm Xuân Ẩn: Tên người như cuộc đời, tr. 238)',
-          pieces: [
-            {
-              title: 'Mảnh 1: Hãng thông tấn Reuters',
-              q: 'Năm 1960, sau khi về nước, Phạm Xuân Ẩn được giới thiệu vào làm việc cho hãng thông tấn nào?',
-              options: [
-                'A. AP (Mỹ)',
-                'B. AFP (Pháp)',
-                'C. Reuters (Anh)',
-                'D. TASS (Liên Xô)'
-              ],
-              correct: 2,
-              feedback: 'Chính xác! Năm 1960, qua sự giới thiệu của Nguyễn Thái, Tổng Giám đốc Việt Tấn Xã, Phạm Xuân Ẩn bắt đầu làm việc cho Reuters, hãng thông tấn của Anh.'
-            },
-            {
-              title: 'Mảnh 2: Sao chụp tài liệu mật',
-              q: 'Phạm Xuân Ẩn đã chụp tài liệu “Kỹ thuật và chiến thuật chống nổi dậy” thành bao nhiêu cuộn phim?',
-              options: [
-                'A. 24 cuộn',
-                'B. 12 cuộn',
-                'C. 18 cuộn',
-                'D. 36 cuộn'
-              ],
-              correct: 0,
-              feedback: 'Chính xác! Năm 1961, Phạm Xuân Ẩn chụp toàn bộ tài liệu thành 24 cuộn phim và chuyển ra căn cứ qua đường dây liên lạc mới thiết lập.'
-            },
-            {
-              title: 'Mảnh 3: Ngụy trang tài liệu',
-              q: 'Để gửi phim chụp tài liệu mật ra căn cứ, Phạm Xuân Ẩn đã giấu chúng ở đâu?',
-              options: [
-                'A. Trong giày',
-                'B. Trong máy ảnh',
-                'C. Trong sách',
-                'D. Trong các món ăn như nem chua, bánh mì'
-              ],
-              correct: 3,
-              feedback: 'Chính xác! Phạm Xuân Ẩn giấu phim chụp thu nhỏ tài liệu mật trong các món ăn như nem chua, bánh xèo, bánh mì, rồi gửi ra căn cứ qua các giao liên như bà Nguyễn Thị Ba, bà Tám Thảo.'
-            }
-          ],
-          story: `<p>Ngày 25/1/1962, Phạm Xuân Ẩn kết hôn với Hoàng Thị Thu Nhạn, khi ấy đang bán đồ thêu và hộp sơn mài tại một cửa hàng trên đường Catinat, Sài Gòn.</p><p>Sau khi kết hôn, bà Nhạn nghỉ việc để chăm lo gia đình, đồng thời hạn chế những mối quan hệ bên ngoài có thể gây nguy hiểm cho hoạt động bí mật của chồng. Khi dần biết đến công việc tình báo của ông, bà cũng âm thầm hỗ trợ bằng nhiều cách.</p><p>Mỗi khi cần, bà lặng lẽ theo chồng từ xa trong lúc ông trao tài liệu cho giao liên. Nếu ông bị bắt hoặc gặp sự cố, bà có thể kịp thời báo tin cho tổ chức. Khi cùng chồng đến nhà những nhân vật có ảnh hưởng trong chính quyền Sài Gòn, bà thường trò chuyện riêng với vợ chủ nhà, tạo điều kiện để ông Ẩn trao đổi thông tin với người cần gặp.</p>`
-        },
-        {
-          id: 'dossier-3',
-          name: 'Hồ sơ 03',
-          title: 'Bài học không có ở trường',
-          sub: '',
-          image: 'assets/images/Trắc nghiệm/TN_PXATreEm.jpg',
-          caption: 'Phạm Xuân Ẩn cùng những đứa trẻ không nhà kiếm sống bằng nghề đánh giày trên đường phố Sài Gòn, năm 1970 (Nguồn: Phạm Xuân Ẩn: Tên người như cuộc đời - Trang 235)',
-          pieces: [
-            {
-              title: 'Mảnh 1: Rời khỏi Reuters',
-              q: 'Năm 1964, trưởng đại diện Reuters yêu cầu Phạm Xuân Ẩn dẹp thứ gì trên bàn làm việc, khiến ông quyết định nộp đơn xin nghỉ việc?',
-              options: [
-                'A. Máy đánh chữ',
-                'B. Lồng chim',
-                'C. Bể cá',
-                'D. Chồng báo cũ'
-              ],
-              correct: 1,
-              feedback: 'Chính xác! Ngày 27/8/1964, trưởng đại diện Nick Turner quát mắng Phạm Xuân Ẩn và bắt ông dẹp lồng chim trên bàn làm việc, nên ông nộp đơn xin nghỉ việc tại Reuters sau gần 4 năm gắn bó.'
-            },
-            {
-              title: 'Mảnh 2: Phóng viên tạp chí Time',
-              q: 'Tháng 8/1965, Phạm Xuân Ẩn được tuyển chính thức làm phóng viên thường trú cho cơ quan báo chí nào?',
-              options: [
-                'A. Tạp chí Time',
-                'B. Hãng thông tấn Reuters',
-                'C. Báo The New York Herald Tribune',
-                'D. Tạp chí Newsweek'
-              ],
-              correct: 0,
-              feedback: 'Chính xác! Tháng 8/1965, trưởng đại diện văn phòng Time tại Sài Gòn là Frank McCulloch ký hợp đồng tuyển Phạm Xuân Ẩn làm phóng viên thường trú với mức lương 75 USD/tuần.'
-            },
-            {
-              title: 'Mảnh 3: Hồ sơ Tám Hà',
-              q: 'Năm 1968, Phạm Xuân Ẩn mượn nguyên bản hồ sơ thẩm vấn Tám Hà, sao chụp rồi trả lại trong bao lâu?',
-              options: [
-                'A. Khoảng 1 tiếng',
-                'B. Trọn 1 ngày',
-                'C. Chỉ trong 15 phút',
-                'D. 1 tuần'
-              ],
-              correct: 2,
-              feedback: 'Chính xác! Theo chỉ thị khẩn của Tư Cang, Phạm Xuân Ẩn chở ông ra sở chỉ huy quân Việt Nam Cộng hòa ở Gia Định, mượn hồ sơ thẩm vấn Tám Hà, sao chụp rồi trả lại chỉ trong vòng 15 phút.'
-            }
-          ],
-          story: `<p>Trong những năm 1960, Phạm Xuân Ẩn lần lượt làm việc cho hãng thông tấn Reuters của Anh, rồi báo The New York Herald Tribune và tạp chí Time của Mỹ, thường xuyên tiếp xúc với giới quan chức, tướng lĩnh Mỹ và chính quyền Sài Gòn.</p><p>Dù làm việc trong môi trường đó, ông vẫn giữ sự quan tâm tới đời sống người dân bình thường. Bức ảnh chụp năm 1970, in trong phần tư liệu ảnh của cuốn “Phạm Xuân Ẩn: Tên người như cuộc đời”, là ảnh ông cùng những đứa trẻ không nhà kiếm sống bằng nghề đánh giày trên đường phố Sài Gòn. Trong sách, ông kể rằng thời làm phóng viên Time, ông mong các con lớn lên gần gũi với đời sống người dân và muốn đưa các con theo khi về nông thôn để chúng thấy cảnh sống khó khăn của người nghèo.</p><p>Ông còn quyết định cho con trai đi tập làm bồi bàn ở nhà hàng Givral trong kỳ nghỉ hè, với lý do “để gần gũi với dân”. Tầng lớp thượng lưu Sài Gòn khi ấy cho rằng chỉ có “Việt Cộng” mới dạy con làm việc vất vả. Ông biết làm như vậy có thể bị nghi là “Việt Cộng”, nhưng vẫn quyết định làm.</p>`
-        },
-        {
-          id: 'dossier-4',
-          name: 'Hồ sơ 04',
-          title: '"Tướng Givral"',
-          sub: '',
-          image: 'assets/images/Trắc nghiệm/TN_Givral.jpg',
-          caption: 'Ông Ẩn trong một cuộc gặp với tác giả Larry Berman tại tiệm Givral quen thuộc (Nguồn: Điệp viên hoàn hảo - Trang 47; Báo Dân Việt)',
-          pieces: [
-            {
-              title: 'Mảnh 1: Hiệp định Paris',
-              q: 'Hiệp định Paris được ký kết vào ngày nào?',
-              options: [
-                'A. 22/12/1972',
-                'B. 29/03/1973',
-                'C. 21/07/1973',
-                'D. 27/01/1973'
-              ],
-              correct: 3,
-              feedback: 'Chính xác! Hiệp định Paris ký ngày 27/01/1973; ngày 29/03/1973 là ngày quân Mỹ cuối cùng rút khỏi miền Nam.'
-            },
-            {
-              title: 'Mảnh 2: Chiến dịch Linebacker I',
-              q: 'Phạm Xuân Ẩn cảnh báo chiến dịch Linebacker I sẽ dùng gì để đánh phá miền Bắc?',
-              options: [
-                'A. B-52 rải thảm Hà Nội',
-                'B. Máy bay cường kích và bom laser',
-                'C. Tên lửa hành trình',
-                'D. Đặc nhiệm đổ bộ'
-              ],
-              correct: 1,
-              feedback: 'Chính xác! Ẩn báo trước Mỹ sẽ dùng máy bay cường kích và bom laser.'
-            },
-            {
-              title: 'Mảnh 3: Vùng giải phóng Mỹ Tho',
-              q: 'Phạm Xuân Ẩn gợi ý nhà báo Pomonti dừng lại ở đâu để vào vùng giải phóng Mỹ Tho?',
-              options: [
-                'A. Xóm Mỹ Quý',
-                'B. Bến phà Mỹ Thuận',
-                'C. Thành phố Mỹ Tho',
-                'D. Thị trấn Cai Lậy'
-              ],
-              correct: 0,
-              feedback: 'Chính xác! Ẩn gợi ý dừng trước xóm Mỹ Quý, trên đường dẫn đến bến phà Mỹ Thuận.'
-            }
-          ],
-          story: `<p>Trong chiến tranh, Phạm Xuân Ẩn có mặt hằng ngày tại tiệm cà phê Givral trên đường Tự Do (nay là đường Đồng Khởi, Quận 1, TP. Hồ Chí Minh), đối diện khách sạn Continental và cách không xa tòa nhà Quốc hội.</p><p>Givral thời chiến là nơi tụ họp của giới ký giả, thông tín viên, cảnh sát và quan chức chính quyền, nơi tin đồn phát khởi, được kiểm chứng rồi lan truyền, đến mức quán được gọi là “Radio Catinat” (Đài phát thanh Catinat).</p><p>Richard Pyle, trưởng văn phòng hãng AP tại Sài Gòn giai đoạn 1970–1973, kể rằng từ chiếc bàn quen thuộc ở Givral, Ẩn chia sẻ những mẩu tin về chính trường Sài Gòn và các mưu đồ bên trong Dinh Tổng thống cho các phóng viên Việt Nam làm việc cho báo đài nước ngoài.</p><p>Nguồn tin của Ẩn phong phú đến mức nhiều đồng nghiệp cho rằng ông cộng tác với CIA ở một mức độ nào đó.</p><p>Cũng vì thế, ông được gọi là “Tướng Givral”, biệt danh mà Laura Palmer, phóng viên chiến trường người Mỹ, hay dùng. Sau này, khi đã được phong quân hàm Thiếu tướng Quân đội nhân dân Việt Nam, ông nói đùa: “Laura phong cho tôi quân hàm cấp tướng từ thời đó.”</p>`
-        },
-        {
-          id: 'dossier-5',
-          name: 'Hồ sơ 05',
-          title: '“Tôi đã có thể thanh thản nhắm mắt”',
-          sub: '',
-          image: 'assets/images/Trắc nghiệm/TN_PXAThamTau.jpg',
-          caption: 'Phạm Xuân Ẩn (đứng thứ hai từ phải qua) trên chiến hạm USS Vandegrift, tháng 11/2003 (Nguồn: Tổng lãnh sự quán Mỹ tại Thành phố Hồ Chí Minh; United States Navy)',
-          pieces: [
-            {
-              title: 'Mảnh 1: Hiệp định Genève',
-              q: 'Theo Hiệp định Genève, tổng tuyển cử thống nhất đất nước dự kiến diễn ra vào thời gian nào?',
-              options: [
-                'A. Tháng 7/1954',
-                'B. Tháng 7/1956',
-                'C. Tháng 7/1955',
-                'D. Cuối năm 1960'
-              ],
-              correct: 1,
-              feedback: 'Chính xác! Hiệp định quy định tổng tuyển cử vào tháng 7/1956.'
-            },
-            {
-              title: 'Mảnh 2: Điểm yếu phòng thủ',
-              q: 'Theo báo cáo tuyệt mật mà Ủy ban Nghiên cứu Chiến lược gửi Nguyễn Văn Thiệu cuối năm 1974, đâu là điểm yếu nhất trong hệ thống phòng thủ của Việt Nam Cộng hòa?',
-              options: [
-                'A. Phước Long',
-                'B. Huế',
-                'C. Buôn Ma Thuột',
-                'D. Đà Nẵng'
-              ],
-              correct: 2,
-              feedback: 'Chính xác! Báo cáo chỉ ra Buôn Ma Thuột là điểm yếu nhất.'
-            },
-            {
-              title: 'Mảnh 3: Chuyển giao quyền lực',
-              q: 'Ngày 28/4/1975, ai đã chuyển giao quyền lực cho Dương Văn Minh?',
-              options: [
-                'A. Nguyễn Văn Thiệu',
-                'B. Nguyễn Cao Kỳ',
-                'C. Trần Kim Tuyến',
-                'D. Trần Văn Hương'
-              ],
-              correct: 3,
-              feedback: 'Chính xác! Thiệu từ chức ngày 21/4 và giao quyền cho Phó Tổng thống Trần Văn Hương. Đến ngày 28/4, Hương chuyển tiếp quyền lực cho Dương Văn Minh.'
-            }
-          ],
-          story: `<p>Gần ba mươi năm sau khi chiến tranh kết thúc, tháng 11/2003, chiến hạm USS Vandegrift cập cảng Sài Gòn. Đây là tàu chiến đầu tiên của Hải quân Mỹ ghé thăm Việt Nam kể từ năm 1975.</p><p>Theo lời mời của Đại sứ Mỹ Raymond Burghardt và Tổng lãnh sự Emi Lynn Yamauchi, Phạm Xuân Ẩn cùng nhiều quan chức đã lên thăm tàu.</p><p>Sau chuyến thăm, Tổng lãnh sự quán Mỹ gửi tặng ông một tấm ảnh chụp trên chiến hạm. Ông coi đây là một trong những món quà đáng giá của mình. Ông tự hào vì đã sống đủ lâu để chứng kiến một sự kiện mang tính biểu tượng cho tiến trình hòa giải và hợp tác giữa Mỹ và Việt Nam, và nói: <i>“Tôi đã có thể thanh thản nhắm mắt. Tôi đã phụng sự cho đất nước, cho nhân dân, cho sự thống nhất.”</i></p>`
-        }
-      ],
       ja: [
         {
           id: 'dossier-1',
@@ -2751,6 +2385,7 @@
         }
       ]
     };
+    DECODE_GAME_DATA.vi = DECODE_GAME_DATA.ja;
 
     const decodeState = {
       archiveIndex: 0,
@@ -2765,7 +2400,7 @@
       }
     };
 
-    let currentLang = (window.getCurrentLang ? window.getCurrentLang() : 'vi') || 'vi';
+    let currentLang = 'ja';
     let currentModalState = null; // Lưu trạng thái modal đang mở để re-render khi đổi ngôn ngữ
 
     const dlg = document.getElementById('dlg');

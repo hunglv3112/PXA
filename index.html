@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="ja" class="lang-ja">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Giới thiệu đề tài – Phạm Xuân Ẩn</title>
+  <title>テーマの紹介 – ファム・スアン・アン</title>
   <script>
     (function () {
       try {
-        var l = localStorage.getItem('pxa_language') || 'vi';
-        document.documentElement.lang = l;
-        if (l === 'ja') document.documentElement.classList.add('lang-ja');
+        localStorage.setItem('pxa_language', 'ja');
+        document.documentElement.lang = 'ja';
+        document.documentElement.classList.add('lang-ja');
       } catch (e) { }
     })();
   </script>
@@ -960,12 +960,7 @@
     </div>
   </nav>
 
-  <!-- Bộ chọn đa ngôn ngữ nổi VI / JA -->
-  <nav class="lang-switcher" aria-label="Chọn ngôn ngữ / 言語選択">
-    <button type="button" class="lang-btn active" data-lang="vi" title="Chuyển sang Tiếng Việt">VI</button>
-    <span class="lang-divider" aria-hidden="true">/</span>
-    <button type="button" class="lang-btn" data-lang="ja" title="日本語に切り替える">日本語</button>
-  </nav>
+  <!-- Bộ chọn đa ngôn ngữ nổi đã được gỡ bỏ -->
 
   <div class="wrap">
     <header class="hero">

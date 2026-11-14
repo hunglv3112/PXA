@@ -1,106 +1,41 @@
 /**
  * ==============================================================================
- * BỘ QUẢN LÝ ĐA NGÔN NGỮ (js/lang.js) — VIỆT NAM (VI) & NHẬT BẢN (JA)
+ * BỘ QUẢN LÝ NGÔN NGỮ (js/lang.js) — CỐ ĐỊNH TIẾNG NHẬT (JA)
  * ==============================================================================
- * Quản lý ngôn ngữ hiện tại, lưu vào localStorage, cập nhật nút bấm chuyển đổi,
- * và phát sự kiện 'languagechange' để các màn hình tự động làm mới giao diện.
  */
 
 (function () {
   const STORAGE_KEY = 'pxa_language';
-  let currentLang = 'vi';
+  const currentLang = 'ja';
 
-  // Khởi tạo từ bộ nhớ trình duyệt hoặc mặc định là Tiếng Việt
   try {
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved === 'ja' || saved === 'vi') {
-      currentLang = saved;
-    }
-  } catch (e) {
-    currentLang = 'vi';
-  }
+    localStorage.setItem(STORAGE_KEY, 'ja');
+  } catch (e) { }
 
-  // Cập nhật ngay lập tức thuộc tính lang và class cho thẻ html để chống chớp tiếng Việt
   if (typeof document !== 'undefined' && document.documentElement) {
-    document.documentElement.lang = currentLang;
-    if (currentLang === 'ja') {
-      document.documentElement.classList.add('lang-ja');
-    } else {
-      document.documentElement.classList.remove('lang-ja');
-    }
+    document.documentElement.lang = 'ja';
+    document.documentElement.classList.add('lang-ja');
+    document.documentElement.classList.remove('lang-vi');
   }
 
   /**
-   * Lấy mã ngôn ngữ hiện tại ('vi' hoặc 'ja')
+   * Lấy mã ngôn ngữ hiện tại (luôn trả về 'ja')
    */
   window.getCurrentLang = function () {
-    return currentLang;
+    return 'ja';
   };
 
   /**
-   * Đặt ngôn ngữ mới và thông báo cho toàn bộ ứng dụng
+   * Khóa cố định ngôn ngữ là Tiếng Nhật
    */
-  window.setLanguage = function (newLang) {
-    if (newLang !== 'vi' && newLang !== 'ja') return;
-    currentLang = newLang;
-
-    try {
-      localStorage.setItem(STORAGE_KEY, newLang);
-    } catch (e) {}
-
-    // Cập nhật thuộc tính lang và class cho thẻ html
-    document.documentElement.lang = newLang;
-    if (newLang === 'ja') {
-      document.documentElement.classList.add('lang-ja');
-    } else {
-      document.documentElement.classList.remove('lang-ja');
-    }
-
-    // Cập nhật trạng thái active trên các nút chọn ngôn ngữ
-    updateSwitcherUI();
-
-    // Cập nhật tiêu đề trang
-    if (window.getAppConfig) {
-      const cfg = window.getAppConfig(newLang);
-      if (cfg && cfg.pageTitle) {
-        document.title = cfg.pageTitle;
-      }
-    }
-
-    // Phát sự kiện toàn cục để các màn hình tự re-render
-    window.dispatchEvent(new CustomEvent('languagechange', {
-      detail: { lang: newLang }
-    }));
+  window.setLanguage = function () {
+    return 'ja';
   };
 
-  /**
-   * Cập nhật giao diện nút bấm chuyển ngôn ngữ
-   */
-  function updateSwitcherUI() {
-    const buttons = document.querySelectorAll('.lang-btn');
-    buttons.forEach(btn => {
-      if (btn.dataset.lang === currentLang) {
-        btn.classList.add('active');
-        btn.setAttribute('aria-pressed', 'true');
-      } else {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-pressed', 'false');
-      }
-    });
-  }
-
-  // Khởi tạo sự kiện click khi DOM sẵn sàng
   document.addEventListener('DOMContentLoaded', () => {
-    document.documentElement.lang = currentLang;
-    updateSwitcherUI();
-
-    document.addEventListener('click', (e) => {
-      const btn = e.target.closest('.lang-btn');
-      if (btn && btn.dataset.lang) {
-        e.preventDefault();
-        e.stopPropagation();
-        window.setLanguage(btn.dataset.lang);
-      }
-    });
+    document.documentElement.lang = 'ja';
+    document.documentElement.classList.add('lang-ja');
+    // Xóa tất cả các nút bấm chuyển đổi ngôn ngữ nếu còn tồn tại trong DOM
+    document.querySelectorAll('.lang-switcher, .m-postwar-lang').forEach(el => el.remove());
   });
 })();
