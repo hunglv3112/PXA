@@ -133,7 +133,7 @@
     }
 
     header h1 {
-      margin: 10px 0 0;
+      margin: 0;
       font-size: clamp(30px, 4.8vw, 48px);
       color: var(--gold2);
       font-weight: 600
@@ -325,6 +325,9 @@
       font-style: italic;
       color: #8fa7ae;
       font-family: var(--sans);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
     /* Khối hé lộ nhân vật (The Big Reveal) */
@@ -532,7 +535,6 @@
   </nav>
 
   <header>
-    <small id="hdrSmall">BỐI CẢNH LỊCH SỬ VIỆT NAM THỜI BẤY GIỜ</small>
     <h1 id="hdrTitle">BỐI CẢNH LỊCH SỬ VIỆT NAM THỜI BẤY GIỜ</h1>
   </header>
 
@@ -540,16 +542,15 @@
 
   <section class="reveal">
     <div>
-      <p class="serif" style="font-size:19px;margin:0" id="revealIntro">Giữa bối cảnh ấy, một người đàn ông đã thay đổi
-        cục diện cuộc chiến…</p>
+      <p class="serif" style="font-size:19px;margin:0" id="revealIntro">Giữa bối cảnh ấy, đã xuất hiện một người đàn ông góp phần thay đổi cục diện cuộc chiến.</p>
       <div class="q">
-        <p id="q1">Ông không hoạt động như một người lính…</p>
-        <p id="q2">Ông ra vào các phòng họp, tòa soạn, quán cà phê…</p>
-        <p id="q3">âm thầm thu thập những thông tin tuyệt mật.</p>
+        <p id="q1">Ông không hoạt động như một người lính ngoài mặt trận…</p>
+        <p id="q2">Ông ra vào các phòng họp, tòa soạn, quán cà phê và những trung tâm quyền lực của Sài Gòn…</p>
+        <p id="q3">Nhằm âm thầm thu thập những thông tin tuyệt mật…</p>
       </div>
       <h2>
         <small id="revealBadge"></small>
-        <span id="revealName">ÔNG TÊN <span class="reveal-highlight">PHẠM XUÂN ẨN.</span></span>
+        <span id="revealName">ÔNG TÊN <span class="reveal-highlight">PHẠM XUÂN ẨN…</span></span>
       </h2>
       <a class="btn" href="bio.html" id="revealBtn">KHÁM PHÁ CÂU CHUYỆN CỦA ÔNG</a>
     </div>
@@ -557,11 +558,11 @@
     <div class="ph-frame">
       <div class="ph-img">
         <img src="assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg"
-          alt="Hai cuộc đời của Phạm Xuân Ẩn (Tình báo và Nhà báo)" id="revealImg" loading="lazy">
+          alt="Hai cuộc đời của Phạm Xuân Ẩn (Nguồn: Đảng bộ TP.HCM; Báo Dân Việt)" id="revealImg" loading="lazy">
       </div>
       <div class="ph-caption">
         <span class="ph-caption-icon">◆</span>
-        <span class="ph-caption-text" id="revealImgCaption">Hai cuộc đời của Phạm Xuân Ẩn (Tình báo và Nhà báo)</span>
+        <span class="ph-caption-text" id="revealImgCaption">Hai cuộc đời của Phạm Xuân Ẩn (Nguồn: Đảng bộ TP.HCM; Báo Dân Việt)</span>
       </div>
     </div>
   </section>
@@ -577,55 +578,55 @@
           hdrSmall: '',
           hdrTitle: 'Bối cảnh lịch sử Việt Nam thời bấy giờ',
           backIntroText: 'Giới thiệu đề tài',
-          revealIntro: 'Giữa bối cảnh ấy, một người đàn ông góp phần thay đổi cục diện cuộc chiến đã xuất hiện.',
+          revealIntro: 'Giữa bối cảnh ấy, đã xuất hiện một người đàn ông góp phần thay đổi cục diện cuộc chiến.',
           q1: 'Ông không hoạt động như một người lính ngoài mặt trận…',
           q2: 'Ông ra vào các phòng họp, tòa soạn, quán cà phê và những trung tâm quyền lực của Sài Gòn…',
-          q3: 'Nhằm âm thầm thu thập những thông tin tuyệt mật...',
+          q3: 'Nhằm âm thầm thu thập những thông tin tuyệt mật…',
           revealBadge: '',
-          revealName: 'ÔNG TÊN <span class="reveal-highlight">PHẠM XUÂN ẨN</span>',
+          revealName: 'ÔNG TÊN <span class="reveal-highlight">PHẠM XUÂN ẨN…</span>',
           revealBtn: 'KHÁM PHÁ CÂU CHUYỆN CỦA ÔNG',
           revealImg: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
-          revealImgCaption: 'Hai cuộc đời của Phạm Xuân Ẩn (Tình báo và Nhà báo)'
+          revealImgCaption: 'Hai cuộc đời của Phạm Xuân Ẩn (Nguồn: Đảng bộ TP.HCM; Báo Dân Việt)'
         },
         events: [
           {
             yr: '1858 – 1945',
             title: 'Cuộc xâm lược của thực dân Pháp',
             paragraphs: [
-              'Trong suốt chiều dài lịch sử, dân tộc Việt Nam đã nhiều lần phải đứng lên bảo vệ nền độc lập trước các cuộc xâm lược từ bên ngoài. Đến năm 1858, đất nước này phải đối mặt với thực dân Pháp, một cường quốc phương Tây có tàu chiến, vũ khí hiện đại và tham vọng biến Việt Nam thành thuộc địa.',
-              'Cai quản Việt Nam lúc bấy giờ là triều đình nhà Nguyễn đã không thể cản nổi sức mạnh quân sự của Pháp, để rồi quân Pháp từng bước mở rộng quyền kiểm soát trên toàn đất nước, mở đầu cho gần một thế kỷ Việt Nam sống dưới ách đô hộ.'
+              'Trong suốt chiều dài lịch sử, dân tộc Việt Nam đã nhiều lần phải đứng lên bảo vệ nền độc lập trước các cuộc xâm lược từ bên ngoài. Đến năm 1858, đất nước này phải đối mặt với Pháp, một cường quốc phương Tây có tàu chiến, súng đạn hiện đại và tham vọng biến Việt Nam thành thuộc địa.',
+              'Triều đình nhà Nguyễn, khi đó đang cai quản Việt Nam, đã không thể cản nổi sức mạnh quân sự của Pháp, để rồi quân Pháp từng bước mở rộng quyền kiểm soát trên toàn đất nước, mở đầu cho gần một thế kỷ Việt Nam sống dưới ách đô hộ.'
             ],
             img: 'assets/images/BoiCanhLichSu/BCLS_TauChienPhapTanCongVN.webp',
-            caption: 'Tàu chiến quân Pháp tấn công Đà Nẵng ngày 1-9-1858, mở đầu cho cuộc chiến tranh xâm lược Việt Nam (Nguồn: Le Monde illustré)'
+            caption: 'Tàu chiến quân Pháp tấn công Đà Nẵng ngày 1/9/1858, mở đầu cho cuộc chiến tranh xâm lược Việt Nam (Nguồn: Le Monde illustré)'
           },
           {
             yr: '1945 – 1946',
-            title: 'Xương máu hóa thành độc lập, độc lập giữ lại bằng máu xương',
+            title: 'Nền độc lập được giành và giữ bằng sinh mạng của dân tộc Việt Nam',
             paragraphs: [
-              'Trải qua nhiều thập kỷ đấu tranh với biết bao máu xương đổ xuống, năm 1945, dưới sự lãnh đạo của Hồ Chí Minh, Cách mạng Tháng Tám (*) thành công. Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập, khai sinh ra nước Việt Nam Dân chủ Cộng hòa.',
-              'Thế nhưng hòa bình chưa được bao lâu, Pháp trở lại với quyết tâm xâm lược dân tộc này một lần nữa, dẫn tới cuộc kháng chiến chống Pháp bùng nổ cuối năm 1946 và kéo dài chín năm.'
+              'Trải qua nhiều thập kỷ đấu tranh với biết bao sinh mạng ngã xuống, vào năm 1945, dưới sự lãnh đạo của Chủ tịch Hồ Chí Minh, Cách mạng Tháng Tám⁽¹⁾ thành công. Ngày 2 tháng 9 năm 1945, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập, khai sinh ra nước Việt Nam Dân chủ Cộng hòa.',
+              'Thế nhưng hòa bình chưa được bao lâu, Pháp quay trở lại với quyết tâm xâm lược dân tộc này một lần nữa, dẫn tới cuộc kháng chiến chống Pháp bùng nổ cuối năm 1946 và kéo dài chín năm.'
             ],
-            footnote: '(*) Cách mạng tháng Tám là cuộc tổng khởi nghĩa của nhân dân Việt Nam do chủ tịch Hồ Chí Minh lãnh đạo, giành chính quyền từ tay phát xít Nhật và thực dân Pháp.',
+            footnote: '1. Cách mạng Tháng Tám là cuộc tổng khởi nghĩa của nhân dân Việt Nam do Chủ tịch Hồ Chí Minh lãnh đạo, giành chính quyền từ tay quân Nhật và chính quyền tay sai.',
             img: 'assets/images/BoiCanhLichSu/BCLS_BacHoDocBanTuyenNgon.jpg',
-            caption: 'Ngày 2-9-1945, tại Quảng trường Ba Đình, Hà Nội, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập, khai sinh ra nước Việt Nam Dân chủ Cộng hòa. (Nguồn: QDNDVN).'
+            caption: 'Ngày 2/9/1945, tại Quảng trường Ba Đình, Hà Nội, Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập, khai sinh ra nước Việt Nam Dân chủ Cộng hòa (Nguồn: Báo Quân đội nhân dân)'
           },
           {
             yr: '1946 – 1954',
             title: 'Một dải đất, hai miền Bắc - Nam và lời hẹn chưa thành',
             paragraphs: [
-              'Đến năm 1954, chiến thắng Điện Biên Phủ lịch sử tưởng chừng như đã mở ra cho đất nước này một nền độc lập, khi Hiệp định Genève được ký kết, buộc Pháp phải rút khỏi Đông Dương (*). Việt Nam tạm thời bị chia cắt thành hai miền tại vĩ tuyến 17, và một cuộc tổng tuyển cử được dự kiến tổ chức vào tháng 7 năm 1956 để thống nhất đất nước.',
+              'Đến năm 1954, chiến thắng Điện Biên Phủ⁽¹⁾ lịch sử tưởng chừng như đã mở ra cho đất nước này một nền độc lập, khi Hiệp định Genève được ký kết, buộc Pháp phải rút khỏi Đông Dương⁽²⁾. Việt Nam tạm thời bị chia cắt thành hai miền tại vĩ tuyến 17, và một cuộc tổng tuyển cử được dự kiến tổ chức vào tháng 7 năm 1956 để thống nhất đất nước.',
               'Tuy nhiên, Mỹ, một quốc gia vốn đã viện trợ cho Pháp suốt nhiều năm trong chiến tranh Đông Dương và đang theo đuổi chính sách ngăn chặn chủ nghĩa cộng sản, lo ngại rằng chính quyền Việt Nam Dân chủ Cộng hòa sẽ giành thắng lợi nếu tổng tuyển cử diễn ra và trở thành một mắt xích trong sự lan rộng của chủ nghĩa cộng sản ở Đông Nam Á.'
             ],
-            footnote: '(*) Đông Dương (Liên Bang Đông Dương) là tên gọi chỉ chung ba nước Việt Nam, Lào và Campuchia thời thực dân Pháp đô hộ.',
+            footnote: '1. Chiến thắng Điện Biên Phủ là thắng lợi quân sự lớn nhất của Việt Nam trong cuộc kháng chiến chống Pháp. Chiến thắng này buộc Pháp phải ký Hiệp định Genève năm 1954.<br>2. Đông Dương là tên gọi chỉ chung ba nước Việt Nam, Lào và Campuchia thời thực dân Pháp đô hộ.',
             img: 'assets/images/BoiCanhLichSu/BCLS_DienBienPhu.jpg',
-            caption: 'Ngày 7-5-1954, toàn bộ Tập đoàn cứ điểm của Pháp ở Điện Biên Phủ bị tiêu diệt. Kết thúc cuộc chiến kéo dài 9 năm chống thực dân Pháp của dân tộc Việt Nam. (Nguồn: QDNDVN)'
+            caption: 'Ngày 7/5/1954, toàn bộ tập đoàn cứ điểm của Pháp ở Điện Biên Phủ bị tiêu diệt (Nguồn: Báo Quân đội nhân dân)'
           },
           {
             yr: '1954 – 1975',
             title: 'Hai phe đối lập, bốn bên giằng co',
             paragraphs: [
               'Vì vậy, Mỹ trực tiếp dựng nên và hậu thuẫn chính quyền Việt Nam Cộng hòa ở miền Nam Việt Nam do Ngô Đình Diệm đứng đầu, rồi can thiệp khiến cuộc tổng tuyển cử năm 1956 theo Hiệp định Genève không được diễn ra. Đến cuối năm 1960, Mặt trận Dân tộc Giải phóng miền Nam Việt Nam ra đời, tập hợp lực lượng đấu tranh ở miền Nam và sát cánh cùng Việt Nam Dân chủ Cộng hòa.',
-              'Từ đây, trên mảnh đất này hình thành hai phe đối lập với bốn bên liên quan, một phía là Việt Nam Dân chủ Cộng hòa và Mặt trận Dân tộc Giải phóng miền Nam Việt Nam, phía kia là Mỹ và Việt Nam Cộng Hòa.',
+              'Từ đây, trên mảnh đất này hình thành hai phe đối lập với bốn bên liên quan, một phía là Việt Nam Dân chủ Cộng hòa và Mặt trận Dân tộc Giải phóng miền Nam Việt Nam, phía kia là Mỹ và Việt Nam Cộng hòa.',
               'Đó là cuộc chiến kéo dài hơn hai mươi năm, trong đó sự đối đầu không chỉ diễn ra trên chiến trường mà còn trên mặt trận chính trị, ngoại giao và tình báo.'
             ],
             img: 'assets/images/BoiCanhLichSu/BCLS_CoBonPhe.jpg',
@@ -639,59 +640,59 @@
           hdrSmall: '',
           hdrTitle: '当時のベトナムの歴史的背景',
           backIntroText: '研究テーマへ戻る',
-          revealIntro: 'その激動の時代の中、一人の男が戦争の局面を変えようとしていた…',
-          q1: '彼は通常の兵士のように戦うことはなかった…',
-          q2: '作戦室、新聞社、カフェを自在に行き来し…',
-          q3: '静かに、極秘の軍事情報を収集し続けた。',
+          revealIntro: 'そうした情勢の中で、戦局の変化に貢献した一人の男が現れた。',
+          q1: '彼は、前線の兵士として活動していたのではなかった……',
+          q2: '彼は、サイゴンの会議室や編集部、カフェ、そして権力の中枢に出入りしていた……',
+          q3: '極秘情報をひそかに収集するために……',
           revealBadge: '',
-          revealName: 'その名は、<span class="reveal-highlight">ファム・スアン・アン。</span>',
-          revealBtn: '彼の物語を紐解く',
+          revealName: '彼の名は、<span class="reveal-highlight">ファム・スアン・アン……</span>',
+          revealBtn: 'ファム・スアン・アンの物語を探る',
           revealImg: 'assets/images/BoiCanhLichSu/BCLS_HaiCuocDoi.jpg',
-          revealImgCaption: 'ファム・スアン・アンの二つの人生（諜報員とジャーナリスト）'
+          revealImgCaption: 'ファム・スアン・アンの二つの人生（出典：ホーチミン市党委員会、Dan Viet紙）'
         },
         events: [
           {
             yr: '1858年 – 1945年',
-            title: 'フランスの侵略と植民地支配',
+            title: 'フランス植民地主義者による侵略',
             paragraphs: [
-              '長い歴史の中で、ベトナム民族は外からの侵略に対して幾度となく独立を守るために立ち上がってきた。1858年、近代的な軍艦や銃火器を備え、ベトナムを植民地化する野望を抱いた西欧の列強、フランス植民地主義者に直面することとなった。',
-              '当時ベトナムを統治していた阮朝（グエン朝）封建宮廷は、フランスの軍事力に対抗することができず、フランス軍は次第に全国へと支配権を拡大し、ベトナムが約1世紀に及ぶ植民地支配下に置かれる時代の幕開けとなった。'
+              '長い歴史を通じて、ベトナム民族は外部からの侵略に対し、独立を守るために幾度となく立ち上がらなければならなかった。1858年になると、この国は、軍艦と近代的な銃火器を備え、ベトナムを植民地にしようという野心を抱く西洋列強の一つ、フランスと向き合わなければならなくなった。',
+              '当時ベトナムを統治していたグエン朝はフランスの軍事力に対抗できず、フランス軍は段階的に全土へと支配権を広げていき、ベトナムが一世紀近くにわたって植民地支配のもとで生きる時代が幕を開けた。'
             ],
             img: 'assets/images/BoiCanhLichSu/BCLS_TauChienPhapTanCongVN.webp',
-            caption: '1858年9月1日、ダナンを砲撃するフランス軍艦。ベトナム侵略戦争の始まり。（出典：フランス国防省歴史記録館）'
+            caption: 'フランス軍の軍艦が1858年9月1日にダナンを攻撃し、ベトナム侵略戦争の幕開けとなった（出典：Le Monde illustré誌）'
           },
           {
             yr: '1945年 – 1946年',
-            title: '八月革命とベトナム民主共和国の誕生',
+            title: 'ベトナム民族の命によって勝ち取られ、守られてきた独立',
             paragraphs: [
-              '幾世代にもわたる多大な犠牲を払った闘争を経て、1945年、ホー・チ・ミンの指導のもと八月革命（*）が成功を収めた。1945年9月2日、ホー・チ・ミン主席は独立宣言を朗読し、ベトナム民主共和国（以下VNDCCH）の樹立を宣言した。',
-              'しかし平穏な時は長く続かず、フランスは再びこの地を侵略する決意をもって舞い戻り、1946年末にフランスに対する抗戦が勃発、9年間にわたって続くこととなった。'
+              '数十年にわたり数多くの命が犠牲となった闘争を経て、1945年に、ホー・チ・ミン主席の指導のもとで八月革命⁽¹⁾が成功した。1945年9月2日、ホー・チ・ミン主席は独立宣言を読み上げ、ベトナム民主共和国を誕生させた。',
+              'しかし、平和は長くは続かず、フランスが再びこの民族を侵略する決意を持って戻ってきたことで、1946年末に抗仏戦争が勃発し、9年間にわたって続いた。'
             ],
-            footnote: '(*) 八月革命は、ホー・チ・ミン主席指導のもと、日本の軍国主義およびフランス植民地支配から政権を奪還したベトナム人民による全国総蜂起である。',
+            footnote: '1. 八月革命は、ホー・チ・ミン主席が指導したベトナム人民による総蜂起であり、日本軍とその傀儡政府から政権を奪取した。',
             img: 'assets/images/BoiCanhLichSu/BCLS_BacHoDocBanTuyenNgon.jpg',
-            caption: '1945年9月2日、ハノイのバーディン広場にて、ホー・チ・ミン主席が独立宣言を朗読し、ベトナム民主共和国が誕生。（出典：QĐNDVN）'
+            caption: '1945年9月2日、ハノイのバーディン広場でホー・チ・ミン主席が独立宣言を読み上げ、ベトナム民主共和国を誕生させた（出典：Quan doi nhan dan紙）'
           },
           {
             yr: '1946年 – 1954年',
-            title: 'ディエンビエンフーの勝利とジュネーヴ協定',
+            title: '一つの国土、南北二つの地域、そして果たされなかった約束',
             paragraphs: [
-              '1954年、歴史的なディエンビエンフーの勝利により、ジュネーヴ協定が調印され、フランスはインドシナ（*）からの撤退を余儀なくされ、独立の道が開かれたかに見えた。ベトナムは北緯17度線で暫定的に南北に分断され、国土統一に向けた全国総選挙が1956年7月に実施される予定となっていた。',
-              'しかし、インドシナ戦争を通じて長年フランスを支援し、共産主義封じ込め政策を推進していた米国は、総選挙が実施されればVNDCCHが勝利し、東南アジアにおける共産主義拡大の結節点となることを強く警戒した。'
+              '1954年になると、歴史的なディエンビエンフーの勝利⁽¹⁾は、ジュネーヴ協定が締結され、フランスがインドシナ⁽²⁾からの撤退を余儀なくされたとき、この国に独立をもたらしたかに思われた。ベトナムは北緯17度線を境に暫定的に二つの地域に分断され、1956年7月には国土統一総選挙が実施される予定となった。',
+              'しかし、インドシナ戦争中に長年にわたってフランスを援助し、共産主義封じ込め政策を推進していたアメリカは、総選挙が実施されればベトナム民主共和国政権が勝利し、東南アジアにおける共産主義拡大の一環となることを懸念した。'
             ],
-            footnote: '(*) インドシナ（フランス領インドシナ連邦）は、フランス植民地統治下におけるベトナム、ラオス、カンボジアの3カ国を指す総称。',
+            footnote: '1. ディエンビエンフーの勝利は、抗仏戦争におけるベトナム最大の軍事的勝利である。この勝利は、フランスに1954年のジュネーヴ協定の締結を余儀なくさせた。<br>2. インドシナは、フランスの植民地支配下にあったベトナム、ラオス、カンボジアの3か国の総称である。',
             img: 'assets/images/BoiCanhLichSu/BCLS_DienBienPhu.jpg',
-            caption: '1954年5月7日、ディエンビエンフーのフランス軍要塞集団が壊滅。ベトナム民族による9年間に及ぶ対仏抗戦が終結。（出典：QĐNDVN）'
+            caption: '1954年5月7日、ディエンビエンフーにあったフランス軍の拠点群がすべて壊滅した（出典：Quan doi nhan dan紙）'
           },
           {
             yr: '1954年 – 1975年',
-            title: '北緯17度線と「二つの陣営・四当事者」の対立',
+            title: '対立する二つの陣営、せめぎ合う四つの勢力',
             paragraphs: [
-              'そのため、米国は南ベトナムにゴ・ディン・ジエムを首班とするベトナム共和国（以下VNCH）政権を直接樹立・支援し、介入によってジュネーヴ協定に基づく1956年の全国総選挙の実施を阻止した。1960年末には南ベトナム解放民族戦線が結成され、南部の闘争勢力を結集してベトナム民主共和国と連携した。',
-              'これにより、この地には「二つの陣営・四当事者」の対立構図が形成された。一方はベトナム民主共和国と南ベトナム解放民族戦線、もう一方はベトナム共和国と米国である。',
-              'これにより、この地には「二つの陣営・四当事者」の対立構図が形成された。一方はベトナム民主共和国と南ベトナム解放民族戦線、もう一方はベトナム共和国と米国である。'
+              'そのため、アメリカはゴー・ディン・ジェムが率いるベトナム共和国政権をベトナム南部に直接樹立して支援し、さらに干渉して、ジュネーヴ協定に基づく1956年の総選挙を実施させなかった。1960年末になると、南ベトナム解放民族戦線が結成され、南部の闘争勢力を結集して、ベトナム民主共和国と手を携えて歩んだ。',
+              'これ以後、この地には四つの勢力からなる対立する二つの陣営が形成され、一方はベトナム民主共和国と南ベトナム解放民族戦線、もう一方はアメリカとベトナム共和国であった。',
+              'それは20年以上にわたる戦争であり、その中で対決は戦場だけでなく、政治・外交・諜報の戦線でも繰り広げられた。'
             ],
             img: 'assets/images/BoiCanhLichSu/BCLS_CoBonPhe.jpg',
-            caption: 'ベトナム民主共和国：赤地に中央に黄色の五角星の旗。<br><br>南ベトナム解放民族戦線：上半分が赤、下半分が青で中央に黄色の五角星の旗。<br><br>米国：赤白13本のストライプと左上に星を配した星条旗。<br><br>ベトナム共和国：黄地に中央に3本の赤い横線の旗。<br><br>ヒエンルオン橋（中央の写真）：1954年ジュネーヴ協定によりベトナムを南北に分断した北緯17度線のベンハイ川（クアンチ省）に架かる橋。'
+            caption: 'ベトナム民主共和国（上半分・右側）<br><br>南ベトナム解放民族戦線（下半分・右側）<br><br>アメリカ（上半分・左側）<br><br>ベトナム共和国（下半分・左側）<br><br>ヒエンルオン橋（中央）は、北緯17度線がベトナムを南北二つの地域に分断したベンハイ川（クアンチ省）に架かる'
           }
         ]
       }
@@ -705,7 +706,8 @@
       const m = data.meta;
 
       document.title = m.pageTitle;
-      document.getElementById('hdrSmall').textContent = m.hdrSmall;
+      const hdrSmallEl = document.getElementById('hdrSmall');
+      if (hdrSmallEl) hdrSmallEl.textContent = m.hdrSmall || '';
       document.getElementById('hdrTitle').textContent = m.hdrTitle;
 
       document.getElementById('revealIntro').textContent = m.revealIntro;
@@ -748,7 +750,11 @@
           pContent = `<p>${ev.desc}</p>`;
         }
 
-        const footnoteHtml = ev.footnote ? `<div class="page-footnote">${ev.footnote}</div>` : '';
+        let footnoteHtml = '';
+        if (ev.footnote) {
+          const fnItems = ev.footnote.split(/<br\s*\/?>/i);
+          footnoteHtml = `<div class="page-footnote">${fnItems.map(item => `<div class="fn-item">${item.trim()}</div>`).join('')}</div>`;
+        }
 
         const mediaHtml = ev.img
           ? `<img src="${ev.img}" alt="${ev.caption ? ev.caption.replace(/<[^>]*>?/gm, '').replace(/"/g, '&quot;') : ''}" loading="lazy" />`
