@@ -187,8 +187,8 @@ window.TIMELINE_DATA = [
     side: "top",
     icon: "doc",
     img: "assets/images/1964_1970/1964_TB_MyDenDaNang.jpg",
-    title: "Thu thập các kế hoạch chiến lược và dự báo bộ binh Mỹ vào miền Nam",
-    title_ja: "米国の戦略計画収集と米地上軍の南部本格介入予測",
+    title: "Thu thập các kế hoạch chiến lược và lập báo cáo dự báo bộ binh Mỹ vào miền Nam",
+    title_ja: "戦略計画の収集およびアメリカ地上軍のベトナム南部投入予測報告書の作成",
   },
   {
     id: "1964b",
@@ -198,7 +198,7 @@ window.TIMELINE_DATA = [
     icon: "mag",
     img: "assets/images/1964_1970/1964_NB_N_PXADuongPho.jpg",
     title: "Tiến sâu vào giới báo chí Mỹ",
-    title_ja: "米有力メディアへの本格的な進出",
+    title_ja: "アメリカのマスコミ界へ深く入り込むこと",
   },
 
   // ==========================================================================
@@ -212,7 +212,7 @@ window.TIMELINE_DATA = [
     icon: "star",
     img: "assets/images/1964_1970/1965_TB_LinhMyDoBo.jpg",
     title: "Gửi Kế hoạch trận Ia Đrăng",
-    title_ja: "イードラン渓谷の戦闘作戦計画を送達",
+    title_ja: "イードランの戦いに関する作戦計画の送付",
   },
   {
     id: "1965b",
@@ -221,8 +221,8 @@ window.TIMELINE_DATA = [
     side: "bot",
     icon: "mag",
     img: "assets/images/1964_1970/1965_NB_N.jpg",
-    title: "Làm phóng viên cho Time",
-    title_ja: "タイム誌記者への道",
+    title: "Làm phóng viên cho tạp chí Time",
+    title_ja: "「タイム」誌の記者として勤務",
   },
 
   // ==========================================================================
@@ -245,8 +245,8 @@ window.TIMELINE_DATA = [
     side: "bot",
     icon: "camera",
     img: "assets/images/1964_1970/1966_NB_N_MayAnhCap.jpg",
-    title: "Những bước tiến trong báo chí",
-    title_ja: "報道活動における新たな前進",
+    title: "Những bước tiến trong hoạt động báo chí",
+    title_ja: "記者としての活動の進展",
   },
 
   // ==========================================================================
@@ -259,8 +259,8 @@ window.TIMELINE_DATA = [
     side: "top",
     icon: "redact",
     img: "assets/images/1964_1970/1967_DSQMy.jpg",
-    title: "Ba tháng trước Tết Mậu Thân, Phạm Xuân Ẩn được chỉ thị ở lại Sài Gòn để đánh giá tình hình.",
-    title_ja: "テト攻勢3カ月前、情勢分析のためサイゴン残留の命を受ける",
+    title: "Nhận chỉ thị ở lại Sài Gòn để phân tích và đánh giá tình hình tại Sài Gòn trước 3 tháng Tết Mậu Thân",
+    title_ja: "テト攻勢の3か月前、サイゴンに残って情勢を分析・評価するよう受けた指示",
   },
   {
     id: "1967b",
@@ -270,7 +270,7 @@ window.TIMELINE_DATA = [
     icon: "mag",
     img: "assets/images/1964_1970/1967_NB_N_DonDoc.jpg",
     title: "Mở rộng phạm vi hoạt động",
-    title_ja: "活動範囲の拡大と特権的通行許可",
+    title_ja: "活動範囲の拡大",
   },
 
   // ==========================================================================
@@ -284,7 +284,7 @@ window.TIMELINE_DATA = [
     icon: "star",
     img: "assets/images/1964_1970/1968_HueSauMauThan.jpg",
     title: "Hành động kịp thời cứu nguy cho quân Giải phóng",
-    title_ja: "解放軍の危機を救った迅速果敢な情報活動",
+    title_ja: "解放軍の危機を救った迅速な行動",
   },
   {
     id: "1968b",
@@ -293,8 +293,8 @@ window.TIMELINE_DATA = [
     side: "bot",
     icon: "ticker",
     img: "assets/images/1964_1970/1968_4V.jpg",
-    title: "Trực tiếp tác nghiệp báo chí trong thời gian Tết Mậu Thân",
-    title_ja: "テト攻勢の渦中における最前線報道取材",
+    title: "Trực tiếp tác nghiệp báo chí thời sự trong thời gian Tết Mậu Thân",
+    title_ja: "テト攻勢期間中の時事報道の現場取材",
   },
 
   // ==========================================================================
@@ -308,7 +308,7 @@ window.TIMELINE_DATA = [
     icon: "key",
     img: "assets/images/1964_1970/1969_MidWay.jpg",
     title: 'Xác thực việc Mỹ chuyển sang sử dụng kế hoạch "Việt Nam hóa chiến tranh"',
-    title_ja: "米国の「戦争のベトナム化」転換方針の検証・確認",
+    title_ja: "アメリカの「戦争のベトナム化」計画への転換の確認",
   },
   {
     id: "1969b",
@@ -318,7 +318,7 @@ window.TIMELINE_DATA = [
     icon: "house",
     img: "assets/images/1964_1970/1969_NgoiTrongVanPhongBaoTime.jpg",
     title: "Người Việt đầu tiên trở thành nhà báo của Time",
-    title_ja: "ベトナム人として初めてタイム誌の正規特派員に就任",
+    title_ja: "『タイム』誌の記者となった最初のベトナム人",
   },
 
   // ==========================================================================
@@ -332,7 +332,7 @@ window.TIMELINE_DATA = [
     icon: "doc",
     img: "assets/images/1964_1970/1970_Campuchia.jpg",
     title: "Cảnh báo sớm cuộc tiến quân xâm lược Campuchia của Mỹ – Việt Nam Cộng hòa",
-    title_ja: "米・南ベトナム軍によるカンボジア侵攻計画の早期警戒通報",
+    title_ja: "アメリカとベトナム共和国によるカンボジア侵攻の早期警告",
   },
 
   // ==========================================================================

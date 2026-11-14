@@ -18,20 +18,20 @@ window.EXTRA_DATA_1970 = {
             id: '1970t',
             modalImg: 'assets/images/1964_1970/1970_Campuchia.jpg',
             modalImgAlt: 'Chiến dịch Campuchia (Nguồn: Getty Images)',
-            modalImgAlt_ja: 'カンボジア作戦（Getty Images）',
+            modalImgAlt_ja: 'カンボジア作戦（出典：Getty Images）',
             caption: 'Chiến dịch Campuchia (Nguồn: Getty Images)',
-            caption_ja: 'カンボジア作戦（Getty Images）',
+            caption_ja: 'カンボジア作戦（出典：Getty Images）',
 
             title: 'Cảnh báo sớm cuộc tiến quân xâm lược Campuchia của Mỹ – Việt Nam Cộng hòa',
-            title_ja: '米・南ベトナム軍によるカンボジア侵攻計画の早期警戒通報',
+            title_ja: 'アメリカとベトナム共和国によるカンボジア侵攻の早期警告',
             date: 'Tháng 4/1970',
             date_ja: '1970年4月',
 
             text1: 'Tháng 4/1970, Mỹ và chính quyền Sài Gòn mở cuộc tấn công quy mô lớn xâm lược Campuchia nhằm càn quét, tiêu diệt các cơ quan đầu não kháng chiến. Phạm Xuân Ẩn đã thu thập thông tin tình báo và gửi báo cáo cảnh báo sớm về toàn bộ kế hoạch tấn công này cho quân Giải phóng.',
-            text1_ja: '1970年4月、米国およびサイゴン政権はカンボジアへの大規模侵攻作戦を開始し、革命指導中枢の掃討・壊滅を企図しました。ファム・スアン・アンはこの進攻計画の全容を事前に察知・収集し、解放軍へ早期警戒報告を急送しました。',
+            text1_ja: '1970年4月、アメリカとサイゴン政権は、抗戦の中枢機関を掃討・壊滅させることを目的として、カンボジアへの大規模な侵攻を開始した。ファム・スアン・アンは情報を収集し、この攻撃計画全体について早期に警告する報告書を解放軍に送った。',
 
             text2: 'Báo cáo cảnh báo sớm khẩn cấp của ông đã giúp Trung ương Cục miền Nam và các cơ quan đầu não của quân Giải phóng kịp thời chủ động rút lui an toàn về phía Tây, bảo toàn 100% lực lượng và bộ máy chỉ đạo.',
-            text2_ja: '彼の緊急警戒報告により、南ベトナム中央基地および解放軍指導機関は速やかに西方へ安全に後退・避難することができ、指導幹部と主力部隊を100%無傷で温存することに成功しました。',
+            text2_ja: 'アンの緊急の早期警告により、南部中央局と解放軍の中枢機関は迅速かつ主体的に西方へ安全に撤退し、兵力と指導機関を100パーセント保全することができた。',
 
             note: '',
             note_ja: '',
