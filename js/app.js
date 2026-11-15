@@ -72,14 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const col = createEl('div', 'col intro');
-    
+
     // Nửa trên Intro
     const up = createEl('div', 'up');
     const titleH1 = createTextEl('h1', 'intro-title', introCfg.name);
     const yrsP = createTextEl('p', 'yrs', introCfg.years);
     const subP = introCfg.subtitle ? createTextEl('p', 'intro-sub', introCfg.subtitle) : null;
     const descTop = createTextEl('p', 'intro-desc-top', introCfg.descriptionTop);
-    
+
     up.appendChild(titleH1);
     up.appendChild(yrsP);
     if (subP) up.appendChild(subP);
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Nhãn giai đoạn du học báo chí (1957 - 1959) ở nhánh báo chí
+      // Nhãn giai đoạn du học báo chí (1957 - 1958) ở nhánh báo chí
       if (group.y == 1957) {
         const periodEl = createEl('div', 'timeline-period-highlight');
         const periodLine = createEl('div', 'period-line');
