@@ -58,7 +58,7 @@ window.EXTRA_DATA_1969 = {
             date_ja: '1969年',
 
             text1: 'Đầu năm 1969, Phạm Xuân Ẩn chính thức làm việc cho tạp chí Time của Mỹ tại Sài Gòn với mức lương 750 USD/tháng là người Việt đầu tiên được Time cho lên chức vụ này.',
-            text1_ja: '1969年初め、ファム・スアン・アンは月給750ドルでアメリカの『タイム』誌のサイゴン支局で正式に勤務し始め、『タイム』誌でこのポストに就いた最初のベトナム人となった。',
+            text1_ja: '1969年初め、ファム・スアン・アンは月給750ドルでアメリカの『タイム』誌のサイゴン支局で正規の専属記者となり、『タイム』誌でこのポストに就いた最初のベトナム人となった。',
 
             // ── ẢNH BÌA BÁO TIME THÁNG 9/1969 ──
             midImg: {

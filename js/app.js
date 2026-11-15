@@ -429,6 +429,14 @@ document.addEventListener('DOMContentLoaded', () => {
           smText.appendChild(container);
         }
       }
+
+      // Render footnote nếu có (như sự kiện ngoài lề 1962)
+      const footnote = (lang === 'ja' && storyData.footnote_ja) ? storyData.footnote_ja : storyData.footnote;
+      if (footnote && footnote.trim() !== '') {
+        const footnoteDiv = createEl('div', 'page-footnote m-page-footnote');
+        footnoteDiv.innerHTML = footnote;
+        smText.appendChild(footnoteDiv);
+      }
     }
 
     if (smNote) {

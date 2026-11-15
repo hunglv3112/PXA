@@ -18,12 +18,12 @@ window.EXTRA_DATA_1965 = {
             id: '1965t',
             modalImg: 'assets/images/1964_1970/1965_TB_LinhMyDoBo.jpg',
             modalImgAlt: 'Lính Mỹ đổ bộ xuống Ia Đrăng trong Chiến dịch Plei Me năm 1965 (Nguồn: Báo Quân đội nhân dân)',
-            modalImgAlt_ja: '1965年、プレーメ作戦でイードランに降り立つアメリカ兵（出典：Quan doi nhan dan紙）',
+            modalImgAlt_ja: '1965年、プレーメ作戦でイアドランに降り立つアメリカ兵（出典：Quan doi nhan dan紙）',
             caption: 'Lính Mỹ đổ bộ xuống Ia Đrăng trong Chiến dịch Plei Me năm 1965 (Nguồn: Báo Quân đội nhân dân)',
-            caption_ja: '1965年、プレーメ作戦でイードランに降り立つアメリカ兵（出典：Quan doi nhan dan紙）',
+            caption_ja: '1965年、プレーメ作戦でイアドランに降り立つアメリカ兵（出典：Quan doi nhan dan紙）',
 
             title: 'Gửi Kế hoạch trận Ia Đrăng',
-            title_ja: 'イードランの戦いに関する作戦計画の送付',
+            title_ja: 'イアドランの戦いに関する作戦計画の送付',
             date: 'Tháng 11/1965',
             date_ja: '1965年11月',
 
@@ -83,7 +83,7 @@ window.EXTRA_DATA_1965 = {
             date_ja: '1965年8月',
 
             text1: 'Tháng 8/1965, trưởng đại diện văn phòng Time tại Sài Gòn là Frank McCulloch chính thức ký hợp đồng tuyển dụng Phạm Xuân Ẩn làm phóng viên thường trú với mức lương 75 USD/tuần.',
-            text1_ja: '1965年8月、『タイム』誌サイゴン支局長のフランク・マッカロックは、週75ドルの給与でファム・スアン・アンを支局記者として雇用する契約を正式に結んだ。',
+            text1_ja: '1965年8月、『タイム』誌サイゴン支局長のフランク・マッカロックは、週75ドルの給与でファム・スアン・アンを現地記者として雇用する契約を正式に結んだ。',
 
             note: '',
             note_ja: '',

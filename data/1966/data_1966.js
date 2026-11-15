@@ -28,7 +28,7 @@ window.EXTRA_DATA_1966 = {
             date_ja: '1966年',
 
             text1: 'Năm 1966, Cụm trưởng H63 Nguyễn Văn Tàu (Tư Cang) bí mật vào Sài Gòn để trực tiếp chỉ đạo hoạt động tình báo. Phạm Xuân Ẩn giúp ông xây dựng vỏ bọc, đồng thời đưa ông đi khảo sát những địa điểm quân sự, chính trị quan trọng trong thành phố. Những hoạt động này góp phần cung cấp thông tin thực địa phục vụ công tác chuẩn bị cho cuộc Tổng tiến công Tết Mậu Thân 1968⁽¹⁾.',
-            text1_ja: '1966年、H63情報グループ長のグエン・ヴァン・タウ（トゥー・カン）は、諜報活動を直接指揮するため、秘密裏にサイゴンに入った。ファム・スアン・アンはトゥー・カンの隠れみのづくりを手助けすると同時に、トゥー・カンを案内して市内の軍事・政治上の重要地点を偵察した。これらの活動は、1968年のテト攻勢⁽¹⁾の準備に役立つ現地情報の提供に貢献した。',
+            text1_ja: '1966年、H63情報グループ長のグエン・ヴァン・タウ（トゥー・カン）は、諜報活動を直接指揮するため、秘密裏にサイゴンに入った。ファム・スアン・アンはトゥー・カンの隠れ蓑づくりを手助けすると同時に、トゥー・カンを案内して市内の軍事・政治上の重要地点を偵察した。これらの活動は、1968年のテト攻勢⁽¹⁾の準備に役立つ現地情報の提供に貢献した。',
 
             footnote: '1. Tổng tiến công Tết Mậu Thân 1968: Là chiến dịch tấn công quy mô lớn do quân Giải phóng phát động vào dịp Tết Nguyên đán năm 1968, đánh vào nhiều nơi do Mỹ và Việt Nam Cộng hòa kiểm soát ở miền Nam Việt Nam.',
             footnote_ja: '1. 1968年のテト攻勢：解放軍が1968年のテト（旧正月）に開始し、ベトナム南部でアメリカとベトナム共和国の支配下にあった多くの地域を攻撃した大規模な攻撃作戦である。',
@@ -76,10 +76,10 @@ window.EXTRA_DATA_1966 = {
             date_ja: '1966年',
 
             text1: 'Trong năm 1966, Phạm Xuân Ẩn đã thu thập và gửi về Tổng hành dinh nguyên bản Kế hoạch quân sự AB142⁽¹⁾. Báo cáo của ông cung cấp số liệu chi tiết về cách thức bố trí, quy mô lực lượng và hướng di chuyển của quân viễn chinh Mỹ, giúp Bộ Chính trị và quân Giải phóng chủ động phòng thủ các cuộc hành quân càn quét lớn của Mỹ như chiến dịch Cedar Falls (diễn ra trong tháng 1 năm 1967).',
-            text1_ja: '1966年、ファム・スアン・アンはAB142計画⁽¹⁾の原版を収集し、総司令部へ送った。アンの報告書は、アメリカ遠征軍の配置方法、兵力の規模および移動の方向に関する詳細な数字を提供し、政治局と解放軍がシーダー・フォールズ作戦（1967年1月）など、アメリカによる大規模な掃討作戦に対して主体的に防御することを可能にした。',
+            text1_ja: '1966年、ファム・スアン・アンはAB142計画⁽¹⁾の原版を収集し、総司令部へ送った。アンの報告書は、アメリカ遠征軍の配置方法、兵力の規模および移動の方向に関する詳細な数字を提供し、政治局と解放軍がシーダー・フォールズ作戦⁽²⁾（1967年1月）など、アメリカによる大規模な掃討作戦に対して主体的に防御することを可能にした。',
 
-            text2: 'Kết quả cuộc hành quân Cedar Falls⁽²⁾ của quân Mỹ không thể tiêu diệt được chủ lực của quân Giải phóng mà gặp phải sự chống trả và thiệt hại nặng nề.',
-            text2_ja: 'シーダー・フォールズ作戦⁽²⁾の結果、アメリカ軍は解放軍の主力を壊滅させることができず、激しい抵抗に遭い、大きな損害を受けた。',
+            text2: 'Kết quả cuộc hành quân Cedar Falls của quân Mỹ không thể tiêu diệt được chủ lực của quân Giải phóng mà gặp phải sự chống trả và thiệt hại nặng nề.',
+            text2_ja: 'シーダー・フォールズ作戦の結果、アメリカ軍は解放軍の主力を壊滅させることができず、激しい抵抗に遭い、大きな損害を受けた。',
 
             footnote: '1. Kế hoạch quân sự AB142: Là chương trình hành động hỗn hợp “liên quân Mỹ-Việt” được kí kết vào mỗi cuối năm (ví dụ AB142, AB144,...).<br><br>2. Cedar Falls: Là cuộc tiến công của quân đội Mỹ vào vùng Củ Chi, nhằm triệt phá căn cứ và tiêu diệt lực lượng cách mạng.',
             footnote_ja: '1. AB142計画：毎年末に締結される「アメリカ・ベトナム連合軍」の共同行動計画である（例：AB142、AB144など）。<br><br>2. シーダー・フォールズ作戦：根拠地の破壊と革命勢力の壊滅を目的とした、アメリカ軍によるクチ地域への進攻である。',

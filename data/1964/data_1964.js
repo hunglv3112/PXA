@@ -34,9 +34,9 @@ window.EXTRA_DATA_1964 = {
             midImg: {
                 src: 'assets/images/1964_1970/1964_TB_WW.jpg',
                 alt: 'Tướng Westmoreland nhận chức Tư lệnh MACV (Nguồn: Co Rentmeester/Time Life Staff)',
-                alt_ja: 'ウェストモーランド将軍がMACV司令官に就任した（出典：Co Rentmeester/Time Life Staff）',
+                alt_ja: 'ウェストモーランド (出典：Co Rentmeester/Time Life Staff）',
                 caption: 'Tướng Westmoreland nhận chức Tư lệnh MACV (Nguồn: Co Rentmeester/Time Life Staff)',
-                caption_ja: 'ウェストモーランド将軍がMACV司令官に就任した（出典：Co Rentmeester/Time Life Staff）'
+                caption_ja: 'ウェストモーランド (出典：Co Rentmeester/Time Life Staff）'
             },
 
             text2: 'Trước bối cảnh này, nhờ uy tín nghề nghiệp và mối quan hệ với các quan chức cấp cao Mỹ và chính quyền Sài Gòn, Phạm Xuân Ẩn có điều kiện tiếp cận nhiều tài liệu quân sự quan trọng. Trong năm 1964, ông đã thu thập và bí mật gửi về căn cứ nguyên bản kế hoạch của Westmoreland⁽¹⁾, cùng kế hoạch bình định mới mang tên “Ấp tân sinh”⁽²⁾.',

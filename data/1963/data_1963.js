@@ -40,7 +40,7 @@ window.EXTRA_DATA_1963 = {
             },
 
             text2: 'Trong bối cảnh đó, Phạm Xuân Ẩn tận dụng các mối quan hệ trong giới quân sự, tình báo và ngoại giao để theo dõi tình hình chính trị tại Sài Gòn, đồng thời gửi những báo cáo phân tích về cơ quan chỉ huy tình báo.',
-            text2_ja: 'このような情勢の中で、ファム・スアン・アンは軍、諜報、外交の各分野の人脈を活用してサイゴンの政治情勢を注視すると同時に、分析報告書を諜報司令部へ送った。',
+            text2_ja: 'このような情勢の中で、ファム・スアン・アンは軍、諜報、外交の各分野の人脈を活用してサイゴンの政治情勢を注視すると同時に、分析報告書を諜報部門へ送った。',
 
             // ── ẢNH CHÈN SAU ĐOẠN 2 ──
             midImg2: {

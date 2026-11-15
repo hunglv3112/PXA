@@ -64,7 +64,7 @@ window.EXTRA_DATA_1962 = {
             },
 
             text4: 'Thông qua mạng lưới quan hệ của mình, Phạm Xuân Ẩn thu thập và chuyển về cơ quan chỉ huy tình báo những thông tin liên quan đến tổ chức quân Việt Nam Cộng hòa, trang bị quân sự và phương thức tác chiến của Mỹ.',
-            text4_ja: '自らの人脈を通じて、ファム・スアン・アンは、ベトナム共和国軍の編成、軍事装備、アメリカの戦闘方式に関する情報を収集し、諜報司令部へ送った。',
+            text4_ja: '自らの人脈を通じて、ファム・スアン・アンは、ベトナム共和国軍の編成、軍事装備、アメリカの戦闘方式に関する情報を収集し、諜報部門へ送った。',
 
             text5: 'Về quân sự, các thông tin gồm việc tăng quân số và tổ chức lực lượng của quân Việt Nam Cộng hòa, các loại vũ khí và trang bị mới, cùng các chiến thuật mới như trực thăng vận và sử dụng xe thiết giáp M113.',
             text5_ja: '軍事面では、その情報には、ベトナム共和国軍の兵員の増加と兵力の編成、新型の兵器・装備、そして「ヘリボーン」戦術やM113装甲兵員輸送車の使用などの新たな戦術が含まれていた。',
@@ -109,7 +109,7 @@ window.EXTRA_DATA_1962 = {
             date_ja: '1962年',
 
             text1: 'Tháng 5/1962, Nick Turner, một nhà báo người New Zealand, thay Peter Smark phụ trách hoạt động của Reuters tại Sài Gòn.',
-            text1_ja: '1962年5月、ニュージーランド人記者のニック・ターナーが、ピーター・スマークに代わってサイゴンにおけるロイター通信の業務の責任者となった。',
+            text1_ja: '1962年5月、ニュージーランド人記者のニック・ターナーが、ピーター・スマークに代わってロイター通信のサイゴン支局長となった。',
 
             text2: 'Phạm Xuân Ẩn tiếp tục làm việc tại Reuters và hỗ trợ Turner trong việc thu thập, dịch thuật và giải thích các thông tin liên quan đến tình hình Việt Nam.',
             text2_ja: 'ファム・スアン・アンは引き続きロイター通信で働き、ベトナム情勢に関する情報の収集、翻訳、解説においてターナーを補佐した。',
@@ -118,7 +118,7 @@ window.EXTRA_DATA_1962 = {
             text3_ja: '英語力、政治に関する知識、幅広い人脈により、アンはロイター通信の報道活動における重要な協力者となった。',
 
             text4: 'Turner đánh giá cao hiểu biết và khả năng phân tích của Phạm Xuân Ẩn. Ông thường dựa vào Phạm Xuân Ẩn để tìm hiểu các vấn đề chính trị và diễn biến chiến sự tại Việt Nam.',
-            text4_ja: 'ターナーはファム・スアン・アンの知識と分析力を高く評価していた。ターナーは、ベトナムの政治問題や戦況の推移を理解するため、しばしばファム・スアン・アンを頼りにしていた。',
+            text4_ja: 'ターナーはアンの知識と分析力を高く評価していた。ベトナムの政治問題や戦況の推移を理解するため、しばしばアンを頼りにしていた。',
 
             text5: 'Công việc này tiếp tục giúp Phạm Xuân Ẩn duy trì các mối quan hệ với giới báo chí quốc tế và những người cung cấp thông tin tại Sài Gòn.',
             text5_ja: 'この仕事は、ファム・スアン・アンが国際的な報道関係者やサイゴンの情報提供者たちとの関係を維持するうえで、引き続き役立った。',

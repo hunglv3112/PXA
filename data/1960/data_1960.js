@@ -58,7 +58,7 @@ window.EXTRA_DATA_1960 = {
             text4_ja: 'ファム・スアン・アンは戦略的な力量を持つ人物と評価され、指導部はアンに、プロの記者という隠れ蓑を活用してアメリカ・サイゴン政権の中枢機関に接近し、情報を得るよう任せた。\n\nアンはここで、戦略情報グループ（のちにH63情報グループに発展）に属する伝説的な秘密名「X6」を正式に授けられた。',
 
             footnote: '1. Võ Văn Kiệt (Sáu Dân): Sinh năm 1922 tại tỉnh Vĩnh Long. Trong kháng chiến chống Mỹ, ông là Bí thư Khu ủy Sài Gòn - Gia Định. Sau khi đất nước thống nhất, ông là Chủ tịch Ủy ban Nhân dân TP. Hồ Chí Minh đầu tiên và là Thủ tướng Việt Nam từ năm 1991 đến 1997.<br><br>2. Cao Đăng Chiếm (Sáu Hoàng): Ông phụ trách lĩnh vực công an ở miền Nam từ thời kháng chiến chống Pháp đến kháng chiến chống Mỹ. Sau này, ông là Ủy viên Trung ương Đảng và Thứ trưởng Bộ Nội vụ.',
-            footnote_ja: '1. ヴォー・ヴァン・キエット（サウ・ザン）：1922年、ヴィンロン省に生まれる。抗米戦争中はサイゴン・ザディン地区党委員会書記であった。南北統一後は初代ホーチミン市人民委員会主席を務め、1991年から1997年までベトナム社会主義共和国首相を務めた。<br><br>2. カオ・ダン・チェム（サウ・ホアン）：抗仏戦争期から抗米戦争期にかけて南部で公安分野を担当した。のちに党中央委員、内務次官を務めた。',
+            footnote_ja: '1. ヴォー・ヴァン・キエット（サウ・ザン）：1922年、ヴィンロン省に生まれる。ベトナム戦争中はサイゴン・ザディン地区党委員会書記であった。南北統一後は初代ホーチミン市人民委員会主席を務め、1991年から1997年までベトナム社会主義共和国首相を務めた。<br><br>2. カオ・ダン・チェム（サウ・ホアン）：抗仏戦争期から抗米戦争期にかけて南部で公安分野を担当した。のちに党中央委員、内務次官を務めた。',
 
             note: '',
             note_ja: '',
@@ -88,10 +88,10 @@ window.EXTRA_DATA_1960 = {
             text1_ja: 'ベトナムに帰国した後、ファム・スアン・アンはベトナム通信で働き、同社の社長グエン・タイと良好な関係にあった。',
 
             text2: 'Thời điểm đó, hãng thông tấn Reuters của Anh đang mở rộng hoạt động đưa tin tại Sài Gòn. Nguyễn Thái đã giới thiệu Phạm Xuân Ẩn cho Bruce Russell, đại diện Reuters, vì ông được đào tạo về báo chí tại Mỹ, sử dụng tiếng Anh thành thạo và am hiểu tình hình chính trị Việt Nam.',
-            text2_ja: '当時、イギリスのロイター通信はサイゴンでの報道活動を拡大していた。\n\nアンがアメリカでジャーナリズムの教育を受け、英語に堪能で、ベトナムの政治情勢に精通していたことから、グエン・タイはロイター通信の代表ブルース・ラッセルにファム・スアン・アンを紹介した。',
+            text2_ja: '当時、ロイター通信〔イギリスの代表的国際通信社〕はサイゴンでの報道活動を拡大していた。\n\nアンがアメリカでジャーナリズムの教育を受け、英語に堪能で、ベトナムの政治情勢に精通していたことから、グエン・タイはロイター通信のサイゴン特派員ブルース・ラッセルにファム・スアン・アンを紹介した。',
 
             text3: 'Thời gian đầu làm việc tại Reuters, Phạm Xuân Ẩn đồng thời nhận lương từ Phủ Tổng thống, Việt Tấn Xã và Reuters. Để tránh những rắc rối có thể phát sinh khi làm việc cho nhiều cơ quan, ông đề nghị Trần Kim Tuyến cho thôi công tác tại Sở Nghiên cứu Chính trị và Xã hội cùng với Việt Tấn Xã.',
-            text3_ja: 'ロイター通信で働き始めた当初、ファム・スアン・アンは大統領府、ベトナム通信、ロイター通信から同時に給与を受け取っていた。\n\n複数の機関で働くことで生じうる面倒を避けるため、アンはチャン・キム・トゥエンに、政治・社会研究局とベトナム通信での勤務をやめさせてほしいと申し出た。',
+            text3_ja: 'ロイター通信で働き始めた当初、ファム・スアン・アンは大統領府、ベトナム通信、ロイター通信から同時に給与を受け取っていた。\n\n複数の機関で働くことで生じうる面倒を避けるため、アンはチャン・キム・トゥエンに、政治・文化・社会研究局とベトナム通信での勤務をやめさせてほしいと申し出た。',
 
             // ── ẢNH CHÈN SAU ĐOẠN 3 ──
             midImg3: {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja" class="lang-ja">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -10,11 +11,13 @@
   <!-- Google Fonts: Be Vietnam Pro, Newsreader & Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    rel="stylesheet">
 
   <!-- CSS tách riêng theo từng phần -->
   <link rel="stylesheet" href="css/theme.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2">
   <link rel="stylesheet" href="css/context.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/page-nav.css">
@@ -26,7 +29,7 @@
         localStorage.setItem('pxa_language', 'ja');
         document.documentElement.lang = 'ja';
         document.documentElement.classList.add('lang-ja');
-      } catch (e) {}
+      } catch (e) { }
       if (window.location.hash === '#timeline' || !window.location.hash) {
         document.documentElement.classList.add('init-timeline');
       }
@@ -41,6 +44,7 @@
       visibility: hidden !important;
       transition: none !important;
     }
+
     html.init-timeline #timelineScreen {
       display: block !important;
       opacity: 1 !important;
@@ -49,19 +53,25 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- ========================================================================
        BỘ ĐIỀU HƯỚNG CHUYỂN TRANG DẠNG DROPDOWN (Góc trên bên trái)
        ======================================================================== -->
   <nav class="page-nav-dropdown" id="pageNavDropdown" aria-label="Điều hướng các trang">
-    <button type="button" class="page-nav-btn" id="pageNavBtn" aria-expanded="false" aria-haspopup="true" title="Chuyển đến trang khác">
+    <button type="button" class="page-nav-btn" id="pageNavBtn" aria-expanded="false" aria-haspopup="true"
+      title="Chuyển đến trang khác">
       <svg class="page-nav-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+        <path fill-rule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          clip-rule="evenodd"></path>
       </svg>
       <span class="page-nav-label" id="pageNavLabel">Chuyển trang</span>
       <svg class="page-nav-arrow" viewBox="0 0 20 20" fill="currentColor" width="12" height="12" aria-hidden="true">
-        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        <path fill-rule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
       </svg>
     </button>
     <div class="page-nav-menu" id="pageNavMenu" role="menu">
@@ -80,17 +90,20 @@
       </a>
       <a href="bio.html" class="page-nav-item" data-page="bio" role="menuitem">
         <span class="page-nav-item-icon">👤</span>
-        <span class="page-nav-item-text" data-vi="3. Tiểu sử (Trước 1957)" data-ja="3. 経歴（1957年以前）">3. Tiểu sử (Trước 1957)</span>
+        <span class="page-nav-item-text" data-vi="3. Tiểu sử (Trước 1957)" data-ja="3. 経歴（1957年以前）">3. Tiểu sử (Trước
+          1957)</span>
         <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
       </a>
       <a href="timeline.html" class="page-nav-item active" data-page="timeline" role="menuitem">
         <span class="page-nav-item-icon">⏱️</span>
-        <span class="page-nav-item-text" data-vi="4. Dòng thời gian (1957–1976)" data-ja="4. 年表（1957～1976年）">4. Dòng thời gian (1957–1976)</span>
+        <span class="page-nav-item-text" data-vi="4. Dòng thời gian (1957–1976)" data-ja="4. 年表（1957～1976年）">4. Dòng
+          thời gian (1957–1976)</span>
         <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
       </a>
       <a href="postwar.html" class="page-nav-item" data-page="postwar" role="menuitem">
         <span class="page-nav-item-icon">🕊️</span>
-        <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm Phạm Xuân Ẩn" data-ja="5. ファム・スアン・アン記念室">5. Phòng lưu niệm Phạm Xuân Ẩn</span>
+        <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm Phạm Xuân Ẩn" data-ja="5. ファム・スアン・アン記念室">5. Phòng
+          lưu niệm Phạm Xuân Ẩn</span>
         <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
       </a>
     </div>
@@ -115,7 +128,8 @@
   <div class="timeline-screen hidden" id="timelineScreen">
 
     <!-- Nút quay lại Tiểu sử (đã thay bằng dropdown) -->
-    <button type="button" class="btn-back-to-context" id="btnBackToBio" title="Xem lại Tiểu sử Phạm Xuân Ẩn" style="display: none;">
+    <button type="button" class="btn-back-to-context" id="btnBackToBio" title="Xem lại Tiểu sử Phạm Xuân Ẩn"
+      style="display: none;">
       <span>‹ Tiểu sử</span>
     </button>
 
@@ -158,7 +172,7 @@
       <div class="sheet" id="sheet" data-side="top">
         <!-- Nút đóng -->
         <button class="x" id="mClose" aria-label="Đóng cửa sổ" title="Đóng (Esc)">×</button>
-        
+
         <!-- Cột trái: Bìa ảnh sự kiện hoặc đồ họa vector -->
         <div class="m-art" id="mArt"></div>
 
@@ -169,7 +183,7 @@
           <div class="m-text" id="mText"></div>
           <p class="m-note" id="mNote" hidden></p>
           <p class="m-src" id="mSrc"></p>
-          
+
           <!-- Nút chuyển sang mốc thời gian trước / sau -->
           <div class="m-nav">
             <button id="mPrev">‹ Mốc trước</button>
@@ -184,7 +198,7 @@
       <div class="sheet sheet--single story-sheet" id="storySheet" data-side="story">
         <!-- Nút đóng -->
         <button class="x story-x" id="smClose" aria-label="Đóng cửa sổ" title="Đóng (Esc)">×</button>
-        
+
         <!-- Khối ảnh bìa sự kiện lớn kèm chú thích -->
         <div class="m-art" id="smArt"></div>
 
@@ -205,7 +219,8 @@
        4. MÀN HÌNH HẬU CHIẾN: MỘT PHẠM XUÂN ẨN BÌNH LẶNG (Postwar Screen)
        Trình bày theo layout trang tiểu sử / bối cảnh lịch sử
        ======================================================================== -->
-  <section class="context-screen postwar-screen hidden" id="postwarScreen" aria-label="Một Phạm Xuân Ẩn bình lặng sau chiến tranh"></section>
+  <section class="context-screen postwar-screen hidden" id="postwarScreen"
+    aria-label="Một Phạm Xuân Ẩn bình lặng sau chiến tranh"></section>
 
   <!-- ========================================================================
        NẠP CÁC TỆP MÃ NGUỒN THEO THỨ TỰ PHỤ THUỘC
@@ -271,9 +286,10 @@
   <!-- 8. Logic dựng màn hình Bối cảnh lịch sử và chuyển trang -->
   <script src="js/context.js"></script>
   <!-- 9. Logic ứng dụng chính, cuộn ngang timeline -->
-  <script src="js/app.js"></script>
+  <script src="js/app.js?v=2"></script>
   <!-- 10. Logic điều hướng chuyển trang dạng dropdown -->
   <script src="js/page-nav.js"></script>
 
 </body>
+
 </html>

@@ -61,7 +61,7 @@ window.EXTRA_DATA_1968 = {
             text1_ja: 'テト攻勢の後、アメリカは三つの戦略研究チームをサイゴンに派遣した（ドナルド・マーシャル大佐のチーム、ランド研究所〔アメリカの代表的な戦略シンクタンク〕のガイ・ポーカー教授のチーム、ハドソン研究所〔アメリカの政策戦略シンクタンク〕のハーマン・カーン教授のチーム）。',
 
             text2: 'Phạm Xuân Ẩn thảo luận trực tiếp trọn 1 ngày với Guy Pauker, thu thập toàn bộ nội dung dự thảo Kế hoạch "Việt Nam hóa chiến tranh"⁽¹⁾, Kế hoạch AB144 gửi về Hà Nội. Điều này đã giúp phe Mặt trận Dân tộc Giải phóng miền Nam Việt Nam nắm được hướng đi tiếp theo của Mỹ sau chiến dịch Mậu Thân.',
-            text2_ja: 'ファム・スアン・アンはガイ・ポーカーと丸一日をかけて直接議論し、「戦争のベトナム化」計画⁽¹⁾, AB144計画の草案の内容をすべて収集して、ハノイへ送った。これにより、南ベトナム解放民族戦線側はテト攻勢後のアメリカの今後の方向性を把握することができた。',
+            text2_ja: 'ファム・スアン・アンはガイ・ポーカーと丸一日をかけて直接議論し、「戦争のベトナム化」計画⁽¹⁾とAB144計画の草案の内容をすべて収集して、ハノイへ送った。これにより、南ベトナム解放民族戦線側はテト攻勢後のアメリカの今後の方向性を把握することができた。',
 
             footnote: '1. Kế hoạch "Việt Nam hóa chiến tranh": Là kế hoạch "Dùng người Việt đánh người Việt" nhằm rút dần quân Mỹ nhưng vẫn giữ được miền Nam Việt Nam trong tầm ảnh hưởng của Mỹ.',
             footnote_ja: '1. 「戦争のベトナム化」計画：アメリカ軍を段階的に撤退させつつ、ベトナム南部をアメリカの影響力の及ぶ範囲にとどめることを目的とした、「ベトナム人を使ってベトナム人と戦わせる」計画である。',
@@ -94,7 +94,7 @@ window.EXTRA_DATA_1968 = {
             text1_ja: '1968年1月31日午前2時48分、サイゴンで総進攻が一斉に勃発すると、同日の昼前、アンはトゥー・カンを車に乗せ、攻撃で犠牲となった兵士たちの遺体を数えに向かった。',
 
             text2: 'Phạm Xuân Ẩn chấp hành lệnh ở lại nội đô vào những ngày Tết Mậu Thân. Dưới danh nghĩa phóng viên thường trú tạp chí Time của Mỹ, ông lái chiếc xe Renault 4CV chở Đại tá Nguyễn Bé, cố vấn Mỹ và đồng nghiệp đi khắp các điểm nóng (Dinh Độc Lập, Tòa Đại sứ Mỹ, Hàng Xanh, Bộ Tổng Tham mưu).',
-            text2_ja: '戊申年のテトの期間中、ファム・スアン・アンはサイゴン市内に滞在せよという命令に従った。アンはアメリカの『タイム』誌の支局記者という名義で、グエン・ベー大佐やアメリカ人の顧問、同僚をルノー4CVに乗せ、各地の激戦地（独立宮殿、アメリカ大使館、ハン・サイン、参謀本部）を見て回った。',
+            text2_ja: 'テト攻勢の期間中、ファム・スアン・アンはサイゴン市内に滞在せよという命令に従った。アンはアメリカの『タイム』誌の支局記者という名義で、グエン・ベー大佐やアメリカ人の顧問、同僚をルノー4CVに乗せ、各地の激戦地（独立宮殿、アメリカ大使館、ハン・サイン、参謀本部）を見て回った。',
 
             note: '',
             note_ja: '',

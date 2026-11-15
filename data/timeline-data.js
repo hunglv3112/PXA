@@ -198,7 +198,7 @@ window.TIMELINE_DATA = [
     icon: "mag",
     img: "assets/images/1964_1970/1964_NB_N_PXADuongPho.jpg",
     title: "Tiến sâu vào giới báo chí Mỹ",
-    title_ja: "アメリカのマスコミ界へ深く入り込むこと",
+    title_ja: "アメリカ報道界の深部への進出",
   },
 
   // ==========================================================================
@@ -212,7 +212,7 @@ window.TIMELINE_DATA = [
     icon: "star",
     img: "assets/images/1964_1970/1965_TB_LinhMyDoBo.jpg",
     title: "Gửi Kế hoạch trận Ia Đrăng",
-    title_ja: "イードランの戦いに関する作戦計画の送付",
+    title_ja: "イアドランの戦いに関する作戦計画の送付",
   },
   {
     id: "1965b",
@@ -222,7 +222,7 @@ window.TIMELINE_DATA = [
     icon: "mag",
     img: "assets/images/1964_1970/1965_NB_N.jpg",
     title: "Làm phóng viên cho tạp chí Time",
-    title_ja: "「タイム」誌の記者として勤務",
+    title_ja: "『タイム』誌の記者として勤務",
   },
 
   // ==========================================================================
@@ -370,7 +370,7 @@ window.TIMELINE_DATA = [
     icon: "camera",
     img: "assets/images/1971_1973/1972_NB_PXAxRobert.jpg",
     title: "Cuộc trao đổi với Robert (Bob) Shaplen (The New Yorker)",
-    title_ja: "ボブ・シャプレン（『ザ・ニューヨーカー』誌）との対話",
+    title_ja: "ロバート・シャプレン（『ザ・ニューヨーカー』誌）との対話",
   },
 
   // ==========================================================================

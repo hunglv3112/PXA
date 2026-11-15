@@ -92,7 +92,7 @@ window.EXTRA_DATA_1973 = {
             caption_ja: 'パリにて、特別顧問のレ・ドゥック・ト（左）とアメリカの国家安全保障担当大統領補佐官のヘンリー・キッシンジャー（出典：ベトナム政府電子新聞）',
 
             title: 'Cung cấp tin độc quyền về đàm phán Paris, giúp tạp chí Time vượt mặt tạp chí Newsweek',
-            title_ja: 'パリ交渉に関する特ダネの提供――『ニューズウィーク』誌に先んじた『タイム』誌',
+            title_ja: 'パリ交渉に関する特ダネの提供 ――『ニューズウィーク』誌に先んじた『タイム』誌',
             date: 'Đầu năm 1973',
             date_ja: '1973年初頭',
 
@@ -116,7 +116,7 @@ window.EXTRA_DATA_1973 = {
             caption_ja: 'フランス人記者のジャン・クロード・ポモンティ（出典：Tien Phong紙）',
 
             title: 'Chỉ đường cho nhà báo quốc tế thâm nhập vùng giải phóng Mỹ Tho (Tháng 2/1973)',
-            title_ja: '外国人記者たちのミトー解放区潜入への道案内（1973年2月）',
+            title_ja: 'ミトー解放区に潜入する外国人記者たちへの道案内（1973年2月）',
             date: 'Đầu tháng 2/1973',
             date_ja: '1973年2月初頭',
 

@@ -1565,6 +1565,14 @@ p+.m-content-figure {
   margin-top: 22px;
 }
 
+.story-sheet .page-footnote.m-page-footnote,
+.sheet[data-side="story"] .page-footnote.m-page-footnote {
+  border-top: 1px solid rgba(229, 169, 59, 0.35);
+  color: #dfcad2;
+  margin-top: 28px;
+  padding-top: 14px;
+}
+
 /* ==========================================================================
    NÚT CHỌN ĐA NGÔN NGỮ (Language Switcher: VI / JA)
    ========================================================================== */
