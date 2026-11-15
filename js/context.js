@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btnToPostwar) {
       const textSpan = btnToPostwar.querySelector('span') || btnToPostwar;
-      textSpan.textContent = cfg?.ui?.toPostwar || (lang === 'ja' ? '戦後の穏やかなファム・スアン・アン ›' : 'Phòng lưu niệm Phạm Xuân Ẩn ›');
+      textSpan.textContent = cfg?.ui?.toPostwar || (lang === 'ja' ? '諜報員ファム・スアン・アン記念館 ›' : 'Phòng lưu niệm Phạm Xuân Ẩn ›');
     }
   }
 
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
       videos.forEach(v => {
         try {
           if (!v.paused) v.pause();
-        } catch (e) {}
+        } catch (e) { }
       });
     }
   }

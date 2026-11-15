@@ -95,7 +95,7 @@ window.POSTWAR_DATA = {
   ja: {
     hero: {
       badge: "戦後と穏やかな日々 (1975 – 2006)",
-      title: "戦後の穏やかなファム・スアン・アン",
+      title: "諜報員ファム・スアン・アン記念館",
       subtitle: "任務の重圧と最前線の硝煙を離れ、伝説のスパイは友と愛犬、小鳥たちに囲まれた清貧で穏やかな余生を選びました。",
       bgImage: "assets/images/context-saigon.jpg"
     },

@@ -90,7 +90,7 @@ window.APP_CONFIG = {
       backToBio: "‹ 人物伝へ戻る",
       enterBio: "ファム・スアン・アン人物伝 ›",
       enterTimeline: "タイムラインを見る ›",
-      toPostwar: "戦後の穏やかなファム・スアン・アン ›",
+      toPostwar: "諜報員ファム・スアン・アン記念館 ›",
       backToTimeline: "‹ タイムラインへ戻る",
       storyBadge: "サイドストーリー"
     }
