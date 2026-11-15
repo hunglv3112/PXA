@@ -306,6 +306,9 @@
       font-style: italic;
       color: #5b6770;
       font-family: var(--sans);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
     .next {
@@ -484,7 +487,8 @@
       </a>
       <a href="postwar.html" class="page-nav-item" data-page="postwar" role="menuitem">
         <span class="page-nav-item-icon">🕊️</span>
-        <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm Phạm Xuân Ẩn" data-ja="5. ファム・スアン・アン記念室">5. Phòng lưu niệm
+        <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm Phạm Xuân Ẩn" data-ja="5. ファム・スアン・アン記念室">5. Phòng
+          lưu niệm
           Phạm Xuân Ẩn</span>
         <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
       </a>
@@ -495,8 +499,8 @@
 
   <header>
     <small class="mono" id="hdrBadge"></small>
-    <h1 id="hdrTitle">ファム・スアン・アンの経歴概要</h1>
-    <p id="hdrDesc">誕生からアメリカ留学準備期間までのファム・スアン・アンの生涯の概要</p>
+    <h1 id="hdrTitle">ファム・スアン・アンの概要</h1>
+    <p id="hdrDesc">ファム・スアン・アンの誕生から、アメリカ留学への出発を控えた日々までの歩みを紹介する</p>
   </header>
 
   <main class="dossier" id="dossierContainer"></main>
@@ -504,15 +508,15 @@
   <section class="next">
     <p class="mono" id="nextSubtitle"></p>
     <div class="yr"></div>
-    <p id="nextDesc">Từ đây, hai cuộc đời chạy song song</p>
-    <a href="timeline.html" id="nextBtn">Dòng thời gian từ năm 1957 đến năm 1976</a>
+    <p id="nextDesc">ここから、二つの人生が並行して走り出す</p>
+    <a href="timeline.html" id="nextBtn">1957年から1976年までの年表</a>
   </section>
 
   <!-- Nạp bộ quản lý đa ngôn ngữ -->
   <script src="js/lang.js"></script>
 
   <script>
-        const DOSSIER_DATA = {
+    const DOSSIER_DATA = {
       vi: {
         meta: {
           pageTitle: 'Khái quát Phạm Xuân Ẩn – Đến 1957',
@@ -561,9 +565,9 @@
             title: 'Bước ngoặt năm 1945',
             paragraphs: [
               'Đến năm 1938, gia đình ông chuyển về Cần Thơ. Tại đây ông trải qua những năm học trung học ở trường Collège de Cần Thơ.',
-              'Đến năm 1945, khi Cách mạng Tháng Tám nổ ra, ông bỏ học, tham gia tổ chức Thanh niên Tiền Phong và học lớp công tác tuyên truyền của Việt Minh⁽¹⁾.'
+              'Đến năm 1945, khi Cách mạng Tháng Tám nổ ra, ông bỏ học, tham gia tổ chức Thanh niên Tiền Phong⁽¹⁾ và học lớp công tác tuyên truyền của Việt Minh⁽²⁾.'
             ],
-            footnote: '1. Việt Minh, hay Việt Nam Độc lập Đồng minh, là tổ chức mặt trận dân tộc do Hồ Chí Minh sáng lập ngày 19/5/1941, nhằm đấu tranh giành độc lập cho Việt Nam.',
+            footnote: '1. Thanh niên Tiền Phong: Tổ chức thanh niên yêu nước được thành lập ngày 21/4/1945 tại miền Nam (khi đó là Nam Kỳ), do bác sĩ Phạm Ngọc Thạch đứng đầu và hoạt động dưới sự lãnh đạo của Xứ ủy Nam Kỳ. Đến giữa năm 1945, tổ chức có khoảng 1,2 triệu đoàn viên và là lực lượng nòng cốt trong cuộc giành chính quyền ở Sài Gòn ngày 25/8/1945.<br>2. Việt Minh, hay Việt Nam Độc lập Đồng minh, là tổ chức mặt trận dân tộc do Hồ Chí Minh sáng lập ngày 19/5/1941, nhằm đấu tranh giành độc lập cho Việt Nam.',
             img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_CachMangThangTam.webp',
             caption: 'Cách mạng Tháng Tám (1945) - Cột mốc dân tộc Việt Nam đứng lên chấm dứt nhiều thập kỷ cai trị của thực dân Pháp (Nguồn: Báo Dân Việt)',
             placeholder: '[Ảnh: Cách mạng Tháng Tám 1945]',
@@ -707,9 +711,9 @@
             title: '1945年の転機',
             paragraphs: [
               '1938年、一家はカントーに移り住んだ。アンはこの地で、コレージュ・ド・カントー（Collège de Cần Thơ）に通って中学時代を過ごした。',
-              '1945年に八月革命が起こると、アンは学業を放棄し、青年先鋒隊に参加するとともに、ベトミン⁽¹⁾の宣伝工作講習を受けた。'
+              '1945年に八月革命が起こると、アンは学業を放棄し、青年先鋒隊⁽¹⁾に参加するとともに、ベトミン⁽²⁾の宣伝工作講習を受けた。'
             ],
-            footnote: '1. ベトミン（ベトナム独立同盟会）は、ベトナムの独立を勝ち取るための闘争を目的として、1941年5月19日にホー・チ・ミンが創設した民族統一戦線組織である。',
+            footnote: '1. 青年先鋒隊：1945年4月21日に南部（当時のコーチシナ）で結成され、ファム・ゴック・タイック医師を指導者として、南部党委員会の指導のもとで活動した愛国青年組織である。1945年半ばには約120万人の隊員を擁し、同年8月25日のサイゴンにおける権力奪取の中核となった。<br>2. ベトミン（ベトナム独立同盟会）は、ベトナムの独立を勝ち取るための闘争を目的として、1941年5月19日にホー・チ・ミンが創設した民族統一戦線組織である。',
             img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_CachMangThangTam.webp',
             caption: '八月革命（1945年）――ベトナム民族が立ち上がり、数十年にわたるフランス植民地主義者の支配に終止符を打った歴史的な節目（出典：Dan Viet紙）',
             placeholder: '[写真: 八月革命 1945年]',
@@ -754,7 +758,7 @@
               '1953年、ウーミンの森で、当時南部党委員会の常務であったレ・ドゥック・トの司会のもと、ファム・スアン・アンは正式にベトナム共産党への入党を認められた。'
             ],
             img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_PXALucLamOSoThueQuan.jpg',
-            caption: '1953年、サイゴン税関に勤務していた頃のファム・スアン・アン（出典：『ファム・スアン・アン―名前のとおりに生きた男』ベトナム語版224ページ）',
+            caption: '1953年、サイゴン税関に勤務していた頃のファム・スアン・アン（出典：『ファム・スアン・アン――名前のとおりに生きた男』ベトナム語版224ページ）',
             placeholder: '[写真: ファム・スアン・アン 1953年]',
             pin: '[写真: ファム・スアン・アン 1953年]'
           },
@@ -879,7 +883,8 @@
 
         let footnoteHtml = '';
         if (p.footnote) {
-          footnoteHtml = `<div class="page-footnote">${p.footnote}</div>`;
+          const fnItems = p.footnote.split(/<br\s*\/?>/i);
+          footnoteHtml = `<div class="page-footnote">${fnItems.map(item => `<div class="fn-item">${item.trim()}</div>`).join('')}</div>`;
         }
 
         html += `
