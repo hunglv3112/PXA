@@ -35,6 +35,8 @@
       --acc: #8fc1d4;
       --serif: "Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
       --sans: "Be Vietnam Pro", "Noto Sans JP", system-ui, -apple-system, sans-serif;
+      --serif-jp: "Noto Serif JP", "Newsreader", serif;
+      --sans-jp: "Noto Sans JP", "Be Vietnam Pro", sans-serif;
       color-scheme: dark;
       box-sizing: border-box;
       padding-top: env(safe-area-inset-top, 0px);
@@ -86,7 +88,7 @@
     }
 
     .dossier {
-      max-width: 1060px;
+      max-width: 1090px;
       margin: 0 auto;
       padding: 0 5vw 0
     }
@@ -127,7 +129,7 @@
 
     .body {
       display: grid;
-      grid-template-columns: 1.3fr 1fr;
+      grid-template-columns: 1.4fr 1fr;
       gap: 28px;
       padding: 22px 26px 0;
       flex: 1;
@@ -147,7 +149,9 @@
     .body p {
       margin: 0 0 10px;
       font-size: 15px;
-      line-height: 1.65
+      letter-spacing: -0.012em;
+      text-wrap: pretty;
+      line-break: strict;
     }
 
     .body blockquote {
@@ -192,7 +196,7 @@
       transition: transform .8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .3s ease;
       font-family: var(--sans);
       width: 100%;
-      max-width: 380px;
+      max-width: 390px;
     }
 
     .page:nth-child(even) .pin {
@@ -267,9 +271,9 @@
 
     /* Chú thích dưới ảnh đồng bộ chuẩn timeline */
     .pin-caption {
-      padding: 10px 14px;
-      font-size: 12.5px;
-      line-height: 1.45;
+      padding: 9px 11px;
+      font-size: 12px;
+      line-height: 1.48;
       font-style: italic;
       color: #b5c7cd;
       background: rgba(14, 31, 37, 0.96);
@@ -278,22 +282,26 @@
       text-align: left;
       display: flex;
       align-items: flex-start;
-      gap: 7px;
-      min-height: 54px;
+      gap: 6px;
+      min-height: 52px;
       box-sizing: border-box;
+      letter-spacing: -0.015em;
+      line-break: strict;
+      text-wrap: pretty;
     }
 
     .pin-caption-icon {
       color: var(--gold);
       font-style: normal;
       font-size: 11px;
-      line-height: 1.45;
+      line-height: 1.48;
       flex-shrink: 0;
       margin-top: 1px
     }
 
     .pin-caption-text {
-      flex: 1
+      line-break: strict;
+      text-wrap: pretty;
     }
 
     /* Chú thích footnote ở đáy trang */
@@ -436,6 +444,23 @@
         margin: 14px 16px 0;
         font-size: 11.5px;
       }
+    }
+
+    /* Định dạng typography tiếng Nhật */
+    html[lang=ja] body,
+    html[lang=ja] .body p,
+    html[lang=ja] .page-footnote {
+      font-family: var(--sans-jp);
+      text-wrap: pretty;
+      line-break: strict;
+    }
+
+    html[lang=ja] header h1,
+    html[lang=ja] .body h2,
+    html[lang=ja] .body blockquote,
+    html[lang=ja] .pin-caption {
+      font-family: var(--serif-jp);
+      line-break: strict;
     }
   </style>
 </head>

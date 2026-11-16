@@ -330,9 +330,10 @@
       font-style: italic;
       font-weight: 500;
       font-size: clamp(19px, 2.3vw, 26px);
-      line-height: 1.45;
+      line-height: 1.5;
       color: var(--gold2);
       position: relative;
+      width: 100%;
     }
 
     .lead blockquote.typing::after {
@@ -358,7 +359,7 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      max-width: 68ch;
+      max-width: 100%;
     }
 
     .acc-item {
@@ -487,6 +488,8 @@
       font-size: 14px;
       line-height: 1.75;
       font-family: var(--sans);
+      text-wrap: pretty;
+      line-break: strict;
     }
 
     /* Section Board: 4 lối vào câu chuyện */
@@ -554,10 +557,10 @@
 
     .card {
       position: absolute;
-      width: 21%;
+      width: 22%;
       background: var(--paper);
       color: #1a1d21;
-      padding: 14px 14px 18px;
+      padding: 14px 11px 18px;
       border-radius: 4px;
       box-shadow: 0 16px 36px rgba(0, 0, 0, .55);
       text-decoration: none;
@@ -815,15 +818,34 @@
     html[lang=ja] .card p,
     html[lang=ja] .lead p {
       font-family: var(--sans-jp);
+      text-wrap: pretty;
+      line-break: strict;
     }
 
     html[lang=ja] h1,
     html[lang=ja] h2,
     html[lang=ja] h3,
+    html[lang=ja] .poster .n {
+      font-family: var(--serif-jp);
+      text-wrap: balance;
+      line-break: strict;
+    }
+
     html[lang=ja] blockquote,
-    html[lang=ja] .poster .n,
+    html[lang=ja] .lead blockquote {
+      font-family: var(--serif-jp);
+      text-wrap: normal;
+      width: 100%;
+      line-break: strict;
+    }
+
     html[lang=ja] .card h3 {
       font-family: var(--serif-jp);
+      font-size: 15.5px;
+      letter-spacing: -0.025em;
+      line-height: 1.35;
+      text-wrap: balance;
+      line-break: strict;
     }
 
     /* Responsive */
@@ -1082,7 +1104,7 @@
         </a>
         <a class="card c2" href="javascript:void(0)">
           <div class="ph"></div>
-          <h3>ファム・スアン・アンの経歴</h3>
+          <h3>ファム・スアン・アンの<span style="white-space:nowrap">経歴</span></h3>
           <p>ビエンホアの一人の学生が、記者となり、諜報員となるまでの歩み</p>
         </a>
         <a class="card c3" href="javascript:void(0)">
@@ -1324,7 +1346,7 @@
       ['.board .sub', ['歴史の霧の中にいまだ隠れている写真をたどり、資料の断片をつなぎ合わせながら、一人の人間、二つの人生の物語を少しずつ明らかにしていく']],
       ['.card h3', [
         'ベトナムの歴史的背景',
-        'ファム・スアン・アンの経歴',
+        'ファム・スアン・アンの<span style="white-space:nowrap">経歴</span>',
         '1957年から1976年までの年表',
         '記念室'
       ]],

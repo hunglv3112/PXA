@@ -51,6 +51,23 @@
       visibility: visible !important;
       transition: none !important;
     }
+
+    /* Định dạng typography tiếng Nhật chống rơi chữ */
+    html[lang=ja] body,
+    html[lang=ja] p,
+    html[lang=ja] figcaption,
+    html[lang=ja] .event-desc,
+    html[lang=ja] .event-extra {
+      text-wrap: pretty;
+      line-break: strict;
+    }
+
+    html[lang=ja] h1,
+    html[lang=ja] h2,
+    html[lang=ja] h3 {
+      text-wrap: balance;
+      line-break: strict;
+    }
   </style>
 </head>
 
