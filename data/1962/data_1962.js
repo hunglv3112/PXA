@@ -73,9 +73,9 @@ window.EXTRA_DATA_1962 = {
             midImg5: {
                 src: 'assets/images/1960_1963/1962_M113.jpg',
                 alt: 'Xe thiết giáp chở quân M113 (Nguồn: Flickr)',
-                alt_ja: 'M113装甲兵員輸送車（出典：Flickr）',
+                alt_ja: 'M113装甲兵員輸送車（出典：Australian War Memorial）',
                 caption: 'Xe thiết giáp chở quân M113 (Nguồn: Flickr)',
-                caption_ja: 'M113装甲兵員輸送車（出典：Flickr）'
+                caption_ja: 'M113装甲兵員輸送車（出典：Australian War Memorial）'
             },
 
             text6: 'Ngoài thông tin quân sự, ông còn theo dõi hoạt động tình báo của Mỹ, những bất đồng giữa phía Mỹ và chính quyền Ngô Đình Diệm, cùng các mâu thuẫn trong nội bộ chính quyền Sài Gòn.',
