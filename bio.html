@@ -101,8 +101,8 @@
       color: var(--ink);
       border-radius: 4px 4px 6px 6px;
       box-shadow: 0 -8px 30px rgba(0, 0, 0, .55);
-      padding-bottom: 26px;
-      min-height: 580px;
+      padding-bottom: 22px;
+      min-height: 470px;
       display: flex;
       flex-direction: column;
     }
@@ -131,7 +131,7 @@
       display: grid;
       grid-template-columns: 1.4fr 1fr;
       gap: 28px;
-      padding: 22px 26px 20px;
+      padding: 22px 26px 14px;
       flex: 1 0 auto;
       align-items: start;
     }
@@ -306,11 +306,11 @@
 
     /* Chú thích footnote ở đáy trang */
     .page-footnote {
-      margin-top: auto;
+      margin-top: 14px;
       margin-left: 26px;
       margin-right: 26px;
       margin-bottom: 0;
-      padding-top: 12px;
+      padding-top: 10px;
       border-top: 1px solid rgba(26, 29, 33, 0.15);
       font-size: 12.5px;
       line-height: 1.55;
@@ -970,7 +970,32 @@
       }, { rootMargin: '-30% 0px -30% 0px' });
 
       document.querySelectorAll('.page').forEach(p => ioInstance.observe(p));
+      syncDossierPageHeights();
+      setTimeout(syncDossierPageHeights, 150);
+      setTimeout(syncDossierPageHeights, 500);
+
+      document.querySelectorAll('.pin-img').forEach(img => {
+        if (!img.complete) {
+          img.addEventListener('load', syncDossierPageHeights);
+        }
+      });
     }
+
+    function syncDossierPageHeights() {
+      const pages = document.querySelectorAll('.page');
+      if (!pages.length) return;
+      pages.forEach(p => p.style.minHeight = '');
+      let maxH = 0;
+      pages.forEach(p => {
+        const h = p.offsetHeight;
+        if (h > maxH) maxH = h;
+      });
+      if (maxH > 0) {
+        pages.forEach(p => p.style.minHeight = maxH + 'px');
+      }
+    }
+
+    window.addEventListener('resize', syncDossierPageHeights);
 
     // Lắng nghe sự kiện chuyển đổi ngôn ngữ
     window.addEventListener('languagechange', () => {
