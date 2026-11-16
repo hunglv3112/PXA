@@ -82,7 +82,7 @@
 
     header p {
       margin: 0 auto;
-      max-width: 520px;
+      max-width: 750px;
       color: var(--mute);
       font-size: 14.5px
     }
@@ -102,7 +102,7 @@
       border-radius: 4px 4px 6px 6px;
       box-shadow: 0 -8px 30px rgba(0, 0, 0, .55);
       padding-bottom: 26px;
-      min-height: 480px;
+      min-height: 580px;
       display: flex;
       flex-direction: column;
     }
@@ -131,8 +131,8 @@
       display: grid;
       grid-template-columns: 1.4fr 1fr;
       gap: 28px;
-      padding: 22px 26px 0;
-      flex: 1;
+      padding: 22px 26px 20px;
+      flex: 1 0 auto;
       align-items: start;
     }
 
@@ -196,7 +196,7 @@
       transition: transform .8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .3s ease;
       font-family: var(--sans);
       width: 100%;
-      max-width: 390px;
+      max-width: 370px;
     }
 
     .page:nth-child(even) .pin {
@@ -306,9 +306,12 @@
 
     /* Chú thích footnote ở đáy trang */
     .page-footnote {
-      margin: auto 26px 0;
-      padding-top: 10px;
-      border-top: 1px solid rgba(26, 29, 33, 0.12);
+      margin-top: auto;
+      margin-left: 26px;
+      margin-right: 26px;
+      margin-bottom: 0;
+      padding-top: 12px;
+      border-top: 1px solid rgba(26, 29, 33, 0.15);
       font-size: 12.5px;
       line-height: 1.55;
       font-style: italic;
@@ -317,6 +320,8 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
+      position: relative;
+      z-index: 2;
     }
 
     .next {
@@ -461,6 +466,12 @@
     html[lang=ja] .pin-caption {
       font-family: var(--serif-jp);
       line-break: strict;
+    }
+
+    @media (min-width: 640px) {
+      html[lang=ja] header p {
+        white-space: nowrap;
+      }
     }
   </style>
 </head>
