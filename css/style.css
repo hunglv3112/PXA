@@ -594,6 +594,16 @@ button.pill:hover {
   max-width: 38ch;
   font-size: 14.5px;
   line-height: 1.6;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+html[lang=ja] .intro p {
+  max-width: none;
+  text-wrap: pretty;
+  line-break: strict;
+  overflow-wrap: normal;
+  word-break: keep-all;
 }
 
 .intro .intro-desc-top {
@@ -602,9 +612,21 @@ button.pill:hover {
   font-size: 14px;
 }
 
+html[lang=ja] .intro .intro-desc-top {
+  text-wrap: pretty;
+  line-break: strict;
+  word-break: keep-all;
+}
+
 .intro .intro-desc-bot {
   color: var(--press-ink);
   font-size: 14.5px;
+}
+
+html[lang=ja] .intro .intro-desc-bot {
+  text-wrap: pretty;
+  line-break: strict;
+  word-break: keep-all;
 }
 
 .intro .intro-guide {
