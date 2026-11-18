@@ -816,116 +816,119 @@
     html[lang=ja] body,
     html[lang=ja] .next,
     html[lang=ja] .card p,
-    html[lang=ja] .lead p {
-      font-family: var(--sans-jp);
-      text-wrap: pretty;
-      line-break: strict;
-    }
 
-    html[lang=ja] h1,
-    html[lang=ja] h2,
-    html[lang=ja] h3,
-    html[lang=ja] .poster .n {
-      font-family: var(--serif-jp);
-      text-wrap: balance;
-      line-break: strict;
-    }
-
-    html[lang=ja] blockquote,
-    html[lang=ja] .lead blockquote {
-      font-family: var(--serif-jp);
-      text-wrap: normal;
-      width: 100%;
-      line-break: strict;
-    }
-
-    html[lang=ja] .card h3 {
-      font-family: var(--serif-jp);
-      font-size: 15.5px;
-      letter-spacing: -0.025em;
-      line-height: 1.35;
-      text-wrap: balance;
-      line-break: strict;
-    }
-
-    /* Responsive */
-    @media (max-width: 860px) {
-      .intro {
-        grid-template-columns: 1fr;
-        gap: 36px;
+      html[lang=ja] .lead p,
+      html[lang=ja] .acc-panel-inner p,
+      html[lang=ja] footer {
+        font-family: var(--sans-jp);
+        text-wrap: pretty;
+        line-break: strict;
       }
 
-      .poster {
-        max-width: 290px;
-        margin: 0 auto;
-      }
+      /* Tiêu đề và số năm dùng Newsreader (kết hợp Noto Serif JP cho chữ Nhật) */
+      html[lang=ja] h1,
+      html[lang=ja] h2,
+      html[lang=ja] h3,
+        html[lang=ja] .poster .n,
+        html[lang=ja] .card h3,
+        html[lang=ja] .yr,
+        html[lang=ja] .year,
+        html[lang=ja] .poster small {
+          font-family: "Newsreader", "Noto Serif JP", serif;
+          text-wrap: balance;
+          line-break: strict;
+        }
 
-      .strings {
-        height: auto;
-        padding-left: 34px;
-        display: grid;
-        gap: 34px;
-      }
+        /* Trích dẫn các thứ dùng Noto Serif JP */
+        html[lang=ja] blockquote,
 
-      .strings svg {
-        display: none;
-      }
+          html[lang=ja] .lead blockquote,
+          html[lang=ja] q,
+          html[lang=ja] cite {
+            font-family: "Noto Serif JP", "Newsreader", serif;
+            text-wrap: normal;
+            width: 100%;
+            line-break: strict;
+          }
 
-      .strings::before {
-        content: "";
-        position: absolute;
-        left: 10px;
-        top: 0;
-        bottom: 0;
-        width: 2.5px;
-        background: var(--thread);
-      }
+          /* Responsive */
+          @media (max-width: 860px) {
+            .intro {
+              grid-template-columns: 1fr;
+              gap: 36px;
+            }
 
-      .card {
-        position: relative;
-        width: 100%;
-        left: auto !important;
-        top: auto !important;
-        transform: none !important;
-      }
+            .poster {
+              max-width: 290px;
+              margin: 0 auto;
+            }
 
-      .card::before {
-        display: block;
-        left: -24px;
-        top: 22px;
-        margin: 0;
-      }
+            .strings {
+              height: auto;
+              padding-left: 34px;
+              display: grid;
+              gap: 34px;
+            }
 
-      .ph {
-        aspect-ratio: 16/9;
-      }
-    }
+            .strings svg {
+              display: none;
+            }
 
-    @media (prefers-reduced-motion: reduce) {
+            .strings::before {
+              content: "";
+              position: absolute;
+              left: 10px;
+              top: 0;
+              bottom: 0;
+              width: 2.5px;
+              background: var(--thread);
+            }
 
-      .flip,
-      .next,
-      .card,
-      .lead blockquote.typing::after,
-      body::after {
-        transition: none !important;
-        animation: none !important;
-      }
+            .card {
+              position: relative;
+              width: 100%;
+              left: auto !important;
+              top: auto !important;
+              transform: none !important;
+            }
 
-      .poster:not(.flipped):hover .flip {
-        transform: none;
-      }
+            .card::before {
+              display: block;
+              left: -24px;
+              top: 22px;
+              margin: 0;
+            }
 
-      .reveal {
-        stroke-dashoffset: 0 !important;
-        transition: none !important;
-      }
+            .ph {
+              aspect-ratio: 16/9;
+            }
+          }
 
-      .loop {
-        opacity: 1;
-        transition: none !important;
-      }
-    }
+          @media (prefers-reduced-motion: reduce) {
+
+            .flip,
+            .next,
+            .card,
+            .lead blockquote.typing::after,
+            body::after {
+              transition: none !important;
+              animation: none !important;
+            }
+
+            .poster:not(.flipped):hover .flip {
+              transform: none;
+            }
+
+            .reveal {
+              stroke-dashoffset: 0 !important;
+              transition: none !important;
+            }
+
+            .loop {
+              opacity: 1;
+              transition: none !important;
+            }
+          }
   </style>
 </head>
 

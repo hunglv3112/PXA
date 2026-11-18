@@ -61,7 +61,10 @@
      5. FONT CHỮ HIỂN THỊ
      ========================================================================== */
   --serif: "Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
-  --sans: "Be Vietnam Pro", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --sans: "Noto Sans JP", "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --serif-jp: "Newsreader", "Noto Serif JP", serif;
+  --quote-jp: "Noto Serif JP", "Newsreader", serif;
+  --sans-jp: "Noto Sans JP", "Be Vietnam Pro", sans-serif;
 
   /* Hiệu ứng chuyển động mượt */
   --transition-fast: 0.18s ease;

@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&display=swap"
     rel="stylesheet">
 
   <!-- CSS tách riêng theo từng phần -->
@@ -55,19 +55,51 @@
     /* Định dạng typography tiếng Nhật chống rơi chữ */
     html[lang=ja] body,
     html[lang=ja] p,
+    html[lang=ja] .m-text p,
+    html[lang=ja] .m-modal-text p,
+    html[lang=ja] .mb p,
     html[lang=ja] figcaption,
     html[lang=ja] .event-desc,
-    html[lang=ja] .event-extra {
-      text-wrap: pretty;
-      line-break: strict;
-    }
 
-    html[lang=ja] h1,
-    html[lang=ja] h2,
-    html[lang=ja] h3 {
-      text-wrap: balance;
-      line-break: strict;
-    }
+      html[lang=ja] .event-extra,
+      html[lang=ja] .sheet-body,
+      html[lang=ja] .filter-btn,
+      html[lang=ja] .story-body {
+        font-family: "Noto Sans JP", "Be Vietnam Pro", sans-serif;
+        text-wrap: pretty;
+        line-break: strict;
+      }
+
+      /* Tiêu đề và số năm dùng Newsreader */
+      html[lang=ja] h1,
+      html[lang=ja] h2,
+        html[lang=ja] h3,
+        html[lang=ja] .m-body h2,
+        html[lang=ja] .m-title,
+        html[lang=ja] .cap,
+        html[lang=ja] .sheet-title,
+        html[lang=ja] .pill b,
+        html[lang=ja] .col-hdr .year,
+        html[lang=ja] .card-date,
+        html[lang=ja] .card-date-year,
+        html[lang=ja] .sheet-year,
+        html[lang=ja] .intro h1 {
+          font-family: "Newsreader", "Noto Serif JP", serif;
+          text-wrap: balance;
+          line-break: strict;
+        }
+
+        /* Trích dẫn các thứ dùng Noto Serif JP */
+        html[lang=ja] blockquote,
+        html[lang=ja] .m-modal-text blockquote,
+        html[lang=ja] .mb blockquote,
+        html[lang=ja] .sheet-quote,
+        html[lang=ja] q,
+        html[lang=ja] cite {
+          font-family: "Noto Serif JP", "Newsreader", serif;
+          text-wrap: normal;
+          line-break: strict;
+        }
   </style>
 </head>
 

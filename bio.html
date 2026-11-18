@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&family=Noto+Sans+JP:wght@400;500;700&family=Courier+Prime:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600;700&family=Courier+Prime:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/page-nav.css">
   <style>
@@ -82,9 +82,16 @@
 
     header p {
       margin: 0 auto;
-      max-width: 520px;
+      max-width: 720px;
       color: var(--mute);
-      font-size: 14.5px
+      white-space: nowrap
+    }
+
+    @media (max-width: 800px) {
+      header p {
+        white-space: normal;
+        max-width: 90vw
+      }
     }
 
     .dossier {
@@ -449,17 +456,31 @@
     /* Định dạng typography tiếng Nhật */
     html[lang=ja] body,
     html[lang=ja] .body p,
-    html[lang=ja] .page-footnote {
+    html[lang=ja] .page-footnote,
+    html[lang=ja] .next p,
+    html[lang=ja] .next a {
       font-family: var(--sans-jp);
       text-wrap: pretty;
       line-break: strict;
     }
 
+    /* Tiêu đề và số năm dùng Newsreader */
     html[lang=ja] header h1,
     html[lang=ja] .body h2,
+    html[lang=ja] .tab span,
+    html[lang=ja] .yr,
+    html[lang=ja] .year {
+      font-family: "Newsreader", "Noto Serif JP", serif;
+      text-wrap: balance;
+      line-break: strict;
+    }
+
+    /* Trích dẫn các thứ dùng Noto Serif JP */
     html[lang=ja] .body blockquote,
-    html[lang=ja] .pin-caption {
-      font-family: var(--serif-jp);
+    html[lang=ja] .pin-caption,
+    html[lang=ja] q,
+    html[lang=ja] cite {
+      font-family: "Noto Serif JP", "Newsreader", serif;
       line-break: strict;
     }
   </style>
@@ -512,11 +533,11 @@
       </a>
       <a href="postwar.html" class="page-nav-item" data-page="postwar" role="menuitem">
         <span class="page-nav-item-icon">🕊️</span>
-          <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm Phạm Xuân Ẩn" data-ja="5. 諜報員ファム・スアン・アン記念館">5.
-            Phòng
-            lưu niệm
-            Phạm Xuân Ẩn</span>
-          <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
+        <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm Phạm Xuân Ẩn" data-ja="5. 諜報員ファム・スアン・アン記念館">5.
+          Phòng
+          lưu niệm
+          Phạm Xuân Ẩn</span>
+        <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">Đang xem</span>
       </a>
     </div>
   </nav>

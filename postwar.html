@@ -18,6 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/page-nav.css">
   <style>
@@ -1827,16 +1828,40 @@
     html[lang=ja] .dossier-story,
     html[lang=ja] .piece-q,
     html[lang=ja] .piece-feedback {
-      text-wrap: pretty;
-      line-break: strict;
-    }
 
-    html[lang=ja] h1,
-    html[lang=ja] h2,
-    html[lang=ja] h3 {
-      text-wrap: balance;
-      line-break: strict;
-    }
+      html[lang=ja] .piece-feedback,
+      html[lang=ja] .quiz-question,
+      html[lang=ja] .quiz-opt-btn {
+        font-family: "Noto Sans JP", "Be Vietnam Pro", sans-serif;
+        text-wrap: pretty;
+        line-break: strict;
+      }
+
+      /* Tiêu đề và số năm dùng Newsreader */
+      html[lang=ja] h1,
+      html[lang=ja] h2,
+      html[lang=ja] h3 {
+
+        html[lang=ja] h3,
+        html[lang=ja] .m-title,
+        html[lang=ja] .dossier-h,
+        html[lang=ja] .yr,
+        html[lang=ja] .year {
+          font-family: "Newsreader", "Noto Serif JP", serif;
+          text-wrap: balance;
+          line-break: strict;
+        }
+
+        /* Trích dẫn các thứ dùng Noto Serif JP */
+        html[lang=ja] blockquote,
+        html[lang=ja] .m-modal-text blockquote,
+        html[lang=ja] .mb blockquote,
+        html[lang=ja] q,
+        html[lang=ja] cite {
+          font-family: "Noto Serif JP", "Newsreader", serif;
+          text-wrap: normal;
+          line-break: strict;
+        }
   </style>
 </head>
 
