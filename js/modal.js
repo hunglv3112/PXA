@@ -81,7 +81,11 @@
     paragraphs.forEach((paragraph, idx) => {
       if (!paragraph || typeof paragraph !== 'string') return;
       const p = document.createElement('p');
-      p.textContent = paragraph;
+      if (paragraph.indexOf('<') !== -1) {
+        p.innerHTML = paragraph;
+      } else {
+        p.textContent = paragraph;
+      }
       mText.appendChild(p);
 
       // Render ảnh chèn giữa văn bản nếu có (midImg sau text1, hoặc midImg2 sau text2...)
@@ -142,8 +146,8 @@
         const caption = typeof item === 'object'
           ? ((lang === 'ja' && item.caption_ja) ? item.caption_ja : (item.caption || ''))
           : ((lang === 'ja' && (contentObj.bottomImgCaption_ja || (rawEv && rawEv.bottomImgCaption_ja)))
-              ? (contentObj.bottomImgCaption_ja || (rawEv && rawEv.bottomImgCaption_ja))
-              : (contentObj.bottomImgCaption || (rawEv && rawEv.bottomImgCaption) || ''));
+            ? (contentObj.bottomImgCaption_ja || (rawEv && rawEv.bottomImgCaption_ja))
+            : (contentObj.bottomImgCaption || (rawEv && rawEv.bottomImgCaption) || ''));
 
         const figure = document.createElement('figure');
         figure.className = 'm-content-figure';
@@ -207,15 +211,15 @@
     currentSubIndex = activeSub;
 
     items.forEach((imgObj, i) => {
-      const altText = (lang === 'ja' && (imgObj.alt_ja || imgObj.modalImgAlt_ja)) 
-        ? (imgObj.alt_ja || imgObj.modalImgAlt_ja) 
+      const altText = (lang === 'ja' && (imgObj.alt_ja || imgObj.modalImgAlt_ja))
+        ? (imgObj.alt_ja || imgObj.modalImgAlt_ja)
         : (imgObj.alt || imgObj.modalImgAlt || '');
-      const label = (lang === 'ja' && (imgObj.label_ja || imgObj.modalImgLabel_ja)) 
-        ? (imgObj.label_ja || imgObj.modalImgLabel_ja) 
+      const label = (lang === 'ja' && (imgObj.label_ja || imgObj.modalImgLabel_ja))
+        ? (imgObj.label_ja || imgObj.modalImgLabel_ja)
         : (imgObj.label || imgObj.modalImgLabel || '');
 
-      const captionText = (lang === 'ja' && (imgObj.caption_ja || imgObj.modalImgAlt_ja || imgObj.modalImgLabel_ja)) 
-        ? (imgObj.caption_ja || imgObj.modalImgAlt_ja || imgObj.modalImgLabel_ja) 
+      const captionText = (lang === 'ja' && (imgObj.caption_ja || imgObj.modalImgAlt_ja || imgObj.modalImgLabel_ja))
+        ? (imgObj.caption_ja || imgObj.modalImgAlt_ja || imgObj.modalImgLabel_ja)
         : (imgObj.caption || imgObj.modalImgAlt || imgObj.modalImgLabel || '');
 
       const cell = document.createElement('div');
@@ -229,8 +233,8 @@
       imgWrap.className = 'm-art-cell-img-wrap';
 
       const img = document.createElement('img');
-      const imgSrc = imgObj.img || imgObj.modalImg || imgObj.image || imgObj.cardImg || 
-                     (imgObj.src && !imgObj.src.startsWith('Nguồn') && !imgObj.src.startsWith('出典') ? imgObj.src : '');
+      const imgSrc = imgObj.img || imgObj.modalImg || imgObj.image || imgObj.cardImg ||
+        (imgObj.src && !imgObj.src.startsWith('Nguồn') && !imgObj.src.startsWith('出典') ? imgObj.src : '');
       img.src = imgSrc;
       img.alt = altText;
       img.loading = i === 0 ? 'eager' : 'lazy';
@@ -276,17 +280,17 @@
     mArt.innerHTML = '';
 
     // Tìm ảnh: ưu tiên modalImg -> img -> cardImg
-    const imgSrc = item.modalImg || item.img || item.cardImg || 
-                   (item.src && !item.src.startsWith('Nguồn') && !item.src.startsWith('出典') ? item.src : '') ||
-                   ev.modalImg || ev.img || ev.cardImg || '';
+    const imgSrc = item.modalImg || item.img || item.cardImg ||
+      (item.src && !item.src.startsWith('Nguồn') && !item.src.startsWith('出典') ? item.src : '') ||
+      ev.modalImg || ev.img || ev.cardImg || '';
 
-    const altText = (lang === 'ja' && (item.modalImgAlt_ja || item.alt_ja)) 
-      ? (item.modalImgAlt_ja || item.alt_ja) 
+    const altText = (lang === 'ja' && (item.modalImgAlt_ja || item.alt_ja))
+      ? (item.modalImgAlt_ja || item.alt_ja)
       : (item.modalImgAlt || item.alt || item.title || ev.title || '');
 
     // Lấy chú thích bên dưới ảnh: ưu tiên caption -> modalImgLabel -> label -> modalImgAlt
-    const captionText = (lang === 'ja' && (item.caption_ja || item.modalImgLabel_ja || item.label_ja || item.modalImgAlt_ja)) 
-      ? (item.caption_ja || item.modalImgLabel_ja || item.label_ja || item.modalImgAlt_ja) 
+    const captionText = (lang === 'ja' && (item.caption_ja || item.modalImgLabel_ja || item.label_ja || item.modalImgAlt_ja))
+      ? (item.caption_ja || item.modalImgLabel_ja || item.label_ja || item.modalImgAlt_ja)
       : (item.caption || item.modalImgLabel || item.label || item.modalImgAlt || '');
 
     if (imgSrc) {
@@ -331,7 +335,7 @@
     // Dừng video đang phát nếu có
     const activeVideos = modal.querySelectorAll('video');
     activeVideos.forEach(v => {
-      try { v.pause(); } catch (e) {}
+      try { v.pause(); } catch (e) { }
     });
 
     if (index !== currentIndex) {
@@ -347,8 +351,8 @@
     sheet.dataset.side = ev.side;
 
     // Xác định danh sách đối tượng: kiểm tra ev.items hoặc ev.imgs
-    const items = Array.isArray(ev.items) 
-      ? ev.items 
+    const items = Array.isArray(ev.items)
+      ? ev.items
       : (Array.isArray(ev.imgs) ? ev.imgs : null);
 
     if (items && items.length > 1) {
@@ -390,7 +394,7 @@
   window.closeModal = function () {
     const activeVideos = modal.querySelectorAll('video');
     activeVideos.forEach(v => {
-      try { v.pause(); } catch (e) {}
+      try { v.pause(); } catch (e) { }
     });
     modal.hidden = true;
     document.body.classList.remove('modal-open');

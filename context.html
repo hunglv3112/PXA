@@ -473,37 +473,39 @@
 
     /* Định dạng typography tiếng Nhật */
     html[lang=ja] body,
+    html[lang=ja] p,
+    html[lang=ja] .txt p,
+    html[lang=ja] .page-footnote,
+    html[lang=ja] .btn {
+      font-family: "Noto Sans JP", "Be Vietnam Pro", sans-serif;
+      text-wrap: normal;
+      line-break: strict;
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
 
-      html[lang=ja] p,
-      html[lang=ja] .txt p,
-      html[lang=ja] .page-footnote,
-      html[lang=ja] .btn {
-        font-family: "Noto Sans JP", "Be Vietnam Pro", sans-serif;
-        text-wrap: pretty;
-        line-break: strict;
-      }
+    /* Tiêu đề và số năm dùng Newsreader */
+    html[lang=ja] h1,
+    html[lang=ja] h2,
+    html[lang=ja] h3,
+    html[lang=ja] .yr,
+    html[lang=ja] .year {
+      font-family: "Newsreader", "Noto Serif JP", serif;
+      text-wrap: normal;
+      line-break: strict;
+      word-break: normal;
+    }
 
-      /* Tiêu đề và số năm dùng Newsreader */
-      html[lang=ja] h1,
-      html[lang=ja] h2,
-
-        html[lang=ja] h3,
-        html[lang=ja] .yr,
-        html[lang=ja] .year {
-          font-family: "Newsreader", "Noto Serif JP", serif;
-          text-wrap: balance;
-          line-break: strict;
-        }
-
-        /* Trích dẫn các thứ dùng Noto Serif JP */
-        html[lang=ja] blockquote,
-        html[lang=ja] .reveal .q,
-        html[lang=ja] q,
-        html[lang=ja] cite {
-          font-family: "Noto Serif JP", "Newsreader", serif;
-          text-wrap: normal;
-          line-break: strict;
-        }
+    /* Trích dẫn các thứ dùng Noto Serif JP */
+    html[lang=ja] blockquote,
+    html[lang=ja] .reveal .q,
+    html[lang=ja] q,
+    html[lang=ja] cite {
+      font-family: "Noto Serif JP", "Newsreader", serif;
+      text-wrap: normal;
+      line-break: strict;
+      word-break: normal;
+    }
   </style>
 </head>
 

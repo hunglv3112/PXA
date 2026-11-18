@@ -29,7 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function createTextEl(tag, className, text) {
     const el = document.createElement(tag);
     if (className) el.className = className;
-    el.textContent = text;
+    if (typeof text === 'string' && text.indexOf('<') !== -1) {
+      el.innerHTML = text;
+    } else {
+      el.textContent = text;
+    }
     return el;
   }
 

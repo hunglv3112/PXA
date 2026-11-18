@@ -330,10 +330,9 @@
       font-style: italic;
       font-weight: 500;
       font-size: clamp(19px, 2.3vw, 26px);
-      line-height: 1.5;
+      line-height: 1.45;
       color: var(--gold2);
       position: relative;
-      width: 100%;
     }
 
     .lead blockquote.typing::after {
@@ -359,7 +358,7 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      max-width: 100%;
+      max-width: 68ch;
     }
 
     .acc-item {
@@ -488,8 +487,6 @@
       font-size: 14px;
       line-height: 1.75;
       font-family: var(--sans);
-      text-wrap: pretty;
-      line-break: strict;
     }
 
     /* Section Board: 4 lối vào câu chuyện */
@@ -557,10 +554,10 @@
 
     .card {
       position: absolute;
-      width: 22%;
+      width: 21%;
       background: var(--paper);
       color: #1a1d21;
-      padding: 14px 11px 18px;
+      padding: 14px 14px 18px;
       border-radius: 4px;
       box-shadow: 0 16px 36px rgba(0, 0, 0, .55);
       text-decoration: none;
@@ -816,119 +813,122 @@
     html[lang=ja] body,
     html[lang=ja] .next,
     html[lang=ja] .card p,
-
-      html[lang=ja] .lead p,
-      html[lang=ja] .acc-panel-inner p,
-      html[lang=ja] footer {
-        font-family: var(--sans-jp);
-        text-wrap: pretty;
-        line-break: strict;
-      }
-
-      /* Tiêu đề và số năm dùng Newsreader (kết hợp Noto Serif JP cho chữ Nhật) */
-      html[lang=ja] h1,
-      html[lang=ja] h2,
-      html[lang=ja] h3,
-        html[lang=ja] .poster .n,
-        html[lang=ja] .card h3,
-        html[lang=ja] .yr,
-        html[lang=ja] .year,
-        html[lang=ja] .poster small {
-          font-family: "Newsreader", "Noto Serif JP", serif;
-          text-wrap: balance;
+        html[lang=ja] .lead p,
+        html[lang=ja] .acc-panel-inner p,
+        html[lang=ja] footer {
+          font-family: var(--sans-jp);
+          text-wrap: normal;
           line-break: strict;
+          word-break: normal;
+          overflow-wrap: break-word;
         }
 
-        /* Trích dẫn các thứ dùng Noto Serif JP */
-        html[lang=ja] blockquote,
+        /* Tiêu đề và số năm dùng Newsreader (kết hợp Noto Serif JP cho chữ Nhật) */
+        html[lang=ja] h1,
+        html[lang=ja] h2,
+        html[lang=ja] h3,
+        html[lang=ja] .poster .n,
 
-          html[lang=ja] .lead blockquote,
-          html[lang=ja] q,
-          html[lang=ja] cite {
-            font-family: "Noto Serif JP", "Newsreader", serif;
+          html[lang=ja] .card h3,
+          html[lang=ja] .yr,
+          html[lang=ja] .year,
+          html[lang=ja] .poster small {
+            font-family: "Newsreader", "Noto Serif JP", serif;
             text-wrap: normal;
-            width: 100%;
             line-break: strict;
+            word-break: normal;
           }
 
-          /* Responsive */
-          @media (max-width: 860px) {
-            .intro {
-              grid-template-columns: 1fr;
-              gap: 36px;
-            }
-
-            .poster {
-              max-width: 290px;
-              margin: 0 auto;
-            }
-
-            .strings {
-              height: auto;
-              padding-left: 34px;
-              display: grid;
-              gap: 34px;
-            }
-
-            .strings svg {
-              display: none;
-            }
-
-            .strings::before {
-              content: "";
-              position: absolute;
-              left: 10px;
-              top: 0;
-              bottom: 0;
-              width: 2.5px;
-              background: var(--thread);
-            }
-
-            .card {
-              position: relative;
+            /* Trích dẫn các thứ dùng Noto Serif JP */
+            html[lang=ja] blockquote,
+            html[lang=ja] .lead blockquote,
+            html[lang=ja] q,
+            html[lang=ja] cite {
+              font-family: "Noto Serif JP", "Newsreader", serif;
+              text-wrap: normal;
               width: 100%;
-              left: auto !important;
-              top: auto !important;
-              transform: none !important;
+              line-break: strict;
+              word-break: normal;
             }
 
-            .card::before {
-              display: block;
-              left: -24px;
-              top: 22px;
-              margin: 0;
+            /* Responsive */
+            @media (max-width: 860px) {
+              .intro {
+                grid-template-columns: 1fr;
+                gap: 36px;
+              }
+
+              .poster {
+                max-width: 290px;
+                margin: 0 auto;
+              }
+
+              .strings {
+                height: auto;
+                padding-left: 34px;
+                display: grid;
+                gap: 34px;
+              }
+
+              .strings svg {
+                display: none;
+              }
+
+              .strings::before {
+                content: "";
+                position: absolute;
+                left: 10px;
+                top: 0;
+                bottom: 0;
+                width: 2.5px;
+                background: var(--thread);
+              }
+
+              .card {
+                position: relative;
+                width: 100%;
+                left: auto !important;
+                top: auto !important;
+                transform: none !important;
+              }
+
+              .card::before {
+                display: block;
+                left: -24px;
+                top: 22px;
+                margin: 0;
+              }
+
+              .ph {
+                aspect-ratio: 16/9;
+              }
             }
 
-            .ph {
-              aspect-ratio: 16/9;
-            }
-          }
+            @media (prefers-reduced-motion: reduce) {
 
-          @media (prefers-reduced-motion: reduce) {
+              .flip,
+              .next,
+              .card,
+              .lead blockquote.typing::after,
+              body::after {
+                transition: none !important;
+                animation: none !important;
+              }
 
-            .flip,
-            .next,
-            .card,
-            .lead blockquote.typing::after,
-            body::after {
-              transition: none !important;
-              animation: none !important;
-            }
+              .poster:not(.flipped):hover .flip {
+                transform: none;
+              }
 
-            .poster:not(.flipped):hover .flip {
-              transform: none;
-            }
+              .reveal {
+                stroke-dashoffset: 0 !important;
+                transition: none !important;
+              }
 
-            .reveal {
-              stroke-dashoffset: 0 !important;
-              transition: none !important;
+              .loop {
+                opacity: 1;
+                transition: none !important;
+              }
             }
-
-            .loop {
-              opacity: 1;
-              transition: none !important;
-            }
-          }
   </style>
 </head>
 
@@ -1107,13 +1107,13 @@
         </a>
         <a class="card c2" href="javascript:void(0)">
           <div class="ph"></div>
-          <h3>ファム・スアン・アンの<span style="white-space:nowrap">経歴</span></h3>
+          <h3>ファム・スアン・アンの経歴</h3>
           <p>ビエンホアの一人の学生が、記者となり、諜報員となるまでの歩み</p>
         </a>
         <a class="card c3" href="javascript:void(0)">
           <div class="ph"></div>
-          <h3>1957年から1976年までの年表</h3>
-          <p>報道と諜報、そして歴史の激動の節目が、年月とともに交錯する</p>
+          <h3>1957年から<span style="white-space:nowrap">1976年までの年表</span></h3>
+          <p>報道と諜報、そして歴史の激動の節目が年月とともに交錯する</p>
         </a>
         <a class="card c4" href="javascript:void(0)">
           <div class="ph"></div>
@@ -1349,14 +1349,14 @@
       ['.board .sub', ['歴史の霧の中にいまだ隠れている写真をたどり、資料の断片をつなぎ合わせながら、一人の人間、二つの人生の物語を少しずつ明らかにしていく']],
       ['.card h3', [
         'ベトナムの歴史的背景',
-        'ファム・スアン・アンの<span style="white-space:nowrap">経歴</span>',
-        '1957年から1976年までの年表',
+        'ファム・スアン・アンの経歴',
+        '1957年から<span style="white-space:nowrap">1976年までの年表</span>',
         '記念室'
       ]],
       ['.card p', [
         '百年にわたる支配のくびきから、背後の勢力による南北分断の企てまで',
         'ビエンホアの一人の学生が、記者となり、諜報員となるまでの歩み',
-        '報道と諜報、そして歴史の激動の節目が、年月とともに交錯する',
+        '報道と諜報、そして歴史の激動の節目が年月とともに交錯する',
         '功績と称号、そしてアンの生涯にまつわる最もかけがえのないもの'
       ]],
       ['.next', ['ベトナムの歴史的背景を探る（1858～1975年）']]

@@ -35,8 +35,6 @@
       --acc: #8fc1d4;
       --serif: "Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
       --sans: "Be Vietnam Pro", "Noto Sans JP", system-ui, -apple-system, sans-serif;
-      --serif-jp: "Noto Serif JP", "Newsreader", serif;
-      --sans-jp: "Noto Sans JP", "Be Vietnam Pro", sans-serif;
       color-scheme: dark;
       box-sizing: border-box;
       padding-top: env(safe-area-inset-top, 0px);
@@ -95,7 +93,7 @@
     }
 
     .dossier {
-      max-width: 1090px;
+      max-width: 1060px;
       margin: 0 auto;
       padding: 0 5vw 0
     }
@@ -136,7 +134,7 @@
 
     .body {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
+      grid-template-columns: 1.3fr 1fr;
       gap: 28px;
       padding: 22px 26px 0;
       flex: 1;
@@ -156,9 +154,7 @@
     .body p {
       margin: 0 0 10px;
       font-size: 15px;
-      letter-spacing: -0.012em;
-      text-wrap: pretty;
-      line-break: strict;
+      line-height: 1.65
     }
 
     .body blockquote {
@@ -203,7 +199,7 @@
       transition: transform .8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .3s ease;
       font-family: var(--sans);
       width: 100%;
-      max-width: 390px;
+      max-width: 380px;
     }
 
     .page:nth-child(even) .pin {
@@ -278,9 +274,9 @@
 
     /* Chú thích dưới ảnh đồng bộ chuẩn timeline */
     .pin-caption {
-      padding: 9px 11px;
-      font-size: 12px;
-      line-height: 1.48;
+      padding: 10px 14px;
+      font-size: 12.5px;
+      line-height: 1.45;
       font-style: italic;
       color: #b5c7cd;
       background: rgba(14, 31, 37, 0.96);
@@ -289,26 +285,22 @@
       text-align: left;
       display: flex;
       align-items: flex-start;
-      gap: 6px;
-      min-height: 52px;
+      gap: 7px;
+      min-height: 54px;
       box-sizing: border-box;
-      letter-spacing: -0.015em;
-      line-break: strict;
-      text-wrap: pretty;
     }
 
     .pin-caption-icon {
       color: var(--gold);
       font-style: normal;
       font-size: 11px;
-      line-height: 1.48;
+      line-height: 1.45;
       flex-shrink: 0;
       margin-top: 1px
     }
 
     .pin-caption-text {
-      line-break: strict;
-      text-wrap: pretty;
+      flex: 1
     }
 
     /* Chú thích footnote ở đáy trang */
@@ -460,8 +452,10 @@
     html[lang=ja] .next p,
     html[lang=ja] .next a {
       font-family: var(--sans-jp);
-      text-wrap: pretty;
+      text-wrap: normal;
       line-break: strict;
+      word-break: normal;
+      overflow-wrap: break-word;
     }
 
     /* Tiêu đề và số năm dùng Newsreader */
@@ -471,8 +465,9 @@
     html[lang=ja] .yr,
     html[lang=ja] .year {
       font-family: "Newsreader", "Noto Serif JP", serif;
-      text-wrap: balance;
+      text-wrap: normal;
       line-break: strict;
+      word-break: normal;
     }
 
     /* Trích dẫn các thứ dùng Noto Serif JP */
@@ -481,8 +476,11 @@
     html[lang=ja] q,
     html[lang=ja] cite {
       font-family: "Noto Serif JP", "Newsreader", serif;
+      text-wrap: normal;
       line-break: strict;
+      word-break: normal;
     }
+
   </style>
 </head>
 

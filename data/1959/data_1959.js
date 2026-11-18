@@ -34,7 +34,7 @@ window.EXTRA_DATA_1959 = {
             text2_ja: '同年9月、ニューヨークの国際連合（The United Nations）本部で研修中だったアンは、ハノイで開かれたベトナム労働党中央委員会第15回総会⁽¹⁾で第15号決議が採択され、南部におけるゲリラ戦の幕開けとなったという知らせを受けた。\n\n1958年にムオイ・フオンが逮捕されたことを知りながらも、アンは任務を続けるために帰国することを決断した。\n\nムオイ・フオンが拷問を受けても自分の正体を明かすことはないと、固く信じていたのである。',
 
             text3: 'Trước khi rời Mỹ, ông từ chối lời mời làm giảng viên ngôn ngữ tại Trường Ngôn ngữ Quân sự Monterey (khi đó có tên là Army Language School, hiện nay đổi tên là Defense Language Institute Foreign Language Center - DLIFLC) với mức lương 350 USD/tháng, đồng thời bỏ qua cơ hội học tiếp ngành báo chí để hoàn thành nốt bằng cử nhân của mình tại Đại học UC Berkeley và cơ hội xây dựng cuộc sống ổn định tại Mỹ.',
-            text3_ja: 'アメリカを離れる前、アンはモントレーの陸軍語学学校（Army Language School。現在のアメリカ国防総省語学学校外国語センター〔Defense Language Institute Foreign Language Center、DLIFLC〕）から、月給350ドルで語学教官として働かないかという誘いを断り、同時に、カリフォルニア大学バークレー校でジャーナリズムの勉強を続けて学士号を取得する機会や、アメリカで安定した生活を築く機会も手放した。',
+            text3_ja: 'アメリカを離れる前、アンはモントレーの陸軍語学学校（Army Language School。現在のアメリカ国防総省語学学校外国語センター〔Defense Language Institute Foreign Language Center、DLIFLC〕）から、月給<span style="white-space:nowrap">350ドル</span>で語学教官として働かないかという誘いを断り、同時に、カリフォルニア大学バークレー校でジャーナリズムの勉強を続けて学士号を取得する機会や、アメリカで安定した生活を築く機会も手放した。',
 
             footnote: '1. Hội nghị lần thứ 15 Ban Chấp hành Trung ương Đảng Lao động Việt Nam: Hội nghị của Đảng Lao động Việt Nam (tiền thân của Đảng Cộng sản Việt Nam), họp tại Hà Nội tháng 1/1959 do Chủ tịch Hồ Chí Minh chủ tọa, quyết định kết hợp đấu tranh chính trị với đấu tranh vũ trang để lật đổ chính quyền Ngô Đình Diệm.',
             footnote_ja: '1. ベトナム労働党中央委員会第15回総会：ベトナム労働党（ベトナム共産党の前身）が1959年1月にハノイで開き、ホー・チ・ミン主席が議長を務めた会議で、政治闘争と武装闘争を結合させてゴー・ディン・ジェム政権を打倒する方針を決定した。',
