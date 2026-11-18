@@ -507,8 +507,9 @@
     .board .sub {
       color: var(--mute);
       margin: 0 0 38px;
-      max-width: 65ch;
+      max-width: none;
       font-size: 14.5px;
+      white-space: nowrap;
     }
 
     /* Dây nối hồ sơ (.strings) */
@@ -870,6 +871,10 @@
 
     /* Responsive */
     @media (max-width: 860px) {
+      .board .sub {
+        white-space: normal;
+      }
+
       .intro {
         grid-template-columns: 1fr;
         gap: 36px;
