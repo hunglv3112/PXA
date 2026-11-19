@@ -30,8 +30,9 @@
   let lastActiveElement = null;
 
   // ─────────────────────────────────────────────────────────────────
-  // Tiêu đề chỉ thừa 1–2 chữ ở dòng cuối → thu nhỏ cỡ chữ tối đa 10%
+  // Tiêu đề chỉ thừa 1–3 chữ ở dòng cuối → thu nhỏ cỡ chữ tối đa 18%
   // để kéo các chữ đó lên. Thừa nhiều hơn thì giữ nguyên.
+  // Tiêu đề từ 3 dòng trở lên → thu nhỏ để còn 2 dòng.
   // ─────────────────────────────────────────────────────────────────
   function getLineRects(el) {
     const range = document.createRange();
@@ -54,24 +55,42 @@
   }
 
   window.fitShortLastLine = function (el) {
-    if (!el || !el.textContent.trim() || !el.offsetParent) return;
+    if (!el) return;
     el.style.fontSize = '';
+    if (!el.textContent.trim() || !el.offsetParent) return;
     const baseSize = parseFloat(getComputedStyle(el).fontSize);
     const start = getLineRects(el);
-    // Chỉ xử lý khi dòng cuối ngắn hơn khoảng 2.5 chữ
-    if (start.lines < 2 || start.lastWidth > baseSize * 2.5) return;
-    for (let scale = 0.98; scale >= 0.9; scale -= 0.02) {
+    // Tiêu đề 3 dòng trở lên → thu nhỏ tối đa 25% để gọn còn 2 dòng
+    if (start.lines >= 3) {
+      for (let scale = 0.97; scale >= 0.75; scale -= 0.01) {
+        el.style.fontSize = (baseSize * scale) + 'px';
+        if (getLineRects(el).lines <= 2) return;
+      }
+      el.style.fontSize = '';
+      return;
+    }
+    // Chỉ xử lý khi dòng cuối ngắn, khoảng 3 chữ trở xuống
+    if (start.lines < 2 || start.lastWidth > baseSize * 3.5) return;
+    for (let scale = 0.98; scale >= 0.82; scale -= 0.01) {
       el.style.fontSize = (baseSize * scale) + 'px';
       if (getLineRects(el).lines < start.lines) return;
     }
     el.style.fontSize = '';
   };
 
+  // Lần mở đầu tiên font tiếng Nhật và hiệu ứng mở popup chưa xong nên đo sai
+  // → đo lại sau khi popup mở xong và mỗi khi tải thêm font
+  let fitTimer;
   function fitModalTitle() {
     requestAnimationFrame(() => window.fitShortLastLine(mTitle));
+    clearTimeout(fitTimer);
+    fitTimer = setTimeout(() => window.fitShortLastLine(mTitle), 400);
   }
   window.addEventListener('resize', fitModalTitle);
-  if (document.fonts) document.fonts.ready.then(fitModalTitle);
+  if (document.fonts) {
+    document.fonts.ready.then(fitModalTitle);
+    document.fonts.addEventListener('loadingdone', fitModalTitle);
+  }
 
   // ─────────────────────────────────────────────────────────────────
   // Hàm cập nhật panel phải với nội dung bất kỳ
@@ -91,6 +110,7 @@
     mMeta.textContent = '';
     mMeta.hidden = true;
     mTitle.textContent = title || '';
+    mTitle.style.fontSize = '';
     fitModalTitle();
 
     mText.innerHTML = '';
