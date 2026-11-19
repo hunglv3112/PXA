@@ -35,7 +35,7 @@ window.EXTRA_DATA_1974 = {
             },
 
             text2: 'Trong thời gian này, Ẩn lấy được một báo cáo tuyệt mật của Ủy ban Nghiên cứu Chiến lược của chính quyền Việt Nam Cộng hòa gửi cho Nguyễn Văn Thiệu. Báo cáo chỉ rõ tình trạng sa sút của quân Việt Nam Cộng hòa cũng như Mỹ không thể can thiệp trở lại vì đã mất sự ủng hộ của người dân Mỹ. Hạm đội 7 của Mỹ sẽ không quay lại, máy bay B-52 không được tái triển khai và viện trợ tiếp tục bị cắt giảm.',
-            text2_ja: 'この時期、アンは、ベトナム共和国政権の戦略研究委員会がグエン・ヴァン・ティエウに宛てた極秘報告書を入手した。報告書は、ベトナム共和国軍の衰えを浮き彫りにするとともに、アメリカは国民の支持を失ったため再び介入することはできないことも示していた。アメリカの第7艦隊は戻ってくることはなく、B-52爆撃機も再配備されず、援助は引き続き削減されるとしていた。',
+            text2_ja: 'この時期、アンは、ベトナム共和国政権の戦略研究委員会がグエン・ヴァン・ティエウに宛てた極秘報告書を入手した。報告書は、ベトナム共和国軍の衰えを浮き彫りにするとともに、アメリカは国民の支持を失ったため再び介入することはできないことも示していた。アメリカの第7艦隊は戻ってくることはなく、B-52爆撃機も再配備されず、援助は引き続き削減されると<span style="white-space:nowrap">していた。</span>',
 
             // ── ẢNH CHÈN GIỮA text2 VÀ text3 ──
             midImg2: {

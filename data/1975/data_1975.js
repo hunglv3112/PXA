@@ -33,7 +33,7 @@ window.EXTRA_DATA_1975 = {
             text2_ja: 'ファム・スアン・アンはこの会議の情報をつかみ、報告した。この情報によって、解放軍は1975年3月に中部高原作戦を開始することを決断し、ブオンマトートへの攻撃を1975年春の総進攻と蜂起の幕開けとした。',
 
             text3: 'Đòn tiến công vào Buôn Ma Thuột của quân Giải phóng khiến Việt Nam Cộng hòa rơi vào thế choáng váng, mở đầu cho cuộc rút quân hỗn loạn khỏi Tây Nguyên. Sự thất bại này khiến quân Việt Nam Cộng hòa nhanh chóng suy yếu và tan rã.',
-            text3_ja: '解放軍のブオンマトートへの攻撃はベトナム共和国に大きな衝撃を与え、中部高原からの混乱した撤退の始まりとなった。この敗北により、ベトナム共和国軍は急速に弱体化し、崩壊していった。',
+            text3_ja: '解放軍のブオンマトートへの攻撃はベトナム共和国に大きな衝撃を与え、中部高原からの混乱した撤退の始まりとなった。この敗北により、ベトナム共和国軍は急速に弱体化し、崩壊して<span style="white-space:nowrap">いった。</span>',
 
             // ── ẢNH CHÈN SAU text3 ──
             midImg3: {

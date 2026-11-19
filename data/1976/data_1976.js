@@ -57,7 +57,7 @@ window.EXTRA_DATA_1976 = {
             date_ja: '1976年12月',
 
             text1: 'Thông báo chính thức đầu tiên về thân phận sĩ quan tình báo của Phạm Xuân Ẩn diễn ra khi ông ra Hà Nội tham dự Đại hội Đảng toàn quốc lần thứ IV vào tháng 12/1976.',
-            text1_ja: 'ファム・スアン・アンが諜報将校であることが初めて正式に公表されたのは、1976年12月、アンが第4回全国党大会に出席するためにハノイへ赴いたときだった。',
+            text1_ja: 'ファム・スアン・アンが諜報将校であることが初めて正式に公表されたのは、1976年12月、アンが第4回全国党大会に出席するためにハノイへ赴いた<span style="white-space:nowrap">ときだった。</span>',
             text2: 'Lần đầu tiên trong đời, ông khoác lên mình bộ quân phục màu xanh thẫm của quân đội nhân dân Việt Nam với cấp bậc Trung tá, khiến nhiều người ngỡ ngàng. Sự kiện này đã chính thức khép lại những năm tháng ẩn mình trong vỏ bọc nhà báo để thực hiện nhiệm vụ tình báo của Phạm Xuân Ẩn.',
             text2_ja: '生まれて初めて、アンは中佐の階級を示すベトナム人民軍の深緑色の軍服に身を包み、多くの人々を驚かせた。この出来事によって、諜報任務を遂行するために記者という隠れ蓑の中に身を潜めていたファム・スアン・アンの歳月は、正式に幕を閉じた。',
 
