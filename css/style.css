@@ -1119,6 +1119,11 @@ button.pill:hover {
     padding-right: 36px;
   }
 
+  /* Popup nhánh tình báo: tiêu đề màu vàng để tách khỏi nội dung bên dưới */
+  .sheet[data-side="top"] .m-body h2 {
+    color: #f6d77e;
+  }
+
   .m-text p {
     margin: 0 0 14px;
     font-family: var(--serif);
