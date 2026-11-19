@@ -99,7 +99,7 @@ window.EXTRA_DATA_1957 = {
             date_ja: '1957年10月',
 
             text1: 'Ngay trước Lễ Tạ ơn năm 1957, tờ báo của trường, The Barnacle, đã đăng bài giới thiệu việc Phạm Xuân Ẩn nhập học, kèm tấm ảnh ông ngồi bên cuốn từ điển tiếng Anh với chú thích: “Bạn nói điều đó như thế nào trong tiếng Anh?”. Đây là bài báo đầu tiên giới thiệu ông công khai với tư cách một sinh viên báo chí người Việt, và trở thành bước đầu của vỏ bọc tình báo mà ông duy trì về sau.',
-            text1_ja: '1957年の感謝祭の直前、学生新聞『バーナクル（The Barnacle、フジツボ）』は、ファム・スアン・アンの入学を紹介する記事を掲載し、英語の辞書のそばに座るアンの写真に「それは英語で何と言うの？」というキャプションを添えた。\n\nこれは、アンをベトナム人のジャーナリズム専攻の学生として公に紹介した最初の記事であり、その後長く保ち続けることになる諜報の隠れ蓑の第一歩となった。',
+            text1_ja: '1957年の感謝祭の直前、学生新聞『バーナクル（The Barnacle、フジツボ）』は、ファム・スアン・アンの入学を紹介する記事を掲載し、英語の辞書のそばに座るアンの写真に「それは英語で何と言うの？」というキャプションを添えた。\n\nこれは、アンをベトナム人のジャーナリズム専攻の学生として公に紹介した最初の記事であり、その後長く保ち続けることになる諜報の隠れ蓑の第一歩<span style="white-space:nowrap">となった。</span>',
             note: '',
             note_ja: '',
         }
