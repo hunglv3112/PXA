@@ -34,7 +34,7 @@ window.EXTRA_DATA_1972 = {
             text2_ja: 'ファム・スアン・アンは『タイム』誌の記者証を使い、ベトナム共和国軍の参謀本部、クレイトン・エイブラムス大将のMACV本部、そしてブリーフィング「ファイブ・オクロック・フォリーズ（5時の茶番）」に出入りした。そこから、アンはアメリカの軍事顧問たちを通じて現場の情報を引き出した。',
 
             text3: 'Ẩn cung cấp các phân tích về sự suy sụp của Quân đoàn II của quân Việt Nam Cộng hòa, kế hoạch điều động lực lượng Địa phương quân của Thiếu tướng Ngô Du (Tư lệnh Quân đoàn II) cùng mức tổn thất nặng của Binh chủng Nhảy dù và Thủy quân lục chiến. Những phân tích này cho thấy lực lượng đối phương bị dàn mỏng. Nhờ đó, quân Giải phóng đã kịp thời triển khai phương án phối hợp trên các chiến trường.',
-            text3_ja: 'アンは、ベトナム共和国軍第II軍団の崩壊、ゴー・ズー少将（第II軍団司令官）による地方軍の動員計画、および空挺部隊と海兵隊の甚大な損失についての分析を提供した。これらの分析は、敵の兵力が分散して手薄になっていることを示していた。これにより、解放軍は各戦場における連携計画を迅速に実行に移した。',
+            text3_ja: 'アンは、ベトナム共和国軍第II軍団の崩壊、ゴー・ズー少将（第II軍団司令官）による地方軍の動員計画、および空挺部隊と海兵隊の甚大な損失についての分析を提供した。これらの分析は、敵の兵力が分散して手薄になっていることを示していた。これにより、解放軍は各戦場における連携計画を迅速に実行に<span style="white-space:nowrap">移した。</span>',
 
             // ── ẢNH CHÈN GIỮA NỘI DUNG ──
             midImg3: {
@@ -88,7 +88,7 @@ window.EXTRA_DATA_1972 = {
             text4_ja: 'これらの早期警告の情報により、北ベトナムの後方と防空・空軍は事前に疎開を行い、対策を準備することができた。',
 
             footnote: '1. Chiến dịch Linebacker I là chiến dịch ném bom và phong tỏa bằng thủy lôi của Mỹ vào miền Bắc Việt Nam năm 1972.',
-            footnote_ja: '1. ラインバッカーI作戦は、1972年にアメリカが北ベトナムに対して行った爆撃と機雷による封鎖の作戦である。',
+            footnote_ja: '1. ラインバッカーI作戦は、1972年にアメリカが北ベトナムに対して行った爆撃と機雷による封鎖の<span style="white-space:nowrap">作戦である。</span>',
 
             note: '',
             note_ja: '',
