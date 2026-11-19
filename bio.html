@@ -302,6 +302,11 @@
       flex: 1
     }
 
+    /* Chừa khoảng giữa ảnh và vạch phân cách footnote */
+    .body:has(+ .page-footnote) {
+      padding-bottom: 18px;
+    }
+
     /* Chú thích footnote ở đáy trang */
     .page-footnote {
       margin: auto 26px 0;
@@ -451,7 +456,7 @@
     html[lang=ja] .next p,
     html[lang=ja] .next a {
       font-family: var(--sans-jp);
-      text-wrap: normal;
+      text-wrap: pretty;
       line-break: strict;
       word-break: normal;
       overflow-wrap: break-word;
@@ -475,7 +480,7 @@
     html[lang=ja] q,
     html[lang=ja] cite {
       font-family: "Noto Serif JP", "Newsreader", serif;
-      text-wrap: normal;
+      text-wrap: pretty;
       line-break: strict;
       word-break: normal;
     }
@@ -753,7 +758,7 @@
             stamp: '極秘ファイル',
             title: '1945年の転機',
             paragraphs: [
-              '1938年、一家はカントーに移り住んだ。アンはこの地で、コレージュ・ド・カントー（Collège de Cần Thơ）に通って中学時代を過ごした。',
+              '1938年、一家はカントーに移り住んだ。アンは<span style="white-space:nowrap">この地で、</span>コレージュ・ド・カントー（Collège de Cần Thơ）に<span style="white-space:nowrap">通って</span><span style="white-space:nowrap">中学時代を過ごした。</span>',
               '1945年に八月革命が起こると、アンは学業を放棄し、青年先鋒隊⁽¹⁾に参加するとともに、ベトミン⁽²⁾の宣伝工作講習を受けた。'
             ],
             footnote: '1. 青年先鋒隊：1945年4月21日に南部（当時のコーチシナ）で結成され、ファム・ゴック・タイック医師を指導者として、南部党委員会の指導のもとで活動した愛国青年組織である。1945年半ばには約120万人の隊員を擁し、同年8月25日のサイゴンにおける権力奪取の中核となった。<br>2. ベトミン（ベトナム独立同盟会）は、ベトナムの独立を勝ち取るための闘争を目的として、1941年5月19日にホー・チ・ミンが創設した民族統一戦線組織である。',
@@ -811,7 +816,7 @@
             stamp: '極秘ファイル',
             title: '歴史の巡り合わせ',
             paragraphs: [
-              '1954年、ファム・スアン・アンは南部の政権⁽¹⁾によって徴兵され、フランス連合軍の総司令部で心理戦室の書記を務める任務を与えられた。',
+              '1954年、ファム・スアン・アンは南部の政権⁽¹⁾によって徴兵され、フランス連合軍の総司令部で心理戦室の書記を務める任務を<span style="white-space:nowrap">与えられた。</span>',
               'アンはこの地で、サイゴン軍事作戦部（SMM）の部長であるエドワード・ランズデール大佐と親しくなったが、ランズデールは実際には、サイゴンにおけるアメリカ軍事援助顧問団（US.MAAG）の団長という隠れ蓑のもとで、インドシナのCIAを指揮していた人物であった。'
             ],
             footnote: '1. 当時の南部の政権は、バオダイを元首とし、フランス連合に属するバオダイ・ベトナム国（1949～1955年）であった。1955年10月26日、この体制はゴー・ディン・ジェムが率いるベトナム共和国に取って代わられた。',
@@ -976,7 +981,23 @@
       }, { rootMargin: '-30% 0px -30% 0px' });
 
       document.querySelectorAll('.page').forEach(p => ioInstance.observe(p));
+      equalizePages();
     }
+
+    // Cho mọi page cao bằng page cao nhất (page 03) để tab sau che kín tab trước
+    function equalizePages() {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(p => p.style.minHeight = '');
+      const maxH = Math.max(...Array.from(pages, p => p.offsetHeight));
+      pages.forEach(p => p.style.minHeight = maxH + 'px');
+    }
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(equalizePages, 150);
+    });
+    if (document.fonts) document.fonts.ready.then(equalizePages);
 
     // Lắng nghe sự kiện chuyển đổi ngôn ngữ
     window.addEventListener('languagechange', () => {
