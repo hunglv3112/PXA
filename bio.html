@@ -94,7 +94,9 @@
     .dossier {
       max-width: 1060px;
       margin: 0 auto;
-      padding: 0 5vw 0
+      padding: 0 5vw 0;
+      /* Giữ margin của page cuối bên trong dossier để page cuối kịp dính lên che page trước */
+      display: flow-root
     }
 
     .page {
@@ -112,7 +114,7 @@
     }
 
     .page:last-child {
-      margin-bottom: 50px;
+      margin-bottom: 30vh;
     }
 
     .tab {
@@ -323,6 +325,8 @@
     }
 
     .next {
+      /* Kéo nút lên sát page cuối như cũ (bù phần 30vh margin của page cuối) */
+      margin-top: calc(50px - 30vh);
       text-align: center;
       padding: 10px 5vw 90px
     }
