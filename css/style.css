@@ -989,8 +989,8 @@ button.pill:hover {
     z-index: 10;
   }
 
-  /* Chỉ khi rê chuột vào ô ảnh sự kiện thì mới phát sáng quanh viền */
-  .m-art-cell:hover::after {
+  /* Chỉ phát sáng quanh viền ở sự kiện đang đọc (rê chuột không sáng) */
+  .m-art-cell--active::after {
     border-color: #ebcb45;
     box-shadow: inset 0 0 16px rgba(235, 203, 69, 0.55), 0 0 22px rgba(235, 203, 69, 0.85);
   }
@@ -1030,7 +1030,7 @@ button.pill:hover {
     transition: background 0.22s ease, color 0.22s ease, border-top-color 0.22s ease;
   }
 
-  .m-art-cell:hover .m-art-cell-caption {
+  .m-art-cell.m-art-cell--active .m-art-cell-caption {
     background: rgba(14, 31, 37, 0.92);
     color: #ffffff;
     border-top-color: rgba(235, 203, 69, 0.6);
