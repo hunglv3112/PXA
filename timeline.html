@@ -98,6 +98,13 @@
       word-break: normal;
     }
 
+    /* Popup 1 sự kiện (tiêu đề căn giữa): tiêu đề dài chia đều 2 dòng,
+       ngắt ở ranh giới cụm từ để vẫn đọc có nghĩa */
+    html[lang=ja] .sheet.sheet--single .m-body h2 {
+      text-wrap: balance;
+      word-break: auto-phrase;
+    }
+
     /* Trích dẫn các thứ dùng Noto Serif JP */
     html[lang=ja] blockquote,
     html[lang=ja] .m-modal-text blockquote,

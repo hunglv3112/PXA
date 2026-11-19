@@ -30,6 +30,50 @@
   let lastActiveElement = null;
 
   // ─────────────────────────────────────────────────────────────────
+  // Tiêu đề chỉ thừa 1–2 chữ ở dòng cuối → thu nhỏ cỡ chữ tối đa 10%
+  // để kéo các chữ đó lên. Thừa nhiều hơn thì giữ nguyên.
+  // ─────────────────────────────────────────────────────────────────
+  function getLineRects(el) {
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const tops = [];
+    let lastRight = 0, lastLeft = 0;
+    Array.from(range.getClientRects()).forEach(r => {
+      if (r.width === 0) return;
+      const top = Math.round(r.top);
+      if (!tops.some(t => Math.abs(t - top) < 4)) {
+        tops.push(top);
+        lastLeft = r.left;
+        lastRight = r.right;
+      } else if (Math.abs(tops[tops.length - 1] - top) < 4) {
+        lastLeft = Math.min(lastLeft, r.left);
+        lastRight = Math.max(lastRight, r.right);
+      }
+    });
+    return { lines: tops.length, lastWidth: lastRight - lastLeft };
+  }
+
+  window.fitShortLastLine = function (el) {
+    if (!el || !el.textContent.trim() || !el.offsetParent) return;
+    el.style.fontSize = '';
+    const baseSize = parseFloat(getComputedStyle(el).fontSize);
+    const start = getLineRects(el);
+    // Chỉ xử lý khi dòng cuối ngắn hơn khoảng 2.5 chữ
+    if (start.lines < 2 || start.lastWidth > baseSize * 2.5) return;
+    for (let scale = 0.98; scale >= 0.9; scale -= 0.02) {
+      el.style.fontSize = (baseSize * scale) + 'px';
+      if (getLineRects(el).lines < start.lines) return;
+    }
+    el.style.fontSize = '';
+  };
+
+  function fitModalTitle() {
+    requestAnimationFrame(() => window.fitShortLastLine(mTitle));
+  }
+  window.addEventListener('resize', fitModalTitle);
+  if (document.fonts) document.fonts.ready.then(fitModalTitle);
+
+  // ─────────────────────────────────────────────────────────────────
   // Hàm cập nhật panel phải với nội dung bất kỳ
   // ─────────────────────────────────────────────────────────────────
   // ─────────────────────────────────────────────────────────────────
@@ -47,6 +91,7 @@
     mMeta.textContent = '';
     mMeta.hidden = true;
     mTitle.textContent = title || '';
+    fitModalTitle();
 
     mText.innerHTML = '';
 

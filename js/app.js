@@ -343,6 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (smTitle) {
       smTitle.textContent = title || '';
+      requestAnimationFrame(() => window.fitShortLastLine && window.fitShortLastLine(smTitle));
     }
 
     // 3. Render Nội dung các đoạn văn & Ảnh chèn giữa / dưới
