@@ -83,7 +83,7 @@ window.EXTRA_DATA_1965 = {
             date_ja: '1965年8月',
 
             text1: 'Tháng 8/1965, trưởng đại diện văn phòng Time tại Sài Gòn là Frank McCulloch chính thức ký hợp đồng tuyển dụng Phạm Xuân Ẩn làm phóng viên thường trú với mức lương 75 USD/tuần.',
-            text1_ja: '1965年8月、『タイム』誌サイゴン支局長のフランク・マッカロックは、週75ドルの給与でファム・スアン・アンを現地記者として雇用する契約を正式に結んだ。',
+            text1_ja: '<span style="display:block;text-wrap:pretty">1965年8月、『タイム』誌サイゴン支局長のフランク・マッカロックは、<span style="white-space:nowrap">週75ドル</span>の給与でファム・スアン・アンを現地記者として雇用する契約を<span style="white-space:nowrap">正式に結んだ。</span></span>',
 
             note: '',
             note_ja: '',

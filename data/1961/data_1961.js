@@ -73,7 +73,7 @@ window.EXTRA_DATA_1961 = {
             date_ja: '1961年',
 
             text1: 'Năm 1961, Mỹ và chính quyền Việt Nam Cộng hòa xây dựng Kế hoạch Staley - Taylor nhằm tăng cường khả năng quân sự và kiểm soát tình hình ở miền Nam Việt Nam. Kế hoạch gắn với các chuyến khảo sát của Eugene Staley⁽¹⁾ và Maxwell Taylor⁽²⁾, bao gồm những biện pháp như tăng cường cố vấn Mỹ, trang bị quân sự và xây dựng hệ thống ấp chiến lược⁽³⁾.',
-            text1_ja: '1961年、アメリカとベトナム共和国政権は、ベトナム南部における軍事力を強化し、情勢を掌握するため、ステイリー・テイラー計画を策定した。\n\nこの計画はユージン・ステイリー⁽¹⁾とマクスウェル・テイラー⁽²⁾の視察と結びついたもので、アメリカの顧問の増強、軍事装備、戦略村⁽³⁾の建設といった措置を含んでいた。',
+            text1_ja: '1961年、アメリカとベトナム共和国政権は、ベトナム南部における軍事力を強化し、情勢を掌握するため、ステイリー・テイラー計画を策定した。\n\nこの計画はユージン・ステイリー⁽¹⁾とマクスウェル・テイラー⁽²⁾の視察と結びついたもので、アメリカの顧問の増強、軍事装備、戦略村⁽³⁾の建設といった措置を<span style="white-space:nowrap">含んでいた。</span>',
 
             text2: 'Thông qua những cuộc trao đổi với Eugene Staley trong quá trình làm việc tại Reuters, Phạm Xuân Ẩn nắm được một số định hướng của phía Mỹ trước khi kế hoạch được hoàn thiện thành văn bản.',
             text2_ja: 'ロイター通信で働いていた間にユージン・ステイリーと意見を交わしたことを通じて、ファム・スアン・アンは、計画が文書としてまとめられる前に、アメリカ側のいくつかの方針を把握していた。',
@@ -100,7 +100,7 @@ window.EXTRA_DATA_1961 = {
             text6_ja: 'その後、ファム・スアン・アンの翻訳はアメリカ側から高く評価された。\n\nアンは引き続き戦闘村計画〔戦略村計画に続いてベトナム共和国政権が進めた村落計画の一つ〕に関する資料の翻訳も任され、それによって重要な軍事情報に接し、複写する機会がさらに増えた。',
 
             footnote: '1. Eugene Staley: Nhà kinh tế học người Mỹ. Năm 1961, ông cùng Maxwell Taylor đề ra Kế hoạch Staley - Taylor.<br><br>2. Maxwell Taylor: Tướng Mỹ, người cùng đề ra Kế hoạch Staley - Taylor. Sau đó, ông giữ chức Chủ tịch Hội đồng Tham mưu trưởng Liên quân Mỹ (1962-1964), rồi làm Đại sứ Mỹ tại Việt Nam (1964-1965).<br><br>3. Ấp chiến lược: Kế hoạch của chính quyền Việt Nam Cộng hòa bắt đầu từ năm 1961, dồn dân nông thôn vào các làng mới được quân sự hóa để kiểm soát và đối phó với lực lượng cách mạng.<br><br>4. Ngô Đình Nhu: Em trai Tổng thống Ngô Đình Diệm. Ông đứng đầu lực lượng mật vụ và chỉ đạo việc đàn áp phe chống Diệm.',
-            footnote_ja: '1. ユージン・ステイリー：アメリカの経済学者。1961年、マクスウェル・テイラーとともにステイリー・テイラー計画を立案した。<br><br>2. マクスウェル・テイラー：ステイリー・テイラー計画を共同で立案したアメリカの将軍。のちにアメリカ統合参謀本部議長（1962～64年）を経て、駐ベトナム大使（1964～65年）となった。<br><br>3. 戦略村：1961年に始まったベトナム共和国政権の計画で、農民を軍事基地化した新しい村に囲い込み、革命勢力側に対抗させようとした。<br><br>4. ゴー・ディン・ニュー：ゴー・ディン・ジェム大統領の弟。秘密警察の長として反ジェム派の弾圧を主導した。',
+            footnote_ja: '1. ユージン・ステイリー：アメリカの経済学者。1961年、マクスウェル・テイラーとともにステイリー・テイラー計画を立案した。<br><br>2. マクスウェル・テイラー：ステイリー・テイラー計画を共同で立案したアメリカの将軍。のちにアメリカ統合参謀本部議長（1962～64年）を経て、駐ベトナム大使（1964～65年）となった。<br><br>3. 戦略村：1961年に始まったベトナム共和国政権の計画で、農民を軍事基地化した新しい村に囲い込み、革命勢力側に対抗させようとした。<br><br>4. ゴー・ディン・ニュー：ゴー・ディン・ジェム大統領の弟。秘密警察の長として反ジェム派の弾圧を<span style="white-space:nowrap">主導した。</span>',
 
             note: '',
             note_ja: '',

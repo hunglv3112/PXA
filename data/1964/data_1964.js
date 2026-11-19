@@ -50,7 +50,7 @@ window.EXTRA_DATA_1964 = {
 
             // ── FOOTNOTES ──
             footnote: '1. Kế hoạch của Westmoreland: Là chiến thuật "tìm và diệt", sử dụng tối đa hỏa lực không quân, pháo binh và lực lượng bộ binh viễn chinh Mỹ mở các cuộc hành quân quy mô lớn nhằm tiêu diệt cơ quan đầu não của quân Giải phóng.<br><br>2. Kế hoạch Ấp tân sinh: Là cách gọi mới của "Ấp chiến lược".<br><br>3. Kế hoạch McNamara - Taylor: Là kế hoạch tăng cường sự chỉ huy trực tiếp của cố vấn Mỹ; tăng viện trợ quân sự và quân số quân Việt Nam Cộng hòa; đẩy mạnh các chiến dịch bình định nông thôn (đặc biệt khu vực quanh Sài Gòn); và dùng không quân đánh phá miền Bắc và Lào.',
-            footnote_ja: '1. ウェストモーランド計画：「索敵撃滅」戦術を用い、空軍・砲兵の火力とアメリカ遠征地上軍を最大限に活用して大規模な作戦を展開し、解放軍の中枢機関を壊滅させることを目的とした計画である。<br><br>2. 新生村計画：「戦略村」の新たな呼び名である。<br><br>3. マクナマラ・テイラー計画：アメリカの顧問による直接指揮の強化、ベトナム共和国軍への軍事援助および兵力の増強、農村平定作戦（特にサイゴン周辺地域）の推進、ならびに空軍による北ベトナムおよびラオスへの爆撃を内容とする計画である。',
+            footnote_ja: '1. ウェストモーランド計画：「索敵撃滅」戦術を用い、空軍・砲兵の火力とアメリカ遠征地上軍を最大限に活用して大規模な作戦を展開し、解放軍の中枢機関を壊滅させることを目的とした計画である。<br><br>2. 新生村計画：「戦略村」の新たな呼び名である。<br><br>3. マクナマラ・テイラー計画：アメリカの顧問による直接指揮の強化、ベトナム共和国軍への軍事援助および兵力の増強、<span style="white-space:nowrap">農村</span>平定作戦（特にサイゴン周辺地域）の推進、ならびに空軍による北ベトナムおよびラオスへの爆撃を内容とする<span style="white-space:nowrap">計画である。</span>',
 
             note: '',
             note_ja: '',
@@ -77,10 +77,10 @@ window.EXTRA_DATA_1964 = {
             date_ja: '1964年8月27日',
 
             text1: 'Ngày 27/08/1964, Phạm Xuân Ẩn đi tác nghiệp theo dõi sự kiện cho Reuters và trở về tòa soạn muộn. Do bị Trưởng đại diện Nick Turner quát mắng bất công và yêu cầu dẹp lồng chim trên bàn làm việc, ông đã kiên quyết nộp đơn xin nghỉ việc tại Reuters sau gần 4 năm gắn bó (1960-1964).',
-            text1_ja: '1964年8月27日、ファム・スアン・アンはロイター通信のために出来事の取材に出かけ、支局に戻るのが遅れた。支局長のニック・ターナーから不当に叱りつけられ、机の上の鳥かごを片付けるよう要求されたため、アンは4年近く（1960～1964年）勤めたロイター通信に断固として辞表を提出した。',
+            text1_ja: '1964年8月27日、ファム・スアン・アンはロイター通信のために出来事の取材に出かけ、支局に戻るのが遅れた。支局長のニック・ターナーから不当に<span style="white-space:nowrap">叱りつけられ</span>、机の上の鳥かごを片付けるよう要求されたため、アンは4年近く（1960～1964年）勤めたロイター通信に断固として辞表を提出した。',
 
             text2: 'Việc chia tay báo chí Anh là bước chuyển chiến lược chủ động. Ông nhận thấy khi Mỹ chuẩn bị đưa quân trực tiếp vào Việt Nam, tư cách nhà báo Mỹ sẽ giúp ông dễ dàng tiếp cận các cơ quan đầu não chỉ huy Mỹ (MACV) và giới tướng lĩnh Sài Gòn hơn nhiều so với một hãng tin Anh.',
-            text2_ja: 'イギリスの報道機関を離れたことは、主体的な戦略的転換であった。アンは、アメリカがベトナムに直接軍を投入する準備をする中で、アメリカの記者という立場であれば、イギリスの通信社にいるよりもはるかに容易に、アメリカ軍の指揮中枢であるMACVやベトナム共和国軍の将官たちにアクセスできると認識していた。',
+            text2_ja: '<span style="display:block;text-wrap:pretty">イギリスの報道機関を離れたことは、主体的な戦略的転換であった。アンは、<span style="white-space:nowrap">アメリカ</span>がベトナムに直接軍を投入する準備をする中で、<span style="white-space:nowrap">アメリカ</span>の記者という<span style="white-space:nowrap">立場</span>であれば、イギリスの通信社にいるよりもはるかに容易に、<span style="white-space:nowrap">アメリカ</span>軍の指揮中枢であるMACVやベトナム共和国軍の将官たちにアクセスできると認識<span style="white-space:nowrap">していた。</span></span>',
 
             note: '',
             note_ja: '',

@@ -31,10 +31,10 @@ window.EXTRA_DATA_1971 = {
             text1_ja: '1970年11月から、ベトナム共和国軍は南ラオスへの攻撃であるラムソン719作戦⁽¹⁾の立案を開始した。この作戦の目的は、北部ベトナムが兵員と物資を南部ベトナムへ輸送するために使っていた道路網、ホーチミン・ルートを遮断することだった。',
 
             text2: 'Tháng 1/1971, Phạm Xuân Ẩn nhận được tin từ các đầu mối trong quân Việt Nam Cộng hòa về cuộc tấn công xuyên biên giới đang được chuẩn bị, trong đó quan hệ gần gũi với Phủ Đặc ủy Trung ương Tình báo (CIO-Central Intelligence Organization) cho ông biết cả đặc nhiệm không vận của Lục quân quân Việt Nam Cộng hòa và cố vấn Mỹ cùng tham gia.',
-            text2_ja: '1971年1月、ファム・スアン・アンはベトナム共和国軍内の情報源から、準備が進められている国境を越えた攻撃に関する情報を得て、中でも中央情報特別委員府（Central Intelligence Organization、CIO）との親しい関係から、ベトナム共和国軍の陸軍の空輸任務部隊もアメリカの顧問も共に参加することを知った。',
+            text2_ja: '1971年1月、ファム・スアン・アンはベトナム共和国軍内の情報源から、準備が進められている国境を越えた攻撃に関する情報を得て、中でも中央情報特別委員府（Central Intelligence Organization、CIO）との親しい関係から、ベトナム共和国軍の陸軍の空輸任務部隊もアメリカの顧問も共に参加することを<span style="white-space:nowrap">知った。</span>',
 
             text3: 'Khi báo cáo đã sẵn sàng gửi cho quân Giải phóng, Ẩn đi bộ dọc một đường phố theo kế hoạch đã định. Bà Nguyễn Thị Ba (liên lạc duy nhất giữa Phạm Xuân Ẩn và phía cách mạng từ năm 1960-1975) bê khay đồ trang sức giả rồi giả bộ làm đổ xuống đường. Ẩn dừng lại giúp bà nhặt đồ lên và nhân lúc đó chuyển bản báo cáo cho bà. Cuối cùng, bản báo cáo được đưa tới quân Giải phóng và việc chuẩn bị phòng thủ trước Chiến dịch Lam Sơn 719 được tiến hành.',
-            text3_ja: '解放軍に送る報告書の準備が整うと、アンはあらかじめ決めておいた計画どおりに、ある通りに沿って歩いた。グエン・ティ・バー（1960～1975年、ファム・スアン・アンと革命側の間の唯一の連絡係）は、イミテーションのアクセサリーを載せた盆を持ち、誤って路上に落としたふりをした。アンは立ち止まってバーが拾うのを手伝い、その隙に報告書をバーに渡した。最終的に、報告書は解放軍のもとに届けられ、ラムソン719作戦に備えた防御の準備が進められた。',
+            text3_ja: '解放軍に送る報告書の準備が整うと、アンはあらかじめ決めておいた計画どおりに、ある通りに沿って歩いた。グエン・ティ・バー（1960～1975年、ファム・スアン・アンと革命側の間の唯一の連絡係）は、イミテーションのアクセサリーを載せた盆を持ち、誤って路上に落としたふりをした。アンは立ち止まってバーが拾うのを手伝い、その隙に報告書をバーに渡した。最終的に、報告書は解放軍のもとに届けられ、ラムソン719作戦に備えた防御の準備が<span style="white-space:nowrap">進められた。</span>',
 
             // ── ẢNH CHÈN GIỮA NỘI DUNG ──
             midImg3: {
@@ -46,7 +46,7 @@ window.EXTRA_DATA_1971 = {
             },
 
             text4: 'Những thông tin của Phạm Xuân Ẩn đã góp phần làm thất bại hoàn toàn Chiến dịch Lam Sơn 719 của quân Việt Nam Cộng hòa năm 1971. Chiến dịch này khiến quân Việt Nam Cộng hòa chịu thiệt hại 8.000 quân thương vong và 150 xe tăng bị phá hủy, đồng thời phía Mỹ cũng chịu tổn thất nặng nề với 108 trực thăng bị mất và 618 chiếc khác bị hư hại.',
-            text4_ja: 'ファム・スアン・アンの情報は、ベトナム共和国軍による1971年のラムソン719作戦を完全な失敗に終わらせることに貢献した。この作戦で、ベトナム共和国軍は8,000人の死傷者と戦車150両の破壊という損害を出し、同時にアメリカ側もヘリコプター108機を失い、ほかに618機が損傷するという甚大な損失を受けた。',
+            text4_ja: 'ファム・スアン・アンの情報は、ベトナム共和国軍による1971年のラムソン719作戦を完全な失敗に終わらせることに貢献した。この作戦で、ベトナム共和国軍は8,000人の死傷者と戦車150両の破壊という損害を出し、同時にアメリカ側もヘリコプター108機を失い、ほかに618機が損傷するという甚大な損失を<span style="white-space:nowrap">受けた。</span>',
 
             midImg4: {
                 src: 'assets/images/1971_1973/1971_TB_ThuMayBay.jpg',

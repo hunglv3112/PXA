@@ -28,7 +28,7 @@ window.EXTRA_DATA_1967 = {
             date_ja: '1967年',
 
             text1: 'Khoảng 3 tháng trước cuộc tấn công (khoảng tháng 10 - 11/1967), Phạm Xuân Ẩn nhận chỉ đạo ở lại nội thành Sài Gòn. Nhiệm vụ của ông là phối hợp cùng Cụm trưởng Tư Cang khảo sát, thăm dò kỹ lưỡng các mục tiêu đầu não (Dinh Độc Lập, Bộ Tổng Tham mưu, Tòa Đại sứ quán Mỹ...) và xây dựng kế hoạch tình báo.',
-            text1_ja: '攻撃の約3か月前（1967年10～11月頃）、ファム・スアン・アンはサイゴン市内に残るよう指示を受けた。アンの任務は、情報グループ長のトゥー・カンと連携して、中枢となる目標（独立宮殿、参謀本部、アメリカ大使館など）を綿密に偵察・調査し、諜報計画を立案することであった。',
+            text1_ja: '<span style="display:block;text-wrap:pretty">攻撃の約3か月前（1967年10～11月頃）、ファム・スアン・アンはサイゴン市内に残るよう指示を受けた。アンの任務は、情報グループ長のトゥー・カンと連携して、中枢となる目標（<span style="white-space:nowrap">独立宮殿</span>、参謀本部、アメリカ大使館など）を綿密に偵察・調査し、諜報計画を<span style="white-space:nowrap">立案すること</span><span style="white-space:nowrap">であった。</span></span>',
 
             note: '',
             note_ja: '',
@@ -55,7 +55,7 @@ window.EXTRA_DATA_1967 = {
             date_ja: '1967年4月21日',
 
             text1: 'Ngày 21 tháng 4 năm 1967 ông được cấp thẻ nhà báo số 103. Chiếc thẻ này yêu cầu các cơ quan hành chính và quân sự tạo mọi điều kiện thuận lợi cho người giữ thẻ khi tác nghiệp.',
-            text1_ja: '1967年4月21日、アンは記者証第103号の発給を受けた。この記者証は、行政・軍当局に対し、所持者が記者の職務を遂行する際に便宜を図るよう求めるものであった。',
+            text1_ja: '<span style="display:block;text-wrap:pretty">1967年4月21日、アンは記者証第103号の発給を受けた。この記者証は、<span style="white-space:nowrap">行政・軍当局</span>に対し、所持者が記者の職務を遂行する際に便宜を図るよう求める<span style="white-space:nowrap">ものであった。</span></span>',
 
             note: '',
             note_ja: '',

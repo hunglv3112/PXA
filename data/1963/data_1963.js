@@ -97,7 +97,7 @@ window.EXTRA_DATA_1963 = {
             },
 
             text3: 'Sau khi trận đánh kết thúc, ông cùng các nhà báo phương Tây đi trực thăng Mỹ đến hiện trường. Những đồng nghiệp đi cùng không biết rằng người phóng viên bên cạnh mình cũng là người hoạt động tình báo cho phía quân Giải phóng.',
-            text3_ja: '戦いが終わった後、アンは西側の記者たちとともにアメリカのヘリコプターで現場へ向かった。\n\n同行した同僚たちは、隣にいる記者が解放軍側のために諜報活動を行う人物でもあるとは知らなかった。',
+            text3_ja: '戦いが終わった後、アンは西側の記者たちとともにアメリカのヘリコプターで現場へ向かった。\n\n同行した同僚たちは、隣にいる記者が解放軍側のために諜報活動を行う人物でもあるとは<span style="white-space:nowrap">知らなかった。</span>',
 
             footnote: '1. Chiến tranh đặc biệt: Chiến lược chiến tranh của Mỹ ở miền Nam Việt Nam (1961–1965), chủ yếu sử dụng quân đội Việt Nam Cộng hòa dưới sự chỉ huy của cố vấn Mỹ, cùng vũ khí và phương tiện do Mỹ cung cấp.',
             footnote_ja: '1. 特殊戦争：1961～65年にベトナム南部でアメリカがとった戦争戦略で、アメリカ人軍事顧問の指揮のもと、アメリカが提供した兵器と装備を用いて、主にベトナム共和国軍に戦わせた。',
