@@ -105,7 +105,7 @@ window.EXTRA_DATA_1975 = {
             },
 
             text2: 'Sau đó Ẩn gửi bài báo cuối cùng về cho Time với tiêu đề “Cuộc chia tay cuối cùng đầy nghiệt ngã”, miêu tả lại cảnh hỗn loạn của Việt Nam Cộng hòa và Mỹ ngày 30/4/1975, được đăng trên số báo ra ngày 12/5/1975. Bài báo khép lại bằng một nhận định lịch sử đầy sâu sắc của Phạm Xuân Ẩn về sự kết thúc can thiệp của người Mỹ tại Việt Nam: “Có lẽ cần phải nói rằng, cuộc chia tay của người Mỹ đối với Việt Nam là chiến dịch duy nhất trong toàn bộ cuộc chiến mà họ hoàn toàn không mang theo ảo tưởng...”',
-            text2_ja: 'その後、アンは、1975年4月30日のベトナム共和国とアメリカの混乱ぶりを描いた「残酷さに満ちた最後の別れ」と題する最後の記事を『タイム』誌に送り、この記事は1975年5月12日号に掲載された。記事は、「アメリカ人のベトナムとの別れは、戦争全体を通じて、彼らがまったく幻想を抱かずに遂行した唯一の作戦だったと言うべきかもしれない……」という、アメリカのベトナム介入の終わりについてのファム・スアン・アンの深い歴史的洞察で締めくくられている。',
+            text2_ja: 'その後、アンは、1975年4月30日のベトナム共和国とアメリカの混乱ぶりを描いた「残酷さに満ちた最後の別れ」と題する最後の記事を『タイム』誌に送り、この記事は1975年5月12日号に掲載された。記事は、「アメリカ人のベトナムとの別れは、戦争全体を通じて、彼らがまったく幻想を抱かずに遂行した唯一の作戦だったと言うべきかもしれない......」という、アメリカのベトナム介入の終わりについてのファム・スアン・アンの深い歴史的洞察で締めくくられている。',
 
             note: '',
             note_ja: '',

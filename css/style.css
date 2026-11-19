@@ -603,7 +603,7 @@ button.pill:hover {
   html[lang=ja] .intro .intro-desc-top,
   html[lang=ja] .intro .intro-desc-bot,
   html[lang=ja] .intro .intro-guide {
-    max-width: none;
+    max-width: 22em;
     text-wrap: normal;
     line-break: strict;
     word-break: normal;
