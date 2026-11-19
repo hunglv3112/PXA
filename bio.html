@@ -793,11 +793,11 @@
             stamp: '極秘ファイル',
             title: '人を選ぶ職業',
             paragraphs: [
-              '同じく1950年、アンはサイゴン税関に就職した。この時、ベトミンから、フランスからベトナムへの物資、軍用品、軍隊の輸送状況を把握する任務を与えられた。これが、アンの諜報活動の第一歩であった。',
-              '当初、アンは自ら銃を手にして直接戦うものと思っていたが、任されたのは諜報の仕事であり、それは当時の自分が「生きおとりや狩猟犬」の仕事だという偏見を抱いていた職業であった。'
+              '同じく1950年、アンはサイゴン税関に就職した。この時、ベトミンから、フランスからベトナムへの物資、軍用品、軍隊の輸送状況を把握する任務を与えられた。これが、アンの諜報活動の<span style="white-space:nowrap">第一歩であった。</span>',
+              '当初、アンは自ら銃を手にして直接戦うものと思っていたが、任されたのは諜報の仕事であり、それは当時の自分が「生きおとりや<span style="white-space:nowrap">狩猟犬」の</span>仕事だという偏見を抱いていた職業であった。'
             ],
             img: 'assets/images/KhaiQuatPXATruocNam1957/KQPXA_BacSiPNT.jpg',
-            caption: 'ファム・ゴック・タイック医師――サイゴン・チョロン特別区行政抗戦委員会主席（出典：ベトナム通信社）',
+            caption: 'ファム・ゴック・タイック医師――サイゴン・チョロン特別区行政抗戦委員会主席（出典：<span style="white-space:nowrap">ベトナム通信社）</span>',
             placeholder: '[写真: ファム・ゴック・タイック医師]',
             pin: '[写真: ファム・ゴック・タイック医師]'
           },
@@ -893,9 +893,14 @@
       }
       let html = '';
 
+      // Các từ không được tách xuống dòng giữa chừng
+      const NOWRAP_WORDS = ['ベトミン'];
+      const keepWords = s => NOWRAP_WORDS.reduce(
+        (t, w) => t.split(w).join(`<span style="white-space:nowrap">${w}</span>`), s);
+
       data.pages.forEach((p, idx) => {
         let pContent = '';
-        p.paragraphs.forEach(pg => {
+        p.paragraphs.map(keepWords).forEach(pg => {
           if (pg.startsWith('<blockquote>') || pg.startsWith('<p')) {
             pContent += pg;
           } else {
@@ -910,7 +915,7 @@
         let mediaHtml = '';
         if (imgSrc) {
           mediaHtml = `
-            <img src="${imgSrc}" alt="${captionText.replace(/"/g, '&quot;')}" class="pin-img" loading="lazy" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='grid';" />
+            <img src="${imgSrc}" alt="${captionText.replace(/<[^>]*>/g, '').replace(/"/g, '&quot;')}" class="pin-img" loading="lazy" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='grid';" />
             <div class="pin-placeholder" style="display:none"><span>${placeholderText}</span></div>
           `;
         } else {
@@ -922,7 +927,7 @@
           captionHtml = `
             <figcaption class="pin-caption">
               <span class="pin-caption-icon">◆</span>
-              <span class="pin-caption-text">${captionText}</span>
+              <span class="pin-caption-text">${keepWords(captionText)}</span>
             </figcaption>
           `;
         } else {
@@ -936,7 +941,7 @@
 
         let footnoteHtml = '';
         if (p.footnote) {
-          const fnItems = p.footnote.split(/<br\s*\/?>/i);
+          const fnItems = keepWords(p.footnote).split(/<br\s*\/?>/i);
           footnoteHtml = `<div class="page-footnote">${fnItems.map(item => `<div class="fn-item">${item.trim()}</div>`).join('')}</div>`;
         }
 
