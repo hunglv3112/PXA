@@ -71,7 +71,10 @@ html.lang-ja:not(.lang-ready) body {
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
-  min-width: 290px;
+  width: max-content;
+  min-width: 350px;
+  max-width: calc(100vw - 32px);
+  box-sizing: border-box;
   background: rgba(14, 31, 37, 0.97);
   border: 1.5px solid rgba(143, 193, 212, 0.35);
   border-radius: 14px;
@@ -120,6 +123,7 @@ html.lang-ja:not(.lang-ready) body {
   font-weight: 500;
   transition: all .18s ease;
   position: relative;
+  white-space: nowrap;
 }
 
 .page-nav-item:hover {
@@ -143,7 +147,8 @@ html.lang-ja:not(.lang-ready) body {
 }
 
 .page-nav-item-text {
-  flex-grow: 1;
+  flex: 1 1 auto;
+  white-space: nowrap;
 }
 
 .page-nav-curr-tag {
@@ -157,8 +162,9 @@ html.lang-ja:not(.lang-ready) body {
   background: rgba(235, 203, 69, 0.25);
   color: var(--gold, #ebcb45);
   border: 1px solid rgba(235, 203, 69, 0.4);
-  margin-left: 6px;
+  margin-left: auto;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .page-nav-item.active .page-nav-curr-tag {
@@ -175,7 +181,13 @@ html.lang-ja:not(.lang-ready) body {
     font-size: 12px;
   }
   .page-nav-menu {
-    min-width: 250px;
+    min-width: 300px;
+    max-width: calc(100vw - 24px);
+  }
+  .page-nav-item {
+    padding: 8px 10px;
+    font-size: 12px;
+    gap: 8px;
   }
 }
 
