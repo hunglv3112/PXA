@@ -58,7 +58,6 @@
       line-height: 1.6;
       background: radial-gradient(ellipse at 50% 0%, #1a3844 0%, #0e1f25 65%, #071014 100%);
       -webkit-font-smoothing: antialiased;
-      user-select: none;
     }
 
     .serif {
@@ -1821,123 +1820,57 @@
       user-select: none;
     }
 
-    <<<<<<< HEAD
-
     /* Định dạng typography tiếng Nhật */
     html[lang=ja] body,
     html[lang=ja] p,
     html[lang=ja] figcaption,
     html[lang=ja] .dossier-story,
     html[lang=ja] .piece-q,
-    html[lang=ja] .piece-feedback {
+    html[lang=ja] .piece-feedback,
+    html[lang=ja] .quiz-question,
+    html[lang=ja] .quiz-opt-btn {
+      font-family: "Noto Sans JP", "Be Vietnam Pro", sans-serif;
+      text-wrap: normal;
+      line-break: strict;
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
 
-      html[lang=ja] .piece-feedback,
-      html[lang=ja] .quiz-question,
-      html[lang=ja] .quiz-opt-btn {
-        font-family: "Noto Sans JP", "Be Vietnam Pro", sans-serif;
-        text-wrap: normal;
-        line-break: strict;
-        word-break: normal;
-        overflow-wrap: break-word;
-      }
+    /* Tiêu đề và số năm dùng Newsreader */
+    html[lang=ja] h1,
+    html[lang=ja] h2,
+    html[lang=ja] h3,
+    html[lang=ja] .m-title,
+    html[lang=ja] .dossier-h,
+    html[lang=ja] .yr,
+    html[lang=ja] .year {
+      font-family: "Newsreader", "Noto Serif JP", serif;
+      text-wrap: normal;
+      line-break: strict;
+      word-break: normal;
+    }
 
-      html[lang=ja] .piece-feedback,
-      html[lang=ja] .quiz-question,
-      html[lang=ja] .quiz-opt-btn {
-        font-family: "Noto Sans JP", "Be Vietnam Pro", sans-serif;
-        text-wrap: normal;
-        line-break: strict;
-        word-break: normal;
-        overflow-wrap: break-word;
-      }
+    /* Trích dẫn các thứ dùng Noto Serif JP */
+    html[lang=ja] blockquote,
+    html[lang=ja] .m-modal-text blockquote,
+    html[lang=ja] .mb blockquote,
+    html[lang=ja] q,
+    html[lang=ja] cite {
+      font-family: "Noto Serif JP", "Newsreader", serif;
+      text-wrap: normal;
+      line-break: strict;
+      word-break: normal;
+    }
 
-      /* Tiêu đề và số năm dùng Newsreader */
-      html[lang=ja] h1,
-      html[lang=ja] h2,
-      html[lang=ja] h3,
-      html[lang=ja] .m-title,
-      html[lang=ja] .dossier-h,
-      html[lang=ja] .yr,
-      html[lang=ja] .year {
-        font-family: "Newsreader", "Noto Serif JP", serif;
-        text-wrap: normal;
-        line-break: strict;
-        word-break: normal;
-      }
-
-      html[lang=ja] .piece-feedback,
-      html[lang=ja] .quiz-question,
-      html[lang=ja] .quiz-opt-btn {
-        font-family: "Noto Sans JP", "Be Vietnam Pro", sans-serif;
-        text-wrap: pretty;
-        line-break: strict;
-      }
-
-      /* Tiêu đề và số năm dùng Newsreader */
-      html[lang=ja] h1,
-      html[lang=ja] h2,
-      html[lang=ja] h3,
-      html[lang=ja] .m-title,
-      html[lang=ja] .dossier-h,
-      html[lang=ja] .yr,
-      html[lang=ja] .year {
-        font-family: "Newsreader", "Noto Serif JP", serif;
-        text-wrap: normal;
-        line-break: strict;
-        word-break: normal;
-      }
-
-      /* Tiêu đề và số năm dùng Newsreader */
-      html[lang=ja] h1,
-      html[lang=ja] h2,
-      html[lang=ja] h3 {
-
-        html[lang=ja] h3,
-        html[lang=ja] .m-title,
-        html[lang=ja] .dossier-h,
-        html[lang=ja] .yr,
-        html[lang=ja] .year {
-          font-family: "Newsreader", "Noto Serif JP", serif;
-          text-wrap: balance;
-          line-break: strict;
-        }
-
-        /* Trích dẫn các thứ dùng Noto Serif JP */
-        html[lang=ja] blockquote,
-        html[lang=ja] .m-modal-text blockquote,
-        html[lang=ja] .mb blockquote,
-        html[lang=ja] q,
-        html[lang=ja] cite {
-          font-family: "Noto Serif JP", "Newsreader", serif;
-          text-wrap: normal;
-          line-break: strict;
-        }
-
-        =======>>>>>>>parent of 6a37654 (không rơi chữ)
-
-        /* Trích dẫn các thứ dùng Noto Serif JP */
-        html[lang=ja] blockquote,
-        html[lang=ja] .m-modal-text blockquote,
-        html[lang=ja] .mb blockquote,
-        html[lang=ja] q,
-        html[lang=ja] cite {
-          font-family: "Noto Serif JP", "Newsreader", serif;
-          text-wrap: normal;
-          line-break: strict;
-          word-break: normal;
-        }
-
-        /* Trích dẫn các thứ dùng Noto Serif JP */
-        html[lang=ja] blockquote,
-        html[lang=ja] .m-modal-text blockquote,
-        html[lang=ja] .mb blockquote,
-        html[lang=ja] q,
-        html[lang=ja] cite {
-          font-family: "Noto Serif JP", "Newsreader", serif;
-          text-wrap: normal;
-          line-break: strict;
-          word-break: normal;
-        }
+    /* Đảm bảo toàn bộ nội dung popup và trang có thể bôi đen copy bình thường */
+    .m-postwar-dialog,
+    .m-postwar-sheet,
+    .mb,
+    .m-modal-text,
+    .poem {
+      user-select: text;
+      -webkit-user-select: text;
+    }
   </style>
 </head>
 

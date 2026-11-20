@@ -52,6 +52,21 @@
       transition: none !important;
     }
 
+    /* Đảm bảo toàn bộ nội dung popup modal và sự kiện đều có thể bôi đen copy bình thường */
+    .modal,
+    .sheet,
+    .sheet *,
+    .story-sheet,
+    .story-sheet *,
+    .m-body,
+    .m-text,
+    .m-text *,
+    .story-body,
+    .story-body * {
+      user-select: text !important;
+      -webkit-user-select: text !important;
+    }
+
     /* Định dạng typography tiếng Nhật chống rơi chữ */
     html[lang=ja] body,
     html[lang=ja] p,
