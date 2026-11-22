@@ -869,6 +869,13 @@
       word-break: normal;
     }
 
+    html[lang=ja] .lead blockquote {
+      font-size: clamp(16px, 1.8vw, 21px);
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      white-space: pre-line;
+    }
+
     /* Responsive */
     @media (max-width: 860px) {
       .board .sub {
@@ -1033,7 +1040,8 @@
 
         <!-- Khối diễn giải đề tài (Dạng Accordion bấm mở) -->
         <div class="lead">
-          <blockquote>「彼らの仕事は、先に知り、先に理解し、そして沈黙を守ることであり、それゆえ、その沈黙こそが彼らを忘れ去られやすい存在にもしている。」</blockquote>
+          <blockquote>「彼らの仕事は、先に知り、先に理解し、そして沈黙を守ることであり、
+            それゆえ、その沈黙こそが彼らを忘れ去られやすい存在にもしている。」</blockquote>
 
           <div class="lead-accordion" id="leadAccordion">
             <div class="acc-item">
@@ -1364,7 +1372,7 @@
       ['h1 .b', ['記者か、諜報員か']],
       ['.poster .n', ['記者', '諜報員']],
       ['.poster .hint', ['↻ タップで裏返す', '↻ タップで裏返す']],
-      ['.lead blockquote', ['「彼らの仕事は、先に知り、先に理解し、そして沈黙を守ることであり、それゆえ、その沈黙こそが彼らを忘れ去られやすい存在にもしている。」']],
+      ['.lead blockquote', ['「彼らの仕事は、先に知り、先に理解し、そして沈黙を守ることであり、\nそれゆえ、その沈黙こそが彼らを忘れ去られやすい存在にもしている。」']],
       ['.acc-title', [
         '人物を選んだ理由',
         'ウェブサイトという形式を選んだ理由',
@@ -1403,7 +1411,7 @@
 
     var QUOTE_TEXTS = {
       vi: '“Công việc của họ là biết trước, hiểu trước và giữ im lặng, nên chính sự im lặng ấy cũng khiến họ dễ bị lãng quên.”',
-      ja: '「彼らの仕事は、先に知り、先に理解し、そして沈黙を守ることであり、それゆえ、その沈黙こそが彼らを忘れ去られやすい存在にもしている。」'
+      ja: '「彼らの仕事は、先に知り、先に理解し、そして沈黙を守ることであり、\nそれゆえ、その沈黙こそが彼らを忘れ去られやすい存在にもしている。」'
     };
 
     var tw = null;
