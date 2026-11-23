@@ -29,8 +29,8 @@ window.EXTRA_DATA_1975 = {
             text1: 'Cuối năm 1974, trong một cuộc họp kín tại Dinh Độc Lập, Thiệu chủ quan đánh giá rằng quân Giải phóng đã chịu tổn thất nặng nề sau các trận đánh năm 1968 và 1972, không còn đủ khả năng tấn công các mục tiêu lớn mà chỉ có thể đánh chiếm những thị xã nhỏ. Vì vậy, Thiệu không tăng cường phòng thủ Tây Nguyên.',
             text1_ja: '1974年末、独立宮殿での秘密会議で、ティエウは、解放軍が1968年と1972年の戦闘で甚大な損失を被っており、もはや大きな目標を攻撃する能力はなく、小規模な地方都市しか占領できないと高をくくった。そのため、ティエウは中部高原の防衛を強化しなかった。',
 
-            text2: 'Phạm Xuân Ẩn đã nắm được thông tin từ cuộc họp này và báo cáo về. Tin này giúp quân Giải phóng quyết định mở Chiến dịch Tây Nguyên vào tháng 3/1975, lấy Buôn Ma Thuột làm đòn mở màn cuộc Tổng tiến công và nổi dậy Mùa Xuân 1975.',
-            text2_ja: 'ファム・スアン・アンはこの会議の情報をつかみ、報告した。この情報によって、解放軍は1975年3月に中部高原作戦を開始することを決断し、ブオンマトートへの攻撃を1975年春の総進攻と蜂起の幕開けとした。',
+            text2: 'Phạm Xuân Ẩn đã nắm được thông tin từ cuộc họp này và báo cáo về. Tin này giúp quân Giải phóng quyết định mở Chiến dịch Tây Nguyên⁽¹⁾ vào tháng 3/1975, lấy Buôn Ma Thuột làm đòn mở màn cuộc Tổng tiến công và nổi dậy Mùa Xuân 1975.',
+            text2_ja: 'ファム・スアン・アンはこの会議の情報をつかみ、報告した。この情報によって、解放軍は1975年3月に中部高原作戦⁽¹⁾を開始することを決断し、ブオンマトートへの攻撃を1975年春の総進攻と蜂起の幕開けとした。',
 
             text3: 'Đòn tiến công vào Buôn Ma Thuột của quân Giải phóng khiến Việt Nam Cộng hòa rơi vào thế choáng váng, mở đầu cho cuộc rút quân hỗn loạn khỏi Tây Nguyên. Sự thất bại này khiến quân Việt Nam Cộng hòa nhanh chóng suy yếu và tan rã.',
             text3_ja: '解放軍のブオンマトートへの攻撃はベトナム共和国に大きな衝撃を与え、中部高原からの混乱した撤退の始まりとなった。この敗北により、ベトナム共和国軍は急速に弱体化し、崩壊して<span style="white-space:nowrap">いった。</span>',
@@ -68,6 +68,9 @@ window.EXTRA_DATA_1975 = {
                 caption: 'Các cán bộ quân Giải phóng chờ Dương Văn Minh (mặc áo đen ngồi nhìn lên) đọc tuyên bố đầu hàng vào trưa ngày 30/4/1975 (Nguồn: TTXVN)',
                 caption_ja: '1975年4月30日昼、ズオン・ヴァン・ミン（黒い服を着て座り、上を見ている人物）が降伏声明を読み上げるのを待つ解放軍の幹部たち（出典：ベトナム通信社）'
             },
+
+            footnote: '1. Chiến dịch Tây Nguyên (bắt đầu từ ngày 4/3/1975) là đòn tiến công chiến lược mở đầu cho cuộc Tổng tiến công và nổi dậy Mùa Xuân 1975. Sau khi Buôn Ma Thuột được giải phóng ngày 10–11/3, quân đội Việt Nam Cộng hòa rút chạy hỗn loạn khỏi Kon Tum, Pleiku, giúp quân Giải phóng làm chủ toàn bộ Tây Nguyên. Thắng lợi này củng cố quyết tâm giải phóng hoàn toàn miền Nam trước khi mùa mưa năm 1975 đến.',
+            footnote_ja: '1. 中部高原作戦（1975年3月4日開始）は、1975年春の総進攻と蜂起の幕開けとなった作戦である。3月10日～11日にブオンマトートが解放されると、ベトナム共和国軍はコントゥム、プレイクから撤退し、解放軍は中部高原全域を掌握した。この勝利を受け、解放軍は1975年の雨季が来る前に南部を解放する決意を固めた。',
 
             note: '',
             note_ja: '',
