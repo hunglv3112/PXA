@@ -495,7 +495,7 @@
     #bioPageRefBtn {
       position: fixed;
       left: max(20px, calc(50% - 530px + 5vw - 58px));
-      top: 180px;
+      top: 260px;
       z-index: 95;
     }
   </style>
@@ -1031,8 +1031,10 @@
     renderDossier();
     document.documentElement.classList.add('lang-ready');
 
-    // Căn chỉnh nút 参考文献 ở trang Tiểu sử nằm ngay sát bên trái các thẻ tab hồ sơ như layout của timeline 1957-1976
+    // Căn chỉnh nút 参考文献 ở trang Tiểu sử: bắt đầu ngang cùng khung với Tab 1 và nằm sát cạnh trái thẻ hồ sơ như timeline 1957-1976
+    let isBioTicking = false;
     function positionBioRefBtn() {
+      isBioTicking = false;
       const btn = document.getElementById('bioPageRefBtn');
       const page = document.querySelector('.page') || document.querySelector('.dossier');
       if (!btn || !page) return;
@@ -1042,11 +1044,15 @@
 
       if (window.innerWidth > 1024) {
         if (cardLeft >= 80) {
-          // Đặt tâm nút cách mép trái của tab hồ sơ khoảng 54px để có khoảng cách ~26px thoáng đẹp hệt như timeline
+          // Căn ngang: Đặt tâm nút cách mép trái của tab hồ sơ khoảng 54px để có khoảng cách ~26px hệt như timeline
           const centerPos = Math.max(45, cardLeft - 54);
           btn.style.left = centerPos + 'px';
           btn.style.transform = 'translateX(-50%)';
-          btn.style.top = '180px';
+
+          // Căn dọc: Bắt đầu ngang cùng khung với Tab 1 (thay vì bị chờm lên trên cao)
+          // Khi người xem cuộn trang, nút đi cùng Tab 1 và neo ở vị trí quan sát tối ưu (top >= 90px)
+          const targetTop = Math.max(90, Math.round(pageRect.top));
+          btn.style.top = targetTop + 'px';
           btn.style.bottom = 'auto';
         } else {
           btn.style.left = '20px';
@@ -1062,7 +1068,20 @@
       }
     }
 
-    window.addEventListener('resize', positionBioRefBtn);
+    window.addEventListener('scroll', () => {
+      if (!isBioTicking) {
+        requestAnimationFrame(positionBioRefBtn);
+        isBioTicking = true;
+      }
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+      if (!isBioTicking) {
+        requestAnimationFrame(positionBioRefBtn);
+        isBioTicking = true;
+      }
+    });
+
     window.addEventListener('load', positionBioRefBtn);
     positionBioRefBtn();
     setTimeout(positionBioRefBtn, 150);
