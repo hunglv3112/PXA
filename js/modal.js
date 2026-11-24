@@ -323,6 +323,11 @@
         mArt.querySelectorAll('.m-art-cell').forEach(c => c.classList.remove('m-art-cell--active'));
         cell.classList.add('m-art-cell--active');
         renderRightPanel(imgObj, ev.yl, cfg, lang, ev);
+
+        const sheetRefBtn = document.getElementById('sheetRefBtn');
+        if (sheetRefBtn && window.ReferencesManager) {
+          window.ReferencesManager.positionPopupRefBtn(sheetRefBtn, sheet);
+        }
       }
 
       cell.addEventListener('click', activate);
@@ -442,6 +447,36 @@
         mClose.setAttribute('title', `${cfg.ui.closeModal} (Esc)`);
       }
     }
+
+    // Luôn cập nhật lại vị trí và nguồn tham khảo khi chuyển mốc sự kiện bằng nút bên dưới popup
+    const sheetRefBtn = document.getElementById('sheetRefBtn');
+    if (sheetRefBtn) {
+      sheetRefBtn.onclick = function (e) {
+        e.stopPropagation();
+        const curEv = window.TIMELINE_DATA[currentIndex];
+        const curSources = curEv ? (curEv.sources || curEv.references || []) : [];
+        if (window.ReferencesManager) {
+          window.ReferencesManager.open({
+            pageKey: 'timeline',
+            eventId: curEv ? curEv.id : null,
+            currentSources: curSources
+          });
+        }
+      };
+
+      if (window.ReferencesManager && !modal.hidden) {
+        window.ReferencesManager.positionPopupRefBtn(sheetRefBtn, sheet);
+        requestAnimationFrame(() => {
+          if (!modal.hidden) window.ReferencesManager.positionPopupRefBtn(sheetRefBtn, sheet);
+        });
+        setTimeout(() => {
+          if (!modal.hidden) window.ReferencesManager.positionPopupRefBtn(sheetRefBtn, sheet);
+        }, 60);
+        setTimeout(() => {
+          if (!modal.hidden) window.ReferencesManager.positionPopupRefBtn(sheetRefBtn, sheet);
+        }, 250);
+      }
+    }
   }
 
   // ─────────────────────────────────────────────────────────────────
@@ -502,6 +537,10 @@
       if (currentIndex > 0) {
         currentSubIndex = 0;
         renderModalContent(currentIndex - 1);
+        const sheetRefBtn = document.getElementById('sheetRefBtn');
+        if (sheetRefBtn && window.ReferencesManager) {
+          window.ReferencesManager.positionPopupRefBtn(sheetRefBtn, sheet);
+        }
       }
     });
   }
@@ -511,6 +550,10 @@
       if (currentIndex < window.TIMELINE_DATA.length - 1) {
         currentSubIndex = 0;
         renderModalContent(currentIndex + 1);
+        const sheetRefBtn = document.getElementById('sheetRefBtn');
+        if (sheetRefBtn && window.ReferencesManager) {
+          window.ReferencesManager.positionPopupRefBtn(sheetRefBtn, sheet);
+        }
       }
     });
   }
