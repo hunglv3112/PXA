@@ -96,7 +96,6 @@
       max-width: 1060px;
       margin: 0 auto;
       padding: 0 5vw 0;
-      padding-left: max(5vw, 108px);
       /* Giữ margin của page cuối bên trong dossier để page cuối kịp dính lên che page trước */
       display: flow-root
     }
@@ -490,6 +489,14 @@
       text-wrap: pretty;
       line-break: strict;
       word-break: normal;
+    }
+
+    /* Riêng cho trang Tiểu sử (bio.html): Kéo nút 参考文献 lại gần cạnh thẻ tab như layout timeline 1957-1976 */
+    #bioPageRefBtn {
+      position: fixed;
+      left: max(20px, calc(50% - 530px + 5vw - 58px));
+      top: 180px;
+      z-index: 95;
     }
   </style>
 </head>
@@ -1029,6 +1036,42 @@
     // Khởi chạy khi tải trang
     renderDossier();
     document.documentElement.classList.add('lang-ready');
+
+    // Căn chỉnh nút 参考文献 ở trang Tiểu sử nằm ngay sát bên trái các thẻ tab hồ sơ như layout của timeline 1957-1976
+    function positionBioRefBtn() {
+      const btn = document.getElementById('bioPageRefBtn');
+      const page = document.querySelector('.page') || document.querySelector('.dossier');
+      if (!btn || !page) return;
+
+      const pageRect = page.getBoundingClientRect();
+      const cardLeft = pageRect.left;
+
+      if (window.innerWidth > 1024) {
+        if (cardLeft >= 80) {
+          // Đặt tâm nút cách mép trái của tab hồ sơ khoảng 54px để có khoảng cách ~26px thoáng đẹp hệt như timeline
+          const centerPos = Math.max(45, cardLeft - 54);
+          btn.style.left = centerPos + 'px';
+          btn.style.transform = 'translateX(-50%)';
+          btn.style.top = '180px';
+          btn.style.bottom = 'auto';
+        } else {
+          btn.style.left = '20px';
+          btn.style.bottom = '24px';
+          btn.style.top = 'auto';
+          btn.style.transform = 'none';
+        }
+      } else {
+        btn.style.left = '20px';
+        btn.style.bottom = '24px';
+        btn.style.top = 'auto';
+        btn.style.transform = 'none';
+      }
+    }
+
+    window.addEventListener('resize', positionBioRefBtn);
+    window.addEventListener('load', positionBioRefBtn);
+    positionBioRefBtn();
+    setTimeout(positionBioRefBtn, 150);
 
     // Kết nối nút Nguồn nổi trang Tiểu sử
     const bioRefBtn = document.getElementById('bioPageRefBtn');

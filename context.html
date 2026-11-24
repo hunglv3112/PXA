@@ -146,7 +146,6 @@
       max-width: 1300px;
       margin: 0 auto;
       padding: 20px 4vw 80px;
-      padding-left: max(4vw, 108px);
     }
 
     .tl::before {
@@ -879,6 +878,68 @@
     // Khởi chạy khi tải trang
     renderPage();
     document.documentElement.classList.add('lang-ready');
+
+    // Dừng nút Tài liệu tham khảo ngay tại dòng kẻ ngăn cách trước phần The Big Reveal (chỉ riêng trang Bối cảnh lịch sử)
+    (function initContextRefBtnClamping() {
+      const btn = document.getElementById('contextPageRefBtn');
+      const revealEl = document.querySelector('.reveal');
+      if (!btn || !revealEl) return;
+
+      let isTicking = false;
+
+      function updateBtnPosition() {
+        isTicking = false;
+        const revealRect = revealEl.getBoundingClientRect();
+        const lineY = revealRect.top; // Điểm bắt đầu dòng kẻ ngăn cách (border-top của .reveal)
+        const btnHeight = btn.offsetHeight || 80;
+        const margin = 24; // Khoảng cách đệm an toàn phía trên dòng kẻ
+
+        if (window.innerWidth > 1024) {
+          // Giao diện Desktop / Màn hình rộng (mặc định top: 180px)
+          const defaultTop = 180;
+          const maxAllowedTop = lineY - btnHeight - margin;
+
+          if (maxAllowedTop < defaultTop) {
+            // Khi cuộn tới gần dòng kẻ: nút dừng lại và ghim ngay phía trên dòng kẻ, không chèn quá dòng
+            btn.style.top = maxAllowedTop + 'px';
+          } else {
+            // Khi chưa tới dòng kẻ: trở lại vị trí cố định thông thường
+            btn.style.top = '';
+          }
+          btn.style.bottom = '';
+        } else {
+          // Giao diện Tablet / Mobile (mặc định bottom: 24px)
+          const defaultBottom = 24;
+          const currentBtnBottomScreen = window.innerHeight - defaultBottom;
+
+          if (lineY < currentBtnBottomScreen + margin) {
+            // Giữ nút luôn nằm phía trên dòng kẻ ngăn cách
+            btn.style.bottom = (window.innerHeight - lineY + margin) + 'px';
+          } else {
+            btn.style.bottom = '';
+          }
+          btn.style.top = '';
+        }
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!isTicking) {
+          requestAnimationFrame(updateBtnPosition);
+          isTicking = true;
+        }
+      }, { passive: true });
+
+      window.addEventListener('resize', () => {
+        if (!isTicking) {
+          requestAnimationFrame(updateBtnPosition);
+          isTicking = true;
+        }
+      });
+
+      // Kiểm tra ngay khi tải xong và sau khi render DOM timeline
+      updateBtnPosition();
+      setTimeout(updateBtnPosition, 200);
+    })();
   </script>
   <script src="data/references-data.js"></script>
   <script src="js/references.js"></script>
