@@ -14,7 +14,7 @@
 
   // SVG Biểu tượng cuốn sách mở (Open Book) màu vàng viền thanh lịch
   const BOOK_ICON_SVG = `
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
       <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
     </svg>
@@ -593,12 +593,26 @@
       if (rect.width === 0 || rect.height === 0) return;
 
       btn.style.position = 'fixed';
-      let leftPos = rect.left - 64;
-      if (leftPos < 12) {
-        leftPos = 16;
+      const leftMargin = rect.left;
+
+      if (leftMargin >= 80) {
+        // Có đủ khoảng trống bên trái popup: Đặt nút ở khoảng trống đó, cách mép popup một khoảng thoáng đẹp ~24px
+        // Tâm nút đặt ở (rect.left - 54px) với transform translateX(-50%)
+        const centerPos = Math.max(45, rect.left - 54);
+        btn.style.left = centerPos + 'px';
+        btn.style.transform = 'translateX(-50%)';
+        btn.style.top = Math.max(80, Math.min(rect.top + 32, window.innerHeight - 130)) + 'px';
+        btn.style.bottom = 'auto';
+        btn.style.right = 'auto';
+      } else {
+        // Màn hình hẹp không đủ khoảng trống bên ngoài popup: Đặt nút góc dưới bên trái (bottom-left)
+        // để tuyệt đối không đè lên menu ≡ ページ移動 ở góc trên bên trái và không che nội dung popup
+        btn.style.left = '20px';
+        btn.style.bottom = '24px';
+        btn.style.top = 'auto';
+        btn.style.right = 'auto';
+        btn.style.transform = 'none';
       }
-      btn.style.left = leftPos + 'px';
-      btn.style.top = Math.max(76, rect.top + 28) + 'px';
       btn.style.zIndex = '125';
     });
   }
