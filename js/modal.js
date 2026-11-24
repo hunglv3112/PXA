@@ -464,14 +464,12 @@
       sheetRefBtn.onclick = function (e) {
         e.stopPropagation();
         const ev = window.TIMELINE_DATA[currentIndex];
-        const lang = window.getCurrentLang ? window.getCurrentLang() : 'vi';
         const evSources = ev ? (ev.sources || ev.references || []) : [];
         if (window.ReferencesManager) {
           window.ReferencesManager.open({
             pageKey: 'timeline',
             eventId: ev ? ev.id : null,
-            currentSources: evSources,
-            modalTitle: (lang === 'ja') ? '年表 — 参考文献・出典' : 'Dòng thời gian — Tài liệu tham khảo'
+            currentSources: evSources
           });
         }
       };

@@ -836,12 +836,11 @@
       const contextRefBtn = document.getElementById('contextPageRefBtn');
       if (contextRefBtn) {
         const refLabelEl = contextRefBtn.querySelector('.ref-btn-label');
-        if (refLabelEl) refLabelEl.textContent = lang === 'ja' ? '出典' : 'Nguồn';
+        if (refLabelEl) refLabelEl.textContent = lang === 'ja' ? '参考文献' : 'Nguồn';
         contextRefBtn.onclick = function () {
           if (window.ReferencesManager) {
             window.ReferencesManager.open({
-              pageKey: 'context',
-              modalTitle: lang === 'ja' ? '歴史的背景 — 参考文献・出典' : 'Bối cảnh lịch sử — Tài liệu tham khảo'
+              pageKey: 'context'
             });
           }
         };

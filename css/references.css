@@ -103,28 +103,6 @@
   transition: opacity 0.2s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Đảm bảo khi nằm bên trong dialog của phòng lưu niệm, nút chiếu sang bên trái ra ngoài dialog */
-dialog.m-postwar-dialog {
-  overflow: visible !important;
-}
-
-dialog.m-postwar-dialog .popup-side-ref-btn {
-  position: absolute !important;
-  right: calc(100% + 22px) !important;
-  left: auto !important;
-  top: 28px !important;
-  z-index: 99999 !important;
-}
-
-@media (max-width: 1024px) {
-  dialog.m-postwar-dialog .popup-side-ref-btn {
-    right: auto !important;
-    left: 14px !important;
-    top: 76px !important;
-    position: fixed !important;
-  }
-}
-
 @media (max-width: 640px) {
   .popup-side-ref-btn .ref-btn-icon-circle {
     width: 36px;
@@ -243,57 +221,44 @@ dialog.m-postwar-dialog .popup-side-ref-btn {
   line-height: 1.25;
 }
 
-/* Bộ chuyển đổi tab: Nguồn bài đang đọc / Xem tất cả */
+/* Bộ chuyển đổi tab: 2 ô vuông chọn nguồn (đoạn hiện tại / tất cả các nguồn) */
 .ref-dialog-tabs {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 14px;
-  font-family: var(--sans, "Noto Sans JP", "Be Vietnam Pro", sans-serif);
-  font-size: 13.5px;
+  gap: 10px;
+  margin-top: 8px;
 }
 
 .ref-tab-btn {
-  background: transparent;
-  border: none;
-  padding: 0;
-  color: var(--mute, #8fa7ae);
+  all: unset;
   cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  transition: color 0.2s ease;
-  text-align: left;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--sans, "Noto Sans JP", "Be Vietnam Pro", sans-serif);
+  color: var(--mute, #8fa7ae);
+  background: rgba(14, 31, 37, 0.6);
+  border: 1px solid rgba(143, 193, 212, 0.25);
+  border-radius: 6px;
+  transition: all 0.22s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  text-align: center;
 }
 
 .ref-tab-btn:hover {
   color: #ffffff;
+  border-color: rgba(235, 203, 69, 0.55);
+  background: rgba(235, 203, 69, 0.08);
 }
 
 .ref-tab-btn.active {
-  color: #ffffff;
-  font-weight: 500;
-}
-
-.ref-tab-link {
-  background: transparent;
-  border: none;
-  padding: 0;
-  color: var(--gold, #ebcb45);
-  cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
-}
-
-.ref-tab-link:hover {
-  color: #fff;
-  text-decoration-color: #fff;
-}
-
-.ref-tab-link.active {
+  background: linear-gradient(135deg, rgba(235, 203, 69, 0.22) 0%, rgba(212, 173, 34, 0.35) 100%);
   color: var(--gold2, #f6d77e);
+  border: 1.5px solid var(--gold, #ebcb45);
+  box-shadow: 0 0 12px rgba(235, 203, 69, 0.32), inset 0 0 6px rgba(235, 203, 69, 0.15);
   font-weight: 600;
 }
 
@@ -657,8 +622,11 @@ dialog.m-postwar-dialog .popup-side-ref-btn {
     font-size: 20px;
   }
   .ref-dialog-tabs {
-    font-size: 12.5px;
-    gap: 10px;
+    gap: 8px;
+  }
+  .ref-tab-btn {
+    padding: 6px 12px;
+    font-size: 12px;
   }
   .ref-search-input {
     font-size: 13px;

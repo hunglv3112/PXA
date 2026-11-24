@@ -1033,11 +1033,9 @@
     const bioRefBtn = document.getElementById('bioPageRefBtn');
     if (bioRefBtn) {
       bioRefBtn.onclick = function () {
-        const lang = (window.getCurrentLang ? window.getCurrentLang() : 'vi') || 'vi';
         if (window.ReferencesManager) {
           window.ReferencesManager.open({
-            pageKey: 'bio',
-            modalTitle: lang === 'ja' ? 'ファム・スアン・アンの経歴 — 参考文献・出典' : 'Tiểu sử Phạm Xuân Ẩn — Tài liệu tham khảo'
+            pageKey: 'bio'
           });
         }
       };

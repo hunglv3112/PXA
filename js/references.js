@@ -35,41 +35,23 @@
       btnLabel: 'Nguồn',
       btnTitle: 'Xem tài liệu tham khảo & nguồn trích dẫn',
       modalTitle: 'Tài liệu tham khảo',
-      tabCurrent: 'Nguồn của bài đang đọc',
-      tabAll: 'Xem tất cả nguồn của trang',
+      tabCurrent: 'Nguồn của đoạn hiện tại',
+      tabAll: 'Tất cả các nguồn',
       searchPlaceholder: 'Tìm theo tác giả, tên, năm',
       countSuffix: 'nguồn',
       emptyText: 'Không tìm thấy tài liệu phù hợp.',
-      sampleTag: '[nguồn mẫu]',
-      btnDecodeLabel: 'Giải mã',
-      btnDecodeTitle: 'Xem hồ sơ giải mã & phân tích tình báo',
-      decodeModalTitle: 'Hồ sơ giải mã tình báo',
-      decodeBadge: 'TUYỆT MẬT • TÌNH BÁO CHIẾN LƯỢC',
-      decodeSub: 'Phân tích nghiệp vụ, phương thức liên lạc bí mật và ý nghĩa chiến lược của Thiếu tướng Phạm Xuân Ẩn',
-      decodeSec1: 'Bối cảnh nghiệp vụ & Thân phận vỏ bọc',
-      decodeSec2: 'Phương thức liên lạc & Tuyến giao liên H4',
-      decodeSec3: 'Tác động chiến lược đối với chiến trường',
-      decodeGameBtn: 'Khám phá Mini-Game Giải mã 3 mảnh ghép ➔'
+      sampleTag: '[nguồn mẫu]'
     },
     ja: {
-      btnLabel: '出典',
-      btnTitle: '参考文献・出典一覧を見る',
-      modalTitle: '参考文献・出典',
+      btnLabel: '参考文献',
+      btnTitle: '参考文献一覧を見る',
+      modalTitle: '参考文献',
       tabCurrent: '現在の項目の出典',
-      tabAll: 'ページ全体の全出典を見る',
+      tabAll: 'すべての出典',
       searchPlaceholder: '著者名、文献名、年で検索',
       countSuffix: '件の出典',
       emptyText: '該当する参考文献が見つかりませんでした。',
-      sampleTag: '[サンプル出典]',
-      btnDecodeLabel: '解読',
-      btnDecodeTitle: '諜報解読ファイル・分析を見る',
-      decodeModalTitle: '諜報解読ファイル',
-      decodeBadge: '極秘 • 戦略諜報分析',
-      decodeSub: 'ファム・スアン・アン少将の諜報手腕、秘密暗号連絡網、および戦略的影響の分析',
-      decodeSec1: '諜報活動の背景と偽装身分',
-      decodeSec2: '暗号連絡経路とH4秘密連絡網',
-      decodeSec3: '戦場および歴史への戦略的インパクト',
-      decodeGameBtn: '3ピース解読ミニゲームを体験する ➔'
+      sampleTag: '[サンプル出典]'
     }
   };
 
@@ -140,7 +122,7 @@
             <h2 class="ref-dialog-title" id="pxaRefTitle">${t.modalTitle}</h2>
             <div class="ref-dialog-tabs">
               <button type="button" class="ref-tab-btn active" id="pxaRefTabCurrent">${t.tabCurrent}</button>
-              <button type="button" class="ref-tab-link" id="pxaRefTabAll">${t.tabAll}</button>
+              <button type="button" class="ref-tab-btn" id="pxaRefTabAll">${t.tabAll}</button>
             </div>
           </div>
           <button type="button" class="ref-close-btn" id="pxaRefClose" aria-label="Đóng (Esc)" title="Đóng">×</button>
@@ -198,16 +180,16 @@
     tabCurrentBtn.addEventListener('click', function () {
       if (activeTab === 'current') return;
       activeTab = 'current';
-      tabCurrentBtn.className = 'ref-tab-btn active';
-      tabAllBtn.className = 'ref-tab-link';
+      tabCurrentBtn.classList.add('active');
+      tabAllBtn.classList.remove('active');
       renderList();
     });
 
     tabAllBtn.addEventListener('click', function () {
       if (activeTab === 'all') return;
       activeTab = 'all';
-      tabCurrentBtn.className = 'ref-tab-btn';
-      tabAllBtn.className = 'ref-tab-link active';
+      tabCurrentBtn.classList.remove('active');
+      tabAllBtn.classList.add('active');
       renderList();
     });
 
@@ -310,7 +292,7 @@
 
     // Cập nhật câu chữ theo ngôn ngữ
     const t = I18N[currentLang] || I18N.vi;
-    titleEl.textContent = options.modalTitle || t.modalTitle;
+    titleEl.textContent = t.modalTitle;
     tabCurrentBtn.textContent = options.tabCurrentText || t.tabCurrent;
     tabAllBtn.textContent = options.tabAllText || t.tabAll;
     searchInput.placeholder = t.searchPlaceholder;
@@ -341,11 +323,11 @@
     // Reset tìm kiếm & tab
     activeTab = options.defaultTab || 'current';
     if (activeTab === 'current') {
-      tabCurrentBtn.className = 'ref-tab-btn active';
-      tabAllBtn.className = 'ref-tab-link';
+      tabCurrentBtn.classList.add('active');
+      tabAllBtn.classList.remove('active');
     } else {
-      tabCurrentBtn.className = 'ref-tab-btn';
-      tabAllBtn.className = 'ref-tab-link active';
+      tabCurrentBtn.classList.remove('active');
+      tabAllBtn.classList.add('active');
     }
 
     searchInput.value = '';
@@ -635,6 +617,13 @@
     const storyRefBtn = document.getElementById('storyRefBtn');
     if (storyModal && !storyModal.hidden && storySheet && storyRefBtn) {
       positionPopupRefBtn(storyRefBtn, storySheet);
+    }
+
+    const dlg = document.getElementById('dlg');
+    const modalPostwar = document.getElementById('modalPostwar');
+    const postwarDlgRefBtn = document.getElementById('postwarDlgRefBtn');
+    if (modalPostwar && !modalPostwar.hidden && dlg && postwarDlgRefBtn) {
+      positionPopupRefBtn(postwarDlgRefBtn, dlg);
     }
   });
 

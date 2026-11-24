@@ -1533,11 +1533,9 @@
     var introRefBtn = document.getElementById('introPageRefBtn');
     if (introRefBtn) {
       introRefBtn.onclick = function () {
-        var lang = (window.getCurrentLang ? window.getCurrentLang() : 'vi') || 'vi';
         if (window.ReferencesManager) {
           window.ReferencesManager.open({
-            pageKey: 'intro',
-            modalTitle: lang === 'ja' ? 'テーマの紹介 — 参考文献・出典' : 'Giới thiệu đề tài — Tài liệu tham khảo'
+            pageKey: 'intro'
           });
         }
       };

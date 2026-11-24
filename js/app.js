@@ -480,8 +480,7 @@ document.addEventListener('DOMContentLoaded', () => {
           window.ReferencesManager.open({
             pageKey: 'timeline',
             eventId: storyData ? storyData.id : null,
-            currentSources: curSources,
-            modalTitle: (lang === 'ja') ? 'サイドストーリー — 参考文献・出典' : 'Chuyện bên lề — Tài liệu tham khảo'
+            currentSources: curSources
           });
         }
       };
