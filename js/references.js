@@ -1,0 +1,671 @@
+/**
+ * ==============================================================================
+ * LOGIC QUẢN LÝ TÀI LIỆU THAM KHẢO & NGUỒN (js/references.js) — HỖ TRỢ SONG NGỮ (VI / JA)
+ * ==============================================================================
+ * Cung cấp khung hiển thị trích dẫn tài liệu tham khảo:
+ *  - Tự động dựng hộp thoại modal tra cứu nguồn
+ *  - Bộ lọc tìm kiếm nhanh theo tác giả, tên, năm thời gian thực
+ *  - Chuyển đổi giữa "Nguồn của bài đang đọc" và "Xem tất cả nguồn của trang"
+ *  - Hỗ trợ nút tròn hình cuốn sách có thể ghim bên cạnh popup hoặc sticky bên trái ảnh
+ */
+
+(function () {
+  'use strict';
+
+  // SVG Biểu tượng cuốn sách mở (Open Book) màu vàng viền thanh lịch
+  const BOOK_ICON_SVG = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+    </svg>
+  `;
+
+  // SVG Biểu tượng ổ khóa giải mã (Decoder Lock) màu vàng viền thanh lịch
+  const DECODE_ICON_SVG = `
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      <circle cx="12" cy="16" r="1.2"></circle>
+    </svg>
+  `;
+
+  // Từ điển ngôn ngữ cho giao diện khung nguồn & giải mã
+  const I18N = {
+    vi: {
+      btnLabel: 'Nguồn',
+      btnTitle: 'Xem tài liệu tham khảo & nguồn trích dẫn',
+      modalTitle: 'Tài liệu tham khảo',
+      tabCurrent: 'Nguồn của bài đang đọc',
+      tabAll: 'Xem tất cả nguồn của trang',
+      searchPlaceholder: 'Tìm theo tác giả, tên, năm',
+      countSuffix: 'nguồn',
+      emptyText: 'Không tìm thấy tài liệu phù hợp.',
+      sampleTag: '[nguồn mẫu]',
+      btnDecodeLabel: 'Giải mã',
+      btnDecodeTitle: 'Xem hồ sơ giải mã & phân tích tình báo',
+      decodeModalTitle: 'Hồ sơ giải mã tình báo',
+      decodeBadge: 'TUYỆT MẬT • TÌNH BÁO CHIẾN LƯỢC',
+      decodeSub: 'Phân tích nghiệp vụ, phương thức liên lạc bí mật và ý nghĩa chiến lược của Thiếu tướng Phạm Xuân Ẩn',
+      decodeSec1: 'Bối cảnh nghiệp vụ & Thân phận vỏ bọc',
+      decodeSec2: 'Phương thức liên lạc & Tuyến giao liên H4',
+      decodeSec3: 'Tác động chiến lược đối với chiến trường',
+      decodeGameBtn: 'Khám phá Mini-Game Giải mã 3 mảnh ghép ➔'
+    },
+    ja: {
+      btnLabel: '出典',
+      btnTitle: '参考文献・出典一覧を見る',
+      modalTitle: '参考文献・出典',
+      tabCurrent: '現在の項目の出典',
+      tabAll: 'ページ全体の全出典を見る',
+      searchPlaceholder: '著者名、文献名、年で検索',
+      countSuffix: '件の出典',
+      emptyText: '該当する参考文献が見つかりませんでした。',
+      sampleTag: '[サンプル出典]',
+      btnDecodeLabel: '解読',
+      btnDecodeTitle: '諜報解読ファイル・分析を見る',
+      decodeModalTitle: '諜報解読ファイル',
+      decodeBadge: '極秘 • 戦略諜報分析',
+      decodeSub: 'ファム・スアン・アン少将の諜報手腕、秘密暗号連絡網、および戦略的影響の分析',
+      decodeSec1: '諜報活動の背景と偽装身分',
+      decodeSec2: '暗号連絡経路とH4秘密連絡網',
+      decodeSec3: '戦場および歴史への戦略的インパクト',
+      decodeGameBtn: '3ピース解読ミニゲームを体験する ➔'
+    }
+  };
+
+  // Quản lý trạng thái hiện tại
+  let currentLang = 'vi';
+  let activeTab = 'current'; // 'current' | 'all'
+  let currentSources = [];
+  let allSources = [];
+  let searchQuery = '';
+  let activeEventId = null;
+
+  // DOM Elements của hộp thoại tham khảo
+  let modalEl = null;
+  let dialogEl = null;
+  let titleEl = null;
+  let tabCurrentBtn = null;
+  let tabAllBtn = null;
+  let searchInput = null;
+  let searchClearBtn = null;
+  let countEl = null;
+  let listEl = null;
+  let emptyEl = null;
+  let closeBtn = null;
+
+  // DOM Elements của hộp thoại Giải mã (Decode modal)
+  let decodeModalEl = null;
+  let decodeDialogEl = null;
+  let decodeBadgeEl = null;
+  let decodeTitleEl = null;
+  let decodeSubEl = null;
+  let decodeBodyEl = null;
+  let decodeCloseBtn = null;
+  let currentDecodeOptions = null;
+
+  // Lấy ngôn ngữ hiện hành
+  function getLang() {
+    if (typeof window.getCurrentLang === 'function') {
+      return window.getCurrentLang();
+    }
+    try {
+      const stored = localStorage.getItem('pxa_language');
+      if (stored === 'ja' || stored === 'vi') return stored;
+    } catch (e) { }
+    const docLang = document.documentElement.lang;
+    return docLang === 'ja' ? 'ja' : 'vi';
+  }
+
+  // Khởi tạo DOM Hộp thoại Modal "Tài liệu tham khảo"
+  function initModalDOM() {
+    if (document.getElementById('pxaRefModal')) {
+      modalEl = document.getElementById('pxaRefModal');
+      return;
+    }
+
+    const t = I18N[currentLang] || I18N.vi;
+
+    const modal = document.createElement('div');
+    modal.className = 'ref-modal';
+    modal.id = 'pxaRefModal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'pxaRefTitle');
+
+    modal.innerHTML = `
+      <div class="ref-dialog" id="pxaRefDialog">
+        <div class="ref-dialog-header">
+          <div class="ref-dialog-title-wrap">
+            <h2 class="ref-dialog-title" id="pxaRefTitle">${t.modalTitle}</h2>
+            <div class="ref-dialog-tabs">
+              <button type="button" class="ref-tab-btn active" id="pxaRefTabCurrent">${t.tabCurrent}</button>
+              <button type="button" class="ref-tab-link" id="pxaRefTabAll">${t.tabAll}</button>
+            </div>
+          </div>
+          <button type="button" class="ref-close-btn" id="pxaRefClose" aria-label="Đóng (Esc)" title="Đóng">×</button>
+        </div>
+
+        <div class="ref-search-wrap">
+          <svg class="ref-search-icon" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+          </svg>
+          <input type="text" class="ref-search-input" id="pxaRefSearch" placeholder="${t.searchPlaceholder}" autocomplete="off" />
+          <button type="button" class="ref-search-clear" id="pxaRefSearchClear" hidden title="Xóa">×</button>
+        </div>
+
+        <div class="ref-count" id="pxaRefCount">4 ${t.countSuffix}</div>
+
+        <div class="ref-list-wrap">
+          <ul class="ref-list" id="pxaRefList"></ul>
+          <div class="ref-empty" id="pxaRefEmpty" hidden>
+            <div class="ref-empty-icon">📖</div>
+            <p>${t.emptyText}</p>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    modalEl = modal;
+    dialogEl = modal.querySelector('#pxaRefDialog');
+    titleEl = modal.querySelector('#pxaRefTitle');
+    tabCurrentBtn = modal.querySelector('#pxaRefTabCurrent');
+    tabAllBtn = modal.querySelector('#pxaRefTabAll');
+    searchInput = modal.querySelector('#pxaRefSearch');
+    searchClearBtn = modal.querySelector('#pxaRefSearchClear');
+    countEl = modal.querySelector('#pxaRefCount');
+    listEl = modal.querySelector('#pxaRefList');
+    emptyEl = modal.querySelector('#pxaRefEmpty');
+    closeBtn = modal.querySelector('#pxaRefClose');
+
+    // Gắn sự kiện đóng modal
+    closeBtn.addEventListener('click', closeRefModal);
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeRefModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modalEl && modalEl.classList.contains('is-open')) {
+        closeRefModal();
+      }
+    });
+
+    // Chuyển tab
+    tabCurrentBtn.addEventListener('click', function () {
+      if (activeTab === 'current') return;
+      activeTab = 'current';
+      tabCurrentBtn.className = 'ref-tab-btn active';
+      tabAllBtn.className = 'ref-tab-link';
+      renderList();
+    });
+
+    tabAllBtn.addEventListener('click', function () {
+      if (activeTab === 'all') return;
+      activeTab = 'all';
+      tabCurrentBtn.className = 'ref-tab-btn';
+      tabAllBtn.className = 'ref-tab-link active';
+      renderList();
+    });
+
+    // Tìm kiếm thời gian thực
+    searchInput.addEventListener('input', function () {
+      searchQuery = (this.value || '').trim().toLowerCase();
+      searchClearBtn.hidden = !searchQuery;
+      renderList();
+    });
+
+    searchClearBtn.addEventListener('click', function () {
+      searchInput.value = '';
+      searchQuery = '';
+      searchClearBtn.hidden = true;
+      searchInput.focus();
+      renderList();
+    });
+  }
+
+  // Định dạng dòng hiển thị cho từng nguồn tài liệu
+  function formatCitationHtml(item, index) {
+    const num = item.id || (index + 1);
+    let html = '';
+
+    if (item.rawHtml) {
+      html = item.rawHtml;
+    } else {
+      const parts = [];
+      if (item.author) parts.push(`<strong>${item.author}</strong>`);
+      if (item.title) parts.push(`“${item.title}”`);
+      if (item.source) parts.push(`<em>${item.source}</em>`);
+      if (item.year) parts.push(item.year);
+      if (item.pages) parts.push(item.pages);
+      if (item.type) parts.push(`[${item.type}]`);
+
+      html = parts.join(', ');
+      if (html && !html.endsWith('.')) html += '.';
+      if (item.tag) {
+        html += ` <span class="ref-tag">[${item.tag}]</span>`;
+      }
+      if (item.url) {
+        html += ` <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="ref-link">Liên kết</a>`;
+      }
+    }
+
+    return `
+      <li class="ref-item" data-id="${num}">
+        <span class="ref-num">[${num}]</span>
+        <div class="ref-content">${html}</div>
+      </li>
+    `;
+  }
+
+  // Render danh sách nguồn đã lọc
+  function renderList() {
+    if (!listEl) return;
+    const t = I18N[currentLang] || I18N.vi;
+
+    // Chọn danh sách theo tab đang kích hoạt
+    let sourceList = (activeTab === 'current') ? currentSources : allSources;
+
+    // Nếu bài đang đọc chưa có nguồn cụ thể, dự phòng dùng danh sách mẫu mặc định
+    if ((!sourceList || sourceList.length === 0) && window.REFERENCES_DATA?.defaultSources) {
+      sourceList = window.REFERENCES_DATA.defaultSources[currentLang] || window.REFERENCES_DATA.defaultSources.vi;
+    }
+
+    // Lọc theo từ khóa tìm kiếm
+    let filtered = sourceList;
+    if (searchQuery) {
+      filtered = sourceList.filter(item => {
+        const text = [
+          item.author || '',
+          item.title || '',
+          item.source || '',
+          item.year || '',
+          item.tag || '',
+          item.rawHtml || ''
+        ].join(' ').toLowerCase();
+        return text.includes(searchQuery);
+      });
+    }
+
+    // Cập nhật số lượng
+    const count = filtered.length;
+    countEl.textContent = `${count} ${t.countSuffix}`;
+
+    if (count === 0) {
+      listEl.innerHTML = '';
+      emptyEl.hidden = false;
+    } else {
+      emptyEl.hidden = true;
+      listEl.innerHTML = filtered.map((item, idx) => formatCitationHtml(item, idx)).join('');
+    }
+  }
+
+  // Mở hộp thoại Modal "Tài liệu tham khảo"
+  function openRefModal(options = {}) {
+    initModalDOM();
+    currentLang = getLang();
+
+    // Cập nhật câu chữ theo ngôn ngữ
+    const t = I18N[currentLang] || I18N.vi;
+    titleEl.textContent = options.modalTitle || t.modalTitle;
+    tabCurrentBtn.textContent = options.tabCurrentText || t.tabCurrent;
+    tabAllBtn.textContent = options.tabAllText || t.tabAll;
+    searchInput.placeholder = t.searchPlaceholder;
+    emptyEl.querySelector('p').textContent = t.emptyText;
+
+    // Thiết lập nguồn dữ liệu
+    activeEventId = options.eventId || null;
+    currentSources = options.currentSources || options.sources || [];
+    allSources = options.allSources || [];
+
+    // Tự động tìm nguồn tất cả của trang nếu chưa truyền vào
+    if (allSources.length === 0 && window.REFERENCES_DATA) {
+      const pageKey = options.pageKey || (window.location.pathname.includes('context') ? 'context' : 'timeline');
+      const pageData = window.REFERENCES_DATA.pages?.[pageKey];
+      if (pageData) {
+        allSources = (currentLang === 'ja' && pageData.all_ja) ? pageData.all_ja : (pageData.all_vi || []);
+      }
+    }
+
+    // Nếu vẫn trống thì dùng defaultSources
+    if (currentSources.length === 0 && window.REFERENCES_DATA?.defaultSources) {
+      currentSources = window.REFERENCES_DATA.defaultSources[currentLang] || window.REFERENCES_DATA.defaultSources.vi;
+    }
+    if (allSources.length === 0 && window.REFERENCES_DATA?.defaultSources) {
+      allSources = window.REFERENCES_DATA.defaultSources[currentLang] || window.REFERENCES_DATA.defaultSources.vi;
+    }
+
+    // Reset tìm kiếm & tab
+    activeTab = options.defaultTab || 'current';
+    if (activeTab === 'current') {
+      tabCurrentBtn.className = 'ref-tab-btn active';
+      tabAllBtn.className = 'ref-tab-link';
+    } else {
+      tabCurrentBtn.className = 'ref-tab-btn';
+      tabAllBtn.className = 'ref-tab-link active';
+    }
+
+    searchInput.value = '';
+    searchQuery = '';
+    searchClearBtn.hidden = true;
+
+    renderList();
+
+    modalEl.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+
+    // Focus vào input tìm kiếm để người dùng có thể gõ ngay nếu muốn
+    setTimeout(() => {
+      if (searchInput) searchInput.focus();
+    }, 150);
+  }
+
+  // Đóng hộp thoại Modal
+  function closeRefModal() {
+    if (!modalEl) return;
+    modalEl.classList.remove('is-open');
+    // Khôi phục lại scroll nếu không còn modal nào khác đang mở
+    const anyModalOpen = document.querySelector('.modal:not([hidden]), .ref-modal.is-open');
+    if (!anyModalOpen) {
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Tạo phần tử nút bấm Nguồn (hình cuốn sách)
+  function createTriggerButton(options = {}) {
+    currentLang = getLang();
+    const t = I18N[currentLang] || I18N.vi;
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = `ref-trigger-btn ${options.className || ''}`.trim();
+    btn.setAttribute('aria-label', options.label || t.btnTitle);
+    btn.setAttribute('title', options.title || t.btnTitle);
+    if (options.id) btn.id = options.id;
+    if (options.eventId) btn.dataset.eventId = options.eventId;
+
+    btn.innerHTML = `
+      <div class="ref-btn-icon-circle">
+        ${BOOK_ICON_SVG}
+      </div>
+      <span class="ref-btn-label">${options.label || t.btnLabel}</span>
+    `;
+
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      openRefModal(options);
+    });
+
+    return btn;
+  }
+
+  // Tự động gắn nút Nguồn vào các popup modal timeline nếu có
+  function bindToTimelineModals() {
+    const sheet = document.getElementById('sheet');
+    if (sheet && !document.getElementById('sheetRefBtn')) {
+      const btn = createTriggerButton({
+        id: 'sheetRefBtn',
+        className: 'popup-side-ref-btn',
+        pageKey: 'timeline'
+      });
+      sheet.parentElement.insertBefore(btn, sheet);
+    }
+
+    const storySheet = document.getElementById('storySheet');
+    if (storySheet && !document.getElementById('storyRefBtn')) {
+      const btn = createTriggerButton({
+        id: 'storyRefBtn',
+        className: 'popup-side-ref-btn',
+        pageKey: 'timeline'
+      });
+      storySheet.parentElement.insertBefore(btn, storySheet);
+    }
+  }
+
+  // Khởi tạo DOM Hộp thoại Modal "Giải mã tình báo" (Decode Modal)
+  function initDecodeModalDOM() {
+    if (document.getElementById('pxaDecodeModal')) {
+      decodeModalEl = document.getElementById('pxaDecodeModal');
+      return;
+    }
+
+    const t = I18N[currentLang] || I18N.vi;
+
+    const modal = document.createElement('div');
+    modal.className = 'decode-modal';
+    modal.id = 'pxaDecodeModal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'pxaDecodeTitle');
+
+    modal.innerHTML = `
+      <div class="decode-dialog" id="pxaDecodeDialog">
+        <div class="ref-dialog-header">
+          <div class="ref-dialog-title-wrap">
+            <span class="decode-dialog-badge" id="pxaDecodeBadge">${t.decodeBadge}</span>
+            <h2 class="decode-dialog-title" id="pxaDecodeTitle">${t.decodeModalTitle}</h2>
+            <p class="decode-dialog-sub" id="pxaDecodeSub">${t.decodeSub}</p>
+          </div>
+          <button type="button" class="ref-close-btn" id="pxaDecodeClose" aria-label="Đóng (Esc)" title="Đóng">×</button>
+        </div>
+        <div class="decode-body-wrap" id="pxaDecodeBody"></div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    decodeModalEl = modal;
+    decodeDialogEl = modal.querySelector('#pxaDecodeDialog');
+    decodeBadgeEl = modal.querySelector('#pxaDecodeBadge');
+    decodeTitleEl = modal.querySelector('#pxaDecodeTitle');
+    decodeSubEl = modal.querySelector('#pxaDecodeSub');
+    decodeBodyEl = modal.querySelector('#pxaDecodeBody');
+    decodeCloseBtn = modal.querySelector('#pxaDecodeClose');
+
+    decodeCloseBtn.addEventListener('click', closeDecodeModal);
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) {
+        closeDecodeModal();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && decodeModalEl && decodeModalEl.classList.contains('is-open')) {
+        closeDecodeModal();
+      }
+    });
+  }
+
+  // Mở hộp thoại Modal "Giải mã tình báo"
+  function openDecodeModal(options = {}) {
+    initDecodeModalDOM();
+    currentLang = getLang();
+    currentDecodeOptions = options;
+    const t = I18N[currentLang] || I18N.vi;
+    const isJa = currentLang === 'ja';
+
+    decodeBadgeEl.textContent = options.badge || t.decodeBadge;
+    decodeTitleEl.textContent = options.modalTitle || t.decodeModalTitle;
+    decodeSubEl.textContent = options.subTitle || t.decodeSub;
+
+    let sec1Html = '';
+    let sec2Html = '';
+    let sec3Html = '';
+
+    if (options.pageKey === 'postwar') {
+      sec1Html = isJa
+        ? '諜報員ファム・スアン・アンは、平和回復後もその生涯を通じて沈黙を守り続けました。生前に遺された16個の勲章、軍服、愛用のカメラやタイプライターは、沈黙の中に秘められた並外れた諜報キャリアを雄弁に物語っています。'
+        : 'Thiếu tướng Phạm Xuân Ẩn sau ngày đất nước thống nhất vẫn giữ trọn sự khiêm nhường và kỷ luật nghiệp vụ. Phòng lưu niệm lưu giữ 16 tấm huân - huy chương cao quý, bộ quân phục, chiếc máy ảnh Minox và máy đánh chữ - những kỷ vật gắn liền với huyền thoại tình báo thế kỷ.';
+      sec2Html = isJa
+        ? '平時はタイム誌等の特派員として西側首脳と交友しつつ、重要軍事作戦計画をフィルムに収め、クチの秘密連絡網（H4ルート）を経由してハノイの最高司令部へ直接送り続けました。'
+        : 'Trong suốt những năm tháng tác nghiệp báo chí, ông tiếp cận trực tiếp giới chức chóp bu MACV và CIA. Các tài liệu tối mật được thu nhỏ qua vi phim, gửi qua hộp thư mật và tuyến giao liên H4 của bà Ba Minh về Căn cứ Bến Cát an toàn tuyệt đối.';
+      sec3Html = isJa
+        ? '米軍の戦略文書や南ベトナム軍の配置情報など、彼のもたらした戦略情報はベトナム民主共和国軍の勝利に決定的貢献を果たしました。'
+        : 'Những tin tức chiến lược về kế hoạch Ấp Bắc, Chiến tranh đặc biệt, Chiến tranh cục bộ và Kế hoạch phòng thủ Sài Gòn đã giúp Bộ Chính trị và Quân ủy Trung ương đưa ra những quyết sách mang tính bước ngoặt lịch sử.';
+    } else if (options.eventData) {
+      const ev = options.eventData;
+      const evTitle = isJa ? (ev.title_ja || ev.title) : ev.title;
+      sec1Html = isJa
+        ? `【${evTitle}】の背景において、ファム・スアン・アンはジャーナリストの身分を最大限に活用し、米軍司令部（MACV）およびサイゴン政権内部の生きた機密情報を収集しました。`
+        : `Trong bối cảnh 【${evTitle}】, Phạm Xuân Ẩn đã vận dụng linh hoạt vỏ bọc ký giả quốc tế để tiếp cận các cuộc họp báo, văn kiện quân sự chiến lược của Bộ Tư lệnh Viện trợ Quân sự Mỹ (MACV) và Phủ Tổng thống Việt Nam Cộng hòa.`;
+      sec2Html = isJa
+        ? '重要機密は専用の超小型カメラで撮影され、未現像フィルムの状態で春巻き（チャーゾー）や筒状菓子の中に隠され、連絡網H4を通じて即座に前線司令部へ搬送されました。'
+        : 'Các tài liệu tối mật được chụp bằng máy ảnh Minox, cuộn phim giấu khéo léo trong các gói chả lụa hoặc giỏ thức ăn của bà Ba Minh, chuyển an toàn qua hàng chục trạm kiểm soát gắt gao của cảnh sát dã chiến.';
+      sec3Html = isJa
+        ? '分析された情報により、解放軍参謀本部は敵の作戦意図を先回りして把握し、的確な反撃作戦を指揮することが可能となりました。'
+        : 'Nguồn tin tình báo chuẩn xác giúp Bộ Tổng tư lệnh Quân Giải phóng nắm trước ý đồ tác chiến của đối phương, chủ động đối phó và làm thất bại các chiến thuật quân sự quy mô lớn.';
+    } else {
+      sec1Html = isJa
+        ? 'ファム・スアン・アンは米国のカリフォルニア州オレンジ・コースト・カレッジでジャーナリズムを専攻し、完璧なアメリカ英語とジャーナリズムの作法を体得。この唯一無二の経歴が、CIAや米軍高官からの絶対的信頼を得る礎となりました。'
+        : 'Được đào tạo bài bản về báo chí tại Mỹ (Orange Coast College, California), Phạm Xuân Ẩn sở hữu phong thái, tư duy văn hóa Mỹ sắc sảo. Vỏ bọc hoàn hảo này giúp ông trở thành bạn tâm giao của các tướng lĩnh, trùm mật vụ CIA và các nhà báo hàng đầu thế giới.';
+      sec2Html = isJa
+        ? '連絡経路は極めて厳格に運用され、サイゴン市内のギヴラル・カフェ（Givral）やコンチネンタル・ホテルを拠点に情報収集を行い、愛犬を連れての情報伝達や暗号シグナルを活用しました。'
+        : 'Mọi hoạt động đều tuân thủ nguyên tắc ngăn cách tuyệt đối. Cà phê Givral, khách sạn Continental là nơi ông thu thập tin tức. Mạng lưới giao liên H4 đảm bảo đường dây vận chuyển thông suốt suốt hàng chục năm không một lần bị lộ.';
+      sec3Html = isJa
+        ? '彼が送った数百件の報告書は、一文字も修正されることなく直接ホー・チ・ミン主席やボー・グエン・ザップ将軍の元に届けられ、国家の命運を左右する決断を支えました。'
+        : 'Hàng trăm bản báo cáo chiến lược được gửi nguyên vẹn về căn cứ, được Đại tướng Võ Nguyên Giáp và Tổng Tư lệnh đánh giá là nguồn tin vô giá, chuẩn xác bậc nhất của cuộc kháng chiến.';
+    }
+
+    let extraBtnHtml = '';
+    if (options.pageKey === 'postwar' && typeof window.openDecodeGame === 'function') {
+      extraBtnHtml = `
+        <div style="margin-top: 8px;">
+          <button type="button" class="decode-action-btn" id="pxaOpenDecodeGameBtn">
+            ${t.decodeGameBtn}
+          </button>
+        </div>
+      `;
+    }
+
+    decodeBodyEl.innerHTML = `
+      <div class="decode-card-section">
+        <h3><span style="color:#ebcb45;">❖</span> ${t.decodeSec1}</h3>
+        <p>${sec1Html}</p>
+      </div>
+      <div class="decode-card-section">
+        <h3><span style="color:#ebcb45;">❖</span> ${t.decodeSec2}</h3>
+        <p>${sec2Html}</p>
+      </div>
+      <div class="decode-card-section">
+        <h3><span style="color:#ebcb45;">❖</span> ${t.decodeSec3}</h3>
+        <p>${sec3Html}</p>
+      </div>
+      ${extraBtnHtml}
+    `;
+
+    const openGameBtn = decodeBodyEl.querySelector('#pxaOpenDecodeGameBtn');
+    if (openGameBtn) {
+      openGameBtn.onclick = function () {
+        closeDecodeModal();
+        if (typeof window.openDecodeGame === 'function') {
+          window.openDecodeGame(0, false);
+        }
+      };
+    }
+
+    decodeModalEl.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Đóng hộp thoại Modal "Giải mã tình báo"
+  function closeDecodeModal() {
+    if (!decodeModalEl) return;
+    decodeModalEl.classList.remove('is-open');
+    const anyModalOpen = document.querySelector('.modal:not([hidden]), .ref-modal.is-open, dialog[open]');
+    if (!anyModalOpen) {
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Cập nhật lại nhãn nút bấm khi người dùng đổi ngôn ngữ
+  function updateI18nTexts() {
+    currentLang = getLang();
+    const t = I18N[currentLang] || I18N.vi;
+
+    document.querySelectorAll('.ref-trigger-btn').forEach(btn => {
+      const label = btn.querySelector('.ref-btn-label');
+      if (label) label.textContent = t.btnLabel;
+      btn.setAttribute('aria-label', t.btnTitle);
+      btn.setAttribute('title', t.btnTitle);
+    });
+
+    if (modalEl && modalEl.classList.contains('is-open')) {
+      titleEl.textContent = t.modalTitle;
+      tabCurrentBtn.textContent = t.tabCurrent;
+      tabAllBtn.textContent = t.tabAll;
+      searchInput.placeholder = t.searchPlaceholder;
+      renderList();
+    }
+  }
+
+  window.addEventListener('languagechange', updateI18nTexts);
+
+  // Định vị nút Nguồn nằm ngay bên cạnh khung popup cũ, không làm co giãn hay thay đổi kích thước khung popup
+  function positionPopupRefBtn(btn, targetEl) {
+    if (!btn || !targetEl) return;
+    requestAnimationFrame(() => {
+      const rect = targetEl.getBoundingClientRect();
+      if (rect.width === 0 || rect.height === 0) return;
+
+      btn.style.position = 'fixed';
+      let leftPos = rect.left - 64;
+      if (leftPos < 12) {
+        leftPos = 16;
+      }
+      btn.style.left = leftPos + 'px';
+      btn.style.top = Math.max(76, rect.top + 28) + 'px';
+      btn.style.zIndex = '125';
+    });
+  }
+
+  // Tự động căn chỉnh lại vị trí nút bên cạnh popup khi thay đổi kích thước màn hình
+  window.addEventListener('resize', () => {
+    const sheet = document.getElementById('sheet');
+    const modal = document.getElementById('modal');
+    const sheetRefBtn = document.getElementById('sheetRefBtn');
+    if (modal && !modal.hidden && sheet && sheetRefBtn) {
+      positionPopupRefBtn(sheetRefBtn, sheet);
+    }
+
+    const storySheet = document.getElementById('storySheet');
+    const storyModal = document.getElementById('storyModal');
+    const storyRefBtn = document.getElementById('storyRefBtn');
+    if (storyModal && !storyModal.hidden && storySheet && storyRefBtn) {
+      positionPopupRefBtn(storyRefBtn, storySheet);
+    }
+  });
+
+  // Xuất API toàn cục
+  window.ReferencesManager = {
+    open: openRefModal,
+    close: closeRefModal,
+    openDecode: openDecodeModal,
+    closeDecode: closeDecodeModal,
+    createTriggerButton: createTriggerButton,
+    positionPopupRefBtn: positionPopupRefBtn,
+    BOOK_ICON_SVG: BOOK_ICON_SVG,
+    DECODE_ICON_SVG: DECODE_ICON_SVG,
+    bindToTimelineModals: bindToTimelineModals,
+    setLanguage: function (lang) {
+      currentLang = lang;
+      updateI18nTexts();
+    }
+  };
+
+  // Tự khởi chạy sau khi DOM sẵn sàng
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      initModalDOM();
+      bindToTimelineModals();
+      updateI18nTexts();
+    });
+  } else {
+    initModalDOM();
+    bindToTimelineModals();
+    updateI18nTexts();
+  }
+
+})();

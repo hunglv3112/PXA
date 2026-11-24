@@ -454,6 +454,28 @@
     modal.hidden = false;
     document.body.classList.add('modal-open');
     if (mClose) mClose.focus();
+
+    // Kết nối nút Nguồn ghim bên trái popup modal
+    const sheetRefBtn = document.getElementById('sheetRefBtn');
+    if (sheetRefBtn) {
+      if (window.ReferencesManager) {
+        window.ReferencesManager.positionPopupRefBtn(sheetRefBtn, sheet);
+      }
+      sheetRefBtn.onclick = function (e) {
+        e.stopPropagation();
+        const ev = window.TIMELINE_DATA[currentIndex];
+        const lang = window.getCurrentLang ? window.getCurrentLang() : 'vi';
+        const evSources = ev ? (ev.sources || ev.references || []) : [];
+        if (window.ReferencesManager) {
+          window.ReferencesManager.open({
+            pageKey: 'timeline',
+            eventId: ev ? ev.id : null,
+            currentSources: evSources,
+            modalTitle: (lang === 'ja') ? '年表 — 参考文献・出典' : 'Dòng thời gian — Tài liệu tham khảo'
+          });
+        }
+      };
+    }
   };
 
   window.closeModal = function () {

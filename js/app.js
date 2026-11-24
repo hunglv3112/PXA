@@ -466,6 +466,26 @@ document.addEventListener('DOMContentLoaded', () => {
     storyModal.hidden = false;
     document.body.classList.add('modal-open');
     if (smClose) smClose.focus();
+
+    // Kết nối nút Nguồn ghim bên trái popup Chuyện bên lề
+    const storyRefBtn = document.getElementById('storyRefBtn');
+    if (storyRefBtn) {
+      if (window.ReferencesManager) {
+        window.ReferencesManager.positionPopupRefBtn(storyRefBtn, storySheet);
+      }
+      storyRefBtn.onclick = function (e) {
+        e.stopPropagation();
+        const curSources = storyData ? (storyData.sources || storyData.references || []) : [];
+        if (window.ReferencesManager) {
+          window.ReferencesManager.open({
+            pageKey: 'timeline',
+            eventId: storyData ? storyData.id : null,
+            currentSources: curSources,
+            modalTitle: (lang === 'ja') ? 'サイドストーリー — 参考文献・出典' : 'Chuyện bên lề — Tài liệu tham khảo'
+          });
+        }
+      };
+    }
   }
 
   function closeStoryModal() {

@@ -21,6 +21,7 @@
     href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/page-nav.css">
+  <link rel="stylesheet" href="css/references.css">
   <style>
     :root {
       --bg: #0e1f25;
@@ -1355,7 +1356,7 @@
       width: min(880px, 94vw);
       max-height: 88vh;
       border-radius: 8px;
-      overflow: hidden;
+      overflow: visible;
       box-shadow: 0 35px 90px rgba(0, 0, 0, 0.95), 0 0 30px rgba(235, 203, 69, 0.18);
       position: fixed;
       inset: 0;
@@ -2050,6 +2051,17 @@
 
   <!-- Modal hộp thoại xem chi tiết đồng bộ phong cách Dòng thời gian -->
   <dialog id="dlg" class="m-postwar-dialog">
+    <!-- Nút Nguồn đặt ngay bên cạnh khung popup phòng lưu niệm (áp dụng cho cả tủ kỷ vật và phần Giải mã Phạm Xuân Ẩn) -->
+    <button type="button" class="ref-trigger-btn popup-side-ref-btn" id="postwarDlgRefBtn" aria-label="Tài liệu tham khảo" title="Xem tài liệu tham khảo & nguồn trích dẫn">
+      <div class="ref-btn-icon-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+        </svg>
+      </div>
+      <span class="ref-btn-label">Nguồn</span>
+    </button>
+
     <button type="button" class="m-postwar-close" id="dx" aria-label="閉じる" title="閉じる (Esc)">✕</button>
     <div class="m-postwar-sheet mb" id="db"></div>
   </dialog>
@@ -3166,6 +3178,26 @@
     dlg.addEventListener('click', e => { if (e.target === dlg) { stopVideos(); currentModalState = null; dlg.close(); } });
     dlg.addEventListener('cancel', () => { stopVideos(); currentModalState = null; });
 
+    // Kết nối nút Nguồn của dialog phòng lưu niệm (áp dụng cho cả tủ kỷ vật và phần Giải mã trắc nghiệm)
+    const postwarDlgBtn = document.getElementById('postwarDlgRefBtn');
+    if (postwarDlgBtn) {
+      postwarDlgBtn.onclick = function (e) {
+        e.stopPropagation();
+        const lang = (window.getCurrentLang ? window.getCurrentLang() : 'vi') || 'vi';
+        const isDecodeGame = currentModalState && currentModalState.type === 'decode';
+        let title = (lang === 'ja') ? '記念館 — 参考文献・出典' : 'Phòng lưu niệm — Tài liệu tham khảo';
+        if (isDecodeGame) {
+          title = (lang === 'ja') ? 'ファム・スアン・アンの解読 — 参考文献・出典' : 'Giải mã Phạm Xuân Ẩn — Tài liệu tham khảo';
+        }
+        if (window.ReferencesManager) {
+          window.ReferencesManager.open({
+            pageKey: 'postwar',
+            modalTitle: title
+          });
+        }
+      };
+    }
+
     // ==============================================================================
     // 2. CƠ CHẾ MỞ & ĐÓNG TỦ 3D:
     // ==============================================================================
@@ -3243,6 +3275,8 @@
     renderContent();
     document.documentElement.classList.add('lang-ready');
   </script>
+  <script src="data/references-data.js"></script>
+  <script src="js/references.js"></script>
   <script src="js/page-nav.js"></script>
 </body>
 
