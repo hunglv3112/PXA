@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ==============================================================================
  * DỮ LIỆU MỞ RỘNG — NĂM 1967 (data/1967/data_1967.js)
  * ==============================================================================
@@ -28,7 +28,7 @@ window.EXTRA_DATA_1967 = {
             date_ja: '1967年',
 
             text1: 'Khoảng 3 tháng trước cuộc tấn công (khoảng tháng 10 - 11/1967), Phạm Xuân Ẩn nhận chỉ đạo ở lại nội thành Sài Gòn. Nhiệm vụ của ông là phối hợp cùng Cụm trưởng Tư Cang khảo sát, thăm dò kỹ lưỡng các mục tiêu đầu não (Dinh Độc Lập, Bộ Tổng Tham mưu, Tòa Đại sứ quán Mỹ...) và xây dựng kế hoạch tình báo.',
-            text1_ja: '<span style="display:block;text-wrap:pretty">攻撃の約3か月前（1967年10～11月頃）、ファム・スアン・アンはサイゴン市内に残るよう指示を受けた。アンの任務は、情報グループ長のトゥー・カンと連携して、中枢となる目標（<span style="white-space:nowrap">独立宮殿</span>、参謀本部、アメリカ大使館など）を綿密に偵察・調査し、諜報計画を<span style="white-space:nowrap">立案すること</span><span style="white-space:nowrap">であった。</span></span>',
+            text1_ja: '<span style="display:block;text-wrap:pretty">攻撃の約3か月前（1967年10～11月頃）、ファム・スアン・アンはサイゴン市内に残るよう指示を受けた。アンの任務は、情報グループ長のトゥー・カンと連携して、中枢となる目標（<span style="white-space:nowrap">独立宮殿</span>、参謀本部、アメリカ大使館など）を綿密に偵察・調査し、諜報計画を<span style="white-space:nowrap">立案することであった[27]。</span>',
 
             note: '',
             note_ja: '',

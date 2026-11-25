@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ==============================================================================
  * DỮ LIỆU MỞ RỘNG — NĂM 1976 (data/1976/data_1976.js)
  * ==============================================================================
@@ -32,7 +32,7 @@ window.EXTRA_DATA_1976 = {
             date_ja: '1976年1月15日',
 
             text1: 'Phạm Xuân Ẩn được phong tặng danh hiệu Anh hùng Lực lượng Vũ trang Nhân dân ngày 15/1/1976. Tuy nhiên, cái tên Phạm Xuân Ẩn của ông chưa được công bố, thay vào đó là bí danh thời chiến Trần Văn Trung được tuyên dương.',
-            text1_ja: 'ファム・スアン・アンは、1976年1月15日に「人民武装勢力英雄」の称号を授与された。しかし、ファム・スアン・アンという名前は公表されず、代わりに戦時中の秘密名であるチャン・ヴァン・チュンが顕彰された。',
+            text1_ja: 'ファム・スアン・アンは、1976年1月15日に「人民武装勢力英雄」の称号を授与された [1]。しかし、ファム・スアン・アンという名前は公表されず、代わりに戦時中の秘密名であるチャン・ヴァン・チュンが顕彰された [27]。',
 
             note: '',
             note_ja: '',
@@ -57,9 +57,9 @@ window.EXTRA_DATA_1976 = {
             date_ja: '1976年12月',
 
             text1: 'Thông báo chính thức đầu tiên về thân phận sĩ quan tình báo của Phạm Xuân Ẩn diễn ra khi ông ra Hà Nội tham dự Đại hội Đảng toàn quốc lần thứ IV vào tháng 12/1976.',
-            text1_ja: 'ファム・スアン・アンが諜報将校であることが初めて正式に公表されたのは、1976年12月、アンが第4回全国党大会に出席するためにハノイへ赴いた<span style="white-space:nowrap">ときだった。</span>',
+            text1_ja: 'ファム・スアン・アンが諜報将校であることが初めて正式に公表されたのは、1976年12月、アンが第4回全国党大会に出席するためにハノイへ赴いたときだった [19]。',
             text2: 'Lần đầu tiên trong đời, ông khoác lên mình bộ quân phục màu xanh thẫm của quân đội nhân dân Việt Nam với cấp bậc Trung tá, khiến nhiều người ngỡ ngàng. Sự kiện này đã chính thức khép lại những năm tháng ẩn mình trong vỏ bọc nhà báo để thực hiện nhiệm vụ tình báo của Phạm Xuân Ẩn.',
-            text2_ja: '生まれて初めて、アンは中佐の階級を示すベトナム人民軍の深緑色の軍服に身を包み、多くの人々を驚かせた。この出来事によって、諜報任務を遂行するために記者という隠れ蓑の中に身を潜めていたファム・スアン・アンの歳月は、正式に幕を閉じた。',
+            text2_ja: '生まれて初めて、アンは中佐の階級を示すベトナム人民軍の深緑色の軍服に身を包み、多くの人々を驚かせた。この出来事によって、諜報任務を遂行するために記者という隠れ蓑の中に身を潜めていたファム・スアン・アンの歳月は、正式に幕を閉じた [18]。',
 
             note: '',
             note_ja: '',
@@ -85,7 +85,7 @@ window.EXTRA_DATA_1976 = {
             date_ja: '1976年夏',
 
             text1: 'Đến mùa hè năm 1976, văn phòng Time đóng cửa, tên ông cũng biến mất khỏi danh sách phóng viên của tạp chí. Quãng thời gian Phạm Xuân Ẩn gắn bó với báo chí cũng từ đó mà khép lại.',
-            text1_ja: '1976年夏には『タイム』誌の支局が閉鎖され、アンの名前も同誌の記者名簿から消えた。ファム・スアン・アンがジャーナリズムと関わってきた日々も、これをもって幕を閉じた。',
+            text1_ja: '1976年夏には『タイム』誌の支局が閉鎖され、アンの名前も同誌の記者名簿から消えた。ファム・スアン・アンがジャーナリズムと関わってきた日々も、これをもって幕を閉じた [18], [19]。',
 
             note: '',
             note_ja: '',

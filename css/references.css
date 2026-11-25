@@ -426,7 +426,8 @@
   color: var(--gold, #ebcb45);
   text-decoration: underline;
   text-underline-offset: 2.5px;
-  word-break: break-all;
+  word-break: break-word;
+  overflow-wrap: anywhere;
   cursor: pointer;
   transition: color 0.18s ease, text-shadow 0.18s ease;
 }

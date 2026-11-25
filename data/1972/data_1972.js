@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ==============================================================================
  * DỮ LIỆU MỞ RỘNG — NĂM 1972 (data/1972/data_1972.js)
  * ==============================================================================
@@ -28,13 +28,13 @@ window.EXTRA_DATA_1972 = {
             date_ja: '1972年3月30日',
 
             text1: 'Ngày 30/3/1972, quân Giải phóng mở tiến công chiến dịch Xuân – Hè 1972⁽¹⁾ đánh vào các vùng Quảng Trị, Tây Nguyên và Đông Nam Bộ. Phía Mỹ và chính quyền Việt Nam Cộng hòa bị bất ngờ về thời điểm, quy mô và hướng tiến công chính.',
-            text1_ja: '1972年3月30日、解放軍は1972年春夏作戦⁽¹⁾の攻勢を開始し、クアンチ、中部高原、東南部の各地域を攻撃した。アメリカ側とベトナム共和国政権にとって、その時期、規模、主な攻撃方向は予想外のものだった。',
+            text1_ja: '1972年3月30日、解放軍は1972年春夏作戦⁽³⁵⁾の攻勢を開始し、クアンチ、中部高原、東南部の各地域を攻撃した。アメリカ側とベトナム共和国政権にとって、その時期、規模、主な攻撃方向は予想外のものだった [58]。',
 
             text2: 'Phạm Xuân Ẩn dùng thẻ nhà báo của tạp chí Time để tiếp cận Bộ Tổng Tham mưu quân Việt Nam Cộng hòa, trụ sở MACV của Đại tướng Creighton Abrams và các buổi họp báo Five O’Clock Follies (“Trò hề lúc 5 giờ”). Từ đó, Ẩn khai thác thông tin từ thực địa qua các cố vấn quân sự Mỹ.',
-            text2_ja: 'ファム・スアン・アンは『タイム』誌の記者証を使い、ベトナム共和国軍の参謀本部、クレイトン・エイブラムス大将のMACV本部、そしてブリーフィング「ファイブ・オクロック・フォリーズ（5時の茶番）」に出入りした。そこから、アンはアメリカの軍事顧問たちを通じて現場の情報を引き出した。',
+            text2_ja: 'ファム・スアン・アンは『タイム』誌の記者証を使い、ベトナム共和国軍の参謀本部、クレイトン・エイブラムス大将のMACV本部、そしてブリーフィング「ファイブ・オクロック・フォリーズ（5時の茶番）」に出入りした。そこから、アンはアメリカの軍事顧問たちを通じて現場の情報を引き出した [19], [27]。',
 
             text3: 'Ẩn cung cấp các phân tích về sự suy sụp của Quân đoàn II của quân Việt Nam Cộng hòa, kế hoạch điều động lực lượng Địa phương quân của Thiếu tướng Ngô Du (Tư lệnh Quân đoàn II) cùng mức tổn thất nặng của Binh chủng Nhảy dù và Thủy quân lục chiến. Những phân tích này cho thấy lực lượng đối phương bị dàn mỏng. Nhờ đó, quân Giải phóng đã kịp thời triển khai phương án phối hợp trên các chiến trường.',
-            text3_ja: 'アンは、ベトナム共和国軍第II軍団の崩壊、ゴー・ズー少将（第II軍団司令官）による地方軍の動員計画、および空挺部隊と海兵隊の甚大な損失についての分析を提供した。これらの分析は、敵の兵力が分散して手薄になっていることを示していた。これにより、解放軍は各戦場における連携計画を迅速に実行に<span style="white-space:nowrap">移した。</span>',
+            text3_ja: 'アンは、ベトナム共和国軍第II軍団の崩壊、ゴー・ズー少将（第II軍団司令官）による地方軍の動員計画、および空挺部隊と海兵隊の甚大な損失についての分析を提供した。これらの分析は、敵の兵力が分散して手薄になっていることを示していた。これにより、解放軍は各戦場における連携計画を迅速に実行に移した [56]-[57]。',
 
             // ── ẢNH CHÈN GIỮA NỘI DUNG ──
             midImg3: {
@@ -46,7 +46,7 @@ window.EXTRA_DATA_1972 = {
             },
 
             footnote: '1. Chiến dịch Xuân – Hè 1972 là một trong những chiến dịch quân sự lớn nhất của quân Giải phóng miền Nam và quân đội nhân dân Việt Nam trong cuộc kháng chiến chống Mỹ, cứu nước, diễn ra từ ngày 30/3/1972 đến đầu năm 1973.',
-            footnote_ja: '1. 1972年春夏作戦は、抗米救国戦争における南ベトナム解放軍とベトナム人民軍の最大規模の軍事作戦の一つで、1972年3月30日から1973年初めまで行われた。',
+            footnote_ja: '35. 1972年春夏作戦は、抗米救国戦争における南ベトナム解放軍とベトナム人民軍の最大規模の軍事作戦の一つで、1972年3月30日から1973年初めまで行われた [59]。',
 
             note: '',
             note_ja: '',
@@ -67,7 +67,7 @@ window.EXTRA_DATA_1972 = {
             date_ja: '1972年',
 
             text1: 'Năm 1972, khi đàm phán Paris ngưng trệ, Mỹ mở Chiến dịch Linebacker I⁽¹⁾ ném bom trở lại miền Bắc nhằm cứu vãn tình thế của quân Việt Nam Cộng hòa và tăng sức ép buộc phía cách mạng nhượng bộ trên bàn đàm phán.',
-            text1_ja: '1972年、パリ交渉が停滞する中、アメリカはベトナム共和国軍の劣勢を挽回し、交渉の場で革命側に譲歩を迫る圧力を強めるため、北ベトナムへの爆撃を再開するラインバッカーI作戦⁽¹⁾を開始した。',
+            text1_ja: '1972年、パリ交渉が停滞する中、アメリカはベトナム共和国軍の劣勢を挽回し、交渉の場で革命側に譲歩を迫る圧力を強めるため、北ベトナムへの爆撃を再開するラインバッカーI作戦⁽³⁶⁾を開始した [19]。',
 
             // ── ẢNH CHÈN GIỮA NỘI DUNG ──
             midImg: {
@@ -82,13 +82,13 @@ window.EXTRA_DATA_1972 = {
             text2_ja: 'CIO内部との親しいつながりを通じて、ファム・スアン・アンはアメリカの軍事的意図を把握した。',
 
             text3: 'Ẩn đã gửi báo cáo khẩn cảnh báo sớm việc Mỹ chuẩn bị dùng máy bay cường kích và bom dẫn đường laser đánh phá đường sá, cầu cống, đường sắt, căn cứ quân sự và kho bãi hậu cần ở miền Bắc.',
-            text3_ja: 'アンは、アメリカが攻撃機とレーザー誘導爆弾を用いて北ベトナムの道路、橋梁、鉄道、軍事基地、補給倉庫を爆撃する準備を進めていることを早期に警告する緊急報告を送った。',
+            text3_ja: 'アンは、アメリカが攻撃機とレーザー誘導爆弾を用いて、北ベトナムの交通網、インフラ施設、補給倉庫を破壊する大規模な爆撃を準備していることを警告する緊急報告を送った [19]。',
 
             text4: 'Nhờ những thông tin cảnh báo sớm này, hậu phương miền Bắc và lực lượng Phòng không - Không quân chủ động sơ tán, chuẩn bị phương án đối phó.',
-            text4_ja: 'これらの早期警告の情報により、北ベトナムの後方と防空・空軍は事前に疎開を行い、対策を準備することができた。',
+            text4_ja: 'これらの早期警告の情報により、北ベトナムの後方と防空・空軍は事前に疎開を行い、対策を準備することができた [18]。',
 
             footnote: '1. Chiến dịch Linebacker I là chiến dịch ném bom và phong tỏa bằng thủy lôi của Mỹ vào miền Bắc Việt Nam năm 1972.',
-            footnote_ja: '1. ラインバッカーI作戦は、1972年にアメリカが北ベトナムに対して行った爆撃と機雷による封鎖の<span style="white-space:nowrap">作戦である。</span>',
+            footnote_ja: '36. ラインバッカーI作戦は、1972年5月から10月にかけてアメリカが北ベトナムに対して行った爆撃と機雷による封鎖の作戦である [60]。',
 
             note: '',
             note_ja: '',
@@ -115,13 +115,13 @@ window.EXTRA_DATA_1972 = {
             date_ja: '1972年',
 
             text1: 'Năm 1972, Phạm Xuân Ẩn trao đổi với Robert (Bob) Shaplen, phóng viên khu vực Viễn Đông của tạp chí The New Yorker từ năm 1962 đến năm 1978 và là một trong những người bạn làm báo của ông.',
-            text1_ja: '1972年、ファム・スアン・アンは、1962年から1978年まで『ザ・ニューヨーカー』誌の極東特派員を務め、自身の記者仲間の一人でもあったロバート・シャプレンと意見を交わした。',
+            text1_ja: '1972年、ファム・スアン・アンは、1962年から1978年まで『ザ・ニューヨーカー』誌の極東特派員を務め、自身の記者仲間の一人でもあったロバート・シャプレンと意見を交わした [30]。',
 
             text2: 'Ẩn cho rằng chính quyền Mỹ và Tổng thống Thiệu đã sai lầm khi cố nhấn mạnh sự tàn khốc của đợt tấn công năm 1972 để lên án quân Giải phóng. Theo ông, cách làm này “chỉ khiến cho nhân dân Mỹ thêm hoảng sợ và dồn Tổng thống Nixon đến bờ vực” ngay trước bầu cử Tổng thống Mỹ tháng 11/1972.',
-            text2_ja: 'アンは、アメリカ政府とティエウ大統領が解放軍を非難するために1972年の攻勢の残虐さを強調しようとしたのは誤りだったと考えていた。アンによれば、このやり方は1972年11月のアメリカ大統領選挙の直前にあって、「アメリカ国民をいっそう恐怖に陥れ、ニクソン大統領を窮地に追い込むだけ」であった。',
+            text2_ja: 'アンは、アメリカ政府とティエウ大統領が解放軍を非難するために1972年の攻勢の残虐さを強調しようとしたのは誤りだったと考えていた。アンによれば、このやり方は1972年11月のアメリカ大統領選挙の直前にあって、「アメリカ国民をいっそう恐怖に陥れ、ニクソン大統領を窮地に追い込むだけ」であった [19, p. 235]。',
 
             text3: 'Năm 1972, trên tạp chí The New Yorker, nhà báo Robert Shaplen đã công khai ca ngợi ông Phạm Xuân Ẩn là "người Việt làm báo chăm chỉ nhất và được nhiều người kính trọng nhất".',
-            text3_ja: '1972年、記者のロバート・シャプレンは『ザ・ニューヨーカー』誌の紙面で、ファム・スアン・アンを「最も勤勉で、最も多くの人々から尊敬を集めるベトナム人記者」と公然と<span style="white-space:nowrap">称賛した。</span>',
+            text3_ja: '1972年、記者のロバート・シャプレンは『ザ・ニューヨーカー』誌の紙面で、ファム・スアン・アンを「最も勤勉で、最も多くの人々から尊敬を集めるベトナム人記者」と公然と称賛した [27, p. 86]。',
 
             note: '',
             note_ja: '',

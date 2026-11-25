@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ==============================================================================
  * DỮ LIỆU MỞ RỘNG — NĂM 1965 (data/1965/data_1965.js)
  * ==============================================================================
@@ -28,14 +28,14 @@ window.EXTRA_DATA_1965 = {
             date_ja: '1965年11月',
 
             text1: 'Trong đợt Mỹ đưa Sư đoàn 1 Kỵ binh⁽¹⁾ lên Tây Nguyên mở cuộc càn quét lớn, Phạm Xuân Ẩn đã hiểu rõ và gửi về căn cứ nguyên bản Kế hoạch tác chiến cùng các thông tin tình báo chiến thuật cho trận Ia Đrăng⁽²⁾ diễn ra vào tháng 11/1965.',
-            text1_ja: 'アメリカが第1騎兵師団⁽¹⁾を中部高原に投入して大規模な掃討作戦を展開した際、ファム・スアン・アンは、1965年11月に行われたイアドランの戦い⁽²⁾に関する作戦計画の原版および戦術情報を把握し、根拠地へ送った。',
+            text1_ja: 'アメリカが第1騎兵師団⁽²⁵⁾を中部高原に投入して大規模な掃討作戦を展開した際、ファム・スアン・アンは、1965年11月に行われたイアドランの戦い⁽²⁶⁾に関する作戦計画の原版および戦術情報を把握し、根拠地へ送った。',
 
             text2: 'Tin tức mật này giúp quân Giải phóng chủ động thế trận, đánh thắng trận giao tranh quy mô lớn đầu tiên trực tiếp với quân chính quy Mỹ, giáng một đòn nặng nề vào chiến thuật "tìm diệt" của đối phương.',
-            text2_ja: 'この機密情報により、解放軍は主体的に戦いを展開し、アメリカの正規軍との初めての大規模な直接交戦に勝利して、敵方の「索敵撃滅」戦術に大きな打撃を与えた。',
+            text2_ja: 'この機密情報により、解放軍は主体的に戦いを展開し、アメリカの正規軍との初めての大規模な直接交戦に勝利して、敵方の「索敵撃滅」戦術に大きな打撃を与えた[18]。',
 
             // ── FOOTNOTES ──
             footnote: '1. Sư đoàn 1 Kỵ binh: Là một trong hai sư đoàn đầu tiên của Mỹ tại Việt Nam, với lực lượng chủ yếu là trực thăng.<br><br>2. Trận Ia Đrăng: Được coi là trận đánh lớn đầu tiên giữa quân Giải phóng và quân Mỹ.',
-            footnote_ja: '1. 第1騎兵師団：ベトナムに展開した最初の二つのアメリカ軍師団の一つで、ヘリコプターを主力とする。<br><br>2. イアドランの戦い：解放軍とアメリカ軍の間で行われた最初の大規模な戦いとされる。',
+            footnote_ja: '25. 第1騎兵師団は、ベトナムに展開した最初の二つのアメリカ軍師団の一つで、ヘリコプターを主力とする[43]。<br><br>26. イアドランの戦いは、解放軍とアメリカ軍の間で行われた最初の大規模な戦いとされる[44]。',
 
             note: '',
             note_ja: '',
@@ -83,7 +83,7 @@ window.EXTRA_DATA_1965 = {
             date_ja: '1965年8月',
 
             text1: 'Tháng 8/1965, trưởng đại diện văn phòng Time tại Sài Gòn là Frank McCulloch chính thức ký hợp đồng tuyển dụng Phạm Xuân Ẩn làm phóng viên thường trú với mức lương 75 USD/tuần.',
-            text1_ja: '<span style="display:block;text-wrap:pretty">1965年8月、『タイム』誌サイゴン支局長のフランク・マッカロックは、<span style="white-space:nowrap">週75ドル</span>の給与でファム・スアン・アンを現地記者として雇用する契約を<span style="white-space:nowrap">正式に結んだ。</span></span>',
+            text1_ja: '<span style="display:block;text-wrap:pretty">1965年8月、『タイム』誌サイゴン支局長のフランク・マッカロックは、<span style="white-space:nowrap">週75ドル</span>の給与でファム・スアン・アンを現地記者として雇用する契約を<span style="white-space:nowrap">正式に結んだ[23]。</span></span>',
 
             note: '',
             note_ja: '',

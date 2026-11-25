@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ==============================================================================
  * DỮ LIỆU MỞ RỘNG — NĂM 1957 (data/1957/data_1957.js)
  * ==============================================================================
@@ -36,7 +36,7 @@ window.EXTRA_DATA_1957 = {
             text2: 'Cấp trên Mười Hương khuyên ông chọn ngành báo chí vì hai lý do chính. Thứ nhất, thời điểm đó Ẩn chưa có bằng tốt nghiệp trung học, trong khi ngành báo chí lúc ấy không bắt buộc phải có loại bằng cấp này. Quan trọng hơn, Mười Hương cho rằng nghề báo có bình diện giao tiếp rộng nhất, tạo điều kiện thuận lợi cho công tác tình báo sau này.',
 
             text1_ja: 'アメリカがベトナムにおいてフランスに取って代わると見て、諜報指揮官のムオイ・フオンとベトナム民主共和国側の指導部は、アメリカの情勢を把握し、長期にわたる戦略情報活動の隠れ蓑の基盤を築くため、ファム・スアン・アンをアメリカに留学させる計画を立てた。',
-            text2_ja: '上官のムオイ・フオンは、主に二つの理由から、アンにジャーナリズムを専攻するよう勧めた。\n\n第一に、当時アンは高校の卒業資格を持っていなかったが、ジャーナリズムの分野ではその資格が必須ではなかったことである。\n\nさらに重要なこととして、ムオイ・フオンは、記者という職業は交友関係が最も広く、後の諜報活動に有利な条件をもたらすと考えていた。',
+            text2_ja: '上官のムオイ・フオンは、主に二つの理由から、アンにジャーナリズムを専攻するよう勧めた。\n\n第一に、当時アンは高校の卒業資格を持っていなかったが、ジャーナリズムの分野ではその資格が必須ではなかったことである。\n\nさらに重要なこととして、ムオイ・フオンは、記者という職業は交友関係が最も広く、後の諜報活動に有利な条件をもたらすと考えていた [19]。',
 
             // ── ẢNH CHÈN GIỮA text1 VÀ text2 ──
             midImg: {
@@ -77,7 +77,7 @@ window.EXTRA_DATA_1957 = {
 
             text1: 'Tháng 10/1957, Phạm Xuân Ẩn đặt chân đến thành phố Costa Mesa, nhập học Trường Orange Coast College (OCC), bang California. Ông trở thành người Việt Nam đầu tiên theo học ngành báo chí tại Quận Cam.',
 
-            text1_ja: '1957年10月、ファム・スアン・アンはカリフォルニア州コスタメサ市に降り立ち、オレンジコーストカレッジ（Orange Coast College、OCC）に入学した。アンは、オレンジ郡でジャーナリズムを学んだ最初のベトナム人となった。',
+            text1_ja: '1957年10月、ファム・スアン・アンはカリフォルニア州コスタメサ市に降り立ち、オレンジコーストカレッジ（Orange Coast College、OCC）に入学した。アンは、オレンジ郡でジャーナリズムを学んだ最初のベトナム人となった [19]。',
             note: '',
             note_ja: '',
         },
@@ -99,7 +99,7 @@ window.EXTRA_DATA_1957 = {
             date_ja: '1957年10月',
 
             text1: 'Ngay trước Lễ Tạ ơn năm 1957, tờ báo của trường, The Barnacle, đã đăng bài giới thiệu việc Phạm Xuân Ẩn nhập học, kèm tấm ảnh ông ngồi bên cuốn từ điển tiếng Anh với chú thích: “Bạn nói điều đó như thế nào trong tiếng Anh?”. Đây là bài báo đầu tiên giới thiệu ông công khai với tư cách một sinh viên báo chí người Việt, và trở thành bước đầu của vỏ bọc tình báo mà ông duy trì về sau.',
-            text1_ja: '1957年の感謝祭の直前、学生新聞『バーナクル（The Barnacle、フジツボ）』は、ファム・スアン・アンの入学を紹介する記事を掲載し、英語の辞書のそばに座るアンの写真に「それは英語で何と言うの？」というキャプションを添えた。\n\nこれは、アンをベトナム人のジャーナリズム専攻の学生として公に紹介した最初の記事であり、その後長く保ち続けることになる諜報の隠れ蓑の第一歩<span style="white-space:nowrap">となった。</span>',
+            text1_ja: '1957年の感謝祭の直前、学生新聞『バーナクル（The Barnacle、フジツボ）』は、ファム・スアン・アンの入学を紹介する記事を掲載し、英語の辞書のそばに座るアンの写真に「それは英語で何と言うの？」というキャプションを添えた。\n\nこれは、アンをベトナム人のジャーナリズム専攻の学生として公に紹介した最初の記事であり、その後長く保ち続けることになる諜報の隠れ蓑の第一歩となった [19]。',
             note: '',
             note_ja: '',
         }

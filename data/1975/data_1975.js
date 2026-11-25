@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ==============================================================================
  * DỮ LIỆU MỞ RỘNG — NĂM 1975 (data/1975/data_1975.js)
  * ==============================================================================
@@ -27,13 +27,13 @@ window.EXTRA_DATA_1975 = {
             date_ja: '1975年3月～4月',
 
             text1: 'Cuối năm 1974, trong một cuộc họp kín tại Dinh Độc Lập, Thiệu chủ quan đánh giá rằng quân Giải phóng đã chịu tổn thất nặng nề sau các trận đánh năm 1968 và 1972, không còn đủ khả năng tấn công các mục tiêu lớn mà chỉ có thể đánh chiếm những thị xã nhỏ. Vì vậy, Thiệu không tăng cường phòng thủ Tây Nguyên.',
-            text1_ja: '1974年末、独立宮殿での秘密会議で、ティエウは、解放軍が1968年と1972年の戦闘で甚大な損失を被っており、もはや大きな目標を攻撃する能力はなく、小規模な地方都市しか占領できないと高をくくった。そのため、ティエウは中部高原の防衛を強化しなかった。',
+            text1_ja: '1974年末、独立宮殿⁽⁴¹⁾での秘密会議で、ティエウは、解放軍が1968年と1972年の戦闘で甚大な損失を被っており、もはや大きな目標を攻撃する能力はなく、小規模な地方都市しか占領できないと高をくくった。そのため、ティエウは中部高原の防衛を強化しなかった。',
 
             text2: 'Phạm Xuân Ẩn đã nắm được thông tin từ cuộc họp này và báo cáo về. Tin này giúp quân Giải phóng quyết định mở Chiến dịch Tây Nguyên⁽¹⁾ vào tháng 3/1975, lấy Buôn Ma Thuột làm đòn mở màn cuộc Tổng tiến công và nổi dậy Mùa Xuân 1975.',
-            text2_ja: 'ファム・スアン・アンはこの会議の情報をつかみ、報告した。この情報によって、解放軍は1975年3月に中部高原作戦⁽¹⁾を開始することを決断し、ブオンマトートへの攻撃を1975年春の総進攻と蜂起の幕開けとした。',
+            text2_ja: 'ファム・スアン・アンはこの会議の情報をつかみ、報告した。この情報によって、解放軍は1975年3月に中部高原作戦⁽⁴²⁾を開始することを決断し、ブオンマトートへの攻撃を1975年春の総進攻と蜂起の幕開けとした。',
 
             text3: 'Đòn tiến công vào Buôn Ma Thuột của quân Giải phóng khiến Việt Nam Cộng hòa rơi vào thế choáng váng, mở đầu cho cuộc rút quân hỗn loạn khỏi Tây Nguyên. Sự thất bại này khiến quân Việt Nam Cộng hòa nhanh chóng suy yếu và tan rã.',
-            text3_ja: '解放軍のブオンマトートへの攻撃はベトナム共和国に大きな衝撃を与え、中部高原からの混乱した撤退の始まりとなった。この敗北により、ベトナム共和国軍は急速に弱体化し、崩壊して<span style="white-space:nowrap">いった。</span>',
+            text3_ja: '解放軍のブオンマトートへの攻撃はベトナム共和国に大きな衝撃を与え、中部高原からの混乱した撤退の始まりとなった。この敗北により、ベトナム共和国軍は急速に弱体化し、崩壊していった  [19], [67]。',
 
             // ── ẢNH CHÈN SAU text3 ──
             midImg3: {
@@ -45,7 +45,7 @@ window.EXTRA_DATA_1975 = {
             },
 
             text4: 'Sau đó quân Giải phóng liên tiếp mở các chiến dịch Huế - Đà Nẵng, chiến dịch Hồ Chí Minh, siết chặt vòng vây quanh thủ đô của Việt Nam Cộng hòa. Ngày 21/4, Thiệu tuyên bố từ chức Tổng thống và bàn giao quyền lực cho Phó Tổng thống lúc bấy giờ là Trần Văn Hương. Đến đêm 25/4, Thiệu rời khỏi Việt Nam. Sau đó, vào ngày 28/4, quyền lực tiếp tục được chuyển giao cho Dương Văn Minh khi Sài Gòn đã bị bao vây chặt.',
-            text4_ja: 'その後、解放軍はフエ・ダナン作戦とホーチミン作戦を次々と開始し、ベトナム共和国の首都への包囲網を狭めていった。4月21日、ティエウは大統領職の辞任を表明し、当時の副大統領チャン・ヴァン・フオンに権力を移譲した。4月25日夜、ティエウはベトナムを離れた。その後4月28日には、サイゴンがすでに完全に包囲されていた中で、権力はさらにズオン・ヴァン・ミンへと移譲された。',
+            text4_ja: 'その後、解放軍はフエ・ダナン作戦とホーチミン作戦を次々と開始し、ベトナム共和国の首都への包囲網を狭めていった [65]。4月21日、ティエウは大統領職の辞任を表明し、当時の副大統領チャン・ヴァン・フオンに権力を移譲した。4月25日夜、ティエウはベトナムを離れた。その後4月28日には、サイゴンがすでに完全に包囲されていた中で、権力はさらにズオン・ヴァン・ミンへと移譲された。',
 
             // ── VIDEO CHÈN SAU text4 ──
             midImg4: {
@@ -58,7 +58,7 @@ window.EXTRA_DATA_1975 = {
             },
 
             text5: 'Trưa ngày 30/4, sau hàng loạt trận đánh, quân Giải phóng tiến vào Sài Gòn, xe tăng húc đổ cổng Dinh Độc Lập, Dương Văn Minh đầu hàng không điều kiện, lá cờ của quân Giải phóng tung bay trên nóc dinh lúc 11h30, cuộc chiến cũng chính thức khép lại.',
-            text5_ja: '4月30日昼、一連の戦闘を経て解放軍がサイゴン市内に進攻し、戦車が独立宮殿の門を突き破り、ズオン・ヴァン・ミンが無条件降伏し、11時30分に解放旗が宮殿の屋上に翻って、戦争は正式に終結した。',
+            text5_ja: '4月30日昼、一連の戦闘を経て解放軍がサイゴン市内に進攻し、戦車が独立宮殿の門を突き破り、ズオン・ヴァン・ミンが無条件降伏し、11時30分に解放旗が宮殿の屋上に翻って、戦争は正式に終結した [68], [69]。',
 
             // ── ẢNH CHÈN SAU text5 ──
             midImg5: {
@@ -70,7 +70,7 @@ window.EXTRA_DATA_1975 = {
             },
 
             footnote: '1. Chiến dịch Tây Nguyên (bắt đầu từ ngày 4/3/1975) là đòn tiến công chiến lược mở đầu cho cuộc Tổng tiến công và nổi dậy Mùa Xuân 1975. Sau khi Buôn Ma Thuột được giải phóng ngày 10–11/3, quân đội Việt Nam Cộng hòa rút chạy hỗn loạn khỏi Kon Tum, Pleiku, giúp quân Giải phóng làm chủ toàn bộ Tây Nguyên. Thắng lợi này củng cố quyết tâm giải phóng hoàn toàn miền Nam trước khi mùa mưa năm 1975 đến.',
-            footnote_ja: '1. 中部高原作戦（1975年3月4日開始）は、1975年春の総進攻と蜂起の幕開けとなった作戦である。3月10日～11日にブオンマトートが解放されると、ベトナム共和国軍はコントゥム、プレイクから撤退し、解放軍は中部高原全域を掌握した。この勝利を受け、解放軍は1975年の雨季が来る前に南部を解放する決意を固めた。',
+            footnote_ja: '41. 独立宮殿は、サイゴンにあったベトナム共和国大統領の官邸である [66]。<br><br>42. 中部高原作戦（1975年3月4日開始）は、1975年春の総進攻と蜂起の幕開けとなった作戦である。3月10日～11日にブオンマトートが解放されると、ベトナム共和国軍はコントゥム、プレイクから撤退し、解放軍は中部高原全域を掌握した。この勝利を受け、解放軍は1975年の雨季が来る前に南部を解放する決意を固めた [65]。',
 
             note: '',
             note_ja: '',
@@ -96,7 +96,7 @@ window.EXTRA_DATA_1975 = {
             date_ja: '1975年4月～5月',
 
             text1: 'Ngày 30/4/1975, khi toàn bộ phóng viên người Mỹ đã di tản, một trong những bức điện cuối cùng mà văn phòng Time ở Sài Gòn gửi về trụ sở tại New York có nội dung: “Đây, Phạm Xuân Ẩn đây. Tất cả các phóng viên người Mỹ đều đã di tản do tình hình khẩn cấp. Văn phòng của Time giờ do mình tôi, Phạm Xuân Ẩn điều hành.”',
-            text1_ja: '1975年4月30日、アメリカ人記者が全員退避した後、『タイム』誌サイゴン支局がニューヨークの本社に送った最後の電文の一つは、「こちらファム・スアン・アン。アメリカ人記者は緊急事態のため全員退避した。『タイム』誌の支局は今、私ファム・スアン・アン一人で運営している」というものだった。',
+            text1_ja: '1975年4月30日、アメリカ人記者が全員退避した後、『タイム』誌サイゴン支局がニューヨークの本社に送った最後の電文の一つは、「こちらファム・スアン・アン。アメリカ人記者は緊急事態のため全員退避した。『タイム』誌の支局は今、私ファム・スアン・アン一人で運営している」というものだった [18, p. 15]。',
 
             // ── ẢNH CHÈN SAU text1 ──
             midImg1: {
@@ -108,7 +108,7 @@ window.EXTRA_DATA_1975 = {
             },
 
             text2: 'Sau đó Ẩn gửi bài báo cuối cùng về cho Time với tiêu đề “Cuộc chia tay cuối cùng đầy nghiệt ngã”, miêu tả lại cảnh hỗn loạn của Việt Nam Cộng hòa và Mỹ ngày 30/4/1975, được đăng trên số báo ra ngày 12/5/1975. Bài báo khép lại bằng một nhận định lịch sử đầy sâu sắc của Phạm Xuân Ẩn về sự kết thúc can thiệp của người Mỹ tại Việt Nam: “Có lẽ cần phải nói rằng, cuộc chia tay của người Mỹ đối với Việt Nam là chiến dịch duy nhất trong toàn bộ cuộc chiến mà họ hoàn toàn không mang theo ảo tưởng...”',
-            text2_ja: 'その後、アンは、1975年4月30日のベトナム共和国とアメリカの混乱ぶりを描いた「残酷さに満ちた最後の別れ」と題する最後の記事を『タイム』誌に送り、この記事は1975年5月12日号に掲載された。記事は、「アメリカ人のベトナムとの別れは、戦争全体を通じて、彼らがまったく幻想を抱かずに遂行した唯一の作戦だったと言うべきかもしれない......」という、アメリカのベトナム介入の終わりについてのファム・スアン・アンの深い歴史的洞察で締めくくられている。',
+            text2_ja: 'その後、アンは、1975年4月30日のベトナム共和国とアメリカの混乱ぶりを描いた「残酷さに満ちた最後の別れ」と題する最後の記事を『タイム』誌に送り、この記事は1975年5月12日号に掲載された。記事は、「アメリカ人のベトナムとの別れは、戦争全体を通じて、彼らがまったく幻想を抱かずに遂行した唯一の作戦だったと言うべきかもしれない......」という、アメリカのベトナム介入の終わりについてのファム・スアン・アンの深い歴史的洞察で締めくくられている [19, p. 281-282]。',
 
             note: '',
             note_ja: '',
