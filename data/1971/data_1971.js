@@ -28,7 +28,7 @@ window.EXTRA_DATA_1971 = {
             date_ja: '1971年1月',
 
             text1: 'Từ tháng 11/1970, quân Việt Nam Cộng hòa lên kế hoạch cho Chiến dịch Lam Sơn 719⁽¹⁾, một cuộc tấn công sang Nam Lào. Mục tiêu của chiến dịch là cắt đứt Đường mòn Hồ Chí Minh, hệ thống đường mà miền Bắc dùng để chuyển quân và hàng hóa vào miền Nam.',
-            text1_ja: '1970年11月から、ベトナム共和国軍は南ラオスへの攻撃であるラムソン719作戦⁽³⁴⁾の立案を開始した。この作戦の目的は、北部ベトナムが兵員と物資を南部ベトナムへ輸送するために使っていた道路網、ホーチミン・ルートを遮断することだった [18]-[19]。',
+            text1_ja: '1970年11月から、ベトナム共和国軍は南ラオスへの攻撃であるラムソン719作戦⁽³⁴⁾の立案を開始した。この作戦の目的は、北部ベトナムが兵員と物資を南部ベトナムへ輸送するために使っていた道路網、ホーチミン・ルートを遮断することだった [18],[19]。',
 
             text2: 'Tháng 1/1971, Phạm Xuân Ẩn nhận được tin từ các đầu mối trong quân Việt Nam Cộng hòa về cuộc tấn công xuyên biên giới đang được chuẩn bị, trong đó quan hệ gần gũi với Phủ Đặc ủy Trung ương Tình báo (CIO-Central Intelligence Organization) cho ông biết cả đặc nhiệm không vận của Lục quân quân Việt Nam Cộng hòa và cố vấn Mỹ cùng tham gia.',
             text2_ja: '1971年1月、ファム・スアン・アンはベトナム共和国軍内の情報源から、準備が進められている国境を越えた攻撃に関する情報を得て、中でも中央情報特別委員府（Central Intelligence Organization、CIO）との親しい関係から、ベトナム共和国軍の陸軍の空輸任務部隊もアメリカの顧問も共に参加することを知った [19]。',
@@ -46,7 +46,7 @@ window.EXTRA_DATA_1971 = {
             },
 
             text4: 'Những thông tin của Phạm Xuân Ẩn đã góp phần làm thất bại hoàn toàn Chiến dịch Lam Sơn 719 của quân Việt Nam Cộng hòa năm 1971. Chiến dịch này khiến quân Việt Nam Cộng hòa chịu thiệt hại 8.000 quân thương vong và 150 xe tăng bị phá hủy, đồng thời phía Mỹ cũng chịu tổn thất nặng nề với 108 trực thăng bị mất và 618 chiếc khác bị hư hại.',
-            text4_ja: 'ファム・スアン・アンの情報は、ベトナム共和国軍による1971年のラムソン719作戦を完全な失敗に終わらせることに貢献した。この作戦で、ベトナム共和国軍は8,000人の死傷者と戦車150両の破壊という損害を出し、同時にアメリカ側もヘリコプター108機を失い、ほかに618機が損傷するという甚大な損失を受けた [18]-[19]。',
+            text4_ja: 'ファム・スアン・アンの情報は、ベトナム共和国軍による1971年のラムソン719作戦を完全な失敗に終わらせることに貢献した。この作戦で、ベトナム共和国軍は8,000人の死傷者と戦車150両の破壊という損害を出し、同時にアメリカ側もヘリコプター108機を失い、ほかに618機が損傷するという甚大な損失を受けた [18],[19]。',
 
             midImg4: {
                 src: 'assets/images/1971_1973/1971_TB_ThuMayBay.jpg',
