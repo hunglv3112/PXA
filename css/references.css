@@ -618,3 +618,16 @@
     padding: 6px 8px;
   }
 }
+
+/* Bibliography typography from Final RP. */
+.ref-list .ref-item {
+  font-family: "Times New Roman", serif;
+  font-size: 12pt;
+  font-weight: normal;
+}
+.ref-item .ref-content, .ref-item .ref-num {
+  font: inherit;
+}
+.ref-item .ref-content i {
+  font-style: italic;
+}

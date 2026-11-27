@@ -1368,6 +1368,7 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -1924,17 +1925,20 @@
       </a>
       <a href="bio.html" class="page-nav-item" data-page="bio" role="menuitem">
         <span class="page-nav-item-icon">👤</span>
-        <span class="page-nav-item-text" data-vi="3. Tiểu sử (Trước 1957)" data-ja="3. 経歴（1957年以前）">3. 経歴（1957年以前）</span>
+        <span class="page-nav-item-text" data-vi="3. Tiểu sử (Trước 1957)" data-ja="3. 経歴（1957年以前）">3.
+          経歴（1957年以前）</span>
         <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">表示中</span>
       </a>
       <a href="timeline.html" class="page-nav-item" data-page="timeline" role="menuitem">
         <span class="page-nav-item-icon">⏱️</span>
-        <span class="page-nav-item-text" data-vi="4. Dòng thời gian (1957–1976)" data-ja="4. 年表（1957～1976年）">4. 年表（1957～1976年）</span>
+        <span class="page-nav-item-text" data-vi="4. Dòng thời gian (1957–1976)" data-ja="4. 年表（1957～1976年）">4.
+          年表（1957～1976年）</span>
         <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">表示中</span>
       </a>
       <a href="postwar.html" class="page-nav-item active" data-page="postwar" role="menuitem">
         <span class="page-nav-item-icon">🕊️</span>
-        <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm Phạm Xuân Ẩn" data-ja="5. 諜報員ファム・スアン・アン記念館">5. 諜報員ファム・スアン・アン記念館</span>
+        <span class="page-nav-item-text" data-vi="5. Phòng lưu niệm Phạm Xuân Ẩn" data-ja="5. 諜報員ファム・スアン・アン記念館">5.
+          諜報員ファム・スアン・アン記念館</span>
         <span class="page-nav-curr-tag" data-vi="Đang xem" data-ja="表示中">表示中</span>
       </a>
     </div>
@@ -2011,7 +2015,7 @@
               </div>
             </div>
             <div class="pt-caption" id="ptCaption">ファム・スアン・アン少将<br><span
-                style="font-weight:400;color:var(--mute);font-size:10px">(1927 – 2006)</span></div>
+                style="font-weight:400;color:var(--mute);font-size:10px">(1927年 – 2006年)</span></div>
           </div>
         </div>
 
@@ -2062,9 +2066,11 @@
   <!-- Modal hộp thoại xem chi tiết đồng bộ phong cách Dòng thời gian (Timeline 1957 - 1976) -->
   <div class="modal m-postwar-modal-backdrop" id="modalPostwar" role="dialog" aria-modal="true" hidden>
     <!-- Nút Nguồn đặt ngay bên cạnh khung popup phòng lưu niệm (áp dụng cho cả tủ kỷ vật và phần Giải mã Phạm Xuân Ẩn) -->
-    <button type="button" class="ref-trigger-btn popup-side-ref-btn" id="postwarDlgRefBtn" aria-label="参考文献" title="参考文献一覧を見る">
+    <button type="button" class="ref-trigger-btn popup-side-ref-btn" id="postwarDlgRefBtn" aria-label="参考文献"
+      title="参考文献一覧を見る">
       <div class="ref-btn-icon-circle">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
           <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
           <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
         </svg>
@@ -3159,8 +3165,8 @@
       const ptCap = document.getElementById('ptCaption');
       if (ptCap) {
         ptCap.innerHTML = (currentLang === 'ja')
-          ? 'ファム・スアン・アン少将<br><span style="font-weight:400;color:var(--mute);font-size:10px">(1927 - 2006)</span>'
-          : 'Thiếu tướng Phạm Xuân Ẩn<br><span style="font-weight:400;color:var(--mute);font-size:10.5px">(1927 - 2006)</span>';
+          ? 'ファム・スアン・アン少将<br><span style="font-weight:400;color:var(--mute);font-size:10px">(1927年 - 2006年)</span>'
+          : 'Thiếu tướng Phạm Xuân Ẩn<br><span style="font-weight:400;color:var(--mute);font-size:10.5px">(1927年 - 2006年)</span>';
       }
       updateFloorBtn();
 

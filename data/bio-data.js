@@ -15,7 +15,7 @@ window.BIO_DATA = {
   // ============================================================================
   vi: {
     hero: {
-      badge: "TIỂU SỬ NHÂN VẬT (1927 – 2006)",
+      badge: "TIỂU SỬ NHÂN VẬT (1927年 – 2006年)",
       title: "Thiếu tướng Phạm Xuân Ẩn",
       subtitle: "Một người — hai cuộc đời song hành trọn vẹn: Nhà báo quốc tế tài hoa và Điệp viên chiến lược hoàn hảo giữa tâm bão lịch sử.",
       bgImage: "assets/images/context-saigon.jpg"
@@ -103,7 +103,7 @@ window.BIO_DATA = {
   // ============================================================================
   ja: {
     hero: {
-      badge: "人物伝 (1927 – 2006)",
+      badge: "人物伝 (1927年 – 2006年)",
       title: "ファム・スアン・アン少将",
       subtitle: "並行する二つの生涯：類まれなる国際ジャーナリストにして、歴史の激流を操った完璧なる戦略諜報員。",
       bgImage: "assets/images/context-saigon.jpg"

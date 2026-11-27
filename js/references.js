@@ -191,7 +191,16 @@
       if (item.text) {
         // Tự động chuyển đổi các đường link URL trong văn bản thành thẻ <a> có thể bấm mở trong tab mới
         const urlRegex = /(https?:\/\/[^\s\)\],<"']+)/g;
-        html = item.text.replace(urlRegex, function (url) {
+        const escapeText = text => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        let formatted = '';
+        let offset = 0;
+        for (const { start, end } of item.italics || []) {
+          formatted += escapeText(item.text.slice(offset, start));
+          formatted += '<i>' + escapeText(item.text.slice(start, end)) + '</i>';
+          offset = end;
+        }
+        formatted += escapeText(item.text.slice(offset));
+        html = formatted.replace(urlRegex, function (url) {
           return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="ref-link-url">${url}</a>`;
         });
       } else if (item.rawHtml) {

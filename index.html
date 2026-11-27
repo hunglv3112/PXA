@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja" class="lang-ja">
 
 <head>
@@ -325,8 +325,9 @@
       padding: 4px 0 6px 28px;
     }
 
-    .lead blockquote {
-      margin: 0 0 24px;
+    .lead blockquote,
+    .lead .quote-source {
+      margin: 0;
       font-family: var(--serif);
       font-style: italic;
       font-weight: 500;
@@ -336,7 +337,13 @@
       position: relative;
     }
 
-    .lead blockquote.typing::after {
+    .lead .quote-source {
+      margin: 8px 0 24px;
+      text-align: right;
+    }
+
+    .lead blockquote.typing::after,
+    .lead .quote-source.typing::after {
       content: "";
       display: inline-block;
       width: 2.5px;
@@ -861,6 +868,7 @@
     /* Trích dẫn các thứ dùng Noto Serif JP */
     html[lang=ja] blockquote,
     html[lang=ja] .lead blockquote,
+    html[lang=ja] .lead .quote-source,
     html[lang=ja] q,
     html[lang=ja] cite {
       font-family: "Noto Serif JP", "Newsreader", serif;
@@ -870,7 +878,8 @@
       word-break: normal;
     }
 
-    html[lang=ja] .lead blockquote {
+    html[lang=ja] .lead blockquote,
+    html[lang=ja] .lead .quote-source {
       font-size: clamp(16px, 1.8vw, 21px);
       line-height: 1.5;
       letter-spacing: -0.01em;
@@ -940,6 +949,7 @@
       .next,
       .card,
       .lead blockquote.typing::after,
+      .lead .quote-source.typing::after,
       body::after {
         transition: none !important;
         animation: none !important;
@@ -1049,6 +1059,8 @@
         <div class="lead">
           <blockquote>「彼らの仕事は、先に知り、先に理解し、そして沈黙を守ることであり、
             それゆえ、その沈黙こそが彼らを忘れ去られやすい存在にもしている。」</blockquote>
+
+          <p class="quote-source" data-vi="- Nhóm tác giả của dự án -">- プロジェクト制作チーム -</p>
 
           <div class="lead-accordion" id="leadAccordion">
             <div class="acc-item">
@@ -1421,37 +1433,49 @@
       ja: '「彼らの仕事は、先に知り、先に理解し、そして沈黙を守ることであり、\nそれゆえ、その沈黙こそが彼らを忘れ去られやすい存在にもしている。」'
     };
 
+    var quoteSource = document.querySelector('.lead .quote-source');
+    var quoteSourceJa = quoteSource.textContent;
     var tw = null;
+    var cursorTimeout = null;
     function typeQuote(l) {
       if (!bq) return;
       clearInterval(tw);
-      bq.classList.remove('typing');
+      clearTimeout(cursorTimeout);
 
       var targetLang = l || (document.documentElement.lang === 'ja' ? 'ja' : 'vi');
-      var full = QUOTE_TEXTS[targetLang] || QUOTE_TEXTS.vi;
+      var quoteText = QUOTE_TEXTS[targetLang] || QUOTE_TEXTS.vi;
+      var sourceText = targetLang === 'ja' ? quoteSourceJa : quoteSource.dataset.vi;
 
-      if (reduce) {
-        bq.textContent = full;
-        bq.style.minHeight = '';
-        return;
-      }
+      [[bq, quoteText], [quoteSource, sourceText]].forEach(function (part) {
+        var el = part[0];
+        el.classList.remove('typing');
+        el.style.minHeight = '';
+        el.textContent = part[1];
+        if (!reduce) {
+          el.style.minHeight = el.offsetHeight + 'px';
+          el.textContent = '';
+        }
+      });
 
-      // Đặt trước nội dung để đo chiều cao cố định, tránh xô lệch layout
-      bq.style.minHeight = '';
-      bq.textContent = full;
-      var h = bq.offsetHeight;
-      bq.style.minHeight = h + 'px';
-      bq.textContent = '';
-      bq.classList.add('typing');
+      if (reduce) return;
 
       var n = 0;
+      bq.classList.add('typing');
       tw = setInterval(function () {
         n++;
-        bq.textContent = full.slice(0, n);
-        if (n >= full.length) {
+        if (n <= quoteText.length) {
+          bq.textContent = quoteText.slice(0, n);
+          return;
+        }
+        if (n === quoteText.length + 1) {
+          bq.classList.remove('typing');
+          quoteSource.classList.add('typing');
+        }
+        quoteSource.textContent = sourceText.slice(0, n - quoteText.length);
+        if (n === quoteText.length + sourceText.length) {
           clearInterval(tw);
-          setTimeout(function () {
-            bq.classList.remove('typing');
+          cursorTimeout = setTimeout(function () {
+            quoteSource.classList.remove('typing');
           }, 1200);
         }
       }, 28);
