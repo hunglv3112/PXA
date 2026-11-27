@@ -176,7 +176,7 @@
       display: grid;
       grid-template-columns: 310px 1fr;
       gap: 52px;
-      align-items: start;
+      align-items: center;
       margin-top: 56px;
     }
 
@@ -361,6 +361,10 @@
     }
 
     /* Accordion Giới thiệu đề tài */
+    .foreword { margin-block: 2rem; text-align: start; }
+    .foreword h2 { color: var(--gold); }
+    .foreword p { margin-block: 1em; line-height: 1.9; }
+
     .lead-accordion {
       margin-top: 24px;
       display: flex;
@@ -1055,100 +1059,19 @@
           </div>
         </div>
 
-        <!-- Khối diễn giải đề tài (Dạng Accordion bấm mở) -->
+        <!-- Khối diễn giải đề tài -->
         <div class="lead">
           <blockquote>「彼らの仕事は、先に知り、先に理解し、そして沈黙を守ることであり、
             それゆえ、その沈黙こそが彼らを忘れ去られやすい存在にもしている。」</blockquote>
 
           <p class="quote-source" data-vi="- Nhóm tác giả của dự án -">- プロジェクト制作チーム -</p>
 
-          <div class="lead-accordion" id="leadAccordion">
-            <div class="acc-item">
-              <button type="button" class="acc-trigger" aria-expanded="false">
-                <h3 class="acc-heading"><b>01.</b> <span class="acc-title">人物を選んだ理由</span></h3>
-                <span class="acc-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </span>
-              </button>
-              <div class="acc-panel">
-                <div class="acc-panel-inner">
-                  <p>
-                    ベトナムの抗戦といえば、人々はディエンビエンフーの勝利のような輝かしい勝利や、ヴォー・グエン・ザップ大将のように歴史に名を刻んだ将軍たちを思い浮かべることが多い。しかし、それらの勝利を支えたものには、戦線の背後で人知れず活動した人々、すなわち諜報部門の<span
-                      style="white-space:nowrap">存在もあった。</span><br><br>調べ始めると、私たちは、これがあまり知られていない空白であり、そこにはファム・ゴック・タオ、ヴー・ゴック・ニャ、ダン・チャン・ドゥックなど、人生も名前もすべて闇の中に捧げた大勢の人々がいることに気づいた。その中でも、ファム・スアン・アンは、二つの顔を持つその生涯によって、私たちを特に強く<span
-                      style="white-space:nowrap">引きつけた。</span><br><br>ファム・スアン・アンは、498件の報告と戦略文書を根拠地に送った諜報員であると同時に、ロイター通信と『タイム』誌の優れた記者でもあった。まさにこの二つの役割を併せ持っていたことが、私たちのプロジェクトの<span
-                      style="white-space:nowrap">出発点となった [1]。</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="acc-item">
-              <button type="button" class="acc-trigger" aria-expanded="false">
-                <h3 class="acc-heading"><b>02.</b> <span class="acc-title">ウェブサイトという形式を選んだ理由</span></h3>
-                <span class="acc-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </span>
-              </button>
-              <div class="acc-panel">
-                <div class="acc-panel-inner">
-                  <p>
-                    ファム・スアン・アンの生涯は、ラリー・バーマンの『完璧なスパイ』、ジャン・クロード・ポモンティの『おとなしいベトナム人』、グエン・ティ・ゴック・ハイの『ファム・スアン・アン――名前のとおりに生きた男』をはじめ、多くの書籍や記事で語られてきた。そのため、私たちが関心を寄せたのは、それらの資料を新しい形でいかに読者にとって身近なものにするかということであった。<br><br>この方向性から、私たちは年表、写真、歴史資料を組み合わせたウェブサイトを作成した。節目を時系列に沿って並べることで、読者はアンの歩みを容易にたどることができ、同時に、記者としての活動、諜報任務、そしてベトナム史の激動との関係をはっきりと<span
-                      style="white-space:nowrap">見て取ることができる。</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="acc-item">
-              <button type="button" class="acc-trigger" aria-expanded="false">
-                <h3 class="acc-heading"><b>03.</b> <span class="acc-title">内容と扱う範囲</span></h3>
-                <span class="acc-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </span>
-              </button>
-              <div class="acc-panel">
-                <div class="acc-panel-inner">
-                  <p>
-                    このウェブサイトは、ベトナムの歴史的背景から始まり、ファム・スアン・アンの幼少期と1945年8月に革命に参加するという転機を経て、アメリカでのジャーナリズム留学に向けた準備と出発に至るまで、読者を<span
-                      style="white-space:nowrap">導いていく。</span><br><br>このウェブサイトの中心となるのは、アンが記者と諜報員という二つの顔を持って同時に活動し、やがて秘密活動の年月が幕を閉じ、諜報員としての正体が公になるまでの、1957～1976年の<span
-                      style="white-space:nowrap">時期である。</span><br><br>また、このウェブサイトでは、アンの戦功や功績、そして戦後の質素な暮らしについても紹介しており、読者が特別な活動の年月の背後にある人物像を、より全体的に<span
-                      style="white-space:nowrap">捉えられるようにしている。</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="acc-item">
-              <button type="button" class="acc-trigger" aria-expanded="false">
-                <h3 class="acc-heading"><b>04.</b> <span class="acc-title">歴史との縁、そしてベトナム語と日本語の架け橋</span></h3>
-                <span class="acc-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </span>
-              </button>
-              <div class="acc-panel">
-                <div class="acc-panel-inner">
-                  <p>
-                    このプロジェクトは、グエン・ティ・ゴック・ハイの著書『ファム・スアン・アン――名前のとおりに生きた男』を翻訳者の澁谷由紀が日本語に訳したものに、私たちが偶然出会ったという、特別な縁から始まった。そのことがきっかけとなり、私たちは大学の4年間学んできた日本語そのものを使って、その物語を新しい形で語り継ぎ、ベトナム民族の英雄を世界の人々に<span
-                      style="white-space:nowrap">紹介したいと考えるようになった。</span><br><br>さらに、これは私たちがファム・スアン・アンに、そしてより広くは、今日のベトナムに平和をもたらすために人知れず尽くし、犠牲となった世代の人々に、感謝の気持ちを表す方法でもある。私たちは、一つのウェブサイトでアンの生涯をすべて語り尽くすことはできず、闇の中に眠ったままの人々すべての名を挙げることもできないと<span
-                      style="white-space:nowrap">理解している。</span><br><br>しかし、読んだあとに、ファム・スアン・アンを知り、どのような人物であったかを理解し、その背後には人知れず生きた数多くの人々がいたことを心に留めてくれる人が一人でも増えたなら、それは私たちにとって<span
-                      style="white-space:nowrap">意義ある成功である。</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <section class="foreword" lang="ja">
+            <h2>はじめに</h2>
+            <p>ベトナム革命の勝利といえば、まず思い浮かぶのは、1945年に人民を率いて独立を成し遂げたホー・チ・ミン主席である。また、1954年のディエンビエンフーの勝利を導いたヴォー・グエン・ザップ大将や、1975年のホーチミン作戦で主要な指揮官の一人として指揮を執ったヴァン・ティエン・ズン大将の名も挙げられる。こうした勝利の陰には、敵の内部でひそかに活動し、軍事上の判断に必要な戦略情報を集めた諜報員たちがいた。ファム・ゴック・タオ、ヴー・ゴック・ニャ、ダン・チャン・ドゥック、グエン・ティ・バーなど、多くの諜報員の功績が今日では認められている。活動には徹底した秘密保持が求められたため、終戦から50年以上が過ぎた今も、彼らについて語られる機会は、歴史に残る戦いや著名な将軍たちに比べて少ない。</p>
+            <p>そうした諜報員の中でも、ファム・スアン・アン（1927～2006年）は特別な存在である。アンはベトナム人民軍の情報将校として少将の階級に達し、「人民武装勢力英雄」の称号を授与された。ジャーナリズムを学ぶためにアメリカへ派遣された最初のベトナム人であり、1957年から1959年まで現地で学んだ。帰国後はロイター通信、『ニューヨーク・ヘラルド・トリビューン』紙、『タイム』誌で働いた。アンは当時、外国の報道機関の正規職員となった唯一のベトナム人であった。記者という職業は諜報活動の隠れ蓑でもあったが、アンは報道の仕事そのものに真摯に取り組んだ。取材を通じて軍の高級将校や軍の保安部門の関係者、さらにはCIAの関係者ともつながりを築き、自らの分析を添えて、計498件の報告や資料を根拠地に送った。そこには、「特殊戦争」戦略、1968年のテト攻勢（旧正月の総攻撃と蜂起）、「戦争のベトナム化」戦略に関する資料のほか、1975年にアメリカがベトナムに再び軍事介入することはないという見通しも含まれていた。アンを諜報組織に紹介したムオイ・フオンによれば、ホー・チ・ミン主席はアンの報告を読んで「まるでニューヨークの中心にいるようだ」と語り、ヴォー・グエン・ザップ大将は「まるで我々が敵の総参謀部の中にいるようだ」と評したという [1]。</p>
+            <p>こうした理由から、私たちはベトナム人民軍の諜報部門を代表する人物として、ファム・スアン・アンを選んだ。アンの歩みを通じて、戦略諜報を担った彼が、記者として公に活動しながら、どのようにして最も重要な情報源に接近したのかを明らかにしたい。一人の生涯を通じて伝えられるのは、諜報部門の歩みの一端である。それでも、アンの生涯や、彼が何を選び、どのような試練に向き合ったのかを紹介することで、諜報部門の活動に関心を寄せる読者が増えたなら、それだけでも私たちにとっては一つの成果である。</p>
+          </section>
         </div>
       </div>
     </header>
